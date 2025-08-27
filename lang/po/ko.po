@@ -28,15 +28,15 @@
 # Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 백도 <tmtm1379@gmail.com>, 2025
 # ARDOR Flag, 2025
-# 김동현, 2025
-# Fruitybite, 2025
 # Tae Heon Lim, 2025
+# Fruitybite, 2025
+# 김동현, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-25 01:37+0000\n"
-"Last-Translator: Tae Heon Lim, 2025\n"
+"POT-Creation-Date: 2025-08-27 00:57+0000\n"
+"Last-Translator: 김동현, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3195,7 +3195,7 @@ msgstr "고장난 바이오닉입니다. 종종 근육에 산을 방출시켜 �
 #: data/json/bionics.json data/json/items/bionics.json
 msgid "Electrical Discharge"
 msgid_plural "Electrical Discharges"
-msgstr[0] "고장: 방전"
+msgstr[0] "고장: 누전"
 
 #. ~ Description for {'str': 'Electrical Discharge'}
 #: data/json/bionics.json
@@ -3218,7 +3218,7 @@ msgstr "고장난 바이오닉입니다. 아무 기능도 하지 않으면서, �
 
 #: data/json/bionics.json
 msgid "Sound Dampeners"
-msgstr "CBM: 소리 감쇠장치"
+msgstr "소리 감쇠장치"
 
 #. ~ Description for {'str': 'Sound Dampeners'}
 #: data/json/bionics.json
@@ -3232,7 +3232,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Enhanced Hearing"
-msgstr "CBM: 청력 향상장치"
+msgstr "청력 향상장치"
 
 #. ~ Description for {'str': 'Enhanced Hearing'}
 #: data/json/bionics.json
@@ -3249,7 +3249,7 @@ msgstr ""
 #: data/json/bionics.json data/json/items/gun/bio.json
 msgid "EMP Projector"
 msgid_plural "EMP Projectors"
-msgstr[0] "CBM: EMP 발생기"
+msgstr[0] "EMP 발생기"
 
 #. ~ Description for {'str': 'EMP Projector'}
 #: data/json/bionics.json
@@ -3264,7 +3264,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Ethanol Burner"
-msgstr "CBM: 에탄올 반응로"
+msgstr "에탄올 반응로"
 
 #. ~ Description for {'str': 'Ethanol Burner'}
 #: data/json/bionics.json
@@ -3273,7 +3273,7 @@ msgstr "알코올을 극도로 효율적인 연료로 삼아 불태웁니다."
 
 #: data/json/bionics.json
 msgid "Aero-Evaporator"
-msgstr "CBM: 대기 증류장치"
+msgstr "대기 증류장치"
 
 #. ~ Description for {'str': 'Aero-Evaporator'}
 #. ~ Description for {'str': 'Aero-Evaporator CBM'}
@@ -3285,7 +3285,7 @@ msgstr "이 장치는 주변의 대기에서 수분을 빨아들여 당신의 �
 
 #: data/json/bionics.json
 msgid "Diamond Cornea"
-msgstr "CBM: 다이아몬드 각막"
+msgstr "다이아몬드 각막"
 
 #. ~ Description for {'str': 'Diamond Cornea'}
 #: data/json/bionics.json
@@ -3296,7 +3296,7 @@ msgstr "시력이 크게 향상되어, 지각력에 +2 보너스를 받고 기�
 
 #: data/json/bionics.json
 msgid "Telescopic Lenses"
-msgstr "CBM: 망원 렌즈"
+msgstr "망원 렌즈"
 
 #. ~ Description for {'str': 'Telescopic Lenses'}
 #: data/json/bionics.json
@@ -3311,7 +3311,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Facial Distortion"
-msgstr "CBM: 안면 변형기"
+msgstr "안면 변형기"
 
 #. ~ Description for {'str': 'Facial Distortion'}
 #: data/json/bionics.json
@@ -3323,7 +3323,7 @@ msgstr "전기화학적 자극을 통해 얼굴 형태를 제어해 타인의 �
 
 #: data/json/bionics.json
 msgid "Dielectric Capacitance System"
-msgstr "CBM: 유전체 정전 시스템"
+msgstr "유전체 정전 시스템"
 
 #. ~ Description for {'str': 'Dielectric Capacitance System'}
 #: data/json/bionics.json
@@ -3335,7 +3335,7 @@ msgstr "몸 전체에 초소형 압전 축전망이 설치되어 있어, 내장 
 
 #: data/json/bionics.json
 msgid "Fingerhack"
-msgstr "CBM: 손가락 해킹장치"
+msgstr "손가락 해킹장치"
 
 #. ~ Description for {'str': 'Fingerhack'}
 #: data/json/bionics.json
@@ -3350,7 +3350,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Flashbang Generator"
-msgstr "CBM: 섬광 생성기"
+msgstr "섬광 생성기"
 
 #. ~ Description for {'str': 'Flashbang Generator'}
 #: data/json/bionics.json
@@ -3364,7 +3364,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Cranial Flashlight"
-msgstr "CBM: 두개골내 광소자"
+msgstr "두개골내 광소자"
 
 #. ~ Description for {'str': 'Cranial Flashlight'}
 #: data/json/bionics.json
@@ -3375,7 +3375,7 @@ msgstr "양 눈 사이에 작지만 강력한 LED 조명이 설치되었습니�
 #: data/json/bionics.json data/json/items/bionics.json
 msgid "LED Tattoo"
 msgid_plural "LED Tattoos"
-msgstr[0] "CBM: LED 타투"
+msgstr[0] "LED 타투"
 
 #. ~ Description for {'str': 'LED Tattoo'}
 #: data/json/bionics.json
@@ -3407,7 +3407,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Integrated Dosimeter"
-msgstr "CBM: 방사선 선량계"
+msgstr "방사선 선량계"
 
 #. ~ Description for {'str': 'Integrated Dosimeter'}
 #: data/json/bionics.json
@@ -3421,7 +3421,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Respirator"
-msgstr "CBM: 인공호흡기"
+msgstr "인공호흡기"
 
 #. ~ Description for {'str': 'Respirator'}
 #: data/json/bionics.json
@@ -3437,7 +3437,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Terranian Sonar"
-msgstr "CBM: 지형 소나"
+msgstr "지형 소나"
 
 #. ~ Description for {'str': 'Terranian Sonar'}
 #: data/json/bionics.json
@@ -3450,7 +3450,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Heat Drain"
-msgstr "CBM: 열 흡수기"
+msgstr "열 흡수기"
 
 #. ~ Description for {'str': 'Heat Drain'}
 #: data/json/bionics.json
@@ -3463,7 +3463,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Thermal Dissipation"
-msgstr "CBM: 열 냉각기"
+msgstr "열 냉각기"
 
 #. ~ Description for {'str': 'Thermal Dissipation'}
 #: data/json/bionics.json
@@ -3477,7 +3477,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Hydraulic Muscles"
-msgstr "CBM: 유압 근력장치"
+msgstr "유압 근력장치"
 
 #. ~ Description for {'str': 'Hydraulic Muscles'}
 #: data/json/bionics.json
@@ -3488,7 +3488,7 @@ msgstr "작동되는 동안에는 근육이 엄청나게 강화됩니다. 작동
 
 #: data/json/bionics.json
 msgid "Bionic Infolink"
-msgstr "CBM: 바이오닉 통신기"
+msgstr "바이오닉 통신기"
 
 #. ~ Description for {'str': 'Bionic Infolink'}
 #: data/json/bionics.json
@@ -3505,7 +3505,7 @@ msgstr ""
 
 #: data/json/bionics.json data/json/mutations/mutations.json
 msgid "Infrared Vision"
-msgstr "CBM: 적외선 시야"
+msgstr "적외선 시야"
 
 #. ~ Description for {'str': 'Infrared Vision'}
 #: data/json/bionics.json
@@ -3516,7 +3516,7 @@ msgstr "당신의 시야가 적외선도 볼 수 있게 되어, 어둠 속이나
 
 #: data/json/bionics.json
 msgid "Cerebral Booster"
-msgstr "CBM: 두뇌 개선장치"
+msgstr "두뇌 개선장치"
 
 #. ~ Description for {'str': 'Cerebral Booster'}
 #: data/json/bionics.json
@@ -3540,7 +3540,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Finger-Mounted Laser"
-msgstr "CBM: 손가락 탑재형 레이저"
+msgstr "손가락 탑재형 레이저"
 
 #. ~ Description for {'str': 'Finger-Mounted Laser'}
 #: data/json/bionics.json
@@ -3569,7 +3569,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Leukocyte Breeder System"
-msgstr "CBM: 백혈구 배양 시스템"
+msgstr "백혈구 배양 시스템"
 
 #. ~ Description for {'str': 'Leukocyte Breeder System'}
 #: data/json/bionics.json
@@ -3584,7 +3584,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Finger Lighter"
-msgstr "CBM: 손가락 발화장치"
+msgstr "손가락 발화장치"
 
 #. ~ Description for {'str': 'Finger Lighter'}
 #: data/json/bionics.json
@@ -3595,7 +3595,7 @@ msgstr "양손의 검지 끝에 강력한 발화 장치가 장착되었습니다
 
 #: data/json/bionics.json
 msgid "Fingerpick"
-msgstr "CBM: 손가락 잠금해제장치"
+msgstr "손가락 잠금해제장치"
 
 #. ~ Description for {'str': 'Fingerpick'}
 #: data/json/bionics.json
@@ -3611,7 +3611,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Electromagnetic Unit"
-msgstr "CBM: 전자석 장치"
+msgstr "전자석 장치"
 
 #. ~ Description for {'str': 'Electromagnetic Unit'}
 #: data/json/bionics.json
@@ -3625,7 +3625,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Nictating Membrane"
-msgstr "CBM: 제3의 눈꺼풀"
+msgstr "제3의 눈꺼풀"
 
 #. ~ Description for {'str': 'Nictating Membrane'}
 #: data/json/bionics.json
@@ -3636,7 +3636,7 @@ msgstr "눈에 잠수할 때 안구를 덮어주는 얇은 막이 있습니다. 
 
 #: data/json/bionics.json
 msgid "Enhanced Memory Banks"
-msgstr "CBM: 향상된 기억 저장소"
+msgstr "향상된 기억 저장소"
 
 #. ~ Description for {'str': 'Enhanced Memory Banks'}
 #: data/json/bionics.json
@@ -3650,7 +3650,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Metabolic Interchange"
-msgstr "CBM: 신진대사 전환기"
+msgstr "신진대사 전환기"
 
 #. ~ Description for {'str': 'Metabolic Interchange'}
 #: data/json/bionics.json
@@ -3661,7 +3661,7 @@ msgstr "당신의 소화기와 전력 공급이 상호연결되었습니다. 칼
 
 #: data/json/bionics.json
 msgid "Repair Nanobots"
-msgstr "CBM: 재생 나노로봇"
+msgstr "재생 나노로봇"
 
 #. ~ Description for {'str': 'Repair Nanobots'}
 #: data/json/bionics.json
@@ -3678,7 +3678,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Artificial Night Generator"
-msgstr "CBM: 인공 심야 발생기"
+msgstr "인공 심야 발생기"
 
 #. ~ Description for {'str': 'Artificial Night Generator'}
 #: data/json/bionics.json
@@ -3689,7 +3689,7 @@ msgstr "활성화되면 2타일 이내에 있는 모든 빛을 파괴적인 간�
 
 #: data/json/bionics.json
 msgid "Implanted Night Vision"
-msgstr "CBM: 광 증폭 시야"
+msgstr "광 증폭 시야"
 
 #. ~ Description for {'str': 'Implanted Night Vision'}
 #: data/json/bionics.json
@@ -3726,7 +3726,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Offensive Defense System"
-msgstr "CBM: 공격형 방호 시스템"
+msgstr "공격형 방호 시스템"
 
 #. ~ Description for {'str': 'Offensive Defense System'}
 #: data/json/bionics.json
@@ -3740,7 +3740,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Sensory Dulling"
-msgstr "CBM: 감각 감쇄"
+msgstr "감각 감쇄"
 
 #. ~ Description for {'str': 'Sensory Dulling'}
 #: data/json/bionics.json
@@ -3766,7 +3766,7 @@ msgstr "잘못 배치된 유전체 타원으로 인해, 약한 시각 신경 장
 
 #: data/json/bionics.json
 msgid "Power Armor Interface"
-msgstr "CBM: 파워 아머 인터페이스"
+msgstr "파워 아머 인터페이스"
 
 #. ~ Description for {'str': 'Power Armor Interface'}
 #: data/json/bionics.json
@@ -3780,7 +3780,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Power Armor Interface Mk. II"
-msgstr "CBM: 파워 아머 인터페이스 Mk. II"
+msgstr "파워 아머 인터페이스 Mk. II"
 
 #. ~ Description for {'str': 'Power Armor Interface Mk. II'}
 #: data/json/bionics.json
@@ -3795,7 +3795,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Power Storage"
-msgstr "CBM: 전력 저장소"
+msgstr "전력 저장소"
 
 #. ~ Description for {'str': 'Power Storage'}
 #: data/json/bionics.json
@@ -3809,7 +3809,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Power Storage Mk. II"
-msgstr "CBM: 전력 저장소 Mk. II"
+msgstr "전력 저장소 Mk. II"
 
 #. ~ Description for {'str': 'Power Storage Mk. II'}
 #: data/json/bionics.json
@@ -3833,7 +3833,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Probability Travel"
-msgstr "CBM: 가능성 추진기"
+msgstr "가능성 추진기"
 
 #. ~ Description for {'str': 'Probability Travel'}
 #: data/json/bionics.json
@@ -3847,7 +3847,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Air Filtration System (passive)"
-msgstr "CBM: 공기 여과 시스템 (지속형)"
+msgstr "공기 여과 시스템 (지속형)"
 
 #. ~ Description for {'str': 'Air Filtration System (passive)'}
 #: data/json/bionics.json
@@ -3862,7 +3862,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Air Filtration System (active)"
-msgstr "CBM: 공기 여과 시스템 (발동형)"
+msgstr "공기 여과 시스템 (발동형)"
 
 #. ~ Description for {'str': 'Air Filtration System (active)'}
 #: data/json/bionics.json
@@ -3876,7 +3876,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Radiation Scrubber System"
-msgstr "CBM: 방사능 제염 시스템"
+msgstr "방사능 제염 시스템"
 
 #. ~ Description for {'str': 'Radiation Scrubber System'}
 #. ~ Description for {'str': 'Radiation Scrubber System CBM'}
@@ -3893,7 +3893,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Railgun"
-msgstr "CBM: 레일건"
+msgstr "레일건"
 
 #. ~ Description for {'str': 'Railgun'}
 #: data/json/bionics.json
@@ -3907,7 +3907,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Fingertip Razors"
-msgstr "CBM: 손끝 칼날"
+msgstr "손끝 칼날"
 
 #. ~ Description for {'str': 'Fingertip Razors'}
 #: data/json/bionics.json
@@ -3921,7 +3921,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Recycler Unit"
-msgstr "CBM: 재활용 장치"
+msgstr "재활용 장치"
 
 #. ~ Description for {'str': 'Recycler Unit'}
 #: data/json/bionics.json
@@ -3934,7 +3934,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Remote Controller"
-msgstr "CBM: 원격조종"
+msgstr "원격조종"
 
 #. ~ Description for {'str': 'Remote Controller'}
 #: data/json/bionics.json
@@ -3945,7 +3945,7 @@ msgstr "뇌에 연결된 소형 모듈로 근처의 무선 기능이 있는 장�
 
 #: data/json/bionics.json
 msgid "Sonic Resonator"
-msgstr "CBM: 음파 공명장치"
+msgstr "음파 공명장치"
 
 #. ~ Description for {'str': 'Sonic Resonator'}
 #: data/json/bionics.json
@@ -3959,7 +3959,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Olfactory Mask"
-msgstr "CBM: 체취 은폐장치"
+msgstr "체취 은폐장치"
 
 #. ~ Description for {'str': 'Olfactory Mask'}
 #: data/json/bionics.json
@@ -3985,7 +3985,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Synaptic Regeneration System"
-msgstr "CBM: 시냅스 회복 시스템"
+msgstr "시냅스 회복 시스템"
 
 #. ~ Description for {'str': 'Synaptic Regeneration System'}
 #: data/json/bionics.json
@@ -4000,7 +4000,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Electroshock Unit"
-msgstr "CBM: 전기충격 장치"
+msgstr "전기충격 장치"
 
 #. ~ Description for {'str': 'Electroshock Unit'}
 #: data/json/bionics.json
@@ -4014,7 +4014,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Shockwave Generator"
-msgstr "CBM: 충격파 발생기"
+msgstr "충격파 발생기"
 
 #. ~ Description for {'str': 'Shockwave Generator'}
 #: data/json/bionics.json
@@ -4060,7 +4060,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Synaptic Accelerator"
-msgstr "CBM: 시냅스 가속기"
+msgstr "시냅스 가속기"
 
 #. ~ Description for {'str': 'Synaptic Accelerator'}
 #: data/json/bionics.json
@@ -4083,7 +4083,7 @@ msgstr "잘못 설치된 전선 때문에 몸 대부분이 움직이기 힘듭�
 
 #: data/json/bionics.json
 msgid "Muscle Augmentation"
-msgstr "CBM: 근력 증강장치"
+msgstr "근력 증강장치"
 
 #. ~ Description for {'str': 'Muscle Augmentation'}
 #: data/json/bionics.json
@@ -4094,7 +4094,7 @@ msgstr "당신의 근육 시스템에 근섬유를 삽입하여 성능이 상승
 
 #: data/json/bionics.json
 msgid "Autonomous Surgical Scalpels"
-msgstr "CBM: 자동화 수술용 메스"
+msgstr "자동화 수술용 메스"
 
 #. ~ Description for {'str': 'Autonomous Surgical Scalpels'}
 #: data/json/bionics.json
@@ -4108,7 +4108,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Anti-Glare Compensators"
-msgstr "CBM: 눈부심 보정기"
+msgstr "눈부심 보정기"
 
 #. ~ Description for {'str': 'Anti-Glare Compensators'}
 #: data/json/bionics.json
@@ -4122,7 +4122,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Targeting System"
-msgstr "CBM: 조준 시스템"
+msgstr "조준 시스템"
 
 #. ~ Description for {'str': 'Targeting System'}
 #: data/json/bionics.json
@@ -4136,7 +4136,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Teleportation Unit"
-msgstr "CBM: 순간이동 장치"
+msgstr "순간이동 장치"
 
 #. ~ Description for {'str': 'Teleportation Unit'}
 #: data/json/bionics.json
@@ -4165,7 +4165,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Time Dilation"
-msgstr "CBM: 시간 지연"
+msgstr "시간 지연"
 
 #. ~ Description for {'str': 'Time Dilation'}
 #: data/json/bionics.json
@@ -4179,7 +4179,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Integrated Toolset"
-msgstr "CBM: 내장형 도구모음"
+msgstr "내장형 도구모음"
 
 #. ~ Description for {'str': 'Integrated Toolset'}
 #: data/json/bionics.json
@@ -4192,7 +4192,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Extended Toolset"
-msgstr "CBM: 확장 도구모음"
+msgstr "확장 도구모음"
 
 #. ~ Description for {'str': 'Extended Toolset'}
 #: data/json/bionics.json
@@ -4203,7 +4203,7 @@ msgstr "내장 도구장치에 금속절삭, 지레질과 같은 기능을 추�
 
 #: data/json/bionics.json
 msgid "Joint Torsion Ratchet"
-msgstr "CBM: 관절 물리력 흡수장치"
+msgstr "관절 물리력 흡수장치"
 
 #. ~ Description for {'str': 'Joint Torsion Ratchet'}
 #: data/json/bionics.json
@@ -4217,7 +4217,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Joint Servo"
-msgstr "CBM: 관절 서보"
+msgstr "관절 서보"
 
 #. ~ Description for {'str': 'Joint Servo'}
 #: data/json/bionics.json
@@ -4246,7 +4246,7 @@ msgstr "고장난 바이오닉으로 인해 가끔씩 시각 자료가 왜곡되
 
 #: data/json/bionics.json data/json/enchantments.json
 msgid "Uncanny Dodge"
-msgstr "CBM: 초인적 회피"
+msgstr "초인적 회피"
 
 #. ~ Description for {'str': 'Uncanny Dodge'}
 #: data/json/bionics.json
@@ -4260,7 +4260,7 @@ msgstr ""
 
 #: data/json/bionics.json data/json/enchantments.json
 msgid "Underwater Propellers"
-msgstr "CBM: 수중 추진기"
+msgstr "수중 추진기"
 
 #. ~ Description for {'str': 'Underwater Propellers'}
 #: data/json/bionics.json
@@ -4271,7 +4271,7 @@ msgstr "상체에 접이식 수중 추진기가 달려 있어, 물속에서 더 
 
 #: data/json/bionics.json
 msgid "Internal Unified Power System"
-msgstr "CBM: 내장 통합 전원장치"
+msgstr "내장 통합 전원장치"
 
 #. ~ Description for {'str': 'Internal Unified Power System'}
 #: data/json/bionics.json
@@ -4299,7 +4299,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Water Extraction Unit"
-msgstr "CBM: 수분 추출기"
+msgstr "수분 추출기"
 
 #. ~ Description for {'str': 'Water Extraction Unit'}
 #: data/json/bionics.json
@@ -4349,7 +4349,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Micro Reactor"
-msgstr "CBM: 소형 반응로"
+msgstr "소형 반응로"
 
 #. ~ Description for {'str': 'Micro Reactor'}
 #: data/json/bionics.json
@@ -4364,7 +4364,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Advanced Micro Reactor"
-msgstr "CBM: 개선된 소형 반응로"
+msgstr "개선된 소형 반응로"
 
 #. ~ Description for {'str': 'Advanced Micro Reactor'}
 #: data/json/bionics.json
@@ -4379,7 +4379,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Micro Reactor Safety Override"
-msgstr "CBM: 소형 반응로 안전장치 해제"
+msgstr "소형 반응로 안전장치 해제"
 
 #. ~ Description for {'str': 'Micro Reactor Safety Override'}
 #. ~ Description for {'str': 'Micro Reactor Safety Override CBM'}
@@ -4394,7 +4394,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Intravenous Needletip"
-msgstr "CBM: 정맥주사기"
+msgstr "정맥주사기"
 
 #. ~ Description for {'str': 'Intravenous Needletip'}
 #: data/json/bionics.json
@@ -4409,7 +4409,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Skeletal Bracing"
-msgstr "CBM: 뼈대 보강"
+msgstr "뼈대 보강"
 
 #. ~ Description for {'str': 'Skeletal Bracing'}
 #: data/json/bionics.json
@@ -4424,7 +4424,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Kinetic Shock Absorbers"
-msgstr "CBM: 운동충격흡수기"
+msgstr "운동충격흡수기"
 
 #. ~ Description for {'str': 'Kinetic Shock Absorbers'}
 #: data/json/bionics.json
@@ -4440,7 +4440,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Taste Modifier"
-msgstr "CBM: 맛 수정기"
+msgstr "맛 수정기"
 
 #. ~ Description for {'str': 'Taste Modifier'}
 #: data/json/bionics.json
@@ -4455,7 +4455,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Soporific Induction"
-msgstr "CBM: 수면 유도기"
+msgstr "수면 유도기"
 
 #. ~ Description for {'str': 'Soporific Induction'}
 #: data/json/bionics.json
@@ -4468,7 +4468,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Solar Panels"
-msgstr "CBM: 태양 전지판"
+msgstr "태양 전지판"
 
 #. ~ Description for {'str': 'Solar Panels'}
 #: data/json/bionics.json
@@ -4482,7 +4482,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Deployable Grenade Launcher"
-msgstr "CBM: 내장식 유탄 발사기"
+msgstr "내장식 유탄 발사기"
 
 #. ~ Description for {'str': 'Deployable Grenade Launcher'}
 #. ~ Description for {'str': 'Deployable Grenade Launcher CBM'}
@@ -4497,7 +4497,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Linguistic Coprocessor"
-msgstr "CBM: 언어 보조처리장치"
+msgstr "언어 보조처리장치"
 
 #. ~ Description for {'str': 'Linguistic Coprocessor'}
 #: data/json/bionics.json
@@ -4510,7 +4510,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Dopamine Stimulators"
-msgstr "CBM: 도파민 촉진기"
+msgstr "도파민 촉진기"
 
 #. ~ Description for {'str': 'Dopamine Stimulators'}
 #: data/json/bionics.json
@@ -4525,7 +4525,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Fusion Blaster Arm"
-msgstr "CBM: 퓨전 블래스터 팔"
+msgstr "퓨전 블래스터 팔"
 
 #. ~ Description for {'str': 'Fusion Blaster Arm'}
 #: data/json/bionics.json
@@ -4536,7 +4536,7 @@ msgstr "튼튼한 퓨전 블래스터가 왼팔에 내장되었습니다! 전력
 
 #: data/json/bionics.json
 msgid "Electrosense Scanner"
-msgstr "CBM: 전자 감지 (탐지)"
+msgstr "전자 감지 (탐지)"
 
 #. ~ Description for {'str': 'Electrosense Scanner'}
 #: data/json/bionics.json
@@ -4547,7 +4547,7 @@ msgstr "이 바이오닉을 작동시키면 지속적으로 전력을 소모하�
 
 #: data/json/bionics.json
 msgid "Electrosense Voltmeter"
-msgstr "CBM: 전자 감지 (전압)"
+msgstr "전자 감지 (전압)"
 
 #. ~ Description for {'str': 'Electrosense Voltmeter'}
 #: data/json/bionics.json
@@ -4559,7 +4559,7 @@ msgstr "작동시키면 주변의 지역 전력망 연결을 확인하거나 조
 
 #: data/json/bionics.json
 msgid "Electrosense Bionic Scanner"
-msgstr "CBM: 전자 감지 (바이오닉 탐지)"
+msgstr "전자 감지 (바이오닉 탐지)"
 
 #. ~ Description for {'str': 'Electrosense Bionic Scanner'}
 #: data/json/bionics.json
@@ -4573,7 +4573,7 @@ msgstr ""
 
 #: data/json/bionics.json
 msgid "Perpetual Generator"
-msgstr "CBM: 영구 발전기"
+msgstr "영구 발전기"
 
 #. ~ Description for {'str': 'Perpetual Generator'}
 #. ~ Description for {'str': 'Perpetual Generator CBM'}
@@ -182942,6 +182942,9 @@ msgid ""
 " have line of sight to where it is going and it must be within four tiles of"
 " it."
 msgstr ""
+"튼튼한 고정식 강철 크레인입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 자동적으로 "
+"크레인을 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 갖고 있어야"
+" 하고 4타일 이내에 있어야 합니다."
 
 #: data/json/vehicleparts/engineering.json
 msgid "internal boom crane"
@@ -182961,6 +182964,9 @@ msgid ""
 " have line of sight to where it is going and it must be within four tiles of"
 " it."
 msgstr ""
+"연장 가능한 접이식 크레인입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 자동적으로 "
+"크레인을 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 갖고 있어야"
+" 하고 4타일 이내에 있어야 합니다."
 
 #. ~ Description for {'str': 'pallet lifter'}
 #: data/json/vehicleparts/engineering.json
@@ -182971,6 +182977,9 @@ msgid ""
 " an engine that you are installing or removing, the crane must have line of "
 "sight to where it is going and it must be within four tiles of it."
 msgstr ""
+"소형 팔레트 승강기입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 자동적으로 크레인을"
+" 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 갖고 있어야 하고 "
+"4타일 이내에 있어야 합니다."
 
 #: data/json/vehicleparts/engineering.json
 msgid "forklift arm"
@@ -182986,6 +182995,9 @@ msgid ""
 " have line of sight to where it is going and it must be within four tiles of"
 " it."
 msgstr ""
+"지게차 덧발 한 쌍입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 자동적으로 크레인을"
+" 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 갖고 있어야 하고 "
+"4타일 이내에 있어야 합니다."
 
 #. ~ Description for {'str': 'rockwheel'}
 #: data/json/vehicleparts/engineering.json
@@ -183030,6 +183042,9 @@ msgid ""
 " have line of sight to where it is going and it must be within four tiles of"
 " it."
 msgstr ""
+"밧줄과 도르레가 달린 나무 크레인입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 "
+"자동적으로 크레인을 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 "
+"갖고 있어야 하고 4타일 이내에 있어야 합니다."
 
 #: data/json/vehicleparts/faults.json
 msgid "Worn drive belt"
@@ -210630,7 +210645,7 @@ msgstr "소용돌이 칼날"
 #. ~ Description for {'str': 'Whirlwind Blade'}
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "A technique where you quickly slash in a full circle around yourself."
-msgstr ""
+msgstr "당신의 주변을 따라 원을 그리며 빠르게 베어내는 테크닉입니다."
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "Sprint"
@@ -210641,7 +210656,7 @@ msgstr "질주"
 msgid ""
 "You dash forward incredibly quickly, perfect for closing the distance on an "
 "enemy."
-msgstr ""
+msgstr "믿을 수 없을 정도로 빠르게 돌진합니다. 적과 거리를 좁힐 때 유용합니다."
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "Adventurer's Remedy"
@@ -210652,14 +210667,14 @@ msgstr "모험가의 치료법"
 msgid ""
 "You've figured out how to make a basic healing poultice from the nature "
 "around you!"
-msgstr ""
+msgstr "당신 주변의 자연으로부터 얻어낸 재료로 기초적인 치료용 습포를 만들어냅니다!"
 
 #. ~ Description for {'str': 'Swift Strike'}
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid ""
 "A technique where you manage to quickly hit your enemy without sacrificing "
 "damage"
-msgstr ""
+msgstr "피해를 희생하지 않고도 적을 신속하게 후려치는 테크닉입니다."
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "Pocket Sand!"
@@ -210668,19 +210683,19 @@ msgstr "모래 뿌리기"
 #. ~ Description for {'str': 'Pocket Sand!'}
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "You throw sand from your pockets into your opponent's eyes!"
-msgstr ""
+msgstr "주머니에서 모래 한 줌을 움켜쥐고 상대의 눈에 뿌립니다!"
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 #: data/mods/MagicalNights/effects/effects.json
 msgid "Adventurer's Cure"
-msgstr "모험가의 치유"
+msgstr "모험가의 해독"
 
 #. ~ Description for {'str': "Adventurer's Cure"}
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid ""
 "You've figured out how to make an antidote against common poisons and other "
 "hazards of adventuring!"
-msgstr ""
+msgstr "모험 중에 겪는 일반적인 독물이나 다른 위험에 대한 해독제를 만들어냅니다!"
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "Survivalist's Wooden Javelins"
@@ -210691,7 +210706,7 @@ msgstr "생존주의자의 나무 자벨린"
 msgid ""
 "You've become an expert at quickly transforming some spare sticks into "
 "wooden javelins!"
-msgstr ""
+msgstr "남는 나무 막대기를 자벨린으로 빠르게 바꾸는데 능숙해졌습니다!"
 
 #: data/mods/MagicalNights/Spells/adventurer.json
 msgid "Adventurer's Relief"
@@ -210702,7 +210717,7 @@ msgstr "모험가의 진통제"
 msgid ""
 "You've figured out how to make a pain-relieving poultice from the nature "
 "around you!"
-msgstr ""
+msgstr "당신 주변의 자연으로부터 얻어낸 재료로 고통을 덜어줄 진통제를 만들어냅니다!"
 
 #: data/mods/MagicalNights/Spells/animist.json
 msgid "Bless"
@@ -213092,12 +213107,12 @@ msgstr "전격 방호의 효과가 거의 끝나갑니다."
 #. ~ Description of effect 'Adventurer's Cure'.
 #: data/mods/MagicalNights/effects/effects.json
 msgid "You're protected against common poisons and other adventuring threats."
-msgstr ""
+msgstr "모험 중에 겪는 일반적인 독물이나 다른 위험으로부터 보호받습니다."
 
 #. ~ Remove message for effect(s) 'Adventurer's Cure'.
 #: data/mods/MagicalNights/effects/effects.json
 msgid "You feel the anti-poison poultice wearing down in effect."
-msgstr ""
+msgstr "해독제의 효과가 사라지는게 느껴집니다."
 
 #: data/mods/MagicalNights/items/alchemy_items.json
 msgid "owlbear gastrolith"
@@ -214607,7 +214622,7 @@ msgstr[0] "모험 입문서"
 msgid ""
 "This looks like a fairly standard beginner HEMA manual, but some of the "
 "points in particular sound a bit more like fantasy than reality."
-msgstr ""
+msgstr "이 책은 얼핏 보기에는 평범한 역사적 유럽 무술 교본 같지만, 몇몇 부분은 현실보다 판타지에 더 가까운 것 같습니다."
 
 #: data/mods/MagicalNights/items/martial_manuals.json
 msgid "A Guide to Common Adventuring Remedies"
@@ -214638,12 +214653,12 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Martial Note"
 msgid_plural "Martial Notes"
-msgstr[0] ""
+msgstr[0] "기법 교본"
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Whirlwind Blade"
 msgid_plural "Notes on Whirlwind Blade"
-msgstr[0] "소용돌이 칼날 메모"
+msgstr[0] "소용돌이 칼날 교본"
 
 #. ~ Description for {'str': 'Note on Whirlwind Blade', 'str_pl': 'Notes on
 #. Whirlwind Blade'}
@@ -214656,7 +214671,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Sprint"
 msgid_plural "Notes on Sprint"
-msgstr[0] "질주 메모"
+msgstr[0] "질주 교본"
 
 #. ~ Description for {'str': 'Note on Sprint', 'str_pl': 'Notes on Sprint'}
 #: data/mods/MagicalNights/items/martial_notes.json
@@ -214668,7 +214683,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Adventurer's Remedy"
 msgid_plural "Notes on Adventurer's Remedy"
-msgstr[0] "모험가의 치료법 메모"
+msgstr[0] "모험가의 치료법 교본"
 
 #. ~ Description for {'str': "Note on Adventurer's Remedy", 'str_pl': "Notes
 #. on Adventurer's Remedy"}
@@ -214682,7 +214697,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Swift Strike"
 msgid_plural "Notes on Swift Strike"
-msgstr[0] "속공 메모"
+msgstr[0] "속공 교본"
 
 #. ~ Description for {'str': 'Note on Swift Strike', 'str_pl': 'Notes on Swift
 #. Strike'}
@@ -214695,7 +214710,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Pocket Sand"
 msgid_plural "Notes on Pocket Sand"
-msgstr[0] "모래 뿌리기 메모"
+msgstr[0] "모래 뿌리기 교본"
 
 #. ~ Description for {'str': 'Note on Pocket Sand', 'str_pl': 'Notes on Pocket
 #. Sand'}
@@ -214708,7 +214723,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Adventurer's Cure"
 msgid_plural "Notes on Adventurer's Cure"
-msgstr[0] "모험가의 치유 메모"
+msgstr[0] "모험가의 해독 교본"
 
 #. ~ Description for {'str': "Note on Adventurer's Cure", 'str_pl': "Notes on
 #. Adventurer's Cure"}
@@ -214721,7 +214736,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Survivalist's Wooden Javelins"
 msgid_plural "Notes on Survivalist's Wooden Javelins"
-msgstr[0] "생존주의자의 나무 자벨린 메모"
+msgstr[0] "생존주의자의 나무 자벨린 교본"
 
 #. ~ Description for {'str': "Note on Survivalist's Wooden Javelins",
 #. 'str_pl': "Notes on Survivalist's Wooden Javelins"}
@@ -214735,7 +214750,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Adventurer's Relief"
 msgid_plural "Notes on Adventurer's Relief"
-msgstr[0] "모험가의 진통제 메모"
+msgstr[0] "모험가의 진통제 교본"
 
 #. ~ Description for {'str': "Note on Adventurer's Relief", 'str_pl': "Notes
 #. on Adventurer's Relief"}
