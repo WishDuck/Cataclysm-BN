@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-25 01:37+0000\n"
+"POT-Creation-Date: 2025-08-28 01:29+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -18881,6 +18881,38 @@ msgstr "红棍总是把最危险的任务交给你，结果这货昨天真成\"�
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Smuggler"
+msgstr "走私贩"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Smuggler"
+msgstr "走私贩"
+
+#. ~ Profession (male Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+"自从迈阿密的热度（无论是气候还是警方的压力）变得太过难熬后，你便找到了一个向新英格兰走私各种免税商品的门路。你早已习惯了甩掉警察，但现在，无论是条子还是你的客户，他们想要的都是你的脑子，而不是你的货。"
+
+#. ~ Profession (female Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+"自从迈阿密的热度（无论是气候还是警方的压力）变得太过难熬后，你便找到了一个向新英格兰走私各种免税商品的门路。你早已习惯了甩掉警察，但现在，无论是条子还是你的客户，他们想要的都是你的脑子，而不是你的货。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Security Guard"
 msgstr "保安"
 
@@ -22055,6 +22087,38 @@ msgstr "在野外历经长年的自我流放式的生活， 你已经和自然�
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Castaway"
+msgstr "落难者"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Castaway"
+msgstr "落难者"
+
+#. ~ Profession (male Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+"你遭遇船难，被困在湖中的一座岛上。没人派出搜救队，所以在连续几周尝试发出求救信号无果后，你搜集了所有能找到的衣物碎片，造了一艘简易木筏并乘着它启程。大家都在哪里？为什么湖里的鲨鱼看起来那么饿？"
+
+#. ~ Profession (female Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+"你遭遇船难，被困在湖中的一座岛上。没人派出搜救队，所以在连续几周尝试发出求救信号无果后，你搜集了所有能找到的衣物碎片，造了一艘简易木筏并乘着它启程。大家都在哪里？为什么湖里的鲨鱼看起来那么饿？"
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Fisher"
 msgstr "渔夫"
 
@@ -22196,6 +22260,32 @@ msgid ""
 "all your plans.  Strike up your Jolly Roger and hoist the Bloody Red, for no"
 " quarter shall be given."
 msgstr "啊哈！你的装扮可能十分完美，但世界的末日已经彻底打乱了你的所有计划。升起骷髅旗，再挂上血红战旗，因为绝不会留任何情面。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Pirate Captain"
+msgstr "海盗船长"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Pirate Captain"
+msgstr "海盗船长"
+
+#. ~ Profession (male Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr "发现陆地啦！你为了这次重演活动可是下了血本，不仅搞定了你的私掠许可证，还驾着一艘精良的单桅帆船出了海，准备在新英格兰的水域里游弋劫掠。"
+
+#. ~ Profession (female Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr "发现陆地啦！你为了这次重演活动可是下了血本，不仅搞定了你的私掠许可证，还驾着一艘精良的单桅帆船出了海，准备在新英格兰的水域里游弋劫掠。"
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -30582,8 +30672,7 @@ msgid "Cleans out dust mites, smoke particles, and more!"
 msgstr "清除尘螨，烟雾微粒，等等！"
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "dishwasher"
 msgid_plural "dishwashers"
 msgstr[0] "洗碗机"
@@ -30898,8 +30987,7 @@ msgid ""
 msgstr "一种气体驱动的强制通风中央供暖装置，带有一个内部风扇，用于推动空气通过建筑物的风道并保持温度。"
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "washing machine"
 msgid_plural "washing machines"
 msgstr[0] "洗衣机"
@@ -84999,6 +85087,16 @@ msgstr[0] "猫食"
 msgid "This is food for cats.  It smells strange, but cats seem to love it."
 msgstr "猫粮，闻起来很奇怪，但是猫猫喜欢。"
 
+#: data/json/items/comestibles/other.json
+msgid "jellied insects"
+msgid_plural "jellied insects"
+msgstr[0] "昆虫冻"
+
+#. ~ Description for {'str_sp': 'jellied insects'}
+#: data/json/items/comestibles/other.json
+msgid "Preserved insect organs, perfect for animals who like extra proteins."
+msgstr "经过保鲜处理的昆虫内脏，非常适合喜爱额外蛋白质的动物。"
+
 #. ~ Description for {'str': 'grass', 'str_pl': 'grasses'}
 #: data/json/items/comestibles/other.json
 msgid ""
@@ -113493,11 +113591,6 @@ msgid ""
 msgstr ""
 "一种给电池充电的小装置。它可以很容易地连接到带电源的车辆上。它将对直接放置在其存储空间内的所有可充电电池（电池单元、铅酸电池等）缓慢充电。它只能安装在现有的储物箱上。"
 
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small washing machine designed for use in vehicles."
-msgstr "一台非常小型的车载洗衣机。"
-
 #: data/json/items/vehicle/utilities.json
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "programmable autopilot"
@@ -113510,6 +113603,26 @@ msgid ""
 "A computer system hooked up to the steering and engine of a vehicle to allow"
 " it to follow simple paths."
 msgstr "一套连接到载具的方向控制系统和引擎的计算机系统，能够控制载具进行简单的驾驶。"
+
+#: data/json/items/vehicle/utilities.json
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "minifridge"
+msgid_plural "minifridges"
+msgstr[0] "迷你冰箱"
+
+#. ~ Description for {'str': 'minifridge'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"A very small fridge for keeping food cool.  Provides some insulation from "
+"outside weather."
+msgstr "一个超级小的冰箱，用于冷藏食物。能够稍微隔热，减少外界气温的影响。"
+
+#. ~ Description for {'str': 'minifreezer'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"Compact version of a chest freezer, designed as a mobile solution for "
+"freezing food.  Provides insulation from the elements."
+msgstr "一台结构紧凑的车载冰柜，设计用于运输各种需要冰冻的食物。能够隔热，减少外界气温的影响。"
 
 #: data/json/items/vehicle/utilities.json
 msgid "mountable autoclave"
@@ -113540,31 +113653,6 @@ msgstr[0] "车载全自动医疗仪手术台"
 #: data/json/items/vehicle/utilities.json
 msgid "This autodoc couch has been rigged to run off a vehicle power grid."
 msgstr "这个全自动医疗仪手术台被改装过，可以使用载具上的电力来工作。"
-
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
-msgid "minifridge"
-msgid_plural "minifridges"
-msgstr[0] "迷你冰箱"
-
-#. ~ Description for {'str': 'minifridge'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"A very small fridge for keeping food cool.  Provides some insulation from "
-"outside weather."
-msgstr "一个超级小的冰箱，用于冷藏食物。能够稍微隔热，减少外界气温的影响。"
-
-#. ~ Description for {'str': 'minifreezer'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"Compact version of a chest freezer, designed as a mobile solution for "
-"freezing food.  Provides insulation from the elements."
-msgstr "一台结构紧凑的车载冰柜，设计用于运输各种需要冰冻的食物。能够隔热，减少外界气温的影响。"
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small dishwasher designed for use in vehicles."
-msgstr "一台非常小型的车载洗碗机。"
 
 #: data/json/items/vehicle/utilities.json
 msgid "refrigerated tank"
@@ -160040,6 +160128,16 @@ msgstr "这就像草莓果酱，只是不加糖。"
 msgid "It's like blueberry jam, only without sugar."
 msgstr "这就像蓝莓果酱，只是不加糖。"
 
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/items.json
+msgid "A very small washing machine designed for use in vehicles."
+msgstr "一台非常小型的车载洗衣机。"
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/items.json
+msgid "A very small dishwasher designed for use in vehicles."
+msgstr "一台非常小型的车载洗碗机。"
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr "收集 1 支流感疫苗"
@@ -161309,6 +161407,19 @@ msgid ""
 "electrical power when exposed to the sun.  Clouds will slow the recharge "
 "speed.  Extremely fragile and cannot be armored."
 msgstr "一块超高性能太阳能板。当暴露于阳光照射之下时，会缓慢地为车辆电池充电。云层遮挡会让充电速度更慢。非常容易损坏，且不能安装装甲。"
+
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small washing machine.  It's only good for salvage, or decorating your "
+"vehicle."
+msgstr "一台小型洗衣机。只能拆解利用，或装饰你的载具。"
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
+msgstr "一台小型洗碗机。只能拆解利用，或装饰你的载具。"
 
 #: data/json/obsoletion/MOVE_AFTER_NEXT_STABLE/exotic_ammo/ammo_types.json
 msgid "9x18mm"
@@ -177412,19 +177523,6 @@ msgid ""
 "A small fridge.  When turned on, it will cool the food inside, extended the "
 "time until the food spoils."
 msgstr "一台小型车载冰箱。开启时，它可以冷藏食物，延缓腐烂。"
-
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small washing machine.  It's only good for salvage, or decorating your "
-"vehicle."
-msgstr "一台小型洗衣机。只能拆解利用，或装饰你的载具。"
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
-msgstr "一台小型洗碗机。只能拆解利用，或装饰你的载具。"
 
 #. ~ Description for {'str': 'autoclave'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -240466,6 +240564,11 @@ msgstr ""
 #, c-format
 msgid "The %s doesn't want that kind of food."
 msgstr "这只 %s 不想要这种食物。"
+
+#: src/iuse.cpp
+#, c-format
+msgid "The %s does not trust your kind."
+msgstr "%s不信任你这样的人。"
 
 #: src/iuse.cpp
 msgid "You want to feed it the pet food, but it bites your fingers!"

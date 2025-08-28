@@ -29,14 +29,14 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # ARDOR Flag, 2025
 # Tae Heon Lim, 2025
-# Fruitybite, 2025
 # 김동현, 2025
+# Fruitybite, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-27 00:57+0000\n"
-"Last-Translator: 김동현, 2025\n"
+"POT-Creation-Date: 2025-08-28 01:29+0000\n"
+"Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19546,6 +19546,40 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Smuggler"
+msgstr "밀수꾼"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Smuggler"
+msgstr "밀수꾼"
+
+#. ~ Profession (male Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+"마이애미가 (날씨와 경찰의 관심 모두) 너무 화끈해진 이래로, 당신은 면세품을 뉴잉글랜드로 가져다 파는 일에 종사해왔습니다. 경찰을 "
+"따돌리는 건 당신에게 이미 익숙한 일이지만, 이제 짭새들과 고객들이 원하는 것은 당신의 물건이 아니라 당신의 뇌입니다."
+
+#. ~ Profession (female Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+"마이애미가 (날씨와 경찰의 관심 모두) 너무 화끈해진 이래로, 당신은 면세품을 뉴잉글랜드로 가져다 파는 일에 종사해왔습니다. 경찰을 "
+"따돌리는 건 당신에게 이미 익숙한 일이지만, 이제 짭새들과 고객들이 원하는 것은 당신의 물건이 아니라 당신의 뇌입니다."
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Security Guard"
 msgstr "경비원"
 
@@ -23060,6 +23094,40 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Castaway"
+msgstr "조난자"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Castaway"
+msgstr "조난자"
+
+#. ~ Profession (male Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+"당신은 호수 안의 어느 섬에 조난당했습니다. 아무도 구조대를 보내지 않았고, 몇 주 동안 구조 신호를 보내던 당신은 결국 구할 수 있는 "
+"온갖 천쪼가리를 이용해 허술한 뗏목을 만들어야 했습니다. 다들 대체 어디로 간거죠? 그리고 상어들이 왜 이렇게 배고파하는걸까요?"
+
+#. ~ Profession (female Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+"당신은 호수 안의 어느 섬에 조난당했습니다. 아무도 구조대를 보내지 않았고, 몇 주 동안 구조 신호를 보내던 당신은 결국 구할 수 있는 "
+"온갖 천쪼가리를 이용해 허술한 뗏목을 만들어야 했습니다. 다들 대체 어디로 간거죠? 그리고 상어들이 왜 이렇게 배고파하는걸까요?"
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Fisher"
 msgstr "낚시꾼"
 
@@ -23219,6 +23287,36 @@ msgid ""
 msgstr ""
 "앓! 당신의 복장은 깔끔하지만, 세상이 끝장나면서 당신의 계획이 전부 아작났습니다. 졸리 로저에 어울리게 행동하며 임전무퇴를 상징하는 "
 "붉은 깃발을 높이 내거세요."
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Pirate Captain"
+msgstr "해적선장"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Pirate Captain"
+msgstr "해적선장"
+
+#. ~ Profession (male Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr ""
+"요호! 육지다! 당신은 리인액트에 완전히 몰입해, 사략 허가증을 챙기고 괜찮은 슬루프에 몸을 실었습니다. 뉴잉글랜드 해역은 이제 전부 "
+"당신 것이라는 것을 증명하기 위해서요."
+
+#. ~ Profession (female Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr ""
+"요호! 육지다! 당신은 리인액트에 완전히 몰입해, 사략 허가증을 챙기고 괜찮은 슬루프에 몸을 실었습니다. 뉴잉글랜드 해역은 이제 전부 "
+"당신 것이라는 것을 증명하기 위해서요."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -31896,8 +31994,7 @@ msgid "Cleans out dust mites, smoke particles, and more!"
 msgstr "집먼지 진드기, 연기 입자같은 것을 걸러냅니다."
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "dishwasher"
 msgid_plural "dishwashers"
 msgstr[0] "식기세척기"
@@ -32217,8 +32314,7 @@ msgid ""
 msgstr "가스로 돌아가는 강제 난방식 중앙 난방기로, 내부 팬으로 공기를 건물의 통풍관으로 보내 난방합니다."
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "washing machine"
 msgid_plural "washing machines"
 msgstr[0] "세탁기"
@@ -87713,6 +87809,16 @@ msgstr[0] "고양이 사료"
 msgid "This is food for cats.  It smells strange, but cats seem to love it."
 msgstr "고양이 사료입니다. 이상한 냄새가 나지만, 고양이들은 좋아하는것 같습니다."
 
+#: data/json/items/comestibles/other.json
+msgid "jellied insects"
+msgid_plural "jellied insects"
+msgstr[0] "곤충 젤리"
+
+#. ~ Description for {'str_sp': 'jellied insects'}
+#: data/json/items/comestibles/other.json
+msgid "Preserved insect organs, perfect for animals who like extra proteins."
+msgstr "잘 보존된 곤충 내장입니다. 단백질을 추가로 섭취하고자 하는 동물에게 완벽합니다."
+
 #. ~ Description for {'str': 'grass', 'str_pl': 'grasses'}
 #: data/json/items/comestibles/other.json
 msgid ""
@@ -117195,11 +117301,6 @@ msgstr ""
 " 가능한 배터리 (셀식 배터리, 납-산 배터리 등) 를 천천히 충전시킬 것입니다. 이 장치는 사전에 설치된 저장공간이 있어야 설치할 수 "
 "있습니다."
 
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small washing machine designed for use in vehicles."
-msgstr "차량 안에서 사용할 수 있게 고안된 작은 세탁기입니다."
-
 #: data/json/items/vehicle/utilities.json
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "programmable autopilot"
@@ -117212,6 +117313,26 @@ msgid ""
 "A computer system hooked up to the steering and engine of a vehicle to allow"
 " it to follow simple paths."
 msgstr "차량 조종장치와 엔진에 컴퓨터 시스템을 연결해, 간단한 경로를 따라 이동할 수 있도록 돕습니다."
+
+#: data/json/items/vehicle/utilities.json
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "minifridge"
+msgid_plural "minifridges"
+msgstr[0] "소형 냉장고"
+
+#. ~ Description for {'str': 'minifridge'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"A very small fridge for keeping food cool.  Provides some insulation from "
+"outside weather."
+msgstr "음식을 냉장시키는데 쓰이는 아주 작은 냉장고. 약간의 단열 효과가 있다."
+
+#. ~ Description for {'str': 'minifreezer'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"Compact version of a chest freezer, designed as a mobile solution for "
+"freezing food.  Provides insulation from the elements."
+msgstr "냉동 보관이 필요한 음식의 고민을 해결해주는, 이동 가능한 해결책이자 냉동고의 소형화 버전입니다. 단열 효과가 있습니다."
 
 #: data/json/items/vehicle/utilities.json
 msgid "mountable autoclave"
@@ -117242,31 +117363,6 @@ msgstr[0] "차량용 오토닥 소파"
 #: data/json/items/vehicle/utilities.json
 msgid "This autodoc couch has been rigged to run off a vehicle power grid."
 msgstr "차량 전력으로 돌아가게 개조된 오토닥 소파입니다."
-
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
-msgid "minifridge"
-msgid_plural "minifridges"
-msgstr[0] "소형 냉장고"
-
-#. ~ Description for {'str': 'minifridge'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"A very small fridge for keeping food cool.  Provides some insulation from "
-"outside weather."
-msgstr "음식을 냉장시키는데 쓰이는 아주 작은 냉장고. 약간의 단열 효과가 있다."
-
-#. ~ Description for {'str': 'minifreezer'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"Compact version of a chest freezer, designed as a mobile solution for "
-"freezing food.  Provides insulation from the elements."
-msgstr "냉동 보관이 필요한 음식의 고민을 해결해주는, 이동 가능한 해결책이자 냉동고의 소형화 버전입니다. 단열 효과가 있습니다."
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small dishwasher designed for use in vehicles."
-msgstr "차량용 초소형 식기세척기입니다."
 
 #: data/json/items/vehicle/utilities.json
 msgid "refrigerated tank"
@@ -166132,6 +166228,16 @@ msgstr "설탕이 빠진 딸기잼이라고 봐도 무방합니다."
 msgid "It's like blueberry jam, only without sugar."
 msgstr "설탕이 빠진 블루베리 잼이라고 봐도 무방합니다."
 
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/items.json
+msgid "A very small washing machine designed for use in vehicles."
+msgstr "차량 안에서 사용할 수 있게 고안된 작은 세탁기입니다."
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/items.json
+msgid "A very small dishwasher designed for use in vehicles."
+msgstr "차량용 초소형 식기세척기입니다."
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr "독감 주사 찾기"
@@ -167442,6 +167548,19 @@ msgid ""
 msgstr ""
 "초고성능의 태양 전지판입니다. 태양에 노출되면 차량의 전력을 서서히 충전시킵니다. 구름이 덮인다면 충전 속도가 느려질 것입니다. 파손에 "
 "매우 취약하며 보강할 수 없습니다."
+
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small washing machine.  It's only good for salvage, or decorating your "
+"vehicle."
+msgstr "소형 세탁기입니다. 해체하여 부품을 얻거나, 차량을 장식하는데 쓸 수 있습니다."
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
+msgstr "소형 식기세척기입니다. 해체하여 부품을 얻거나, 차량을 장식하는데 쓸 수 있습니다."
 
 #: data/json/obsoletion/MOVE_AFTER_NEXT_STABLE/exotic_ammo/ammo_types.json
 msgid "9x18mm"
@@ -184242,19 +184361,6 @@ msgid ""
 "A small fridge.  When turned on, it will cool the food inside, extended the "
 "time until the food spoils."
 msgstr "소형 냉장고입니다. 작동되면 내부 음식을 냉각시켜, 음식이 부패되기까지의 시간을 연장시킵니다."
-
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small washing machine.  It's only good for salvage, or decorating your "
-"vehicle."
-msgstr "소형 세탁기입니다. 해체하여 부품을 얻거나, 차량을 장식하는데 쓸 수 있습니다."
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
-msgstr "소형 식기세척기입니다. 해체하여 부품을 얻거나, 차량을 장식하는데 쓸 수 있습니다."
 
 #. ~ Description for {'str': 'autoclave'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -214635,7 +214741,7 @@ msgstr[0] "모험가용 치료 입문"
 msgid ""
 "This book looks like a fairly standard historical foraging or herbal "
 "remedies guide, but the claims it makes are simply outlandish!"
-msgstr ""
+msgstr "이 책은 얼핏 보기에는 평범한 역사적 수렵채집 및 약초 치료법 교본 같지만, 세부적인 내용은 꽤 기이합니다!"
 
 #: data/mods/MagicalNights/items/martial_manuals.json
 msgid "The Guide to Natural Adventuring Tools"
@@ -214648,7 +214754,7 @@ msgstr[0] "자연 모험 도구 입문"
 msgid ""
 "A clever little book that tells you some neat tricks using the natural "
 "environment."
-msgstr ""
+msgstr "자연환경을 활용하는 유용한 기술을 알려주는 작고 지혜로운 책입니다."
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Martial Note"
@@ -214666,7 +214772,7 @@ msgstr[0] "소용돌이 칼날 교본"
 msgid ""
 "Sometimes, you have to spin to win! Those enemies stand no chance with your "
 "blade!"
-msgstr ""
+msgstr "가끔씩은 뱅글뱅글 돌아야 이길 때가 있습니다! 적들은 당신의 칼날 앞에 쓰러질 것입니다!"
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Sprint"
@@ -219957,6 +220063,7 @@ msgid ""
 "specializing in any one aspect prominently due to the variety encountered in"
 " their journeys."
 msgstr ""
+"모험가들은 물질계의 팔방미인으로, 여정 도중 만나는 다양한 사건에 대처할 수 있도록 한 가지에 특화하기보다 여러 기술을 두루 익혔습니다."
 
 #. ~ Mutation class name
 #: data/mods/MagicalNights/traits/manatouched.json
@@ -248385,6 +248492,11 @@ msgstr ""
 #, c-format
 msgid "The %s doesn't want that kind of food."
 msgstr "%s(은)는 이런 음식을 좋아하지 않는 것 같습니다."
+
+#: src/iuse.cpp
+#, c-format
+msgid "The %s does not trust your kind."
+msgstr "%s(은)는 당신 부류를 믿지 않습니다."
 
 #: src/iuse.cpp
 msgid "You want to feed it the pet food, but it bites your fingers!"

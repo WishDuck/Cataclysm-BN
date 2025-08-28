@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-25 01:37+0000\n"
+"POT-Creation-Date: 2025-08-28 01:29+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/bn-team/teams/113585/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -19112,6 +19112,36 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Smuggler"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Smuggler"
+msgstr ""
+
+#. ~ Profession (male Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+
+#. ~ Profession (female Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Security Guard"
 msgstr "Biztonsági őr"
 
@@ -22698,6 +22728,36 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Castaway"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Castaway"
+msgstr ""
+
+#. ~ Profession (male Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+
+#. ~ Profession (female Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Fisher"
 msgstr "Pecás"
 
@@ -22856,6 +22916,32 @@ msgid ""
 "Arr!  Your costume may be shipshape, but the end of the world's scuppered "
 "all your plans.  Strike up your Jolly Roger and hoist the Bloody Red, for no"
 " quarter shall be given."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Pirate Captain"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Pirate Captain"
+msgstr ""
+
+#. ~ Profession (male Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr ""
+
+#. ~ Profession (female Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
 msgstr ""
 
 #: data/json/professions.json
@@ -31508,8 +31594,7 @@ msgstr ""
 "A levegőből kiszűri az atkákat, a porszemcséket, és még sok minden mást!"
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "dishwasher"
 msgid_plural "dishwashers"
 msgstr[0] ""
@@ -31831,8 +31916,7 @@ msgstr ""
 "szét a meleg levegőt a ház szellőzőrendszerébe."
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "washing machine"
 msgid_plural "washing machines"
 msgstr[0] "mosógép"
@@ -91595,6 +91679,17 @@ msgstr[1] "macskaja"
 msgid "This is food for cats.  It smells strange, but cats seem to love it."
 msgstr "Ez élelem a macskák számára. Furcsa a szaga, de a macskák szeretik."
 
+#: data/json/items/comestibles/other.json
+msgid "jellied insects"
+msgid_plural "jellied insects"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str_sp': 'jellied insects'}
+#: data/json/items/comestibles/other.json
+msgid "Preserved insect organs, perfect for animals who like extra proteins."
+msgstr ""
+
 #. ~ Description for {'str': 'grass', 'str_pl': 'grasses'}
 #: data/json/items/comestibles/other.json
 msgid ""
@@ -123710,11 +123805,6 @@ msgid ""
 "storage compartments."
 msgstr ""
 
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small washing machine designed for use in vehicles."
-msgstr "Járműbe építhető kisméretű mosógép."
-
 #: data/json/items/vehicle/utilities.json
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "programmable autopilot"
@@ -123728,6 +123818,31 @@ msgid ""
 "A computer system hooked up to the steering and engine of a vehicle to allow"
 " it to follow simple paths."
 msgstr ""
+
+#: data/json/items/vehicle/utilities.json
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "minifridge"
+msgid_plural "minifridges"
+msgstr[0] "minihűtő"
+msgstr[1] "minihűtő"
+
+#. ~ Description for {'str': 'minifridge'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"A very small fridge for keeping food cool.  Provides some insulation from "
+"outside weather."
+msgstr ""
+"Egy nagyon kicsi hűtőszekrény az ételek behűtésére. Némileg szigetel az "
+"időjárással szemben."
+
+#. ~ Description for {'str': 'minifreezer'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"Compact version of a chest freezer, designed as a mobile solution for "
+"freezing food.  Provides insulation from the elements."
+msgstr ""
+"A fagyasztóláda kisebb méretű, hordozható testvére. Szigetelést nyújt az "
+"időjárás viszontagságai ellen."
 
 #: data/json/items/vehicle/utilities.json
 msgid "mountable autoclave"
@@ -123760,36 +123875,6 @@ msgstr[1] ""
 #. ~ Description for {'str': 'mountable autodoc couch'}
 #: data/json/items/vehicle/utilities.json
 msgid "This autodoc couch has been rigged to run off a vehicle power grid."
-msgstr ""
-
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
-msgid "minifridge"
-msgid_plural "minifridges"
-msgstr[0] "minihűtő"
-msgstr[1] "minihűtő"
-
-#. ~ Description for {'str': 'minifridge'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"A very small fridge for keeping food cool.  Provides some insulation from "
-"outside weather."
-msgstr ""
-"Egy nagyon kicsi hűtőszekrény az ételek behűtésére. Némileg szigetel az "
-"időjárással szemben."
-
-#. ~ Description for {'str': 'minifreezer'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"Compact version of a chest freezer, designed as a mobile solution for "
-"freezing food.  Provides insulation from the elements."
-msgstr ""
-"A fagyasztóláda kisebb méretű, hordozható testvére. Szigetelést nyújt az "
-"időjárás viszontagságai ellen."
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small dishwasher designed for use in vehicles."
 msgstr ""
 
 #: data/json/items/vehicle/utilities.json
@@ -171918,6 +172003,16 @@ msgstr "Olyan, mint az eperlekvár, csak éppen cukor nélkül."
 msgid "It's like blueberry jam, only without sugar."
 msgstr "Olyan, mint az áfonyalekvár, csak éppen cukor nélkül."
 
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/items.json
+msgid "A very small washing machine designed for use in vehicles."
+msgstr "Járműbe építhető kisméretű mosógép."
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/items.json
+msgid "A very small dishwasher designed for use in vehicles."
+msgstr ""
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr ""
@@ -173265,6 +173360,19 @@ msgstr ""
 "Rendkívül magas teljesítményű napelem. Napos időben feltölti a jármű "
 "akkumulátorát. Felhős időben lassabban tölt. Nagyon törékeny, páncélüveget "
 "nem lehet rászerelni."
+
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small washing machine.  It's only good for salvage, or decorating your "
+"vehicle."
+msgstr ""
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
+msgstr ""
 
 #: data/json/obsoletion/MOVE_AFTER_NEXT_STABLE/exotic_ammo/ammo_types.json
 msgid "9x18mm"
@@ -189128,19 +189236,6 @@ msgid ""
 msgstr ""
 "Kisméretű hűtőszekrény. Bekapcsolása után a belehelyezett ételt lehűti, "
 "ezzel késlelteti annak megromlását."
-
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small washing machine.  It's only good for salvage, or decorating your "
-"vehicle."
-msgstr ""
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
-msgstr ""
 
 #. ~ Description for {'str': 'autoclave'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -254174,6 +254269,11 @@ msgstr ""
 #: src/iuse.cpp
 #, c-format
 msgid "The %s doesn't want that kind of food."
+msgstr ""
+
+#: src/iuse.cpp
+#, c-format
+msgid "The %s does not trust your kind."
 msgstr ""
 
 #: src/iuse.cpp

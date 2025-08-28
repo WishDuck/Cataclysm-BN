@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-25 01:37+0000\n"
+"POT-Creation-Date: 2025-08-28 01:29+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Polish (Poland) (https://app.transifex.com/bn-team/teams/113585/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -19152,6 +19152,36 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Smuggler"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Smuggler"
+msgstr ""
+
+#. ~ Profession (male Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+
+#. ~ Profession (female Smuggler) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Ever since the heat (both climate and police presence) got too bad in Miami,"
+" you found a niche running all sorts of tax-free goods into New England.  "
+"You're used to outrunning the cops, but now both the pigs and your clientele"
+" want your brains instead of your product."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Security Guard"
 msgstr "Ochroniarz"
 
@@ -22746,6 +22776,36 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Castaway"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Castaway"
+msgstr ""
+
+#. ~ Profession (male Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+
+#. ~ Profession (female Castaway) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were shipwrecked out on an island in the lake.  No one sent a search "
+"party, so after weeks of trying to signal for help you salvaged every scrap "
+"of clothing you could to set sail on a makeshift raft.  Where is everyone, "
+"and why do the sharks look so hungry?"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Fisher"
 msgstr "Wędkarz"
 
@@ -22900,6 +22960,32 @@ msgid ""
 "Arr!  Your costume may be shipshape, but the end of the world's scuppered "
 "all your plans.  Strike up your Jolly Roger and hoist the Bloody Red, for no"
 " quarter shall be given."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Pirate Captain"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Pirate Captain"
+msgstr ""
+
+#. ~ Profession (male Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
+msgstr ""
+
+#. ~ Profession (female Pirate Captain) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Land ho!  Ye went all out on the reenactment, got your letters of marque in "
+"order and cast off in a fine sloop, to prowl the New England waters with."
 msgstr ""
 
 #: data/json/professions.json
@@ -31609,8 +31695,7 @@ msgid "Cleans out dust mites, smoke particles, and more!"
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "dishwasher"
 msgid_plural "dishwashers"
 msgstr[0] "zmywarka"
@@ -31928,8 +32013,7 @@ msgid ""
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
+#: data/json/obsoletion/items.json data/json/obsoletion/vehicle_parts.json
 msgid "washing machine"
 msgid_plural "washing machines"
 msgstr[0] "pralka"
@@ -98851,6 +98935,19 @@ msgstr[3] "kocie żarcie"
 msgid "This is food for cats.  It smells strange, but cats seem to love it."
 msgstr "To żarcie dla kotów. Dziwnie pachnie, ale kotom wydaje się smakować."
 
+#: data/json/items/comestibles/other.json
+msgid "jellied insects"
+msgid_plural "jellied insects"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str_sp': 'jellied insects'}
+#: data/json/items/comestibles/other.json
+msgid "Preserved insect organs, perfect for animals who like extra proteins."
+msgstr ""
+
 #. ~ Description for {'str': 'grass', 'str_pl': 'grasses'}
 #: data/json/items/comestibles/other.json
 msgid ""
@@ -135251,11 +135348,6 @@ msgid ""
 "storage compartments."
 msgstr ""
 
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small washing machine designed for use in vehicles."
-msgstr "Kompaktowa pralka opracowana do stosowania w pojazdach."
-
 #: data/json/items/vehicle/utilities.json
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "programmable autopilot"
@@ -135273,6 +135365,33 @@ msgid ""
 msgstr ""
 "System komputerowy przyłączony do sterowania i silnika pojazdu, pozwalający "
 "mu na podążanie niezbyt złożonymi ścieżkami."
+
+#: data/json/items/vehicle/utilities.json
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "minifridge"
+msgid_plural "minifridges"
+msgstr[0] "mini lodówka"
+msgstr[1] "mini lodówki"
+msgstr[2] "mini lodówek"
+msgstr[3] "mini lodówki"
+
+#. ~ Description for {'str': 'minifridge'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"A very small fridge for keeping food cool.  Provides some insulation from "
+"outside weather."
+msgstr ""
+"Bardzo mała lodówka do przechowywania w chłodzie żywności. Zapewnia izolację"
+" od zewnętrznych warunków pogodowych."
+
+#. ~ Description for {'str': 'minifreezer'}
+#: data/json/items/vehicle/utilities.json
+msgid ""
+"Compact version of a chest freezer, designed as a mobile solution for "
+"freezing food.  Provides insulation from the elements."
+msgstr ""
+"Kompaktowa wersja zamrażarki skrzyniowej, zaprojektowana jako przenośny "
+"sposób na zamrażanie jedzenia. Zapewnia izolację od żywiołów."
 
 #: data/json/items/vehicle/utilities.json
 msgid "mountable autoclave"
@@ -135311,38 +135430,6 @@ msgstr[3] ""
 #. ~ Description for {'str': 'mountable autodoc couch'}
 #: data/json/items/vehicle/utilities.json
 msgid "This autodoc couch has been rigged to run off a vehicle power grid."
-msgstr ""
-
-#: data/json/items/vehicle/utilities.json
-#: data/json/vehicleparts/vehicle_parts.json
-msgid "minifridge"
-msgid_plural "minifridges"
-msgstr[0] "mini lodówka"
-msgstr[1] "mini lodówki"
-msgstr[2] "mini lodówek"
-msgstr[3] "mini lodówki"
-
-#. ~ Description for {'str': 'minifridge'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"A very small fridge for keeping food cool.  Provides some insulation from "
-"outside weather."
-msgstr ""
-"Bardzo mała lodówka do przechowywania w chłodzie żywności. Zapewnia izolację"
-" od zewnętrznych warunków pogodowych."
-
-#. ~ Description for {'str': 'minifreezer'}
-#: data/json/items/vehicle/utilities.json
-msgid ""
-"Compact version of a chest freezer, designed as a mobile solution for "
-"freezing food.  Provides insulation from the elements."
-msgstr ""
-"Kompaktowa wersja zamrażarki skrzyniowej, zaprojektowana jako przenośny "
-"sposób na zamrażanie jedzenia. Zapewnia izolację od żywiołów."
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/items/vehicle/utilities.json
-msgid "A very small dishwasher designed for use in vehicles."
 msgstr ""
 
 #: data/json/items/vehicle/utilities.json
@@ -186175,6 +186262,16 @@ msgstr "Trochę jak dżem truskawkowy, ale bez cukru."
 msgid "It's like blueberry jam, only without sugar."
 msgstr "Trochę jak dżem jagodowy, ale bez cukru."
 
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/items.json
+msgid "A very small washing machine designed for use in vehicles."
+msgstr "Kompaktowa pralka opracowana do stosowania w pojazdach."
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/items.json
+msgid "A very small dishwasher designed for use in vehicles."
+msgstr ""
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr "Odnajdź Szczepionkę Na Grypę"
@@ -187564,6 +187661,19 @@ msgstr ""
 "Panel słoneczny niezwykle wysokiej wydajności. Będzie regenerował moc "
 "elektryczną pojazdu jeśli będzie wystawiony na słońce. Zachmurzenie spowolni"
 " proces. Niezwykle wrażliwy i nie może być wzmocniony szkłem."
+
+#. ~ Description for {'str': 'washing machine'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small washing machine.  It's only good for salvage, or decorating your "
+"vehicle."
+msgstr ""
+
+#. ~ Description for {'str': 'dishwasher'}
+#: data/json/obsoletion/vehicle_parts.json
+msgid ""
+"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
+msgstr ""
 
 #: data/json/obsoletion/MOVE_AFTER_NEXT_STABLE/exotic_ammo/ammo_types.json
 msgid "9x18mm"
@@ -204327,19 +204437,6 @@ msgid ""
 msgstr ""
 "Mała lodówka. Po włączeniu schładza żywność w niej umieszczoną, wydłużając "
 "jej zdatność do spożycia."
-
-#. ~ Description for {'str': 'washing machine'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small washing machine.  It's only good for salvage, or decorating your "
-"vehicle."
-msgstr ""
-
-#. ~ Description for {'str': 'dishwasher'}
-#: data/json/vehicleparts/vehicle_parts.json
-msgid ""
-"A small dishwasher.  It's only good for salvage, or decorating your vehicle."
-msgstr ""
 
 #. ~ Description for {'str': 'autoclave'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -273209,6 +273306,11 @@ msgstr ""
 #, c-format
 msgid "The %s doesn't want that kind of food."
 msgstr "%s nie chce tego rodzaju jedzenia."
+
+#: src/iuse.cpp
+#, c-format
+msgid "The %s does not trust your kind."
+msgstr ""
 
 #: src/iuse.cpp
 msgid "You want to feed it the pet food, but it bites your fingers!"
