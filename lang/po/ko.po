@@ -29,14 +29,14 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # ARDOR Flag, 2025
 # Tae Heon Lim, 2025
-# 김동현, 2025
 # Fruitybite, 2025
+# 김동현, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-28 01:29+0000\n"
-"Last-Translator: Fruitybite, 2025\n"
+"POT-Creation-Date: 2025-08-29 01:30+0000\n"
+"Last-Translator: 김동현, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -129676,7 +129676,7 @@ msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Mycogenesis"
-msgstr "미커스 기원"
+msgstr "미커스 창조"
 
 #. ~ Description for {'str': 'Mycogenesis'}
 #: data/json/mutations/mutations.json
@@ -221801,11 +221801,11 @@ msgstr "각 신체 부위에 설치할 수 있는 CBM의 수를 제한하는 바
 
 #: data/mods/change_hairstyle/iuse.json
 msgid "Change hairstyle"
-msgstr ""
+msgstr "머리모양 변경"
 
 #: data/mods/change_hairstyle/modinfo.json
 msgid "Change Hairstyle"
-msgstr ""
+msgstr "머리모양 변경"
 
 #. ~ Description for Change Hairstyle
 #: data/mods/change_hairstyle/modinfo.json
@@ -222389,7 +222389,7 @@ msgstr "총기에 리드웍스 정품 탄창을 사용할 수 있도록 영구�
 #: data/mods/exotic_ammo/items/gunmod/rail.json
 msgid "LW gyroscopic stabilizer"
 msgid_plural "LW gyroscopic stabilizer"
-msgstr[0] ""
+msgstr[0] "LW 자이로 안정기"
 
 #: data/mods/exotic_ammo/items/gunmod/rail.json
 msgid "An advanced Leadworks built-in gyroscopic stabilizer."
@@ -222398,7 +222398,7 @@ msgstr "리드워크 사의 무기에 기본적으로 딸려오는 향상된 자
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "LW red dot sight"
 msgid_plural "LW red dot sight"
-msgstr[0] ""
+msgstr[0] "LW 레드 도트사이트"
 
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "Built in red-dot sight for the Leadworks weapon."
@@ -222407,7 +222407,7 @@ msgstr "리드워크 사의 무기에 기본적으로 딸려오는 도트사이�
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "LW rifle scope"
 msgid_plural "LW rifle scope"
-msgstr[0] ""
+msgstr[0] "LW 소총 망원 조준경"
 
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "Built in rifle scope for the Leadworks weapon."
@@ -222416,7 +222416,7 @@ msgstr "리드워크 사의 무기에 기본적으로 딸려오는 소총 조준
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "LW ACOG scope"
 msgid_plural "LW ACOG scope"
-msgstr[0] ""
+msgstr[0] "LW ACOG 조준경"
 
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid ""
@@ -222429,7 +222429,7 @@ msgstr ""
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "LW holographic sight"
 msgid_plural "LW holographic sight"
-msgstr[0] ""
+msgstr[0] "LW 홀로그램 사이트"
 
 #: data/mods/exotic_ammo/items/gunmod/sights.json
 msgid "Leadworks built-in holographic sight."
@@ -222438,7 +222438,7 @@ msgstr "리드워크 사의 무기에 기본적으로 딸려오는 홀로그램 
 #: data/mods/exotic_ammo/items/gunmod/underbarrel.json
 msgid "LW underbarrel laser sight"
 msgid_plural "LW underbarrel laser sight"
-msgstr[0] ""
+msgstr[0] "LW 총열하단 레이저 사이트"
 
 #: data/mods/exotic_ammo/items/gunmod/underbarrel.json
 msgid ""
@@ -222450,7 +222450,7 @@ msgstr ""
 #: data/mods/exotic_ammo/items/gunmod/underbarrel.json
 msgid "LW forward grip"
 msgid_plural "LW forward grip"
-msgstr[0] ""
+msgstr[0] "LW 수직 손잡이"
 
 #: data/mods/exotic_ammo/items/gunmod/underbarrel.json
 msgid ""
@@ -227254,7 +227254,7 @@ msgstr "이 주문이 어떻게 작동하는지 막 깨달았습니다!  주문 
 #: src/activity_handlers.cpp
 #, c-format
 msgid "You gained %i experience in %s"
-msgstr ""
+msgstr "%s 기술의 경험치 %i (을)를 얻었습니다."
 
 #: src/activity_handlers.cpp
 #, c-format
@@ -257525,7 +257525,7 @@ msgstr "이 모드는 구식이며, 심각한 오류를 포함할 수 있습니�
 
 #: src/mod_manager_ui.cpp
 msgid "License"
-msgstr ""
+msgstr "라이센스"
 
 #: src/mod_manager_ui.cpp
 msgid "Author"
