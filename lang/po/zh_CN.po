@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-28 01:29+0000\n"
+"POT-Creation-Date: 2025-08-30 01:29+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -1985,6 +1985,15 @@ msgid ""
 "Be what you want to be, the only creatures that could tell you otherwise are"
 " made of meat.  You are now a post-threshold Raptor mutant."
 msgstr "做你想成为的人，唯一能够告诉你否定的生物都是由肉体构成的。你现在是一名超越门槛的迅猛龙突变体。"
+
+#: data/json/achievements.json
+msgid "[Mutation] No Step On Snek"
+msgstr "[突变] 请勿踩蛇"
+
+#. ~ Description for {'str': '[Mutation] No Step On Snek'}
+#: data/json/achievements.json
+msgid "Legs are for chumps.  You are now a post-threshold Serpent mutant."
+msgstr "腿是给傻瓜用的。你现在是一名超越门槛的蛇类突变体。"
 
 #: data/json/achievements.json
 msgid "[Mutation] Slippery When Moist"
@@ -5061,8 +5070,16 @@ msgid "Build Junk Metal Barrier"
 msgstr "建造废旧金属墙"
 
 #: data/json/construction_group.json
+msgid "Build Junk Metal Door"
+msgstr "建造废金属门"
+
+#: data/json/construction_group.json
 msgid "Build Junk Metal Floor"
 msgstr "建造废旧金属地板"
+
+#: data/json/construction_group.json
+msgid "Build Junk Metal Roof Over Floor"
+msgstr "为地面建造废金属屋顶"
 
 #: data/json/construction_group.json
 msgid "Build Large Metal Support"
@@ -5379,6 +5396,10 @@ msgstr "建造木火炉"
 #: data/json/construction_group.json
 msgid "Build Wood Wall"
 msgstr "建造木墙"
+
+#: data/json/construction_group.json
+msgid "Build Wooden Chest"
+msgstr "建造木箱"
 
 #: data/json/construction_group.json
 msgid "Build Wooden Floor"
@@ -6220,6 +6241,14 @@ msgstr "你做了一个关于蜥蜴的怪梦。"
 msgid "Your dreams give you a strange scaly feeling."
 msgstr "你的梦给你一种全身长满鳞片的奇怪感觉。"
 
+#: data/json/dreams.json data/mods/Monster_Girls/dreams.json
+msgid "You have a strange dream about snakes."
+msgstr "你做了一个关于蛇的怪梦。"
+
+#: data/json/dreams.json data/mods/Monster_Girls/dreams.json
+msgid "Your dreams give you a strange slithering feeling."
+msgstr "你的梦境带来一种奇异的滑行感。"
+
 #: data/json/dreams.json
 msgid ""
 "You have a strange dream about being a patient in a frightening hospital."
@@ -6403,6 +6432,16 @@ msgid ""
 msgstr "梦里，你看见自己像蜥蜴一样的独特身影。"
 
 #: data/json/dreams.json
+msgid ""
+"You have a disturbing dream of slithering and coiling around a small mammal."
+msgstr "你做了一个令人不安的梦，梦见自己滑行并缠绕着一只小型哺乳动物。"
+
+#: data/json/dreams.json
+msgid ""
+"While dreaming, you see an unblinking serpentine reflection of yourself."
+msgstr "在梦中，你看到了自己不眨眼的蛇形倒影。"
+
+#: data/json/dreams.json
 msgid "You have a disturbing dream of undergoing strange medical procedures."
 msgstr "你做了一个令人不安的梦，好像接受了诡异的医疗手术。"
 
@@ -6581,6 +6620,17 @@ msgstr "你很惊恐的梦到自己变成了一个蜥蜴人。"
 #: data/json/dreams.json
 msgid "You have a disturbingly lifelike dream of living as a lizard."
 msgstr "你做了一个很令人困惑很逼真的梦，梦见自己俨然如一只蜥蜴一样活着。"
+
+#: data/json/dreams.json
+msgid ""
+"You have an unsettling dream about living as some sort of snake creature."
+msgstr "你做了一个令人不适的梦，梦见自己像某种蛇类生物一样生活。"
+
+#: data/json/dreams.json
+msgid ""
+"You're unnerved by a dream where your slithering serpentine form seemed "
+"unnaturally graceful and lifelike."
+msgstr "一个梦让你感到不安，梦中你滑行的蛇形身躯显得异常优雅和逼真。"
 
 #: data/json/dreams.json
 msgid ""
@@ -6772,6 +6822,14 @@ msgstr "你惊恐的梦到自己变成了一个杂交猿。"
 #: data/json/dreams.json
 msgid "You blissfully recall days spent lounging in the sun."
 msgstr "你愉快的梦到在太阳底下的日子。"
+
+#: data/json/dreams.json
+msgid "You're haunted by a dream of the old days spent stumbling on ape-legs."
+msgstr "一个梦萦绕着你，梦中是过去用那双猿猴般的腿蹒跚走路的日子。"
+
+#: data/json/dreams.json
+msgid "You have a vivid dream of crushing worthy prey in your powerful coils."
+msgstr "你做了一个生动的梦，梦见自己用强力的蛇躯绞杀有价值的猎物。"
 
 #: data/json/dreams.json
 msgid ""
@@ -10539,6 +10597,13 @@ msgstr "这个装备 <info>可用于飞行</info>，但需要消耗 <info>UPS</i
 #: data/json/flags.json
 msgid "This gear <info>allows flight</info>."
 msgstr "这个装备<info>可用于飞行</info>。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>serpentine bodies.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>蛇形躯体</info>的突变者。"
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -30619,6 +30684,7 @@ msgstr "一个大型笨重的金属装置，用于冷却大面积区域，现在
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -30648,6 +30714,7 @@ msgstr "一声尖锐的金属断裂的声音！"
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -32592,6 +32659,7 @@ msgstr "一个在室内靠墙砌的生火取暖用的设备。"
 #: data/json/furniture_and_terrain/furniture-tools.json
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -32939,8 +33007,11 @@ msgstr "眼子菜"
 
 #. ~ Description for pondweed
 #: data/json/furniture_and_terrain/furniture-flora.json
-msgid "An aquatic pondweed, it's sort of tall and blocks your view."
-msgstr "一种水生眼子菜，长得很高，会遮挡你的视线。"
+msgid ""
+"An aquatic pondweed, it's sort of tall and blocks your view.  Whether "
+"Potamogeton or Elodea, most varieties have edible shoots that are best "
+"picked early in the year."
+msgstr "一种水生眼子菜，长得很高，会遮挡你的视线。无论是金鱼藻还是伊乐藻，大多数品种的嫩芽都可以食用，最好在年初采摘。"
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "eelgrass"
@@ -32957,8 +33028,11 @@ msgstr "金鱼藻"
 
 #. ~ Description for hornwort
 #: data/json/furniture_and_terrain/furniture-flora.json
-msgid "A species of hornwort that grows at the bottom of lakes."
-msgstr "一种生长在湖底的金鱼藻。"
+msgid ""
+"A species of hornwort that grows at the bottom of lakes.  Though known for "
+"being harmful to other plants, the leaves are safe for humans to eat and "
+"available most of the year."
+msgstr "一种生长在湖底的金鱼藻。虽然它以对其他植物有害而闻名，但其叶子对人类来说是安全的，并且一年中大部分时间都可以获得。"
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "detritus"
@@ -34928,9 +35002,19 @@ msgstr "金属行李箱"
 #. ~ Description for metal foot locker
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid ""
-"An metal storage box, capable of holding any number of things.  The lid has "
+"A metal storage box, capable of holding any number of things.  The lid has "
 "has a small lock."
-msgstr "一种金属储物箱，能够容纳各种物品。盖子上有一个小锁。"
+msgstr "一个金属储物箱，能够存放各种物品。箱盖上有一把小锁。"
+
+#: data/json/furniture_and_terrain/furniture-storage.json
+msgid "wooden chest"
+msgstr "木箱"
+
+#. ~ Description for wooden chest
+#: data/json/furniture_and_terrain/furniture-storage.json
+msgid ""
+"A nice big wooden box with a hinged lid, to store all manner of things in."
+msgstr "一个漂亮的大木箱，带有铰链盖，可以存放各种各样的东西。"
 
 #: data/json/furniture_and_terrain/furniture-surfaces.json
 msgid "counter"
@@ -36783,6 +36867,29 @@ msgstr ""
 "一个十分坚固的金属门，由合金钢制成，一体冲压成型。这一扇门上有个锁孔，应该是被锁上了。你可以使用开锁工具尝试开锁或者用足够坚硬的工具撬开它。"
 
 #: data/json/furniture_and_terrain/terrain-doors.json
+msgid "closed junk metal door"
+msgstr "废金属门（关）"
+
+#. ~ Description for closed junk metal door
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid ""
+"A makeshift door made of rusty scrap metal bolted together, with metal wires"
+" for hinges.  Very fashionable in post-apocalyptic shantytowns."
+msgstr "一扇由生锈的废金属用螺栓固定在一起的临时门，用金属丝做铰链。在世界末日后的棚户区非常流行。"
+
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid "open junk metal door"
+msgstr "废金属门（开）"
+
+#. ~ Description for open junk metal door
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid ""
+"A makeshift door made of rusty scrap metal bolted together, with metal wires"
+" for hinges.  Very fashionable in post-apocalyptic shantytowns.  Somehow "
+"even draftier now that it's open."
+msgstr "一扇由生锈的废金属用螺栓固定在一起的临时门，用金属丝做铰链。在世界末日后的棚户区非常流行。不知怎么的，打开后更漏风了。"
+
+#: data/json/furniture_and_terrain/terrain-doors.json
 msgid "closed bar door"
 msgstr "栏杆门（关）"
 
@@ -37233,6 +37340,17 @@ msgstr "一段木栏杆。"
 #: data/json/furniture_and_terrain/terrain-recreational.json src/mapdata.cpp
 msgid "crack!"
 msgstr "咔嚓！"
+
+#: data/json/furniture_and_terrain/terrain-fences-gates.json
+msgid "underwater railing"
+msgstr "水下栏杆"
+
+#. ~ Description for underwater railing
+#: data/json/furniture_and_terrain/terrain-fences-gates.json
+msgid ""
+"A flooded section of wooden railing.  Much less effective at stopping you "
+"from jumping overboard, now."
+msgstr "一段被水淹没的木制栏杆。现在，它在阻止你跳下船方面的效果要差得多。"
 
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 msgid "glass railing"
@@ -37718,6 +37836,7 @@ msgstr ""
 "一个双重用途的平台，通过暂时提升内部储存的放射性材料，将放置在其上的物品暴露于放射源，同时安全地封闭所有物品，以避免对周围环境造成污染。由外部控制台操作。"
 
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid "junk metal floor"
 msgstr "废旧金属地板"
 
@@ -38036,11 +38155,27 @@ msgid ""
 "Common in patios."
 msgstr "木质楼板，由扎紧的木板钉牢而成。常见于露台。"
 
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid "underwater wooden floor"
+msgstr "水下木地板"
+
+#. ~ Description for underwater wooden floor
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid "Rotting old floorboards long since repurposed as Davy Jones's patio."
+msgstr "腐烂的旧地板，早就被改用作戴维·琼斯的露台了。"
+
 #. ~ Description for metal floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid ""
 "High-quality and tough checkered flooring to reduce risk of slips and falls."
 msgstr "高质量的坚固网纹地板，可以减小滑倒的风险。"
+
+#. ~ Description for junk metal floor
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid ""
+"A simple floor of rusty scrap metal bolted and wire-tied to a makeshift "
+"frame.  Very fashionable in post-apocalyptic shantytowns."
+msgstr "由生锈的废金属用螺栓和金属丝固定在临时框架上的简易地板。在世界末日后的棚户区非常流行。"
 
 #. ~ Description for dirt floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
@@ -41139,6 +41274,17 @@ msgid ""
 msgstr "这个结构缺失了一些木板，开始倾倒崩裂。修复这堵墙颇需要一番功夫。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
+msgid "underwater wooden wall"
+msgstr "水下木墙"
+
+#. ~ Description for underwater wooden wall
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid ""
+"A decaying old section of wooden wall, soaked through and leaking.  It will "
+"likely crumble to bits if damaged."
+msgstr "一段腐朽的旧木墙，已经湿透并正在漏水。如果受到损坏，它很可能会碎成碎片。"
+
+#: data/json/furniture_and_terrain/terrain-walls.json
 msgid "half-built log wall"
 msgstr "原木墙（半成品）"
 
@@ -41273,11 +41419,11 @@ msgstr "废旧金属墙"
 #. ~ Description for junk metal barrier
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid ""
-"A simple wall of rusty scrap metal bolted and wire-tied to a makeshift "
-"frame.  Very fashionable in post-apocalyptic shantytowns.  This one isn't "
-"quite strong enough to support a roof, but could be reinforced."
+"A short wall of rusty scrap metal bolted and wire-tied to a makeshift frame."
+"  Very fashionable in post-apocalyptic shantytowns.  This one isn't quite "
+"strong enough to support a roof, but could be reinforced."
 msgstr ""
-"一堵由锈迹斑斑的废金属制成的简易墙，被螺栓和铁丝绑在一个简易框架上。在世界末日后的棚户区非常流行。这堵墙看上去不够坚固，无法支撑屋顶，但可以被进一步加固。"
+"一堵由锈迹斑斑的废金属制成的矮墙，被螺栓和铁丝绑在一个简易框架上。在世界末日后的棚户区非常流行。这堵墙看上去不够坚固，无法支撑屋顶，但可以被进一步加固。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "glass wall"
@@ -41594,6 +41740,18 @@ msgid ""
 "through unimpeded if you're adjacent to it.  It doesn't take much out of "
 "incoming fire, but it's better than nothing."
 msgstr "一堵开有射击孔的木墙，当你紧邻它时，可以不受阻碍地通过它进行射击。它无法抵挡太多来袭的火力，但聊胜于无。"
+
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid "underwater wooden fortification"
+msgstr "水下木制防御工事"
+
+#. ~ Description for underwater wooden fortification
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid ""
+"A waterlogged gunport from the age of sail.  If you have a speargun to fire "
+"through it with, it might still serve as light cover against any unexpected "
+"encounters with gun-toting sharks."
+msgstr "一个来自帆船时代、被水浸泡的炮门。如果你有一把鱼叉枪可以从中射击，它或许还能在与持枪鲨鱼的意外遭遇中充当轻型掩体。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "log fortification"
@@ -57369,6 +57527,18 @@ msgid ""
 "Six long cotton tubes sized to fit over tentacles and help protect them from"
 " the cold."
 msgstr "六根大小足以容下任何触肢的长棉袜，保暖效果很棒。"
+
+#: data/json/items/armor/boots.json
+msgid "tail warmer"
+msgid_plural "tail warmers"
+msgstr[0] "尾部保暖套"
+
+#. ~ Description for {'str': 'tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer clearly designed for legless mutants, or an awkward "
+"tube skirt for more normal survivors."
+msgstr "一个超大的暖腿套，显然是为无腿的突变者设计的，或者对于更普通的幸存者来说，是一件尴尬的筒裙。"
 
 #: data/json/items/armor/boots.json
 msgid "pair of tabi"
@@ -83818,6 +83988,18 @@ msgid ""
 msgstr "超浓缩的诱变剂，在不同深浅的绿色之间变幻。你需要一根针管来注射它……如果你真的想用的话。"
 
 #: data/json/items/comestibles/mutagen.json
+msgid "serpent serum"
+msgid_plural "serpent serums"
+msgstr[0] "蛇类诱变血清"
+
+#. ~ Description for serpent serum
+#: data/json/items/comestibles/mutagen.json
+msgid ""
+"A super-concentrated mutagen resembling congealed venom.  You need a syringe"
+" to inject it… if you really want to?"
+msgstr "超浓缩的诱变剂，外观类似凝固的毒液。你需要一根针管来注射它……如果你真的想用的话。"
+
+#: data/json/items/comestibles/mutagen.json
 msgid "lupine serum"
 msgid_plural "lupine serums"
 msgstr[0] "狼类诱变血清"
@@ -84028,6 +84210,11 @@ msgstr[0] "昆虫诱变剂"
 msgid "lizard mutagen"
 msgid_plural "lizard mutagens"
 msgstr[0] "蜥蜴诱变剂"
+
+#: data/json/items/comestibles/mutagen.json
+msgid "serpent mutagen"
+msgid_plural "serpent mutagens"
+msgstr[0] "蛇类诱变剂"
 
 #: data/json/items/comestibles/mutagen.json
 msgid "lupine mutagen"
@@ -86135,6 +86322,18 @@ msgid ""
 "The leftover outer layer of rice seeds, this vegetable matter is quite "
 "nutritionally dense and makes for a good cooking oil."
 msgstr "这是大米种子的剩余外层，这种植物物质在营养上相当丰富，并可用于制作优质的食用油。"
+
+#: data/json/items/comestibles/raw_veggy.json
+msgid "aquatic greens"
+msgid_plural "aquatic greens"
+msgstr[0] "水生蔬菜"
+
+#. ~ Description for {'str_sp': 'aquatic greens'}
+#: data/json/items/comestibles/raw_veggy.json
+msgid ""
+"Shoots and leaves from underwater plants, such as hornwort or pondweed.  A "
+"bit like raw seaweed."
+msgstr "来自水下植物的嫩芽和叶子，例如金鱼藻或眼子菜。有点像生的海藻。"
 
 #: data/json/items/comestibles/sandwich.json
 msgid "GENERIC SANDWICH"
@@ -123902,7 +124101,7 @@ msgstr "找到了\"奶酪\"。"
 #. ~ Mutation class name
 #: data/json/mutations/mutation_category.json
 msgid "Rabbit"
-msgstr "兔类"
+msgstr "兔人"
 
 #. ~ Mutation class: Rabbit mutagen_message
 #: data/json/mutations/mutation_category.json
@@ -123929,6 +124128,42 @@ msgstr "爱上吃胡萝卜。"
 msgctxt "memorial_female"
 msgid "Acquired a taste for carrots."
 msgstr "爱上吃胡萝卜。"
+
+#. ~ Mutation class name
+#: data/json/mutations/mutation_category.json
+#: data/json/mutations/mutations.json
+msgid "Serpent"
+msgstr "蛇人"
+
+#. ~ Mutation class: Serpent mutagen_message
+#. ~ Mutation class: Lamia mutagen_message
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgid "You feel a slithering feeling."
+msgstr "你感到一阵滑行的感觉。"
+
+#. ~ Mutation class: Serpent iv_message
+#. ~ Mutation class: Lamia iv_message
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgid "You hiss, left reeling from the strange sensations."
+msgstr "你发出嘶嘶声，奇异的感觉让你感到晕眩。"
+
+#. ~ Mutation class: Serpent Male memorial messsage
+#. ~ Mutation class: Lamia Male memorial messsage
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgctxt "memorial_male"
+msgid "Seized opportunity in their coils."
+msgstr "它们用盘绕的身躯抓住了机遇。"
+
+#. ~ Mutation class: Serpent Female memorial messsage
+#. ~ Mutation class: Lamia Female memorial messsage
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgctxt "memorial_female"
+msgid "Seized opportunity in their coils."
+msgstr "它们用盘绕的身躯抓住了机遇。"
 
 #: data/json/mutations/mutation_spells.json
 msgid "Blinding spray"
@@ -128612,6 +128847,13 @@ msgid ""
 "better now."
 msgstr "你偶尔还会回想起长尾巴前的日子，但你觉得现在快活多了。"
 
+#. ~ Description for {'str': 'Serpent'}
+#: data/json/mutations/mutations.json
+msgid ""
+"They say you have to crawl before you can walk.  You walked, but now "
+"slithering feels better."
+msgstr "人们常说，走路之前要先学会爬。你曾经会走，但现在感觉还是滑行更舒服。"
+
 #. ~ Description for {'str': 'Bird'}
 #: data/json/mutations/mutations.json
 msgid ""
@@ -129022,6 +129264,50 @@ msgstr "你用尖牙撕裂了%s"
 #: data/json/mutations/mutations.json
 msgid "%1$s tears into %2$s with their teeth"
 msgstr "%1$s 用尖牙撕裂了 %2$s"
+
+#: data/json/mutations/mutations.json
+msgid "Snake Body"
+msgstr "蛇之躯"
+
+#. ~ Description for {'str': 'Snake Body'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your legs and feet have merged into a long, scaly tail.  It's harder for you"
+" to move (though you can wind through obstacles a bit better) and harder to "
+"dodge, and limits what you can wear.  Anything you can get to fit on your "
+"tail just makes crawling around even more awkward.  At least it protects "
+"your lower half decently, reduces wet effects, and lets you carry more "
+"weight."
+msgstr ""
+"你的腿和脚已经融合成一条长长的、布满鳞片的尾巴。这让你移动更困难（尽管你能更好地穿过障碍物），也更难闪避，并且限制了你能穿的衣物。任何能套在你尾巴上的东西只会让爬行变得更加笨拙。但至少它能很好地保护你的下半身，减少潮湿效果，并让你能负重更多。"
+
+#: data/json/mutations/mutations.json
+msgid "Serpentine Body"
+msgstr "蛇形之躯"
+
+#. ~ Description for {'str': 'Serpentine Body'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your snake body has grown stronger and more flexible, or maybe you're just "
+"getting used to moving with it.  It's still incredibly inconvenient to find "
+"clothes for your tail, but you're better at navigating obstacles and can "
+"even whip enemies with the end."
+msgstr ""
+"你的蛇躯变得更强壮、更灵活了，或许你只是更习惯用它来移动了。为你的尾巴找到合适的衣物仍然非常不便，但你更擅长穿越障碍，甚至能用尾巴末端鞭打敌人。"
+
+#: data/json/mutations/mutations.json
+msgid "Crushing Coils"
+msgstr "绞杀之躯"
+
+#. ~ Description for {'str': 'Crushing Coils'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your newfound size has granted some extra bulk to your serpentine half.  You"
+" haven't figured out how to constrict anything with it, but it does further "
+"enhance your strength (+4) and your lower half's natural armor is even "
+"thicker."
+msgstr ""
+"你新获得的身形为你蛇一般的下半身增加了一些额外的体积。你还没想出如何用它来缠绕任何东西，但它确实进一步增强了你的力量（+4），并且你下半身的天然护甲也更厚了。"
 
 #: data/json/mutations/mutations.json
 msgid "Police Officer"
@@ -165688,6 +165974,14 @@ msgid "trailhead roof"
 msgstr "林间小径起点（屋顶）"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
+msgid "RV park"
+msgstr "房车公园"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
+msgid "RV park roof"
+msgstr "房车公园屋顶"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
 #: data/json/overmap/overmap_terrain/overmap_terrain_urban.json
 #: data/mods/alt_map_key/overmap_terrain.json
 msgid "subway station"
@@ -165901,6 +166195,10 @@ msgid "lake shore"
 msgstr "湖岸"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
+msgid "shoal"
+msgstr "浅滩"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "lake shore (submerged)"
 msgstr "湖岸（水下）"
 
@@ -165923,6 +166221,10 @@ msgstr "沉没的实验室入口"
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "sunken cargo ship"
 msgstr "沉没的货船"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
+msgid "sunken ship"
+msgstr "沉船"
 
 #. ~ Crafting recipes category name
 #: data/json/recipes/recipes.json
@@ -212868,6 +213170,12 @@ msgstr "你感觉简直要高兴得跳起来了！"
 msgid "You feel the most intense craving for carrots you've ever had..."
 msgstr "你感受到了前所未有的对胡萝卜的强烈渴望……"
 
+#. ~ Mutation class name
+#: data/mods/Monster_Girls/categories.json
+#: data/mods/Monster_Girls/thresh_mutation.json
+msgid "Lamia"
+msgstr "拉米亚"
+
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a strange dream about foxes."
 msgstr "你做了一个关于狐狸的怪梦。"
@@ -212883,6 +213191,16 @@ msgstr "你做了一个关于兔子的怪梦。"
 #: data/mods/Monster_Girls/dreams.json
 msgid "Your dreams give you a joyful bouncy feeling."
 msgstr "你的梦给你一种愉快又活蹦乱跳的感觉。"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have a dream of moving across a field, yet you don't hear your "
+"footsteps…"
+msgstr "你梦见自己穿过一片田野，却没有听到自己的脚步声……"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid "While dreaming, you see a strangely serpentine reflection of yourself."
+msgstr "在梦中，你看到了自己奇异的蛇形倒影。"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "In a dream, you see a curiously harpy-like reflection of yourself."
@@ -212914,6 +213232,18 @@ msgstr "你清晰地梦到自己悄悄靠近鸡舍。"
 msgid ""
 "Whilst dreaming, you see yourself… but with a pair of fox ears on your head?"
 msgstr "在梦中，你看到了自己……但是你的头上多了一对狐狸耳朵？"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have an vivid dream of yourself with a long, serpentine tail instead of "
+"legs."
+msgstr "你做了一个生动的梦，梦见自己没有腿，而是拖着一条长长的蛇尾。"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"Your dream-self seems so graceful, slithering along in their dexterous scaly"
+" form."
+msgstr "梦中的你似乎如此优雅，用那灵巧的、布满鳞片的身躯滑行着。"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a vivid dream of returning to your cozy warren."
@@ -212974,6 +213304,18 @@ msgid ""
 "It's like your stamina never ends, you wish you had this much energy outside"
 " of the dream world!"
 msgstr "你的体力仿佛无穷无尽，真希望在梦境之外也能有这么充沛的精力！"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have a nostalgic dream of stumbling around clumsily on two legs instead "
+"of an elegant snake tail."
+msgstr "你怀旧地梦见自己用两条腿笨拙地蹒跚而行，而不是用优雅的蛇尾滑行。"
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You dream of coiling around a loved one, keeping them wrapped up close for "
+"warmth."
+msgstr "你梦见自己盘绕着心爱的人，将他们紧紧裹住以取暖。"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
@@ -213144,6 +213486,16 @@ msgid ""
 "inject it… if you really want to?"
 msgstr "超浓缩的诱变剂，有着琥珀色。你需要一个针管来注射……如果你真的想用的话。"
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Lamia serum"
+msgid_plural "Lamia serums"
+msgstr[0] "拉米亚诱变血清"
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Lamia mutagen"
+msgid_plural "Lamia mutagens"
+msgstr[0] "拉米亚诱变剂"
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -213242,6 +213594,14 @@ msgid ""
 "find a partner that can keep up with you…"
 msgstr ""
 "那些花花公子里的荡妇不过是一群装模作样的家伙，这里才是真正的兔女郎！那些丧尸和你比起来简直慢得像乌龟，而你在行动时还美得惊人！有种感觉告诉你，要找到一个能跟上你步伐的搭档可不是件容易的事……"
+
+#. ~ Description for {'str': 'Lamia'}
+#: data/mods/Monster_Girls/thresh_mutation.json
+msgid ""
+"You have to put in a lot of care to keep your scales smooth and shiny, but "
+"it's worth it.  All you need now is a nice warm rock to bask on, or someone "
+"to coil around for warmth…"
+msgstr "你必须精心保养，才能让你的鳞片保持光滑亮丽，但这是值得的。现在你所需要的只是一块可以晒太阳的温暖岩石，或者一个可以盘绕取暖的人……"
 
 #: data/mods/My_Sweet_Cataclysm/modinfo.json
 msgid "My Sweet Cataclysm: BN Edition"

@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-28 01:29+0000\n"
+"POT-Creation-Date: 2025-08-30 01:29+0000\n"
 "Last-Translator: jacli mouber, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/bn-team/teams/113585/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -1991,6 +1991,15 @@ msgid ""
 "Be what you want to be, the only creatures that could tell you otherwise are"
 " made of meat.  You are now a post-threshold Raptor mutant."
 msgstr "なりたい自分になりましょう。なれないと主張するのは、獲物たちだけです。今や閾値を超えた爬虫類変異体となりました。"
+
+#: data/json/achievements.json
+msgid "[Mutation] No Step On Snek"
+msgstr ""
+
+#. ~ Description for {'str': '[Mutation] No Step On Snek'}
+#: data/json/achievements.json
+msgid "Legs are for chumps.  You are now a post-threshold Serpent mutant."
+msgstr ""
 
 #: data/json/achievements.json
 msgid "[Mutation] Slippery When Moist"
@@ -5123,8 +5132,16 @@ msgid "Build Junk Metal Barrier"
 msgstr "塀(廃金属)を設置する"
 
 #: data/json/construction_group.json
+msgid "Build Junk Metal Door"
+msgstr ""
+
+#: data/json/construction_group.json
 msgid "Build Junk Metal Floor"
 msgstr "床(廃金属)を設置する"
+
+#: data/json/construction_group.json
+msgid "Build Junk Metal Roof Over Floor"
+msgstr ""
 
 #: data/json/construction_group.json
 msgid "Build Large Metal Support"
@@ -5441,6 +5458,10 @@ msgstr "薪ストーブを設置する"
 #: data/json/construction_group.json
 msgid "Build Wood Wall"
 msgstr "壁(木)を設置する"
+
+#: data/json/construction_group.json
+msgid "Build Wooden Chest"
+msgstr ""
 
 #: data/json/construction_group.json
 msgid "Build Wooden Floor"
@@ -6282,6 +6303,14 @@ msgstr "トカゲに関する奇妙な夢を見ました。"
 msgid "Your dreams give you a strange scaly feeling."
 msgstr "夢の中で、皮膚に鱗があるような奇妙な感覚をおぼえました。"
 
+#: data/json/dreams.json data/mods/Monster_Girls/dreams.json
+msgid "You have a strange dream about snakes."
+msgstr ""
+
+#: data/json/dreams.json data/mods/Monster_Girls/dreams.json
+msgid "Your dreams give you a strange slithering feeling."
+msgstr ""
+
 #: data/json/dreams.json
 msgid ""
 "You have a strange dream about being a patient in a frightening hospital."
@@ -6465,6 +6494,16 @@ msgid ""
 msgstr "夢の中で、自分はトカゲのような姿になっていました。"
 
 #: data/json/dreams.json
+msgid ""
+"You have a disturbing dream of slithering and coiling around a small mammal."
+msgstr ""
+
+#: data/json/dreams.json
+msgid ""
+"While dreaming, you see an unblinking serpentine reflection of yourself."
+msgstr ""
+
+#: data/json/dreams.json
 msgid "You have a disturbing dream of undergoing strange medical procedures."
 msgstr "奇妙な医療行為を受ける不穏な夢を見ました。"
 
@@ -6643,6 +6682,17 @@ msgstr "トカゲとの混血種になる恐ろしい夢を見ました。"
 #: data/json/dreams.json
 msgid "You have a disturbingly lifelike dream of living as a lizard."
 msgstr "トカゲのように生活する現実感溢れる不安な夢を見ました。"
+
+#: data/json/dreams.json
+msgid ""
+"You have an unsettling dream about living as some sort of snake creature."
+msgstr ""
+
+#: data/json/dreams.json
+msgid ""
+"You're unnerved by a dream where your slithering serpentine form seemed "
+"unnaturally graceful and lifelike."
+msgstr ""
 
 #: data/json/dreams.json
 msgid ""
@@ -6835,6 +6885,14 @@ msgstr "サルとの混血種になる恐ろしい夢を見ました。"
 #: data/json/dreams.json
 msgid "You blissfully recall days spent lounging in the sun."
 msgstr "夢の中で、木漏れ日の中で穏やかに過ごした日々を思い出しました。"
+
+#: data/json/dreams.json
+msgid "You're haunted by a dream of the old days spent stumbling on ape-legs."
+msgstr ""
+
+#: data/json/dreams.json
+msgid "You have a vivid dream of crushing worthy prey in your powerful coils."
+msgstr ""
 
 #: data/json/dreams.json
 msgid ""
@@ -10606,6 +10664,13 @@ msgstr "このアイテムを起動すると、着用者を<info>飛行</info>�
 #: data/json/flags.json
 msgid "This gear <info>allows flight</info>."
 msgstr "このアイテムは着用者を<info>飛行</info>させます。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>serpentine bodies.</info>."
+msgstr ""
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -30950,6 +31015,7 @@ msgstr "巨大で無骨な金属製の冷蔵装置で、大型エリアの冷却
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -30979,6 +31045,7 @@ msgstr "[金属が軋む音]"
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -32922,6 +32989,7 @@ msgstr "あぁ。例え世界がめちゃくちゃになっても、火の傍に
 #: data/json/furniture_and_terrain/furniture-tools.json
 #: data/json/furniture_and_terrain/terrain-doors.json
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 #: data/json/furniture_and_terrain/terrain-manufactured.json
 #: data/json/furniture_and_terrain/terrain-mechanisms.json
 #: data/json/furniture_and_terrain/terrain-railroads.json
@@ -33269,7 +33337,10 @@ msgstr ""
 
 #. ~ Description for pondweed
 #: data/json/furniture_and_terrain/furniture-flora.json
-msgid "An aquatic pondweed, it's sort of tall and blocks your view."
+msgid ""
+"An aquatic pondweed, it's sort of tall and blocks your view.  Whether "
+"Potamogeton or Elodea, most varieties have edible shoots that are best "
+"picked early in the year."
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-flora.json
@@ -33287,7 +33358,10 @@ msgstr ""
 
 #. ~ Description for hornwort
 #: data/json/furniture_and_terrain/furniture-flora.json
-msgid "A species of hornwort that grows at the bottom of lakes."
+msgid ""
+"A species of hornwort that grows at the bottom of lakes.  Though known for "
+"being harmful to other plants, the leaves are safe for humans to eat and "
+"available most of the year."
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-flora.json
@@ -35259,9 +35333,19 @@ msgstr "金属製ロッカー"
 #. ~ Description for metal foot locker
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid ""
-"An metal storage box, capable of holding any number of things.  The lid has "
+"A metal storage box, capable of holding any number of things.  The lid has "
 "has a small lock."
-msgstr "金属製の収納箱で、様々なものを入れることが出来ます。扉には小さな鍵がかかるようになっています。"
+msgstr ""
+
+#: data/json/furniture_and_terrain/furniture-storage.json
+msgid "wooden chest"
+msgstr ""
+
+#. ~ Description for wooden chest
+#: data/json/furniture_and_terrain/furniture-storage.json
+msgid ""
+"A nice big wooden box with a hinged lid, to store all manner of things in."
+msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-surfaces.json
 msgid "counter"
@@ -37124,6 +37208,29 @@ msgstr ""
 "削り出しと鍛造によって成形された合金鋼製の非常に強靭な扉です。鍵穴が付いており、ロックされている可能性がありますが、ロックピックか、こじ開けるための強力な道具を使えば開けられそうです。"
 
 #: data/json/furniture_and_terrain/terrain-doors.json
+msgid "closed junk metal door"
+msgstr ""
+
+#. ~ Description for closed junk metal door
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid ""
+"A makeshift door made of rusty scrap metal bolted together, with metal wires"
+" for hinges.  Very fashionable in post-apocalyptic shantytowns."
+msgstr ""
+
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid "open junk metal door"
+msgstr ""
+
+#. ~ Description for open junk metal door
+#: data/json/furniture_and_terrain/terrain-doors.json
+msgid ""
+"A makeshift door made of rusty scrap metal bolted together, with metal wires"
+" for hinges.  Very fashionable in post-apocalyptic shantytowns.  Somehow "
+"even draftier now that it's open."
+msgstr ""
+
+#: data/json/furniture_and_terrain/terrain-doors.json
 msgid "closed bar door"
 msgstr "閉じたスイングドア"
 
@@ -37573,6 +37680,17 @@ msgstr "木製の手すりです。"
 #: data/json/furniture_and_terrain/terrain-recreational.json src/mapdata.cpp
 msgid "crack!"
 msgstr "メリッ！"
+
+#: data/json/furniture_and_terrain/terrain-fences-gates.json
+msgid "underwater railing"
+msgstr ""
+
+#. ~ Description for underwater railing
+#: data/json/furniture_and_terrain/terrain-fences-gates.json
+msgid ""
+"A flooded section of wooden railing.  Much less effective at stopping you "
+"from jumping overboard, now."
+msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 msgid "glass railing"
@@ -38059,6 +38177,7 @@ msgid ""
 msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid "junk metal floor"
 msgstr "床(廃金属)"
 
@@ -38379,11 +38498,27 @@ msgid ""
 "Common in patios."
 msgstr "木の板を隙間なく敷き詰めて釘で打ち付けた床です。テラスなどでよく見られます。"
 
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid "underwater wooden floor"
+msgstr ""
+
+#. ~ Description for underwater wooden floor
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid "Rotting old floorboards long since repurposed as Davy Jones's patio."
+msgstr ""
+
 #. ~ Description for metal floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid ""
 "High-quality and tough checkered flooring to reduce risk of slips and falls."
 msgstr "スリップや転倒のリスクを軽減する、高品質で頑丈な格子模様のフローリングです。"
+
+#. ~ Description for junk metal floor
+#: data/json/furniture_and_terrain/terrain-floors-outdoors.json
+msgid ""
+"A simple floor of rusty scrap metal bolted and wire-tied to a makeshift "
+"frame.  Very fashionable in post-apocalyptic shantytowns."
+msgstr ""
 
 #. ~ Description for dirt floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
@@ -41508,6 +41643,17 @@ msgid ""
 msgstr "木材の大部分が割れており、形が歪んで崩壊し始めています。この壁を修復するにはかなり大変な作業が必要です。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
+msgid "underwater wooden wall"
+msgstr ""
+
+#. ~ Description for underwater wooden wall
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid ""
+"A decaying old section of wooden wall, soaked through and leaking.  It will "
+"likely crumble to bits if damaged."
+msgstr ""
+
+#: data/json/furniture_and_terrain/terrain-walls.json
 msgid "half-built log wall"
 msgstr "建設途中の壁(丸太)"
 
@@ -41643,11 +41789,10 @@ msgstr "塀(廃金属)"
 #. ~ Description for junk metal barrier
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid ""
-"A simple wall of rusty scrap metal bolted and wire-tied to a makeshift "
-"frame.  Very fashionable in post-apocalyptic shantytowns.  This one isn't "
-"quite strong enough to support a roof, but could be reinforced."
+"A short wall of rusty scrap metal bolted and wire-tied to a makeshift frame."
+"  Very fashionable in post-apocalyptic shantytowns.  This one isn't quite "
+"strong enough to support a roof, but could be reinforced."
 msgstr ""
-"簡易的な骨組みにボルトとワイヤーで固定された廃金属製の簡単な壁です。ポストアポカリプス的なボロ家に良く似合う見た目をしています。屋根を支えられるほど頑丈ではありませんが、更に補強できます。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "glass wall"
@@ -41963,6 +42108,18 @@ msgid ""
 "A wooden wall with a firing hole carved out of it, which you can fire "
 "through unimpeded if you're adjacent to it.  It doesn't take much out of "
 "incoming fire, but it's better than nothing."
+msgstr ""
+
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid "underwater wooden fortification"
+msgstr ""
+
+#. ~ Description for underwater wooden fortification
+#: data/json/furniture_and_terrain/terrain-walls.json
+msgid ""
+"A waterlogged gunport from the age of sail.  If you have a speargun to fire "
+"through it with, it might still serve as light cover against any unexpected "
+"encounters with gun-toting sharks."
 msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-walls.json
@@ -57672,6 +57829,18 @@ msgid ""
 "Six long cotton tubes sized to fit over tentacles and help protect them from"
 " the cold."
 msgstr "六本に分かれた長い管状の綿製のストッキングです。触手に密着して寒さを防ぎます。"
+
+#: data/json/items/armor/boots.json
+msgid "tail warmer"
+msgid_plural "tail warmers"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer clearly designed for legless mutants, or an awkward "
+"tube skirt for more normal survivors."
+msgstr ""
 
 #: data/json/items/armor/boots.json
 msgid "pair of tabi"
@@ -83910,6 +84079,18 @@ msgid ""
 msgstr "緑がかった様々な色合いに変化し続ける、濃縮された変異原物質です。使用するなら注射器が必要ですが...本気ですか？"
 
 #: data/json/items/comestibles/mutagen.json
+msgid "serpent serum"
+msgid_plural "serpent serums"
+msgstr[0] ""
+
+#. ~ Description for serpent serum
+#: data/json/items/comestibles/mutagen.json
+msgid ""
+"A super-concentrated mutagen resembling congealed venom.  You need a syringe"
+" to inject it… if you really want to?"
+msgstr ""
+
+#: data/json/items/comestibles/mutagen.json
 msgid "lupine serum"
 msgid_plural "lupine serums"
 msgstr[0] "血清(オオカミ)"
@@ -84120,6 +84301,11 @@ msgstr[0] "変異原物質(虫)"
 msgid "lizard mutagen"
 msgid_plural "lizard mutagens"
 msgstr[0] "変異原物質(トカゲ)"
+
+#: data/json/items/comestibles/mutagen.json
+msgid "serpent mutagen"
+msgid_plural "serpent mutagens"
+msgstr[0] ""
 
 #: data/json/items/comestibles/mutagen.json
 msgid "lupine mutagen"
@@ -86204,6 +86390,18 @@ msgstr[0] ""
 msgid ""
 "The leftover outer layer of rice seeds, this vegetable matter is quite "
 "nutritionally dense and makes for a good cooking oil."
+msgstr ""
+
+#: data/json/items/comestibles/raw_veggy.json
+msgid "aquatic greens"
+msgid_plural "aquatic greens"
+msgstr[0] ""
+
+#. ~ Description for {'str_sp': 'aquatic greens'}
+#: data/json/items/comestibles/raw_veggy.json
+msgid ""
+"Shoots and leaves from underwater plants, such as hornwort or pondweed.  A "
+"bit like raw seaweed."
 msgstr ""
 
 #: data/json/items/comestibles/sandwich.json
@@ -123925,6 +124123,42 @@ msgctxt "memorial_female"
 msgid "Acquired a taste for carrots."
 msgstr ""
 
+#. ~ Mutation class name
+#: data/json/mutations/mutation_category.json
+#: data/json/mutations/mutations.json
+msgid "Serpent"
+msgstr ""
+
+#. ~ Mutation class: Serpent mutagen_message
+#. ~ Mutation class: Lamia mutagen_message
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgid "You feel a slithering feeling."
+msgstr ""
+
+#. ~ Mutation class: Serpent iv_message
+#. ~ Mutation class: Lamia iv_message
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgid "You hiss, left reeling from the strange sensations."
+msgstr ""
+
+#. ~ Mutation class: Serpent Male memorial messsage
+#. ~ Mutation class: Lamia Male memorial messsage
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgctxt "memorial_male"
+msgid "Seized opportunity in their coils."
+msgstr ""
+
+#. ~ Mutation class: Serpent Female memorial messsage
+#. ~ Mutation class: Lamia Female memorial messsage
+#: data/json/mutations/mutation_category.json
+#: data/mods/Monster_Girls/categories.json
+msgctxt "memorial_female"
+msgid "Seized opportunity in their coils."
+msgstr ""
+
 #: data/json/mutations/mutation_spells.json
 msgid "Blinding spray"
 msgstr "ブラインディング・スプレー"
@@ -128626,6 +128860,13 @@ msgid ""
 "better now."
 msgstr "たまに尻尾が無かった頃のことを思い出します。やっぱり今のほうがいいですね。"
 
+#. ~ Description for {'str': 'Serpent'}
+#: data/json/mutations/mutations.json
+msgid ""
+"They say you have to crawl before you can walk.  You walked, but now "
+"slithering feels better."
+msgstr ""
+
 #. ~ Description for {'str': 'Bird'}
 #: data/json/mutations/mutations.json
 msgid ""
@@ -129034,6 +129275,47 @@ msgstr "歯で%sを引き裂きました"
 #: data/json/mutations/mutations.json
 msgid "%1$s tears into %2$s with their teeth"
 msgstr "%1$sは歯で%2$sを引き裂きました"
+
+#: data/json/mutations/mutations.json
+msgid "Snake Body"
+msgstr ""
+
+#. ~ Description for {'str': 'Snake Body'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your legs and feet have merged into a long, scaly tail.  It's harder for you"
+" to move (though you can wind through obstacles a bit better) and harder to "
+"dodge, and limits what you can wear.  Anything you can get to fit on your "
+"tail just makes crawling around even more awkward.  At least it protects "
+"your lower half decently, reduces wet effects, and lets you carry more "
+"weight."
+msgstr ""
+
+#: data/json/mutations/mutations.json
+msgid "Serpentine Body"
+msgstr ""
+
+#. ~ Description for {'str': 'Serpentine Body'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your snake body has grown stronger and more flexible, or maybe you're just "
+"getting used to moving with it.  It's still incredibly inconvenient to find "
+"clothes for your tail, but you're better at navigating obstacles and can "
+"even whip enemies with the end."
+msgstr ""
+
+#: data/json/mutations/mutations.json
+msgid "Crushing Coils"
+msgstr ""
+
+#. ~ Description for {'str': 'Crushing Coils'}
+#: data/json/mutations/mutations.json
+msgid ""
+"Your newfound size has granted some extra bulk to your serpentine half.  You"
+" haven't figured out how to constrict anything with it, but it does further "
+"enhance your strength (+4) and your lower half's natural armor is even "
+"thicker."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Police Officer"
@@ -165663,6 +165945,14 @@ msgid "trailhead roof"
 msgstr "自然歩道(屋上)"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
+msgid "RV park"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
+msgid "RV park roof"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_transportation.json
 #: data/json/overmap/overmap_terrain/overmap_terrain_urban.json
 #: data/mods/alt_map_key/overmap_terrain.json
 msgid "subway station"
@@ -165876,6 +166166,10 @@ msgid "lake shore"
 msgstr "湖岸"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
+msgid "shoal"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "lake shore (submerged)"
 msgstr ""
 
@@ -165897,6 +166191,10 @@ msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "sunken cargo ship"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
+msgid "sunken ship"
 msgstr ""
 
 #. ~ Crafting recipes category name
@@ -212858,6 +213156,12 @@ msgstr ""
 msgid "You feel the most intense craving for carrots you've ever had..."
 msgstr ""
 
+#. ~ Mutation class name
+#: data/mods/Monster_Girls/categories.json
+#: data/mods/Monster_Girls/thresh_mutation.json
+msgid "Lamia"
+msgstr ""
+
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a strange dream about foxes."
 msgstr ""
@@ -212872,6 +213176,16 @@ msgstr ""
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "Your dreams give you a joyful bouncy feeling."
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have a dream of moving across a field, yet you don't hear your "
+"footsteps…"
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid "While dreaming, you see a strangely serpentine reflection of yourself."
 msgstr ""
 
 #: data/mods/Monster_Girls/dreams.json
@@ -212903,6 +213217,18 @@ msgstr ""
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
 "Whilst dreaming, you see yourself… but with a pair of fox ears on your head?"
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have an vivid dream of yourself with a long, serpentine tail instead of "
+"legs."
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"Your dream-self seems so graceful, slithering along in their dexterous scaly"
+" form."
 msgstr ""
 
 #: data/mods/Monster_Girls/dreams.json
@@ -212963,6 +213289,18 @@ msgstr ""
 msgid ""
 "It's like your stamina never ends, you wish you had this much energy outside"
 " of the dream world!"
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You have a nostalgic dream of stumbling around clumsily on two legs instead "
+"of an elegant snake tail."
+msgstr ""
+
+#: data/mods/Monster_Girls/dreams.json
+msgid ""
+"You dream of coiling around a loved one, keeping them wrapped up close for "
+"warmth."
 msgstr ""
 
 #: data/mods/Monster_Girls/dreams.json
@@ -213133,6 +213471,16 @@ msgid ""
 "inject it… if you really want to?"
 msgstr ""
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Lamia serum"
+msgid_plural "Lamia serums"
+msgstr[0] ""
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Lamia mutagen"
+msgid_plural "Lamia mutagens"
+msgstr[0] ""
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -213227,6 +213575,14 @@ msgid ""
 "  Those zombies are practically tortoises compared to you now, and you look "
 "stunning while doing it!  Something tells you it's gonna be a challenge to "
 "find a partner that can keep up with you…"
+msgstr ""
+
+#. ~ Description for {'str': 'Lamia'}
+#: data/mods/Monster_Girls/thresh_mutation.json
+msgid ""
+"You have to put in a lot of care to keep your scales smooth and shiny, but "
+"it's worth it.  All you need now is a nice warm rock to bask on, or someone "
+"to coil around for warmth…"
 msgstr ""
 
 #: data/mods/My_Sweet_Cataclysm/modinfo.json
