@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-30 01:29+0000\n"
+"POT-Creation-Date: 2025-08-31 01:35+0000\n"
 "Last-Translator: GostBug <blackday8990@gmx.de>, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -62534,6 +62534,22 @@ msgstr ""
 "Это устройство заменяет обычный батареечный отсек на соединительный порт, в "
 "который можно подключить УБП. Любой прибор с таким устройством будет "
 "работать без батареек, пока у вас есть заряженный УБП."
+
+#: data/json/items/toolmod.json
+msgid "UPS battery conversion mod"
+msgid_plural "UPS battery conversion mods"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'UPS battery conversion mod'}
+#: data/json/items/toolmod.json
+msgid ""
+"This device extends the conventional battery connections with a connector "
+"port that can plug into a UPS.  Any device modified with this can toggle "
+"whether to charge its battery from UPS power."
+msgstr ""
 
 #: data/json/items/toolmod.json
 msgid "battery compartment mod"
@@ -293295,6 +293311,10 @@ msgstr[0] "Максимум <num> заряд."
 msgstr[1] "Максимум <num> заряда."
 msgstr[2] "Максимум <num> зарядов."
 msgstr[3] "Максимум <num> заряд."
+
+#: src/item.cpp
+msgid "UPS Efficiency Multiplier: "
+msgstr ""
 
 #: src/item.cpp
 #, c-format

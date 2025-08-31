@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-30 01:29+0000\n"
+"POT-Creation-Date: 2025-08-31 01:35+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -53529,6 +53529,19 @@ msgid ""
 "that can plug into a UPS.  Any device modified with this can be used without"
 " a battery as long as you have a charged UPS with you."
 msgstr "該裝置取代了傳統電池的連接，其連接器端口可以插入UPS。只要你身上有有電量的UPS，任何以此裝置修改後的裝備都可以在沒有電池的情況下使用。"
+
+#: data/json/items/toolmod.json
+msgid "UPS battery conversion mod"
+msgid_plural "UPS battery conversion mods"
+msgstr[0] "UPS 电池改装"
+
+#. ~ Description for {'str': 'UPS battery conversion mod'}
+#: data/json/items/toolmod.json
+msgid ""
+"This device extends the conventional battery connections with a connector "
+"port that can plug into a UPS.  Any device modified with this can toggle "
+"whether to charge its battery from UPS power."
+msgstr "该设备为传统的电池连接增加了一个专用端口，可用于接入UPS。任何经过此项改造的设备，都可以切换是否使用UPS电源为其电池充电。"
 
 #: data/json/items/toolmod.json
 msgid "battery compartment mod"
@@ -239066,6 +239079,10 @@ msgstr[0] "最高 <num> 容量的 %s。"
 msgid "Maximum <num> charge."
 msgid_plural "Maximum <num> charges."
 msgstr[0] "最高 <num> 的容量。"
+
+#: src/item.cpp
+msgid "UPS Efficiency Multiplier: "
+msgstr "UPS 效率倍增器："
 
 #: src/item.cpp
 #, c-format

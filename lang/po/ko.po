@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-30 01:29+0000\n"
+"POT-Creation-Date: 2025-08-31 01:35+0000\n"
 "Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -34366,6 +34366,8 @@ msgid ""
 "Potamogeton or Elodea, most varieties have edible shoots that are best "
 "picked early in the year."
 msgstr ""
+"수생 연못초입니다.  키가 크고 시야를 가립니다.  포타모게톤이든 엘로데아든 대부분의 품종에는 식용 새싹이 있으며, 이는 연초에 수확하는"
+" 게 제일 좋게 처줍니다."
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "eelgrass"
@@ -34387,6 +34389,8 @@ msgid ""
 "being harmful to other plants, the leaves are safe for humans to eat and "
 "available most of the year."
 msgstr ""
+"호수 바닥에서 자라는 뿔풀의 한 종입니다.  다른 식물에 해로운 것으로 알려져 있지만 잎은 인간이 먹기에 안전하며 일 년 내내 구할 수 "
+"있습니다."
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "detritus"
@@ -55647,6 +55651,19 @@ msgid ""
 msgstr ""
 "이 장치는 기존의 배터리 연결부를 제거하고, UPS에 연결 가능한 접속단자로 대체합니다. 이렇게 개조한 장치는 충전된 UPS를 갖고 있는"
 " 한 배터리 없이도 작동합니다."
+
+#: data/json/items/toolmod.json
+msgid "UPS battery conversion mod"
+msgid_plural "UPS battery conversion mods"
+msgstr[0] "UPS 배터리 전환 모듈"
+
+#. ~ Description for {'str': 'UPS battery conversion mod'}
+#: data/json/items/toolmod.json
+msgid ""
+"This device extends the conventional battery connections with a connector "
+"port that can plug into a UPS.  Any device modified with this can toggle "
+"whether to charge its battery from UPS power."
+msgstr ""
 
 #: data/json/items/toolmod.json
 msgid "battery compartment mod"
@@ -247269,6 +247286,10 @@ msgstr[0] "최대 %s 충전량: <num>"
 msgid "Maximum <num> charge."
 msgid_plural "Maximum <num> charges."
 msgstr[0] "최대 충전량: <num>"
+
+#: src/item.cpp
+msgid "UPS Efficiency Multiplier: "
+msgstr ""
 
 #: src/item.cpp
 #, c-format

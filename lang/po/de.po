@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-30 01:29+0000\n"
+"POT-Creation-Date: 2025-08-31 01:35+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: German (https://app.transifex.com/bn-team/teams/113585/de/)\n"
 "MIME-Version: 1.0\n"
@@ -56622,6 +56622,20 @@ msgid ""
 "This device replaces conventional battery connections with a connector port "
 "that can plug into a UPS.  Any device modified with this can be used without"
 " a battery as long as you have a charged UPS with you."
+msgstr ""
+
+#: data/json/items/toolmod.json
+msgid "UPS battery conversion mod"
+msgid_plural "UPS battery conversion mods"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'UPS battery conversion mod'}
+#: data/json/items/toolmod.json
+msgid ""
+"This device extends the conventional battery connections with a connector "
+"port that can plug into a UPS.  Any device modified with this can toggle "
+"whether to charge its battery from UPS power."
 msgstr ""
 
 #: data/json/items/toolmod.json
@@ -257367,6 +257381,10 @@ msgid "Maximum <num> charge."
 msgid_plural "Maximum <num> charges."
 msgstr[0] "Maximal <num> Ladung."
 msgstr[1] "Maximal <num> Ladungen."
+
+#: src/item.cpp
+msgid "UPS Efficiency Multiplier: "
+msgstr ""
 
 #: src/item.cpp
 #, c-format
