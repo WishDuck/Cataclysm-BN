@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-31 01:35+0000\n"
+"POT-Creation-Date: 2025-09-01 01:41+0000\n"
 "Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -55664,6 +55664,8 @@ msgid ""
 "port that can plug into a UPS.  Any device modified with this can toggle "
 "whether to charge its battery from UPS power."
 msgstr ""
+"이 장치는 기존의 배터리 연결부에다가 UPS에 연결 가능한 접속단자를 추가합니다. 이렇게 개조한 장치는 충전된 UPS를 갖고 있는 한 "
+"배터리 없이도 작동합니다."
 
 #: data/json/items/toolmod.json
 msgid "battery compartment mod"
@@ -128362,7 +128364,7 @@ msgstr "미끄러지는 기분을 느껴집니다."
 #: data/json/mutations/mutation_category.json
 #: data/mods/Monster_Girls/categories.json
 msgid "You hiss, left reeling from the strange sensations."
-msgstr ""
+msgstr "당신들은 이상한 감각에 휘청거리며 쉿쉿거리는 소리를 냅니다."
 
 #. ~ Mutation class: Serpent Male memorial messsage
 #. ~ Mutation class: Lamia Male memorial messsage
@@ -128370,7 +128372,7 @@ msgstr ""
 #: data/mods/Monster_Girls/categories.json
 msgctxt "memorial_male"
 msgid "Seized opportunity in their coils."
-msgstr ""
+msgstr "그들의 코일로 기회를 잡았다."
 
 #. ~ Mutation class: Serpent Female memorial messsage
 #. ~ Mutation class: Lamia Female memorial messsage
@@ -128378,7 +128380,7 @@ msgstr ""
 #: data/mods/Monster_Girls/categories.json
 msgctxt "memorial_female"
 msgid "Seized opportunity in their coils."
-msgstr ""
+msgstr "그들의 코일로 기회를 잡았다."
 
 #: data/json/mutations/mutation_spells.json
 msgid "Blinding spray"
