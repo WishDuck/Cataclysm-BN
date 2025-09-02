@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-31 01:35+0000\n"
+"POT-Creation-Date: 2025-09-02 01:31+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -25675,6 +25675,16 @@ msgid "unknown species"
 msgid_plural "unknown species"
 msgstr[0] "未知物种"
 
+#: data/json/species.json data/json/monsters/misc.json
+msgid "debug monster"
+msgid_plural "debug monsters"
+msgstr[0] "除錯怪物"
+
+#. ~ Description for {'str': 'debug monster'}
+#: data/json/species.json
+msgid "a debug monster used for testing. Please report this."
+msgstr "一个用于测试的调试怪物。请上报此问题。"
+
 #: data/json/speech.json data/mods/Aftershock/speech.json
 #: data/mods/CrazyCataclysm/crazy_speech.json
 msgid "\"Hello?\""
@@ -50920,8 +50930,8 @@ msgstr[0] "一套反向關節足"
 #. reverse-jointed legs'}
 #: data/json/items/robot_parts.json
 msgid ""
-"A set of reverse-jointed legs, like the ones found under a chicken walker."
-msgstr "一套反向關節的腿，就像雙足步行機器人的腿。"
+"A set of reverse-jointed legs, like the ones found under a military walker."
+msgstr "一组反关节的腿，就像在军用步行机器人用的那种。"
 
 #: data/json/items/robot_parts.json
 msgid "set of omni wheels"
@@ -89713,12 +89723,12 @@ msgstr "搬运机器人笨拙地四肢着地，完全无视你。"
 #: data/json/items/corpses/inactive_bots.json
 msgid ""
 "This is an inactive hauler bot for commercial and military use, able to "
-"autonomously carry up to 75 kilograms (165 pounds).  Using this item "
+"autonomously carry up to 180 kilograms (400 pounds).  Using this item "
 "involves placing it on the ground and turning it on.  If reprogrammed and "
 "rewired successfully the hauler bot will respond to future commands, serving"
-" as a lightweight robotic packmule."
+" as a robotic packmule."
 msgstr ""
-"这是一个商业和军事用途的运输机器人（关），能够自主携带75公斤（165磅）负重。使用需要将其放在地上并打开。如果重新编程并接线成功，搬运机器人能够听你指挥，并成为一个轻量级的机器人驮骡。"
+"这是一个商业和军事用途的运输机器人，能够自主携带180公斤（400磅）负重。使用需要将其放在地上并打开。如果重新编程并接线成功，搬运机器人能够听你指挥，并成为一个机器人驮骡。目前它还未启动。"
 
 #: data/json/items/corpses/inactive_bots.json
 msgid "inactive miner bot"
@@ -118974,15 +118984,12 @@ msgstr ""
 msgid "The mi-go scout fires its weapon!"
 msgstr "米戈斥侯開火了！"
 
-#: data/json/monsters/misc.json
-msgid "debug monster"
-msgid_plural "debug monsters"
-msgstr[0] "除錯怪物"
-
 #. ~ Description for {'str': 'debug monster'}
 #: data/json/monsters/misc.json
-msgid "This monster exists only for testing purposes."
-msgstr "這個怪物只為了除錯目的而存在。"
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Best."
+msgstr "此怪物仅为测试目的而存在。它被用于最佳类型的DPS计算。"
 
 #: data/json/monsters/misc.json
 msgid "menacing debug monster"
@@ -118995,6 +119002,42 @@ msgid ""
 "This monster exists only for testing purposes.  It's threatening enough to "
 "warrant bullets from NPCs"
 msgstr "这个怪物仅存在于测试目的。它足够威胁，以至于NPC会向它开枪。"
+
+#: data/json/monsters/misc.json
+msgid "agile debug monster"
+msgid_plural "agile debug monsters"
+msgstr[0] "敏捷型调试怪物"
+
+#. ~ Description for {'str': 'agile debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Agile."
+msgstr "此怪物仅为测试目的而存在。它被用于敏捷类型的DPS计算。"
+
+#: data/json/monsters/misc.json
+msgid "armored debug monster"
+msgid_plural "armored debug monsters"
+msgstr[0] "装甲型调试怪物"
+
+#. ~ Description for {'str': 'armored debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Armored."
+msgstr "此怪物仅为测试目的而存在。它被用于装甲类型的DPS计算。"
+
+#: data/json/monsters/misc.json
+msgid "mixed debug monster"
+msgid_plural "mixed debug monsters"
+msgstr[0] "混合型调试怪物"
+
+#. ~ Description for {'str': 'mixed debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Mixed."
+msgstr "此怪物仅为测试目的而存在。它被用于混合类型的DPS计算。"
 
 #: data/json/monsters/misc.json
 msgid "ancient red dragon"
@@ -120282,12 +120325,12 @@ msgstr[0] "运输机器人"
 #: data/json/monsters/utility_bot.json
 msgid ""
 "A mule-sized, quadrupedal robot designed for commercial and military use.  "
-"Capable of carrying fairly heavy loads for its size, autonomously stumbling "
-"about and surveying the terrain with its various cameras.  Not very useful "
+"Capable of carrying up to 180 kilograms (400 pounds), autonomously stumbling"
+" about and surveying the terrain with its various cameras.  Not very useful "
 "after the apocalypse, unless it has been reprogrammed to receive commands "
 "from a new user."
 msgstr ""
-"一种骡子大小的四足机器人，设计用于商业和军事用途。能够承受相当大的重量，能够自主缓慢行动，并使用各种相机测量地形。在大灾变之后不是很有用，除非它被重新编程以接收来自新用户的命令。"
+"一种骡子大小的四足机器人，设计用于商业和军事用途。能够自主携带180公斤（400磅）负重，能够自主缓慢行动，并使用各种相机测量地形。在大灾变之后不是很有用，除非它被重新编程以接收来自新用户的命令。"
 
 #: data/json/monsters/utility_bot.json
 msgid "miner bot"
@@ -176019,6 +176062,18 @@ msgid ""
 msgstr "高度只有一半的厚金屬隔板。阻隔殭屍在車體外，而且車內可以看到車外。"
 
 #: data/json/vehicleparts/boards.json
+msgid "superalloy stow board"
+msgstr "超合金载物板"
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy board"
+msgstr "超合金隔板"
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy quarterpanel"
+msgstr "超合金半隔板"
+
+#: data/json/vehicleparts/boards.json
 msgid "wooden board"
 msgstr "木隔板"
 
@@ -176062,7 +176117,7 @@ msgstr "外挂大号铁丝篮"
 #. ~ Description for {'str': 'external large wire basket'}
 #. ~ Description for {'str': 'external small wire basket'}
 #. ~ Description for {'str': 'external cargo rack'}
-#. ~ Description for {'str': 'external carbon cargo rack'}
+#. ~ Description for {'str': 'external carbon fiber cargo rack'}
 #: data/json/vehicleparts/cargo.json
 msgid ""
 "Storage space, mounted outside your vehicle's armor and vulnerable to "
@@ -176078,6 +176133,10 @@ msgid "box"
 msgstr "箱子"
 
 #: data/json/vehicleparts/cargo.json
+msgid "carbon fiber box"
+msgstr "碳素纤维箱"
+
+#: data/json/vehicleparts/cargo.json
 msgid "wood box"
 msgstr "木箱"
 
@@ -176088,6 +176147,10 @@ msgstr "折疊式木箱"
 #: data/json/vehicleparts/cargo.json
 msgid "trunk"
 msgstr "行李箱"
+
+#: data/json/vehicleparts/cargo.json
+msgid "carbon fiber trunk"
+msgstr "碳素纤维后备箱"
 
 #. ~ Description for {'str': 'floor trunk'}
 #: data/json/vehicleparts/cargo.json
@@ -176103,11 +176166,11 @@ msgid "external cargo rack"
 msgstr "外置載貨架"
 
 #: data/json/vehicleparts/cargo.json
-msgid "carbon cargo space"
+msgid "carbon fiber cargo space"
 msgstr "碳素纤维货舱"
 
 #: data/json/vehicleparts/cargo.json
-msgid "external carbon cargo rack"
+msgid "external carbon fiber cargo rack"
 msgstr "碳素纤维外挂货架"
 
 #: data/json/vehicleparts/cargo.json
@@ -176225,6 +176288,14 @@ msgid ""
 msgstr "一扇門。實心的結構意味著你在它關閉時無法看到外面。"
 
 #: data/json/vehicleparts/doors.json
+msgid "carbon fiber door"
+msgstr "碳素纤维车门"
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber door"
+msgstr "碳素纤维不透明车门"
+
+#: data/json/vehicleparts/doors.json
 msgid "heavy duty door"
 msgstr "重型門"
 
@@ -176270,6 +176341,18 @@ msgstr "一扇堅固的門。在關閉時你能從窗戶看到外面。"
 #: data/json/vehicleparts/doors.json
 msgid "opaque hatch"
 msgstr "不透明艙門"
+
+#: data/json/vehicleparts/doors.json
+msgid "internal carbon fiber door"
+msgstr "碳素纤维内部车门"
+
+#: data/json/vehicleparts/doors.json
+msgid "carbon fiber hatch"
+msgstr "碳素纤维舱门"
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber hatch"
+msgstr "碳素纤维不透明舱门"
 
 #: data/json/vehicleparts/doors.json
 msgid "heavy duty hatch"
@@ -176353,6 +176436,10 @@ msgid ""
 " it."
 msgstr ""
 "一对叉车升降臂。当它安装在你视野内的载具上且距离目标载具两格内时，能够当作千斤顶使用，将其他载具抬起来更换轮胎。当它安装在你视野内的载具上且距离目标四格内时，能够当作起重机使用，更换沉重的载具部件，例如引擎。"
+
+#: data/json/vehicleparts/engineering.json
+msgid "carbon fiber forklift arm"
+msgstr "碳素纤维叉车臂"
 
 #. ~ Description for {'str': 'rockwheel'}
 #: data/json/vehicleparts/engineering.json
@@ -177485,6 +177572,10 @@ msgstr "重型車頂蓋"
 msgid "A thick metal roof."
 msgstr "一個厚重的金屬頂蓋。"
 
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy roof"
+msgstr "超合金车顶盖"
+
 #. ~ Description for {'str': 'blade'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A blade, welded to the vehicle, for cutting up zombies."
@@ -177768,6 +177859,10 @@ msgid ""
 msgstr "用于加固窗户的坚固金属百叶窗，可开启或关闭。"
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy shutter"
+msgstr "超合金百叶窗"
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "wooden shutter"
 msgstr "木制百叶窗"
 
@@ -177889,6 +177984,10 @@ msgid "A short door.  You can always see over it, open or closed."
 msgstr "一扇矮門。你可以看向外面, 無論是開著或關著。"
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber trunk door"
+msgstr "碳素纤维行李箱门"
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "heavy duty trunk door"
 msgstr "重型行李箱門"
 
@@ -177909,6 +178008,10 @@ msgstr "滑門"
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A door.  A window lets you see through it when closed."
 msgstr "一扇門。在關閉時你能從窗戶看到外面。"
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber sliding door"
+msgstr "碳素纤维推拉门"
 
 #. ~ Description for {'str': 'recharging station'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -178205,6 +178308,10 @@ msgstr "简易木制炮塔底座"
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple steel turret mount"
 msgstr "简易鋼制炮塔底座"
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "simple carbon fiber turret mount"
+msgstr "简易碳素纤维炮塔底座"
 
 #. ~ Description for {'str': 'turret control unit'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -224182,6 +224289,15 @@ msgstr "你没有足够的手来穿这个。"
 #, c-format
 msgid "%s doesn't have enough arms to wear that."
 msgstr "%s 没有足够的手来穿这个。"
+
+#: src/character.cpp
+msgid "You can't put on a flotation device below the surface."
+msgstr "你无法在水下穿上漂浮设备。"
+
+#: src/character.cpp
+#, c-format
+msgid "%s can't put on a flotation device below the surface."
+msgstr "%s无法在水下穿上漂浮设备。"
 
 #: src/character.cpp
 msgid "Can't wear power armor over other gear!"

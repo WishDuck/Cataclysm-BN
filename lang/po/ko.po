@@ -28,14 +28,14 @@
 # Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 백도 <tmtm1379@gmail.com>, 2025
 # ARDOR Flag, 2025
-# Fruitybite, 2025
 # 김동현, 2025
+# Fruitybite, 2025
 # Tae Heon Lim, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-01 01:41+0000\n"
+"POT-Creation-Date: 2025-09-02 01:31+0000\n"
 "Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -26970,6 +26970,16 @@ msgid "unknown species"
 msgid_plural "unknown species"
 msgstr[0] "정체불명"
 
+#: data/json/species.json data/json/monsters/misc.json
+msgid "debug monster"
+msgid_plural "debug monsters"
+msgstr[0] "디버그 괴물"
+
+#. ~ Description for {'str': 'debug monster'}
+#: data/json/species.json
+msgid "a debug monster used for testing. Please report this."
+msgstr "테스트용 디버그 괴물입니다. 이게 보이면 보고해주세요."
+
 #: data/json/speech.json data/mods/Aftershock/speech.json
 #: data/mods/CrazyCataclysm/crazy_speech.json
 msgid "\"Hello?\""
@@ -52930,8 +52940,8 @@ msgstr[0] "역관절 다리 부품 세트"
 #. reverse-jointed legs'}
 #: data/json/items/robot_parts.json
 msgid ""
-"A set of reverse-jointed legs, like the ones found under a chicken walker."
-msgstr "치킨 워커 등에 흔히 달려있는 역관절 다리 부품 세트입니다."
+"A set of reverse-jointed legs, like the ones found under a military walker."
+msgstr "군용 장비 등에서 흔히 볼 수 있는 역관절 다리 세트입니다."
 
 #: data/json/items/robot_parts.json
 msgid "set of omni wheels"
@@ -92769,12 +92779,12 @@ msgstr "운반로봇이 네 다리로 기묘하게 비틀거리며, 당신을 �
 #: data/json/items/corpses/inactive_bots.json
 msgid ""
 "This is an inactive hauler bot for commercial and military use, able to "
-"autonomously carry up to 75 kilograms (165 pounds).  Using this item "
+"autonomously carry up to 180 kilograms (400 pounds).  Using this item "
 "involves placing it on the ground and turning it on.  If reprogrammed and "
 "rewired successfully the hauler bot will respond to future commands, serving"
-" as a lightweight robotic packmule."
+" as a robotic packmule."
 msgstr ""
-"상업용, 군사용으로 쓰이는 비활성화된 운반로봇입니다. 75킬로그램 (165파운드)에 해당하는 물품을 자체적으로 짊어지고 다닐 수 "
+"상업용, 군사용으로 쓰이는 비활성화된 운반로봇입니다. 180킬로그램 (400파운드)에 해당하는 물품을 자체적으로 짊어지고 다닐 수 "
 "있습니다. 사용하면 이 로봇을 바닥에 놓고 작동시킵니다. 재프로그래밍 및 재설치를 마쳤다면 운반로봇이 명령에 응답해, 충실한 경량 로봇 "
 "짐꾼으로 작동할 것입니다."
 
@@ -123275,15 +123285,12 @@ msgstr ""
 msgid "The mi-go scout fires its weapon!"
 msgstr "미-고 정찰꾼이 무기를 발사합니다!"
 
-#: data/json/monsters/misc.json
-msgid "debug monster"
-msgid_plural "debug monsters"
-msgstr[0] "디버그 괴물"
-
 #. ~ Description for {'str': 'debug monster'}
 #: data/json/monsters/misc.json
-msgid "This monster exists only for testing purposes."
-msgstr "이 괴물은 테스트 목적으로만 존재합니다."
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Best."
+msgstr ""
 
 #: data/json/monsters/misc.json
 msgid "menacing debug monster"
@@ -123296,6 +123303,42 @@ msgid ""
 "This monster exists only for testing purposes.  It's threatening enough to "
 "warrant bullets from NPCs"
 msgstr "이 괴물은 테스트 용도로만 존재합니다. NPC들이 겁먹고 총을 쏴갈길 정도로 무섭습니다."
+
+#: data/json/monsters/misc.json
+msgid "agile debug monster"
+msgid_plural "agile debug monsters"
+msgstr[0] "민첩한 디버그 괴물"
+
+#. ~ Description for {'str': 'agile debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Agile."
+msgstr ""
+
+#: data/json/monsters/misc.json
+msgid "armored debug monster"
+msgid_plural "armored debug monsters"
+msgstr[0] "중무장 디버그 괴물"
+
+#. ~ Description for {'str': 'armored debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Armored."
+msgstr ""
+
+#: data/json/monsters/misc.json
+msgid "mixed debug monster"
+msgid_plural "mixed debug monsters"
+msgstr[0] "혼합 디버그 괴물"
+
+#. ~ Description for {'str': 'mixed debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Mixed."
+msgstr ""
 
 #: data/json/monsters/misc.json
 msgid "ancient red dragon"
@@ -124683,14 +124726,11 @@ msgstr[0] "운반로봇"
 #: data/json/monsters/utility_bot.json
 msgid ""
 "A mule-sized, quadrupedal robot designed for commercial and military use.  "
-"Capable of carrying fairly heavy loads for its size, autonomously stumbling "
-"about and surveying the terrain with its various cameras.  Not very useful "
+"Capable of carrying up to 180 kilograms (400 pounds), autonomously stumbling"
+" about and surveying the terrain with its various cameras.  Not very useful "
 "after the apocalypse, unless it has been reprogrammed to receive commands "
 "from a new user."
 msgstr ""
-"노새만한 크기의 사족보행 로봇으로, 민간용/군용으로 설계되었습니다. 크기에 비해 꽤 무거운 짐을 들 수 있고, 여러 카메라를 활용해 "
-"능동적으로 장애물과 지형을 탐색합니다. 대재앙 이래로는 큰 쓸모가 없지만, 새 사용자가 명령을 수신할 수 있게 다시 프로그래밍하면 "
-"이야기가 달라질겁니다."
 
 #: data/json/monsters/utility_bot.json
 msgid "miner bot"
@@ -183098,6 +183138,18 @@ msgid ""
 msgstr "절반 높이의 튼튼한 금속 벽입니다.  좀비들이 차량에 들어오는 것을 막지만 시야를 차단하지는 않습니다."
 
 #: data/json/vehicleparts/boards.json
+msgid "superalloy stow board"
+msgstr "초합금 접이식 보드"
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy board"
+msgstr "초합금 보드"
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy quarterpanel"
+msgstr "초합금 쿼터패널"
+
+#: data/json/vehicleparts/boards.json
 msgid "wooden board"
 msgstr "나무판"
 
@@ -183141,7 +183193,7 @@ msgstr "외부 대형 철사 바구니"
 #. ~ Description for {'str': 'external large wire basket'}
 #. ~ Description for {'str': 'external small wire basket'}
 #. ~ Description for {'str': 'external cargo rack'}
-#. ~ Description for {'str': 'external carbon cargo rack'}
+#. ~ Description for {'str': 'external carbon fiber cargo rack'}
 #: data/json/vehicleparts/cargo.json
 msgid ""
 "Storage space, mounted outside your vehicle's armor and vulnerable to "
@@ -183157,6 +183209,10 @@ msgid "box"
 msgstr "상자"
 
 #: data/json/vehicleparts/cargo.json
+msgid "carbon fiber box"
+msgstr "탄소섬유 상자"
+
+#: data/json/vehicleparts/cargo.json
 msgid "wood box"
 msgstr "나무상자"
 
@@ -183167,6 +183223,10 @@ msgstr "접이식 나무상자"
 #: data/json/vehicleparts/cargo.json
 msgid "trunk"
 msgstr "트렁크"
+
+#: data/json/vehicleparts/cargo.json
+msgid "carbon fiber trunk"
+msgstr "탄소섬유 트렁크"
 
 #. ~ Description for {'str': 'floor trunk'}
 #: data/json/vehicleparts/cargo.json
@@ -183182,12 +183242,12 @@ msgid "external cargo rack"
 msgstr "외부 화물 운반고"
 
 #: data/json/vehicleparts/cargo.json
-msgid "carbon cargo space"
+msgid "carbon fiber cargo space"
 msgstr "탄소섬유 화물 운반고"
 
 #: data/json/vehicleparts/cargo.json
-msgid "external carbon cargo rack"
-msgstr "외부 탄소섬유 화물 운반고"
+msgid "external carbon fiber cargo rack"
+msgstr "탄소섬유 외부 화물 운반고"
 
 #: data/json/vehicleparts/cargo.json
 msgid "livestock stall"
@@ -183313,6 +183373,14 @@ msgid ""
 msgstr "문입니다. 빈틈 없이 완전히 틀어막기 때문에, 닫혀있을 때는 반대편을 볼 수 없습니다."
 
 #: data/json/vehicleparts/doors.json
+msgid "carbon fiber door"
+msgstr "탄소섬유 문"
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber door"
+msgstr "탄소섬유 불투명한 문"
+
+#: data/json/vehicleparts/doors.json
 msgid "heavy duty door"
 msgstr "고강도 문"
 
@@ -183358,6 +183426,18 @@ msgstr "튼튼한 문입니다. 조그만 창문이 달려있어, 닫혀있을 �
 #: data/json/vehicleparts/doors.json
 msgid "opaque hatch"
 msgstr "불투명한 해치"
+
+#: data/json/vehicleparts/doors.json
+msgid "internal carbon fiber door"
+msgstr "탄소섬유 내부 문"
+
+#: data/json/vehicleparts/doors.json
+msgid "carbon fiber hatch"
+msgstr "탄소섬유 해치"
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber hatch"
+msgstr "탄소섬유 불투명한 해치"
 
 #: data/json/vehicleparts/doors.json
 msgid "heavy duty hatch"
@@ -183449,6 +183529,10 @@ msgstr ""
 "지게차 덧발 한 쌍입니다. 시야선 내에 크레인이 있고 2타일 이내에 다른 차량이 있다면, 차량의 바퀴를 바꾸려 할 때 자동적으로 크레인을"
 " 사용해 들어올립니다. 엔진 같은 무거운 물체를 설치하거나 제거하기 위해 들어올릴 때는 크레인이 목표 지점의 시야선을 갖고 있어야 하고 "
 "4타일 이내에 있어야 합니다."
+
+#: data/json/vehicleparts/engineering.json
+msgid "carbon fiber forklift arm"
+msgstr "탄소섬유 지게차 덧발"
 
 #. ~ Description for {'str': 'rockwheel'}
 #: data/json/vehicleparts/engineering.json
@@ -184630,6 +184714,10 @@ msgstr "고강도 지붕"
 msgid "A thick metal roof."
 msgstr "두꺼운 금속 지붕."
 
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy roof"
+msgstr "초합금 지붕"
+
 #. ~ Description for {'str': 'blade'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A blade, welded to the vehicle, for cutting up zombies."
@@ -184917,6 +185005,10 @@ msgid ""
 msgstr "창문을 단단히 보호하는데 쓰이는 튼튼한 금속판입니다. 자유롭게 열거나 닫을 수 있습니다."
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy shutter"
+msgstr "초합금 셔터"
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "wooden shutter"
 msgstr "나무 셔터"
 
@@ -185045,6 +185137,10 @@ msgid "A short door.  You can always see over it, open or closed."
 msgstr "키가 낮은 문입니다.  열려있든 닫혀있든 항상 너머로 볼 수 있습니다."
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber trunk door"
+msgstr "탄소섬유 트렁크 문"
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "heavy duty trunk door"
 msgstr "고강도 트렁크 문"
 
@@ -185065,6 +185161,10 @@ msgstr "미닫이문"
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A door.  A window lets you see through it when closed."
 msgstr "문입니다.  닫혀있을 때에도 창을 통해 내다볼 수 있습니다."
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber sliding door"
+msgstr "탄소섬유 미닫이문"
 
 #. ~ Description for {'str': 'recharging station'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -185391,6 +185491,10 @@ msgstr "수동형 목재 터렛 장착대"
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple steel turret mount"
 msgstr "수동형 강철 터렛 장착대"
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "simple carbon fiber turret mount"
+msgstr "수동형 탄소섬유 터렛 장착대"
 
 #. ~ Description for {'str': 'turret control unit'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -232345,6 +232449,15 @@ msgid "%s doesn't have enough arms to wear that."
 msgstr "%s(이)가 그걸 입기에는 팔의 개수가 부족합니다."
 
 #: src/character.cpp
+msgid "You can't put on a flotation device below the surface."
+msgstr "부력을 제공할 부품을 표면 아래에 설치할 수 없습니다."
+
+#: src/character.cpp
+#, c-format
+msgid "%s can't put on a flotation device below the surface."
+msgstr "%s(은)는 부력을 제공할 부품을 표면 아래에 설치할 수 없습니다."
+
+#: src/character.cpp
 msgid "Can't wear power armor over other gear!"
 msgstr "파워 아머는 다른 장비 위에 장착할 수 없습니다!"
 
@@ -247291,7 +247404,7 @@ msgstr[0] "최대 충전량: <num>"
 
 #: src/item.cpp
 msgid "UPS Efficiency Multiplier: "
-msgstr ""
+msgstr "UPS 효율 배수: "
 
 #: src/item.cpp
 #, c-format

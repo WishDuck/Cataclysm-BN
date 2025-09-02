@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-08-31 01:35+0000\n"
+"POT-Creation-Date: 2025-09-02 01:31+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Italian (Italy) (https://app.transifex.com/bn-team/teams/113585/it_IT/)\n"
 "MIME-Version: 1.0\n"
@@ -25556,6 +25556,18 @@ msgid_plural "unknown species"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
+
+#: data/json/species.json data/json/monsters/misc.json
+msgid "debug monster"
+msgid_plural "debug monsters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'debug monster'}
+#: data/json/species.json
+msgid "a debug monster used for testing. Please report this."
+msgstr ""
 
 #: data/json/speech.json data/mods/Aftershock/speech.json
 #: data/mods/CrazyCataclysm/crazy_speech.json
@@ -52392,7 +52404,7 @@ msgstr[2] ""
 #. reverse-jointed legs'}
 #: data/json/items/robot_parts.json
 msgid ""
-"A set of reverse-jointed legs, like the ones found under a chicken walker."
+"A set of reverse-jointed legs, like the ones found under a military walker."
 msgstr ""
 
 #: data/json/items/robot_parts.json
@@ -98239,10 +98251,10 @@ msgstr ""
 #: data/json/items/corpses/inactive_bots.json
 msgid ""
 "This is an inactive hauler bot for commercial and military use, able to "
-"autonomously carry up to 75 kilograms (165 pounds).  Using this item "
+"autonomously carry up to 180 kilograms (400 pounds).  Using this item "
 "involves placing it on the ground and turning it on.  If reprogrammed and "
 "rewired successfully the hauler bot will respond to future commands, serving"
-" as a lightweight robotic packmule."
+" as a robotic packmule."
 msgstr ""
 
 #: data/json/items/corpses/inactive_bots.json
@@ -131315,16 +131327,11 @@ msgstr ""
 msgid "The mi-go scout fires its weapon!"
 msgstr ""
 
-#: data/json/monsters/misc.json
-msgid "debug monster"
-msgid_plural "debug monsters"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
 #. ~ Description for {'str': 'debug monster'}
 #: data/json/monsters/misc.json
-msgid "This monster exists only for testing purposes."
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Best."
 msgstr ""
 
 #: data/json/monsters/misc.json
@@ -131339,6 +131346,48 @@ msgstr[2] ""
 msgid ""
 "This monster exists only for testing purposes.  It's threatening enough to "
 "warrant bullets from NPCs"
+msgstr ""
+
+#: data/json/monsters/misc.json
+msgid "agile debug monster"
+msgid_plural "agile debug monsters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'agile debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Agile."
+msgstr ""
+
+#: data/json/monsters/misc.json
+msgid "armored debug monster"
+msgid_plural "armored debug monsters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'armored debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Armored."
+msgstr ""
+
+#: data/json/monsters/misc.json
+msgid "mixed debug monster"
+msgid_plural "mixed debug monsters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'mixed debug monster'}
+#: data/json/monsters/misc.json
+msgid ""
+"This monster exists only for testing purposes.  It's used in the DPS "
+"calculations for Mixed."
 msgstr ""
 
 #: data/json/monsters/misc.json
@@ -132784,8 +132833,8 @@ msgstr[2] ""
 #: data/json/monsters/utility_bot.json
 msgid ""
 "A mule-sized, quadrupedal robot designed for commercial and military use.  "
-"Capable of carrying fairly heavy loads for its size, autonomously stumbling "
-"about and surveying the terrain with its various cameras.  Not very useful "
+"Capable of carrying up to 180 kilograms (400 pounds), autonomously stumbling"
+" about and surveying the terrain with its various cameras.  Not very useful "
 "after the apocalypse, unless it has been reprogrammed to receive commands "
 "from a new user."
 msgstr ""
@@ -188032,6 +188081,18 @@ msgid ""
 msgstr ""
 
 #: data/json/vehicleparts/boards.json
+msgid "superalloy stow board"
+msgstr ""
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy board"
+msgstr ""
+
+#: data/json/vehicleparts/boards.json
+msgid "superalloy quarterpanel"
+msgstr ""
+
+#: data/json/vehicleparts/boards.json
 msgid "wooden board"
 msgstr "tavola in legno"
 
@@ -188075,7 +188136,7 @@ msgstr ""
 #. ~ Description for {'str': 'external large wire basket'}
 #. ~ Description for {'str': 'external small wire basket'}
 #. ~ Description for {'str': 'external cargo rack'}
-#. ~ Description for {'str': 'external carbon cargo rack'}
+#. ~ Description for {'str': 'external carbon fiber cargo rack'}
 #: data/json/vehicleparts/cargo.json
 msgid ""
 "Storage space, mounted outside your vehicle's armor and vulnerable to "
@@ -188091,6 +188152,10 @@ msgid "box"
 msgstr "scatola"
 
 #: data/json/vehicleparts/cargo.json
+msgid "carbon fiber box"
+msgstr ""
+
+#: data/json/vehicleparts/cargo.json
 msgid "wood box"
 msgstr "scatola di legno"
 
@@ -188101,6 +188166,10 @@ msgstr "scatola di legno pieghevole"
 #: data/json/vehicleparts/cargo.json
 msgid "trunk"
 msgstr "bagagliaio"
+
+#: data/json/vehicleparts/cargo.json
+msgid "carbon fiber trunk"
+msgstr ""
 
 #. ~ Description for {'str': 'floor trunk'}
 #: data/json/vehicleparts/cargo.json
@@ -188116,11 +188185,11 @@ msgid "external cargo rack"
 msgstr ""
 
 #: data/json/vehicleparts/cargo.json
-msgid "carbon cargo space"
+msgid "carbon fiber cargo space"
 msgstr ""
 
 #: data/json/vehicleparts/cargo.json
-msgid "external carbon cargo rack"
+msgid "external carbon fiber cargo rack"
 msgstr ""
 
 #: data/json/vehicleparts/cargo.json
@@ -188233,6 +188302,14 @@ msgid ""
 msgstr ""
 
 #: data/json/vehicleparts/doors.json
+msgid "carbon fiber door"
+msgstr ""
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber door"
+msgstr ""
+
+#: data/json/vehicleparts/doors.json
 msgid "heavy duty door"
 msgstr ""
 
@@ -188277,6 +188354,18 @@ msgstr ""
 
 #: data/json/vehicleparts/doors.json
 msgid "opaque hatch"
+msgstr ""
+
+#: data/json/vehicleparts/doors.json
+msgid "internal carbon fiber door"
+msgstr ""
+
+#: data/json/vehicleparts/doors.json
+msgid "carbon fiber hatch"
+msgstr ""
+
+#: data/json/vehicleparts/doors.json
+msgid "opaque carbon fiber hatch"
 msgstr ""
 
 #: data/json/vehicleparts/doors.json
@@ -188356,6 +188445,10 @@ msgid ""
 "component like an engine that you are installing or removing, the crane must"
 " have line of sight to where it is going and it must be within four tiles of"
 " it."
+msgstr ""
+
+#: data/json/vehicleparts/engineering.json
+msgid "carbon fiber forklift arm"
 msgstr ""
 
 #. ~ Description for {'str': 'rockwheel'}
@@ -189476,6 +189569,10 @@ msgstr "tetto rinforzato"
 msgid "A thick metal roof."
 msgstr ""
 
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy roof"
+msgstr ""
+
 #. ~ Description for {'str': 'blade'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A blade, welded to the vehicle, for cutting up zombies."
@@ -189755,6 +189852,10 @@ msgid ""
 msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "superalloy shutter"
+msgstr ""
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "wooden shutter"
 msgstr ""
 
@@ -189876,6 +189977,10 @@ msgid "A short door.  You can always see over it, open or closed."
 msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber trunk door"
+msgstr ""
+
+#: data/json/vehicleparts/vehicle_parts.json
 msgid "heavy duty trunk door"
 msgstr ""
 
@@ -189895,6 +190000,10 @@ msgstr "porta scorrevole"
 #. ~ Description for {'str': 'sliding door'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "A door.  A window lets you see through it when closed."
+msgstr ""
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "carbon fiber sliding door"
 msgstr ""
 
 #. ~ Description for {'str': 'recharging station'}
@@ -190186,6 +190295,10 @@ msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple steel turret mount"
+msgstr ""
+
+#: data/json/vehicleparts/vehicle_parts.json
+msgid "simple carbon fiber turret mount"
 msgstr ""
 
 #. ~ Description for {'str': 'turret control unit'}
@@ -239336,6 +239449,15 @@ msgstr ""
 #: src/character.cpp
 #, c-format
 msgid "%s doesn't have enough arms to wear that."
+msgstr ""
+
+#: src/character.cpp
+msgid "You can't put on a flotation device below the surface."
+msgstr ""
+
+#: src/character.cpp
+#, c-format
+msgid "%s can't put on a flotation device below the surface."
 msgstr ""
 
 #: src/character.cpp
