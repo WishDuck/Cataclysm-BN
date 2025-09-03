@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-02 01:31+0000\n"
+"POT-Creation-Date: 2025-09-03 01:26+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: German (https://app.transifex.com/bn-team/teams/113585/de/)\n"
 "MIME-Version: 1.0\n"
@@ -6176,6 +6176,14 @@ msgstr ""
 
 #: data/json/construction_group.json
 msgid "Build Roof Over Adobe Floor"
+msgstr ""
+
+#: data/json/construction_group.json
+msgid "Fill Bathtub with Money"
+msgstr ""
+
+#: data/json/construction_group.json
+msgid "Remove Money from Bathtub"
 msgstr ""
 
 #: data/json/debug_spells.json
@@ -34855,10 +34863,12 @@ msgid ""
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-plumbing.json
+#: data/json/furniture_and_terrain/furniture-sleep.json
 msgid "porcelain breaking!"
 msgstr "Porzellan zerbrechen!"
 
 #: data/json/furniture_and_terrain/furniture-plumbing.json
+#: data/json/furniture_and_terrain/furniture-sleep.json
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid "whunk!"
 msgstr "»Bumms!«."
@@ -35616,6 +35626,18 @@ msgstr[1] ""
 msgid ""
 "A comfortable wool mattress has been tossed on the floor for sleeping here."
 "  It's not quite as comfy as a real bed, but it's pretty close."
+msgstr ""
+
+#: data/json/furniture_and_terrain/furniture-sleep.json
+msgid "bathtub full of money"
+msgstr ""
+
+#. ~ Description for bathtub full of money
+#: data/json/furniture_and_terrain/furniture-sleep.json
+msgid ""
+"You could lay in and take a soothing bath, if there were running water.  "
+"Instead, you have a bathtub full of cash.  Now you can lay in it and take a "
+"scrooge mcduck-style slumber."
 msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-storage.json
@@ -52411,6 +52433,19 @@ msgid ""
 msgstr ""
 "Ein Haufen aus getrocknetem Gras. Könnte benutzt werden, ein Strohbett "
 "daraus zu fertigen, wenn es sonst nichts gibt, worauf man schlafen könnte."
+
+#: data/json/items/generic.json
+msgid "pile of money"
+msgid_plural "piles of money"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'pile of money', 'str_pl': 'piles of money'}
+#: data/json/items/generic.json
+msgid ""
+"A pile of cash.  Can be used to fill a bathtub with cash or as a comforting "
+"reminder of the past."
+msgstr ""
 
 #: data/json/items/generic.json
 msgid "straw doll"
@@ -253581,23 +253616,43 @@ msgid ""
 msgstr ""
 
 #: src/iexamine.cpp
-msgid "Purchase cash card?"
-msgstr "Eine Geldkarte kaufen?"
+msgid "Purchase cash card"
+msgstr ""
 
 #: src/iexamine.cpp
 msgid "You need $10.00 in your account to purchase a card."
 msgstr ""
 
 #: src/iexamine.cpp
-msgid "Withdraw Money"
-msgstr "Geld abheben"
+msgid "Withdraw cash"
+msgstr ""
+
+#: src/iexamine.cpp
+msgid "You need to pay down your debt before withdrawing cash!"
+msgstr ""
+
+#: src/iexamine.cpp
+msgid "You don't have enough to withdraw a money bundle!"
+msgstr ""
+
+#: src/iexamine.cpp
+msgid "Deposit cash"
+msgstr ""
+
+#: src/iexamine.cpp
+msgid "You need cash to deposit!"
+msgstr ""
+
+#: src/iexamine.cpp
+msgid "Withdraw onto cash card"
+msgstr ""
 
 #: src/iexamine.cpp
 msgid "You need a cash card before you can withdraw money!"
 msgstr "Sie brauchen eine Geldkarte, bevor Sie Geld abheben können."
 
 #: src/iexamine.cpp
-msgid "You need to pay down your debt first!"
+msgid "You need to pay down your debt before withdrawing money onto a card!"
 msgstr ""
 
 #: src/iexamine.cpp
@@ -253605,8 +253660,8 @@ msgid "You need money in your account before you can withdraw money!"
 msgstr "Sie brauchen Geld auf Ihrem Konto, bevor Sie Geld abheben können."
 
 #: src/iexamine.cpp
-msgid "Deposit Money"
-msgstr "Geld einzahlen"
+msgid "Deposit from cash card"
+msgstr ""
 
 #: src/iexamine.cpp
 msgid "You need a charged cash card before you can deposit money!"
@@ -253614,8 +253669,8 @@ msgstr ""
 "Sie brauchen eine Geldkarte mit Geld, bevor Sie Geld einzahlen können!"
 
 #: src/iexamine.cpp
-msgid "Transfer All Money"
-msgstr "Das gesamte Geld auf eine einzige Karte übertragen"
+msgid "Combine cash cards"
+msgstr ""
 
 #: src/iexamine.cpp
 #, c-format
@@ -253638,6 +253693,13 @@ msgstr "Sie können nur Geld von Geldkarten mit Geld einzahlen."
 
 #: src/iexamine.cpp
 #, c-format
+msgid "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
+msgid_plural "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/iexamine.cpp
+#, c-format
 msgid "Deposit how much?  Max: %d cent.  (0 to cancel) "
 msgid_plural "Deposit how much?  Max: %d cents.  (0 to cancel) "
 msgstr[0] ""
@@ -253651,6 +253713,13 @@ msgstr "Du hast keine Geldkarte, um Geld abzuheben!"
 #, c-format
 msgid "Withdraw how much?  Max: %d cent.  (0 to cancel) "
 msgid_plural "Withdraw how much?  Max: %d cents.  (0 to cancel) "
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/iexamine.cpp
+#, c-format
+msgid "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
+msgid_plural "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
 msgstr[0] ""
 msgstr[1] ""
 
@@ -272368,6 +272437,10 @@ msgid "%s level %d"
 msgstr ""
 
 #: src/newcharacter.cpp
+msgid "Profession money:"
+msgstr ""
+
+#: src/newcharacter.cpp
 #, c-format
 msgid ""
 "Press <color_light_green>%1$s</color> or <color_light_green>%2$s</color> to "
@@ -276336,7 +276409,7 @@ msgstr ""
 " kleine Zahlen führen zu einer sehr langsamen Weltgenerierung."
 
 #: src/options.cpp
-msgid "Overmap specials density"
+msgid "Overmap specials density factor"
 msgstr ""
 
 #: src/options.cpp
@@ -276354,7 +276427,7 @@ msgid ""
 msgstr ""
 
 #: src/options.cpp
-msgid "Vehicle damage modifier"
+msgid "Vehicle damage scaling factor"
 msgstr ""
 
 #: src/options.cpp
@@ -276421,7 +276494,7 @@ msgid "A scaling factor that determines restock rate of merchants."
 msgstr ""
 
 #: src/options.cpp
-msgid "Item category spawn rate"
+msgid "Item category scaling factors"
 msgstr ""
 
 #: src/options.cpp
@@ -276432,8 +276505,8 @@ msgid ""
 msgstr ""
 
 #: src/options.cpp
-msgid "Monster speed"
-msgstr "Monstergeschwindigkeit"
+msgid "Monster speed percentage"
+msgstr ""
 
 #: src/options.cpp
 msgid ""
@@ -276445,8 +276518,8 @@ msgstr ""
 "Erfordert ein Zurücksetzen der Welt. "
 
 #: src/options.cpp
-msgid "Monster resilience"
-msgstr "Widerstandsfähigkeit der Monster"
+msgid "Monster resilience percentage"
+msgstr ""
 
 #: src/options.cpp
 msgid ""
@@ -276506,8 +276579,8 @@ msgid "Season length, in days."
 msgstr ""
 
 #: src/options.cpp
-msgid "Construction scaling"
-msgstr "Bau-Skalierungsfaktor"
+msgid "Construction speed percentage"
+msgstr ""
 
 #: src/options.cpp
 msgid ""
@@ -276520,7 +276593,17 @@ msgstr ""
 "Jahreszeitenlänge der Welt."
 
 #: src/options.cpp
-msgid "Growth scaling"
+msgid "Crafting speed percentage"
+msgstr ""
+
+#: src/options.cpp
+msgid ""
+"Sets default crafting speed in percents.  '50' is two times slower than "
+"default, '200' is two times faster.  '0' makes crafting instant."
+msgstr ""
+
+#: src/options.cpp
+msgid "Growth scaling percentage"
 msgstr ""
 
 #: src/options.cpp

@@ -29,14 +29,14 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # ARDOR Flag, 2025
 # 김동현, 2025
-# Fruitybite, 2025
 # Tae Heon Lim, 2025
+# Fruitybite, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-02 01:31+0000\n"
-"Last-Translator: Tae Heon Lim, 2025\n"
+"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6480,6 +6480,14 @@ msgstr "어도비 바닥 건설"
 msgid "Build Roof Over Adobe Floor"
 msgstr "어도비 바닥 위 지붕 건설"
 
+#: data/json/construction_group.json
+msgid "Fill Bathtub with Money"
+msgstr "욕조를 돈으로 채우기"
+
+#: data/json/construction_group.json
+msgid "Remove Money from Bathtub"
+msgstr "욕조에서 돈 꺼내기"
+
 #: data/json/debug_spells.json
 msgid "Template Spell"
 msgstr "템플릿 주문"
@@ -6848,7 +6856,7 @@ msgstr "돌 위에서 내리쬐는 햇살에 일광욕을 하는 불안한 꿈�
 #: data/json/dreams.json
 msgid ""
 "While dreaming, you see a distinctively lizard-like reflection of yourself."
-msgstr "꼼 속에서 기묘하게 도마뱀처럼 생긴 또 다른 자신을 봅니다."
+msgstr "꿈 속에서 기묘하게 도마뱀처럼 생긴 또 다른 자신을 봅니다."
 
 #: data/json/dreams.json
 msgid ""
@@ -6858,7 +6866,7 @@ msgstr "작은 포유류의 주변을 감아오르는 불안한 꿈을 꾸었습
 #: data/json/dreams.json
 msgid ""
 "While dreaming, you see an unblinking serpentine reflection of yourself."
-msgstr "꼼 속에서 기묘하게 뱀처럼 생긴 또 다른 자신을 봅니다."
+msgstr "꿈 속에서 기묘하게 뱀처럼 생긴 또 다른 자신을 봅니다."
 
 #: data/json/dreams.json
 msgid "You have a disturbing dream of undergoing strange medical procedures."
@@ -35195,10 +35203,12 @@ msgid ""
 msgstr "수도가 멀쩡했다면 안에 누워 편히 목욕할 수 있었을텐데요. 마개로 막혀있어 액체를 보관하는데 쓸 수 있을겁니다."
 
 #: data/json/furniture_and_terrain/furniture-plumbing.json
+#: data/json/furniture_and_terrain/furniture-sleep.json
 msgid "porcelain breaking!"
 msgstr "도자기 깨짐!"
 
 #: data/json/furniture_and_terrain/furniture-plumbing.json
+#: data/json/furniture_and_terrain/furniture-sleep.json
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid "whunk!"
 msgstr "터엉!"
@@ -35970,6 +35980,20 @@ msgid ""
 "A comfortable wool mattress has been tossed on the floor for sleeping here."
 "  It's not quite as comfy as a real bed, but it's pretty close."
 msgstr "잠을 자기 위해 푹신한 양모 매트리스를 바닥에 깔았습니다. 진짜 침대처럼 편하지는 않지만, 그럭저럭 비슷합니다."
+
+#: data/json/furniture_and_terrain/furniture-sleep.json
+msgid "bathtub full of money"
+msgstr "돈으로 가득 찬 욕조"
+
+#. ~ Description for bathtub full of money
+#: data/json/furniture_and_terrain/furniture-sleep.json
+msgid ""
+"You could lay in and take a soothing bath, if there were running water.  "
+"Instead, you have a bathtub full of cash.  Now you can lay in it and take a "
+"scrooge mcduck-style slumber."
+msgstr ""
+"수도가 멀쩡했다면 안에 누워 편히 목욕할 수 있었을텐데요. 뭐 대신 돈으로 가득 채우긴 했습니다. 원한다면 스크루지 맥덕처럼 누워서 "
+"낮잠을 잘 수 있습니다."
 
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid "bookcase"
@@ -51770,6 +51794,18 @@ msgid ""
 "A pile of dry grass.  Can be used to craft a straw bed if there is nothing "
 "else to sleep on."
 msgstr "잘 마른 지푸라기 더미입니다. 마땅히 잘 곳이 없다면 짚 침대를 만드는데 쓸 수 있습니다."
+
+#: data/json/items/generic.json
+msgid "pile of money"
+msgid_plural "piles of money"
+msgstr[0] "돈 무더기"
+
+#. ~ Description for {'str': 'pile of money', 'str_pl': 'piles of money'}
+#: data/json/items/generic.json
+msgid ""
+"A pile of cash.  Can be used to fill a bathtub with cash or as a comforting "
+"reminder of the past."
+msgstr "현금 무더기입니다. 욕조를 채우거나 과거를 추억하는데 쓰입니다."
 
 #: data/json/items/generic.json
 msgid "straw doll"
@@ -123290,7 +123326,7 @@ msgstr "미-고 정찰꾼이 무기를 발사합니다!"
 msgid ""
 "This monster exists only for testing purposes.  It's used in the DPS "
 "calculations for Best."
-msgstr ""
+msgstr "이 괴물은 시험 용도로 존재합니다. 최고 조건에서의 DPS 계산에 쓰입니다."
 
 #: data/json/monsters/misc.json
 msgid "menacing debug monster"
@@ -123314,7 +123350,7 @@ msgstr[0] "민첩한 디버그 괴물"
 msgid ""
 "This monster exists only for testing purposes.  It's used in the DPS "
 "calculations for Agile."
-msgstr ""
+msgstr "이 괴물은 시험 용도로 존재합니다. 민첩 유형의 DPS 계산에 쓰입니다."
 
 #: data/json/monsters/misc.json
 msgid "armored debug monster"
@@ -123326,7 +123362,7 @@ msgstr[0] "중무장 디버그 괴물"
 msgid ""
 "This monster exists only for testing purposes.  It's used in the DPS "
 "calculations for Armored."
-msgstr ""
+msgstr "이 괴물은 시험 용도로 존재합니다. 장갑 유형의 DPS 계산에 쓰입니다."
 
 #: data/json/monsters/misc.json
 msgid "mixed debug monster"
@@ -123338,7 +123374,7 @@ msgstr[0] "혼합 디버그 괴물"
 msgid ""
 "This monster exists only for testing purposes.  It's used in the DPS "
 "calculations for Mixed."
-msgstr ""
+msgstr "이 괴물은 시험 용도로 존재합니다. 혼합 유형의 DPS 계산에 쓰입니다."
 
 #: data/json/monsters/misc.json
 msgid "ancient red dragon"
@@ -124731,6 +124767,9 @@ msgid ""
 "after the apocalypse, unless it has been reprogrammed to receive commands "
 "from a new user."
 msgstr ""
+"상용 및 군사용으로 설계된 당나귀 크기의 사족보행 로봇입니다. 최대 180kg (400파운드) 까지 들 수 있으며, 장착된 여러 카메라를"
+" 이용해 자체적으로 주변 지형을 탐색 및 이동할 수 있습니다. 대재앙 이래로 그렇게까지 쓸모가 있지는 않지만, 새로운 사용자의 명령을 "
+"수신할 수 있도록 재프로그래밍되면 이야기가 달라질 것입니다."
 
 #: data/json/monsters/utility_bot.json
 msgid "miner bot"
@@ -221048,7 +221087,7 @@ msgstr "지금까지 살면서 지금처럼 당근이 고팠던 적이 없었는
 #: data/mods/Monster_Girls/categories.json
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid "Lamia"
-msgstr ""
+msgstr "라미아"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a strange dream about foxes."
@@ -221070,11 +221109,11 @@ msgstr ""
 msgid ""
 "You have a dream of moving across a field, yet you don't hear your "
 "footsteps…"
-msgstr ""
+msgstr "풀밭을 나아가는 꿈을 꿉니다. 그러는 동안 당신의 발소리가 들리지 않는군요..."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "While dreaming, you see a strangely serpentine reflection of yourself."
-msgstr ""
+msgstr "꿈 속에서 기묘하게 파충류처럼 생긴 또 다른 자신을 봅니다."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "In a dream, you see a curiously harpy-like reflection of yourself."
@@ -243577,40 +243616,60 @@ msgstr ""
 "현재 계좌 잔액: %s"
 
 #: src/iexamine.cpp
-msgid "Purchase cash card?"
-msgstr "현금 카드를 구입합니까?"
+msgid "Purchase cash card"
+msgstr "현금 카드 구매"
 
 #: src/iexamine.cpp
 msgid "You need $10.00 in your account to purchase a card."
 msgstr "카드를 구매하려면 계좌에 $10.00가 필요합니다."
 
 #: src/iexamine.cpp
-msgid "Withdraw Money"
-msgstr "출금하기"
+msgid "Withdraw cash"
+msgstr "현금 인출"
+
+#: src/iexamine.cpp
+msgid "You need to pay down your debt before withdrawing cash!"
+msgstr "현금을 인출하려면 우선 빚을 상환해야 합니다!"
+
+#: src/iexamine.cpp
+msgid "You don't have enough to withdraw a money bundle!"
+msgstr "현금 다발을 인출하는데 필요한 예금이 부족합니다!"
+
+#: src/iexamine.cpp
+msgid "Deposit cash"
+msgstr "현금 예금"
+
+#: src/iexamine.cpp
+msgid "You need cash to deposit!"
+msgstr "입금할 현금이 없습니다!"
+
+#: src/iexamine.cpp
+msgid "Withdraw onto cash card"
+msgstr "현금 카드로 인출"
 
 #: src/iexamine.cpp
 msgid "You need a cash card before you can withdraw money!"
 msgstr "현금을 인출하려면 현금 카드가 있어야 합니다!"
 
 #: src/iexamine.cpp
-msgid "You need to pay down your debt first!"
-msgstr "먼저 빚부터 상환해야 한다!"
+msgid "You need to pay down your debt before withdrawing money onto a card!"
+msgstr "현금 카드로 인출하려면 우선 빚을 상환해야 합니다!"
 
 #: src/iexamine.cpp
 msgid "You need money in your account before you can withdraw money!"
 msgstr "계좌에서 현금을 인출하려면 계좌에 잔액이 있어야 합니다!"
 
 #: src/iexamine.cpp
-msgid "Deposit Money"
-msgstr "예금하기"
+msgid "Deposit from cash card"
+msgstr "현금 카드에서 입금"
 
 #: src/iexamine.cpp
 msgid "You need a charged cash card before you can deposit money!"
 msgstr "현금을 입금하려면 잔액이 있는 현금 카드가 필요합니다!"
 
 #: src/iexamine.cpp
-msgid "Transfer All Money"
-msgstr "모든 잔고 송금"
+msgid "Combine cash cards"
+msgstr "현금 카드 결합"
 
 #: src/iexamine.cpp
 #, c-format
@@ -243633,6 +243692,12 @@ msgstr "잔액이 있는 현금 카드로만 입금이 가능합니다!"
 
 #: src/iexamine.cpp
 #, c-format
+msgid "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
+msgid_plural "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
+msgstr[0] "얼마나 예금하시겠습니까? 최대 %d 개. (취소하려면 0 입력)"
+
+#: src/iexamine.cpp
+#, c-format
 msgid "Deposit how much?  Max: %d cent.  (0 to cancel) "
 msgid_plural "Deposit how much?  Max: %d cents.  (0 to cancel) "
 msgstr[0] "얼마나 예금하시겠습니까?  최대: %d 센트 (취소하려면 0입력)"
@@ -243646,6 +243711,12 @@ msgstr "인출하려면 현금 카드가 필요합니다!"
 msgid "Withdraw how much?  Max: %d cent.  (0 to cancel) "
 msgid_plural "Withdraw how much?  Max: %d cents.  (0 to cancel) "
 msgstr[0] "얼마나 인출하시겠습니까?  최대: %d 센트 (취소하려면 0입력)"
+
+#: src/iexamine.cpp
+#, c-format
+msgid "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
+msgid_plural "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
+msgstr[0] "얼마나 인출하시겠습니까? 최대 %d 개. (취소하려면 0 입력)"
 
 #: src/iexamine.cpp
 msgid "The vending machine is empty."
@@ -262032,6 +262103,10 @@ msgid "%s level %d"
 msgstr "%s 레벨 %d"
 
 #: src/newcharacter.cpp
+msgid "Profession money:"
+msgstr "직업 금액:"
+
+#: src/newcharacter.cpp
 #, c-format
 msgid ""
 "Press <color_light_green>%1$s</color> or <color_light_green>%2$s</color> to "
@@ -265947,8 +266022,8 @@ msgid ""
 msgstr "도시 사이의 간격을 정하는 수치입니다. 주의: 수치가 너무 작으면 지역 생성이 상당히 느려집니다."
 
 #: src/options.cpp
-msgid "Overmap specials density"
-msgstr "오버맵 특수 지역 밀집도"
+msgid "Overmap specials density factor"
+msgstr "오버맵 특수 지역 밀집 배율"
 
 #: src/options.cpp
 msgid "A scaling factor that determines density of overmap specials."
@@ -265965,8 +266040,8 @@ msgid ""
 msgstr "오버맵 특수 지역 간의 최소 거리를 지정합니다. -1 일 경우 특수 지역들이 서로 교차할 수 있습니다."
 
 #: src/options.cpp
-msgid "Vehicle damage modifier"
-msgstr "차량 손상 수정치"
+msgid "Vehicle damage scaling factor"
+msgstr "차량 피해 배율"
 
 #: src/options.cpp
 msgid "A scaling factor that determines how damaged vehicles are."
@@ -266026,8 +266101,8 @@ msgid "A scaling factor that determines restock rate of merchants."
 msgstr "상인의 물품 재고가 보충되는 비율을 결정하는 계수입니다."
 
 #: src/options.cpp
-msgid "Item category spawn rate"
-msgstr "물품 종류 생성율"
+msgid "Item category scaling factors"
+msgstr "물품 종류 배율"
 
 #: src/options.cpp
 msgid ""
@@ -266039,8 +266114,8 @@ msgstr ""
 " 물품이 함께 생성됩니다. 0.0 으로 설정되면 해당 종류의 물품이 생성되지 않습니다."
 
 #: src/options.cpp
-msgid "Monster speed"
-msgstr "괴물 이동속도"
+msgid "Monster speed percentage"
+msgstr "괴물 속도 백분율"
 
 #: src/options.cpp
 msgid ""
@@ -266050,8 +266125,8 @@ msgstr ""
 "괴물의 이동속도를 결정합니다. 수치가 높을 경우 괴물의 속도를 상승시키며 낮을 경우 느리게 합니다. 월드맵 재생성이 필요합니다."
 
 #: src/options.cpp
-msgid "Monster resilience"
-msgstr "괴물 내구성"
+msgid "Monster resilience percentage"
+msgstr "괴물 내구력 백분율"
 
 #: src/options.cpp
 msgid ""
@@ -266110,8 +266185,8 @@ msgid "Season length, in days."
 msgstr "계절 길이입니다. 단위는 일."
 
 #: src/options.cpp
-msgid "Construction scaling"
-msgstr "건설 속도"
+msgid "Construction speed percentage"
+msgstr "건설 속도 백분율"
 
 #: src/options.cpp
 msgid ""
@@ -266119,12 +266194,24 @@ msgid ""
 "default, '200' is two times longer.  '0' automatically scales construction "
 "time to match the world's season length."
 msgstr ""
-"건축에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요시간을 200%로 조정합니다. 0으로 설정하면 작물"
-" 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
+"건축에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요 시간을 200%로 조정합니다. 0으로 설정하면 "
+"작물 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
 
 #: src/options.cpp
-msgid "Growth scaling"
-msgstr "작물 성장 배율"
+msgid "Crafting speed percentage"
+msgstr "제작 속도 백분율"
+
+#: src/options.cpp
+msgid ""
+"Sets default crafting speed in percents.  '50' is two times slower than "
+"default, '200' is two times faster.  '0' makes crafting instant."
+msgstr ""
+"물품 제작에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 200%로, 200은 소요 시간을 50%로 설정합니다. 0으로 "
+"설정하면 제작이 즉시 완료됩니다."
+
+#: src/options.cpp
+msgid "Growth scaling percentage"
+msgstr "성장 속도 백분율"
 
 #: src/options.cpp
 msgid ""
@@ -266132,8 +266219,8 @@ msgid ""
 "default, '200' is two times longer.  '0' automatically scales growth time to"
 " match the world's season length."
 msgstr ""
-"작물 성장에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요시간을 200%로 조정합니다. 0으로 설정하면"
-" 작물 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
+"작물 성장에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요 시간을 200%로 조정합니다. 0으로 "
+"설정하면 작물 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
 
 #: src/options.cpp
 msgid "Eternal season"
