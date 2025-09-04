@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"POT-Creation-Date: 2025-09-04 01:26+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -76631,7 +76631,7 @@ msgstr[0] "기본 권총"
 
 #: data/json/items/classes/gun.json data/json/items/classes/range.json
 #: data/json/items/gun/bio.json data/json/items/gun/monster_gun.json
-#: data/json/obsoletion/items.json data/mods/CRT_EXPANSION/items/crt_gun.json
+#: data/mods/CRT_EXPANSION/items/crt_gun.json
 msgctxt "gun_type_type"
 msgid "pistol"
 msgstr "권총"
@@ -134238,6 +134238,15 @@ msgid ""
 "Crafting and construction requirements bugger off with this one.  Apply with"
 " care."
 msgstr "제작 및 건축 요구사항을 이것만 있으면 전부 해치울 수 있습니다. 신중하게 사용하세요."
+
+#: data/json/mutations/mutations.json
+msgid "Debug Hammertime"
+msgstr ""
+
+#. ~ Description for {'str': 'Debug Hammertime'}
+#: data/json/mutations/mutations.json
+msgid "Crafting and construction are practically instant."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -221150,13 +221159,13 @@ msgstr "꿈 속에서 당신은 스스로와 마주합니다... 그런데, 머�
 msgid ""
 "You have an vivid dream of yourself with a long, serpentine tail instead of "
 "legs."
-msgstr ""
+msgstr "다리 대신 기다란 파충류 꼬리가 달린 당신에 대한 생생한 꿈을 꿉니다."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
 "Your dream-self seems so graceful, slithering along in their dexterous scaly"
 " form."
-msgstr ""
+msgstr "꿈 속의 당신은 민활한 비늘달린 것들과 함께 우아하게 기어다닙니다."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a vivid dream of returning to your cozy warren."
@@ -221222,13 +221231,13 @@ msgstr ""
 msgid ""
 "You have a nostalgic dream of stumbling around clumsily on two legs instead "
 "of an elegant snake tail."
-msgstr ""
+msgstr "당신은 우아한 뱀 꼬리 대신 두 다리로 위태롭게 휘청거리는 향수에 젖은 꿈을 꿉니다."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
 "You dream of coiling around a loved one, keeping them wrapped up close for "
 "warmth."
-msgstr ""
+msgstr "당신은 사랑하는 이와 함께 몸을 꼬아 엮어, 함께 온기를 나누는 꿈을 꿉니다."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
@@ -221404,12 +221413,12 @@ msgstr "호박색을 띈 초농축된 뮤타젠입니다. 주사기가 있으면
 #: data/mods/Monster_Girls/mutagens.json
 msgid "Lamia serum"
 msgid_plural "Lamia serums"
-msgstr[0] ""
+msgstr[0] "라미아 혈청"
 
 #: data/mods/Monster_Girls/mutagens.json
 msgid "Lamia mutagen"
 msgid_plural "Lamia mutagens"
-msgstr[0] ""
+msgstr[0] "라미아 뮤타젠"
 
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
@@ -221535,6 +221544,8 @@ msgid ""
 "it's worth it.  All you need now is a nice warm rock to bask on, or someone "
 "to coil around for warmth…"
 msgstr ""
+"당신의 비늘이 매끄럽고 빛나도록 관리하는건 상당한 노력을 필요로 하지만, 그만한 가치가 있는 일입니다. 이제 당신이 바라는건 일광욕할 "
+"따뜻하고 멋진 바위나, 아니면 온기를 찾아 휘감을 누군가 뿐입니다..."
 
 #: data/mods/My_Sweet_Cataclysm/modinfo.json
 msgid "My Sweet Cataclysm: BN Edition"
@@ -235982,8 +235993,8 @@ msgid "Your morale is too low to continue crafting."
 msgstr "이어서 제작하기에는 의욕이 너무 낮습니다."
 
 #: src/crafting.cpp
-msgid "You are too frustrated to continue and just give up."
-msgstr "도저히 의욕이 나질 않아서 이 이상은 할 수 없습니다."
+msgid "You are too frustrated to continue and should just give up."
+msgstr ""
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -236611,8 +236622,8 @@ msgid "too dark to craft"
 msgstr "제작하기엔 너무 어두움"
 
 #: src/crafting_gui.cpp
-msgid "too sad to craft"
-msgstr "제작하기엔 너무 슬픔"
+msgid "too sad to craft effectively"
+msgstr ""
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -266191,11 +266202,8 @@ msgstr "건설 속도 백분율"
 #: src/options.cpp
 msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
-"default, '200' is two times longer.  '0' automatically scales construction "
-"time to match the world's season length."
+"default, '200' is two times longer.  '0' makes construction instant."
 msgstr ""
-"건축에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요 시간을 200%로 조정합니다. 0으로 설정하면 "
-"작물 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -266203,11 +266211,9 @@ msgstr "제작 속도 백분율"
 
 #: src/options.cpp
 msgid ""
-"Sets default crafting speed in percents.  '50' is two times slower than "
-"default, '200' is two times faster.  '0' makes crafting instant."
+"Sets default crafting speed in percents.  '50' is two times faster than "
+"default, '200' is two times longer.  '0' makes crafting instant."
 msgstr ""
-"물품 제작에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 200%로, 200은 소요 시간을 50%로 설정합니다. 0으로 "
-"설정하면 제작이 즉시 완료됩니다."
 
 #: src/options.cpp
 msgid "Growth scaling percentage"
@@ -268149,6 +268155,10 @@ msgstr "작업대"
 #: src/player_activity.cpp
 msgid "Assistants"
 msgstr "조수"
+
+#: src/player_activity.cpp
+msgid "Traits"
+msgstr ""
 
 #: src/player_activity.cpp
 msgid "Crafting speed multipliers:\n"

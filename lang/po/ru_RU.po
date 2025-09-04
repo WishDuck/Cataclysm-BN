@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"POT-Creation-Date: 2025-09-04 01:26+0000\n"
 "Last-Translator: GostBug <blackday8990@gmx.de>, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -90357,7 +90357,7 @@ msgstr[3] "базовый пистолет"
 
 #: data/json/items/classes/gun.json data/json/items/classes/range.json
 #: data/json/items/gun/bio.json data/json/items/gun/monster_gun.json
-#: data/json/obsoletion/items.json data/mods/CRT_EXPANSION/items/crt_gun.json
+#: data/mods/CRT_EXPANSION/items/crt_gun.json
 msgctxt "gun_type_type"
 msgid "pistol"
 msgstr "пистолет"
@@ -164395,6 +164395,15 @@ msgid ""
 msgstr ""
 "Требования к крафту и строительству теперь больше не сбоят. Применять с "
 "осторожностью."
+
+#: data/json/mutations/mutations.json
+msgid "Debug Hammertime"
+msgstr ""
+
+#. ~ Description for {'str': 'Debug Hammertime'}
+#: data/json/mutations/mutations.json
+msgid "Crafting and construction are practically instant."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -281612,8 +281621,8 @@ msgid "Your morale is too low to continue crafting."
 msgstr "У вас слишком низкий моральный дух, чтобы продолжать сборку."
 
 #: src/crafting.cpp
-msgid "You are too frustrated to continue and just give up."
-msgstr "Вы слишком расстроены и бросаете своё занятие."
+msgid "You are too frustrated to continue and should just give up."
+msgstr ""
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -282258,8 +282267,8 @@ msgid "too dark to craft"
 msgstr "слишком темно для создания предметов"
 
 #: src/crafting_gui.cpp
-msgid "too sad to craft"
-msgstr "слишком грустно для создания предметов"
+msgid "too sad to craft effectively"
+msgstr ""
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -312884,12 +312893,8 @@ msgstr ""
 #: src/options.cpp
 msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
-"default, '200' is two times longer.  '0' automatically scales construction "
-"time to match the world's season length."
+"default, '200' is two times longer.  '0' makes construction instant."
 msgstr ""
-"Устанавливает время строительства в процентах. 50 — строиться будет в два "
-"раза быстрее, 200 — в два раза медленнее. Ноль автоматически масштабирует "
-"строительство в соответствии с длиной сезона текущего мира."
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -312897,8 +312902,8 @@ msgstr ""
 
 #: src/options.cpp
 msgid ""
-"Sets default crafting speed in percents.  '50' is two times slower than "
-"default, '200' is two times faster.  '0' makes crafting instant."
+"Sets default crafting speed in percents.  '50' is two times faster than "
+"default, '200' is two times longer.  '0' makes crafting instant."
 msgstr ""
 
 #: src/options.cpp
@@ -314931,6 +314936,10 @@ msgstr "Верстак"
 #: src/player_activity.cpp
 msgid "Assistants"
 msgstr "Помощники"
+
+#: src/player_activity.cpp
+msgid "Traits"
+msgstr ""
 
 #: src/player_activity.cpp
 msgid "Crafting speed multipliers:\n"

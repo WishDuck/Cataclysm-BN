@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"POT-Creation-Date: 2025-09-04 01:26+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -74085,7 +74085,7 @@ msgstr[0] "基础手枪"
 
 #: data/json/items/classes/gun.json data/json/items/classes/range.json
 #: data/json/items/gun/bio.json data/json/items/gun/monster_gun.json
-#: data/json/obsoletion/items.json data/mods/CRT_EXPANSION/items/crt_gun.json
+#: data/mods/CRT_EXPANSION/items/crt_gun.json
 msgctxt "gun_type_type"
 msgid "pistol"
 msgstr "手枪"
@@ -129742,6 +129742,15 @@ msgid ""
 "Crafting and construction requirements bugger off with this one.  Apply with"
 " care."
 msgstr "制造和建设的要求统统不再需要了，小心应用。"
+
+#: data/json/mutations/mutations.json
+msgid "Debug Hammertime"
+msgstr "调试用神锤"
+
+#. ~ Description for {'str': 'Debug Hammertime'}
+#: data/json/mutations/mutations.json
+msgid "Crafting and construction are practically instant."
+msgstr "制作和建造近乎瞬间完成。"
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -228081,8 +228090,8 @@ msgid "Your morale is too low to continue crafting."
 msgstr "你心情值过低，无法继续制造物品。"
 
 #: src/crafting.cpp
-msgid "You are too frustrated to continue and just give up."
-msgstr "你太沮丧了，无法继续下去直接放弃了。"
+msgid "You are too frustrated to continue and should just give up."
+msgstr "你太沮丧了，无法继续下去，应该就此放弃。"
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -228708,8 +228717,8 @@ msgid "too dark to craft"
 msgstr "光线不足，无法制造"
 
 #: src/crafting_gui.cpp
-msgid "too sad to craft"
-msgstr "没有心情制造"
+msgid "too sad to craft effectively"
+msgstr "没有心情去制作"
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -258152,9 +258161,8 @@ msgstr "建造速度百分比"
 #: src/options.cpp
 msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
-"default, '200' is two times longer.  '0' automatically scales construction "
-"time to match the world's season length."
-msgstr "建造建筑速度的倍率。'50' 代表比默认的快两倍，'200' 代表比默认慢两倍，设置为0时将自动根据当前季节长度调节建造建筑的速度。"
+"default, '200' is two times longer.  '0' makes construction instant."
+msgstr "建造建筑速度的倍率。'50' 代表比默认的快两倍，'200' 代表比默认慢两倍，“0”则代表瞬间完成建筑。"
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -258162,9 +258170,9 @@ msgstr "制作速度百分比"
 
 #: src/options.cpp
 msgid ""
-"Sets default crafting speed in percents.  '50' is two times slower than "
-"default, '200' is two times faster.  '0' makes crafting instant."
-msgstr "以百分比形式设置默认制作速度。“50”代表速度减半，“200”代表速度加倍。“0”则代表瞬间完成制作。"
+"Sets default crafting speed in percents.  '50' is two times faster than "
+"default, '200' is two times longer.  '0' makes crafting instant."
+msgstr "以百分比形式设置默认制作速度。'50' 代表比默认的快两倍，'200' 代表比默认慢两倍，“0”则代表瞬间完成制作。"
 
 #: src/options.cpp
 msgid "Growth scaling percentage"
@@ -260083,6 +260091,10 @@ msgstr "工作台"
 #: src/player_activity.cpp
 msgid "Assistants"
 msgstr "协助"
+
+#: src/player_activity.cpp
+msgid "Traits"
+msgstr "特性"
 
 #: src/player_activity.cpp
 msgid "Crafting speed multipliers:\n"

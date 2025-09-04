@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"POT-Creation-Date: 2025-09-04 01:26+0000\n"
 "Last-Translator: jacli mouber, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/bn-team/teams/113585/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -74276,7 +74276,7 @@ msgstr[0] "ハンドガン(ﾍﾞｰｽ)"
 
 #: data/json/items/classes/gun.json data/json/items/classes/range.json
 #: data/json/items/gun/bio.json data/json/items/gun/monster_gun.json
-#: data/json/obsoletion/items.json data/mods/CRT_EXPANSION/items/crt_gun.json
+#: data/mods/CRT_EXPANSION/items/crt_gun.json
 msgctxt "gun_type_type"
 msgid "pistol"
 msgstr "ハンドガン"
@@ -129755,6 +129755,15 @@ msgid ""
 "Crafting and construction requirements bugger off with this one.  Apply with"
 " care."
 msgstr "製作や建設に必要な要件を取っ払います。慎重に使ってください。"
+
+#: data/json/mutations/mutations.json
+msgid "Debug Hammertime"
+msgstr ""
+
+#. ~ Description for {'str': 'Debug Hammertime'}
+#: data/json/mutations/mutations.json
+msgid "Crafting and construction are practically instant."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -227985,8 +227994,8 @@ msgid "Your morale is too low to continue crafting."
 msgstr "製作する意欲が湧きません。"
 
 #: src/crafting.cpp
-msgid "You are too frustrated to continue and just give up."
-msgstr "不満が高まっており、作業を続ける気になりません。"
+msgid "You are too frustrated to continue and should just give up."
+msgstr ""
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -228608,8 +228617,8 @@ msgid "too dark to craft"
 msgstr "製作不可(明度不足)"
 
 #: src/crafting_gui.cpp
-msgid "too sad to craft"
-msgstr "製作不可(意欲不足)"
+msgid "too sad to craft effectively"
+msgstr ""
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -258052,10 +258061,8 @@ msgstr ""
 #: src/options.cpp
 msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
-"default, '200' is two times longer.  '0' automatically scales construction "
-"time to match the world's season length."
+"default, '200' is two times longer.  '0' makes construction instant."
 msgstr ""
-"建設にかかる時間をパーセンテージで設定します。50で通常の所要時間の半分、200で2倍になります。0に設定すると、季節の長さによって自動的に建設時間を調整します。"
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -258063,8 +258070,8 @@ msgstr ""
 
 #: src/options.cpp
 msgid ""
-"Sets default crafting speed in percents.  '50' is two times slower than "
-"default, '200' is two times faster.  '0' makes crafting instant."
+"Sets default crafting speed in percents.  '50' is two times faster than "
+"default, '200' is two times longer.  '0' makes crafting instant."
 msgstr ""
 
 #: src/options.cpp
@@ -259994,6 +260001,10 @@ msgstr "作業台"
 
 #: src/player_activity.cpp
 msgid "Assistants"
+msgstr ""
+
+#: src/player_activity.cpp
+msgid "Traits"
 msgstr ""
 
 #: src/player_activity.cpp

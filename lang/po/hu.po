@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-03 01:26+0000\n"
+"POT-Creation-Date: 2025-09-04 01:26+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/bn-team/teams/113585/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -79264,7 +79264,7 @@ msgstr[1] ""
 
 #: data/json/items/classes/gun.json data/json/items/classes/range.json
 #: data/json/items/gun/bio.json data/json/items/gun/monster_gun.json
-#: data/json/obsoletion/items.json data/mods/CRT_EXPANSION/items/crt_gun.json
+#: data/mods/CRT_EXPANSION/items/crt_gun.json
 msgctxt "gun_type_type"
 msgid "pistol"
 msgstr "pisztoly"
@@ -141513,6 +141513,15 @@ msgstr ""
 msgid ""
 "Crafting and construction requirements bugger off with this one.  Apply with"
 " care."
+msgstr ""
+
+#: data/json/mutations/mutations.json
+msgid "Debug Hammertime"
+msgstr ""
+
+#. ~ Description for {'str': 'Debug Hammertime'}
+#: data/json/mutations/mutations.json
+msgid "Crafting and construction are practically instant."
 msgstr ""
 
 #: data/json/mutations/mutations.json
@@ -241600,8 +241609,8 @@ msgid "Your morale is too low to continue crafting."
 msgstr "Túl alacsony a hangulatod ahhoz, hogy folytasd az összeszerelést."
 
 #: src/crafting.cpp
-msgid "You are too frustrated to continue and just give up."
-msgstr "A folytatáshoz túl frusztrált vagy, és abbahagyod."
+msgid "You are too frustrated to continue and should just give up."
+msgstr ""
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -242233,7 +242242,7 @@ msgid "too dark to craft"
 msgstr ""
 
 #: src/crafting_gui.cpp
-msgid "too sad to craft"
+msgid "too sad to craft effectively"
 msgstr ""
 
 #: src/crafting_gui.cpp
@@ -272009,12 +272018,8 @@ msgstr ""
 #: src/options.cpp
 msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
-"default, '200' is two times longer.  '0' automatically scales construction "
-"time to match the world's season length."
+"default, '200' is two times longer.  '0' makes construction instant."
 msgstr ""
-"Az építéshez szükséges időt határozza meg százalékosan. Az '50' kétszer "
-"olyan gyors, mint az alapértelmezett, a '200' pedig kétszer tovább tart. A "
-"'0' érték az építési időt a világ évszakainak hosszához igazítja."
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -272022,8 +272027,8 @@ msgstr ""
 
 #: src/options.cpp
 msgid ""
-"Sets default crafting speed in percents.  '50' is two times slower than "
-"default, '200' is two times faster.  '0' makes crafting instant."
+"Sets default crafting speed in percents.  '50' is two times faster than "
+"default, '200' is two times longer.  '0' makes crafting instant."
 msgstr ""
 
 #: src/options.cpp
@@ -273987,6 +273992,10 @@ msgstr ""
 
 #: src/player_activity.cpp
 msgid "Assistants"
+msgstr ""
+
+#: src/player_activity.cpp
+msgid "Traits"
 msgstr ""
 
 #: src/player_activity.cpp
