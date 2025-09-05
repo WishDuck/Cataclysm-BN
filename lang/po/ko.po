@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-04 01:26+0000\n"
+"POT-Creation-Date: 2025-09-05 01:29+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -134241,12 +134241,12 @@ msgstr "제작 및 건축 요구사항을 이것만 있으면 전부 해치울 �
 
 #: data/json/mutations/mutations.json
 msgid "Debug Hammertime"
-msgstr ""
+msgstr "디버그 해머타임"
 
 #. ~ Description for {'str': 'Debug Hammertime'}
 #: data/json/mutations/mutations.json
 msgid "Crafting and construction are practically instant."
-msgstr ""
+msgstr "제작 및 건축이 즉시 완료됩니다."
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -235994,7 +235994,7 @@ msgstr "이어서 제작하기에는 의욕이 너무 낮습니다."
 
 #: src/crafting.cpp
 msgid "You are too frustrated to continue and should just give up."
-msgstr ""
+msgstr "도저히 의욕이 나지 않아 그만두기로 합니다."
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -236623,7 +236623,7 @@ msgstr "제작하기엔 너무 어두움"
 
 #: src/crafting_gui.cpp
 msgid "too sad to craft effectively"
-msgstr ""
+msgstr "제대로 제작하기에 너무 슬픔"
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -266204,6 +266204,8 @@ msgid ""
 "Sets the time of construction in percents.  '50' is two times faster than "
 "default, '200' is two times longer.  '0' makes construction instant."
 msgstr ""
+"건축에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요 시간을 200%로 조정합니다. 0으로 설정하면 "
+"작물 성장 시간이 계절 길이에 맞춰 자동적으로 조정됩니다."
 
 #: src/options.cpp
 msgid "Crafting speed percentage"
@@ -266214,6 +266216,8 @@ msgid ""
 "Sets default crafting speed in percents.  '50' is two times faster than "
 "default, '200' is two times longer.  '0' makes crafting instant."
 msgstr ""
+"물품 제작에 걸리는 시간을 백분율로 조정합니다. 50은 소요 시간을 50%로, 200은 소요 시간을 200%로 설정합니다. 0으로 "
+"설정하면 제작이 즉시 완료됩니다."
 
 #: src/options.cpp
 msgid "Growth scaling percentage"
@@ -268158,7 +268162,7 @@ msgstr "조수"
 
 #: src/player_activity.cpp
 msgid "Traits"
-msgstr ""
+msgstr "특성"
 
 #: src/player_activity.cpp
 msgid "Crafting speed multipliers:\n"
