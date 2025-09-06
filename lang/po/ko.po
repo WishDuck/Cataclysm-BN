@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-05 01:29+0000\n"
+"POT-Creation-Date: 2025-09-06 01:27+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -119256,6 +119256,7 @@ msgstr "도서관 입구"
 #: data/json/mapgen/lab/lab_floorplans_1side.json
 #: data/mods/Aftershock/maps/lab_vehicle_track.json
 #: data/mods/Aftershock/maps/lab_weapons_range.json
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
 msgid "UNLOCK ENTRANCE"
 msgstr "출입구 잠금해제"
 
@@ -194406,6 +194407,20 @@ msgid ""
 "plutonium heating elements."
 msgstr "일체형 플루토늄 발열장치로 음식을 데울 수 있는 간단하고도 튼튼한 금속 반합."
 
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid "C.R.I.T solarpack"
+msgid_plural "C.R.I.T solarpacks"
+msgstr[0] "C.R.I.T. 태양광 배낭"
+
+#. ~ Description for C.R.I.T solarpack
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid ""
+"C.R.I.T special-issue pack. This is based on the MOLLE backpack's design, "
+"but comes with a integrated UPS and a few protected but interwoven solar "
+"cells"
+msgstr ""
+"C.R.I.T. 특수작전용 배낭입니다. MOLLE 배낭을 기초로 하되 내장형 UPS 및 내구성이 강화된 태양 전지 몇 개가 들어있습니다."
+
 #: data/mods/CRT_EXPANSION/items/crt_tools.json
 msgid "C.R.I.T. mess kit"
 msgid_plural "C.R.I.T. mess kits"
@@ -194586,6 +194601,16 @@ msgid ""
 msgstr ""
 "C.R.I.T. 제식 경비용 톤파입니다. 길이 덕분에 우월한 사거리를 자랑하고, 삐죽 튀어나온 끄트머리 덕분에 원통 형태의 톤파에 비해 "
 "더 큰 충격을 가할 수 있습니다."
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Housing Entrance"
+msgstr "C.R.I.T. 연구소 거주지 입구"
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Entrance"
+msgstr "C.R.I.T. 연구소 입구"
 
 #: data/mods/CRT_EXPANSION/martial/CRT_Bladework.json
 msgid "C.R.I.T Blade-work manual"
@@ -195804,6 +195829,42 @@ msgstr ""
 
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
 msgctxt "profession_male"
+msgid "C.R.I.T. Technician"
+msgstr "C.R.I.T. 기술자"
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_female"
+msgid "C.R.I.T. Technician"
+msgstr "C.R.I.T. 기술자"
+
+#. ~ Profession (male C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
+msgstr ""
+"당신은 온갖 최신 레이저 장비를 작동하도록 훈련받은 팀의 공돌이였습니다. 당신이 포탑 하나를 수리했을 때, 당신의 팀은 당신을 놔두고 "
+"떠났습니다. 살기 위해 도망쳐야 하는 이 상황에서 과연 당신은 생존에 필요한 것들을 전부 갖췄을까요? 아니면 저들이 저지른 끔찍한 실수를"
+" 후회하게끔 저 무리에 합류하게 될까요?"
+
+#. ~ Profession (female C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
+msgstr ""
+"당신은 온갖 최신 레이저 장비를 작동하도록 훈련받은 팀의 공돌이였습니다. 당신이 포탑 하나를 수리했을 때, 당신의 팀은 당신을 놔두고 "
+"떠났습니다. 살기 위해 도망쳐야 하는 이 상황에서 과연 당신은 생존에 필요한 것들을 전부 갖췄을까요? 아니면 저들이 저지른 끔찍한 실수를"
+" 후회하게끔 저 무리에 합류하게 될까요?"
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_male"
 msgid "C.R.I.T. Combat Medic"
 msgstr "C.R.I.T. 전투 의무병"
 
@@ -196596,12 +196657,12 @@ msgstr "지나치게 자신만만한 경관이 소지하는 총입니다. 밸런
 #: data/mods/Civilians/professions.json
 msgctxt "profession_male"
 msgid "Futile Fighter"
-msgstr ""
+msgstr "쓸모없는 싸움꾼"
 
 #: data/mods/Civilians/professions.json
 msgctxt "profession_female"
 msgid "Futile Fighter"
-msgstr ""
+msgstr "쓸모없는 싸움꾼"
 
 #. ~ Profession (male Futile Fighter) description
 #: data/mods/Civilians/professions.json
@@ -196609,7 +196670,7 @@ msgctxt "prof_desc_male"
 msgid ""
 "The cataclysm may have caught you off guard, but you're not going down "
 "without a fight!"
-msgstr ""
+msgstr "대재앙이 당신을 기습했을지언정, 싸워보지도 않고 순순히 죽을 수는 없죠!"
 
 #. ~ Profession (female Futile Fighter) description
 #: data/mods/Civilians/professions.json
@@ -196617,7 +196678,7 @@ msgctxt "prof_desc_female"
 msgid ""
 "The cataclysm may have caught you off guard, but you're not going down "
 "without a fight!"
-msgstr ""
+msgstr "대재앙이 당신을 기습했을지언정, 싸워보지도 않고 순순히 죽을 수는 없죠!"
 
 #: data/mods/Civilians/speech.json
 msgid "howling in terror."
@@ -224541,13 +224602,13 @@ msgstr ""
 msgid ""
 "Crouching slows you down, but allows you to hide behind obstacles and makes "
 "you a smaller target when bullets start flying."
-msgstr ""
+msgstr "웅크리면 이동속도가 느려지지만, 장애물 뒤에 숨을 수 있고 총격전 상황에서 상대가 당신을 노리기 더 어려워집니다."
 
 #: data/raw/tips.json
 msgid ""
 "Make every shot count.  Take time to steady your aim, or crouch for more "
 "accurate fire."
-msgstr ""
+msgstr "한발한발 신중하게 쏘세요. 더 정확하게 맞히고 싶다면 사격 사이에 잠시 시간을 두거나 몸을 웅크리면 도움이 될겁니다."
 
 #: data/raw/keybindings/edit_creature_effects.json
 msgid "Add new effect"
@@ -242180,7 +242241,7 @@ msgstr "상위 버전을 설치하였습니다."
 
 #: src/game_inventory.cpp
 msgid "CBM not usable by NPC's"
-msgstr ""
+msgstr "NPC가 쓸 수 없는 CBM"
 
 #: src/game_inventory.cpp src/iuse_actor.cpp
 msgid "Max power capacity already reached"
@@ -255260,7 +255321,7 @@ msgstr "<npcname>(이)가 떨어지는 잔해에 맞아 짓눌렸습니다!"
 #: src/map.cpp
 #, c-format
 msgid "The shot strikes the %s!"
-msgstr ""
+msgstr "사격이 %s에게 적중합니다!"
 
 #: src/map.cpp
 #, c-format

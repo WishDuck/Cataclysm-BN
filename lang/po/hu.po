@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-04 01:26+0000\n"
+"POT-Creation-Date: 2025-09-06 01:27+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/bn-team/teams/113585/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -125797,6 +125797,7 @@ msgstr "Könyvtár bejárat"
 #: data/json/mapgen/lab/lab_floorplans_1side.json
 #: data/mods/Aftershock/maps/lab_vehicle_track.json
 #: data/mods/Aftershock/maps/lab_weapons_range.json
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
 msgid "UNLOCK ENTRANCE"
 msgstr "BEJÁRATI ZÁR KINYITÁSA"
 
@@ -199331,6 +199332,20 @@ msgid ""
 "plutonium heating elements."
 msgstr ""
 
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid "C.R.I.T solarpack"
+msgid_plural "C.R.I.T solarpacks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for C.R.I.T solarpack
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid ""
+"C.R.I.T special-issue pack. This is based on the MOLLE backpack's design, "
+"but comes with a integrated UPS and a few protected but interwoven solar "
+"cells"
+msgstr ""
+
 #: data/mods/CRT_EXPANSION/items/crt_tools.json
 msgid "C.R.I.T. mess kit"
 msgid_plural "C.R.I.T. mess kits"
@@ -199501,6 +199516,16 @@ msgstr[1] ""
 msgid ""
 "C.R.I.T. standard issue guard tonfa.  The length allows for great reach and "
 "the domed tip allows for greater impact than a cylinder style baton."
+msgstr ""
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Housing Entrance"
+msgstr ""
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Entrance"
 msgstr ""
 
 #: data/mods/CRT_EXPANSION/martial/CRT_Bladework.json
@@ -200671,6 +200696,36 @@ msgid ""
 " when the otherworldly abominations arrived.  Now fleeing for your life, "
 "will you have what it takes to survive or is this hellish landscape your "
 "resting place?"
+msgstr ""
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_male"
+msgid "C.R.I.T. Technician"
+msgstr ""
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_female"
+msgid "C.R.I.T. Technician"
+msgstr ""
+
+#. ~ Profession (male C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
+msgstr ""
+
+#. ~ Profession (female C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
 msgstr ""
 
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json

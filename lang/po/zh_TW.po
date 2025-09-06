@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-04 01:26+0000\n"
+"POT-Creation-Date: 2025-09-06 01:27+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -115160,6 +115160,7 @@ msgstr "圖書館入口"
 #: data/json/mapgen/lab/lab_floorplans_1side.json
 #: data/mods/Aftershock/maps/lab_vehicle_track.json
 #: data/mods/Aftershock/maps/lab_weapons_range.json
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
 msgid "UNLOCK ENTRANCE"
 msgstr "入口解鎖"
 
@@ -186940,6 +186941,19 @@ msgid ""
 "plutonium heating elements."
 msgstr "一个简单耐用的钢制水壶，可以加热食物，内置钚加热元件。"
 
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid "C.R.I.T solarpack"
+msgid_plural "C.R.I.T solarpacks"
+msgstr[0] "C.R.I.T. 太阳能背包"
+
+#. ~ Description for C.R.I.T solarpack
+#: data/mods/CRT_EXPANSION/items/crt_toolarmor.json
+msgid ""
+"C.R.I.T special-issue pack. This is based on the MOLLE backpack's design, "
+"but comes with a integrated UPS and a few protected but interwoven solar "
+"cells"
+msgstr "C.R.I.T. 特供版背包。这款背包基于MOLLE背包的设计，但内置了一个UPS，并集成了数片受保护且交织在背包材质中的太阳能电池。"
+
 #: data/mods/CRT_EXPANSION/items/crt_tools.json
 msgid "C.R.I.T. mess kit"
 msgid_plural "C.R.I.T. mess kits"
@@ -187109,6 +187123,16 @@ msgid ""
 "C.R.I.T. standard issue guard tonfa.  The length allows for great reach and "
 "the domed tip allows for greater impact than a cylinder style baton."
 msgstr "C.R.I.T. 标准版警棍，比起普通警棍，更长更粗，使得威力也更加大。"
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Housing Entrance"
+msgstr "C.R.I.T. 实验室宿舍入口"
+
+#. ~ Computer name
+#: data/mods/CRT_EXPANSION/mapgen/lab_floorplans_1side.json
+msgid "C.R.I.T. Lab Entrance"
+msgstr "C.R.I.T. 实验室入口"
 
 #: data/mods/CRT_EXPANSION/martial/CRT_Bladework.json
 msgid "C.R.I.T Blade-work manual"
@@ -188287,6 +188311,38 @@ msgid ""
 msgstr ""
 "你是一名 C.R.I.T. "
 "步兵，你们是第一批下到战线的人，清理出一片作战基地，然后回来与你的战友们一起休息。但当大灾变露出它那丑恶的头颅之后，这日子就到头了。异界怪物像切豆腐般攻破了你们的防线，而你只能逃命。你是否能够找到生存的方法，或者说这地狱般的灾难就是你的末日？"
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_male"
+msgid "C.R.I.T. Technician"
+msgstr "C.R.I.T. 技术员"
+
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "profession_female"
+msgid "C.R.I.T. Technician"
+msgstr "C.R.I.T. 技术员"
+
+#. ~ Profession (male C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_male"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
+msgstr ""
+"你是团队里的电子技术达人，一名受过所有新型激光设备操作培训的技术员。在你修理一座炮塔时，你的团队抛弃了你。被迫逃离的你，是否有能力活下去？还是会加入尸群，为他们犯下的滔天大罪而化作梦魇，永远纠缠他们？"
+
+#. ~ Profession (female C.R.I.T. Technician) description
+#: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
+msgctxt "prof_desc_female"
+msgid ""
+"You were the team's electronics nerd.  A technician trained to operate all "
+"the new laser equipment.  You were left behind by you team as repaired a "
+"turret. Forced to flee, will you have what it takes to survive or will you "
+"join the horde to haunt them for their cardinal sin?"
+msgstr ""
+"你是团队里的电子技术达人，一名受过所有新型激光设备操作培训的技术员。在你修理一座炮塔时，你的团队抛弃了你。被迫逃离的你，是否有能力活下去？还是会加入尸群，为他们犯下的滔天大罪而化作梦魇，永远纠缠他们？"
 
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
 msgctxt "profession_male"
