@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-06 01:27+0000\n"
+"POT-Creation-Date: 2025-09-07 01:39+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -13886,7 +13886,7 @@ msgstr "우호적인 NPC는 이 영역 내에서 발생하는 알 수 없는 소
 
 #: data/json/loot_zones.json
 msgid "Loot: Dump"
-msgstr "물품: 기타"
+msgstr "물품: 기타 분류"
 
 #. ~ Description for Loot: Dump
 #: data/json/loot_zones.json
@@ -45305,6 +45305,11 @@ msgid "M235 66mm Incendiary TPA"
 msgstr "M235 66mm TPA 소이로켓탄"
 
 #: data/json/items/ammo_types.json data/json/items/fuel.json
+msgid "butane"
+msgid_plural "butane"
+msgstr[0] "부탄"
+
+#: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "gasoline"
 msgid_plural "gasoline"
 msgstr[0] "휘발유"
@@ -49985,6 +49990,14 @@ msgid ""
 msgstr ""
 "휘발유와 경유를 같은 비율로 섞은 혼합유입니다. 두 기름을 섞은 덕택에 휘발유로도 경유로도 사용할 수 없습니다만, 화염방사기에는 사용할 "
 "수 있습니다."
+
+#. ~ Description for {'str_sp': 'butane'}
+#: data/json/items/fuel.json
+msgid ""
+"A flammable natural gas product typically used in lighters, stored as a "
+"pressurized liquid.  It could be useful as a fuel, but also as a solvent or "
+"chemical reagent."
+msgstr "가압된 액체로 보관되는, 흔히 라이터에 쓰이는 가연성 천연가스입니다. 연료, 용매, 화학적 시약 등으로 쓸 수 있습니다."
 
 #: data/json/items/furniture.json
 msgid "air conditioner"
@@ -62515,16 +62528,29 @@ msgid "survivor harness"
 msgid_plural "survivor harnesses"
 msgstr[0] "생존용 하네스"
 
+#. ~ Use action holster_msg for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#. ~ Use action holster_msg for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/holster.json data/json/items/armor/storage.json
+msgid "You stow your %s"
+msgstr "%s(을)를 집어넣습니다."
+
+#. ~ Use action holster_prompt for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#: data/json/items/armor/holster.json
+msgid "Stow equipment"
+msgstr "장비 집어넣기"
+
 #. ~ Description for {'str': 'survivor harness', 'str_pl': 'survivor
 #. harnesses'}
 #: data/json/items/armor/holster.json
 msgid ""
-"A custom-built light harness covered with pouches and including an integral "
-"tactical sling for a small rifle or other such weapon.  Durable and "
-"carefully crafted to be comfortable to wear.  Activate to holster/draw your "
-"weapon."
+"A custom-built light harness covered with pouches and including a few "
+"integral tactical slings for firearms, magazines, and field tools.  Durable "
+"and carefully crafted to be comfortable to wear.  Activate to holster/draw "
+"your weapon."
 msgstr ""
-"소형 소총 및 유사한 무기를 고정할 수 있도록 일체형 전술 띠와 주머니가 달린 수제 경량 하네스입니다. 튼튼하고 착용하기 편합니다. "
+"총기, 탄창, 현장용 도구 등을 고정할 수 있도록 일체형 전술 띠와 주머니가 달린 수제 경량 하네스입니다. 튼튼하고 착용하기 편합니다. "
 "사용하여 무기를 뽑거나 보관할 수 있습니다."
 
 #: data/json/items/armor/holster.json
@@ -69099,12 +69125,17 @@ msgid "MOLLE pack"
 msgid_plural "MOLLE packs"
 msgstr[0] "MOLLE 팩"
 
+#. ~ Use action holster_prompt for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/storage.json
+msgid "Stow gear"
+msgstr "물품 집어넣기"
+
 #. ~ Description for {'str': 'MOLLE pack'}
 #: data/json/items/armor/storage.json
 msgid ""
 "The Modular Lightweight Load-carrying Equipment is an advanced military "
-"backpack.  Covered with pockets and straps, it strikes a fine balance "
-"between storage space and encumbrance."
+"backpack.  Covered with pockets and equipment straps, it strikes a fine "
+"balance between storage space and encumbrance."
 msgstr ""
 "모듈형 경량 적재 운반 장비(Modular Lightweight Load-carrying Equipment)는 첨단 군용 배낭입니다. "
 "주머니와 끈들로 뒤덮여있고, 저장 공간의 방해도 대비 효율이 뛰어납니다."
@@ -108267,16 +108298,16 @@ msgstr ""
 "방사선 조사에 의한 응결을 유발합니다. 원자력 소다 머신은 기존의 원자력 커피 제조기와 마찬가지로 대부분 지역에서 불법입니다."
 
 #: data/json/items/tool/cooking.json
-msgid "gasoline cooker"
-msgid_plural "gasoline cookers"
-msgstr[0] "휘발유 조리기구"
+msgid "camping stove"
+msgid_plural "camping stoves"
+msgstr[0] "캠핑 조리기구"
 
-#. ~ Description for {'str': 'gasoline cooker'}
+#. ~ Description for {'str': 'camping stove'}
 #: data/json/items/tool/cooking.json
 msgid ""
-"This is a simple heater powered by gasoline.  It is designed for cooking "
-"food."
-msgstr "휘발유로 작동하는 간단한 가열기구입니다. 음식을 요리하는데 쓰입니다."
+"This is a simple burner powered by pressurized fuel, such as butane or "
+"gasoline.  It is designed for cooking food."
+msgstr "부탄가스나 휘발유 같은 가압 연료로 작동하는 간단한 가열기구입니다. 음식을 요리하는데 쓰입니다."
 
 #: data/json/items/tool/cooking.json
 msgid "heat pack"
@@ -108408,8 +108439,10 @@ msgstr[0] "반합"
 msgid ""
 "A self-contained camping mess kit, containing everything you might need for "
 "wilderness cooking.  This model relies on a battery-operated hotplate, "
-"rather than the more commonplace chemical-fueled Esbit stove."
-msgstr "야영지 요리에 필요한 모든 것이 들어 있는 자급식 캠핑 키트입니다. 이 모델은 배터리로 작동하는 핫플레이트를 사용합니다."
+"rather than the more commonplace chemical-fueled butane and Esbit stoves."
+msgstr ""
+"야영지 요리에 필요한 모든 것이 들어있는 캠핑용 완제품 반합입니다. 이 모델은 부탄가스나 고체연료 등을 이용하는 일반적인 연료식 조리기구"
+" 대신 배터리로 작동하는 핫플레이트를 사용합니다."
 
 #: data/json/items/tool/cooking.json
 msgid "mess tin"
@@ -112203,18 +112236,6 @@ msgstr ""
 " 분해하면 몇몇 유용한 부품을 얻을 수 있습니다."
 
 #: data/json/items/tool/misc.json
-msgid "can of butane"
-msgid_plural "cans of butane"
-msgstr[0] "부탄가스통"
-
-#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
-#: data/json/items/tool/misc.json
-msgid ""
-"A typical can of butane that you would normally use to fill a lighter.  It "
-"could be useful as a fuel, but also as a solvent or chemical reagent."
-msgstr "라이터에 채우는데 쓰는 평범한 부탄가스 깡통입니다. 연료로 쓸 수 있고, 용제나 화학 시약으로도 기능합니다."
-
-#: data/json/items/tool/misc.json
 msgid "cow bell"
 msgid_plural "cow bells"
 msgstr[0] "카우벨"
@@ -113238,18 +113259,6 @@ msgid ""
 msgstr ""
 "일반적으로 액체에 직류 전기을 흘리기 위한 배선 및 전극 세트입니다.  수공예에 사용합니다. 대형 배터리 또는 12V 차량 배터리를 "
 "사용합니다."
-
-#: data/json/items/tool/science.json
-msgid "butane tank"
-msgid_plural "tanks of butane"
-msgstr[0] "부탄 탱크"
-
-#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
-#: data/json/items/tool/science.json
-msgid ""
-"This is a tank of liquid compressed butane.  It can be used to extract "
-"essential oils from organic material."
-msgstr "압축된 상태의 액화 부탄이 들어있는 탱크입니다. 유기물로부터 에센셜 오일을 추출하는데 쓰입니다."
 
 #: data/json/items/tool/science.json
 msgid "hydrogen tank"
@@ -166642,6 +166651,30 @@ msgstr "차량 안에서 사용할 수 있게 고안된 작은 세탁기입니�
 #: data/json/obsoletion/items.json
 msgid "A very small dishwasher designed for use in vehicles."
 msgstr "차량용 초소형 식기세척기입니다."
+
+#: data/json/obsoletion/items.json
+msgid "can of butane"
+msgid_plural "cans of butane"
+msgstr[0] "부탄가스통"
+
+#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A typical can of butane that you would normally use to fill a lighter.  It "
+"could be useful as a fuel, but also as a solvent or chemical reagent."
+msgstr "라이터에 채우는데 쓰는 평범한 부탄가스 깡통입니다. 연료로 쓸 수 있고, 용제나 화학 시약으로도 기능합니다."
+
+#: data/json/obsoletion/items.json
+msgid "butane tank"
+msgid_plural "tanks of butane"
+msgstr[0] "부탄 탱크"
+
+#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"This is a tank of liquid compressed butane.  It can be used to extract "
+"essential oils from organic material."
+msgstr "압축된 상태의 액화 부탄이 들어있는 탱크입니다. 유기물로부터 에센셜 오일을 추출하는데 쓰입니다."
 
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"

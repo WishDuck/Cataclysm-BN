@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-06 01:27+0000\n"
+"POT-Creation-Date: 2025-09-07 01:39+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: German (https://app.transifex.com/bn-team/teams/113585/de/)\n"
 "MIME-Version: 1.0\n"
@@ -45280,6 +45280,12 @@ msgid "M235 66mm Incendiary TPA"
 msgstr "M235 66mm Brand TPA"
 
 #: data/json/items/ammo_types.json data/json/items/fuel.json
+msgid "butane"
+msgid_plural "butane"
+msgstr[0] ""
+msgstr[1] ""
+
+#: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "gasoline"
 msgid_plural "gasoline"
 msgstr[0] "Benzin"
@@ -50350,6 +50356,14 @@ msgstr ""
 "Verbrennungseigenschaften machen es ungeeignet für die Anwendung in "
 "Bereichen, in denen du einen der Bestandteile separat nutzen würdest. Dafür "
 "kann man es verwenden um einen Flammenwerfer zu füllen."
+
+#. ~ Description for {'str_sp': 'butane'}
+#: data/json/items/fuel.json
+msgid ""
+"A flammable natural gas product typically used in lighters, stored as a "
+"pressurized liquid.  It could be useful as a fuel, but also as a solvent or "
+"chemical reagent."
+msgstr ""
 
 #: data/json/items/furniture.json
 msgid "air conditioner"
@@ -64563,20 +64577,28 @@ msgid_plural "survivor harnesses"
 msgstr[0] "Überlebendenharnisch"
 msgstr[1] "Überlebendenharnische"
 
+#. ~ Use action holster_msg for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#. ~ Use action holster_msg for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/holster.json data/json/items/armor/storage.json
+msgid "You stow your %s"
+msgstr ""
+
+#. ~ Use action holster_prompt for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#: data/json/items/armor/holster.json
+msgid "Stow equipment"
+msgstr ""
+
 #. ~ Description for {'str': 'survivor harness', 'str_pl': 'survivor
 #. harnesses'}
 #: data/json/items/armor/holster.json
 msgid ""
-"A custom-built light harness covered with pouches and including an integral "
-"tactical sling for a small rifle or other such weapon.  Durable and "
-"carefully crafted to be comfortable to wear.  Activate to holster/draw your "
-"weapon."
+"A custom-built light harness covered with pouches and including a few "
+"integral tactical slings for firearms, magazines, and field tools.  Durable "
+"and carefully crafted to be comfortable to wear.  Activate to holster/draw "
+"your weapon."
 msgstr ""
-"Ein selbstgeschneiderter leichter Harnisch, der mit Beuteln überzogen ist "
-"und mit einer eingenähten taktischen Schlinge für ein kleines Gewehr oder "
-"einer ähnlichen Waffe ausgestattet ist. Langlebig und sorgfältig für hohen "
-"Tragekomfort geschneidert. Aktiviere diesen Gegenstand, um deine Waffe zu "
-"ziehen bzw. wieder einzustecken."
 
 #: data/json/items/armor/holster.json
 msgid "baldric holster"
@@ -71732,17 +71754,18 @@ msgid_plural "MOLLE packs"
 msgstr[0] "MOLLE-Rucksack"
 msgstr[1] "MOLLE-Rucksäcke"
 
+#. ~ Use action holster_prompt for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/storage.json
+msgid "Stow gear"
+msgstr ""
+
 #. ~ Description for {'str': 'MOLLE pack'}
 #: data/json/items/armor/storage.json
 msgid ""
 "The Modular Lightweight Load-carrying Equipment is an advanced military "
-"backpack.  Covered with pockets and straps, it strikes a fine balance "
-"between storage space and encumbrance."
+"backpack.  Covered with pockets and equipment straps, it strikes a fine "
+"balance between storage space and encumbrance."
 msgstr ""
-"Der MOLLE (Abkürzung für »Modular Lightweight Load-carrying Equipment«, "
-"deutsch: »Modulare leichtgewichtige Trageausrüstung«) ist ein "
-"fortgeschrittener Militärrucksack. Es ist voller Taschen und Riemen und "
-"bietet einen guten Ausgleich zwischen Lagerplatz und Hinderung."
 
 #: data/json/items/armor/storage.json
 msgid "petpack"
@@ -115161,19 +115184,17 @@ msgid ""
 msgstr ""
 
 #: data/json/items/tool/cooking.json
-msgid "gasoline cooker"
-msgid_plural "gasoline cookers"
-msgstr[0] "Benzinkocher"
-msgstr[1] "Benzinkocher"
+msgid "camping stove"
+msgid_plural "camping stoves"
+msgstr[0] ""
+msgstr[1] ""
 
-#. ~ Description for {'str': 'gasoline cooker'}
+#. ~ Description for {'str': 'camping stove'}
 #: data/json/items/tool/cooking.json
 msgid ""
-"This is a simple heater powered by gasoline.  It is designed for cooking "
-"food."
+"This is a simple burner powered by pressurized fuel, such as butane or "
+"gasoline.  It is designed for cooking food."
 msgstr ""
-"Dies ist ein einfaches Heizgerät, das mit Benzin betrieben wird. Es ist für "
-"das Kochen von Nahrung ausgelegt."
 
 #: data/json/items/tool/cooking.json
 msgid "heat pack"
@@ -115319,12 +115340,8 @@ msgstr[1] "Campinggeschirre"
 msgid ""
 "A self-contained camping mess kit, containing everything you might need for "
 "wilderness cooking.  This model relies on a battery-operated hotplate, "
-"rather than the more commonplace chemical-fueled Esbit stove."
+"rather than the more commonplace chemical-fueled butane and Esbit stoves."
 msgstr ""
-"Ein Satz eigenständiges Campinggeschirr. Es enthält alles, was du beim "
-"Kochen in der Wildnis gebrauchen könntest. Dieses Modell stützt sich auf "
-"eine batteriegetriebene Kochplatte statt des üblicheren chemisch betriebenen"
-" Esbit-Ofens."
 
 #: data/json/items/tool/cooking.json
 msgid "mess tin"
@@ -119536,19 +119553,6 @@ msgstr ""
 "Einzelteile zerlegt werden, um ein paar nützliche Teile zu erhalten."
 
 #: data/json/items/tool/misc.json
-msgid "can of butane"
-msgid_plural "cans of butane"
-msgstr[0] ""
-msgstr[1] ""
-
-#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
-#: data/json/items/tool/misc.json
-msgid ""
-"A typical can of butane that you would normally use to fill a lighter.  It "
-"could be useful as a fuel, but also as a solvent or chemical reagent."
-msgstr ""
-
-#: data/json/items/tool/misc.json
 msgid "cow bell"
 msgid_plural "cow bells"
 msgstr[0] "Kuhglocke"
@@ -120703,19 +120707,6 @@ msgstr ""
 "üblicherweiser an einer Flüssigkeit. Nützlich für die Fertigung. Dies muss "
 "mit einem Akkumulator oder einer 12V-Fahrzeugbatterie geladen werden, um es "
 "benutzen zu können."
-
-#: data/json/items/tool/science.json
-msgid "butane tank"
-msgid_plural "tanks of butane"
-msgstr[0] ""
-msgstr[1] ""
-
-#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
-#: data/json/items/tool/science.json
-msgid ""
-"This is a tank of liquid compressed butane.  It can be used to extract "
-"essential oils from organic material."
-msgstr ""
 
 #: data/json/items/tool/science.json
 msgid "hydrogen tank"
@@ -175703,6 +175694,32 @@ msgstr ""
 #. ~ Description for {'str': 'dishwasher'}
 #: data/json/obsoletion/items.json
 msgid "A very small dishwasher designed for use in vehicles."
+msgstr ""
+
+#: data/json/obsoletion/items.json
+msgid "can of butane"
+msgid_plural "cans of butane"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A typical can of butane that you would normally use to fill a lighter.  It "
+"could be useful as a fuel, but also as a solvent or chemical reagent."
+msgstr ""
+
+#: data/json/obsoletion/items.json
+msgid "butane tank"
+msgid_plural "tanks of butane"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"This is a tank of liquid compressed butane.  It can be used to extract "
+"essential oils from organic material."
 msgstr ""
 
 #: data/json/obsoletion/missions.json

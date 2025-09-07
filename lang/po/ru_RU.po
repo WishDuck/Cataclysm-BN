@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-06 01:27+0000\n"
+"POT-Creation-Date: 2025-09-07 01:39+0000\n"
 "Last-Translator: GostBug <blackday8990@gmx.de>, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -48856,6 +48856,14 @@ msgid "M235 66mm Incendiary TPA"
 msgstr "66 мм зажигательный снаряд M235 TPA"
 
 #: data/json/items/ammo_types.json data/json/items/fuel.json
+msgid "butane"
+msgid_plural "butane"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "gasoline"
 msgid_plural "gasoline"
 msgstr[0] "бензин"
@@ -55066,6 +55074,14 @@ msgstr ""
 "Смесь из равных частей бензина и дизеля. Из-за особенностей сгорания смесь "
 "не подходит для применения там же, где её составляющие, но ею можно "
 "заправить огнемёт."
+
+#. ~ Description for {'str_sp': 'butane'}
+#: data/json/items/fuel.json
+msgid ""
+"A flammable natural gas product typically used in lighters, stored as a "
+"pressurized liquid.  It could be useful as a fuel, but also as a solvent or "
+"chemical reagent."
+msgstr ""
 
 #: data/json/items/furniture.json
 msgid "air conditioner"
@@ -71715,19 +71731,28 @@ msgstr[1] "разгрузки выживальщика"
 msgstr[2] "разгрузок выживальщика"
 msgstr[3] "разгрузка выживальщика"
 
+#. ~ Use action holster_msg for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#. ~ Use action holster_msg for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/holster.json data/json/items/armor/storage.json
+msgid "You stow your %s"
+msgstr ""
+
+#. ~ Use action holster_prompt for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#: data/json/items/armor/holster.json
+msgid "Stow equipment"
+msgstr ""
+
 #. ~ Description for {'str': 'survivor harness', 'str_pl': 'survivor
 #. harnesses'}
 #: data/json/items/armor/holster.json
 msgid ""
-"A custom-built light harness covered with pouches and including an integral "
-"tactical sling for a small rifle or other such weapon.  Durable and "
-"carefully crafted to be comfortable to wear.  Activate to holster/draw your "
-"weapon."
+"A custom-built light harness covered with pouches and including a few "
+"integral tactical slings for firearms, magazines, and field tools.  Durable "
+"and carefully crafted to be comfortable to wear.  Activate to holster/draw "
+"your weapon."
 msgstr ""
-"Специально спроектированная разгрузка со множеством отделений, а также "
-"встроенный тактический ремень для небольшой винтовки или подобного оружия. "
-"Прочная и продуманная для комфортного ношения. Активируйте, чтобы "
-"вложить/достать оружие."
 
 #: data/json/items/armor/holster.json
 msgid "baldric holster"
@@ -80623,15 +80648,18 @@ msgstr[1] "рюкзака MOLLE"
 msgstr[2] "рюкзаков MOLLE"
 msgstr[3] "рюкзак MOLLE"
 
+#. ~ Use action holster_prompt for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/storage.json
+msgid "Stow gear"
+msgstr ""
+
 #. ~ Description for {'str': 'MOLLE pack'}
 #: data/json/items/armor/storage.json
 msgid ""
 "The Modular Lightweight Load-carrying Equipment is an advanced military "
-"backpack.  Covered with pockets and straps, it strikes a fine balance "
-"between storage space and encumbrance."
+"backpack.  Covered with pockets and equipment straps, it strikes a fine "
+"balance between storage space and encumbrance."
 msgstr ""
-"Лёгкий военный рюкзак продвинутого модульного типа MOLLE. Весь увешан "
-"карманами и ремнями. Прекрасный баланс между вместимостью и стеснением."
 
 #: data/json/items/armor/storage.json
 msgid "petpack"
@@ -132562,21 +132590,19 @@ msgstr ""
 "регионов."
 
 #: data/json/items/tool/cooking.json
-msgid "gasoline cooker"
-msgid_plural "gasoline cookers"
-msgstr[0] "бензиновая плита"
-msgstr[1] "бензиновые плиты"
-msgstr[2] "бензиновых плит"
-msgstr[3] "бензиновая плита"
+msgid "camping stove"
+msgid_plural "camping stoves"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#. ~ Description for {'str': 'gasoline cooker'}
+#. ~ Description for {'str': 'camping stove'}
 #: data/json/items/tool/cooking.json
 msgid ""
-"This is a simple heater powered by gasoline.  It is designed for cooking "
-"food."
+"This is a simple burner powered by pressurized fuel, such as butane or "
+"gasoline.  It is designed for cooking food."
 msgstr ""
-"Это простая печь, работающая на бензине. Она предназначена для приготовления"
-" еды."
 
 #: data/json/items/tool/cooking.json
 msgid "heat pack"
@@ -132743,11 +132769,8 @@ msgstr[3] "кухонный набор"
 msgid ""
 "A self-contained camping mess kit, containing everything you might need for "
 "wilderness cooking.  This model relies on a battery-operated hotplate, "
-"rather than the more commonplace chemical-fueled Esbit stove."
+"rather than the more commonplace chemical-fueled butane and Esbit stoves."
 msgstr ""
-"Походный кухонный набор, содержащий в себе всё необходимое для готовки в "
-"диких условиях. Эта модель основана на электроплитке, работающей от "
-"батареек, вместо печи на сухом горючем."
 
 #: data/json/items/tool/cooking.json
 msgid "mess tin"
@@ -137621,24 +137644,6 @@ msgstr ""
 "полезные детали."
 
 #: data/json/items/tool/misc.json
-msgid "can of butane"
-msgid_plural "cans of butane"
-msgstr[0] "канистра бутана"
-msgstr[1] "канистры бутана"
-msgstr[2] "канистр бутана"
-msgstr[3] "канистра бутана"
-
-#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
-#: data/json/items/tool/misc.json
-msgid ""
-"A typical can of butane that you would normally use to fill a lighter.  It "
-"could be useful as a fuel, but also as a solvent or chemical reagent."
-msgstr ""
-"Обычная канистра бутана, которой можно заправить зажигалку. Можно "
-"использовать в качестве топлива, а также растворителя или химического "
-"реагента."
-
-#: data/json/items/tool/misc.json
 msgid "cow bell"
 msgid_plural "cow bells"
 msgstr[0] "коровий колокольчик"
@@ -138975,23 +138980,6 @@ msgstr ""
 "Набор из проводов и электродов для передачи постоянного тока, обычно в "
 "жидкость. Можно использовать при изготовлении предметов. Чтобы использовать,"
 " заряжайте его аккумулятором или 12-вольтовой автомобильной батареей."
-
-#: data/json/items/tool/science.json
-msgid "butane tank"
-msgid_plural "tanks of butane"
-msgstr[0] "канистра бутана"
-msgstr[1] "канистры бутана"
-msgstr[2] "канистр бутана"
-msgstr[3] "канистры бутана"
-
-#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
-#: data/json/items/tool/science.json
-msgid ""
-"This is a tank of liquid compressed butane.  It can be used to extract "
-"essential oils from organic material."
-msgstr ""
-"Канистра сжатого жидкого бутана. Можно использовать для выделения эфирных "
-"масел из органики."
 
 #: data/json/items/tool/science.json
 msgid "hydrogen tank"
@@ -200407,6 +200395,41 @@ msgid "A very small dishwasher designed for use in vehicles."
 msgstr ""
 "Небольшая посудомоечная машина, предназначенная для установки на "
 "транспортное средство."
+
+#: data/json/obsoletion/items.json
+msgid "can of butane"
+msgid_plural "cans of butane"
+msgstr[0] "канистра бутана"
+msgstr[1] "канистры бутана"
+msgstr[2] "канистр бутана"
+msgstr[3] "канистра бутана"
+
+#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A typical can of butane that you would normally use to fill a lighter.  It "
+"could be useful as a fuel, but also as a solvent or chemical reagent."
+msgstr ""
+"Обычная канистра бутана, которой можно заправить зажигалку. Можно "
+"использовать в качестве топлива, а также растворителя или химического "
+"реагента."
+
+#: data/json/obsoletion/items.json
+msgid "butane tank"
+msgid_plural "tanks of butane"
+msgstr[0] "канистра бутана"
+msgstr[1] "канистры бутана"
+msgstr[2] "канистр бутана"
+msgstr[3] "канистры бутана"
+
+#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"This is a tank of liquid compressed butane.  It can be used to extract "
+"essential oils from organic material."
+msgstr ""
+"Канистра сжатого жидкого бутана. Можно использовать для выделения эфирных "
+"масел из органики."
 
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"

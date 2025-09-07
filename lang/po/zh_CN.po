@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-06 01:27+0000\n"
+"POT-Creation-Date: 2025-09-07 01:39+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -43558,6 +43558,11 @@ msgid "M235 66mm Incendiary TPA"
 msgstr "M235 66mm 燃烧弹TPA"
 
 #: data/json/items/ammo_types.json data/json/items/fuel.json
+msgid "butane"
+msgid_plural "butane"
+msgstr[0] "丁烷"
+
+#: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "gasoline"
 msgid_plural "gasoline"
 msgstr[0] "汽油"
@@ -48062,6 +48067,14 @@ msgid ""
 "properties make it unfit for applications where you would use any of them "
 "separately, but it can be used to feed a flamethrower."
 msgstr "由等量的汽油和柴油混合而成。特殊的燃烧性质使其无法再像汽油或柴油一样使用，但是可以用作火焰喷射器的燃料。"
+
+#. ~ Description for {'str_sp': 'butane'}
+#: data/json/items/fuel.json
+msgid ""
+"A flammable natural gas product typically used in lighters, stored as a "
+"pressurized liquid.  It could be useful as a fuel, but also as a solvent or "
+"chemical reagent."
+msgstr "一种易燃的天然气产品，通常用于打火机，以加压液体的形式储存。它既可以作为燃料，也可以用作溶剂或化学试剂。"
 
 #: data/json/items/furniture.json
 msgid "air conditioner"
@@ -60314,16 +60327,29 @@ msgid "survivor harness"
 msgid_plural "survivor harnesses"
 msgstr[0] "幸存者背带"
 
+#. ~ Use action holster_msg for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#. ~ Use action holster_msg for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/holster.json data/json/items/armor/storage.json
+msgid "You stow your %s"
+msgstr "你收起了你的 %s"
+
+#. ~ Use action holster_prompt for {'str': 'survivor harness', 'str_pl':
+#. 'survivor harnesses'}.
+#: data/json/items/armor/holster.json
+msgid "Stow equipment"
+msgstr "收起装备"
+
 #. ~ Description for {'str': 'survivor harness', 'str_pl': 'survivor
 #. harnesses'}
 #: data/json/items/armor/holster.json
 msgid ""
-"A custom-built light harness covered with pouches and including an integral "
-"tactical sling for a small rifle or other such weapon.  Durable and "
-"carefully crafted to be comfortable to wear.  Activate to holster/draw your "
-"weapon."
+"A custom-built light harness covered with pouches and including a few "
+"integral tactical slings for firearms, magazines, and field tools.  Durable "
+"and carefully crafted to be comfortable to wear.  Activate to holster/draw "
+"your weapon."
 msgstr ""
-"一个自制的轻型背带，缝了不少口袋的同时还有一个集成战术吊索用于小型步枪及此类武器。值得信赖的手工技术将它打造得至为舒适耐用。激活它来收拔武器。"
+"一款定制的轻型背带，上面挂满了附包，并包含几条用于携带枪械、弹匣和野外工具的一体式战术枪带。它经久耐用，制作精心，穿戴舒适。激活可收起/拔出你的武器。"
 
 #: data/json/items/armor/holster.json
 msgid "baldric holster"
@@ -66780,13 +66806,18 @@ msgid "MOLLE pack"
 msgid_plural "MOLLE packs"
 msgstr[0] "MOLLE战术背包"
 
+#. ~ Use action holster_prompt for {'str': 'MOLLE pack'}.
+#: data/json/items/armor/storage.json
+msgid "Stow gear"
+msgstr "收起装备"
+
 #. ~ Description for {'str': 'MOLLE pack'}
 #: data/json/items/armor/storage.json
 msgid ""
 "The Modular Lightweight Load-carrying Equipment is an advanced military "
-"backpack.  Covered with pockets and straps, it strikes a fine balance "
-"between storage space and encumbrance."
-msgstr "一件新一代模块化的改进型军用背包，相比普通背包它更加轻便舒适，且提供更可观的储存空间，取得了储存空间与累赘度之间的完美平衡。"
+"backpack.  Covered with pockets and equipment straps, it strikes a fine "
+"balance between storage space and encumbrance."
+msgstr "模块化轻型承载装备（MOLLE）是一种先进的军用背包。它上面布满了口袋和装备挂带，在存储空间和负重之间取得了很好的平衡。"
 
 #: data/json/items/armor/storage.json
 msgid "petpack"
@@ -104903,16 +104934,16 @@ msgstr ""
 "腔体中的辐射冷凝液混入饮品中。如同其前身一样，这种原子汽水机在大多数地区已被禁止使用。"
 
 #: data/json/items/tool/cooking.json
-msgid "gasoline cooker"
-msgid_plural "gasoline cookers"
-msgstr[0] "汽油炉"
+msgid "camping stove"
+msgid_plural "camping stoves"
+msgstr[0] "露营炉"
 
-#. ~ Description for {'str': 'gasoline cooker'}
+#. ~ Description for {'str': 'camping stove'}
 #: data/json/items/tool/cooking.json
 msgid ""
-"This is a simple heater powered by gasoline.  It is designed for cooking "
-"food."
-msgstr "一只被设计成用汽油来加热食物的简单炉子。"
+"This is a simple burner powered by pressurized fuel, such as butane or "
+"gasoline.  It is designed for cooking food."
+msgstr "这是一种由丁烷或汽油等加压燃料驱动的简易燃烧器，设计用于烹饪食物。"
 
 #: data/json/items/tool/cooking.json
 msgid "heat pack"
@@ -105038,8 +105069,9 @@ msgstr[0] "野外餐具"
 msgid ""
 "A self-contained camping mess kit, containing everything you might need for "
 "wilderness cooking.  This model relies on a battery-operated hotplate, "
-"rather than the more commonplace chemical-fueled Esbit stove."
-msgstr "一整套野炊餐具，在这里面打包着你在野外煮食的一切必要的东西。这是电池供能加热的版本，而不是通常的化学燃料加热版本。"
+"rather than the more commonplace chemical-fueled butane and Esbit stoves."
+msgstr ""
+"一整套野炊餐具，在这里面打包着你在野外煮食的一切必要的东西。该型号依靠电池驱动的电热板加热，而非使用更常见的丁烷炉和固态燃料炉等化学燃料炉具。"
 
 #: data/json/items/tool/cooking.json
 msgid "mess tin"
@@ -108676,18 +108708,6 @@ msgid ""
 msgstr "一个发条闹钟。被吵醒实在是不舒服，但起早总没什么坏处。也可以拆成有用的零件。"
 
 #: data/json/items/tool/misc.json
-msgid "can of butane"
-msgid_plural "cans of butane"
-msgstr[0] "丁烷罐"
-
-#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
-#: data/json/items/tool/misc.json
-msgid ""
-"A typical can of butane that you would normally use to fill a lighter.  It "
-"could be useful as a fuel, but also as a solvent or chemical reagent."
-msgstr "一只装满丁烷的金属罐，通常用来填充打火机。它还可以用作燃料，溶剂或化学试剂。"
-
-#: data/json/items/tool/misc.json
 msgid "cow bell"
 msgid_plural "cow bells"
 msgstr[0] "牛铃"
@@ -109674,18 +109694,6 @@ msgid ""
 "liquid.  Useful for crafting.  Load with a storage battery or 12V vehicle "
 "battery to use."
 msgstr "一整套能够进行直流电电解的线缆和电极设备，通常使用在液体上。可用于制造物品。需要安装一个蓄电池或者12V的载具电池配合使用。"
-
-#: data/json/items/tool/science.json
-msgid "butane tank"
-msgid_plural "tanks of butane"
-msgstr[0] "压缩丁烷罐"
-
-#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
-#: data/json/items/tool/science.json
-msgid ""
-"This is a tank of liquid compressed butane.  It can be used to extract "
-"essential oils from organic material."
-msgstr "一大罐液态压缩丁烷。它可以用来从有机物质中提取精油。"
 
 #: data/json/items/tool/science.json
 msgid "hydrogen tank"
@@ -160523,6 +160531,30 @@ msgstr "一台非常小型的车载洗衣机。"
 #: data/json/obsoletion/items.json
 msgid "A very small dishwasher designed for use in vehicles."
 msgstr "一台非常小型的车载洗碗机。"
+
+#: data/json/obsoletion/items.json
+msgid "can of butane"
+msgid_plural "cans of butane"
+msgstr[0] "丁烷罐"
+
+#. ~ Description for {'str': 'can of butane', 'str_pl': 'cans of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A typical can of butane that you would normally use to fill a lighter.  It "
+"could be useful as a fuel, but also as a solvent or chemical reagent."
+msgstr "一只装满丁烷的金属罐，通常用来填充打火机。它还可以用作燃料，溶剂或化学试剂。"
+
+#: data/json/obsoletion/items.json
+msgid "butane tank"
+msgid_plural "tanks of butane"
+msgstr[0] "压缩丁烷罐"
+
+#. ~ Description for {'str': 'butane tank', 'str_pl': 'tanks of butane'}
+#: data/json/obsoletion/items.json
+msgid ""
+"This is a tank of liquid compressed butane.  It can be used to extract "
+"essential oils from organic material."
+msgstr "一大罐液态压缩丁烷。它可以用来从有机物质中提取精油。"
 
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
