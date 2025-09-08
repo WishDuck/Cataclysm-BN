@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-07 01:39+0000\n"
+"POT-Creation-Date: 2025-09-08 01:54+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Hungarian (https://app.transifex.com/bn-team/teams/113585/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -12545,6 +12545,10 @@ msgid "Well, you know"
 msgstr "Hát, tudod"
 
 #: data/json/item_actions.json
+msgid "Turn off toy"
+msgstr ""
+
+#: data/json/item_actions.json
 msgid "Purify some water"
 msgstr "Víztisztítás"
 
@@ -12603,6 +12607,10 @@ msgstr ""
 
 #: data/json/item_actions.json
 msgid "(Debug) Amputate body part"
+msgstr ""
+
+#: data/json/item_actions.json
+msgid "Relieve some tension"
 msgstr ""
 
 #: data/json/item_category.json
@@ -34036,6 +34044,17 @@ msgid ""
 "A mass of decaying organic matter that accumulates at the bottom of lakes."
 msgstr ""
 
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid "cave mushrooms"
+msgstr ""
+
+#. ~ Description for cave mushrooms
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid ""
+"A cluster of fungi growing in the dark.  Could be plucked, they might be "
+"edible."
+msgstr ""
+
 #: data/json/furniture_and_terrain/furniture-fungal.json
 #: data/mods/No_Fungi/furniture.json
 msgid "marloss flower"
@@ -54106,7 +54125,7 @@ msgstr "Bekapcsolod a(z) %st."
 #: data/json/items/tool_armor.json data/json/items/melee/bludgeons.json
 #: data/json/items/melee/swords_and_blades.json
 #: data/json/obsoletion/items.json data/mods/Aftershock/items/tool_armor.json
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "The %s's batteries are dead."
 msgstr "A(z) %s eleme lemerült."
@@ -114983,6 +115002,42 @@ msgid ""
 msgstr ""
 "Ez az elemzabáló eszköz pont arra van, hogy feloldja a feszültségedet és "
 "segítsen a lazításban. Aktiváld a pihenéshez és a relaxáláshoz."
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (off)"
+msgid_plural "bullet vibrator (off)s"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Use action msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "You turn on the bullet vibe and place it appropriately."
+msgstr ""
+
+#. ~ Use action need_charges_msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "The vibrator's battery is dead."
+msgstr ""
+
+#. ~ Description for {'str': 'bullet vibrator (off)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  Use it to turn it on and start letting it buzz away."
+msgstr ""
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (on)"
+msgid_plural "bullet vibrator (on)s"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'bullet vibrator (on)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  You can feel it buzzing away all that tension."
+msgstr ""
 
 #: data/json/items/tool/electronics.json
 msgid "gps pinpointer"
@@ -177178,6 +177233,11 @@ msgid "mine shaft"
 msgstr "bánya akna"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
+#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
+msgid "subway station?"
+msgstr "metróállomás?"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
 msgid "mine tunnels"
 msgstr ""
 
@@ -177317,10 +177377,6 @@ msgstr "mi-go leszállóhely"
 #: data/json/overmap/overmap_terrain/overmap_terrain_mi-go.json
 msgid "mi-go scout tower"
 msgstr "mi-go felderítő torony"
-
-#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
-msgid "subway station?"
-msgstr "metróállomás?"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
 #: data/mods/DinoMod/overmap/overmap_terrain.json
@@ -191417,6 +191473,14 @@ msgstr ""
 
 #: data/json/vehicles/trains.json
 msgid "Trolley"
+msgstr ""
+
+#: data/json/vehicles/trains.json
+msgid "Hopper Truck"
+msgstr ""
+
+#: data/json/vehicles/trains.json
+msgid "Electric Tram"
 msgstr ""
 
 #: data/json/vehicles/trucks.json
@@ -245396,6 +245460,11 @@ msgstr ""
 msgid "Loading the tileset failed: %s"
 msgstr "Nem sikerült betölteni a %s grafikai készletet."
 
+#: src/game.cpp src/options.cpp
+#, c-format
+msgid "Loading the overmap tileset failed: %s"
+msgstr ""
+
 #: src/game.cpp
 msgid "Please wait as we build your world"
 msgstr "Kérjük vár a világ felépítésére"
@@ -255790,16 +255859,16 @@ msgstr ""
 msgid "It's waterproof, but oxygen maybe?"
 msgstr ""
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 msgid "*Your* batteries are dead."
 msgstr ""
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You fire up your %s and start getting the tension out."
 msgstr ""
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You whip out your %s and start getting the tension out."
 msgstr ""
@@ -257727,6 +257796,11 @@ msgstr ""
 msgid "Body part removed: %s"
 msgstr ""
 
+#: src/iuse.cpp
+#, c-format
+msgid "The %s turns off."
+msgstr ""
+
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -258977,6 +259051,14 @@ msgstr "Sikerrel módosítottad a(z) %st!"
 #: src/iuse_actor.cpp
 #, c-format
 msgid "You use the %s to mask your scent"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You can't do *that* while mounted"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Are you trying to drown yourself?"
 msgstr ""
 
 #: src/iuse_actor.h
@@ -271332,6 +271414,14 @@ msgstr ""
 #: src/options.cpp
 msgid ""
 "If true, replaces some TTF-rendered text with tiles for overmap display."
+msgstr ""
+
+#: src/options.cpp
+msgid "Choose overmap tileset"
+msgstr ""
+
+#: src/options.cpp
+msgid "Choose the overmap tileset you want to use."
 msgstr ""
 
 #: src/options.cpp

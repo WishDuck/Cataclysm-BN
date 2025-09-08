@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-07 01:39+0000\n"
+"POT-Creation-Date: 2025-09-08 01:54+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -12179,6 +12179,10 @@ msgid "Well, you know"
 msgstr "好吧, 你懂的"
 
 #: data/json/item_actions.json
+msgid "Turn off toy"
+msgstr "关闭玩具"
+
+#: data/json/item_actions.json
 msgid "Purify some water"
 msgstr "淨水"
 
@@ -12238,6 +12242,10 @@ msgstr "繼續製作工作台上的"
 #: data/json/item_actions.json
 msgid "(Debug) Amputate body part"
 msgstr "(调试）截断身体部位"
+
+#: data/json/item_actions.json
+msgid "Relieve some tension"
+msgstr "缓解一些压力"
 
 #: data/json/item_category.json
 msgid "GUNS"
@@ -33082,6 +33090,17 @@ msgid ""
 "A mass of decaying organic matter that accumulates at the bottom of lakes."
 msgstr "一堆堆积在湖底的腐烂有机物。"
 
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid "cave mushrooms"
+msgstr "洞穴蘑菇"
+
+#. ~ Description for cave mushrooms
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid ""
+"A cluster of fungi growing in the dark.  Could be plucked, they might be "
+"edible."
+msgstr "在黑暗中生长的一丛菌类。可以采摘，也许能吃。"
+
 #: data/json/furniture_and_terrain/furniture-fungal.json
 #: data/mods/No_Fungi/furniture.json
 msgid "marloss flower"
@@ -51851,7 +51870,7 @@ msgstr "你啟動了你的 %s。"
 #: data/json/items/tool_armor.json data/json/items/melee/bludgeons.json
 #: data/json/items/melee/swords_and_blades.json
 #: data/json/obsoletion/items.json data/mods/Aftershock/items/tool_armor.json
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "The %s's batteries are dead."
 msgstr "%s 的電池沒電了。"
@@ -105589,6 +105608,44 @@ msgid ""
 "This battery-devouring device is just the thing to knead the tension out and"
 " help you relax.  Use it to take a break and unwind."
 msgstr "這個吃電池的裝置是用來幫你按摩舒緩僵硬的身體, 使用他來幫助你休息和伸展。"
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (off)"
+msgid_plural "bullet vibrator (off)s"
+msgstr[0] "跳蛋（关）"
+
+#. ~ Use action msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "You turn on the bullet vibe and place it appropriately."
+msgstr "你打开了跳蛋，并将其放置在合适的位置。"
+
+#. ~ Use action need_charges_msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "The vibrator's battery is dead."
+msgstr "振动器的电池没电了。"
+
+#. ~ Description for {'str': 'bullet vibrator (off)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  Use it to turn it on and start letting it buzz away."
+msgstr ""
+"这个吞噬电池的玩意儿正好可以用来消除紧张，帮助你放松。使用它来开启，让它嗡嗡作响吧。\n"
+"\"塞跳蛋的同时打丧尸……是在玩黄油吗？\""
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (on)"
+msgid_plural "bullet vibrator (on)s"
+msgstr[0] "跳蛋（开）"
+
+#. ~ Description for {'str': 'bullet vibrator (on)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  You can feel it buzzing away all that tension."
+msgstr ""
+"这个吞噬电池的玩意儿正好可以用来消除紧张，帮助你放松。你能感觉到它正嗡嗡作响，带走你所有的紧张感。\n"
+"\"不行……会忍不住蹲下来的……\""
 
 #: data/json/items/tool/electronics.json
 msgid "gps pinpointer"
@@ -164734,6 +164791,11 @@ msgid "mine shaft"
 msgstr "礦井"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
+#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
+msgid "subway station?"
+msgstr "地下鐵？"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
 msgid "mine tunnels"
 msgstr "矿井通道"
 
@@ -164873,10 +164935,6 @@ msgstr "米戈登陸平台"
 #: data/json/overmap/overmap_terrain/overmap_terrain_mi-go.json
 msgid "mi-go scout tower"
 msgstr "米戈斥候瞭望塔"
-
-#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
-msgid "subway station?"
-msgstr "地下鐵？"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
 #: data/mods/DinoMod/overmap/overmap_terrain.json
@@ -179301,6 +179359,14 @@ msgstr "微缩火车"
 #: data/json/vehicles/trains.json
 msgid "Trolley"
 msgstr "矿车"
+
+#: data/json/vehicles/trains.json
+msgid "Hopper Truck"
+msgstr "漏斗卡车"
+
+#: data/json/vehicles/trains.json
+msgid "Electric Tram"
+msgstr "电动有轨电车"
 
 #: data/json/vehicles/trucks.json
 msgid "Flatbed Truck"
@@ -231597,6 +231663,11 @@ msgstr "你完成了成就 “%s”。"
 msgid "Loading the tileset failed: %s"
 msgstr "無法讀取圖像包: %s"
 
+#: src/game.cpp src/options.cpp
+#, c-format
+msgid "Loading the overmap tileset failed: %s"
+msgstr "大地图贴图包加载失败：%s"
+
 #: src/game.cpp
 msgid "Please wait as we build your world"
 msgstr "正在生成世界, 請稍候"
@@ -241808,16 +241879,16 @@ msgstr "騎乘時無法進行...。"
 msgid "It's waterproof, but oxygen maybe?"
 msgstr "這是防水的, 但也許並非氣密?"
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 msgid "*Your* batteries are dead."
 msgstr "*你的* 電池耗盡了。"
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You fire up your %s and start getting the tension out."
 msgstr "你打開 %s 並且準備開始放鬆。"
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You whip out your %s and start getting the tension out."
 msgstr "你抽出 %s 并开始动手放松一下。"
@@ -243748,6 +243819,11 @@ msgstr "选择要截肢的身体部位："
 msgid "Body part removed: %s"
 msgstr "移除的身体部位: %s"
 
+#: src/iuse.cpp
+#, c-format
+msgid "The %s turns off."
+msgstr "%s 关闭了。"
+
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -244989,6 +245065,14 @@ msgstr "你修改了 %s!"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "你使用了 %s 来掩盖体味"
+
+#: src/iuse_actor.cpp
+msgid "You can't do *that* while mounted"
+msgstr "骑乘时无法进行此操作。"
+
+#: src/iuse_actor.cpp
+msgid "Are you trying to drown yourself?"
+msgstr "你想淹死自己吗？"
 
 #: src/iuse_actor.h
 msgid "Carve"
@@ -257271,6 +257355,14 @@ msgstr "使用大地图贴图包"
 msgid ""
 "If true, replaces some TTF-rendered text with tiles for overmap display."
 msgstr "开启时，将使用贴图包替换游戏大地图中的TTF文本。"
+
+#: src/options.cpp
+msgid "Choose overmap tileset"
+msgstr "选择大地图贴图包"
+
+#: src/options.cpp
+msgid "Choose the overmap tileset you want to use."
+msgstr "请选择你想要使用的大地图贴图包。"
 
 #: src/options.cpp
 msgid "Enable character preview window"

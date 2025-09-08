@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-07 01:39+0000\n"
+"POT-Creation-Date: 2025-09-08 01:54+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -12634,6 +12634,10 @@ msgid "Well, you know"
 msgstr "글쎄, 너도 알다시피"
 
 #: data/json/item_actions.json
+msgid "Turn off toy"
+msgstr "장난감 끄기"
+
+#: data/json/item_actions.json
 msgid "Purify some water"
 msgstr "정수"
 
@@ -12693,6 +12697,10 @@ msgstr "작업대에서 제작"
 #: data/json/item_actions.json
 msgid "(Debug) Amputate body part"
 msgstr "(디버그) 신체 부위 절단"
+
+#: data/json/item_actions.json
+msgid "Relieve some tension"
+msgstr "긴장 풀기"
 
 #: data/json/item_category.json
 msgid "GUNS"
@@ -34420,6 +34428,17 @@ msgid ""
 "A mass of decaying organic matter that accumulates at the bottom of lakes."
 msgstr "호수 지하에 축척되어 있는 유기물 덩어리."
 
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid "cave mushrooms"
+msgstr "동굴 버섯"
+
+#. ~ Description for cave mushrooms
+#: data/json/furniture_and_terrain/furniture-flora.json
+msgid ""
+"A cluster of fungi growing in the dark.  Could be plucked, they might be "
+"edible."
+msgstr "어둠 속에서 자라는 버섯 뭉치입니다. 원한다면 채취해서 먹을 수 있습니다."
+
 #: data/json/furniture_and_terrain/furniture-fungal.json
 #: data/mods/No_Fungi/furniture.json
 msgid "marloss flower"
@@ -53898,7 +53917,7 @@ msgstr "%s(을)를 작동시킵니다."
 #: data/json/items/tool_armor.json data/json/items/melee/bludgeons.json
 #: data/json/items/melee/swords_and_blades.json
 #: data/json/obsoletion/items.json data/mods/Aftershock/items/tool_armor.json
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "The %s's batteries are dead."
 msgstr "%s의 배터리가 다 되었습니다."
@@ -109375,6 +109394,40 @@ msgid ""
 "This battery-devouring device is just the thing to knead the tension out and"
 " help you relax.  Use it to take a break and unwind."
 msgstr "마사지를 통해 긴장을 완화시키고 편안함을 가져다주는 배터리 작동식 기계. 사용하면 휴식을 취하며 긴장을 완화시킨다."
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (off)"
+msgid_plural "bullet vibrator (off)s"
+msgstr[0] ""
+
+#. ~ Use action msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "You turn on the bullet vibe and place it appropriately."
+msgstr ""
+
+#. ~ Use action need_charges_msg for {'str': 'bullet vibrator (off)'}.
+#: data/json/items/tool/electronics.json
+msgid "The vibrator's battery is dead."
+msgstr ""
+
+#. ~ Description for {'str': 'bullet vibrator (off)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  Use it to turn it on and start letting it buzz away."
+msgstr ""
+
+#: data/json/items/tool/electronics.json
+msgid "bullet vibrator (on)"
+msgid_plural "bullet vibrator (on)s"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'bullet vibrator (on)'}
+#: data/json/items/tool/electronics.json
+msgid ""
+"This battery-devouring device is just the thing to knead the tension out and"
+" help you relax.  You can feel it buzzing away all that tension."
+msgstr ""
 
 #: data/json/items/tool/electronics.json
 msgid "gps pinpointer"
@@ -171284,6 +171337,11 @@ msgid "mine shaft"
 msgstr "수직 갱도"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
+#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
+msgid "subway station?"
+msgstr "지하철역?"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_industrial.json
 msgid "mine tunnels"
 msgstr "광산 터널"
 
@@ -171423,10 +171481,6 @@ msgstr "미-고 착륙 플랫폼"
 #: data/json/overmap/overmap_terrain/overmap_terrain_mi-go.json
 msgid "mi-go scout tower"
 msgstr "미-고 정찰탑"
-
-#: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
-msgid "subway station?"
-msgstr "지하철역?"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_microlab.json
 #: data/mods/DinoMod/overmap/overmap_terrain.json
@@ -186509,6 +186563,14 @@ msgstr "열차 기관차 모형"
 #: data/json/vehicles/trains.json
 msgid "Trolley"
 msgstr "트롤리"
+
+#: data/json/vehicles/trains.json
+msgid "Hopper Truck"
+msgstr "호퍼 트럭"
+
+#: data/json/vehicles/trains.json
+msgid "Electric Tram"
+msgstr "전동 트램"
 
 #: data/json/vehicles/trucks.json
 msgid "Flatbed Truck"
@@ -239782,6 +239844,11 @@ msgstr "도전과제 달성 \"%s\"."
 msgid "Loading the tileset failed: %s"
 msgstr "타일셋 불러오기 실패: %s"
 
+#: src/game.cpp src/options.cpp
+#, c-format
+msgid "Loading the overmap tileset failed: %s"
+msgstr "오버맵 타일셋 %s(을)를 불러오는데 실패했습니다."
+
 #: src/game.cpp
 msgid "Please wait as we build your world"
 msgstr "세계가 생성되는 동안 기다려 주십시오"
@@ -250039,16 +250106,16 @@ msgstr "안됩니다… 뭔가에 타고 있는 동안에는요."
 msgid "It's waterproof, but oxygen maybe?"
 msgstr "이건 방수라지만, 산소는 어떻게 해?"
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 msgid "*Your* batteries are dead."
 msgstr "*당신*의 배터리가 다 되었습니다."
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You fire up your %s and start getting the tension out."
 msgstr ""
 
-#: src/iuse.cpp
+#: src/iuse.cpp src/iuse_actor.cpp
 #, c-format
 msgid "You whip out your %s and start getting the tension out."
 msgstr ""
@@ -251982,6 +252049,11 @@ msgstr "절단할 신체 부위를 선택하세요:"
 msgid "Body part removed: %s"
 msgstr "신체 부위 제거됨: %s"
 
+#: src/iuse.cpp
+#, c-format
+msgid "The %s turns off."
+msgstr "%s(이)가 꺼집니다."
+
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -253223,6 +253295,14 @@ msgstr "%s(을)를 개량했습니다!"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "%s(으)로 체취를 가리려 시도합니다."
+
+#: src/iuse_actor.cpp
+msgid "You can't do *that* while mounted"
+msgstr "탑승 중에 해당 행동을 할 수 없습니다."
+
+#: src/iuse_actor.cpp
+msgid "Are you trying to drown yourself?"
+msgstr "스스로를 익사시킬 셈인가요?"
 
 #: src/iuse_actor.h
 msgid "Carve"
@@ -265554,6 +265634,14 @@ msgstr "타일로 오버맵 표시"
 msgid ""
 "If true, replaces some TTF-rendered text with tiles for overmap display."
 msgstr "이 설정을 켜면 TTF 형식으로 렌더링된 텍스트가 타일로 대체됩니다."
+
+#: src/options.cpp
+msgid "Choose overmap tileset"
+msgstr "오버맵 타일셋 선택"
+
+#: src/options.cpp
+msgid "Choose the overmap tileset you want to use."
+msgstr "사용할 오버맵 타일셋을 선택하세요."
 
 #: src/options.cpp
 msgid "Enable character preview window"
