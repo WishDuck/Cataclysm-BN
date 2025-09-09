@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-08 01:54+0000\n"
+"POT-Creation-Date: 2025-09-09 01:33+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -12050,10 +12050,6 @@ msgid "Fold"
 msgstr "折叠"
 
 #: data/json/item_actions.json
-msgid "Cook"
-msgstr "烹饪"
-
-#: data/json/item_actions.json
 msgid "Cut up metal"
 msgstr "切割金属"
 
@@ -12236,6 +12232,10 @@ msgstr "使用天平"
 #: data/json/item_actions.json
 msgid "Search GPS"
 msgstr "搜索 GPS"
+
+#: data/json/item_actions.json
+msgid "CRAFT"
+msgstr "制作"
 
 #: data/json/item_actions.json
 msgid "Work on craft"
@@ -105138,7 +105138,7 @@ msgstr "这是一个小磨石和一个碗石的简单组合。用于研磨谷物
 #: data/json/items/tool/cooking.json
 msgid "multi cooker"
 msgid_plural "multi cookers"
-msgstr[0] "多功能厨师机"
+msgstr[0] "多功能炊具"
 
 #. ~ Description for {'str': 'multi cooker'}
 #: data/json/items/tool/cooking.json
@@ -105148,21 +105148,20 @@ msgid ""
 "sort of cooking, from parboiling potatoes to cooking curry to popping "
 "popcorn.  There's no manual, but you're sure you can work it out."
 msgstr ""
-"一种民用级的多功能厨师机。在旅行野营时使用电池供电。它的许多设置和功能，号称可以处理任何烹饪，从煮马铃薯煮咖哩到做爆米花。虽然没有使用手册，但你确定你会用。\n"
+"一款专业级多功能炊具，带有一个电池槽，可用于露营旅行或车尾派对。其丰富的设置与功能确保能胜任各种烹饪需求，无论是预煮土豆、烹饪咖喱，还是爆米花，都不在话下。虽然没有附带说明书，但你相信自己能摸索出它的用法。\n"
 "\"嘿，我有个邪恶的兄弟。\""
 
 #: data/json/items/tool/cooking.json
-msgid "multi cooker - cooking"
-msgid_plural "multi cooker - cookings"
-msgstr[0] "多功能厨师机（烹饪中）"
+msgid "improved multi cooker"
+msgid_plural "improved multi cookers"
+msgstr[0] "改进型多功能炊具"
 
-#. ~ Description for {'str': 'multi cooker - cooking'}
+#. ~ Description for {'str': 'improved multi cooker'}
 #: data/json/items/tool/cooking.json
 msgid ""
 "A professional-grade multi-cooker, with a battery slot for camping trips or "
-"tailgating.  There is a dish in it."
-msgstr ""
-"一种民用级的多功能厨师机。在旅行野营时使用电池供电。它的许多设置和功能，号称可以处理任何烹饪，从煮马铃薯煮咖哩到做爆米花。虽然没有使用手册，但你确定你会用。这里面有盘菜正在烹饪。"
+"tailgating. This has been tinkered with."
+msgstr "一款专业级多功能炊具，带有电池槽，可用于露营旅行或车尾派对。这件物品经过了改装。"
 
 #: data/json/items/tool/cooking.json
 msgid "lamp oil cooker"
@@ -111998,6 +111997,19 @@ msgid ""
 "surprising amount of damage."
 msgstr "弹簧与废金属制成的简易组件，安装在车辆的某个部位时，可保护该部位免受冲击。弹簧可以吸收大量的伤害。"
 
+#: data/json/items/vehicle/balloon.json data/json/vehicleparts/balloons.json
+msgid "airship balloon"
+msgid_plural "airship balloons"
+msgstr[0] "飞艇气囊"
+
+#. ~ Description for {'str': 'airship balloon'}
+#: data/json/items/vehicle/balloon.json
+msgid ""
+"A big plastic airbag filled with hydrogen gas.  Provides lift if installed "
+"on a vehicle, but you'll need a propeller to do anything more than float up "
+"and down."
+msgstr "一个充满氢气的大型塑料气囊。如果安装在载具上可以提供升力，但你需要一个螺旋桨才能进行升降以外的动作。"
+
 #: data/json/items/vehicle/battery.json data/json/vehicleparts/battery.json
 msgid "car battery"
 msgid_plural "car batteries"
@@ -112143,9 +112155,10 @@ msgstr[0] "气囊浮力单元"
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/items/vehicle/boat.json
 msgid ""
-"A gas-filled sac that provides buoyancy.  Add buoyancy cells to a vehicle "
-"until it floats.  Then attach oars or a motor to get the boat to move."
-msgstr "一个充满气体的囊袋，用于提供浮力。将其安装在载具上直到它浮在水上。继续添加桨或者引擎来移动船只。"
+"Several bags tied together, filled with just enough hydrogen to provide "
+"buoyancy.  Add buoyancy cells to a vehicle until it floats.  Then attach "
+"oars or a motor to get the boat to move."
+msgstr "几个捆绑在一起的气囊，里面填充了刚好能提供浮力的氢气。将浮力单元添加到载具上，直到它能浮起来。然后安装船桨或马达来让船移动。"
 
 #: data/json/items/vehicle/boat.json data/json/vehicleparts/vehicle_parts.json
 msgid "plastic boat hull"
@@ -113244,8 +113257,10 @@ msgstr[0] "风力发电机"
 
 #. ~ Description for {'str': 'wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A small turbine that can convert wind into electric power."
-msgstr "一台能将风能转化为电能的小型涡轮机。"
+msgid ""
+"A small turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr "一个小型涡轮机，可以根据风速将风能转化为电能。"
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -113255,8 +113270,10 @@ msgstr[0] "大型风力发电机"
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A large turbine that can convert wind into electric power."
-msgstr "能把风转化成电能的大型涡轮机。"
+msgid ""
+"A large turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr "一个大型涡轮机，可以根据风速将风能转化为电能。"
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -113531,6 +113548,20 @@ msgstr[0] "骨制装甲板"
 #: data/json/items/vehicle/plating.json
 msgid "Bone plating made for a vehicle."
 msgstr "载具用骨制装甲板。"
+
+#: data/json/items/vehicle/propellers.json
+#: data/json/vehicleparts/propellers.json
+msgid "aircraft propeller"
+msgid_plural "aircraft propellers"
+msgstr[0] "飞机螺旋桨"
+
+#. ~ Description for {'str': 'aircraft propeller'}
+#: data/json/items/vehicle/propellers.json
+msgid ""
+"A steel propeller and spinner from an airplane.  When attached to a vehicle,"
+" engine power will provide lift to any installed wings, allowing it to take "
+"off."
+msgstr "一个来自飞机的钢制螺旋桨和桨毂罩。当安装在载具上时，引擎动力将为任何已安装的机翼提供升力，使其能够起飞。"
 
 #: data/json/items/vehicle/rams.json data/json/vehicleparts/rams.json
 msgid "shredder"
@@ -114306,6 +114337,32 @@ msgid ""
 "Simple wooden runners for a hand-pulled sled.  They make it easier to drag a"
 " cart across rough terrain, but that's about all they do."
 msgstr "用于手拉雪橇的简单木制滑条。它们可以让拖拉小车在崎岖地形上更容易一些，但作用仅限于此。"
+
+#: data/json/items/vehicle/wings.json
+msgid "metal aerofoil"
+msgid_plural "metal aerofoils"
+msgstr[0] "金属机翼"
+
+#. ~ Description for {'str': 'metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers.  Wings allow a vehicle to fly, but require a propeller and enough"
+" velocity to take off."
+msgstr "一段由钢制翼肋和纵梁上覆盖金属蒙皮制成的机翼。机翼能让载具飞行，但需要螺旋桨和足够的速度才能起飞。"
+
+#: data/json/items/vehicle/wings.json
+msgid "wired metal aerofoil"
+msgid_plural "wired metal aerofoils"
+msgstr[0] "带线路的金属机翼"
+
+#. ~ Description for {'str': 'wired metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers, and a navigation light wired into it.  Wings allow a vehicle to "
+"fly, but require a propeller and enough velocity to take off."
+msgstr "一段由钢制翼肋和纵梁上覆盖金属蒙皮制成的机翼，并内置了航行灯线路。机翼能让载具飞行，但需要螺旋桨和足够的速度才能起飞。"
 
 #. ~ Sign
 #: data/json/mapgen/Bastion_Fort.json data/json/mapgen/s_gas.json
@@ -119531,7 +119588,7 @@ msgstr "妈妈，是你吗？"
 #: data/json/monsters/misc.json
 msgid "evil multi-cooker"
 msgid_plural "evil multi-cookers"
-msgstr[0] "邪恶厨师机"
+msgstr[0] "邪恶多功能炊具"
 
 #. ~ Description for {'str': 'evil multi-cooker'}
 #: data/json/monsters/misc.json
@@ -160590,6 +160647,18 @@ msgid "A very small dishwasher designed for use in vehicles."
 msgstr "一台非常小型的车载洗碗机。"
 
 #: data/json/obsoletion/items.json
+msgid "multi cooker - cooking"
+msgid_plural "multi cooker - cookings"
+msgstr[0] "多功能炊具（烹饪中）"
+
+#. ~ Description for {'str': 'multi cooker - cooking'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A professional-grade multi-cooker, with a battery slot for camping trips or "
+"tailgating.  There is a dish in it."
+msgstr "一款专业级多功能炊具，带有电池槽，可用于露营旅行或车尾派对。里面有一道菜。"
+
+#: data/json/obsoletion/items.json
 msgid "can of butane"
 msgid_plural "cans of butane"
 msgstr[0] "丁烷罐"
@@ -176378,6 +176447,16 @@ msgid ""
 "on the interior of your vehicle."
 msgstr "一套弹簧和垫片组合而成的缓冲系统，用于吸收碰撞对载具内部造成的冲击。"
 
+#: data/json/vehicleparts/balloons.json
+msgid ""
+"A balloon that provides lift, but requires aircraft propellers for "
+"horizontal momentum."
+msgstr "一个提供升力的气囊，但需要飞机螺旋桨来获得水平动力。"
+
+#: data/json/vehicleparts/balloons.json
+msgid "external airship balloon"
+msgstr "外挂式飞艇气囊"
+
 #. ~ Description for {'str': 'car battery'}
 #. ~ Description for {'str': 'large storage battery'}
 #: data/json/vehicleparts/battery.json
@@ -177421,6 +177500,12 @@ msgid ""
 "multiple of them are installed."
 msgstr "一种更先进的电动马达，即使安装多个，其功率也不会减弱。"
 
+#: data/json/vehicleparts/propellers.json
+msgid ""
+"A set of aerofoil propeller rotors, when spun at high speed, they generate "
+"thrust via horizontal momentum."
+msgstr "一套翼型螺旋桨旋翼，高速旋转时通过水平动力产生推力。"
+
 #: data/json/vehicleparts/rams.json
 msgid ""
 "A reinforced ram.  Place at the edge of vehicle to reduce damage taken in "
@@ -177485,7 +177570,6 @@ msgid ""
 msgstr "一套旋翼型直升机旋翼桨叶，通过高速旋转，提供升力和推力。"
 
 #. ~ Description for heavy-duty military rotors
-#. ~ Description for small helicopter rotors
 #. ~ Description for heavy-duty military Blackhawk rotors
 #: data/json/vehicleparts/rotor.json
 msgid ""
@@ -177496,6 +177580,13 @@ msgstr "一套四翼军用级直升机旋翼桨叶，通过高速旋转，提供
 #: data/json/vehicleparts/rotor.json
 msgid "small helicopter rotors"
 msgstr "小型直升机旋翼"
+
+#. ~ Description for small helicopter rotors
+#: data/json/vehicleparts/rotor.json
+msgid ""
+"A set of four civilian helicopter rotor blades, used to provide lift by "
+"rotation."
+msgstr "一套四叶民用直升机旋翼桨叶，通过旋转提供升力。"
 
 #: data/json/vehicleparts/rotor.json
 msgid "gyrocopter rotors"
@@ -178123,8 +178214,10 @@ msgstr "将原木捆绑在一起，能让你的船浮在水面上。"
 
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/vehicleparts/vehicle_parts.json
-msgid "Gas sacs tied together to keep your boat out of the water."
-msgstr "将气囊捆绑在一起，能让你的船浮在水面上。"
+msgid ""
+"Hydrogen-filled bags tied together.  Not light enough to provide lift for an"
+" airship, but can help a boat float."
+msgstr "捆绑在一起的氢气囊。虽然不足以为飞艇提供升力，但可以帮助船只漂浮。"
 
 #. ~ Description for {'str': 'plastic boat hull'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -178316,16 +178409,16 @@ msgstr "一块太阳能板。当暴露于阳光照射之下时，会缓慢地为
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A small wind turbine.  Will slowly recharge the vehicle's electrical power "
-"when exposed to the wind."
-msgstr "一个小型风力发电机。当暴露于大风下时，会缓慢地为车辆电池充电。"
+"when exposed to the wind depending on wind speed."
+msgstr "一个小型风力涡轮机。暴露在风中时会根据风速缓慢地为载具的电力系统充电。"
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A large wind turbine with stabilizing legs.  Will recharge the vehicle's "
-"electrical power when exposed to the wind.  Will cause extra drag on the "
-"vehicle."
-msgstr "一个大型风力发电机。当暴露于大风下时，会缓慢地为车辆电池充电。会额外增加车辆的阻力。"
+"electrical power when exposed to the wind depending on wind speed.  Will "
+"cause extra drag on the vehicle."
+msgstr "一个带有稳定支架的大型风力涡轮机。暴露在风中时会根据风速为载具的电力系统充电。会给载具带来额外的阻力。"
 
 #. ~ Description for {'str': 'reinforced solar panel'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -179157,6 +179250,44 @@ msgid ""
 "A translucent sheet of rigid that lets you see outside the vehicle.  Bit "
 "more durable than glass."
 msgstr "一块半透明的硬质板材，让你可以看见外面。比玻璃耐用一些。"
+
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne."
+msgstr "一个在移动时提供升力的机翼，但在空中飞行时需要螺旋桨提供向前的推力。"
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing"
+msgstr "金属机翼"
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing with lights"
+msgstr "带灯金属机翼"
+
+#. ~ Description for metal wing with lights
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne.  Has a navigation light built in, for"
+" collision avoidance."
+msgstr "一个在移动时提供升力的机翼，但在空中飞行时需要螺旋桨提供向前的推力。内置航行灯，用于防撞。"
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing"
+msgstr "外挂式金属机翼"
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing with lights"
+msgstr "外挂式带灯金属机翼"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Small 2-seater Plane"
+msgstr "小型双座飞机"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Commercial Blimp"
+msgstr "商用软式飞艇"
 
 #: data/json/vehicles/bikes.json
 msgid "Bicycle"
@@ -213813,6 +213944,16 @@ msgid "Lamia mutagen"
 msgid_plural "Lamia mutagens"
 msgstr[0] "拉米亚诱变剂"
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi serum"
+msgid_plural "Usagimimi serums"
+msgstr[0] "兔耳娘诱变血清"
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi mutagen"
+msgid_plural "Usagimimi mutagens"
+msgstr[0] "兔耳娘诱变剂"
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -235463,8 +235604,12 @@ msgid "You can't go down stairs while you're riding."
 msgstr "你不能在骑乘的时候下楼。"
 
 #: src/handle_action.cpp
-msgid "The rotors struggle to generate enough lift!"
-msgstr ""
+msgid "The craft struggles to generate enough lift!"
+msgstr "飞行器难以产生足够的升力！"
+
+#: src/handle_action.cpp
+msgid "You need a propeller to take off!"
+msgstr "你需要一个螺旋桨才能起飞！"
 
 #: src/handle_action.cpp
 msgid "You can't open things while you're in your shell."
@@ -237253,6 +237398,10 @@ msgstr "你的现金卡现在余额有 %s 。"
 #: src/iexamine.cpp
 msgid "Unable to refund, no fuel in pump."
 msgstr "无法退还，泵里已没有燃料。"
+
+#: src/iexamine.cpp
+msgid "Jumping off a flying object is far too dangerous."
+msgstr "从飞行物上跳下太危险了。"
 
 #: src/iexamine.cpp
 msgid "There is a ledge here.  What do you want to do?"
@@ -243463,143 +243612,6 @@ msgid "You take control of the vehicle."
 msgstr "你控制了载具。"
 
 #: src/iuse.cpp
-msgid "And when you gaze long into a screen, the screen also gazes into you."
-msgstr "当你注视着厨师机，你发现厨师机也注视着你。"
-
-#: src/iuse.cpp
-msgid "The multi-cooker boiled your head!"
-msgstr "多功能厨师机水煮了你的脑袋！"
-
-#: src/iuse.cpp
-msgid "The characters on the screen display an obscene joke.  Strange humor."
-msgstr "显示屏上的人物展示了一个黄色段子。奇怪的幽默。"
-
-#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
-#: src/iuse.cpp
-msgid "Are you sure?!  the multi-cooker wants to poison your food!"
-msgstr "你确定？！多功能厨师机想给你的饭菜下毒！"
-
-#: src/iuse.cpp
-msgid ""
-"The multi-cooker argues with you about the taste preferences.  You don't "
-"want to deal with it."
-msgstr "多功能厨师机和你争辩饭菜的口味表现，你根本不想理会它。"
-
-#: src/iuse.cpp
-msgid "The multi-cooker runs away!"
-msgstr "多功能厨师机逃跑了！"
-
-#: src/iuse.cpp
-msgid "You're surrounded by aggressive multi-cookers!"
-msgstr "你被敌对的多功能厨师机包围了！"
-
-#: src/iuse.cpp
-msgid "The multi-cooker should be finishing shortly…"
-msgstr "多功能厨师机很快就要完工了……"
-
-#. ~ sound of a multi-cooker finishing its cycle!
-#: src/iuse.cpp
-msgid "ding!"
-msgstr "叮！"
-
-#: src/iuse.cpp
-msgid "You cannot read, and don't understand the screen or the buttons!"
-msgstr "你不识字，所以你根本无法理解屏幕和按钮的意思！"
-
-#: src/iuse.cpp
-msgid "Welcome to the RobotChef3000.  Choose option:"
-msgstr "欢迎使用机器厨师3000型。请选择："
-
-#: src/iuse.cpp
-msgid "Stop cooking"
-msgstr "停止烹调"
-
-#: src/iuse.cpp
-msgid "Batteries are low."
-msgstr "电量低。"
-
-#: src/iuse.cpp
-msgid "Start cooking"
-msgstr "开始烹调"
-
-#: src/iuse.cpp
-msgid "Upgrade multi-cooker"
-msgstr "升级多功能厨师机"
-
-#: src/iuse.cpp
-msgid "Multi-cooker already upgraded"
-msgstr "多功能厨师机已被升级"
-
-#: src/iuse.cpp
-msgid "Multi-cooker unable to upgrade"
-msgstr "多功能厨师机无法升级"
-
-#: src/iuse.cpp
-msgid "Take out dish"
-msgstr "装盘"
-
-#: src/iuse.cpp
-msgid "Really stop cooking?"
-msgstr "真的停止烹饪？"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You don't have a suitable container to store your %s."
-msgstr "你没有合适的容器来存储你的%s。"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You got the %s from the multi-cooker."
-msgstr "你把 %s 从厨师机中取出。"
-
-#: src/iuse.cpp
-msgid "Choose desired meal:"
-msgstr "选择你想要的餐饮："
-
-#: src/iuse.cpp
-#, c-format
-msgid "The multi-cooker needs %d charges to cook this dish."
-msgstr "多功能厨师机需要消耗 %d 单位电量来烹饪这道菜肴。"
-
-#: src/iuse.cpp
-msgid ""
-"The screen flashes blue symbols and scales as the multi-cooker begins to "
-"shake."
-msgstr "随着显示屏闪过蓝色的符号，多功能厨师机开始振动。"
-
-#: src/iuse.cpp
-msgid "Your morale is too low to craft…"
-msgstr "你心情值过低，无法制造物品……"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need a %s."
-msgstr "你需要一个 %s。"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need an item with %s of 1 or more to disassemble this."
-msgstr "你需要一个 %s 等级至少为1的工具来拆解它。"
-
-#: src/iuse.cpp
-msgid ""
-"You've successfully upgraded the multi-cooker, master tinkerer!  Now it "
-"cooks faster!"
-msgstr "你成功的升级了多功能厨师机，大师级工匠！现在它烹饪得更快了！"
-
-#: src/iuse.cpp
-msgid ""
-"You sagely examine and analyze the multi-cooker, but don't manage to "
-"accomplish anything."
-msgstr "你精细的检查和分析了多功能厨师机，但是什么都没干成。"
-
-#: src/iuse.cpp
-msgid ""
-"Your tinkering nearly breaks the multi-cooker!  Fortunately, it still works,"
-" but best to stop messing with it."
-msgstr "你的捣鼓要把多功能厨师机弄坏了！幸运的是，它还能用。你最好少乱动它了。"
-
-#: src/iuse.cpp
 msgid "Attach cable where?"
 msgstr ""
 
@@ -245339,6 +245351,107 @@ msgstr "你成功改造了 %s！"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "你使用了 %s 来掩盖体味"
+
+#: src/iuse_actor.cpp
+msgid "And when you gaze long into a screen, the screen also gazes into you."
+msgstr "当你注视着炊具，你发现炊具也注视着你。"
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker boiled your head!"
+msgstr "多功能炊具水煮了你的脑袋！"
+
+#: src/iuse_actor.cpp
+msgid "The characters on the screen display an obscene joke.  Strange humor."
+msgstr "显示屏上的人物展示了一个黄色段子。奇怪的幽默。"
+
+#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
+#: src/iuse_actor.cpp
+msgid "Are you sure?!  the multi-cooker wants to poison your food!"
+msgstr "你确定？！多功能炊具想给你的饭菜下毒！"
+
+#: src/iuse_actor.cpp
+msgid ""
+"The multi-cooker argues with you about the taste preferences.  You don't "
+"want to deal with it."
+msgstr "多功能炊具和你争辩饭菜的口味表现，你根本不想理会它。"
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker runs away!"
+msgstr "多功能炊具逃跑了！"
+
+#: src/iuse_actor.cpp
+msgid "You're surrounded by aggressive multi-cookers!"
+msgstr "你被敌对的多功能炊具包围了！"
+
+#: src/iuse_actor.cpp
+msgid "ding!"
+msgstr "叮！"
+
+#: src/iuse_actor.cpp
+msgid "Choose option:"
+msgstr "选择选项："
+
+#: src/iuse_actor.cpp
+msgid "Stop crafting"
+msgstr "停止制作"
+
+#: src/iuse_actor.cpp
+msgid "Batteries are low."
+msgstr "电量低。"
+
+#: src/iuse_actor.cpp
+msgid "Start crafting "
+msgstr "开始制作"
+
+#: src/iuse_actor.cpp
+msgid "Remove Product"
+msgstr "移除产品"
+
+#: src/iuse_actor.cpp
+msgid "Really stop?"
+msgstr "确定要停止吗？"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You don't have a suitable container to store your %s."
+msgstr "你没有合适的容器来存储你的%s。"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You got the %s from the %s."
+msgstr "你从 %s 获得了 %s。"
+
+#: src/iuse_actor.cpp
+msgid "Choose desired recipe:"
+msgstr "选择想要的配方："
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s (%1.f charges)"
+msgstr "%s（%1.f 次充能）"
+
+#: src/iuse_actor.cpp
+msgid "You don't know of anything you could craft with this."
+msgstr "没有可使用此物品制作的配方。"
+
+#: src/iuse_actor.cpp
+msgid "Choose batch count:"
+msgstr "选择制作数量："
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s batches (%1.f charges)"
+msgstr "%s 批（%1.f 次充能）"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s needs %d charges to create this."
+msgstr "制作此物品需要 %s 的 %d 次充能。"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s begins to hum."
+msgstr "%s 开始发出嗡嗡声。"
 
 #: src/iuse_actor.cpp
 msgid "You can't do *that* while mounted"
@@ -259832,6 +259945,10 @@ msgid "Max Mana"
 msgstr "最大魔力"
 
 #: src/panels.cpp
+msgid "Vehicle"
+msgstr "载具"
+
+#: src/panels.cpp
 msgid "Location"
 msgstr "位置"
 
@@ -259894,10 +260011,6 @@ msgstr "需求"
 #: src/panels.cpp
 msgid "Env"
 msgstr "环境"
-
-#: src/panels.cpp
-msgid "Vehicle"
-msgstr "载具"
 
 #: src/panels.cpp
 msgid "Hint"
@@ -263620,6 +263733,11 @@ msgstr "最大起飞重量: <color_light_blue>%5.0f</color> %s"
 
 #: src/veh_interact.cpp
 #, c-format
+msgid "Liftoff Speed: <color_light_blue>%3d</color> %s"
+msgstr "起飞速度：<color_light_blue>%3d</color> %s"
+
+#: src/veh_interact.cpp
+#, c-format
 msgid "Maximum Buoyancy: <color_light_blue>%5.0f</color> %s"
 msgstr "最大漂浮重量: <color_light_blue>%5.0f</color> %s"
 
@@ -264182,6 +264300,10 @@ msgid "You lose control as the vehicle starts skidding."
 msgstr "你无法控制载具，开始打滑。"
 
 #: src/vehicle_autodrive.cpp
+msgid "Autodrive is not good enough for planes."
+msgstr "自动驾驶功能不适用于飞机。"
+
+#: src/vehicle_autodrive.cpp
 msgid "Can't see a path forward."
 msgstr "无法看清前方道路。"
 
@@ -264357,14 +264479,6 @@ msgstr "你已经着陆了！"
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and land when there are obstacles below you."
 msgstr "当你下方有障碍物时，尝试着陆是不安全的。"
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and land while you are moving."
-msgstr "当你还在移动时，尝试着陆是不安全的。"
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and take off while you are moving."
-msgstr "当你还在移动时，尝试起飞是不安全的。"
 
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and take off from an uneven surface."

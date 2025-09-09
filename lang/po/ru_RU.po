@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-08 01:54+0000\n"
+"POT-Creation-Date: 2025-09-09 01:33+0000\n"
 "Last-Translator: GostBug <blackday8990@gmx.de>, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -13560,10 +13560,6 @@ msgid "Fold"
 msgstr "Сложить"
 
 #: data/json/item_actions.json
-msgid "Cook"
-msgstr "Готовить"
-
-#: data/json/item_actions.json
 msgid "Cut up metal"
 msgstr "Резать металл"
 
@@ -13746,6 +13742,10 @@ msgstr "Использовать весы"
 #: data/json/item_actions.json
 msgid "Search GPS"
 msgstr "Поиск GPS"
+
+#: data/json/item_actions.json
+msgid "CRAFT"
+msgstr ""
 
 #: data/json/item_actions.json
 msgid "Work on craft"
@@ -132876,22 +132876,19 @@ msgstr ""
 "управления, но вы уверены, что вы можете ей пользоваться."
 
 #: data/json/items/tool/cooking.json
-msgid "multi cooker - cooking"
-msgid_plural "multi cooker - cookings"
-msgstr[0] "мультиварка (с едой)"
-msgstr[1] "мультиварки (с едой)"
-msgstr[2] "мультиварок (с едой)"
-msgstr[3] "мультиварки (с едой)"
+msgid "improved multi cooker"
+msgid_plural "improved multi cookers"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#. ~ Description for {'str': 'multi cooker - cooking'}
+#. ~ Description for {'str': 'improved multi cooker'}
 #: data/json/items/tool/cooking.json
 msgid ""
 "A professional-grade multi-cooker, with a battery slot for camping trips or "
-"tailgating.  There is a dish in it."
+"tailgating. This has been tinkered with."
 msgstr ""
-"Мультиварка для профессиональной готовки. Имеет разъём под батарею для "
-"готовки на природе или сохранения еды тёплой. Внутри находится что-то "
-"съедобное."
 
 #: data/json/items/tool/cooking.json
 msgid "lamp oil cooker"
@@ -142132,6 +142129,22 @@ msgstr ""
 " средство будет защищать от ударов. Пружины могут поглощать огромное "
 "количество повреждений."
 
+#: data/json/items/vehicle/balloon.json data/json/vehicleparts/balloons.json
+msgid "airship balloon"
+msgid_plural "airship balloons"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'airship balloon'}
+#: data/json/items/vehicle/balloon.json
+msgid ""
+"A big plastic airbag filled with hydrogen gas.  Provides lift if installed "
+"on a vehicle, but you'll need a propeller to do anything more than float up "
+"and down."
+msgstr ""
+
 #: data/json/items/vehicle/battery.json data/json/vehicleparts/battery.json
 msgid "car battery"
 msgid_plural "car batteries"
@@ -142335,8 +142348,9 @@ msgstr[3] ""
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/items/vehicle/boat.json
 msgid ""
-"A gas-filled sac that provides buoyancy.  Add buoyancy cells to a vehicle "
-"until it floats.  Then attach oars or a motor to get the boat to move."
+"Several bags tied together, filled with just enough hydrogen to provide "
+"buoyancy.  Add buoyancy cells to a vehicle until it floats.  Then attach "
+"oars or a motor to get the boat to move."
 msgstr ""
 
 #: data/json/items/vehicle/boat.json data/json/vehicleparts/vehicle_parts.json
@@ -143852,8 +143866,10 @@ msgstr[3] "ветряки"
 
 #. ~ Description for {'str': 'wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A small turbine that can convert wind into electric power."
-msgstr "Маленький ветряк для превращения энергии ветра в электроэнергию."
+msgid ""
+"A small turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr ""
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -143866,8 +143882,10 @@ msgstr[3] "большие ветряки"
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A large turbine that can convert wind into electric power."
-msgstr "Большой ветряк для превращения энергии ветра в электроэнергию."
+msgid ""
+"A large turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr ""
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -144238,6 +144256,23 @@ msgstr[3] "набор костяной брони"
 #: data/json/items/vehicle/plating.json
 msgid "Bone plating made for a vehicle."
 msgstr "Костяная броня для транспорта."
+
+#: data/json/items/vehicle/propellers.json
+#: data/json/vehicleparts/propellers.json
+msgid "aircraft propeller"
+msgid_plural "aircraft propellers"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'aircraft propeller'}
+#: data/json/items/vehicle/propellers.json
+msgid ""
+"A steel propeller and spinner from an airplane.  When attached to a vehicle,"
+" engine power will provide lift to any installed wings, allowing it to take "
+"off."
+msgstr ""
 
 #: data/json/items/vehicle/rams.json data/json/vehicleparts/rams.json
 msgid "shredder"
@@ -145314,6 +145349,38 @@ msgid ""
 msgstr ""
 "Простые деревянные полозья для ручных саней. Они облегчают тягу тележки по "
 "неровной местности, но это все, что они делают."
+
+#: data/json/items/vehicle/wings.json
+msgid "metal aerofoil"
+msgid_plural "metal aerofoils"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers.  Wings allow a vehicle to fly, but require a propeller and enough"
+" velocity to take off."
+msgstr ""
+
+#: data/json/items/vehicle/wings.json
+msgid "wired metal aerofoil"
+msgid_plural "wired metal aerofoils"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'wired metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers, and a navigation light wired into it.  Wings allow a vehicle to "
+"fly, but require a propeller and enough velocity to take off."
+msgstr ""
 
 #. ~ Sign
 #: data/json/mapgen/Bastion_Fort.json data/json/mapgen/s_gas.json
@@ -200456,6 +200523,24 @@ msgstr ""
 "транспортное средство."
 
 #: data/json/obsoletion/items.json
+msgid "multi cooker - cooking"
+msgid_plural "multi cooker - cookings"
+msgstr[0] "мультиварка (с едой)"
+msgstr[1] "мультиварки (с едой)"
+msgstr[2] "мультиварок (с едой)"
+msgstr[3] "мультиварки (с едой)"
+
+#. ~ Description for {'str': 'multi cooker - cooking'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A professional-grade multi-cooker, with a battery slot for camping trips or "
+"tailgating.  There is a dish in it."
+msgstr ""
+"Мультиварка для профессиональной готовки. Имеет разъём под батарею для "
+"готовки на природе или сохранения еды тёплой. Внутри находится что-то "
+"съедобное."
+
+#: data/json/obsoletion/items.json
 msgid "can of butane"
 msgid_plural "cans of butane"
 msgstr[0] "канистра бутана"
@@ -219713,6 +219798,16 @@ msgstr ""
 "Система пружин и подушек, предназначенных для смягчения последствий "
 "столкновений внутри вашего автомобиля."
 
+#: data/json/vehicleparts/balloons.json
+msgid ""
+"A balloon that provides lift, but requires aircraft propellers for "
+"horizontal momentum."
+msgstr ""
+
+#: data/json/vehicleparts/balloons.json
+msgid "external airship balloon"
+msgstr ""
+
 #. ~ Description for {'str': 'car battery'}
 #. ~ Description for {'str': 'large storage battery'}
 #: data/json/vehicleparts/battery.json
@@ -220914,6 +221009,12 @@ msgstr ""
 "Более совершенный электродвигатель, его мощность не снижается даже при "
 "установке сразу множества таких же устройств."
 
+#: data/json/vehicleparts/propellers.json
+msgid ""
+"A set of aerofoil propeller rotors, when spun at high speed, they generate "
+"thrust via horizontal momentum."
+msgstr ""
+
 #: data/json/vehicleparts/rams.json
 msgid ""
 "A reinforced ram.  Place at the edge of vehicle to reduce damage taken in "
@@ -220986,7 +221087,6 @@ msgstr ""
 "создают подъемную тягу."
 
 #. ~ Description for heavy-duty military rotors
-#. ~ Description for small helicopter rotors
 #. ~ Description for heavy-duty military Blackhawk rotors
 #: data/json/vehicleparts/rotor.json
 msgid ""
@@ -220999,6 +221099,13 @@ msgstr ""
 #: data/json/vehicleparts/rotor.json
 msgid "small helicopter rotors"
 msgstr "маленькие вертолетные роторы"
+
+#. ~ Description for small helicopter rotors
+#: data/json/vehicleparts/rotor.json
+msgid ""
+"A set of four civilian helicopter rotor blades, used to provide lift by "
+"rotation."
+msgstr ""
 
 #: data/json/vehicleparts/rotor.json
 msgid "gyrocopter rotors"
@@ -221703,7 +221810,9 @@ msgstr ""
 
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/vehicleparts/vehicle_parts.json
-msgid "Gas sacs tied together to keep your boat out of the water."
+msgid ""
+"Hydrogen-filled bags tied together.  Not light enough to provide lift for an"
+" airship, but can help a boat float."
 msgstr ""
 
 #. ~ Description for {'str': 'plastic boat hull'}
@@ -221916,20 +222025,16 @@ msgstr ""
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A small wind turbine.  Will slowly recharge the vehicle's electrical power "
-"when exposed to the wind."
+"when exposed to the wind depending on wind speed."
 msgstr ""
-"Маленький ветряк. Будет медленно заряжать автомобильные батареи, если на "
-"него дует ветер."
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A large wind turbine with stabilizing legs.  Will recharge the vehicle's "
-"electrical power when exposed to the wind.  Will cause extra drag on the "
-"vehicle."
+"electrical power when exposed to the wind depending on wind speed.  Will "
+"cause extra drag on the vehicle."
 msgstr ""
-"Большой ветряк со стабилизирующими подпорками. Будет заряжать автомобильные "
-"батареи, если на него дует ветер. Ухудшает сопротивление ветру транспорта."
 
 #. ~ Description for {'str': 'reinforced solar panel'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -222913,6 +223018,44 @@ msgstr ""
 msgid ""
 "A translucent sheet of rigid that lets you see outside the vehicle.  Bit "
 "more durable than glass."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing"
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing with lights"
+msgstr ""
+
+#. ~ Description for metal wing with lights
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne.  Has a navigation light built in, for"
+" collision avoidance."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing"
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing with lights"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Small 2-seater Plane"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Commercial Blimp"
 msgstr ""
 
 #: data/json/vehicles/bikes.json
@@ -266227,6 +266370,22 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi serum"
+msgid_plural "Usagimimi serums"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi mutagen"
+msgid_plural "Usagimimi mutagens"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -289186,8 +289345,12 @@ msgid "You can't go down stairs while you're riding."
 msgstr "Вы не можете спускаться по лестнице во время езды верхом."
 
 #: src/handle_action.cpp
-msgid "The rotors struggle to generate enough lift!"
-msgstr "Роторы не могут создать достаточную подъёмную силу!"
+msgid "The craft struggles to generate enough lift!"
+msgstr ""
+
+#: src/handle_action.cpp
+msgid "You need a propeller to take off!"
+msgstr ""
 
 #: src/handle_action.cpp
 msgid "You can't open things while you're in your shell."
@@ -291032,6 +291195,10 @@ msgstr "На всех ваших карточках имеется %s."
 #: src/iexamine.cpp
 msgid "Unable to refund, no fuel in pump."
 msgstr "Невозможно вернуть, нет топлива в насосе."
+
+#: src/iexamine.cpp
+msgid "Jumping off a flying object is far too dangerous."
+msgstr ""
 
 #: src/iexamine.cpp
 msgid "There is a ledge here.  What do you want to do?"
@@ -297566,152 +297733,6 @@ msgid "You take control of the vehicle."
 msgstr "Вы управляете машиной."
 
 #: src/iuse.cpp
-msgid "And when you gaze long into a screen, the screen also gazes into you."
-msgstr "Если долго всматриваться в экран, экран начнёт всматриваться в вас."
-
-#: src/iuse.cpp
-msgid "The multi-cooker boiled your head!"
-msgstr "Мультиварка вскипятила вашу голову!"
-
-#: src/iuse.cpp
-msgid "The characters on the screen display an obscene joke.  Strange humor."
-msgstr ""
-"Буквы на экране складываются в непристойную шутку. Странное чувство юмора."
-
-#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
-#: src/iuse.cpp
-msgid "Are you sure?!  the multi-cooker wants to poison your food!"
-msgstr "Вы уверены?! Мультиварка хочет отравить вашу еду!"
-
-#: src/iuse.cpp
-msgid ""
-"The multi-cooker argues with you about the taste preferences.  You don't "
-"want to deal with it."
-msgstr ""
-"Мультиварка спорит с вами о ваших вкусах в еде. Вы не хотите иметь с ней "
-"дела."
-
-#: src/iuse.cpp
-msgid "The multi-cooker runs away!"
-msgstr "Мультиварка убегает!"
-
-#: src/iuse.cpp
-msgid "You're surrounded by aggressive multi-cookers!"
-msgstr "Вы окружены агрессивными мультиварками!"
-
-#: src/iuse.cpp
-msgid "The multi-cooker should be finishing shortly…"
-msgstr "Мультиварка должна скоро закончить работу…"
-
-#. ~ sound of a multi-cooker finishing its cycle!
-#: src/iuse.cpp
-msgid "ding!"
-msgstr "«дзынь!»"
-
-#: src/iuse.cpp
-msgid "You cannot read, and don't understand the screen or the buttons!"
-msgstr ""
-"Вы не умеете читать, вы не понимаете, что написано на экране и клавишах!"
-
-#: src/iuse.cpp
-msgid "Welcome to the RobotChef3000.  Choose option:"
-msgstr "Добро пожаловать в РобоШефПовар3000. Выберите режим:"
-
-#: src/iuse.cpp
-msgid "Stop cooking"
-msgstr "Прекратить готовить"
-
-#: src/iuse.cpp
-msgid "Batteries are low."
-msgstr "Батарея разряжена."
-
-#: src/iuse.cpp
-msgid "Start cooking"
-msgstr "Начать готовить"
-
-#: src/iuse.cpp
-msgid "Upgrade multi-cooker"
-msgstr "Улучшить мультиварку"
-
-#: src/iuse.cpp
-msgid "Multi-cooker already upgraded"
-msgstr "Мультиварка уже улучшена"
-
-#: src/iuse.cpp
-msgid "Multi-cooker unable to upgrade"
-msgstr "Невозможно улучшить мультиварку"
-
-#: src/iuse.cpp
-msgid "Take out dish"
-msgstr "Вытащить блюдо"
-
-#: src/iuse.cpp
-msgid "Really stop cooking?"
-msgstr "Действительно прекратить готовить?"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You don't have a suitable container to store your %s."
-msgstr "У вас нет подходящего контейнера для хранения %s."
-
-#: src/iuse.cpp
-#, c-format
-msgid "You got the %s from the multi-cooker."
-msgstr "Вы взяли %s из мультиварки."
-
-#: src/iuse.cpp
-msgid "Choose desired meal:"
-msgstr "Выберите желаемое блюдо:"
-
-#: src/iuse.cpp
-#, c-format
-msgid "The multi-cooker needs %d charges to cook this dish."
-msgstr "Мультиварке требуется %d единиц энергии, чтобы приготовить это блюдо."
-
-#: src/iuse.cpp
-msgid ""
-"The screen flashes blue symbols and scales as the multi-cooker begins to "
-"shake."
-msgstr ""
-"На экране мигают голубые символы и шкалы, а мультиварка начинает трястись."
-
-#: src/iuse.cpp
-msgid "Your morale is too low to craft…"
-msgstr "Настроение ни к чёрту, чтобы что-либо делать…"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need a %s."
-msgstr "Вам понадобится %s."
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need an item with %s of 1 or more to disassemble this."
-msgstr "Нужен предмет со значением %s 1 или больше, чтобы разобрать это."
-
-#: src/iuse.cpp
-msgid ""
-"You've successfully upgraded the multi-cooker, master tinkerer!  Now it "
-"cooks faster!"
-msgstr "Вы успешно улучшили мультиварку! Теперь она готовит быстрее!"
-
-#: src/iuse.cpp
-msgid ""
-"You sagely examine and analyze the multi-cooker, but don't manage to "
-"accomplish anything."
-msgstr ""
-"Вы глубокомысленно изучаете и анализируете мультиварку, но вам не удаётся "
-"ничего закончить."
-
-#: src/iuse.cpp
-msgid ""
-"Your tinkering nearly breaks the multi-cooker!  Fortunately, it still works,"
-" but best to stop messing with it."
-msgstr ""
-"Ваши попытки почти сломали мультиварку! К счастью, она всё ещё работает, но "
-"лучше прекратить это."
-
-#: src/iuse.cpp
 msgid "Attach cable where?"
 msgstr "Куда подключить кабель?"
 
@@ -299504,6 +299525,110 @@ msgstr "Вы модифицируете %s!"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "Вы используете %s, чтобы замаскировать свой запах"
+
+#: src/iuse_actor.cpp
+msgid "And when you gaze long into a screen, the screen also gazes into you."
+msgstr "Если долго всматриваться в экран, экран начнёт всматриваться в вас."
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker boiled your head!"
+msgstr "Мультиварка вскипятила вашу голову!"
+
+#: src/iuse_actor.cpp
+msgid "The characters on the screen display an obscene joke.  Strange humor."
+msgstr ""
+"Буквы на экране складываются в непристойную шутку. Странное чувство юмора."
+
+#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
+#: src/iuse_actor.cpp
+msgid "Are you sure?!  the multi-cooker wants to poison your food!"
+msgstr "Вы уверены?! Мультиварка хочет отравить вашу еду!"
+
+#: src/iuse_actor.cpp
+msgid ""
+"The multi-cooker argues with you about the taste preferences.  You don't "
+"want to deal with it."
+msgstr ""
+"Мультиварка спорит с вами о ваших вкусах в еде. Вы не хотите иметь с ней "
+"дела."
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker runs away!"
+msgstr "Мультиварка убегает!"
+
+#: src/iuse_actor.cpp
+msgid "You're surrounded by aggressive multi-cookers!"
+msgstr "Вы окружены агрессивными мультиварками!"
+
+#: src/iuse_actor.cpp
+msgid "ding!"
+msgstr "«дзынь!»"
+
+#: src/iuse_actor.cpp
+msgid "Choose option:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Stop crafting"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Batteries are low."
+msgstr "Батарея разряжена."
+
+#: src/iuse_actor.cpp
+msgid "Start crafting "
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Remove Product"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Really stop?"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You don't have a suitable container to store your %s."
+msgstr "У вас нет подходящего контейнера для хранения %s."
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You got the %s from the %s."
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Choose desired recipe:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s (%1.f charges)"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You don't know of anything you could craft with this."
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Choose batch count:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s batches (%1.f charges)"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s needs %d charges to create this."
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s begins to hum."
+msgstr ""
 
 #: src/iuse_actor.cpp
 msgid "You can't do *that* while mounted"
@@ -314669,6 +314794,10 @@ msgid "Max Mana"
 msgstr "Макс. мана"
 
 #: src/panels.cpp
+msgid "Vehicle"
+msgstr "Транспорт"
+
+#: src/panels.cpp
 msgid "Location"
 msgstr "Локация"
 
@@ -314731,10 +314860,6 @@ msgstr "Потребности"
 #: src/panels.cpp
 msgid "Env"
 msgstr "Окружение"
-
-#: src/panels.cpp
-msgid "Vehicle"
-msgstr "Транспорт"
 
 #: src/panels.cpp
 msgid "Hint"
@@ -318575,6 +318700,11 @@ msgstr "Максимальный подъём: <color_light_blue>%5.0f</color> %
 
 #: src/veh_interact.cpp
 #, c-format
+msgid "Liftoff Speed: <color_light_blue>%3d</color> %s"
+msgstr ""
+
+#: src/veh_interact.cpp
+#, c-format
 msgid "Maximum Buoyancy: <color_light_blue>%5.0f</color> %s"
 msgstr "Максимальная плавучесть: <color_light_blue>%5.0f</color> %s"
 
@@ -319149,6 +319279,10 @@ msgid "You lose control as the vehicle starts skidding."
 msgstr "Вы теряете управление и транспорт уходит в занос."
 
 #: src/vehicle_autodrive.cpp
+msgid "Autodrive is not good enough for planes."
+msgstr ""
+
+#: src/vehicle_autodrive.cpp
 msgid "Can't see a path forward."
 msgstr "Нет видимости пути."
 
@@ -319324,14 +319458,6 @@ msgstr "Вы уже на земле!"
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and land when there are obstacles below you."
 msgstr "Будет опасно пытаться приземлиться там, где есть препятствия."
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and land while you are moving."
-msgstr "Будет небезопасно приземляться, пока вы движетесь."
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and take off while you are moving."
-msgstr "Будет небезопасно пытаться взлететь, пока вы движетесь."
 
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and take off from an uneven surface."

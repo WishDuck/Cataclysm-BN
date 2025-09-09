@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-08 01:54+0000\n"
+"POT-Creation-Date: 2025-09-09 01:33+0000\n"
 "Last-Translator: jacli mouber, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/bn-team/teams/113585/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -12120,10 +12120,6 @@ msgid "Fold"
 msgstr "折り畳む"
 
 #: data/json/item_actions.json
-msgid "Cook"
-msgstr "調理する"
-
-#: data/json/item_actions.json
 msgid "Cut up metal"
 msgstr "金属を切る"
 
@@ -12306,6 +12302,10 @@ msgstr "乗る"
 #: data/json/item_actions.json
 msgid "Search GPS"
 msgstr "GPS探索"
+
+#: data/json/item_actions.json
+msgid "CRAFT"
+msgstr ""
 
 #: data/json/item_actions.json
 msgid "Work on craft"
@@ -105117,17 +105117,16 @@ msgstr ""
 "プロ仕様の多機能調理機です。キャンプ旅行やライトバンの荷台でBBQパーティーをする際にも使えるように、電池スロットが組み込まれています。非常に多くの状況とレシピに対応します。じゃがいもを茹でるもカレーを作るもポップコーンを弾けさせるも自由自在です。取扱説明書は付いていませんが、普段から料理をする人なら不要でしょう。"
 
 #: data/json/items/tool/cooking.json
-msgid "multi cooker - cooking"
-msgid_plural "multi cooker - cookings"
-msgstr[0] "多機能調理機(稼働)"
+msgid "improved multi cooker"
+msgid_plural "improved multi cookers"
+msgstr[0] ""
 
-#. ~ Description for {'str': 'multi cooker - cooking'}
+#. ~ Description for {'str': 'improved multi cooker'}
 #: data/json/items/tool/cooking.json
 msgid ""
 "A professional-grade multi-cooker, with a battery slot for camping trips or "
-"tailgating.  There is a dish in it."
+"tailgating. This has been tinkered with."
 msgstr ""
-"プロ仕様の多機能調理機です。キャンプ旅行やライトバンの荷台でBBQパーティーをする際にも使えるように、電池スロットが組み込まれています。内部に料理が入っています。"
 
 #: data/json/items/tool/cooking.json
 msgid "lamp oil cooker"
@@ -111969,6 +111968,19 @@ msgid ""
 "surprising amount of damage."
 msgstr "簡易的にバネと鉄屑を組み合わせたもので、装着された部分を衝撃から守る車両部品です。バネ構造は驚くほどのダメージを吸収できます。"
 
+#: data/json/items/vehicle/balloon.json data/json/vehicleparts/balloons.json
+msgid "airship balloon"
+msgid_plural "airship balloons"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'airship balloon'}
+#: data/json/items/vehicle/balloon.json
+msgid ""
+"A big plastic airbag filled with hydrogen gas.  Provides lift if installed "
+"on a vehicle, but you'll need a propeller to do anything more than float up "
+"and down."
+msgstr ""
+
 #: data/json/items/vehicle/battery.json data/json/vehicleparts/battery.json
 msgid "car battery"
 msgid_plural "car batteries"
@@ -112115,8 +112127,9 @@ msgstr[0] ""
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/items/vehicle/boat.json
 msgid ""
-"A gas-filled sac that provides buoyancy.  Add buoyancy cells to a vehicle "
-"until it floats.  Then attach oars or a motor to get the boat to move."
+"Several bags tied together, filled with just enough hydrogen to provide "
+"buoyancy.  Add buoyancy cells to a vehicle until it floats.  Then attach "
+"oars or a motor to get the boat to move."
 msgstr ""
 
 #: data/json/items/vehicle/boat.json data/json/vehicleparts/vehicle_parts.json
@@ -113221,8 +113234,10 @@ msgstr[0] "風力タービン"
 
 #. ~ Description for {'str': 'wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A small turbine that can convert wind into electric power."
-msgstr "風力エネルギーを電力に変換する小型のタービンです。"
+msgid ""
+"A small turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr ""
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -113232,8 +113247,10 @@ msgstr[0] "大型風力タービン"
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A large turbine that can convert wind into electric power."
-msgstr "風力エネルギーを電力に変換する大型のタービンです。"
+msgid ""
+"A large turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr ""
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -113509,6 +113526,20 @@ msgstr[0] "装甲キット(骨)"
 #: data/json/items/vehicle/plating.json
 msgid "Bone plating made for a vehicle."
 msgstr "骨で作られた装甲です。車両に取り付けます。"
+
+#: data/json/items/vehicle/propellers.json
+#: data/json/vehicleparts/propellers.json
+msgid "aircraft propeller"
+msgid_plural "aircraft propellers"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'aircraft propeller'}
+#: data/json/items/vehicle/propellers.json
+msgid ""
+"A steel propeller and spinner from an airplane.  When attached to a vehicle,"
+" engine power will provide lift to any installed wings, allowing it to take "
+"off."
+msgstr ""
 
 #: data/json/items/vehicle/rams.json data/json/vehicleparts/rams.json
 msgid "shredder"
@@ -114288,6 +114319,32 @@ msgstr[0] ""
 msgid ""
 "Simple wooden runners for a hand-pulled sled.  They make it easier to drag a"
 " cart across rough terrain, but that's about all they do."
+msgstr ""
+
+#: data/json/items/vehicle/wings.json
+msgid "metal aerofoil"
+msgid_plural "metal aerofoils"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers.  Wings allow a vehicle to fly, but require a propeller and enough"
+" velocity to take off."
+msgstr ""
+
+#: data/json/items/vehicle/wings.json
+msgid "wired metal aerofoil"
+msgid_plural "wired metal aerofoils"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'wired metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers, and a navigation light wired into it.  Wings allow a vehicle to "
+"fly, but require a propeller and enough velocity to take off."
 msgstr ""
 
 #. ~ Sign
@@ -160557,6 +160614,19 @@ msgid "A very small dishwasher designed for use in vehicles."
 msgstr "車両用に設計された、非常に小さな食器洗浄機です。"
 
 #: data/json/obsoletion/items.json
+msgid "multi cooker - cooking"
+msgid_plural "multi cooker - cookings"
+msgstr[0] "多機能調理機(稼働)"
+
+#. ~ Description for {'str': 'multi cooker - cooking'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A professional-grade multi-cooker, with a battery slot for camping trips or "
+"tailgating.  There is a dish in it."
+msgstr ""
+"プロ仕様の多機能調理機です。キャンプ旅行やライトバンの荷台でBBQパーティーをする際にも使えるように、電池スロットが組み込まれています。内部に料理が入っています。"
+
+#: data/json/obsoletion/items.json
 msgid "can of butane"
 msgid_plural "cans of butane"
 msgstr[0] "ブタンガスボンベ"
@@ -176324,6 +176394,16 @@ msgid ""
 "on the interior of your vehicle."
 msgstr "衝突時に内部への衝撃を緩和する、バネの付いたパッドです。"
 
+#: data/json/vehicleparts/balloons.json
+msgid ""
+"A balloon that provides lift, but requires aircraft propellers for "
+"horizontal momentum."
+msgstr ""
+
+#: data/json/vehicleparts/balloons.json
+msgid "external airship balloon"
+msgstr ""
+
 #. ~ Description for {'str': 'car battery'}
 #. ~ Description for {'str': 'large storage battery'}
 #: data/json/vehicleparts/battery.json
@@ -177370,6 +177450,12 @@ msgid ""
 "multiple of them are installed."
 msgstr ""
 
+#: data/json/vehicleparts/propellers.json
+msgid ""
+"A set of aerofoil propeller rotors, when spun at high speed, they generate "
+"thrust via horizontal momentum."
+msgstr ""
+
 #: data/json/vehicleparts/rams.json
 msgid ""
 "A reinforced ram.  Place at the edge of vehicle to reduce damage taken in "
@@ -177435,7 +177521,6 @@ msgid ""
 msgstr "回転翼が付いたヘリコプター用のローターです。高速で回転することで揚力が生じて離陸します。"
 
 #. ~ Description for heavy-duty military rotors
-#. ~ Description for small helicopter rotors
 #. ~ Description for heavy-duty military Blackhawk rotors
 #: data/json/vehicleparts/rotor.json
 msgid ""
@@ -177446,6 +177531,13 @@ msgstr "4つセットになった、軍用ヘリコプターのローターと�
 #: data/json/vehicleparts/rotor.json
 msgid "small helicopter rotors"
 msgstr "ヘリ用小型ローター"
+
+#. ~ Description for small helicopter rotors
+#: data/json/vehicleparts/rotor.json
+msgid ""
+"A set of four civilian helicopter rotor blades, used to provide lift by "
+"rotation."
+msgstr ""
 
 #: data/json/vehicleparts/rotor.json
 msgid "gyrocopter rotors"
@@ -178068,7 +178160,9 @@ msgstr ""
 
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/vehicleparts/vehicle_parts.json
-msgid "Gas sacs tied together to keep your boat out of the water."
+msgid ""
+"Hydrogen-filled bags tied together.  Not light enough to provide lift for an"
+" airship, but can help a boat float."
 msgstr ""
 
 #. ~ Description for {'str': 'plastic boat hull'}
@@ -178262,16 +178356,16 @@ msgstr "太陽光に当てると車両の電力をゆっくりと充電するソ
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A small wind turbine.  Will slowly recharge the vehicle's electrical power "
-"when exposed to the wind."
-msgstr "風を当てると車両の電力をゆっくりと充電する、小型の風力タービンです。"
+"when exposed to the wind depending on wind speed."
+msgstr ""
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A large wind turbine with stabilizing legs.  Will recharge the vehicle's "
-"electrical power when exposed to the wind.  Will cause extra drag on the "
-"vehicle."
-msgstr "安定感のある脚を備えた大型の風力タービンです。風を当てると車両の電力をゆっくりと充電します。車両の空気抵抗が増加します。"
+"electrical power when exposed to the wind depending on wind speed.  Will "
+"cause extra drag on the vehicle."
+msgstr ""
 
 #. ~ Description for {'str': 'reinforced solar panel'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -179106,6 +179200,44 @@ msgstr ""
 msgid ""
 "A translucent sheet of rigid that lets you see outside the vehicle.  Bit "
 "more durable than glass."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing"
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing with lights"
+msgstr ""
+
+#. ~ Description for metal wing with lights
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne.  Has a navigation light built in, for"
+" collision avoidance."
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing"
+msgstr ""
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing with lights"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Small 2-seater Plane"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Commercial Blimp"
 msgstr ""
 
 #: data/json/vehicles/bikes.json
@@ -213786,6 +213918,16 @@ msgid "Lamia mutagen"
 msgid_plural "Lamia mutagens"
 msgstr[0] ""
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi serum"
+msgid_plural "Usagimimi serums"
+msgstr[0] ""
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi mutagen"
+msgid_plural "Usagimimi mutagens"
+msgstr[0] ""
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -235352,7 +235494,11 @@ msgid "You can't go down stairs while you're riding."
 msgstr "騎乗中は階段を下りられません。"
 
 #: src/handle_action.cpp
-msgid "The rotors struggle to generate enough lift!"
+msgid "The craft struggles to generate enough lift!"
+msgstr ""
+
+#: src/handle_action.cpp
+msgid "You need a propeller to take off!"
 msgstr ""
 
 #: src/handle_action.cpp
@@ -237141,6 +237287,10 @@ msgstr "キャッシュカードの残金合計は%sです。"
 #: src/iexamine.cpp
 msgid "Unable to refund, no fuel in pump."
 msgstr "返金不可。ポンプ内の燃料が不足しています。"
+
+#: src/iexamine.cpp
+msgid "Jumping off a flying object is far too dangerous."
+msgstr ""
 
 #: src/iexamine.cpp
 msgid "There is a ledge here.  What do you want to do?"
@@ -243346,143 +243496,6 @@ msgid "You take control of the vehicle."
 msgstr "車両の運転を始めました。"
 
 #: src/iuse.cpp
-msgid "And when you gaze long into a screen, the screen also gazes into you."
-msgstr "画面を覗くとき、画面もまたこちらを覗いているのだ。"
-
-#: src/iuse.cpp
-msgid "The multi-cooker boiled your head!"
-msgstr "多機能調理機はあなたの頭を茹でています！"
-
-#: src/iuse.cpp
-msgid "The characters on the screen display an obscene joke.  Strange humor."
-msgstr "画面上には卑猥なジョークが表示されています。奇妙なユーモアですね。"
-
-#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
-#: src/iuse.cpp
-msgid "Are you sure?!  the multi-cooker wants to poison your food!"
-msgstr "何だって！？多機能調理機は食事に毒を入れたがっています！"
-
-#: src/iuse.cpp
-msgid ""
-"The multi-cooker argues with you about the taste preferences.  You don't "
-"want to deal with it."
-msgstr "多機能調理機は味の好みについて論じています。議論に応じる必要はありません。"
-
-#: src/iuse.cpp
-msgid "The multi-cooker runs away!"
-msgstr "多機能調理機は逃げ出しました！"
-
-#: src/iuse.cpp
-msgid "You're surrounded by aggressive multi-cookers!"
-msgstr "多機能調理機の群れに取り囲まれました！牙を剥いて唸っています！"
-
-#: src/iuse.cpp
-msgid "The multi-cooker should be finishing shortly…"
-msgstr "そろそろ料理が完成しそうです..."
-
-#. ~ sound of a multi-cooker finishing its cycle!
-#: src/iuse.cpp
-msgid "ding!"
-msgstr "チーン！"
-
-#: src/iuse.cpp
-msgid "You cannot read, and don't understand the screen or the buttons!"
-msgstr "画面やボタンの文字が読めず、意味を理解できません！"
-
-#: src/iuse.cpp
-msgid "Welcome to the RobotChef3000.  Choose option:"
-msgstr "ロボットシェフ3000にようこそ。メニューを選択して下さい: "
-
-#: src/iuse.cpp
-msgid "Stop cooking"
-msgstr "調理を止める"
-
-#: src/iuse.cpp
-msgid "Batteries are low."
-msgstr "電池が消耗しています。"
-
-#: src/iuse.cpp
-msgid "Start cooking"
-msgstr "調理を始める"
-
-#: src/iuse.cpp
-msgid "Upgrade multi-cooker"
-msgstr "多機能調理機を改良する"
-
-#: src/iuse.cpp
-msgid "Multi-cooker already upgraded"
-msgstr "既に多機能調理機は改良されています。"
-
-#: src/iuse.cpp
-msgid "Multi-cooker unable to upgrade"
-msgstr "多機能調理機を改良できません。"
-
-#: src/iuse.cpp
-msgid "Take out dish"
-msgstr "料理を取り出す"
-
-#: src/iuse.cpp
-msgid "Really stop cooking?"
-msgstr "本当に調理を止めますか？"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You don't have a suitable container to store your %s."
-msgstr "%sの保存に適した容器がありません。"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You got the %s from the multi-cooker."
-msgstr "多機能調理機から%sを取り出しました。"
-
-#: src/iuse.cpp
-msgid "Choose desired meal:"
-msgstr "ご希望の料理を選択して下さい: "
-
-#: src/iuse.cpp
-#, c-format
-msgid "The multi-cooker needs %d charges to cook this dish."
-msgstr "この料理を作るには%d以上の充電が必要です。"
-
-#: src/iuse.cpp
-msgid ""
-"The screen flashes blue symbols and scales as the multi-cooker begins to "
-"shake."
-msgstr "多機能調理機が震え出し、画面の青い記号と目盛りが点滅しはじめました。"
-
-#: src/iuse.cpp
-msgid "Your morale is too low to craft…"
-msgstr "製作する意欲が湧きません..."
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need a %s."
-msgstr "%sが必要"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need an item with %s of 1 or more to disassemble this."
-msgstr "分解するには1以上の%s性能を持つ工具が必要です。"
-
-#: src/iuse.cpp
-msgid ""
-"You've successfully upgraded the multi-cooker, master tinkerer!  Now it "
-"cooks faster!"
-msgstr "多機能調理機の改良に成功しました。よっ機械いじり名人！調理が速くなりました！"
-
-#: src/iuse.cpp
-msgid ""
-"You sagely examine and analyze the multi-cooker, but don't manage to "
-"accomplish anything."
-msgstr "多機能調理機を詳細に調査、分析しました。しかしこれ以上できることは無いようです。"
-
-#: src/iuse.cpp
-msgid ""
-"Your tinkering nearly breaks the multi-cooker!  Fortunately, it still works,"
-" but best to stop messing with it."
-msgstr "力任せにいじって壊してしまうところでした！幸運にも故障は免れました。下手にいじるのはやめましょう。"
-
-#: src/iuse.cpp
 msgid "Attach cable where?"
 msgstr ""
 
@@ -245220,6 +245233,107 @@ msgstr "%sを改良しました！"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "%sを使って体臭を誤魔化しました。"
+
+#: src/iuse_actor.cpp
+msgid "And when you gaze long into a screen, the screen also gazes into you."
+msgstr "画面を覗くとき、画面もまたこちらを覗いているのだ。"
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker boiled your head!"
+msgstr "多機能調理機はあなたの頭を茹でています！"
+
+#: src/iuse_actor.cpp
+msgid "The characters on the screen display an obscene joke.  Strange humor."
+msgstr "画面上には卑猥なジョークが表示されています。奇妙なユーモアですね。"
+
+#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
+#: src/iuse_actor.cpp
+msgid "Are you sure?!  the multi-cooker wants to poison your food!"
+msgstr "何だって！？多機能調理機は食事に毒を入れたがっています！"
+
+#: src/iuse_actor.cpp
+msgid ""
+"The multi-cooker argues with you about the taste preferences.  You don't "
+"want to deal with it."
+msgstr "多機能調理機は味の好みについて論じています。議論に応じる必要はありません。"
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker runs away!"
+msgstr "多機能調理機は逃げ出しました！"
+
+#: src/iuse_actor.cpp
+msgid "You're surrounded by aggressive multi-cookers!"
+msgstr "多機能調理機の群れに取り囲まれました！牙を剥いて唸っています！"
+
+#: src/iuse_actor.cpp
+msgid "ding!"
+msgstr "チーン！"
+
+#: src/iuse_actor.cpp
+msgid "Choose option:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Stop crafting"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Batteries are low."
+msgstr "電池が消耗しています。"
+
+#: src/iuse_actor.cpp
+msgid "Start crafting "
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Remove Product"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Really stop?"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You don't have a suitable container to store your %s."
+msgstr "%sの保存に適した容器がありません。"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You got the %s from the %s."
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Choose desired recipe:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s (%1.f charges)"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You don't know of anything you could craft with this."
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Choose batch count:"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s batches (%1.f charges)"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s needs %d charges to create this."
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s begins to hum."
+msgstr ""
 
 #: src/iuse_actor.cpp
 msgid "You can't do *that* while mounted"
@@ -259732,6 +259846,10 @@ msgid "Max Mana"
 msgstr "最大マナ"
 
 #: src/panels.cpp
+msgid "Vehicle"
+msgstr "車両"
+
+#: src/panels.cpp
 msgid "Location"
 msgstr "現在地"
 
@@ -259794,10 +259912,6 @@ msgstr "欲求"
 #: src/panels.cpp
 msgid "Env"
 msgstr "環境"
-
-#: src/panels.cpp
-msgid "Vehicle"
-msgstr "車両"
 
 #: src/panels.cpp
 msgid "Hint"
@@ -263512,6 +263626,11 @@ msgstr ""
 
 #: src/veh_interact.cpp
 #, c-format
+msgid "Liftoff Speed: <color_light_blue>%3d</color> %s"
+msgstr ""
+
+#: src/veh_interact.cpp
+#, c-format
 msgid "Maximum Buoyancy: <color_light_blue>%5.0f</color> %s"
 msgstr ""
 
@@ -264076,6 +264195,10 @@ msgid "You lose control as the vehicle starts skidding."
 msgstr "車両がコントロールを失い、スリップしました。"
 
 #: src/vehicle_autodrive.cpp
+msgid "Autodrive is not good enough for planes."
+msgstr ""
+
+#: src/vehicle_autodrive.cpp
 msgid "Can't see a path forward."
 msgstr "経路を発見できません。"
 
@@ -264251,14 +264374,6 @@ msgstr "既に着陸しています！"
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and land when there are obstacles below you."
 msgstr "障害物がある地点に着陸しようとするのは危険です。"
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and land while you are moving."
-msgstr "移動中に着陸しようとするのは危険です。"
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and take off while you are moving."
-msgstr "移動中に離陸しようとするのは危険です。"
 
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and take off from an uneven surface."

@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-08 01:54+0000\n"
+"POT-Creation-Date: 2025-09-09 01:33+0000\n"
 "Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -12503,10 +12503,6 @@ msgid "Fold"
 msgstr "접기"
 
 #: data/json/item_actions.json
-msgid "Cook"
-msgstr "요리"
-
-#: data/json/item_actions.json
 msgid "Cut up metal"
 msgstr "금속 절단"
 
@@ -12689,6 +12685,10 @@ msgstr "저울 사용"
 #: data/json/item_actions.json
 msgid "Search GPS"
 msgstr "GPS 검색"
+
+#: data/json/item_actions.json
+msgid "CRAFT"
+msgstr "제작"
 
 #: data/json/item_actions.json
 msgid "Work on craft"
@@ -108529,16 +108529,16 @@ msgstr ""
 "다양한 설정과 기능은 어떤 종류의 요리라도 만들 수 있도록 돕는다. 설명서는 없지만, 그래도 사용할 수 있을 것 같다."
 
 #: data/json/items/tool/cooking.json
-msgid "multi cooker - cooking"
-msgid_plural "multi cooker - cookings"
-msgstr[0] "멀티쿠커 (조리중)"
+msgid "improved multi cooker"
+msgid_plural "improved multi cookers"
+msgstr[0] "첨단 멀티쿠커"
 
-#. ~ Description for {'str': 'multi cooker - cooking'}
+#. ~ Description for {'str': 'improved multi cooker'}
 #: data/json/items/tool/cooking.json
 msgid ""
 "A professional-grade multi-cooker, with a battery slot for camping trips or "
-"tailgating.  There is a dish in it."
-msgstr "전문가용 멀티쿠커. 캠핑 여행이나 야외 파티에 쓸 수 있도록 배터리 장착부가 달려있습니다. 지금은 음식이 담겨있습니다."
+"tailgating. This has been tinkered with."
+msgstr ""
 
 #: data/json/items/tool/cooking.json
 msgid "lamp oil cooker"
@@ -109398,17 +109398,17 @@ msgstr "마사지를 통해 긴장을 완화시키고 편안함을 가져다주�
 #: data/json/items/tool/electronics.json
 msgid "bullet vibrator (off)"
 msgid_plural "bullet vibrator (off)s"
-msgstr[0] ""
+msgstr[0] "총알 바이브레이터 (꺼짐)"
 
 #. ~ Use action msg for {'str': 'bullet vibrator (off)'}.
 #: data/json/items/tool/electronics.json
 msgid "You turn on the bullet vibe and place it appropriately."
-msgstr ""
+msgstr "총알 바이브레이터를 켜고 적절한 곳에 가져다댑니다."
 
 #. ~ Use action need_charges_msg for {'str': 'bullet vibrator (off)'}.
 #: data/json/items/tool/electronics.json
 msgid "The vibrator's battery is dead."
-msgstr ""
+msgstr "바이브레이터의 건전지가 다 되었습니다."
 
 #. ~ Description for {'str': 'bullet vibrator (off)'}
 #: data/json/items/tool/electronics.json
@@ -109420,7 +109420,7 @@ msgstr ""
 #: data/json/items/tool/electronics.json
 msgid "bullet vibrator (on)"
 msgid_plural "bullet vibrator (on)s"
-msgstr[0] ""
+msgstr[0] "총알 바이브레이터 (켜짐)"
 
 #. ~ Description for {'str': 'bullet vibrator (on)'}
 #: data/json/items/tool/electronics.json
@@ -115652,6 +115652,19 @@ msgstr ""
 "용수철과 강철판을 대강 용접해 만든 것으로 차량에 부착하면 부착 부위를 충격으로부터 보호해준다. 용수철은 상상 이상으로 충격을 많이 "
 "줄여준다."
 
+#: data/json/items/vehicle/balloon.json data/json/vehicleparts/balloons.json
+msgid "airship balloon"
+msgid_plural "airship balloons"
+msgstr[0] "비행선 풍선"
+
+#. ~ Description for {'str': 'airship balloon'}
+#: data/json/items/vehicle/balloon.json
+msgid ""
+"A big plastic airbag filled with hydrogen gas.  Provides lift if installed "
+"on a vehicle, but you'll need a propeller to do anything more than float up "
+"and down."
+msgstr ""
+
 #: data/json/items/vehicle/battery.json data/json/vehicleparts/battery.json
 msgid "car battery"
 msgid_plural "car batteries"
@@ -115804,10 +115817,10 @@ msgstr[0] "가스 주머니 부력통"
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/items/vehicle/boat.json
 msgid ""
-"A gas-filled sac that provides buoyancy.  Add buoyancy cells to a vehicle "
-"until it floats.  Then attach oars or a motor to get the boat to move."
+"Several bags tied together, filled with just enough hydrogen to provide "
+"buoyancy.  Add buoyancy cells to a vehicle until it floats.  Then attach "
+"oars or a motor to get the boat to move."
 msgstr ""
-"부력을 제공하는 가스로 가득찬 주머니입니다. 차량이 물에 뜰 때까지 충분히 부착한 다음 노나 모터를 달면 배가 움직일 것입니다."
 
 #: data/json/items/vehicle/boat.json data/json/vehicleparts/vehicle_parts.json
 msgid "plastic boat hull"
@@ -116940,8 +116953,10 @@ msgstr[0] "풍력발전용 터빈"
 
 #. ~ Description for {'str': 'wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A small turbine that can convert wind into electric power."
-msgstr "바람의 힘을 전력으로 전환하는 소형 터빈입니다."
+msgid ""
+"A small turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr "바람의 힘을 풍속에 따라 전력으로 전환하는 소형 터빈입니다."
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -116951,8 +116966,10 @@ msgstr[0] "대형 풍력발전용 터빈"
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/items/vehicle/mills.json
-msgid "A large turbine that can convert wind into electric power."
-msgstr "바람의 힘을 전력으로 전환하는 대형 터빈입니다."
+msgid ""
+"A large turbine that can convert wind into electric power depending on wind "
+"speed."
+msgstr "바람의 힘을 풍속에 따라 전력으로 전환하는 대형 터빈입니다."
 
 #: data/json/items/vehicle/mills.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -117234,6 +117251,20 @@ msgstr[0] "차량용 뼈장갑판"
 #: data/json/items/vehicle/plating.json
 msgid "Bone plating made for a vehicle."
 msgstr "차량에 장착하도록 만들어진 뼈 장갑판."
+
+#: data/json/items/vehicle/propellers.json
+#: data/json/vehicleparts/propellers.json
+msgid "aircraft propeller"
+msgid_plural "aircraft propellers"
+msgstr[0] "비행선 프로펠러"
+
+#. ~ Description for {'str': 'aircraft propeller'}
+#: data/json/items/vehicle/propellers.json
+msgid ""
+"A steel propeller and spinner from an airplane.  When attached to a vehicle,"
+" engine power will provide lift to any installed wings, allowing it to take "
+"off."
+msgstr ""
 
 #: data/json/items/vehicle/rams.json data/json/vehicleparts/rams.json
 msgid "shredder"
@@ -118038,6 +118069,32 @@ msgid ""
 msgstr ""
 "손으로 끌고다니는 썰매에 달 수 있는 간단한 나무 손잡이입니다. 차량을 거친 지형 너머로 끌고 가는데 유용하지만, 그 이외에는 별 쓸모가"
 " 없습니다."
+
+#: data/json/items/vehicle/wings.json
+msgid "metal aerofoil"
+msgid_plural "metal aerofoils"
+msgstr[0] "금속 에어로포일"
+
+#. ~ Description for {'str': 'metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers.  Wings allow a vehicle to fly, but require a propeller and enough"
+" velocity to take off."
+msgstr ""
+
+#: data/json/items/vehicle/wings.json
+msgid "wired metal aerofoil"
+msgid_plural "wired metal aerofoils"
+msgstr[0] "전선 달린 금속 에어로포일"
+
+#. ~ Description for {'str': 'wired metal aerofoil'}
+#: data/json/items/vehicle/wings.json
+msgid ""
+"A section of aircraft wing made of sheet metal skin over steel ribs and "
+"stringers, and a navigation light wired into it.  Wings allow a vehicle to "
+"fly, but require a propeller and enough velocity to take off."
+msgstr ""
 
 #. ~ Sign
 #: data/json/mapgen/Bastion_Fort.json data/json/mapgen/s_gas.json
@@ -166706,6 +166763,18 @@ msgid "A very small dishwasher designed for use in vehicles."
 msgstr "차량용 초소형 식기세척기입니다."
 
 #: data/json/obsoletion/items.json
+msgid "multi cooker - cooking"
+msgid_plural "multi cooker - cookings"
+msgstr[0] "멀티쿠커 (조리중)"
+
+#. ~ Description for {'str': 'multi cooker - cooking'}
+#: data/json/obsoletion/items.json
+msgid ""
+"A professional-grade multi-cooker, with a battery slot for camping trips or "
+"tailgating.  There is a dish in it."
+msgstr "전문가용 멀티쿠커. 캠핑 여행이나 야외 파티에 쓸 수 있도록 배터리 장착부가 달려있습니다. 지금은 음식이 담겨있습니다."
+
+#: data/json/obsoletion/items.json
 msgid "can of butane"
 msgid_plural "cans of butane"
 msgstr[0] "부탄가스통"
@@ -183160,6 +183229,16 @@ msgid ""
 "on the interior of your vehicle."
 msgstr "차량 내부의 흔들림과 충돌을 흡수하기 위한 스프링과 충격 흡수 패드입니다."
 
+#: data/json/vehicleparts/balloons.json
+msgid ""
+"A balloon that provides lift, but requires aircraft propellers for "
+"horizontal momentum."
+msgstr "부력을 제공하는 풍선입니다. 수평적 운동을 위해서는 비행선 프로펠러가 필요합니다."
+
+#: data/json/vehicleparts/balloons.json
+msgid "external airship balloon"
+msgstr "외부 비행선 풍선"
+
 #. ~ Description for {'str': 'car battery'}
 #. ~ Description for {'str': 'large storage battery'}
 #: data/json/vehicleparts/battery.json
@@ -184255,6 +184334,12 @@ msgid ""
 "multiple of them are installed."
 msgstr "더 강력한 전기 모터입니다. 같은 차량에 여러 개를 설치해도 출력 낭비가 일어나지 않습니다."
 
+#: data/json/vehicleparts/propellers.json
+msgid ""
+"A set of aerofoil propeller rotors, when spun at high speed, they generate "
+"thrust via horizontal momentum."
+msgstr "에어로포일 헬리콥터 로터입니다. 고속으로 회전하여 수평 운동량을 통해 차체를 이륙시키는데 필요한 추력을 제공합니다."
+
 #: data/json/vehicleparts/rams.json
 msgid ""
 "A reinforced ram.  Place at the edge of vehicle to reduce damage taken in "
@@ -184323,7 +184408,6 @@ msgid ""
 msgstr "에어로포일 헬리콥터 로터입니다. 빠르게 회전하여 차체를 이륙시킬 수 있습니다."
 
 #. ~ Description for heavy-duty military rotors
-#. ~ Description for small helicopter rotors
 #. ~ Description for heavy-duty military Blackhawk rotors
 #: data/json/vehicleparts/rotor.json
 msgid ""
@@ -184334,6 +184418,13 @@ msgstr "날개 네 장짜리 군용 헬리콥터 로터입니다. 회전을 통�
 #: data/json/vehicleparts/rotor.json
 msgid "small helicopter rotors"
 msgstr "소형 헬기 로터"
+
+#. ~ Description for small helicopter rotors
+#: data/json/vehicleparts/rotor.json
+msgid ""
+"A set of four civilian helicopter rotor blades, used to provide lift by "
+"rotation."
+msgstr "날개 네 장짜리 민간용 헬리콥터 로터입니다. 회전을 통해 양력을 제공합니다."
 
 #: data/json/vehicleparts/rotor.json
 msgid "gyrocopter rotors"
@@ -184979,8 +185070,12 @@ msgstr "보트가 물에 떠있을 수 있도록 나란히 묶어놓은 통나�
 
 #. ~ Description for {'str': 'gas sac buoyancy cell'}
 #: data/json/vehicleparts/vehicle_parts.json
-msgid "Gas sacs tied together to keep your boat out of the water."
-msgstr "보트가 물에 떠있을 수 있도록 나란히 묶어놓은 가스 주머니 모음입니다."
+msgid ""
+"Hydrogen-filled bags tied together.  Not light enough to provide lift for an"
+" airship, but can help a boat float."
+msgstr ""
+"수소로 채워진 가방을 한데 묶은 것입니다. 비행선을 띄우는데 필요한 양력을 제공할만큼 가볍지는 않지만, 보트에 부력을 제공하기에는 "
+"충분합니다. "
 
 #. ~ Description for {'str': 'plastic boat hull'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -185173,17 +185268,18 @@ msgstr "태양 전지판입니다. 태양에 노출되면 차량의 전력을 �
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A small wind turbine.  Will slowly recharge the vehicle's electrical power "
-"when exposed to the wind."
-msgstr "소형 풍력발전용 터빈입니다.  바람에 노출되면 차량의 전력을 서서히 충전시킵니다."
+"when exposed to the wind depending on wind speed."
+msgstr "소형 풍력발전용 터빈입니다. 바람에 노출되면 풍속에 따라 차량의 전력을 서서히 충전시킵니다."
 
 #. ~ Description for {'str': 'large wind turbine'}
 #: data/json/vehicleparts/vehicle_parts.json
 msgid ""
 "A large wind turbine with stabilizing legs.  Will recharge the vehicle's "
-"electrical power when exposed to the wind.  Will cause extra drag on the "
-"vehicle."
+"electrical power when exposed to the wind depending on wind speed.  Will "
+"cause extra drag on the vehicle."
 msgstr ""
-"지지대가 있는 거대한 풍력발전용 터빈입니다.  바람에 노출되면 차량의 전력을 충전시킵니다.  차량에 추가적인 저항력을 야기할 것입니다."
+"지지대가 있는 거대한 풍력 발전용 터빈입니다. 바람에 노출되면 풍속에 따라 차량의 전력을 충전시킵니다. 차량에 추가적인 저항력을 야기할 "
+"것입니다."
 
 #. ~ Description for {'str': 'reinforced solar panel'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -186069,6 +186165,46 @@ msgid ""
 "A translucent sheet of rigid that lets you see outside the vehicle.  Bit "
 "more durable than glass."
 msgstr "차량 밖을 보게 해주는 반투명한 플라스틱 판입니다. 유리보다는 조금 더 튼튼합니다."
+
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne."
+msgstr "이동 중에 양력을 제공하는 비행선 날개입니다. 공중에서 전방으로의 추진력을 얻기 위해서는 프로펠러가 필요합니다.."
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing"
+msgstr "금속 날개"
+
+#: data/json/vehicleparts/wings.json
+msgid "metal wing with lights"
+msgstr "조명 달린 금속 날개"
+
+#. ~ Description for metal wing with lights
+#: data/json/vehicleparts/wings.json
+msgid ""
+"An aircraft wing that provides lift when moving, but requires a propeller "
+"for forward propulsion while airborne.  Has a navigation light built in, for"
+" collision avoidance."
+msgstr ""
+"이동 중에 양력을 제공하는 비행선 날개입니다. 공중에서 전방으로의 추진력을 얻기 위해서는 프로펠러가 필요합니다. 충돌 방지용 안내등이 "
+"설치되어 있습니다."
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing"
+msgstr "외부 금속 날개"
+
+#: data/json/vehicleparts/wings.json
+msgid "external metal wing with lights"
+msgstr "조명 달린 외부 금속 날개"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Small 2-seater Plane"
+msgstr "소형 2좌석 비행기"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "Commercial Blimp"
+msgstr "상업용 비행선"
 
 #: data/json/vehicles/bikes.json
 msgid "Bicycle"
@@ -221576,6 +221712,16 @@ msgid "Lamia mutagen"
 msgid_plural "Lamia mutagens"
 msgstr[0] "라미아 뮤타젠"
 
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi serum"
+msgid_plural "Usagimimi serums"
+msgstr[0] "우사기미미 혈청"
+
+#: data/mods/Monster_Girls/mutagens.json
+msgid "Usagimimi mutagen"
+msgid_plural "Usagimimi mutagens"
+msgstr[0] "우사기미미 뮤타젠"
+
 #. ~ Description for {'str': 'Nekomimi'}
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid ""
@@ -243384,8 +243530,12 @@ msgid "You can't go down stairs while you're riding."
 msgstr "타고 있는 동안엔 계단 아래로 내려갈 수 없습니다."
 
 #: src/handle_action.cpp
-msgid "The rotors struggle to generate enough lift!"
-msgstr "충분한 양력 발생을 위해 로터가 격렬히 작동합니다!"
+msgid "The craft struggles to generate enough lift!"
+msgstr "충분한 양력 발생을 위해 비행선이 격렬히 작동합니다!"
+
+#: src/handle_action.cpp
+msgid "You need a propeller to take off!"
+msgstr "이륙하려면 프로펠러가 필요합니다!"
 
 #: src/handle_action.cpp
 msgid "You can't open things while you're in your shell."
@@ -245174,6 +245324,10 @@ msgstr "현금카드 잔액이 %s 남았습니다."
 #: src/iexamine.cpp
 msgid "Unable to refund, no fuel in pump."
 msgstr "펌프에 연료가 없어 환불받을 수 없습니다."
+
+#: src/iexamine.cpp
+msgid "Jumping off a flying object is far too dangerous."
+msgstr "비행 중인 물체에서 뛰어내리는건 너무 위험합니다."
 
 #: src/iexamine.cpp
 msgid "There is a ledge here.  What do you want to do?"
@@ -251413,143 +251567,6 @@ msgid "You take control of the vehicle."
 msgstr "차량의 조종권을 획득했다."
 
 #: src/iuse.cpp
-msgid "And when you gaze long into a screen, the screen also gazes into you."
-msgstr "화면을 오랫동안 들여다보노라면, 화면도 당신을 들여다보고 있음을 알아야 합니다."
-
-#: src/iuse.cpp
-msgid "The multi-cooker boiled your head!"
-msgstr "멀티쿠커가 당신의 머리를 삶아버립니다!"
-
-#: src/iuse.cpp
-msgid "The characters on the screen display an obscene joke.  Strange humor."
-msgstr "화면에 떠오른 문자는 야한 농담입니다. 유머감각 한번 특이하네요."
-
-#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
-#: src/iuse.cpp
-msgid "Are you sure?!  the multi-cooker wants to poison your food!"
-msgstr "확실한가요?! 멀티쿠커가 당신의 음식에 독을 넣으려고 한다고요!"
-
-#: src/iuse.cpp
-msgid ""
-"The multi-cooker argues with you about the taste preferences.  You don't "
-"want to deal with it."
-msgstr "멀티쿠커가 당신을 붙잡고 맛에 대한 논쟁을 시작합니다. 굳이 엮이고 싶지 않네요."
-
-#: src/iuse.cpp
-msgid "The multi-cooker runs away!"
-msgstr "멀티쿠커가 도망쳐버립니다!"
-
-#: src/iuse.cpp
-msgid "You're surrounded by aggressive multi-cookers!"
-msgstr "공격적인 멀티쿠커들에게 포위당했습니다!"
-
-#: src/iuse.cpp
-msgid "The multi-cooker should be finishing shortly…"
-msgstr "멀티쿠커가 곧 조리를 마칠 것 같습니다..."
-
-#. ~ sound of a multi-cooker finishing its cycle!
-#: src/iuse.cpp
-msgid "ding!"
-msgstr "땡!"
-
-#: src/iuse.cpp
-msgid "You cannot read, and don't understand the screen or the buttons!"
-msgstr "글을 읽을 수가 없어서, 화면이나 버튼에 쓰인 것들을 이해할 수가 없습니다!"
-
-#: src/iuse.cpp
-msgid "Welcome to the RobotChef3000.  Choose option:"
-msgstr "로봇셰프3000가 실행되었습니다. 무엇을 할까요?"
-
-#: src/iuse.cpp
-msgid "Stop cooking"
-msgstr "요리 중단하기"
-
-#: src/iuse.cpp
-msgid "Batteries are low."
-msgstr "배터리가 부족합니다."
-
-#: src/iuse.cpp
-msgid "Start cooking"
-msgstr "요리 시작하기"
-
-#: src/iuse.cpp
-msgid "Upgrade multi-cooker"
-msgstr "멀티쿠커 개량하기"
-
-#: src/iuse.cpp
-msgid "Multi-cooker already upgraded"
-msgstr "멀티쿠커가 이미 개량됨"
-
-#: src/iuse.cpp
-msgid "Multi-cooker unable to upgrade"
-msgstr "멀티쿠커 개량 불가"
-
-#: src/iuse.cpp
-msgid "Take out dish"
-msgstr "요리 꺼내기"
-
-#: src/iuse.cpp
-msgid "Really stop cooking?"
-msgstr "정말로 요리를 그만둘까요?"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You don't have a suitable container to store your %s."
-msgstr "%s(을)를 담을 적절한 용기가 없습니다."
-
-#: src/iuse.cpp
-#, c-format
-msgid "You got the %s from the multi-cooker."
-msgstr "%s(을)를 멀티쿠커에서 꺼냈습니다."
-
-#: src/iuse.cpp
-msgid "Choose desired meal:"
-msgstr "원하는 요리 선택:"
-
-#: src/iuse.cpp
-#, c-format
-msgid "The multi-cooker needs %d charges to cook this dish."
-msgstr "이 요리를 만들려면 멀티쿠커에 전력이 %d만큼 필요합니다."
-
-#: src/iuse.cpp
-msgid ""
-"The screen flashes blue symbols and scales as the multi-cooker begins to "
-"shake."
-msgstr "화면이 파란색 기호와 눈금으로 번쩍거리더니 멀티쿠커가 흔들리기 시작합니다."
-
-#: src/iuse.cpp
-msgid "Your morale is too low to craft…"
-msgstr "제작하기에는 의욕이 너무 낮습니다…"
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need a %s."
-msgstr "%s(이)가 필요합니다."
-
-#: src/iuse.cpp
-#, c-format
-msgid "You need an item with %s of 1 or more to disassemble this."
-msgstr "이것을 분해하려면 %s 1개 이상이 필요합니다."
-
-#: src/iuse.cpp
-msgid ""
-"You've successfully upgraded the multi-cooker, master tinkerer!  Now it "
-"cooks faster!"
-msgstr "멀티쿠커를 개량하는데 성공했습니다. 이제 조리가 더 빨라집니다!"
-
-#: src/iuse.cpp
-msgid ""
-"You sagely examine and analyze the multi-cooker, but don't manage to "
-"accomplish anything."
-msgstr "신중하게 멀티쿠커를 살피고 분석했지만, 딱히 얻어낸 것은 없습니다."
-
-#: src/iuse.cpp
-msgid ""
-"Your tinkering nearly breaks the multi-cooker!  Fortunately, it still works,"
-" but best to stop messing with it."
-msgstr "멀티쿠커를 어설프게 손보다가 거의 부숴버렸습니다! 다행히 아직 작동하긴 하지만, 이제 그만 건드리는게 좋겠습니다."
-
-#: src/iuse.cpp
 msgid "Attach cable where?"
 msgstr "어디에 케이블을 연결합니까?"
 
@@ -253295,6 +253312,107 @@ msgstr "%s(을)를 개량했습니다!"
 #, c-format
 msgid "You use the %s to mask your scent"
 msgstr "%s(으)로 체취를 가리려 시도합니다."
+
+#: src/iuse_actor.cpp
+msgid "And when you gaze long into a screen, the screen also gazes into you."
+msgstr "화면을 오랫동안 들여다보노라면, 화면도 당신을 들여다보고 있음을 알아야 합니다."
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker boiled your head!"
+msgstr "멀티쿠커가 당신의 머리를 삶아버립니다!"
+
+#: src/iuse_actor.cpp
+msgid "The characters on the screen display an obscene joke.  Strange humor."
+msgstr "화면에 떠오른 문자는 야한 농담입니다. 유머감각 한번 특이하네요."
+
+#. ~ Single-spaced & lowercase are intentional, conveying hurried speech-KA101
+#: src/iuse_actor.cpp
+msgid "Are you sure?!  the multi-cooker wants to poison your food!"
+msgstr "확실한가요?! 멀티쿠커가 당신의 음식에 독을 넣으려고 한다고요!"
+
+#: src/iuse_actor.cpp
+msgid ""
+"The multi-cooker argues with you about the taste preferences.  You don't "
+"want to deal with it."
+msgstr "멀티쿠커가 당신을 붙잡고 맛에 대한 논쟁을 시작합니다. 굳이 엮이고 싶지 않네요."
+
+#: src/iuse_actor.cpp
+msgid "The multi-cooker runs away!"
+msgstr "멀티쿠커가 도망쳐버립니다!"
+
+#: src/iuse_actor.cpp
+msgid "You're surrounded by aggressive multi-cookers!"
+msgstr "공격적인 멀티쿠커들에게 포위당했습니다!"
+
+#: src/iuse_actor.cpp
+msgid "ding!"
+msgstr "땡!"
+
+#: src/iuse_actor.cpp
+msgid "Choose option:"
+msgstr "옵션 선택:"
+
+#: src/iuse_actor.cpp
+msgid "Stop crafting"
+msgstr "제작 중단"
+
+#: src/iuse_actor.cpp
+msgid "Batteries are low."
+msgstr "배터리가 부족합니다."
+
+#: src/iuse_actor.cpp
+msgid "Start crafting "
+msgstr "제작 시작"
+
+#: src/iuse_actor.cpp
+msgid "Remove Product"
+msgstr "물품 제거"
+
+#: src/iuse_actor.cpp
+msgid "Really stop?"
+msgstr "정말로 중단합니까?"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You don't have a suitable container to store your %s."
+msgstr "%s(을)를 담을 적절한 용기가 없습니다."
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "You got the %s from the %s."
+msgstr "%s(을)를 %s에서 끄집어냅니다."
+
+#: src/iuse_actor.cpp
+msgid "Choose desired recipe:"
+msgstr "원하는 제작법 선택:"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s (%1.f charges)"
+msgstr "%s (%1.f 충전량)"
+
+#: src/iuse_actor.cpp
+msgid "You don't know of anything you could craft with this."
+msgstr "이것으로 뭘 만들 수 있을지 아직 잘 모르겠습니다."
+
+#: src/iuse_actor.cpp
+msgid "Choose batch count:"
+msgstr "일괄 수량 선택:"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%s batches (%1.f charges)"
+msgstr "%s 묶음 (%1.f 충전량)"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s needs %d charges to create this."
+msgstr "이 물품을 제작하려면 %s에 충전량이 %d만큼 필요합니다."
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "The %s begins to hum."
+msgstr "%s(이)가 웅웅거리기 시작합니다."
 
 #: src/iuse_actor.cpp
 msgid "You can't do *that* while mounted"
@@ -267902,6 +268020,10 @@ msgid "Max Mana"
 msgstr "최대마나"
 
 #: src/panels.cpp
+msgid "Vehicle"
+msgstr "차량"
+
+#: src/panels.cpp
 msgid "Location"
 msgstr "장소"
 
@@ -267964,10 +268086,6 @@ msgstr "필요"
 #: src/panels.cpp
 msgid "Env"
 msgstr "환경"
-
-#: src/panels.cpp
-msgid "Vehicle"
-msgstr "차량"
 
 #: src/panels.cpp
 msgid "Hint"
@@ -271690,6 +271808,11 @@ msgstr "비행 가능한 최대 질량: <color_light_blue>%5.0f</color> %s"
 
 #: src/veh_interact.cpp
 #, c-format
+msgid "Liftoff Speed: <color_light_blue>%3d</color> %s"
+msgstr "이륙 속도: <color_light_blue>%3d</color> %s"
+
+#: src/veh_interact.cpp
+#, c-format
 msgid "Maximum Buoyancy: <color_light_blue>%5.0f</color> %s"
 msgstr "부양 가능한 최대 질량: <color_light_blue>%5.0f</color>%s"
 
@@ -272253,6 +272376,10 @@ msgid "You lose control as the vehicle starts skidding."
 msgstr "차가 미끄러지자 통제력을 잃습니다."
 
 #: src/vehicle_autodrive.cpp
+msgid "Autodrive is not good enough for planes."
+msgstr "자동주행 기능은 아직 비행기에 쓸 만큼 뛰어나지 못합니다."
+
+#: src/vehicle_autodrive.cpp
 msgid "Can't see a path forward."
 msgstr "나아갈 길을 찾을 수 없습니다."
 
@@ -272428,14 +272555,6 @@ msgstr "이미 착지해있습니다!"
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and land when there are obstacles below you."
 msgstr "아래에 장애물이 있을 때 착지하려는 것은 위험할 수 있습니다."
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and land while you are moving."
-msgstr "움직이면서 착지하려는 것은 위험할 수 있습니다."
-
-#: src/vehicle_move.cpp
-msgid "It would be unsafe to try and take off while you are moving."
-msgstr "움직이면서 이륙하려는 것은 위험할 수 있습니다."
 
 #: src/vehicle_move.cpp
 msgid "It would be unsafe to try and take off from an uneven surface."
