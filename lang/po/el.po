@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-09 01:33+0000\n"
+"POT-Creation-Date: 2025-09-10 01:36+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2023\n"
 "Language-Team: Greek (https://app.transifex.com/bn-team/teams/113585/el/)\n"
 "MIME-Version: 1.0\n"
@@ -17373,6 +17373,38 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Lonesome Drifter"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Lonesome Drifter"
+msgstr ""
+
+#. ~ Profession (male Lonesome Drifter) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You thought you were just another resident of Massachusetts, until the "
+"undead came calling. Armed with blinkies, a shotgun, and a set of survival "
+"rules, you know the best way to survive is to keep moving, shoot straight, "
+"and never forget your seatbelt.  You've heard the Cataclysm hasn't reached "
+"the west, so that's where you're heading."
+msgstr ""
+
+#. ~ Profession (female Lonesome Drifter) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You thought you were just another resident of Massachusetts, until the "
+"undead came calling. Armed with blinkies, a shotgun, and a set of survival "
+"rules, you know the best way to survive is to keep moving, shoot straight, "
+"and never forget your seatbelt.  You've heard the Cataclysm hasn't reached "
+"the west, so that's where you're heading."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Sheltered Survivor"
 msgstr ""
 
@@ -18707,6 +18739,92 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Dumpster Diver"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Dumpster Diver"
+msgstr ""
+
+#. ~ Profession (male Dumpster Diver) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Before the Cataclysm, you lived off what others threw away. Now that the "
+"world has leveled the playing field, your eye for salvage makes you a "
+"survivor, not a beggar."
+msgstr ""
+
+#. ~ Profession (female Dumpster Diver) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Before the Cataclysm, you lived off what others threw away. Now that the "
+"world has leveled the playing field, your eye for salvage makes you a "
+"survivor, not a beggar."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Crypto Millionaire"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Crypto Millionaire"
+msgstr ""
+
+#. ~ Profession (male Crypto Millionaire) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Before the Cataclysm, you were a shut-in NEET who struck gold on an obscure "
+"cryptocoin. Money couldn’t buy you friends or fitness, but it filled your "
+"apartment with gadgets, snacks, and time to waste. When the world ended, "
+"your fortune meant nothing—except the gear you had the sense (or luck) to "
+"keep close."
+msgstr ""
+
+#. ~ Profession (female Crypto Millionaire) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Before the Cataclysm, you were a shut-in NEET who struck gold on an obscure "
+"cryptocoin. Money couldn’t buy you friends or fitness, but it filled your "
+"apartment with gadgets, snacks, and time to waste. When the world ended, "
+"your fortune meant nothing—except the gear you had the sense (or luck) to "
+"keep close."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Fashion Model"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Fashion Model"
+msgstr ""
+
+#. ~ Profession (male Fashion Model) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Once worshipped for looks, not survival skills. Now that the world has "
+"leveled the playing field, glamour won’t save you."
+msgstr ""
+
+#. ~ Profession (female Fashion Model) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Once worshipped for looks, not survival skills. Now that the world has "
+"leveled the playing field, glamour won’t save you."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Tweaker"
 msgstr ""
 
@@ -18823,6 +18941,34 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Pilot"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Pilot"
+msgstr ""
+
+#. ~ Profession (male Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve spent years in the cockpit, guiding passengers, cargo, or your own "
+"craft through the skies. The Cataclysm has grounded you, but the thrill of "
+"flight still calls…"
+msgstr ""
+
+#. ~ Profession (female Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve spent years in the cockpit, guiding passengers, cargo, or your own "
+"craft through the skies. The Cataclysm has grounded you, but the thrill of "
+"flight still calls…"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Helicopter Pilot"
 msgstr ""
 
@@ -18835,32 +18981,68 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
-"You earned a living ferrying businessmen and tourists from helipad to "
-"helipad, the Cataclysm has grounded you, but the sky still calls you…"
+"You earned a living ferrying businesspeople and tourists from helipad to "
+"helipad, now your flying skills are all you have to rely on."
 msgstr ""
 
 #. ~ Profession (female Helicopter Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
-"You earned a living ferrying businessmen and tourists from helipad to "
-"helipad, the Cataclysm has grounded you, but the sky still calls you…"
+"You earned a living ferrying businesspeople and tourists from helipad to "
+"helipad, now your flying skills are all you have to rely on."
 msgstr ""
 
-#. ~ Profession (male Helicopter Pilot) description
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Plane Pilot"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Plane Pilot"
+msgstr ""
+
+#. ~ Profession (male Plane Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
-"You earned a living ferrying businesspeople and tourists from helipad to "
-"helipad, now your flying skills are all you have to rely on."
+"You once soared above cities and fields, transporting passengers and cargo "
+"between airports."
 msgstr ""
 
-#. ~ Profession (female Helicopter Pilot) description
+#. ~ Profession (female Plane Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
-"You earned a living ferrying businesspeople and tourists from helipad to "
-"helipad, now your flying skills are all you have to rely on."
+"You once soared above cities and fields, transporting passengers and cargo "
+"between airports."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Blimp Pilot"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Blimp Pilot"
+msgstr ""
+
+#. ~ Profession (male Blimp Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You once piloted a newscasting blimp, drifting above cities and fields to "
+"capture stories from the skies."
+msgstr ""
+
+#. ~ Profession (female Blimp Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You once piloted a newscasting blimp, drifting above cities and fields to "
+"capture stories from the skies."
 msgstr ""
 
 #: data/json/professions.json
@@ -18979,6 +19161,36 @@ msgid ""
 "You spent your career busting drug smugglers with your faithful canine "
 "companion.  Now the world has ended and none of that matters anymore.  But "
 "at least you have a loyal friend."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Dog Lover"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Dog Lover"
+msgstr ""
+
+#. ~ Profession (male Dog Lover) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You spent your days running around with your faithful dogs by your side.  "
+"When the world ended, you grabbed your companions along with some of their "
+"things to protect them.  The zombies could be nearby, but at least your "
+"canine friends shouldn't have to worry about the rain."
+msgstr ""
+
+#. ~ Profession (female Dog Lover) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You spent your days running around with your faithful dogs by your side.  "
+"When the world ended, you grabbed your companions along with some of their "
+"things to protect them.  The zombies could be nearby, but at least your "
+"canine friends shouldn't have to worry about the rain."
 msgstr ""
 
 #: data/json/professions.json
@@ -19529,6 +19741,66 @@ msgid ""
 "Caffeine pills and all-nighters in front of a computer screen have given you"
 " skills in an area that seem, on the face of it, distinctly less-than-useful"
 " when the world has ended.  Unless you manage to find a military mainframe."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Robot Technician"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Robot Technician"
+msgstr ""
+
+#. ~ Profession (male Robot Technician) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You worked as a robotics technician, keeping drones and machines running and"
+" once even slipped a control laptop out of the lab for yourself. After the "
+"world fell, your skill to repair and command broken robots makes you as "
+"valuable and dangerous as any weapon."
+msgstr ""
+
+#. ~ Profession (female Robot Technician) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You worked as a robotics technician, keeping drones and machines running and"
+" once even slipped a control laptop out of the lab for yourself. After the "
+"world fell, your skill to repair and command broken robots makes you as "
+"valuable and dangerous as any weapon."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Penetration Tester"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Penetration Tester"
+msgstr ""
+
+#. ~ Profession (male Penetration Tester) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Years of sneaking past digital defenses and exploiting software "
+"vulnerabilities taught you to manipulate systems others couldn’t touch. Now,"
+" in a world of silent servers and dormant machinery, those same skills let "
+"you turn abandoned tech into tools, weapons, or even allies."
+msgstr ""
+
+#. ~ Profession (female Penetration Tester) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Years of sneaking past digital defenses and exploiting software "
+"vulnerabilities taught you to manipulate systems others couldn’t touch. Now,"
+" in a world of silent servers and dormant machinery, those same skills let "
+"you turn abandoned tech into tools, weapons, or even allies."
 msgstr ""
 
 #: data/json/professions.json
@@ -20147,6 +20419,36 @@ msgid ""
 "\"basic\" augments and the best gear on the market to better aid you in your"
 " job.  After enjoying some period of freedom to do as you wanted, now you "
 "find yourself needing those skills to survive. "
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Bionic Gunslinger"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Bionic Gunslinger"
+msgstr ""
+
+#. ~ Profession (male Bionic Gunslinger) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"Lynched but not killed for a crime you didn't commit, you underwent "
+"augmentation surgery and hunted down those responsible with your trusty "
+"laser pistol. Now the Cataclysm is here, and it's you, your cybernetics and "
+"your gun against the world."
+msgstr ""
+
+#. ~ Profession (female Bionic Gunslinger) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"Lynched but not killed for a crime you didn't commit, you underwent "
+"augmentation surgery and hunted down those responsible with your trusty "
+"laser pistol. Now the Cataclysm is here, and it's you, your cybernetics and "
+"your gun against the world."
 msgstr ""
 
 #: data/json/professions.json
@@ -22609,7 +22911,8 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
-"You've raised cows or horses most of your life, now we'll see what happens "
+"You've spent your life tending to cows, but the world has bigger plans for "
+"you now. Time to see where your skills - and a little luck - will take you "
 "next."
 msgstr ""
 
@@ -22617,7 +22920,8 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
-"You've raised cows or horses most of your life, now we'll see what happens "
+"You've spent your life tending to cows, but the world has bigger plans for "
+"you now. Time to see where your skills - and a little luck - will take you "
 "next."
 msgstr ""
 
@@ -24811,6 +25115,34 @@ msgid "an amphibian"
 msgstr ""
 
 #: data/json/species.json
+msgid "slosh"
+msgstr ""
+
+#: data/json/species.json
+msgid "squelch"
+msgstr ""
+
+#: data/json/species.json
+msgid "slip and plop"
+msgstr ""
+
+#: data/json/species.json
+msgid "a wet shuffle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a muffled squish"
+msgstr ""
+
+#: data/json/species.json
+msgid "ribbit"
+msgstr ""
+
+#: data/json/species.json
+msgid "a long croak"
+msgstr ""
+
+#: data/json/species.json
 msgid "bird"
 msgid_plural "birds"
 msgstr[0] ""
@@ -24833,6 +25165,18 @@ msgid "a reptile"
 msgstr ""
 
 #: data/json/species.json
+msgid "slithering"
+msgstr ""
+
+#: data/json/species.json
+msgid "the rustle of scales"
+msgstr ""
+
+#: data/json/species.json
+msgid "scratch"
+msgstr ""
+
+#: data/json/species.json
 msgid "fish"
 msgid_plural "fish"
 msgstr[0] ""
@@ -24841,6 +25185,26 @@ msgstr[1] ""
 #. ~ Description for {'str_sp': 'fish'}
 #: data/json/species.json
 msgid "a fish"
+msgstr ""
+
+#: data/json/species.json
+msgid "flop"
+msgstr ""
+
+#: data/json/species.json
+msgid "the slap of fins"
+msgstr ""
+
+#: data/json/species.json
+msgid "a splash"
+msgstr ""
+
+#: data/json/species.json
+msgid "a wet thump"
+msgstr ""
+
+#: data/json/species.json
+msgid "gurgle"
 msgstr ""
 
 #: data/json/species.json
@@ -24865,6 +25229,38 @@ msgstr[1] ""
 msgid "a nether creature"
 msgstr ""
 
+#: data/json/species.json
+msgid "a whispering echo"
+msgstr ""
+
+#: data/json/species.json
+msgid "an ethereal hiss"
+msgstr ""
+
+#: data/json/species.json
+msgid "a dry crackle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a shadowy rustle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a distorted thrum"
+msgstr ""
+
+#: data/json/species.json
+msgid "an unearthly hum"
+msgstr ""
+
+#: data/json/species.json
+msgid "a sibilant crackle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a faint wail"
+msgstr ""
+
 #: data/json/species.json data/json/monsters/slimes.json
 msgid "blob"
 msgid_plural "blobs"
@@ -24877,7 +25273,35 @@ msgid "a blob"
 msgstr ""
 
 #: data/json/species.json
-msgid "plop."
+msgid "plop"
+msgstr ""
+
+#: data/json/species.json
+msgid "glorp"
+msgstr ""
+
+#: data/json/species.json
+msgid "blop"
+msgstr ""
+
+#: data/json/species.json
+msgid "splat"
+msgstr ""
+
+#: data/json/species.json
+msgid "squish"
+msgstr ""
+
+#: data/json/species.json
+msgid "blubber"
+msgstr ""
+
+#: data/json/species.json
+msgid "gloop"
+msgstr ""
+
+#: data/json/species.json
+msgid "thud"
 msgstr ""
 
 #: data/json/species.json
@@ -24903,6 +25327,38 @@ msgid "a leech plant"
 msgstr ""
 
 #: data/json/species.json
+msgid "rustling"
+msgstr ""
+
+#: data/json/species.json
+msgid "the crackle of leaves"
+msgstr ""
+
+#: data/json/species.json
+msgid "the swish of vines"
+msgstr ""
+
+#: data/json/species.json
+msgid "a spark crackle"
+msgstr ""
+
+#: data/json/species.json
+msgid "electric snap"
+msgstr ""
+
+#: data/json/species.json
+msgid "zing"
+msgstr ""
+
+#: data/json/species.json
+msgid "the fizz of electricity"
+msgstr ""
+
+#: data/json/species.json
+msgid "pop and rustle"
+msgstr ""
+
+#: data/json/species.json
 msgid "insect"
 msgid_plural "insects"
 msgstr[0] ""
@@ -24911,6 +25367,38 @@ msgstr[1] ""
 #. ~ Description for {'str': 'insect'}
 #: data/json/species.json
 msgid "an insect"
+msgstr ""
+
+#: data/json/species.json
+msgid "skittering"
+msgstr ""
+
+#: data/json/species.json
+msgid "the pattering of tiny legs"
+msgstr ""
+
+#: data/json/species.json
+msgid "chitter"
+msgstr ""
+
+#: data/json/species.json
+msgid "a soft crawl"
+msgstr ""
+
+#: data/json/species.json
+msgid "the clicking of legs"
+msgstr ""
+
+#: data/json/species.json
+msgid "a rapid scuttle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a scritching sound"
+msgstr ""
+
+#: data/json/species.json
+msgid "the tapping of many feet"
 msgstr ""
 
 #. ~ Description for a flying insect
@@ -24922,7 +25410,23 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: data/json/species.json
-msgid "bzzzzzzzzzzzzzzzzz"
+msgid "buzzing softly"
+msgstr ""
+
+#: data/json/species.json
+msgid "a gentle hum"
+msgstr ""
+
+#: data/json/species.json
+msgid "a low buzz"
+msgstr ""
+
+#: data/json/species.json
+msgid "a faint whir of wings"
+msgstr ""
+
+#: data/json/species.json
+msgid "a soft flutter"
 msgstr ""
 
 #: data/json/species.json
@@ -24932,7 +25436,15 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: data/json/species.json
-msgid "BZZZZZZZZZZZZZZZZZ"
+msgid "BZZZZZZZZZZZZZZZZZ!"
+msgstr ""
+
+#: data/json/species.json
+msgid "a loud buzzing"
+msgstr ""
+
+#: data/json/species.json
+msgid "a furious hum"
 msgstr ""
 
 #: data/json/species.json data/json/monsters/insect_spider.json
@@ -24947,7 +25459,11 @@ msgid "a centipede"
 msgstr ""
 
 #: data/json/species.json
-msgid "skittering."
+msgid "clicking legs"
+msgstr ""
+
+#: data/json/species.json
+msgid "scritching along"
 msgstr ""
 
 #: data/json/species.json
@@ -24962,6 +25478,22 @@ msgid "a spider"
 msgstr ""
 
 #: data/json/species.json
+msgid "a light patter of legs"
+msgstr ""
+
+#: data/json/species.json
+msgid "clicking of joints"
+msgstr ""
+
+#: data/json/species.json
+msgid "a subtle crawl"
+msgstr ""
+
+#: data/json/species.json
+msgid "soft scuttling"
+msgstr ""
+
+#: data/json/species.json
 msgid "plant"
 msgid_plural "plants"
 msgstr[0] ""
@@ -24970,6 +25502,14 @@ msgstr[1] ""
 #. ~ Description for {'str': 'plant'}
 #: data/json/species.json
 msgid "a plant"
+msgstr ""
+
+#: data/json/species.json
+msgid "the crunch of leaves"
+msgstr ""
+
+#: data/json/species.json
+msgid "crackle"
 msgstr ""
 
 #: data/json/species.json
@@ -24995,7 +25535,19 @@ msgid "a worm"
 msgstr ""
 
 #: data/json/species.json
-msgid "rustle."
+msgid "a thrum"
+msgstr ""
+
+#: data/json/species.json
+msgid "a rumble"
+msgstr ""
+
+#: data/json/species.json
+msgid "vibrations"
+msgstr ""
+
+#: data/json/species.json
+msgid "a thud"
 msgstr ""
 
 #: data/json/species.json data/json/monsters/zed-classic.json
@@ -25011,7 +25563,27 @@ msgid "a zombie"
 msgstr ""
 
 #: data/json/species.json
-msgid "shuffling."
+msgid "shuffling"
+msgstr ""
+
+#: data/json/species.json
+msgid "moaning"
+msgstr ""
+
+#: data/json/species.json
+msgid "gargling"
+msgstr ""
+
+#: data/json/species.json
+msgid "growling"
+msgstr ""
+
+#: data/json/species.json
+msgid "gasping"
+msgstr ""
+
+#: data/json/species.json
+msgid "grunting"
 msgstr ""
 
 #: data/json/species.json
@@ -25026,7 +25598,70 @@ msgid "a robot"
 msgstr ""
 
 #: data/json/species.json
-msgid "mechanical whirring."
+msgid "a metallic clank"
+msgstr ""
+
+#: data/json/species.json
+msgid "a gear grind"
+msgstr ""
+
+#: data/json/species.json
+msgid "a servo click"
+msgstr ""
+
+#: data/json/species.json
+msgid "the clunk of metal"
+msgstr ""
+
+#: data/json/species.json
+msgid "the thud of machinery"
+msgstr ""
+
+#: data/json/species.json
+msgid "the whirring of servos"
+msgstr ""
+
+#: data/json/species.json
+msgid "flying robot"
+msgid_plural "flying robots"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'flying robot'}
+#: data/json/species.json
+msgid "a flying robot"
+msgstr ""
+
+#: data/json/species.json
+msgid "the whir of rotors"
+msgstr ""
+
+#: data/json/species.json
+msgid "a high-pitched buzz"
+msgstr ""
+
+#: data/json/species.json
+msgid "an electronic hum"
+msgstr ""
+
+#: data/json/species.json
+msgid "a soft mechanical whine"
+msgstr ""
+
+#: data/json/species.json
+msgid "the sizzling of motors"
+msgstr ""
+
+#: data/json/species.json
+msgid "a hovering whirr"
+msgstr ""
+
+#: data/json/species.json
+msgid "a rotor spin"
+msgstr ""
+
+#: data/json/species.json
+msgid "a servo buzz"
 msgstr ""
 
 #: data/json/species.json data/json/npcs/talk_tags.json
@@ -25041,6 +25676,38 @@ msgid "a horror"
 msgstr ""
 
 #: data/json/species.json
+msgid "a light scuttle"
+msgstr ""
+
+#: data/json/species.json
+msgid "a soft shuffle"
+msgstr ""
+
+#: data/json/species.json
+msgid "an unnatural click"
+msgstr ""
+
+#: data/json/species.json
+msgid "a hollow tap"
+msgstr ""
+
+#: data/json/species.json
+msgid "creaking joints"
+msgstr ""
+
+#: data/json/species.json
+msgid "the scraping of nails"
+msgstr ""
+
+#: data/json/species.json
+msgid "a tiny skitter"
+msgstr ""
+
+#: data/json/species.json
+msgid "a quiet thump"
+msgstr ""
+
+#: data/json/species.json
 msgid "abberation"
 msgid_plural "abberations"
 msgstr[0] ""
@@ -25049,6 +25716,34 @@ msgstr[1] ""
 #. ~ Description for {'str': 'abberation'}
 #: data/json/species.json
 msgid "an aberration"
+msgstr ""
+
+#: data/json/species.json
+msgid "a squelch"
+msgstr ""
+
+#: data/json/species.json
+msgid "crackling shifts"
+msgstr ""
+
+#: data/json/species.json
+msgid "a wet scraping"
+msgstr ""
+
+#: data/json/species.json
+msgid "a hollow thump"
+msgstr ""
+
+#: data/json/species.json
+msgid "a twisting rattle"
+msgstr ""
+
+#: data/json/species.json
+msgid "an unearthly squeak"
+msgstr ""
+
+#: data/json/species.json
+msgid "a chittering snap"
 msgstr ""
 
 #: data/json/species.json
@@ -25066,6 +25761,41 @@ msgstr[1] ""
 #. ~ Description for {'str': 'human'}
 #: data/json/species.json
 msgid "a human"
+msgstr ""
+
+#: data/json/species.json src/game.cpp
+msgid "footsteps"
+msgstr ""
+
+#: data/json/species.json data/json/monsters/zed_skeletal.json
+msgid "skeleton"
+msgid_plural "skeletons"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'skeleton'}
+#: data/json/species.json
+msgid "a skeleton"
+msgstr ""
+
+#: data/json/species.json
+msgid "the clatter of bones"
+msgstr ""
+
+#: data/json/species.json
+msgid "a rattle"
+msgstr ""
+
+#: data/json/species.json
+msgid "the click of joints"
+msgstr ""
+
+#: data/json/species.json
+msgid "the tinkle of bone"
+msgstr ""
+
+#: data/json/species.json
+msgid "a hollow clack"
 msgstr ""
 
 #: data/json/species.json
@@ -55957,10 +56687,12 @@ msgstr[1] ""
 #. ~ Use action holster_msg for {'str': 'HERC rig'}.
 #. ~ Use action holster_msg for {'str': 'MBR vest (titanium)', 'str_pl': 'MBR
 #. vests (titanium)'}.
+#. ~ Use action holster_msg for C.R.I.T. chestrig.
 #: data/json/items/armor/ammo_pouch.json data/json/items/armor/bandolier.json
 #: data/json/items/armor/power_armor.json data/json/obsoletion/items.json
 #: data/mods/Aftershock/items/armor.json
 #: data/mods/Aftershock/items/obsolete.json
+#: data/mods/CRT_EXPANSION/items/crt_armor.json
 msgid "You stash your %s."
 msgstr ""
 
@@ -55989,10 +56721,12 @@ msgstr ""
 #. ~ Use action holster_prompt for {'str': 'HERC rig'}.
 #. ~ Use action holster_prompt for {'str': 'MBR vest (titanium)', 'str_pl':
 #. 'MBR vests (titanium)'}.
+#. ~ Use action holster_prompt for C.R.I.T. chestrig.
 #: data/json/items/armor/ammo_pouch.json
 #: data/json/items/armor/power_armor.json data/json/obsoletion/items.json
 #: data/mods/Aftershock/items/armor.json
 #: data/mods/Aftershock/items/obsolete.json
+#: data/mods/CRT_EXPANSION/items/crt_armor.json
 msgid "Stash ammo"
 msgstr ""
 
@@ -56740,11 +57474,9 @@ msgstr[1] ""
 #. ~ Use action holster_msg for {'str': 'hiking backpack'}.
 #. ~ Use action holster_msg for {'str': 'survivor hiking backpack'}.
 #. ~ Use action holster_msg for {'str': 'hollow cane'}.
-#. ~ Use action holster_msg for C.R.I.T. web belt.
 #. ~ Use action holster_msg for {'str': "technomancer's toolbelt"}.
 #: data/json/items/armor/bandolier.json data/json/items/armor/sheath.json
 #: data/json/items/armor/storage.json data/json/items/melee/bludgeons.json
-#: data/mods/CRT_EXPANSION/items/crt_clothes.json
 #: data/mods/MagicalNights/items/class_items.json
 msgid "You sheath your %s"
 msgstr ""
@@ -67631,10 +68363,8 @@ msgstr[1] ""
 
 #. ~ Use action holster_prompt for {'str': 'hiking backpack'}.
 #. ~ Use action holster_prompt for {'str': 'survivor hiking backpack'}.
-#. ~ Use action holster_prompt for C.R.I.T. web belt.
 #. ~ Use action holster_prompt for {'str': "technomancer's toolbelt"}.
 #: data/json/items/armor/storage.json
-#: data/mods/CRT_EXPANSION/items/crt_clothes.json
 #: data/mods/MagicalNights/items/class_items.json
 msgid "Sheath blade"
 msgstr ""
@@ -127054,12 +127784,6 @@ msgid ""
 "tattered jumpsuit marks it as an oddity across the wasteland."
 msgstr ""
 
-#: data/json/monsters/zed_skeletal.json
-msgid "skeleton"
-msgid_plural "skeletons"
-msgstr[0] ""
-msgstr[1] ""
-
 #. ~ Description for {'str': 'skeleton'}
 #: data/json/monsters/zed_skeletal.json
 msgid ""
@@ -140602,10 +141326,10 @@ msgid "I guess this wasn't as bright an idea as I thought."
 msgstr ""
 
 #: data/json/npcs/missiondef.json
-msgid "Refuel your helicopter."
+msgid "Refuel your aircraft."
 msgstr ""
 
-#. ~ Description for mission '{'str': 'Refuel your helicopter.'}'
+#. ~ Description for mission '{'str': 'Refuel your aircraft.'}'
 #: data/json/npcs/missiondef.json
 msgid ""
 "You were flying towards a nearby private airport before your forced landing."
@@ -190136,8 +190860,8 @@ msgstr[1] ""
 msgid ""
 "C.R.I.T. standard-issue pack.  Based on the MOLLE backpack's design, this "
 "smaller pack strikes a fine balance between storage space and encumbrance "
-"and allows a larger weapon to be holstered, drawing and holstering is still "
-"rather awkward even with the magnetized clips, but practice helps."
+"and allows multiple larger weapons to be holstered, drawing and holstering "
+"is still rather awkward even with the magnetized clips, but practice helps."
 msgstr ""
 
 #: data/mods/CRT_EXPANSION/items/crt_armor.json
@@ -190184,7 +190908,6 @@ msgid ""
 msgstr ""
 
 #: data/mods/CRT_EXPANSION/items/crt_armor.json
-#: data/mods/CRT_EXPANSION/items/crt_clothes.json
 msgid "C.R.I.T. web belt"
 msgid_plural "C.R.I.T. web belts"
 msgstr[0] ""
@@ -190412,13 +191135,6 @@ msgstr[1] ""
 msgid ""
 "C.R.I.T. standard-issue rec gloves.  Skin-hugging and sleek, these gloves "
 "are made with cotton with a neoprene lining for grip-pads and warmth.  "
-msgstr ""
-
-#. ~ Description for C.R.I.T. web belt
-#: data/mods/CRT_EXPANSION/items/crt_clothes.json
-msgid ""
-"C.R.I.T. standard-issue belt.  Keeps your trousers up and your tools on your"
-" hip."
 msgstr ""
 
 #: data/mods/CRT_EXPANSION/items/crt_clothes.json
@@ -196814,6 +197530,30 @@ msgstr[1] ""
 #. ~ Description for {'str': 'dinosaur'}
 #: data/mods/DinoMod/monsters/dinosaur.json
 msgid "a dinosaur"
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "a heavy thud."
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "the crash of weight on the ground."
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "a booming stomp."
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "a low tremor in the earth."
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "the pounding of massive feet."
+msgstr ""
+
+#: data/mods/DinoMod/monsters/dinosaur.json
+msgid "a ground-shaking step."
 msgstr ""
 
 #: data/mods/DinoMod/monsters/dinosaur.json
@@ -237690,10 +238430,6 @@ msgid "Your tentacles stick to the ground, but you pull them free."
 msgstr ""
 
 #: src/game.cpp
-msgid "footsteps"
-msgstr ""
-
-#: src/game.cpp
 msgid "a rattling sound."
 msgstr ""
 
@@ -257826,10 +258562,6 @@ msgstr ""
 msgid "%s flinches, letting <npcname> go!"
 msgstr ""
 
-#: src/monstergenerator.cpp src/mtype.cpp
-msgid "footsteps."
-msgstr ""
-
 #: src/morale.cpp src/player_activity.cpp
 msgid "Morale"
 msgstr ""
@@ -257868,6 +258600,10 @@ msgstr ""
 
 #: src/morale.cpp
 msgid "Focus trends towards:"
+msgstr ""
+
+#: src/mtype.cpp
+msgid "indistinct footsteps."
 msgstr ""
 
 #: src/mtype.cpp
