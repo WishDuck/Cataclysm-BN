@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-10 01:36+0000\n"
+"POT-Creation-Date: 2025-09-11 01:31+0000\n"
 "Language-Team: Indonesian (https://app.transifex.com/bn-team/teams/113585/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23489,6 +23489,34 @@ msgid ""
 "You felled trees before the world ended, but now there's so much more you "
 "could be doing.  When your work's finally finished, who will survive, and "
 "what will be left of them?"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Urban Explorer"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Urban Explorer"
+msgstr ""
+
+#. ~ Profession (male Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr ""
+
+#. ~ Profession (female Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
 msgstr ""
 
 #. ~ Name for scenario 'Evacuee' for a male character
@@ -70736,6 +70764,42 @@ msgid ""
 msgstr ""
 
 #: data/json/items/book/maps.json
+msgid "sewer maintenance map"
+msgid_plural "sewer maintenance maps"
+msgstr[0] ""
+
+#. ~ Use action message for sewer maintenance map.
+#: data/json/items/book/maps.json
+msgid "You add the local sewer systems to your map."
+msgstr ""
+
+#. ~ Description for sewer maintenance map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a map of sewer tunnels formerly used by public maintenance workers."
+"  Using it will add sewer systems to your map."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "spelunker's map"
+msgid_plural "spelunker's maps"
+msgstr[0] ""
+
+#. ~ Use action message for spelunker's map.
+#: data/json/items/book/maps.json
+msgid ""
+"You mark potential entry points and underground routes in the margins of "
+"your map."
+msgstr ""
+
+#. ~ Description for spelunker's map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a handmade map of local caving spots, some requiring trespassing.  "
+"There's probably bigger worries than that now, though."
+msgstr ""
+
+#: data/json/items/book/maps.json
 msgid "trail guide"
 msgid_plural "trail guides"
 msgstr[0] ""
@@ -70805,6 +70869,41 @@ msgstr ""
 msgid ""
 "This is a map of local rivers and lakes, along with the location of notable "
 "points of interest such as marinas and lighthouses."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "urban explorer's map"
+msgid_plural "urban explorer's maps"
+msgstr[0] ""
+
+#. ~ Use action message for {'str': "urban explorer's map"}.
+#: data/json/items/book/maps.json
+msgid "You add roads and abandoned buildings to your map."
+msgstr ""
+
+#. ~ Description for {'str': "urban explorer's map"}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printout of a local road map, with several buildings circled in "
+"red.  Using it will add roads and abandoned buildings to your map."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "satellite map"
+msgid_plural "satellite maps"
+msgstr[0] ""
+
+#. ~ Use action message for {'str': 'satellite map'}.
+#: data/json/items/book/maps.json
+msgid "You add terrain and roads to your map."
+msgstr ""
+
+#. ~ Description for {'str': 'satellite map'}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printed satellite map of the local area.  Due to it's low quality "
+"and lack of map legend, you are unable to recognise most buildings.  Using "
+"it will add terrain and roads to your map."
 msgstr ""
 
 #: data/json/items/book/martial.json

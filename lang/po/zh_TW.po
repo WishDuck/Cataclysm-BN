@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-10 01:36+0000\n"
+"POT-Creation-Date: 2025-09-11 01:31+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -24189,6 +24189,34 @@ msgid ""
 "could be doing.  When your work's finally finished, who will survive, and "
 "what will be left of them?"
 msgstr "在世界末日之前，你砍倒树木，但现在你有更多事情可以做。当你的工作终于完成时，谁会存活下来，他们还剩下什么？"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Urban Explorer"
+msgstr "城市探险家"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Urban Explorer"
+msgstr "城市探险家"
+
+#. ~ Profession (male Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr "你向来钟情于城市废墟之美，正准备开启下一次进城之旅时，世界末日的到来却让你的这项爱好变得无比应景。"
+
+#. ~ Profession (female Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr "你向来钟情于城市废墟之美，正准备开启下一次进城之旅时，世界末日的到来却让你的这项爱好变得无比应景。"
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -71851,6 +71879,42 @@ msgid ""
 msgstr "一张曾经由维修人员使用的地铁线路图。使用它将在你的地图添加地铁线路和地铁站。"
 
 #: data/json/items/book/maps.json
+msgid "sewer maintenance map"
+msgid_plural "sewer maintenance maps"
+msgstr[0] "下水道维护地图"
+
+#. ~ Use action message for sewer maintenance map.
+#: data/json/items/book/maps.json
+msgid "You add the local sewer systems to your map."
+msgstr "你将本地的下水道系统添加到了地图上。"
+
+#. ~ Description for sewer maintenance map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a map of sewer tunnels formerly used by public maintenance workers."
+"  Using it will add sewer systems to your map."
+msgstr "这是一张公共维修工人曾使用过的下水道隧道地图。使用后会将下水道系统添加到你的地图上。"
+
+#: data/json/items/book/maps.json
+msgid "spelunker's map"
+msgid_plural "spelunker's maps"
+msgstr[0] "洞穴探险家地图"
+
+#. ~ Use action message for spelunker's map.
+#: data/json/items/book/maps.json
+msgid ""
+"You mark potential entry points and underground routes in the margins of "
+"your map."
+msgstr "你在地图的空白处标记了潜在的入口和地下路线。"
+
+#. ~ Description for spelunker's map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a handmade map of local caving spots, some requiring trespassing.  "
+"There's probably bigger worries than that now, though."
+msgstr "这是一张手绘的本地探洞地点地图，其中一些需要非法闯入。不过，事到如今，这恐怕也算不上什么大事了。"
+
+#: data/json/items/book/maps.json
 msgid "trail guide"
 msgid_plural "trail guides"
 msgstr[0] "小徑指南"
@@ -71922,6 +71986,41 @@ msgid ""
 "This is a map of local rivers and lakes, along with the location of notable "
 "points of interest such as marinas and lighthouses."
 msgstr "这是一张当地河流和湖泊的地图，并标注了码头、灯塔等重要兴趣点的位置。"
+
+#: data/json/items/book/maps.json
+msgid "urban explorer's map"
+msgid_plural "urban explorer's maps"
+msgstr[0] "城市探险家地图"
+
+#. ~ Use action message for {'str': "urban explorer's map"}.
+#: data/json/items/book/maps.json
+msgid "You add roads and abandoned buildings to your map."
+msgstr "你将道路和废弃建筑添加到了地图上。"
+
+#. ~ Description for {'str': "urban explorer's map"}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printout of a local road map, with several buildings circled in "
+"red.  Using it will add roads and abandoned buildings to your map."
+msgstr "这是一份打印出来的本地公路地图，上面用红笔圈出了几栋建筑。使用后会将道路和废弃建筑添加到你的地图上。"
+
+#: data/json/items/book/maps.json
+msgid "satellite map"
+msgid_plural "satellite maps"
+msgstr[0] "卫星地图"
+
+#. ~ Use action message for {'str': 'satellite map'}.
+#: data/json/items/book/maps.json
+msgid "You add terrain and roads to your map."
+msgstr "你将地形和道路添加到了地图上。"
+
+#. ~ Description for {'str': 'satellite map'}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printed satellite map of the local area.  Due to it's low quality "
+"and lack of map legend, you are unable to recognise most buildings.  Using "
+"it will add terrain and roads to your map."
+msgstr "这是一张打印出来的本地卫星地图。由于质量不佳且缺少图例，你无法识别出大部分建筑。使用后会将地形和道路添加到你的地图上。"
 
 #: data/json/items/book/martial.json
 msgid "The Spirit of Aikido"

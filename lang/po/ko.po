@@ -29,14 +29,14 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # 김동현, 2025
 # Tae Heon Lim, 2025
-# Fruitybite, 2025
 # ARDOR Flag, 2025
+# Fruitybite, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-10 01:36+0000\n"
-"Last-Translator: ARDOR Flag, 2025\n"
+"POT-Creation-Date: 2025-09-11 01:31+0000\n"
+"Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20013,7 +20013,9 @@ msgctxt "prof_desc_male"
 msgid ""
 "Once worshipped for looks, not survival skills. Now that the world has "
 "leveled the playing field, glamour won’t save you."
-msgstr "한때는 생존기술보다 외모로 주목받았지만, 이제 세상은 달라졌다. 화려함 따위로는 살아남을 수 없다."
+msgstr ""
+"한때 당신은 생존기술이 아니라 멋진 외견으로 주목받았습니다. 세상이 지독한 생존경쟁의 장으로 변한 지금, 화려함은 더 이상 도움이 되지 "
+"않을겁니다."
 
 #. ~ Profession (female Fashion Model) description
 #: data/json/professions.json
@@ -20021,7 +20023,9 @@ msgctxt "prof_desc_female"
 msgid ""
 "Once worshipped for looks, not survival skills. Now that the world has "
 "leveled the playing field, glamour won’t save you."
-msgstr "한때는 생존기술보다 외모로 주목받았지만, 이제 세상은 달라졌다. 화려함 따위로는 살아남을 수 없다."
+msgstr ""
+"한때 당신은 생존기술이 아니라 멋진 외견으로 주목받았습니다. 세상이 지독한 생존경쟁의 장으로 변한 지금, 화려함은 더 이상 도움이 되지 "
+"않을겁니다."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -20173,8 +20177,8 @@ msgid ""
 "craft through the skies. The Cataclysm has grounded you, but the thrill of "
 "flight still calls…"
 msgstr ""
-"수년간 조종석에서 승객과 화물, 그리고 자신의 기체를 몰아 하늘을 누벼왔다. 대격변이 당신을 땅에 묶었지만, 비행의 전율은 여전히 당신을"
-" 부른다…"
+"당신은 수년 동안 조종석에 앉아 승객, 화물, 그리고 당신의 기체를 하늘 너머로 데려다주었습니다. 대재앙이 벌어지면서 당신은 더 이상 날"
+" 수 없는 몸이 되었지만, 비행의 스릴이 아직도 당신의 뇌리에 맴돕니다..."
 
 #. ~ Profession (female Pilot) description
 #: data/json/professions.json
@@ -20184,8 +20188,8 @@ msgid ""
 "craft through the skies. The Cataclysm has grounded you, but the thrill of "
 "flight still calls…"
 msgstr ""
-"수년간 조종석에서 승객과 화물, 그리고 자신의 기체를 몰아 하늘을 누벼왔다. 대격변이 당신을 땅에 묶었지만, 비행의 전율은 여전히 당신을"
-" 부른다…"
+"당신은 수년 동안 조종석에 앉아 승객, 화물, 그리고 당신의 기체를 하늘 너머로 데려다주었습니다. 대재앙이 벌어지면서 당신은 더 이상 날"
+" 수 없는 몸이 되었지만, 비행의 스릴이 아직도 당신의 뇌리에 맴돕니다..."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -20233,7 +20237,7 @@ msgctxt "prof_desc_male"
 msgid ""
 "You once soared above cities and fields, transporting passengers and cargo "
 "between airports."
-msgstr "한때는 도시와 들판 위를 누비며 공항 사이로 승객과 화물을 실어 나르던 조종사였다."
+msgstr "당신은 한때 도시와 들판 위를 누비며 승객과 화물을 공항에서 공항으로 실어날랐습니다."
 
 #. ~ Profession (female Plane Pilot) description
 #: data/json/professions.json
@@ -20241,7 +20245,7 @@ msgctxt "prof_desc_female"
 msgid ""
 "You once soared above cities and fields, transporting passengers and cargo "
 "between airports."
-msgstr "한때는 도시와 들판 위를 누비며 공항 사이로 승객과 화물을 실어 나르던 조종사였다."
+msgstr "당신은 한때 도시와 들판 위를 누비며 승객과 화물을 공항에서 공항으로 실어날랐습니다."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -25390,6 +25394,38 @@ msgid ""
 msgstr ""
 "세상이 끝장나기 전에 당신은 나무를 베곤 했지만, 이제 당신이 할 일이 더 많아졌습니다. 당신의 작업이 마침내 끝났을 때 누가 살아남고,"
 " 또 놈들의 무엇이 남아있을까요?"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Urban Explorer"
+msgstr "도시 탐험가"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Urban Explorer"
+msgstr "도시 탐험가"
+
+#. ~ Profession (male Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr ""
+"당신은 언제나 도시의 황량함 속에 숨겨진 아름다움에 매료되어 있었습니다. 세상의 종말이 당신의 취미를 더 유용하게 만들었을 때, 당신은 "
+"도시로의 다음 여행 준비를 끝마쳤습니다."
+
+#. ~ Profession (female Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr ""
+"당신은 언제나 도시의 황량함 속에 숨겨진 아름다움에 매료되어 있었습니다. 세상의 종말이 당신의 취미를 더 유용하게 만들었을 때, 당신은 "
+"도시로의 다음 여행 준비를 끝마쳤습니다."
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -74546,6 +74582,42 @@ msgid ""
 msgstr "과거 공공 유지보수 근로자들이 사용했던 지도입니다. 사용하면 지도에 지하철 노선과 지하 역을 추가합니다."
 
 #: data/json/items/book/maps.json
+msgid "sewer maintenance map"
+msgid_plural "sewer maintenance maps"
+msgstr[0] "하수도 유지보수 지도"
+
+#. ~ Use action message for sewer maintenance map.
+#: data/json/items/book/maps.json
+msgid "You add the local sewer systems to your map."
+msgstr "지도에 지역 하수도 구조를 추가했습니다."
+
+#. ~ Description for sewer maintenance map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a map of sewer tunnels formerly used by public maintenance workers."
+"  Using it will add sewer systems to your map."
+msgstr "과거 공공 유지보수 작업자들이 사용했던 하수도 터널 지도입니다. 사용하면 지도에 하수도 내부 구조를 추가합니다."
+
+#: data/json/items/book/maps.json
+msgid "spelunker's map"
+msgid_plural "spelunker's maps"
+msgstr[0] "동굴 탐험가의 지도"
+
+#. ~ Use action message for spelunker's map.
+#: data/json/items/book/maps.json
+msgid ""
+"You mark potential entry points and underground routes in the margins of "
+"your map."
+msgstr "지도 곳곳에 잠재적 출입구 및 지하 통로를 기록했습니다."
+
+#. ~ Description for spelunker's map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a handmade map of local caving spots, some requiring trespassing.  "
+"There's probably bigger worries than that now, though."
+msgstr ""
+
+#: data/json/items/book/maps.json
 msgid "trail guide"
 msgid_plural "trail guides"
 msgstr[0] "산길 안내서"
@@ -74620,6 +74692,41 @@ msgid ""
 "This is a map of local rivers and lakes, along with the location of notable "
 "points of interest such as marinas and lighthouses."
 msgstr "지역의 강과 호수, 그리고 위락항과 등대와 같은 주목할 만한 명소들의 위치를 보여주는 지도입니다."
+
+#: data/json/items/book/maps.json
+msgid "urban explorer's map"
+msgid_plural "urban explorer's maps"
+msgstr[0] "도시 탐험가의 지도"
+
+#. ~ Use action message for {'str': "urban explorer's map"}.
+#: data/json/items/book/maps.json
+msgid "You add roads and abandoned buildings to your map."
+msgstr ""
+
+#. ~ Description for {'str': "urban explorer's map"}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printout of a local road map, with several buildings circled in "
+"red.  Using it will add roads and abandoned buildings to your map."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "satellite map"
+msgid_plural "satellite maps"
+msgstr[0] "위성 지도"
+
+#. ~ Use action message for {'str': 'satellite map'}.
+#: data/json/items/book/maps.json
+msgid "You add terrain and roads to your map."
+msgstr ""
+
+#. ~ Description for {'str': 'satellite map'}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printed satellite map of the local area.  Due to it's low quality "
+"and lack of map legend, you are unable to recognise most buildings.  Using "
+"it will add terrain and roads to your map."
+msgstr ""
 
 #: data/json/items/book/martial.json
 msgid "The Spirit of Aikido"
@@ -216469,7 +216576,7 @@ msgstr[0] "모래 뿌리기 교본"
 msgid ""
 "You think you saw this in a video of some kind once. It's certainly worth a "
 "try, in this world."
-msgstr ""
+msgstr "무슨 영상에서 한번쯤 본 기억이 납니다. 이런 세상에서는 시도해볼만한 가치가 있죠."
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Adventurer's Cure"
@@ -216482,7 +216589,7 @@ msgstr[0] "모험가의 해독 교본"
 msgid ""
 "A must-have for any adventurers with an allergy to bee stings and similar "
 "natural poisons."
-msgstr ""
+msgstr "봉독 같은 자연적 독에 알러지가 있는 모든 모험가의 필수품입니다."
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Survivalist's Wooden Javelins"
@@ -216497,6 +216604,8 @@ msgid ""
 "Fortunately, adventurers devised ways to quickly make a pair serviceable for"
 " their travels."
 msgstr ""
+"활을 싫어하는 이들에게 제대로 된 품질의 자벨린은 두번째로 좋은 선택지입니다. 다행히도 모험가들은 여정 중에 쓸만한 자벨린을 신속하게 "
+"만들어내는 기술을 발명해냈습니다."
 
 #: data/mods/MagicalNights/items/martial_notes.json
 msgid "Note on Adventurer's Relief"

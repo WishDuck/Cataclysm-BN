@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-10 01:36+0000\n"
+"POT-Creation-Date: 2025-09-11 01:31+0000\n"
 "Last-Translator: Vadim, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -2346,7 +2346,7 @@ msgstr "[Мутация] Современный динозавр"
 #: data/json/achievements.json
 msgid ""
 "I can see my house from here!  You are now a post-threshold Bird mutant."
-msgstr ""
+msgstr "Я вижу свой дом отсюда! Теперь вы пост-пороговый мутант-птица."
 
 #: data/json/achievements.json
 msgid "[Mutation] Don't Drive a Limousine, Become It"
@@ -2538,12 +2538,12 @@ msgstr ""
 
 #: data/json/achievements.json
 msgid "[Mutation] No Step On Snek"
-msgstr ""
+msgstr "[Мутация] Не наступай на змею"
 
 #. ~ Description for {'str': '[Mutation] No Step On Snek'}
 #: data/json/achievements.json
 msgid "Legs are for chumps.  You are now a post-threshold Serpent mutant."
-msgstr ""
+msgstr "Ноги для слабаков. Теперь вы пост-пороговый мутант-змея."
 
 #: data/json/achievements.json
 msgid "[Mutation] Slippery When Moist"
@@ -4847,7 +4847,7 @@ msgstr ""
 
 #: data/json/bionics.json data/json/enchantments.json
 msgid "Underwater Propellers"
-msgstr ""
+msgstr "Подводные винты"
 
 #. ~ Description for {'str': 'Underwater Propellers'}
 #: data/json/bionics.json
@@ -4855,6 +4855,8 @@ msgid ""
 "Your upper torso is fitted with retractable propellers that enable you to "
 "swim and maneuver at greater speeds when submerged."
 msgstr ""
+"Верхняя часть вашего туловища оснащена выдвижными винтами, которые позволяют"
+" вам плавать и маневрировать с большей скоростью под водой."
 
 #: data/json/bionics.json
 msgid "Internal Unified Power System"
@@ -7157,11 +7159,11 @@ msgstr ""
 
 #: data/json/construction_group.json
 msgid "Fill Bathtub with Money"
-msgstr ""
+msgstr "Наполнить ванну деньгами"
 
 #: data/json/construction_group.json
 msgid "Remove Money from Bathtub"
-msgstr ""
+msgstr "Убрать деньги из ванны"
 
 #: data/json/debug_spells.json
 msgid "Template Spell"
@@ -7347,11 +7349,11 @@ msgstr "Во сне у вас появляется странное ощущен
 
 #: data/json/dreams.json data/mods/Monster_Girls/dreams.json
 msgid "You have a strange dream about snakes."
-msgstr ""
+msgstr "Вам снится странный сон о змеях."
 
 #: data/json/dreams.json data/mods/Monster_Girls/dreams.json
 msgid "Your dreams give you a strange slithering feeling."
-msgstr ""
+msgstr "Ваши сны вызывают у вас странное ощущение скольжения."
 
 #: data/json/dreams.json
 msgid ""
@@ -7540,11 +7542,13 @@ msgstr "Во сне вы видите свое отражение, отчетл�
 msgid ""
 "You have a disturbing dream of slithering and coiling around a small mammal."
 msgstr ""
+"Вам снится тревожный сон, в котором вы скользите и обвиваетесь вокруг "
+"маленького млекопитающего."
 
 #: data/json/dreams.json
 msgid ""
 "While dreaming, you see an unblinking serpentine reflection of yourself."
-msgstr ""
+msgstr "Во сне вы видите своё немигающее змеевидное отражение."
 
 #: data/json/dreams.json
 msgid "You have a disturbing dream of undergoing strange medical procedures."
@@ -7742,12 +7746,15 @@ msgstr "Вы видите пугающе реалистичный сон, в к�
 msgid ""
 "You have an unsettling dream about living as some sort of snake creature."
 msgstr ""
+"Вам снится тревожный сон, что вы живёте как какое-то змееподобное существо."
 
 #: data/json/dreams.json
 msgid ""
 "You're unnerved by a dream where your slithering serpentine form seemed "
 "unnaturally graceful and lifelike."
 msgstr ""
+"Вас настораживает сон, в котором ваша извивающаяся змееподобная форма "
+"казалась неестественно грациозной и реалистичной."
 
 #: data/json/dreams.json
 msgid ""
@@ -7971,10 +7978,14 @@ msgstr "Вы блаженно вспоминаете дни, когда вы о�
 #: data/json/dreams.json
 msgid "You're haunted by a dream of the old days spent stumbling on ape-legs."
 msgstr ""
+"Вас преследует сон о старых временах, когда вы спотыкались на обезьяньих "
+"ногах."
 
 #: data/json/dreams.json
 msgid "You have a vivid dream of crushing worthy prey in your powerful coils."
 msgstr ""
+"Вам снится яркий сон, в котором вы сокрушаете достойную добычу своими "
+"мощными витками."
 
 #: data/json/dreams.json
 msgid ""
@@ -11369,6 +11380,8 @@ msgid ""
 "Your underwater propellers are currently extended, enabling you to maneuver "
 "at greater speeds when submerged."
 msgstr ""
+"Ваши подводные винты в настоящее время выдвинуты, что позволяет вам "
+"маневрировать под водой с большей скоростью."
 
 #: data/json/enchantments.json
 msgid "debugging hammer"
@@ -11934,6 +11947,8 @@ msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>serpentine bodies.</info>."
 msgstr ""
+"Эта одежда подходит <good>исключительно</good> мутантам, обладающим "
+"<info>змеевидным телом</info>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -13339,7 +13354,7 @@ msgstr "Выключить"
 
 #: data/json/item_actions.json
 msgid "Transform"
-msgstr ""
+msgstr "Преобразовать"
 
 #: data/json/item_actions.json
 msgid "Start countdown"
@@ -21473,12 +21488,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Pilot"
-msgstr ""
+msgstr "Пилот"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Pilot"
-msgstr ""
+msgstr "Пилот"
 
 #. ~ Profession (male Pilot) description
 #: data/json/professions.json
@@ -21488,6 +21503,9 @@ msgid ""
 "craft through the skies. The Cataclysm has grounded you, but the thrill of "
 "flight still calls…"
 msgstr ""
+"Вы провели годы в кабине пилота, перевозя пассажиров, грузы или управляя "
+"собственным самолётом. Катаклизм заставил вас остаться на земле, но острые "
+"ощущения от полёта всё ещё манят вас…"
 
 #. ~ Profession (female Pilot) description
 #: data/json/professions.json
@@ -21497,6 +21515,9 @@ msgid ""
 "craft through the skies. The Cataclysm has grounded you, but the thrill of "
 "flight still calls…"
 msgstr ""
+"Вы провели годы в кабине пилота, перевозя пассажиров, грузы или управляя "
+"собственным самолётом. Катаклизм заставил вас остаться на земле, но острые "
+"ощущения от полёта всё ещё манят вас…"
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -21533,12 +21554,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Plane Pilot"
-msgstr ""
+msgstr "Пилот самолета"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Plane Pilot"
-msgstr ""
+msgstr "Пилот самолета"
 
 #. ~ Profession (male Plane Pilot) description
 #: data/json/professions.json
@@ -21547,6 +21568,8 @@ msgid ""
 "You once soared above cities and fields, transporting passengers and cargo "
 "between airports."
 msgstr ""
+"Когда-то вы парили над городами и полями, перевозя пассажиров и грузы между "
+"аэропортами."
 
 #. ~ Profession (female Plane Pilot) description
 #: data/json/professions.json
@@ -21555,16 +21578,18 @@ msgid ""
 "You once soared above cities and fields, transporting passengers and cargo "
 "between airports."
 msgstr ""
+"Когда-то вы парили над городами и полями, перевозя пассажиров и грузы между "
+"аэропортами."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Blimp Pilot"
-msgstr ""
+msgstr "Пилот дирижабля"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Blimp Pilot"
-msgstr ""
+msgstr "Пилот дирижабля"
 
 #. ~ Profession (male Blimp Pilot) description
 #: data/json/professions.json
@@ -21573,6 +21598,8 @@ msgid ""
 "You once piloted a newscasting blimp, drifting above cities and fields to "
 "capture stories from the skies."
 msgstr ""
+"Когда-то вы пилотировали дирижабль для трансляции новостей, паря над "
+"городами и полями, чтобы снимать репортажи с высоты птичьего полета."
 
 #. ~ Profession (female Blimp Pilot) description
 #: data/json/professions.json
@@ -21581,6 +21608,8 @@ msgid ""
 "You once piloted a newscasting blimp, drifting above cities and fields to "
 "capture stories from the skies."
 msgstr ""
+"Когда-то вы пилотировали дирижабль для трансляции новостей, паря над "
+"городами и полями, чтобы снимать репортажи с высоты птичьего полета."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -21717,12 +21746,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Dog Lover"
-msgstr ""
+msgstr "Любитель собак"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Dog Lover"
-msgstr ""
+msgstr "Любительница собак"
 
 #. ~ Profession (male Dog Lover) description
 #: data/json/professions.json
@@ -21733,6 +21762,10 @@ msgid ""
 "things to protect them.  The zombies could be nearby, but at least your "
 "canine friends shouldn't have to worry about the rain."
 msgstr ""
+"Вы проводили дни, не расставаясь со своими верными собаками. Когда мир "
+"рухнул, вы схватили своих спутников и некоторые их вещи, чтобы защитить их. "
+"Зомби могли быть где-то рядом, но, по крайней мере, вашим четвероногим "
+"друзьям не нужно будет беспокоиться о дожде."
 
 #. ~ Profession (female Dog Lover) description
 #: data/json/professions.json
@@ -21743,6 +21776,10 @@ msgid ""
 "things to protect them.  The zombies could be nearby, but at least your "
 "canine friends shouldn't have to worry about the rain."
 msgstr ""
+"Вы проводили дни, не расставаясь со своими верными собаками. Когда мир "
+"рухнул, вы схватили своих спутников и некоторые их вещи, чтобы защитить их. "
+"Зомби могли быть где-то рядом, но, по крайней мере, вашим четвероногим "
+"друзьям не нужно будет беспокоиться о дожде."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -22421,12 +22458,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Robot Technician"
-msgstr ""
+msgstr "Робототехник"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Robot Technician"
-msgstr ""
+msgstr "Робототехник"
 
 #. ~ Profession (male Robot Technician) description
 #: data/json/professions.json
@@ -22437,6 +22474,10 @@ msgid ""
 "world fell, your skill to repair and command broken robots makes you as "
 "valuable and dangerous as any weapon."
 msgstr ""
+"Вы работали робототехником, обслуживая дроны и машины, и однажды даже "
+"вынесли для себя из лаборатории ноутбук с программным обеспечением. После "
+"того, как мир рухнул, ваши навыки ремонта и управления сломанными роботами "
+"сделали вас столь же ценным и опасным, как любое оружие."
 
 #. ~ Profession (female Robot Technician) description
 #: data/json/professions.json
@@ -22447,6 +22488,10 @@ msgid ""
 "world fell, your skill to repair and command broken robots makes you as "
 "valuable and dangerous as any weapon."
 msgstr ""
+"Вы работали робототехником, обслуживая дроны и машины, и однажды даже "
+"вынесли для себя из лаборатории ноутбук с программным обеспечением. После "
+"того, как мир рухнул, ваши навыки ремонта и управления сломанными роботами "
+"сделали вас столь же ценным и опасным, как любое оружие."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -23237,12 +23282,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Bionic Gunslinger"
-msgstr ""
+msgstr "Бионический стрелок"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Bionic Gunslinger"
-msgstr ""
+msgstr "Бионический стрелок"
 
 #. ~ Profession (male Bionic Gunslinger) description
 #: data/json/professions.json
@@ -23253,6 +23298,10 @@ msgid ""
 "laser pistol. Now the Cataclysm is here, and it's you, your cybernetics and "
 "your gun against the world."
 msgstr ""
+"Получив смертный приговор за преступление, которого вы не совершали, вы "
+"подверглись операции по увеличению мышечной массы и с помощью своего верного"
+" лазерного пистолета выследили виновных. Теперь наступил Катаклизм, и только"
+" вы, ваша кибернетика и ваше оружие противостоят всему миру."
 
 #. ~ Profession (female Bionic Gunslinger) description
 #: data/json/professions.json
@@ -23263,6 +23312,10 @@ msgid ""
 "laser pistol. Now the Cataclysm is here, and it's you, your cybernetics and "
 "your gun against the world."
 msgstr ""
+"Получив смертный приговор за преступление, которого вы не совершали, вы "
+"подверглись операции по увеличению мышечной массы и с помощью своего верного"
+" лазерного пистолета выследили виновных. Теперь наступил Катаклизм, и только"
+" вы, ваша кибернетика и ваше оружие противостоят всему миру."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -26228,6 +26281,9 @@ msgid ""
 "you now. Time to see where your skills - and a little luck - will take you "
 "next."
 msgstr ""
+"Вы всю жизнь ухаживали за коровами, но теперь у мира для вас есть более "
+"грандиозные планы. Пришло время выяснить, куда приведут вас ваши навыки и "
+"немного удачи."
 
 #. ~ Profession (female Rancher) description
 #: data/json/professions.json
@@ -26237,6 +26293,9 @@ msgid ""
 "you now. Time to see where your skills - and a little luck - will take you "
 "next."
 msgstr ""
+"Вы всю жизнь ухаживали за коровами, но теперь у мира для вас есть более "
+"грандиозные планы. Пришло время выяснить, куда приведут вас ваши навыки и "
+"немного удачи."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -27011,6 +27070,34 @@ msgstr ""
 "Ты вырубала деревья до того, как наступил конец света, но теперь можешь "
 "сделать гораздо больше. Когда твоя работа будет закончена, кто выживет, и "
 "что от них останется?"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Urban Explorer"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Urban Explorer"
+msgstr ""
+
+#. ~ Profession (male Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr ""
+
+#. ~ Profession (female Urban Explorer) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You've always admired the beauty of urban desolation, and were ready for "
+"your next trip into town when the end of the world made your hobby much more"
+" relevant."
+msgstr ""
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -28843,7 +28930,7 @@ msgstr "амфибия"
 
 #: data/json/species.json
 msgid "slosh"
-msgstr ""
+msgstr "чух"
 
 #: data/json/species.json
 msgid "squelch"
@@ -28851,11 +28938,11 @@ msgstr ""
 
 #: data/json/species.json
 msgid "slip and plop"
-msgstr ""
+msgstr "скольжение и падение"
 
 #: data/json/species.json
 msgid "a wet shuffle"
-msgstr ""
+msgstr "влажное шарканье"
 
 #: data/json/species.json
 msgid "a muffled squish"
@@ -28867,7 +28954,7 @@ msgstr "кваканье"
 
 #: data/json/species.json
 msgid "a long croak"
-msgstr ""
+msgstr "протяжный клёкот"
 
 #: data/json/species.json
 msgid "bird"
@@ -28897,15 +28984,15 @@ msgstr "рептилия"
 
 #: data/json/species.json
 msgid "slithering"
-msgstr ""
+msgstr "скольжение"
 
 #: data/json/species.json
 msgid "the rustle of scales"
-msgstr ""
+msgstr "шуршание чешуек"
 
 #: data/json/species.json
 msgid "scratch"
-msgstr ""
+msgstr "скрежет"
 
 #: data/json/species.json
 msgid "fish"
@@ -28926,19 +29013,19 @@ msgstr ""
 
 #: data/json/species.json
 msgid "the slap of fins"
-msgstr ""
+msgstr "шлепок плавников"
 
 #: data/json/species.json
 msgid "a splash"
-msgstr ""
+msgstr "всплеск"
 
 #: data/json/species.json
 msgid "a wet thump"
-msgstr ""
+msgstr "влажный стук"
 
 #: data/json/species.json
 msgid "gurgle"
-msgstr ""
+msgstr "бульканье"
 
 #: data/json/species.json
 msgid "mutant"
@@ -28968,7 +29055,7 @@ msgstr "потустороннее существо"
 
 #: data/json/species.json
 msgid "a whispering echo"
-msgstr ""
+msgstr "шепчущее эхо"
 
 #: data/json/species.json
 msgid "an ethereal hiss"
@@ -29095,11 +29182,11 @@ msgstr ""
 
 #: data/json/species.json
 msgid "the fizz of electricity"
-msgstr ""
+msgstr "шипение электричества"
 
 #: data/json/species.json
 msgid "pop and rustle"
-msgstr ""
+msgstr "хлопок и шуршание"
 
 #: data/json/species.json
 msgid "insect"
@@ -29132,15 +29219,15 @@ msgstr ""
 
 #: data/json/species.json
 msgid "the clicking of legs"
-msgstr ""
+msgstr "щёлканье ног"
 
 #: data/json/species.json
 msgid "a rapid scuttle"
-msgstr ""
+msgstr "быстрое скольжение"
 
 #: data/json/species.json
 msgid "a scritching sound"
-msgstr ""
+msgstr "скребущий звук"
 
 #: data/json/species.json
 msgid "the tapping of many feet"
@@ -29170,11 +29257,11 @@ msgstr "тихое жужжание"
 
 #: data/json/species.json
 msgid "a faint whir of wings"
-msgstr ""
+msgstr "тихое шуршание крыльев"
 
 #: data/json/species.json
 msgid "a soft flutter"
-msgstr ""
+msgstr "тихое трепетание"
 
 #: data/json/species.json
 msgid "an angry wasp"
@@ -29211,7 +29298,7 @@ msgstr "многоножка"
 
 #: data/json/species.json
 msgid "clicking legs"
-msgstr ""
+msgstr "щёлкающие ноги"
 
 #: data/json/species.json
 msgid "scritching along"
@@ -29232,11 +29319,11 @@ msgstr "паук"
 
 #: data/json/species.json
 msgid "a light patter of legs"
-msgstr ""
+msgstr "лёгкий стук ног"
 
 #: data/json/species.json
 msgid "clicking of joints"
-msgstr ""
+msgstr "щёлканье суставов"
 
 #: data/json/species.json
 msgid "a subtle crawl"
@@ -29244,7 +29331,7 @@ msgstr ""
 
 #: data/json/species.json
 msgid "soft scuttling"
-msgstr ""
+msgstr "тихое шуршание"
 
 #: data/json/species.json
 msgid "plant"
@@ -29261,11 +29348,11 @@ msgstr "растение"
 
 #: data/json/species.json
 msgid "the crunch of leaves"
-msgstr ""
+msgstr "хруст листьев"
 
 #: data/json/species.json
 msgid "crackle"
-msgstr ""
+msgstr "потрескивание"
 
 #: data/json/species.json
 msgid "mollusk"
@@ -29299,15 +29386,15 @@ msgstr ""
 
 #: data/json/species.json
 msgid "a rumble"
-msgstr ""
+msgstr "грохот"
 
 #: data/json/species.json
 msgid "vibrations"
-msgstr ""
+msgstr "вибрации"
 
 #: data/json/species.json
 msgid "a thud"
-msgstr ""
+msgstr "стук"
 
 #: data/json/species.json data/json/monsters/zed-classic.json
 #: data/json/npcs/talk_tags.json
@@ -29329,7 +29416,7 @@ msgstr "шарканье"
 
 #: data/json/species.json
 msgid "moaning"
-msgstr ""
+msgstr "стенания"
 
 #: data/json/species.json
 msgid "gargling"
@@ -29337,15 +29424,15 @@ msgstr ""
 
 #: data/json/species.json
 msgid "growling"
-msgstr ""
+msgstr "ворчание"
 
 #: data/json/species.json
 msgid "gasping"
-msgstr ""
+msgstr "пыхтение"
 
 #: data/json/species.json
 msgid "grunting"
-msgstr ""
+msgstr "хрюканье"
 
 #: data/json/species.json
 msgid "robot"
@@ -29387,10 +29474,10 @@ msgstr "жужжание приводов"
 #: data/json/species.json
 msgid "flying robot"
 msgid_plural "flying robots"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "летающий робот"
+msgstr[1] "летающих робота"
+msgstr[2] "летающих роботов"
+msgstr[3] "летающие роботы"
 
 #. ~ Description for {'str': 'flying robot'}
 #: data/json/species.json
@@ -29403,7 +29490,7 @@ msgstr "жужжание роторов"
 
 #: data/json/species.json
 msgid "a high-pitched buzz"
-msgstr ""
+msgstr "высокочастотный гул"
 
 #: data/json/species.json
 msgid "an electronic hum"
@@ -29419,7 +29506,7 @@ msgstr "шипение моторов"
 
 #: data/json/species.json
 msgid "a hovering whirr"
-msgstr ""
+msgstr "парящее жужжание"
 
 #: data/json/species.json
 msgid "a rotor spin"
@@ -29444,7 +29531,7 @@ msgstr "ужас"
 
 #: data/json/species.json
 msgid "a light scuttle"
-msgstr ""
+msgstr "тихое скольжение"
 
 #: data/json/species.json
 msgid "a soft shuffle"
@@ -29456,11 +29543,11 @@ msgstr "неестественный щелчок"
 
 #: data/json/species.json
 msgid "a hollow tap"
-msgstr ""
+msgstr "глухой стук"
 
 #: data/json/species.json
 msgid "creaking joints"
-msgstr ""
+msgstr "скрипящие суставы"
 
 #: data/json/species.json
 msgid "the scraping of nails"
@@ -29493,11 +29580,11 @@ msgstr ""
 
 #: data/json/species.json
 msgid "crackling shifts"
-msgstr ""
+msgstr "треск переключателей"
 
 #: data/json/species.json
 msgid "a wet scraping"
-msgstr ""
+msgstr "влажное скрежетание"
 
 #: data/json/species.json
 msgid "a hollow thump"
@@ -29593,6 +29680,8 @@ msgstr[3] "отладочные монстры"
 #: data/json/species.json
 msgid "a debug monster used for testing. Please report this."
 msgstr ""
+"отладочный монстр, используемый для тестирования. Пожалуйста, сообщите об "
+"этой ошибке."
 
 #: data/json/speech.json data/mods/Aftershock/speech.json
 #: data/mods/CrazyCataclysm/crazy_speech.json
@@ -39156,7 +39245,7 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-sleep.json
 msgid "bathtub full of money"
-msgstr ""
+msgstr "ванна, полная денег"
 
 #. ~ Description for bathtub full of money
 #: data/json/furniture_and_terrain/furniture-sleep.json
@@ -39165,6 +39254,9 @@ msgid ""
 "Instead, you have a bathtub full of cash.  Now you can lay in it and take a "
 "scrooge mcduck-style slumber."
 msgstr ""
+"Тут можно было бы лечь и принять расслабляющую ванну, если бы работал "
+"водопровод. Вместо этого у вас ванна, полная наличных. Теперь вы можете лечь"
+" в неё и уснуть, как Скрудж Макдак."
 
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid "bookcase"
@@ -58332,10 +58424,10 @@ msgstr ""
 #: data/json/items/generic.json
 msgid "pile of money"
 msgid_plural "piles of money"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "куча денег"
+msgstr[1] "кучи денег"
+msgstr[2] "куч денег"
+msgstr[3] "кучи денег"
 
 #. ~ Description for {'str': 'pile of money', 'str_pl': 'piles of money'}
 #: data/json/items/generic.json
@@ -58343,6 +58435,8 @@ msgid ""
 "A pile of cash.  Can be used to fill a bathtub with cash or as a comforting "
 "reminder of the past."
 msgstr ""
+"Куча наличных денег. Может быть использована для наполнения ванны наличными "
+"или в качестве утешительного напоминания о прошлом."
 
 #: data/json/items/generic.json
 msgid "straw doll"
@@ -87558,6 +87652,48 @@ msgstr ""
 "нанести на вашу карту туннели и станции метро."
 
 #: data/json/items/book/maps.json
+msgid "sewer maintenance map"
+msgid_plural "sewer maintenance maps"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Use action message for sewer maintenance map.
+#: data/json/items/book/maps.json
+msgid "You add the local sewer systems to your map."
+msgstr ""
+
+#. ~ Description for sewer maintenance map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a map of sewer tunnels formerly used by public maintenance workers."
+"  Using it will add sewer systems to your map."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "spelunker's map"
+msgid_plural "spelunker's maps"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Use action message for spelunker's map.
+#: data/json/items/book/maps.json
+msgid ""
+"You mark potential entry points and underground routes in the margins of "
+"your map."
+msgstr ""
+
+#. ~ Description for spelunker's map
+#: data/json/items/book/maps.json
+msgid ""
+"This is a handmade map of local caving spots, some requiring trespassing.  "
+"There's probably bigger worries than that now, though."
+msgstr ""
+
+#: data/json/items/book/maps.json
 msgid "trail guide"
 msgid_plural "trail guides"
 msgstr[0] "путеводитель по тропинкам"
@@ -87646,6 +87782,47 @@ msgstr ""
 msgid ""
 "This is a map of local rivers and lakes, along with the location of notable "
 "points of interest such as marinas and lighthouses."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "urban explorer's map"
+msgid_plural "urban explorer's maps"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Use action message for {'str': "urban explorer's map"}.
+#: data/json/items/book/maps.json
+msgid "You add roads and abandoned buildings to your map."
+msgstr ""
+
+#. ~ Description for {'str': "urban explorer's map"}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printout of a local road map, with several buildings circled in "
+"red.  Using it will add roads and abandoned buildings to your map."
+msgstr ""
+
+#: data/json/items/book/maps.json
+msgid "satellite map"
+msgid_plural "satellite maps"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Use action message for {'str': 'satellite map'}.
+#: data/json/items/book/maps.json
+msgid "You add terrain and roads to your map."
+msgstr ""
+
+#. ~ Description for {'str': 'satellite map'}
+#: data/json/items/book/maps.json
+msgid ""
+"This is a printed satellite map of the local area.  Due to it's low quality "
+"and lack of map legend, you are unable to recognise most buildings.  Using "
+"it will add terrain and roads to your map."
 msgstr ""
 
 #: data/json/items/book/martial.json
@@ -134746,20 +134923,20 @@ msgstr ""
 #: data/json/items/tool/electronics.json
 msgid "bullet vibrator (off)"
 msgid_plural "bullet vibrator (off)s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "вибропуля (выкл.)"
+msgstr[1] "вибропули (выкл.)"
+msgstr[2] "вибропуль (выкл.)"
+msgstr[3] "вибропули (выкл.)"
 
 #. ~ Use action msg for {'str': 'bullet vibrator (off)'}.
 #: data/json/items/tool/electronics.json
 msgid "You turn on the bullet vibe and place it appropriately."
-msgstr ""
+msgstr "Вы включаете вибропулю и помещаете её в соответствующее место."
 
 #. ~ Use action need_charges_msg for {'str': 'bullet vibrator (off)'}.
 #: data/json/items/tool/electronics.json
 msgid "The vibrator's battery is dead."
-msgstr ""
+msgstr "Батарея вибратора разряжена."
 
 #. ~ Description for {'str': 'bullet vibrator (off)'}
 #: data/json/items/tool/electronics.json
@@ -134767,14 +134944,17 @@ msgid ""
 "This battery-devouring device is just the thing to knead the tension out and"
 " help you relax.  Use it to turn it on and start letting it buzz away."
 msgstr ""
+"Это устройство, которое быстро разряжает батарею, как раз то, что нужно, "
+"чтобы снять напряжение и помочь вам расслабиться. Включите его и позвольте "
+"ему зажужжать."
 
 #: data/json/items/tool/electronics.json
 msgid "bullet vibrator (on)"
 msgid_plural "bullet vibrator (on)s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "вибропуля (вкл.)"
+msgstr[1] "вибропули (вкл.)"
+msgstr[2] "вибропуль (вкл.)"
+msgstr[3] "вибропули (вкл.)"
 
 #. ~ Description for {'str': 'bullet vibrator (on)'}
 #: data/json/items/tool/electronics.json
@@ -134782,6 +134962,9 @@ msgid ""
 "This battery-devouring device is just the thing to knead the tension out and"
 " help you relax.  You can feel it buzzing away all that tension."
 msgstr ""
+"Это устройство, которое быстро разряжает батарею, как раз то, что нужно, "
+"чтобы снять напряжение и помочь вам расслабиться. Вы чувствуете, как оно "
+"снимает всё напряжение."
 
 #: data/json/items/tool/electronics.json
 msgid "gps pinpointer"
@@ -165269,7 +165452,7 @@ msgstr ""
 #. ~ Description for {'str': 'Debug Hammertime'}
 #: data/json/mutations/mutations.json
 msgid "Crafting and construction are practically instant."
-msgstr ""
+msgstr "Изготовление и строительство происходят практически мгновенно."
 
 #: data/json/mutations/mutations.json
 msgid "Debug Mind Control"
@@ -266711,7 +266894,7 @@ msgstr ""
 #: data/mods/Monster_Girls/categories.json
 #: data/mods/Monster_Girls/thresh_mutation.json
 msgid "Lamia"
-msgstr ""
+msgstr "Ламия"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a strange dream about foxes."
@@ -266733,11 +266916,11 @@ msgstr "Ваши сны вызывают у вас радостное, прыг�
 msgid ""
 "You have a dream of moving across a field, yet you don't hear your "
 "footsteps…"
-msgstr ""
+msgstr "Вам снится, что вы идёте по полю, но не слышите своих шагов…"
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "While dreaming, you see a strangely serpentine reflection of yourself."
-msgstr ""
+msgstr "Во время сна вы видите странное змеевидное отражение себя."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "In a dream, you see a curiously harpy-like reflection of yourself."
@@ -266778,12 +266961,15 @@ msgid ""
 "You have an vivid dream of yourself with a long, serpentine tail instead of "
 "legs."
 msgstr ""
+"Вам снится яркий сон, в котором вместо ног у вас длинный извилистый хвост."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
 "Your dream-self seems so graceful, slithering along in their dexterous scaly"
 " form."
 msgstr ""
+"В вашем сне вы выглядите очень грациозно, скользя в своем проворном "
+"чешуйчатом обличье."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid "You have a vivid dream of returning to your cozy warren."
@@ -266862,12 +267048,16 @@ msgid ""
 "You have a nostalgic dream of stumbling around clumsily on two legs instead "
 "of an elegant snake tail."
 msgstr ""
+"Во сне вы ностальгируете по временам, когда вы неуклюже передвигались на "
+"двух ногах, а не на изящном змеином хвосте."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
 "You dream of coiling around a loved one, keeping them wrapped up close for "
 "warmth."
 msgstr ""
+"Вам снится, как вы обнимаете любимого человека, прижимая его к себе, чтобы "
+"сохранить тепло."
 
 #: data/mods/Monster_Girls/dreams.json
 msgid ""
@@ -267123,18 +267313,18 @@ msgstr ""
 #: data/mods/Monster_Girls/mutagens.json
 msgid "Lamia serum"
 msgid_plural "Lamia serums"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "сыворотка Ламии"
+msgstr[1] "сыворотки Ламии"
+msgstr[2] "сывороток Ламии"
+msgstr[3] "сыворотки Ламии"
 
 #: data/mods/Monster_Girls/mutagens.json
 msgid "Lamia mutagen"
 msgid_plural "Lamia mutagens"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "мутаген Ламии"
+msgstr[1] "мутагена Ламии"
+msgstr[2] "мутагенов Ламии"
+msgstr[3] "мутагены Ламии"
 
 #: data/mods/Monster_Girls/mutagens.json
 msgid "Usagimimi serum"
@@ -267219,6 +267409,9 @@ msgid ""
 " stand no chance, now that you can swoop down from above!  Part of you "
 "wishes you could build a house on a floating sky island, though…"
 msgstr ""
+"Братья Райт **мечтали** летать так же, как вы. Теперь, когда вы можете "
+"пикировать с высоты, у зомби нет ни единого шанса! Хотя часть вас мечтает "
+"построить дом на парящем в небе острове…"
 
 #. ~ Description for {'str': 'Dryad'}
 #: data/mods/Monster_Girls/thresh_mutation.json
@@ -267287,6 +267480,10 @@ msgid ""
 "it's worth it.  All you need now is a nice warm rock to bask on, or someone "
 "to coil around for warmth…"
 msgstr ""
+"Чтобы ваши чешуйки оставались гладкими и блестящими, нужно уделять им много "
+"внимания, но это того стоит. Теперь вам нужно только найти теплый камень, на"
+" котором можно погреться, или кого-нибудь, вокруг кого можно свернуться, "
+"чтобы согреться…"
 
 #: data/mods/My_Sweet_Cataclysm/modinfo.json
 msgid "My Sweet Cataclysm: BN Edition"
@@ -268081,12 +268278,12 @@ msgstr "Позволяет характеристикам повышаться �
 
 #: data/mods/Test_for_Lua_hooks/modinfo.json
 msgid "Lua hook testing"
-msgstr ""
+msgstr "Тестирование Lua-хуков"
 
 #. ~ Description for Lua hook testing
 #: data/mods/Test_for_Lua_hooks/modinfo.json
 msgid "Testing lua hooks. It should be obsolete after testing!"
-msgstr ""
+msgstr "Тестирование lua-хуков. После тестирования должно стать неактуальным!"
 
 #: data/mods/UDP_BN_FAKE_SNOW/modinfo.json
 msgid "MSX Fake Snow"
@@ -282696,6 +282893,7 @@ msgstr "У вас слишком низкий моральный дух, что�
 #: src/crafting.cpp
 msgid "You are too frustrated to continue and should just give up."
 msgstr ""
+"Вы слишком расстроены, чтобы продолжать, и вам следует просто всё бросить."
 
 #: src/crafting.cpp
 msgid "You can't see well and are working slowly."
@@ -283341,7 +283539,7 @@ msgstr "слишком темно для создания предметов"
 
 #: src/crafting_gui.cpp
 msgid "too sad to craft effectively"
-msgstr ""
+msgstr "слишком грустно для эффективного создания предметов"
 
 #: src/crafting_gui.cpp
 #, c-format
@@ -287654,7 +287852,7 @@ msgstr "Разобрать все, включая получаемые в про
 
 #: src/game.cpp
 msgid "Salvage everything"
-msgstr ""
+msgstr "Извлечь всё"
 
 #: src/game.cpp
 msgid ""
@@ -290517,7 +290715,7 @@ msgstr ""
 
 #: src/iexamine.cpp
 msgid "Purchase cash card"
-msgstr ""
+msgstr "Купить кредитную карту"
 
 #: src/iexamine.cpp
 msgid "You need $10.00 in your account to purchase a card."
@@ -290525,11 +290723,11 @@ msgstr "Вам нужно иметь $10.00 на личном счету, что
 
 #: src/iexamine.cpp
 msgid "Withdraw cash"
-msgstr ""
+msgstr "Снять наличные"
 
 #: src/iexamine.cpp
 msgid "You need to pay down your debt before withdrawing cash!"
-msgstr ""
+msgstr "Перед снятием наличных денег вам необходимо погасить свой долг!"
 
 #: src/iexamine.cpp
 msgid "You don't have enough to withdraw a money bundle!"
@@ -290537,15 +290735,15 @@ msgstr ""
 
 #: src/iexamine.cpp
 msgid "Deposit cash"
-msgstr ""
+msgstr "Внести наличные"
 
 #: src/iexamine.cpp
 msgid "You need cash to deposit!"
-msgstr ""
+msgstr "Для депозита нужны наличные!"
 
 #: src/iexamine.cpp
 msgid "Withdraw onto cash card"
-msgstr ""
+msgstr "Снять на кредитную карту"
 
 #: src/iexamine.cpp
 msgid "You need a cash card before you can withdraw money!"
@@ -290561,7 +290759,7 @@ msgstr "Для снятия средств нужно иметь положит�
 
 #: src/iexamine.cpp
 msgid "Deposit from cash card"
-msgstr ""
+msgstr "Взнос с кредитной карты"
 
 #: src/iexamine.cpp
 msgid "You need a charged cash card before you can deposit money!"
@@ -290569,7 +290767,7 @@ msgstr "Для пополнения баланса нужна действующ
 
 #: src/iexamine.cpp
 msgid "Combine cash cards"
-msgstr ""
+msgstr "Объединить кредитные карты"
 
 #: src/iexamine.cpp
 #, c-format
