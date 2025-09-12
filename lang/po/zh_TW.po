@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-11 01:31+0000\n"
+"POT-Creation-Date: 2025-09-12 01:50+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -5841,7 +5841,7 @@ msgstr "放置伙夫牌厨房机"
 
 #: data/json/construction_group.json
 msgid "Install Grid Reloading Press"
-msgstr "安装重装压弹机（电网）"
+msgstr "安装弹药复装压床（电网）"
 
 #: data/json/construction_group.json
 msgid "Place Water Mill"
@@ -12020,10 +12020,6 @@ msgid "Mop"
 msgstr "抹掉"
 
 #: data/json/item_actions.json
-msgid "Play music"
-msgstr "播放音樂"
-
-#: data/json/item_actions.json
 msgid "Turn off music"
 msgstr "關掉音樂"
 
@@ -12246,6 +12242,10 @@ msgstr "(调试）截断身体部位"
 #: data/json/item_actions.json
 msgid "Relieve some tension"
 msgstr "缓解一些压力"
+
+#: data/json/item_actions.json
+msgid "Listen to music"
+msgstr "听音乐"
 
 #: data/json/item_category.json
 msgid "GUNS"
@@ -23716,15 +23716,15 @@ msgstr "你受够了看到东西从天上掉下来，把士兵和幸存者从一
 
 #: data/json/professions.json
 msgctxt "profession_male"
-msgid "UH-60 Blackhawk pilot"
+msgid "UH-60 Blackhawk Pilot"
 msgstr "UH-60黑鹰直升机飞行员"
 
 #: data/json/professions.json
 msgctxt "profession_female"
-msgid "UH-60 Blackhawk pilot"
-msgstr "UH-60黑鹰直升机驾驶员"
+msgid "UH-60 Blackhawk Pilot"
+msgstr "UH-60黑鹰直升机飞行员"
 
-#. ~ Profession (male UH-60 Blackhawk pilot) description
+#. ~ Profession (male UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
@@ -23734,7 +23734,7 @@ msgid ""
 msgstr ""
 "你成功到达了你的UH-60直升机。你的副驾驶员没能幸存下来。你从天空中目睹了一切的崩溃，将士兵和幸存者从一个据点运送到另一个据点，但现在只剩下你和你的飞行载具了。"
 
-#. ~ Profession (female UH-60 Blackhawk pilot) description
+#. ~ Profession (female UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
@@ -32793,7 +32793,7 @@ msgstr "一个连接到建筑电网的高级3D打印机。"
 
 #: data/json/furniture_and_terrain/furniture-appliances.json
 msgid "grid reloading press"
-msgstr "重装压弹机（电网）"
+msgstr "弹药复装压床（电网）"
 
 #. ~ Description for grid reloading press
 #: data/json/furniture_and_terrain/furniture-appliances.json
@@ -32970,7 +32970,9 @@ msgid_plural "grid hydraulic presss"
 msgstr[0] "液压机（电网）"
 
 #. ~ Description for grid hydraulic press
+#. ~ Description for {'str': 'mounted hydraulic press'}
 #: data/json/furniture_and_terrain/furniture-appliances.json
+#: data/json/vehicleparts/utilities.json
 msgid ""
 "If you really want to squash something a lot, this would be exactly the "
 "right industrial tool for you."
@@ -48423,7 +48425,7 @@ msgstr[0] "高级3D打印机（电网）"
 #: data/json/items/fake.json
 msgid "installed reloading press"
 msgid_plural "installed reloading presss"
-msgstr[0] "已安装的重装压弹机"
+msgstr[0] "已安装的弹药复装压床"
 
 #: data/json/items/fake.json
 msgid "installed advanced butchering station"
@@ -106260,6 +106262,15 @@ msgid "mp3 player (off)"
 msgid_plural "mp3 players (off)"
 msgstr[0] "MP3 播放器 (關閉)"
 
+#. ~ Use action msg for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
+#. (off)'}.
+#. ~ Use action msg for {'str': 'smartphone'}.
+#. ~ Use action msg for {'str': 'atomic smartphone'}.
+#. ~ Use action msg for {'str': "Wraitheon executive's smartphone"}.
+#: data/json/items/tool/electronics.json data/mods/Aftershock/items/tools.json
+msgid "You put in the earbuds and start listening to music."
+msgstr "你戴上了耳機並且開始聽音樂。"
+
 #. ~ Description for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
 #. (off)'}
 #: data/json/items/tool/electronics.json
@@ -106333,6 +106344,12 @@ msgstr "一个完好的便携式游戏机，它有一个LED屏幕可以在黑暗
 msgid "smartphone"
 msgid_plural "smartphones"
 msgstr[0] "智慧型手機"
+
+#. ~ Use action menu_text for {'str': 'smartphone'}.
+#. ~ Use action menu_text for {'str': 'atomic smartphone'}.
+#: data/json/items/tool/electronics.json
+msgid "Activate Flashlight"
+msgstr "打开手电筒"
 
 #. ~ Use action msg for {'str': 'smartphone'}.
 #. ~ Use action msg for {'str': 'atomic smartphone'}.
@@ -107972,17 +107989,18 @@ msgstr "一個用來拆解槍械子彈的工具。"
 #: data/json/items/tool/handloading.json
 msgid "reloading press"
 msgid_plural "reloading presses"
-msgstr[0] "重装压弹机"
+msgstr[0] "弹药复装压床"
 
 #. ~ Description for {'str': 'reloading press', 'str_pl': 'reloading presses'}
 #: data/json/items/tool/handloading.json
 msgid ""
 "This is an all-in-one handloading tool consisting of a multi-stage press, "
 "bullet molds, a hotplate, and a collet puller for disassembling cartridges."
-"  Once installed as furniture, it can handle both making your own ammunition"
-" and taking ammo apart for materials."
+"  It needs to be hooked up as grid furniture or mounted on a vehicle, but "
+"once you do it can handle both making your own ammunition and taking ammo "
+"apart for materials."
 msgstr ""
-"这是一个集多功能于一体的手工装弹工具，包括多级压机、子弹模具、电热板以及用于拆解弹药的夹头拉拔器。安装为家具后，它既可以制造弹药，也可以拆解弹药以获取材料。"
+"这是一个集多功能于一体的手工装弹工具，包括多级压床、子弹模具、电热板以及用于拆解弹药的夹头拉拔器。它需要作为电网设备接入或安装在载具上，一旦设置好，它既可以制造弹药，也可以将弹药拆解为原材料。"
 
 #: data/json/items/tool/knives.json
 msgid "copper knife"
@@ -109100,10 +109118,10 @@ msgstr[0] "液压机"
 msgid ""
 "A large, barely portable hydraulic press, that uses a 36kW motor to squash "
 "whatever needs squashing.  Do not put your hand in here, it will get "
-"squashed.  Can run off heavy-duty batteries, or installed to run off a power"
-" grid instead."
+"squashed.  Can run off heavy-duty batteries, installed to run off a power "
+"grid, or mounted on a vehicle."
 msgstr ""
-"一台大型、几乎不可移动的液压压机，使用36千瓦电机来压碎任何需要被压碎的东西。切勿将手放入其中，否则会被压碎。可以通过重型电池供电，或安装以连接电网运行。"
+"一台大型、几乎不可移动的液压压机，使用36千瓦电机来压碎任何需要被压碎的东西。切勿将手放入其中，否则会被压碎。可由重型电池供电，也可接入电网或安装在载具上。"
 
 #: data/json/items/tool/metalworking.json
 msgid "finished charcoal kiln"
@@ -137160,6 +137178,17 @@ msgid ""
 "appears to be ending, but not even that can stop you from finishing your "
 "mission."
 msgstr "你的任务需要你击杀某个正在躲藏的高层人士。你的目标似乎在逃跑时已经疯了，而整个世界也似乎面临末日，但即便如此这也无法打消你完成任务的决心。"
+
+#: data/json/npcs/missiondef.json
+msgid "Protect Your Canine Friends!"
+msgstr "保护你的狗狗朋友！"
+
+#. ~ Description for mission '{'str': 'Protect Your Canine Friends!'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"Search any nearby pet stores for armor for your pups. You think you remember"
+" the location of one..."
+msgstr "搜寻附近的宠物店，为你的狗狗们寻找护甲。你似乎记得其中一家的位置……"
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -178538,6 +178567,22 @@ msgid ""
 "it as a tool."
 msgstr ""
 "一台可以烧制砖块和陶器的电力窑炉，使用车载电源供电。砖块和陶器需要烧制变硬后才能使用。如果你在制造物品时需要使用到它的功能时，该部件会出现在可选项中。"
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted reloading press"
+msgstr "车载弹药复装压床"
+
+#. ~ Description for {'str': 'mounted reloading press'}
+#: data/json/vehicleparts/utilities.json
+msgid ""
+"An all-in-one handloading tool that can both assemble ammunition and break "
+"it back down for materials, includes a hotplate for bullet molding powered "
+"by the vehicle's batteries."
+msgstr "这是一种集成的手工装弹工具，既可以组装弹药，也可以拆解弹药以获取材料。它配有用于子弹铸造的电热板，由载具电池供电。"
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted hydraulic press"
+msgstr "车载液压机"
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "null part"
@@ -230028,6 +230073,10 @@ msgid "Reset ignored debug messages"
 msgstr "重置忽略的报错消息"
 
 #: src/debug_menu.cpp
+msgid "Control NPC follower"
+msgstr "控制NPC追随者"
+
+#: src/debug_menu.cpp
 msgid "Reload tileset and show missing tiles"
 msgstr "重新加载贴图包并显示缺失的贴图"
 
@@ -230054,6 +230103,10 @@ msgstr "傳送 - 短距"
 #: src/debug_menu.cpp
 msgid "Teleport - long range"
 msgstr "傳送 - 長距"
+
+#: src/debug_menu.cpp
+msgid "Teleport - overmap special"
+msgstr "传送至大地图特殊地形"
 
 #: src/debug_menu.cpp
 msgid "Teleport - adjacent overmap"
@@ -230203,6 +230256,10 @@ msgstr "想要的大地圖在哪呢?"
 #, c-format
 msgid "You teleport to overmap %s."
 msgstr "你传送到大地图 %s。"
+
+#: src/debug_menu.cpp
+msgid "Choose area to teleport to"
+msgstr "选择传送区域"
 
 #: src/debug_menu.cpp
 msgid "no faction"
@@ -242678,18 +242735,6 @@ msgid "Insufficient power"
 msgstr "電力不足"
 
 #: src/iuse.cpp
-msgid "The device's batteries are dead."
-msgstr "設備的電池沒電了。"
-
-#: src/iuse.cpp
-msgid "You are already listening to music!"
-msgstr "你已經在聽音樂了！"
-
-#: src/iuse.cpp
-msgid "You put in the earbuds and start listening to music."
-msgstr "你戴上了耳機並且開始聽音樂。"
-
-#: src/iuse.cpp
 msgid "a sweet guitar solo!"
 msgstr "令人沉醉的吉他獨奏!"
 
@@ -242719,12 +242764,9 @@ msgid "You listen to %s"
 msgstr "你聽了 %s"
 
 #: src/iuse.cpp
-msgid "The mp3 player turns off."
-msgstr "MP3 播放器關閉了。"
-
-#: src/iuse.cpp
-msgid "The phone turns off."
-msgstr "手機關閉了。"
+#, c-format
+msgid "The %s turns off."
+msgstr "%s 关闭了。"
 
 #. ~ %1$d: roll number, %2$d: side number of a die, %3$s: die item name
 #: src/iuse.cpp
@@ -244678,11 +244720,6 @@ msgstr "选择要截肢的身体部位："
 msgid "Body part removed: %s"
 msgstr "移除的身体部位: %s"
 
-#: src/iuse.cpp
-#, c-format
-msgid "The %s turns off."
-msgstr "%s 关闭了。"
-
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -246033,6 +246070,10 @@ msgstr "骑乘时无法进行此操作。"
 #: src/iuse_actor.cpp
 msgid "Are you trying to drown yourself?"
 msgstr "你想淹死自己吗？"
+
+#: src/iuse_actor.cpp
+msgid "You can't listen to multiple music players at once!"
+msgstr "你不能同时收听多个音乐播放器！"
 
 #: src/iuse_actor.h
 msgid "Carve"
@@ -250714,47 +250755,47 @@ msgctxt "memorial_female"
 msgid "Set off an alarm."
 msgstr "引發警報。"
 
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "good"
+msgstr "良好"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "bad"
+msgstr "惡劣"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "mixed"
+msgstr "混合"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "warning"
+msgstr "警告"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "info"
+msgstr "資訊"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "neutral"
+msgstr "中立"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "debug"
+msgstr "除錯"
+
 #. ~ Message %s on the message log was repeated %d times, e.g. "You hear a
 #. whack! x 12"
 #: src/messages.cpp
 #, c-format
 msgid "%s x %d"
 msgstr "%s x %d"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "good"
-msgstr "良好"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "bad"
-msgstr "惡劣"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "mixed"
-msgstr "混合"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "warning"
-msgstr "警告"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "info"
-msgstr "資訊"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "neutral"
-msgstr "中立"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "debug"
-msgstr "除錯"
 
 #: src/messages.cpp
 #, c-format
@@ -256072,10 +256113,33 @@ msgid "Enter a sentence to yell"
 msgstr "輸入你想喊出的話"
 
 #: src/npctalk.cpp
+#, c-format
 msgid ""
-"What do you want to monologue?  (This has no in-game effect! Use +, -, or ? "
-"at the start to add context.)"
-msgstr "你想说些什么独白？（这不会对游戏造成任何影响！使用 +、- 或 ? 开头为内容添加上下文。）"
+"<color_light_gray>You can add a prefix to your monologue to set the tone or emotion. Valid prefixes are:</color> %s\n"
+"\n"
+"<color_white>Examples:</color>\n"
+"  <color_light_green>good: You feel like it's going to be a good day.</color>\n"
+"  <color_light_red>bad: You don't like the look of this place…</color>\n"
+"  <color_light_blue>info: The empty house reminds you of old times.</color>\n"
+"  <color_yellow>warning: You say 'Stay close, I hear something moving!'</color>\n"
+"\n"
+"<color_light_gray>Leave off the prefix for a neutral monologue.</color>\n"
+msgstr ""
+"<color_light_gray>你可以在独白前添加前缀来设定语气或情绪。有效的前缀有：</color> %s\n"
+"\n"
+"<color_white>示例：</color>\n"
+"  <color_light_green>好：你感觉今天将会是美好的一天。</color>\n"
+"  <color_light_red>坏：你不喜欢这个地方的样子……</color>\n"
+"  <color_light_blue>信息：这间空房子让你想起了旧时光。</color>\n"
+"  <color_yellow>警告：你说道“跟紧点，我听到有东西在动！”</color>\n"
+"\n"
+"<color_light_gray>不加前缀则为中性独白。</color>\n"
+
+#: src/npctalk.cpp
+#, c-format
+msgctxt "message log"
+msgid "<color_%s>%s</color>"
+msgstr "<color_%s>%s</color>"
 
 #: src/npctalk.cpp
 msgid "Who should guard here?"

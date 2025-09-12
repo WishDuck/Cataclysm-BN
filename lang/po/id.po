@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-11 01:31+0000\n"
+"POT-Creation-Date: 2025-09-12 01:50+0000\n"
 "Language-Team: Indonesian (https://app.transifex.com/bn-team/teams/113585/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11768,10 +11768,6 @@ msgid "Mop"
 msgstr ""
 
 #: data/json/item_actions.json
-msgid "Play music"
-msgstr ""
-
-#: data/json/item_actions.json
 msgid "Turn off music"
 msgstr ""
 
@@ -11993,6 +11989,10 @@ msgstr ""
 
 #: data/json/item_actions.json
 msgid "Relieve some tension"
+msgstr ""
+
+#: data/json/item_actions.json
+msgid "Listen to music"
 msgstr ""
 
 #: data/json/item_category.json
@@ -23025,15 +23025,15 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
-msgid "UH-60 Blackhawk pilot"
+msgid "UH-60 Blackhawk Pilot"
 msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_female"
-msgid "UH-60 Blackhawk pilot"
+msgid "UH-60 Blackhawk Pilot"
 msgstr ""
 
-#. ~ Profession (male UH-60 Blackhawk pilot) description
+#. ~ Profession (male UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
@@ -23042,7 +23042,7 @@ msgid ""
 " holdout to the next, but now it's just you and your bird."
 msgstr ""
 
-#. ~ Profession (female UH-60 Blackhawk pilot) description
+#. ~ Profession (female UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
@@ -32240,7 +32240,9 @@ msgid_plural "grid hydraulic presss"
 msgstr[0] ""
 
 #. ~ Description for grid hydraulic press
+#. ~ Description for {'str': 'mounted hydraulic press'}
 #: data/json/furniture_and_terrain/furniture-appliances.json
+#: data/json/vehicleparts/utilities.json
 msgid ""
 "If you really want to squash something a lot, this would be exactly the "
 "right industrial tool for you."
@@ -104607,6 +104609,15 @@ msgid "mp3 player (off)"
 msgid_plural "mp3 players (off)"
 msgstr[0] ""
 
+#. ~ Use action msg for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
+#. (off)'}.
+#. ~ Use action msg for {'str': 'smartphone'}.
+#. ~ Use action msg for {'str': 'atomic smartphone'}.
+#. ~ Use action msg for {'str': "Wraitheon executive's smartphone"}.
+#: data/json/items/tool/electronics.json data/mods/Aftershock/items/tools.json
+msgid "You put in the earbuds and start listening to music."
+msgstr ""
+
 #. ~ Description for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
 #. (off)'}
 #: data/json/items/tool/electronics.json
@@ -104676,6 +104687,12 @@ msgstr ""
 msgid "smartphone"
 msgid_plural "smartphones"
 msgstr[0] ""
+
+#. ~ Use action menu_text for {'str': 'smartphone'}.
+#. ~ Use action menu_text for {'str': 'atomic smartphone'}.
+#: data/json/items/tool/electronics.json
+msgid "Activate Flashlight"
+msgstr ""
 
 #. ~ Use action msg for {'str': 'smartphone'}.
 #. ~ Use action msg for {'str': 'atomic smartphone'}.
@@ -106277,8 +106294,9 @@ msgstr[0] ""
 msgid ""
 "This is an all-in-one handloading tool consisting of a multi-stage press, "
 "bullet molds, a hotplate, and a collet puller for disassembling cartridges."
-"  Once installed as furniture, it can handle both making your own ammunition"
-" and taking ammo apart for materials."
+"  It needs to be hooked up as grid furniture or mounted on a vehicle, but "
+"once you do it can handle both making your own ammunition and taking ammo "
+"apart for materials."
 msgstr ""
 
 #: data/json/items/tool/knives.json
@@ -107389,8 +107407,8 @@ msgstr[0] ""
 msgid ""
 "A large, barely portable hydraulic press, that uses a 36kW motor to squash "
 "whatever needs squashing.  Do not put your hand in here, it will get "
-"squashed.  Can run off heavy-duty batteries, or installed to run off a power"
-" grid instead."
+"squashed.  Can run off heavy-duty batteries, installed to run off a power "
+"grid, or mounted on a vehicle."
 msgstr ""
 
 #: data/json/items/tool/metalworking.json
@@ -135025,6 +135043,17 @@ msgid ""
 "hiding.  Your mark seems to have turned feral while escaping and the world "
 "appears to be ending, but not even that can stop you from finishing your "
 "mission."
+msgstr ""
+
+#: data/json/npcs/missiondef.json
+msgid "Protect Your Canine Friends!"
+msgstr ""
+
+#. ~ Description for mission '{'str': 'Protect Your Canine Friends!'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"Search any nearby pet stores for armor for your pups. You think you remember"
+" the location of one..."
 msgstr ""
 
 #: data/json/npcs/npc.json
@@ -174975,6 +175004,22 @@ msgid ""
 "batteries.  You could use this to harden bricks or clay.  If you attempt to "
 "craft an item that needs a kiln, you will be given the option of selecting "
 "it as a tool."
+msgstr ""
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted reloading press"
+msgstr ""
+
+#. ~ Description for {'str': 'mounted reloading press'}
+#: data/json/vehicleparts/utilities.json
+msgid ""
+"An all-in-one handloading tool that can both assemble ammunition and break "
+"it back down for materials, includes a hotplate for bullet molding powered "
+"by the vehicle's batteries."
+msgstr ""
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted hydraulic press"
 msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
@@ -225639,6 +225684,10 @@ msgid "Reset ignored debug messages"
 msgstr ""
 
 #: src/debug_menu.cpp
+msgid "Control NPC follower"
+msgstr ""
+
+#: src/debug_menu.cpp
 msgid "Reload tileset and show missing tiles"
 msgstr ""
 
@@ -225664,6 +225713,10 @@ msgstr ""
 
 #: src/debug_menu.cpp
 msgid "Teleport - long range"
+msgstr ""
+
+#: src/debug_menu.cpp
+msgid "Teleport - overmap special"
 msgstr ""
 
 #: src/debug_menu.cpp
@@ -225810,6 +225863,10 @@ msgstr ""
 #: src/debug_menu.cpp
 #, c-format
 msgid "You teleport to overmap %s."
+msgstr ""
+
+#: src/debug_menu.cpp
+msgid "Choose area to teleport to"
 msgstr ""
 
 #: src/debug_menu.cpp
@@ -238207,18 +238264,6 @@ msgid "Insufficient power"
 msgstr ""
 
 #: src/iuse.cpp
-msgid "The device's batteries are dead."
-msgstr ""
-
-#: src/iuse.cpp
-msgid "You are already listening to music!"
-msgstr ""
-
-#: src/iuse.cpp
-msgid "You put in the earbuds and start listening to music."
-msgstr ""
-
-#: src/iuse.cpp
 msgid "a sweet guitar solo!"
 msgstr ""
 
@@ -238248,11 +238293,8 @@ msgid "You listen to %s"
 msgstr ""
 
 #: src/iuse.cpp
-msgid "The mp3 player turns off."
-msgstr ""
-
-#: src/iuse.cpp
-msgid "The phone turns off."
+#, c-format
+msgid "The %s turns off."
 msgstr ""
 
 #. ~ %1$d: roll number, %2$d: side number of a die, %3$s: die item name
@@ -240193,11 +240235,6 @@ msgstr ""
 msgid "Body part removed: %s"
 msgstr ""
 
-#: src/iuse.cpp
-#, c-format
-msgid "The %s turns off."
-msgstr ""
-
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -241547,6 +241584,10 @@ msgstr ""
 
 #: src/iuse_actor.cpp
 msgid "Are you trying to drown yourself?"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You can't listen to multiple music players at once!"
 msgstr ""
 
 #: src/iuse_actor.h
@@ -246199,46 +246240,46 @@ msgctxt "memorial_female"
 msgid "Set off an alarm."
 msgstr ""
 
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "good"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "bad"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "mixed"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "warning"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "info"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "neutral"
+msgstr ""
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "debug"
+msgstr ""
+
 #. ~ Message %s on the message log was repeated %d times, e.g. "You hear a
 #. whack! x 12"
 #: src/messages.cpp
 #, c-format
 msgid "%s x %d"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "good"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "bad"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "mixed"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "warning"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "info"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "neutral"
-msgstr ""
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "debug"
 msgstr ""
 
 #: src/messages.cpp
@@ -251494,9 +251535,23 @@ msgid "Enter a sentence to yell"
 msgstr ""
 
 #: src/npctalk.cpp
+#, c-format
 msgid ""
-"What do you want to monologue?  (This has no in-game effect! Use +, -, or ? "
-"at the start to add context.)"
+"<color_light_gray>You can add a prefix to your monologue to set the tone or emotion. Valid prefixes are:</color> %s\n"
+"\n"
+"<color_white>Examples:</color>\n"
+"  <color_light_green>good: You feel like it's going to be a good day.</color>\n"
+"  <color_light_red>bad: You don't like the look of this place…</color>\n"
+"  <color_light_blue>info: The empty house reminds you of old times.</color>\n"
+"  <color_yellow>warning: You say 'Stay close, I hear something moving!'</color>\n"
+"\n"
+"<color_light_gray>Leave off the prefix for a neutral monologue.</color>\n"
+msgstr ""
+
+#: src/npctalk.cpp
+#, c-format
+msgctxt "message log"
+msgid "<color_%s>%s</color>"
 msgstr ""
 
 #: src/npctalk.cpp

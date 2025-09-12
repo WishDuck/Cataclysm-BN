@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-11 01:31+0000\n"
+"POT-Creation-Date: 2025-09-12 01:50+0000\n"
 "Last-Translator: Vadim, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -6167,7 +6167,7 @@ msgstr "Построить баррикаду из металлолома"
 
 #: data/json/construction_group.json
 msgid "Build Junk Metal Door"
-msgstr ""
+msgstr "Построить дверь из металлолома"
 
 #: data/json/construction_group.json
 msgid "Build Junk Metal Floor"
@@ -6175,7 +6175,7 @@ msgstr "Построить пол из металлолома"
 
 #: data/json/construction_group.json
 msgid "Build Junk Metal Roof Over Floor"
-msgstr ""
+msgstr "Построить крышу из металлолома над полом"
 
 #: data/json/construction_group.json
 msgid "Build Large Metal Support"
@@ -6495,7 +6495,7 @@ msgstr "Построить деревянную стену"
 
 #: data/json/construction_group.json
 msgid "Build Wooden Chest"
-msgstr ""
+msgstr "Построить деревянный сундук"
 
 #: data/json/construction_group.json
 msgid "Build Wooden Floor"
@@ -6659,7 +6659,7 @@ msgstr "Установить очень большой аккумулятор"
 
 #: data/json/construction_group.json
 msgid "Plug In Freezer"
-msgstr ""
+msgstr "Подключить морозильник"
 
 #: data/json/construction_group.json
 msgid "Install Industrial Freezer"
@@ -6667,35 +6667,35 @@ msgstr "Установите промышленную морозильную к�
 
 #: data/json/construction_group.json
 msgid "Plug In Glass Freezer"
-msgstr ""
+msgstr "Подключить морозильник с дверью из стекла"
 
 #: data/json/construction_group.json
 msgid "Plug In Minifridge"
-msgstr ""
+msgstr "Подключить мини-холодильник"
 
 #: data/json/construction_group.json
 msgid "Plug In Minifreezer"
-msgstr ""
+msgstr "Подключить мини-морозильник"
 
 #: data/json/construction_group.json
 msgid "Plug In Oven"
-msgstr ""
+msgstr "Подключить духовку"
 
 #: data/json/construction_group.json
 msgid "Plug In Refrigerator"
-msgstr ""
+msgstr "Подключить холодильник"
 
 #: data/json/construction_group.json
 msgid "Plug In Glass Refrigerator"
-msgstr ""
+msgstr "Подключить холодильник с дверью из стекла"
 
 #: data/json/construction_group.json
 msgid "Plug In Plutonium Generator"
-msgstr ""
+msgstr "Подключить плутониевый генератор"
 
 #: data/json/construction_group.json
 msgid "Plug In 3D Printer"
-msgstr ""
+msgstr "Подключить 3D-принтер"
 
 #: data/json/construction_group.json
 msgid "Place Advanced 3D Printer"
@@ -6707,11 +6707,11 @@ msgstr "Установить оконный кондиционер"
 
 #: data/json/construction_group.json
 msgid "Plug In Small Space Heater"
-msgstr ""
+msgstr "Подключить малый автообогреватель"
 
 #: data/json/construction_group.json
 msgid "Plug In Large Space Heater"
-msgstr ""
+msgstr "Подключить большой автообогреватель"
 
 #: data/json/construction_group.json
 msgid "Install Wind Turbine"
@@ -6847,11 +6847,11 @@ msgstr "Построить оштукатуренную деревянную с�
 
 #: data/json/construction_group.json
 msgid "Plug In Arc Welder"
-msgstr ""
+msgstr "Подключить сварочный аппарат"
 
 #: data/json/construction_group.json
 msgid "Plug In Gunsmith Kit"
-msgstr ""
+msgstr "Подключить комплект оружейника"
 
 #: data/json/construction_group.json
 msgid "Place Autoclave"
@@ -6859,7 +6859,7 @@ msgstr "Установить автоклав"
 
 #: data/json/construction_group.json
 msgid "Plug In Charger"
-msgstr ""
+msgstr "Подключить зарядное устройство"
 
 #: data/json/construction_group.json
 msgid "Place Recharging Station"
@@ -6883,11 +6883,11 @@ msgstr "Разместить улучшенную станцию для разд
 
 #: data/json/construction_group.json
 msgid "Plug In Electrolysis Kit"
-msgstr ""
+msgstr "Подключить набор для электролиза"
 
 #: data/json/construction_group.json
 msgid "Plug In Chemistry Set"
-msgstr ""
+msgstr "Подключить набор химика"
 
 #: data/json/construction_group.json
 msgid "Place Chemistry Lab"
@@ -6895,15 +6895,15 @@ msgstr "Поставить бортовую химлабораторию"
 
 #: data/json/construction_group.json
 msgid "Plug In Food Dehydrator"
-msgstr ""
+msgstr "Подключить пищевой дегидратор"
 
 #: data/json/construction_group.json
 msgid "Plug In Food Processor"
-msgstr ""
+msgstr "Подключить кухонный комбайн"
 
 #: data/json/construction_group.json
 msgid "Plug In Soda Machine"
-msgstr ""
+msgstr "Подключить машину для изготовления содовой"
 
 #: data/json/construction_group.json
 msgid "Place Forge"
@@ -6919,7 +6919,7 @@ msgstr "Установить автомобильную кухню"
 
 #: data/json/construction_group.json
 msgid "Plug In soldering iron"
-msgstr ""
+msgstr "Подключить паяльник"
 
 #: data/json/construction_group.json
 msgid "Place Still"
@@ -6931,7 +6931,7 @@ msgstr "Разместить стол"
 
 #: data/json/construction_group.json
 msgid "Plug In Vaccuum Sealer"
-msgstr ""
+msgstr "Подключить вакуумный упаковщик"
 
 #: data/json/construction_group.json
 msgid "Place FOODCO Kitchen Buddy"
@@ -7115,7 +7115,7 @@ msgstr "Покрыть пол воском"
 
 #: data/json/construction_group.json
 msgid "Clog Mi-Go gas emitter"
-msgstr ""
+msgstr "Засорить газовый излучатель ми-го"
 
 #: data/json/construction_group.json
 msgid "Remove Mi-Go gas emitter"
@@ -7151,11 +7151,11 @@ msgstr "Поставить глиняные горшки"
 
 #: data/json/construction_group.json
 msgid "Build Adobe Floor"
-msgstr ""
+msgstr "Построить пол из саманного кирпича"
 
 #: data/json/construction_group.json
 msgid "Build Roof Over Adobe Floor"
-msgstr ""
+msgstr "Построить крышу над полом из саманного кирпича"
 
 #: data/json/construction_group.json
 msgid "Fill Bathtub with Money"
@@ -11394,7 +11394,7 @@ msgstr[3] ""
 #. ~ Description for {'str': 'debugging hammer'}
 #: data/json/enchantments.json
 msgid "Fix'em all!"
-msgstr ""
+msgstr "Исправь их все!"
 
 #: data/json/field_type.json
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
@@ -13547,10 +13547,6 @@ msgid "Mop"
 msgstr "Вымыть пол"
 
 #: data/json/item_actions.json
-msgid "Play music"
-msgstr "Включить музыку"
-
-#: data/json/item_actions.json
 msgid "Turn off music"
 msgstr "Выключить музыку"
 
@@ -13773,6 +13769,10 @@ msgstr "(Отладка) Ампутировать часть тела"
 #: data/json/item_actions.json
 msgid "Relieve some tension"
 msgstr "Снять напряжение"
+
+#: data/json/item_actions.json
+msgid "Listen to music"
+msgstr "Слушать музыку"
 
 #: data/json/item_category.json
 msgid "GUNS"
@@ -18222,7 +18222,7 @@ msgstr[3] ""
 #. ~ Use action no_deactivate_msg for fuming acidic mass.
 #: data/json/monster_attacks.json
 msgid "Why are you trying to touch it?  Run!"
-msgstr ""
+msgstr "Почему ты пытаешься это потрогать? Беги!"
 
 #. ~ Description for fuming acidic mass
 #: data/json/monster_attacks.json
@@ -18230,6 +18230,8 @@ msgid ""
 "A congealed mass of roiling acidic goop.  It's expanding as if it's about to"
 " burst, get back!"
 msgstr ""
+"Застывшая масса бурлящей кислой слизи. Она расширяется, как будто вот-вот "
+"взорвется, отойди!"
 
 #: data/json/monster_attacks.json
 msgid "acid grub bomb"
@@ -20162,12 +20164,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Professional Diver"
-msgstr ""
+msgstr "Профессиональный дайвер"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Professional Diver"
-msgstr ""
+msgstr "Профессиональная дайверша"
 
 #. ~ Profession (male Professional Diver) description
 #: data/json/professions.json
@@ -20177,6 +20179,9 @@ msgid ""
 "England region, giving you lots of knowledge about the waters in the local "
 "area."
 msgstr ""
+"Большую часть времени вы провели, исследуя озера и занимаясь дайвингом в "
+"регионе Новой Англии, что позволило вам приобрести обширные знания о водах в"
+" этом районе."
 
 #. ~ Profession (female Professional Diver) description
 #: data/json/professions.json
@@ -20186,16 +20191,19 @@ msgid ""
 "England region, giving you lots of knowledge about the waters in the local "
 "area."
 msgstr ""
+"Большую часть времени вы провели, исследуя озера и занимаясь дайвингом в "
+"регионе Новой Англии, что позволило вам приобрести обширные знания о водах в"
+" этом районе."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Underwater Welder"
-msgstr ""
+msgstr "Подводный сварщик"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Underwater Welder"
-msgstr ""
+msgstr "Подводная сварщица"
 
 #. ~ Profession (male Underwater Welder) description
 #: data/json/professions.json
@@ -20204,6 +20212,8 @@ msgid ""
 "Through years of underwater welding, you've honed a deep understanding of "
 "submerged structures in the New England region."
 msgstr ""
+"За годы подводной сварки вы приобрели обширные знания о подводных "
+"сооружениях в регионе Новой Англии."
 
 #. ~ Profession (female Underwater Welder) description
 #: data/json/professions.json
@@ -20212,16 +20222,18 @@ msgid ""
 "Through years of underwater welding, you've honed a deep understanding of "
 "submerged structures in the New England region."
 msgstr ""
+"За годы подводной сварки вы приобрели обширные знания о подводных "
+"сооружениях в регионе Новой Англии."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Bionic Marine Biologist"
-msgstr ""
+msgstr "Морской биолог-бионик"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Bionic Marine Biologist"
-msgstr ""
+msgstr "Морской биолог-бионик"
 
 #. ~ Profession (male Bionic Marine Biologist) description
 #: data/json/professions.json
@@ -20232,6 +20244,11 @@ msgid ""
 " air unexpectedly, and additional implants that enable you to explore the "
 "depths easier and surgically examine marine life."
 msgstr ""
+"Вы были морским биологом, специализирующимся на длительных подводных "
+"исследованиях. У вас есть бионический респиратор для экстренных ситуаций, "
+"когда неожиданно заканчивается воздух, а также дополнительные имплантаты, "
+"которые позволяют вам легче исследовать глубины и хирургически исследовать "
+"морскую флору и фауну."
 
 #. ~ Profession (female Bionic Marine Biologist) description
 #: data/json/professions.json
@@ -20242,16 +20259,21 @@ msgid ""
 " air unexpectedly, and additional implants that enable you to explore the "
 "depths easier and surgically examine marine life."
 msgstr ""
+"Вы были морским биологом, специализирующимся на длительных подводных "
+"исследованиях. У вас есть бионический респиратор для экстренных ситуаций, "
+"когда неожиданно заканчивается воздух, а также дополнительные имплантаты, "
+"которые позволяют вам легче исследовать глубины и хирургически исследовать "
+"морскую флору и фауну."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Sharkboy"
-msgstr ""
+msgstr "Шаркбой"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Sharkboy"
-msgstr ""
+msgstr "Шаркбой"
 
 #. ~ Profession (male Sharkboy) description
 #: data/json/professions.json
@@ -20261,6 +20283,9 @@ msgid ""
 "your days swimming, diving, and exploring the depths. Now, you find yourself"
 " transformed into a creature of the deep. Is this what you desired?"
 msgstr ""
+"Вы всегда были увлечены водоемами, океаном или озером. Вы проводили дни, "
+"плавая, ныряя и исследуя глубины. Теперь вы обнаружили, что превратились в "
+"существо из глубин. Это то, чего вы желали?"
 
 #. ~ Profession (female Sharkboy) description
 #: data/json/professions.json
@@ -20270,16 +20295,19 @@ msgid ""
 "your days swimming, diving, and exploring the depths. Now, you find yourself"
 " transformed into a creature of the deep. Is this what you desired?"
 msgstr ""
+"Вы всегда были увлечены водоемами, океаном или озером. Вы проводили дни, "
+"плавая, ныряя и исследуя глубины. Теперь вы обнаружили, что превратились в "
+"существо из глубин. Это то, чего вы желали?"
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Davy Jones"
-msgstr ""
+msgstr "Дэйви Джонс"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Davy Jones"
-msgstr ""
+msgstr "Дэйви Джонс"
 
 #. ~ Profession (male Davy Jones) description
 #: data/json/professions.json
@@ -20290,6 +20318,9 @@ msgid ""
 "vengeance against those who wronged you, and a desire to reclaim your lost "
 "treasures."
 msgstr ""
+"Вас ограбили, выстрелили в голову и бросили в море незадолго до Катаклизма. "
+"Теперь вы восстали из мертвых из глубин, с жаждой мести тем, кто причинил "
+"вам зло, и желанием вернуть свои утраченные сокровища."
 
 #. ~ Profession (female Davy Jones) description
 #: data/json/professions.json
@@ -20300,16 +20331,19 @@ msgid ""
 "vengeance against those who wronged you, and a desire to reclaim your lost "
 "treasures."
 msgstr ""
+"Вас ограбили, выстрелили в голову и бросили в море незадолго до Катаклизма. "
+"Теперь вы восстали из мертвых из глубин, с жаждой мести тем, кто причинил "
+"вам зло, и желанием вернуть свои утраченные сокровища."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Creature of the Lagoon"
-msgstr ""
+msgstr "Существо из лагуны"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Creature of the Lagoon"
-msgstr ""
+msgstr "Существо из лагуны"
 
 #. ~ Profession (male Creature of the Lagoon) description
 #: data/json/professions.json
@@ -20319,6 +20353,9 @@ msgid ""
 "far cry from your previous existence, you now find yourself a creature of "
 "the deep, struggling to understand your new form and purpose."
 msgstr ""
+"Восстав из грязи, вы получили новую жизнь благодаря Катаклизму. В отличие от"
+" вашего прежнего положения, теперь вы стали существом из глубин, пытающимся "
+"осознать свою новую форму и предназначение."
 
 #. ~ Profession (female Creature of the Lagoon) description
 #: data/json/professions.json
@@ -20328,6 +20365,9 @@ msgid ""
 "far cry from your previous existence, you now find yourself a creature of "
 "the deep, struggling to understand your new form and purpose."
 msgstr ""
+"Восстав из грязи, вы получили новую жизнь благодаря Катаклизму. В отличие от"
+" вашего прежнего положения, теперь вы стали существом из глубин, пытающимся "
+"осознать свою новую форму и предназначение."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -20561,6 +20601,10 @@ msgid ""
 " sabotage and boarding operations, you've survived where others became shark"
 " bait.  As far as you can tell, military command has left you high and dry."
 msgstr ""
+"Вы были лучшими из лучших, элитой вооруженных сил. Пройдя подготовку по "
+"подводному диверсионному делу и абордажным операциям, вы выжили там, где "
+"другие стали кормом для акул. Насколько вы можете судить, военное "
+"командование бросило вас на произвол судьбы."
 
 #. ~ Profession (female Spec Ops Combat Diver) description
 #: data/json/professions.json
@@ -20570,16 +20614,20 @@ msgid ""
 " sabotage and boarding operations, you've survived where others became shark"
 " bait.  As far as you can tell, military command has left you high and dry."
 msgstr ""
+"Вы были лучшими из лучших, элитой вооруженных сил. Пройдя подготовку по "
+"подводному диверсионному делу и абордажным операциям, вы выжили там, где "
+"другие стали кормом для акул. Насколько вы можете судить, военное "
+"командование бросило вас на произвол судьбы."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Military Saboteur"
-msgstr ""
+msgstr "Военный диверсант"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Military Saboteur"
-msgstr ""
+msgstr "Военный диверсант"
 
 #. ~ Profession (male Military Saboteur) description
 #: data/json/professions.json
@@ -20591,6 +20639,11 @@ msgid ""
 "nuke.  Unfortunately, you discovered too late that this facility doesn't "
 "contain the equipment you were looking for."
 msgstr ""
+"Вы были переведены в отдел безопасности лаборатории на должность "
+"консультанта. На самом деле, в случае непредвиденных обстоятельств, вашим "
+"заданием было найти и обезвредить какой-то портальный эксперимент, для чего "
+"вам выдали рюкзак с ядерной бомбой. К сожалению, вы слишком поздно "
+"обнаружили, что на этом объекте нет оборудования, которое вы искали."
 
 #. ~ Profession (female Military Saboteur) description
 #: data/json/professions.json
@@ -20602,6 +20655,11 @@ msgid ""
 "nuke.  Unfortunately, you discovered too late that this facility doesn't "
 "contain the equipment you were looking for."
 msgstr ""
+"Вы были переведены в отдел безопасности лаборатории на должность "
+"консультанта. На самом деле, в случае непредвиденных обстоятельств, вашим "
+"заданием было найти и обезвредить какой-то портальный эксперимент, для чего "
+"вам выдали рюкзак с ядерной бомбой. К сожалению, вы слишком поздно "
+"обнаружили, что на этом объекте нет оборудования, которое вы искали."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -26507,15 +26565,15 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
-msgid "UH-60 Blackhawk pilot"
-msgstr "Пилот UH-60 «Чёрный Ястреб»"
+msgid "UH-60 Blackhawk Pilot"
+msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_female"
-msgid "UH-60 Blackhawk pilot"
-msgstr "Пилот UH-60 «Чёрный Ястреб»"
+msgid "UH-60 Blackhawk Pilot"
+msgstr ""
 
-#. ~ Profession (male UH-60 Blackhawk pilot) description
+#. ~ Profession (male UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_male"
 msgid ""
@@ -26528,7 +26586,7 @@ msgstr ""
 "выживших из одного места в другое. А теперь остались только Вы и ваша "
 "птичка."
 
-#. ~ Profession (female UH-60 Blackhawk pilot) description
+#. ~ Profession (female UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
 msgctxt "prof_desc_female"
 msgid ""
@@ -36494,7 +36552,9 @@ msgstr[2] "подключенных к сети гидравлических п�
 msgstr[3] "подключенные к сети гидравлические прессы"
 
 #. ~ Description for grid hydraulic press
+#. ~ Description for {'str': 'mounted hydraulic press'}
 #: data/json/furniture_and_terrain/furniture-appliances.json
+#: data/json/vehicleparts/utilities.json
 msgid ""
 "If you really want to squash something a lot, this would be exactly the "
 "right industrial tool for you."
@@ -134674,6 +134734,15 @@ msgstr[1] "mp3-плеера (выкл.)"
 msgstr[2] "mp3-плееров (выкл.)"
 msgstr[3] "mp3-плееры (выкл.)"
 
+#. ~ Use action msg for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
+#. (off)'}.
+#. ~ Use action msg for {'str': 'smartphone'}.
+#. ~ Use action msg for {'str': 'atomic smartphone'}.
+#. ~ Use action msg for {'str': "Wraitheon executive's smartphone"}.
+#: data/json/items/tool/electronics.json data/mods/Aftershock/items/tools.json
+msgid "You put in the earbuds and start listening to music."
+msgstr "Вы надели наушники и начали слушать музыку."
+
 #. ~ Description for {'str': 'mp3 player (off)', 'str_pl': 'mp3 players
 #. (off)'}
 #: data/json/items/tool/electronics.json
@@ -134773,6 +134842,12 @@ msgstr[0] "смартфон"
 msgstr[1] "смартфона"
 msgstr[2] "смартфонов"
 msgstr[3] "смартфон"
+
+#. ~ Use action menu_text for {'str': 'smartphone'}.
+#. ~ Use action menu_text for {'str': 'atomic smartphone'}.
+#: data/json/items/tool/electronics.json
+msgid "Activate Flashlight"
+msgstr ""
 
 #. ~ Use action msg for {'str': 'smartphone'}.
 #. ~ Use action msg for {'str': 'atomic smartphone'}.
@@ -136973,14 +137048,10 @@ msgstr[3] "станций снаряжения патронов"
 msgid ""
 "This is an all-in-one handloading tool consisting of a multi-stage press, "
 "bullet molds, a hotplate, and a collet puller for disassembling cartridges."
-"  Once installed as furniture, it can handle both making your own ammunition"
-" and taking ammo apart for materials."
+"  It needs to be hooked up as grid furniture or mounted on a vehicle, but "
+"once you do it can handle both making your own ammunition and taking ammo "
+"apart for materials."
 msgstr ""
-"Это универсальный инструмент для снаряжения патронов, состоящий из "
-"многоступенчатого пресса, форм для пуль, нагревательной плиты и съемника "
-"цанги для разборки патронов. После установки в качестве мебели он может "
-"использоваться как для изготовления патронов самостоятельно, так и для "
-"разборки патронов на материалы."
 
 #: data/json/items/tool/knives.json
 msgid "copper knife"
@@ -138466,13 +138537,9 @@ msgstr[3] "гидравлические прессы"
 msgid ""
 "A large, barely portable hydraulic press, that uses a 36kW motor to squash "
 "whatever needs squashing.  Do not put your hand in here, it will get "
-"squashed.  Can run off heavy-duty batteries, or installed to run off a power"
-" grid instead."
+"squashed.  Can run off heavy-duty batteries, installed to run off a power "
+"grid, or mounted on a vehicle."
 msgstr ""
-"Большой, едва передвигаемый гидравлический пресс, в котором используется "
-"двигатель мощностью 36 кВт для измельчения всего, что необходимо измельчить."
-" Не кладите сюда руку, раздваит. Может работать от мощных аккумуляторов или "
-"быть установлен для работы от электросети."
 
 #: data/json/items/tool/metalworking.json
 msgid "finished charcoal kiln"
@@ -173161,6 +173228,17 @@ msgstr ""
 "скрывающегося от правосудия. Ваша цель, похоже, одичала во время побега, а "
 "мир, видимо, катится к гибели, но даже это не может остановить вас от "
 "завершения задания."
+
+#: data/json/npcs/missiondef.json
+msgid "Protect Your Canine Friends!"
+msgstr ""
+
+#. ~ Description for mission '{'str': 'Protect Your Canine Friends!'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"Search any nearby pet stores for armor for your pups. You think you remember"
+" the location of one..."
+msgstr ""
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -222496,6 +222574,22 @@ msgstr ""
 "Электрическая печь для обжига кирпичей или глины, запитанная от "
 "автомобильных аккумуляторов. Если при изготовлении предметов вам понадобится"
 " печь для обжига, вы сможете выбрать её в качестве инструмента."
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted reloading press"
+msgstr ""
+
+#. ~ Description for {'str': 'mounted reloading press'}
+#: data/json/vehicleparts/utilities.json
+msgid ""
+"An all-in-one handloading tool that can both assemble ammunition and break "
+"it back down for materials, includes a hotplate for bullet molding powered "
+"by the vehicle's batteries."
+msgstr ""
+
+#: data/json/vehicleparts/utilities.json
+msgid "mounted hydraulic press"
+msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "null part"
@@ -283981,6 +284075,10 @@ msgid "Reset ignored debug messages"
 msgstr "Сбросить игнорированные отладочные сообщения"
 
 #: src/debug_menu.cpp
+msgid "Control NPC follower"
+msgstr ""
+
+#: src/debug_menu.cpp
 msgid "Reload tileset and show missing tiles"
 msgstr "Перезагрузить тайлсет и показать отсутствующие тайлы"
 
@@ -284007,6 +284105,10 @@ msgstr "Телепорт на небольшие расстояния"
 #: src/debug_menu.cpp
 msgid "Teleport - long range"
 msgstr "Телепорт на большие расстояния"
+
+#: src/debug_menu.cpp
+msgid "Teleport - overmap special"
+msgstr ""
 
 #: src/debug_menu.cpp
 msgid "Teleport - adjacent overmap"
@@ -284156,6 +284258,10 @@ msgstr "Где находится желаемая overmap?"
 #, c-format
 msgid "You teleport to overmap %s."
 msgstr "Вы телепортируетесь по глобальной карте %s."
+
+#: src/debug_menu.cpp
+msgid "Choose area to teleport to"
+msgstr ""
 
 #: src/debug_menu.cpp
 msgid "no faction"
@@ -297142,18 +297248,6 @@ msgid "Insufficient power"
 msgstr "Недостаточно энергии."
 
 #: src/iuse.cpp
-msgid "The device's batteries are dead."
-msgstr "У устройства сели батарейки."
-
-#: src/iuse.cpp
-msgid "You are already listening to music!"
-msgstr "Вы уже слушаете музыку!"
-
-#: src/iuse.cpp
-msgid "You put in the earbuds and start listening to music."
-msgstr "Вы надели наушники и начали слушать музыку."
-
-#: src/iuse.cpp
 msgid "a sweet guitar solo!"
 msgstr "приятное гитарное соло!"
 
@@ -297183,12 +297277,9 @@ msgid "You listen to %s"
 msgstr "Вы слушаете музыку: %s"
 
 #: src/iuse.cpp
-msgid "The mp3 player turns off."
-msgstr "Mp3-плеер выключен."
-
-#: src/iuse.cpp
-msgid "The phone turns off."
-msgstr "Телефон отключается."
+#, c-format
+msgid "The %s turns off."
+msgstr "%s отключается."
 
 #. ~ %1$d: roll number, %2$d: side number of a die, %3$s: die item name
 #: src/iuse.cpp
@@ -299201,11 +299292,6 @@ msgstr "Выберите часть тела для ампутации:"
 msgid "Body part removed: %s"
 msgstr "Часть тела удалена: %s"
 
-#: src/iuse.cpp
-#, c-format
-msgid "The %s turns off."
-msgstr "%s отключается."
-
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s is empty!"
@@ -300597,6 +300683,10 @@ msgstr "Во время езды верхом *этого* делать нель
 #: src/iuse_actor.cpp
 msgid "Are you trying to drown yourself?"
 msgstr "Вы пытаетесь себя утопить?"
+
+#: src/iuse_actor.cpp
+msgid "You can't listen to multiple music players at once!"
+msgstr ""
 
 #: src/iuse_actor.h
 msgid "Carve"
@@ -305384,47 +305474,47 @@ msgctxt "memorial_female"
 msgid "Set off an alarm."
 msgstr "Отключила сигнализацию."
 
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "good"
+msgstr "хорошо"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "bad"
+msgstr "плохо"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "mixed"
+msgstr "смешанный"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "warning"
+msgstr "предупреждение"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "info"
+msgstr "информация"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "neutral"
+msgstr "безразличен"
+
+#: src/message_types.cpp
+msgctxt "message type"
+msgid "debug"
+msgstr "отладка"
+
 #. ~ Message %s on the message log was repeated %d times, e.g. "You hear a
 #. whack! x 12"
 #: src/messages.cpp
 #, c-format
 msgid "%s x %d"
 msgstr "%s x %d"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "good"
-msgstr "хорошо"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "bad"
-msgstr "плохо"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "mixed"
-msgstr "смешанный"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "warning"
-msgstr "предупреждение"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "info"
-msgstr "информация"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "neutral"
-msgstr "безразличен"
-
-#: src/messages.cpp
-msgctxt "message type"
-msgid "debug"
-msgstr "отладка"
 
 #: src/messages.cpp
 #, c-format
@@ -310915,12 +311005,24 @@ msgid "Enter a sentence to yell"
 msgstr "Введите предложение, чтобы прокричать"
 
 #: src/npctalk.cpp
+#, c-format
 msgid ""
-"What do you want to monologue?  (This has no in-game effect! Use +, -, or ? "
-"at the start to add context.)"
+"<color_light_gray>You can add a prefix to your monologue to set the tone or emotion. Valid prefixes are:</color> %s\n"
+"\n"
+"<color_white>Examples:</color>\n"
+"  <color_light_green>good: You feel like it's going to be a good day.</color>\n"
+"  <color_light_red>bad: You don't like the look of this place…</color>\n"
+"  <color_light_blue>info: The empty house reminds you of old times.</color>\n"
+"  <color_yellow>warning: You say 'Stay close, I hear something moving!'</color>\n"
+"\n"
+"<color_light_gray>Leave off the prefix for a neutral monologue.</color>\n"
 msgstr ""
-"Что вы хотите сказать в монологе? (Это не имеет внутриигрового эффекта! "
-"Используйте +, - или ? в начале, чтобы добавить контекст.)"
+
+#: src/npctalk.cpp
+#, c-format
+msgctxt "message log"
+msgid "<color_%s>%s</color>"
+msgstr ""
 
 #: src/npctalk.cpp
 msgid "Who should guard here?"
