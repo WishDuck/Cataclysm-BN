@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-12 01:50+0000\n"
+"POT-Creation-Date: 2025-09-13 01:27+0000\n"
 "Last-Translator: Vadim, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -20704,12 +20704,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Industrial Mech Pilot"
-msgstr ""
+msgstr "Пилот промышленного экзоскелета"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Industrial Mech Pilot"
-msgstr ""
+msgstr "Пилот промышленного экзоскелета"
 
 #. ~ Profession (male Industrial Mech Pilot) description
 #: data/json/professions.json
@@ -20720,6 +20720,10 @@ msgid ""
 "  It's not armed, but it might still be useful despite the heavy use its "
 "power cell has been through."
 msgstr ""
+"Недавно вы получили сертификат пилота промышленной и боевой инженерной "
+"модели механического экзоскелета, разрабатываемого военными. Он не оснащен "
+"оружием, но все же может быть полезен, несмотря на сильную изношенность его "
+"энергоблока."
 
 #. ~ Profession (female Industrial Mech Pilot) description
 #: data/json/professions.json
@@ -20730,16 +20734,20 @@ msgid ""
 "  It's not armed, but it might still be useful despite the heavy use its "
 "power cell has been through."
 msgstr ""
+"Недавно вы получили сертификат пилота промышленной и боевой инженерной "
+"модели механического экзоскелета, разрабатываемого военными. Он не оснащен "
+"оружием, но все же может быть полезен, несмотря на сильную изношенность его "
+"энергоблока."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Combat Mech Pilot"
-msgstr ""
+msgstr "Пилот боевого экзоскелета"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Combat Mech Pilot"
-msgstr ""
+msgstr "Пилот боевого экзоскелета"
 
 #. ~ Profession (male Combat Mech Pilot) description
 #: data/json/professions.json
@@ -20751,6 +20759,12 @@ msgid ""
 "fire support, but the power cell the technicians provided has been mostly "
 "depleted from earlier tests."
 msgstr ""
+"Вы тестировали новейшее военное вооружение, а механические экзокостюмы "
+"должны были заполнить нишу, оставшуюся после перехода к разработке более "
+"легких моделей силовой брони. Ваш механизм создан для оказания интенсивной "
+"огневой поддержки, но энергетическая ячейка, предоставленная техническими "
+"специалистами, практически полностью разрядилась в ходе предыдущих "
+"испытаний."
 
 #. ~ Profession (female Combat Mech Pilot) description
 #: data/json/professions.json
@@ -20762,16 +20776,22 @@ msgid ""
 "fire support, but the power cell the technicians provided has been mostly "
 "depleted from earlier tests."
 msgstr ""
+"Вы тестировали новейшее военное вооружение, а механические экзокостюмы "
+"должны были заполнить нишу, оставшуюся после перехода к разработке более "
+"легких моделей силовой брони. Ваш механизм создан для оказания интенсивной "
+"огневой поддержки, но энергетическая ячейка, предоставленная техническими "
+"специалистами, практически полностью разрядилась в ходе предыдущих "
+"испытаний."
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Recon Mech Pilot"
-msgstr ""
+msgstr "Пилот разведывательного экзоскелета"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Recon Mech Pilot"
-msgstr ""
+msgstr "Пилот разведывательного экзоскелета"
 
 #. ~ Profession (male Recon Mech Pilot) description
 #: data/json/professions.json
@@ -20783,6 +20803,12 @@ msgid ""
 "sniping, but the power cell the technicians provided has been mostly "
 "depleted from earlier tests."
 msgstr ""
+"Вы тестировали новейшее военное вооружение, а механические экзокостюмы "
+"должны были заполнить нишу, оставшуюся после перехода к разработке более "
+"легких моделей силовой брони. Ваш механизм создан для разведки и снайперской"
+" стрельбы, но энергетическая ячейка, предоставленная техническими "
+"специалистами, практически полностью разрядилась в ходе предыдущих "
+"испытаний."
 
 #. ~ Profession (female Recon Mech Pilot) description
 #: data/json/professions.json
@@ -20794,6 +20820,12 @@ msgid ""
 "sniping, but the power cell the technicians provided has been mostly "
 "depleted from earlier tests."
 msgstr ""
+"Вы тестировали новейшее военное вооружение, а механические экзокостюмы "
+"должны были заполнить нишу, оставшуюся после перехода к разработке более "
+"легких моделей силовой брони. Ваш механизм создан для разведки и снайперской"
+" стрельбы, но энергетическая ячейка, предоставленная техническими "
+"специалистами, практически полностью разрядилась в ходе предыдущих "
+"испытаний."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -20902,12 +20934,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Escapee"
-msgstr ""
+msgstr "Беглец"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Escapee"
-msgstr ""
+msgstr "Беглянка"
 
 #. ~ Profession (male Escapee) description
 #: data/json/professions.json
@@ -20917,6 +20949,9 @@ msgid ""
 "walls until you found a loose piece you could fashion into a shiv.  You're "
 "getting dizzy from the stifling heat and fumes, it's now or never."
 msgstr ""
+"Вы провели в этом инопланетном аду уже несколько дней, ковыряя стены, пока "
+"не нашли отколовшийся кусок, из которого можно было сделать заточку. Вас "
+"тошнит от удушающей жары и дыма, так что сейчас или никогда."
 
 #. ~ Profession (female Escapee) description
 #: data/json/professions.json
@@ -20926,6 +20961,9 @@ msgid ""
 "walls until you found a loose piece you could fashion into a shiv.  You're "
 "getting dizzy from the stifling heat and fumes, it's now or never."
 msgstr ""
+"Вы провели в этом инопланетном аду уже несколько дней, ковыряя стены, пока "
+"не нашли отколовшийся кусок, из которого можно было сделать заточку. Вас "
+"тошнит от удушающей жары и дыма, так что сейчас или никогда."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -21344,12 +21382,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Crypto Millionaire"
-msgstr ""
+msgstr "Криптомиллионер"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Crypto Millionaire"
-msgstr ""
+msgstr "Криптомиллионер"
 
 #. ~ Profession (male Crypto Millionaire) description
 #: data/json/professions.json
@@ -21361,6 +21399,12 @@ msgid ""
 "your fortune meant nothing—except the gear you had the sense (or luck) to "
 "keep close."
 msgstr ""
+"До катаклизма вы были затворником, разбогатевшим на малоизвестной "
+"криптовалюте. Деньги не могли купить вам друзей или здоровье, но они "
+"наполнили вашу квартиру гаджетами, снеками и временем, которое можно было "
+"тратить впустую. Когда мир рухнул, ваше состояние не значило ничего — за "
+"исключением снаряжения, которое вы предусмотрительно (или по счастливой "
+"случайности) хранили под рукой."
 
 #. ~ Profession (female Crypto Millionaire) description
 #: data/json/professions.json
@@ -21372,6 +21416,12 @@ msgid ""
 "your fortune meant nothing—except the gear you had the sense (or luck) to "
 "keep close."
 msgstr ""
+"До катаклизма вы были затворницей, разбогатевшей на малоизвестной "
+"криптовалюте. Деньги не могли купить вам друзей или здоровье, но они "
+"наполнили вашу квартиру гаджетами, снеками и временем, которое можно было "
+"тратить впустую. Когда мир рухнул, ваше состояние не значило ничего — за "
+"исключением снаряжения, которое вы предусмотрительно (или по счастливой "
+"случайности) хранили под рукой."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -25139,12 +25189,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Castaway"
-msgstr ""
+msgstr "Потерпевший кораблекрушение"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Castaway"
-msgstr ""
+msgstr "Потерпевшая кораблекрушение"
 
 #. ~ Profession (male Castaway) description
 #: data/json/professions.json
@@ -25155,6 +25205,10 @@ msgid ""
 "of clothing you could to set sail on a makeshift raft.  Where is everyone, "
 "and why do the sharks look so hungry?"
 msgstr ""
+"Вы потерпели кораблекрушение на острове в озере. Никто не отправил поисковую"
+" группу, поэтому после нескольких недель попыток подать сигнал о помощи вы "
+"собрали все обрывки одежды, которые смогли найти, чтобы отплыть на "
+"импровизированном плоту. Где все, и почему акулы выглядят такими голодными?"
 
 #. ~ Profession (female Castaway) description
 #: data/json/professions.json
@@ -25165,6 +25219,10 @@ msgid ""
 "of clothing you could to set sail on a makeshift raft.  Where is everyone, "
 "and why do the sharks look so hungry?"
 msgstr ""
+"Вы потерпели кораблекрушение на острове в озере. Никто не отправил поисковую"
+" группу, поэтому после нескольких недель попыток подать сигнал о помощи вы "
+"собрали все обрывки одежды, которые смогли найти, чтобы отплыть на "
+"импровизированном плоту. Где все, и почему акулы выглядят такими голодными?"
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -25339,12 +25397,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Pirate Captain"
-msgstr ""
+msgstr "Капитан пиратов"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Pirate Captain"
-msgstr ""
+msgstr "Капитан пиратов"
 
 #. ~ Profession (male Pirate Captain) description
 #: data/json/professions.json
@@ -25353,6 +25411,9 @@ msgid ""
 "Land ho!  Ye went all out on the reenactment, got your letters of marque in "
 "order and cast off in a fine sloop, to prowl the New England waters with."
 msgstr ""
+"Земля впереди! Вы полностью посвятили себя реконструкции, получили каперские"
+" свидетельства и отплыли на прекрасном шлюпе, чтобы бороздить воды Новой "
+"Англии."
 
 #. ~ Profession (female Pirate Captain) description
 #: data/json/professions.json
@@ -25361,6 +25422,9 @@ msgid ""
 "Land ho!  Ye went all out on the reenactment, got your letters of marque in "
 "order and cast off in a fine sloop, to prowl the New England waters with."
 msgstr ""
+"Земля впереди! Вы полностью посвятили себя реконструкции, получили каперские"
+" свидетельства и отплыли на прекрасном шлюпе, чтобы бороздить воды Новой "
+"Англии."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -25427,12 +25491,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Skateboarder"
-msgstr ""
+msgstr "Скейтбордист"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Skateboarder"
-msgstr ""
+msgstr "Скейтбордистка"
 
 #. ~ Profession (male Skateboarder) description
 #: data/json/professions.json
@@ -26566,12 +26630,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "UH-60 Blackhawk Pilot"
-msgstr ""
+msgstr "Пилот UH-60 Чёрный Ястреб"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "UH-60 Blackhawk Pilot"
-msgstr ""
+msgstr "Пилот UH-60 Чёрный Ястреб"
 
 #. ~ Profession (male UH-60 Blackhawk Pilot) description
 #: data/json/professions.json
@@ -27147,6 +27211,8 @@ msgid ""
 "your next trip into town when the end of the world made your hobby much more"
 " relevant."
 msgstr ""
+"Вы всегда восхищались красотой заброшенных городов и были готовы к следующей"
+" поездке, когда конец света сделал ваше хобби гораздо более актуальным."
 
 #. ~ Profession (female Urban Explorer) description
 #: data/json/professions.json
@@ -27156,6 +27222,8 @@ msgid ""
 "your next trip into town when the end of the world made your hobby much more"
 " relevant."
 msgstr ""
+"Вы всегда восхищались красотой заброшенных городов и были готовы к следующей"
+" поездке, когда конец света сделал ваше хобби гораздо более актуальным."
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -27257,7 +27325,7 @@ msgctxt "scen_desc_male"
 msgid ""
 "Before the cataclysm, you spent your days exploring the local area's lakes "
 "and waterways."
-msgstr ""
+msgstr "До катаклизма вы проводили дни, исследуя озёра и водоёмы в округе."
 
 #. ~ Description for scenario 'Pond Scum' for a female character.
 #: data/json/scenarios.json
@@ -27265,13 +27333,13 @@ msgctxt "scen_desc_female"
 msgid ""
 "Before the cataclysm, you spent your days exploring the local area's lakes "
 "and waterways."
-msgstr ""
+msgstr "До катаклизма вы проводили дни, исследуя озёра и водоёмы в округе."
 
 #. ~ Starting location for scenario 'Pond Scum'.
 #: data/json/scenarios.json
 msgctxt "start_name"
 msgid "Lake Surface"
-msgstr ""
+msgstr "Поверхность озера"
 
 #. ~ Name for scenario 'Large Building' for a male character
 #: data/json/scenarios.json
@@ -29261,7 +29329,7 @@ msgstr "насекомое"
 
 #: data/json/species.json
 msgid "skittering"
-msgstr ""
+msgstr "скольжение"
 
 #: data/json/species.json
 msgid "the pattering of tiny legs"
@@ -29273,7 +29341,7 @@ msgstr "щебетание"
 
 #: data/json/species.json
 msgid "a soft crawl"
-msgstr ""
+msgstr "тихое ползание"
 
 #: data/json/species.json
 msgid "the clicking of legs"
@@ -29385,7 +29453,7 @@ msgstr "щёлканье суставов"
 
 #: data/json/species.json
 msgid "a subtle crawl"
-msgstr ""
+msgstr "едва заметное ползание"
 
 #: data/json/species.json
 msgid "soft scuttling"
@@ -37544,16 +37612,16 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "eelgrass"
-msgstr ""
+msgstr "взморник"
 
 #. ~ Description for eelgrass
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "A species of eelgrass that grows at the bottom of lakes."
-msgstr ""
+msgstr "Разновидность морской травы, растущей на дне озёр."
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "hornwort"
-msgstr ""
+msgstr "роголистник"
 
 #. ~ Description for hornwort
 #: data/json/furniture_and_terrain/furniture-flora.json
@@ -37562,16 +37630,21 @@ msgid ""
 "being harmful to other plants, the leaves are safe for humans to eat and "
 "available most of the year."
 msgstr ""
+"Разновидность роголистника, растущая на дне озер. Хотя он известен своим "
+"вредным воздействием на другие растения, его листья безопасны для "
+"употребления в пищу людьми и доступны в течение почти всего года."
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "detritus"
-msgstr ""
+msgstr "детрит"
 
 #. ~ Description for detritus
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid ""
 "A mass of decaying organic matter that accumulates at the bottom of lakes."
 msgstr ""
+"Масса разлагающегося органического вещества, которая накапливается на дне "
+"озер."
 
 #: data/json/furniture_and_terrain/furniture-flora.json
 msgid "cave mushrooms"
@@ -39818,13 +39891,15 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid "wooden chest"
-msgstr ""
+msgstr "деревянный сундук"
 
 #. ~ Description for wooden chest
 #: data/json/furniture_and_terrain/furniture-storage.json
 msgid ""
 "A nice big wooden box with a hinged lid, to store all manner of things in."
 msgstr ""
+"Хорошая большая деревянная коробка с откидной крышкой, в которой можно "
+"хранить всевозможные вещи."
 
 #: data/json/furniture_and_terrain/furniture-surfaces.json
 msgid "counter"
@@ -39911,7 +39986,7 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-surfaces.json
 msgid "robotic workbench"
-msgstr ""
+msgstr "роботизированный верстак"
 
 #. ~ Description for robotic workbench
 #. ~ Description for {'str': 'robobench', 'str_pl': 'robobenches'}
@@ -41983,7 +42058,7 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-doors.json
 msgid "closed junk metal door"
-msgstr ""
+msgstr "закрытая дверь из металлолома"
 
 #. ~ Description for closed junk metal door
 #: data/json/furniture_and_terrain/terrain-doors.json
@@ -41991,10 +42066,13 @@ msgid ""
 "A makeshift door made of rusty scrap metal bolted together, with metal wires"
 " for hinges.  Very fashionable in post-apocalyptic shantytowns."
 msgstr ""
+"Импровизированная дверь из ржавого металлолома, скрепленного болтами, с "
+"металлическими проволоками вместо петель. Очень популярна в "
+"постапокалиптических трущобах."
 
 #: data/json/furniture_and_terrain/terrain-doors.json
 msgid "open junk metal door"
-msgstr ""
+msgstr "открытая дверь из металлолома"
 
 #. ~ Description for open junk metal door
 #: data/json/furniture_and_terrain/terrain-doors.json
@@ -42003,6 +42081,10 @@ msgid ""
 " for hinges.  Very fashionable in post-apocalyptic shantytowns.  Somehow "
 "even draftier now that it's open."
 msgstr ""
+"Импровизированная дверь из ржавого металлолома, скрепленного болтами, с "
+"металлическими проволоками вместо петель. Очень популярна в "
+"постапокалиптических трущобах. Почему-то теперь, когда она открыта, сквозняк"
+" стал еще сильнее."
 
 #: data/json/furniture_and_terrain/terrain-doors.json
 msgid "closed bar door"
@@ -43219,7 +43301,7 @@ msgstr "Это открытое пространство."
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid "adobe floor"
-msgstr ""
+msgstr "пол из саманного кирпича"
 
 #. ~ Description for adobe floor
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
@@ -43227,6 +43309,8 @@ msgid ""
 "Adobe bricks and mortar smoothed out to make a clean fireproof floor, with a"
 " matching roof of adobe."
 msgstr ""
+"Кирпичи и раствор из самана, выровненные, чтобы получить ровный огнеупорный "
+"пол, с соответствующей крышей."
 
 #. ~ Description for mound of clay
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
@@ -44515,7 +44599,7 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-flora.json
 msgid "sunken tree trunk"
-msgstr ""
+msgstr "затонувший ствол дерева"
 
 #. ~ Description for sunken tree trunk
 #: data/json/furniture_and_terrain/terrain-flora.json
@@ -45041,12 +45125,12 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-liquids.json
 msgid "water moss"
-msgstr ""
+msgstr "водный мох"
 
 #. ~ Description for water moss
 #: data/json/furniture_and_terrain/terrain-liquids.json
 msgid "Moist spongy water moss."
-msgstr ""
+msgstr "Влажный губчатый водный мох."
 
 #: data/json/furniture_and_terrain/terrain-liquids.json
 msgid "ocean bed"
@@ -49786,10 +49870,10 @@ msgstr "66 мм зажигательный снаряд M235 TPA"
 #: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "butane"
 msgid_plural "butane"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "бутан"
+msgstr[1] "бутан"
+msgstr[2] "бутан"
+msgstr[3] "бутан"
 
 #: data/json/items/ammo_types.json data/json/items/fuel.json
 msgid "gasoline"
@@ -56010,6 +56094,9 @@ msgid ""
 "pressurized liquid.  It could be useful as a fuel, but also as a solvent or "
 "chemical reagent."
 msgstr ""
+"Воспламеняющийся природный газ, обычно используемый в зажигалках, хранится в"
+" виде жидкости под давлением. Может быть полезен в качестве топлива, а также"
+" в качестве растворителя или химического реагента."
 
 #: data/json/items/furniture.json
 msgid "air conditioner"
@@ -87714,15 +87801,15 @@ msgstr ""
 #: data/json/items/book/maps.json
 msgid "sewer maintenance map"
 msgid_plural "sewer maintenance maps"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "служебная карта канализации"
+msgstr[1] "служебных карты канализации"
+msgstr[2] "служебных карт канализации"
+msgstr[3] "служебные карты канализации"
 
 #. ~ Use action message for sewer maintenance map.
 #: data/json/items/book/maps.json
 msgid "You add the local sewer systems to your map."
-msgstr ""
+msgstr "Вы добавляете местные канализационные системы на свою карту."
 
 #. ~ Description for sewer maintenance map
 #: data/json/items/book/maps.json
@@ -87730,14 +87817,17 @@ msgid ""
 "This is a map of sewer tunnels formerly used by public maintenance workers."
 "  Using it will add sewer systems to your map."
 msgstr ""
+"Это карта канализационных туннелей, которые ранее использовались работниками"
+" коммунальных служб. Используйте, чтобы нанести на вашу карту "
+"канализационные системы."
 
 #: data/json/items/book/maps.json
 msgid "spelunker's map"
 msgid_plural "spelunker's maps"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "карта спелеолога"
+msgstr[1] "карты спелеолога"
+msgstr[2] "карт спелеолога"
+msgstr[3] "карты спелеолога"
 
 #. ~ Use action message for spelunker's map.
 #: data/json/items/book/maps.json
@@ -87745,6 +87835,7 @@ msgid ""
 "You mark potential entry points and underground routes in the margins of "
 "your map."
 msgstr ""
+"Вы отмечаете потенциальные точки входа и подземные маршруты на краях карты."
 
 #. ~ Description for spelunker's map
 #: data/json/items/book/maps.json
@@ -87752,6 +87843,9 @@ msgid ""
 "This is a handmade map of local caving spots, some requiring trespassing.  "
 "There's probably bigger worries than that now, though."
 msgstr ""
+"Это самодельная карта местных пещер, причем для посещения некоторых из них "
+"требуется проникнуть на объект без разрешения. Однако сейчас, вероятно, есть"
+" другие поводы для беспокойства."
 
 #: data/json/items/book/maps.json
 msgid "trail guide"
@@ -87855,7 +87949,7 @@ msgstr[3] ""
 #. ~ Use action message for {'str': "urban explorer's map"}.
 #: data/json/items/book/maps.json
 msgid "You add roads and abandoned buildings to your map."
-msgstr ""
+msgstr "Вы добавили дороги и заброшенные здания на свою карту."
 
 #. ~ Description for {'str': "urban explorer's map"}
 #: data/json/items/book/maps.json
@@ -87863,19 +87957,22 @@ msgid ""
 "This is a printout of a local road map, with several buildings circled in "
 "red.  Using it will add roads and abandoned buildings to your map."
 msgstr ""
+"Это распечатка местной дорожной карты, на которой несколько зданий обведены "
+"красным. Используйте, чтобы нанести на вашу карту дороги и заброшенные "
+"здания."
 
 #: data/json/items/book/maps.json
 msgid "satellite map"
 msgid_plural "satellite maps"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "спутниковая карта"
+msgstr[1] "спутниковых карты"
+msgstr[2] "спутниковых карт"
+msgstr[3] "спутниковые карты"
 
 #. ~ Use action message for {'str': 'satellite map'}.
 #: data/json/items/book/maps.json
 msgid "You add terrain and roads to your map."
-msgstr ""
+msgstr "Вы добавляете рельеф местности и дороги на карту."
 
 #. ~ Description for {'str': 'satellite map'}
 #: data/json/items/book/maps.json
@@ -87884,6 +87981,9 @@ msgid ""
 "and lack of map legend, you are unable to recognise most buildings.  Using "
 "it will add terrain and roads to your map."
 msgstr ""
+"Это распечатанная спутниковая карта местности. Из-за низкого качества и "
+"отсутствия легенды вы не можете распознать большинство зданий. Используйте, "
+"чтобы нанести на вашу карту рельеф местности и дороги."
 
 #: data/json/items/book/martial.json
 msgid "The Spirit of Aikido"
@@ -105246,10 +105346,10 @@ msgstr[3] "мутаген ящерицы"
 #: data/json/items/comestibles/mutagen.json
 msgid "serpent mutagen"
 msgid_plural "serpent mutagens"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "мутаген змеи"
+msgstr[1] "мутагена змеи"
+msgstr[2] "мутагенов змеи"
+msgstr[3] "мутагены змеи"
 
 #: data/json/items/comestibles/mutagen.json
 msgid "lupine mutagen"
@@ -126926,10 +127026,10 @@ msgstr ""
 #: data/json/items/melee/bludgeons.json
 msgid "burnt out battletorch"
 msgid_plural "burnt out battletorches"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "сгоревший боевой факел"
+msgstr[1] "сгоревших боевых факела"
+msgstr[2] "сгоревших боевых факелов"
+msgstr[3] "сгоревшие боевые факелы"
 
 #. ~ Description for {'str': 'burnt out battletorch', 'str_pl': 'burnt out
 #. battletorches'}
@@ -126939,14 +127039,17 @@ msgid ""
 "melee weapon, but could be disassembled to recycle the baseball bat and some"
 " Nomex patches."
 msgstr ""
+"Прочная деревянная бита, обёрнутая огнестойкой тканью Nomex. Хорошо подходит"
+" в качестве оружия ближнего боя, но может быть разобрана для получения "
+"бейсбольной биты и нескольких кусков ткани Nomex."
 
 #: data/json/items/melee/bludgeons.json
 msgid "battletorch"
 msgid_plural "battletorches"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "боевой факел"
+msgstr[1] "боевых факела"
+msgstr[2] "боевых факелов"
+msgstr[3] "боевые факелы"
 
 #. ~ Use action msg for {'str': 'battletorch', 'str_pl': 'battletorches'}.
 #: data/json/items/melee/bludgeons.json
@@ -134847,7 +134950,7 @@ msgstr[3] "смартфон"
 #. ~ Use action menu_text for {'str': 'atomic smartphone'}.
 #: data/json/items/tool/electronics.json
 msgid "Activate Flashlight"
-msgstr ""
+msgstr "Включить фонарик"
 
 #. ~ Use action msg for {'str': 'smartphone'}.
 #. ~ Use action msg for {'str': 'atomic smartphone'}.
@@ -137052,6 +137155,12 @@ msgid ""
 "once you do it can handle both making your own ammunition and taking ammo "
 "apart for materials."
 msgstr ""
+"Это универсальный инструмент для снаряжения патронов, состоящий из "
+"многоступенчатого пресса, форм для пуль, нагревательной плиты и съемника "
+"цанги для разборки патронов. После установки в качестве мебели или "
+"монтирования на транспортном средстве он может использоваться как для "
+"изготовления патронов самостоятельно, так и для разборки патронов на "
+"материалы."
 
 #: data/json/items/tool/knives.json
 msgid "copper knife"
@@ -138540,6 +138649,10 @@ msgid ""
 "squashed.  Can run off heavy-duty batteries, installed to run off a power "
 "grid, or mounted on a vehicle."
 msgstr ""
+"Большой, едва переносимый гидравлический пресс, с двигателем мощностью 36 "
+"кВт, который раздавит всё, что нужно раздавить. Не кладите сюда руку — она "
+"будет раздавлена. Может работать от мощных аккумуляторов, быть подключён к "
+"электросети или смонтирован на транспортном средстве."
 
 #: data/json/items/tool/metalworking.json
 msgid "finished charcoal kiln"
@@ -159101,7 +159214,7 @@ msgstr "Приобрела пристрастие к морковкам."
 #: data/json/mutations/mutation_category.json
 #: data/json/mutations/mutations.json
 msgid "Serpent"
-msgstr ""
+msgstr "Змей"
 
 #. ~ Mutation class: Serpent mutagen_message
 #. ~ Mutation class: Lamia mutagen_message
@@ -173231,7 +173344,7 @@ msgstr ""
 
 #: data/json/npcs/missiondef.json
 msgid "Protect Your Canine Friends!"
-msgstr ""
+msgstr "Защитите своих четвероногих друзей!"
 
 #. ~ Description for mission '{'str': 'Protect Your Canine Friends!'}'
 #: data/json/npcs/missiondef.json
@@ -173239,6 +173352,8 @@ msgid ""
 "Search any nearby pet stores for armor for your pups. You think you remember"
 " the location of one..."
 msgstr ""
+"Найдите в ближайших зоомагазинах защиту для ваших щенков. Кажется, вы "
+"помните, где находится один из них..."
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -208059,7 +208174,7 @@ msgstr "берег озера"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "shoal"
-msgstr ""
+msgstr "отмель"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "lake shore (submerged)"
@@ -208087,7 +208202,7 @@ msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_waterbody.json
 msgid "sunken ship"
-msgstr ""
+msgstr "затонувший корабль"
 
 #. ~ Crafting recipes category name
 #: data/json/recipes/recipes.json
@@ -235933,12 +236048,12 @@ msgstr ""
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
 msgctxt "profession_male"
 msgid "C.R.I.T. Technician"
-msgstr ""
+msgstr "Техник C.R.I.T."
 
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
 msgctxt "profession_female"
 msgid "C.R.I.T. Technician"
-msgstr ""
+msgstr "Техник C.R.I.T."
 
 #. ~ Profession (male C.R.I.T. Technician) description
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
@@ -235949,6 +236064,10 @@ msgid ""
 "turret. Forced to flee, will you have what it takes to survive or will you "
 "join the horde to haunt them for their cardinal sin?"
 msgstr ""
+"В команде вы были специалистом по электронике. Техником, обученным работать "
+"со всем современным лазерным оборудованием. Вас оставили позади, пока вы "
+"ремонтировали турель. Вынужденный бежать, сможете ли вы выжить или "
+"присоединитесь к орде, чтобы настичь их за их смертный грех?"
 
 #. ~ Profession (female C.R.I.T. Technician) description
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
@@ -235959,6 +236078,10 @@ msgid ""
 "turret. Forced to flee, will you have what it takes to survive or will you "
 "join the horde to haunt them for their cardinal sin?"
 msgstr ""
+"В команде вы были специалистом по электронике. Техником, обученной работать "
+"со всем современным лазерным оборудованием. Вас оставили позади, пока вы "
+"ремонтировали турель. Вынужденная бежать, сможете ли вы выжить или "
+"присоединитесь к орде, чтобы настичь их за их смертный грех?"
 
 #: data/mods/CRT_EXPANSION/scenarios/crt_classes.json
 msgctxt "profession_male"
@@ -274428,7 +274551,7 @@ msgstr "Вас внезапно осенило насчёт этого закл�
 #: src/activity_handlers.cpp
 #, c-format
 msgid "You gained %i experience in %s"
-msgstr ""
+msgstr "Вы получили %i опыта в %s"
 
 #: src/activity_handlers.cpp
 #, c-format
@@ -276986,7 +277109,7 @@ msgstr "Вы пускаете своего скакуна в галоп."
 
 #: src/avatar.cpp
 msgid "You stand up and start running."
-msgstr ""
+msgstr "Вы встаёте и начинаете бежать."
 
 #: src/avatar.cpp
 msgid "You start running."
@@ -283740,7 +283863,7 @@ msgstr "Вы промахнулись!"
 #: src/creature.cpp
 #, c-format
 msgid "The %s goes up in flames!"
-msgstr ""
+msgstr "%s вспыхивает пламенем!"
 
 #: src/creature.cpp
 msgid "Severe pain"
@@ -284076,7 +284199,7 @@ msgstr "Сбросить игнорированные отладочные со�
 
 #: src/debug_menu.cpp
 msgid "Control NPC follower"
-msgstr ""
+msgstr "Управление NPC-последователем"
 
 #: src/debug_menu.cpp
 msgid "Reload tileset and show missing tiles"
@@ -284261,7 +284384,7 @@ msgstr "Вы телепортируетесь по глобальной карт
 
 #: src/debug_menu.cpp
 msgid "Choose area to teleport to"
-msgstr ""
+msgstr "Выберите область для телепортации"
 
 #: src/debug_menu.cpp
 msgid "no faction"
@@ -288360,7 +288483,7 @@ msgstr "Вы не можете здесь подняться!"
 
 #: src/game.cpp
 msgid "There is something above blocking your way."
-msgstr ""
+msgstr "Что-то наверху преграждает вам путь."
 
 #: src/game.cpp
 msgid "You can't go down here!"
@@ -289331,7 +289454,7 @@ msgstr "Улучшенная версия установлена"
 
 #: src/game_inventory.cpp
 msgid "CBM not usable by NPC's"
-msgstr ""
+msgstr "КБМ не может использоваться NPC"
 
 #: src/game_inventory.cpp src/iuse_actor.cpp
 msgid "Max power capacity already reached"
@@ -290837,7 +290960,7 @@ msgstr "Перед снятием наличных денег вам необх�
 
 #: src/iexamine.cpp
 msgid "You don't have enough to withdraw a money bundle!"
-msgstr ""
+msgstr "У вас недостаточно средств для снятия пачки денег!"
 
 #: src/iexamine.cpp
 msgid "Deposit cash"
@@ -290857,7 +290980,7 @@ msgstr "Вам нужна кредитная карта для снятия де
 
 #: src/iexamine.cpp
 msgid "You need to pay down your debt before withdrawing money onto a card!"
-msgstr ""
+msgstr "Вам необходимо погасить долг, прежде чем снимать деньги на карту!"
 
 #: src/iexamine.cpp
 msgid "You need money in your account before you can withdraw money!"
@@ -290899,10 +291022,10 @@ msgstr "Вы можете пополнить баланс только с кре
 #, c-format
 msgid "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
 msgid_plural "Deposit how many bundles?  Max: %d bundles.  (0 to cancel) "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Сколько пачек внести? Максимум: %d пачка. (0 для отмены) "
+msgstr[1] "Сколько пачек внести? Максимум: %d пачки. (0 для отмены) "
+msgstr[2] "Сколько пачек внести? Максимум: %d пачек. (0 для отмены) "
+msgstr[3] "Сколько пачек внести? Максимум: %d пачек. (0 для отмены) "
 
 #: src/iexamine.cpp
 #, c-format
@@ -290930,10 +291053,10 @@ msgstr[3] "Сколько снять? Максимум: %d цент. (0 для �
 #, c-format
 msgid "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
 msgid_plural "Withdraw how much?  Max: %d bundles.  (0 to cancel) "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Сколько снять? Максимум: %d пачка. (0 для отмены)"
+msgstr[1] "Сколько снять? Максимум: %d пачки. (0 для отмены)"
+msgstr[2] "Сколько снять? Максимум: %d пачек. (0 для отмены)"
+msgstr[3] "Сколько снять? Максимум: %d пачек. (0 для отмены)"
 
 #: src/iexamine.cpp
 msgid "The vending machine is empty."
@@ -294899,7 +295022,7 @@ msgstr[3] "Максимум <num> заряд."
 
 #: src/item.cpp
 msgid "UPS Efficiency Multiplier: "
-msgstr ""
+msgstr "Мультипликатор эффективности УБП: "
 
 #: src/item.cpp
 #, c-format
@@ -300669,7 +300792,7 @@ msgstr ""
 #: src/iuse_actor.cpp
 #, c-format
 msgid "The %s needs %d charges to create this."
-msgstr ""
+msgstr "%s требуется %d зарядов, чтобы создать это."
 
 #: src/iuse_actor.cpp
 #, c-format
@@ -300686,7 +300809,7 @@ msgstr "Вы пытаетесь себя утопить?"
 
 #: src/iuse_actor.cpp
 msgid "You can't listen to multiple music players at once!"
-msgstr ""
+msgstr "Вы не можете слушать несколько музыкальных плееров одновременно!"
 
 #: src/iuse_actor.h
 msgid "Carve"
@@ -302876,7 +302999,7 @@ msgstr "Падающие обломки зацепили <npcname>!"
 #: src/map.cpp
 #, c-format
 msgid "The shot strikes the %s!"
-msgstr ""
+msgstr "Выстрел попадает в %s!"
 
 #: src/map.cpp
 #, c-format
@@ -309010,15 +309133,15 @@ msgstr "неразборчивые шаги."
 
 #: src/mtype.cpp
 msgid "Origin"
-msgstr ""
+msgstr "Источник"
 
 #: src/mtype.cpp
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: src/mtype.cpp
 msgid "Species"
-msgstr ""
+msgstr "Вид"
 
 #: src/mtype.cpp
 msgid "hearing"
@@ -309034,7 +309157,7 @@ msgstr "обоняние"
 
 #: src/mtype.cpp
 msgid "Senses"
-msgstr ""
+msgstr "Органы чувств"
 
 #: src/mtype.cpp
 msgid "It can swim."
@@ -309901,7 +310024,7 @@ msgstr "%s уровень %d"
 
 #: src/newcharacter.cpp
 msgid "Profession money:"
-msgstr ""
+msgstr "Деньги профессии:"
 
 #: src/newcharacter.cpp
 #, c-format
@@ -311022,7 +311145,7 @@ msgstr ""
 #, c-format
 msgctxt "message log"
 msgid "<color_%s>%s</color>"
-msgstr ""
+msgstr "<color_%s>%s</color>"
 
 #: src/npctalk.cpp
 msgid "Who should guard here?"
@@ -312526,11 +312649,12 @@ msgstr "Переключение языка."
 
 #: src/options.cpp
 msgid "Health Display Style"
-msgstr ""
+msgstr "Стиль отображения здоровья"
 
 #: src/options.cpp
 msgid "Switch health-related display styling such as HP and hunger"
 msgstr ""
+"Изменение стиля отображения информации о здоровье, такой как HP и голод"
 
 #: src/options.cpp
 msgid "Numerical"
@@ -314075,7 +314199,7 @@ msgstr ""
 
 #: src/options.cpp
 msgid "Overmap specials density factor"
-msgstr ""
+msgstr "Коэффициент плотности особенных локаций"
 
 #: src/options.cpp
 msgid "A scaling factor that determines density of overmap specials."
@@ -314096,7 +314220,7 @@ msgstr ""
 
 #: src/options.cpp
 msgid "Vehicle damage scaling factor"
-msgstr ""
+msgstr "Коэффициент изменения повреждений транспорта"
 
 #: src/options.cpp
 msgid "A scaling factor that determines how damaged vehicles are."
@@ -316300,7 +316424,7 @@ msgstr "Помощники"
 
 #: src/player_activity.cpp
 msgid "Traits"
-msgstr ""
+msgstr "Черты"
 
 #: src/player_activity.cpp
 msgid "Crafting speed multipliers:\n"
@@ -318001,8 +318125,8 @@ msgstr "шум"
 
 #: src/sounds.cpp
 #, c-format
-msgid "Heard %s!"
-msgstr "Слышно %s!"
+msgid "Heard %s"
+msgstr "Слышно %s"
 
 #: src/sounds.cpp
 #, c-format

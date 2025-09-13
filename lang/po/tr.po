@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-12 01:50+0000\n"
+"POT-Creation-Date: 2025-09-13 01:27+0000\n"
 "Last-Translator: Raina Lute, 2024\n"
 "Language-Team: Turkish (https://app.transifex.com/bn-team/teams/113585/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -266686,7 +266686,7 @@ msgstr ""
 
 #: src/sounds.cpp
 #, c-format
-msgid "Heard %s!"
+msgid "Heard %s"
 msgstr ""
 
 #: src/sounds.cpp

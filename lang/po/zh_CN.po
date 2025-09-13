@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-12 01:50+0000\n"
+"POT-Creation-Date: 2025-09-13 01:27+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -262934,8 +262934,8 @@ msgstr "一阵噪音"
 
 #: src/sounds.cpp
 #, c-format
-msgid "Heard %s!"
-msgstr "听到了 %s！"
+msgid "Heard %s"
+msgstr "听到了 %s"
 
 #: src/sounds.cpp
 #, c-format

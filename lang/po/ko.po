@@ -29,15 +29,15 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # 김동현, 2025
 # Tae Heon Lim, 2025
-# ARDOR Flag, 2025
 # Fruitybite, 2025
 # 김예준, 2025
+# ARDOR Flag, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-12 01:50+0000\n"
-"Last-Translator: 김예준, 2025\n"
+"POT-Creation-Date: 2025-09-13 01:27+0000\n"
+"Last-Translator: ARDOR Flag, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74621,7 +74621,7 @@ msgstr "지도 곳곳에 잠재적 출입구 및 지하 통로를 기록했습�
 msgid ""
 "This is a handmade map of local caving spots, some requiring trespassing.  "
 "There's probably bigger worries than that now, though."
-msgstr ""
+msgstr "동네 동굴 탐험 명소를 손수 그린 지도다. 몇몇은 무단 침입이 필요하지만, 지금은 그보다 더 큰 걱정거리가 있다."
 
 #: data/json/items/book/maps.json
 msgid "trail guide"
@@ -74732,7 +74732,7 @@ msgid ""
 "This is a printed satellite map of the local area.  Due to it's low quality "
 "and lack of map legend, you are unable to recognise most buildings.  Using "
 "it will add terrain and roads to your map."
-msgstr ""
+msgstr "지역 위성을 인쇄한 지도다. 화질이 낮고 범례도 없어 건물은 알아보기 어렵지만, 사용하면 지도에 지형과 도로가 추가된다."
 
 #: data/json/items/book/martial.json
 msgid "The Spirit of Aikido"
@@ -104205,7 +104205,7 @@ msgstr[0] "바이오닉 손톱"
 msgid ""
 "Short and sharp claws made from a high-tech metal and edged with bonded "
 "nanocrystals."
-msgstr "최첨단 금속으로 만들고 전용 나노크리스탈로 날을 세운 짧고 날카로운 발톱입니다."
+msgstr "최첨단 금속으로 만들고 전용 나노크리스털로 날을 세운 짧고 날카로운 발톱입니다."
 
 #: data/json/items/melee/fake.json
 msgid "monomolecular blade"
@@ -104217,7 +104217,7 @@ msgstr[0] "단분자 칼날"
 msgid ""
 "A foot-long blade made from high-tech alloy and edged with bonded "
 "nanocrystals."
-msgstr "최첨단 기술이 적용된 합금과 예리한 나노 크리스탈로 만들어진 1피트 길이의 칼날입니다."
+msgstr "최첨단 기술이 적용된 합금과 예리한 나노 크리스털로 만들어진 1피트 길이의 칼날입니다."
 
 #: data/json/items/melee/fake.json
 msgid "monofilament whip"
@@ -178230,6 +178230,9 @@ msgid ""
 "able to survive outside its native planar material.  XEDRA command is "
 "authorizing a biological research wing to take over XE037 property analysis."
 msgstr ""
+"헨델슨은 통제된 조건에서 실험용 쥐에 XE037을 노출했다. 그가 어떻게 이 프로젝트의 허가를 받았는지는 알 수 없다. 결과는 "
+"흥미로웠다. 쥐의 세포 조직에 빠르게 흡수된 뒤 곧 죽어 나갔는데, 이는 XE037이 본래 차원 물질 밖에서는 살아남지 못한다는 기존 "
+"관찰과도 일치한다. 이에 따라 XEDRA 지휘부는 XE037 성질 분석을 생물학 연구 부서에 맡기기로 했다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178249,6 +178252,9 @@ msgid ""
 "informing XEDRA-40 via Melchior.  Perhaps Dr. Sidhu can make some use of "
 "this information."
 msgstr ""
+"오늘 우연히 오염 문제의 해결책을 발견했다. XE037은 소생된 신체가 초고에너지의 4차원 전이를 여러 차례 거치면 완전히 제거된다. "
+"하지만 그 과정에서 하위 차원 생명체가 주 차원으로 넘어오게 된다. 병을 고치는 방법이 오히려 더 큰 화를 부르는 셈이다. 그래도 "
+"멜키오르를 통해 XEDRA-40에 보고할 예정이다. 어쩌면 시두 박사가 이 정보를 쓸 수 있을지도 모른다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178257,6 +178263,8 @@ msgid ""
 " long and costly process, and research into this area is lacking.  We'll "
 "send for some monkeys."
 msgstr ""
+"쥐와 고양이에 XE037을 시험했지만, 이상하게도 소생 효과는 나타나지 않았다. 비인간 피실험체 확보는 시간과 비용이 많이 들고 연구도 "
+"부족하다. 결국 원숭이를 보내오도록 했다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178268,6 +178276,9 @@ msgid ""
 "wider range of subjects seem to suggest that larger mammals - dogs and "
 "monkeys, thus far - are susceptible to both effects."
 msgstr ""
+"소생이 인간에게만 일어난다는 추측은 성급했다. 이전 실험에서 XE037 노출은 모든 포유류에 낮은 수준의 지속적 감염을 일으켰지만 곧 "
+"정지 상태에 들어가 잠복하는 듯했다. 대부분의 피실험체에서는 변이만 일어났고 소생은 나타나지 않았다. 그러나 새로 진행된 더 다양한 "
+"시험에서는 개와 원숭이 같은 큰 포유류가 변이와 소생 모두에 취약하다는 결과가 나왔다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178276,6 +178287,8 @@ msgid ""
 "mammals such as lab rats do not obtain this critical amount of XE037 before "
 "going dormant.  Larger canine subjects, however, do."
 msgstr ""
+"포유류의 소생 여부는 사망 시 체내에 남은 XE037의 양에 달린 것으로 보인다. 실험용 쥐 같은 작은 포유류는 휴면 상태에 들기 전 "
+"임계치에 도달하지 못하지만, 큰 개과 동물들은 도달한다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178296,6 +178309,9 @@ msgid ""
 "  These levels drop over hours, suggesting that XE037 cannot sustain itself "
 "in smaller organisms."
 msgstr ""
+"XE037의 포유류 휴면 한계를 넘어서려는 시도는 어느 정도 성과를 보였다. XE037이 풍부한 시료를 피하 주사하자 몸 전체로 파동이 "
+"퍼졌고, 이는 XE037의 급속 흡수를 나타내는 것으로 보였다. 그러나 수치는 몇 시간 만에 감소했으며, 이는 XE037이 작은 "
+"개체에서는 오래 유지되지 못함을 시사한다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178314,6 +178330,8 @@ msgid ""
 "expiration, proximity to other revived individuals, time since colonization "
 "by XE037, and the body mass of the subject."
 msgstr ""
+"사후 변이 발생은 여러 요인에 좌우되는 것으로 보인다. 대표적인 요인으로는 사망에 이른 손상의 유형과 정도, 다른 소생 개체와의 거리, "
+"XE037 감염 이후 경과 시간, 그리고 피실험체의 체질량이 있다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178323,6 +178341,8 @@ msgid ""
 " and we have added a formalized protocol to quarter cadavers immediately "
 "after death if an autopsy is planned."
 msgstr ""
+"XE037의 소생 능력에는 한계가 있음이 확인됐다. 신체가 해부나 분쇄로 충분히 파괴되면 더는 소생하지 않는다. 이는 부검에 유용해, "
+"사망 직후 부검이 예정된 시신은 즉시 4등분하도록 하는 공식 절차를 추가했다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178342,6 +178362,8 @@ msgid ""
 "  We have requisitioned military assistance at facilities involved in the "
 "project."
 msgstr ""
+"야콥슨은 심각한 보안과 안전상의 위험에도 불구하고 S37ZBE를 계속해야 한다고 주장한다. 피실험체의 간헐적인 탈출만으로도 보안 인력의 "
+"절반 가까이가 프로젝트에 투입된 상황이다. 이에 우리는 프로젝트 시설에 군사 지원을 요청했다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178353,6 +178375,9 @@ msgid ""
 "XE037.  How can this have happened?  Even during the breach last week, we "
 "managed to keep containment protocols active!"
 msgstr ""
+"오늘 야콥슨이 S37ZBE 피실험체에게 살해됐다. 프로젝트 유지를 위해 그렇게 애쓴 걸 생각하면 아이러니하다. 그런데 그의 시신은 즉시 "
+"소생했으며, 이는 XE037이 실험실 전체에 퍼졌을 가능성을 시사한다. 더 큰 문제는, XEDRA-12의 디온 박사가 동일한 XE037 "
+"교차 오염 징후를 발견했다는 경고를 보내온 것이다. 이런 일이 어떻게 가능하단 말인가? 지난주 침입 사태 때조차 격리 절차는 유지됐는데!"
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178362,6 +178387,9 @@ msgid ""
 "been quarantined.  While they backtrace the leak, we will start research "
 "into a process to destroy XE037 within the human body."
 msgstr ""
+"S37ZBE와 무관한 피실험체의 처분으로 두려움이 현실이 되었음이 확인됐다. XE037은 실험실 대부분, 아니 전부를 오염시켰다. 우리는"
+" 자체 발병을 겪고 있는 XEDRA-12와 연락 중이며, 두 실험실 모두 격리되었다. 그들이 누출을 추적하는 동안 우리는 인체 내 "
+"XE037을 파괴하는 절차 연구를 시작할 예정이다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -178388,6 +178416,10 @@ msgid ""
 " us to stop anthropomorphizing it.  He thinks it's no more a sign of "
 "intelligence than a cold virus coming out with a sneeze."
 msgstr ""
+"시두 박사는 고친 친화성 바이오 추적자와 피실험체 바로 뒤를 따라가는 탐침을 이용해 XE037이 순간이동 중 제거될 때의 움직임을 "
+"추적하는 방법을 알아냈다. XE037은 순간이동 때마다 소량이지만 무시할 수 없는 양이 몸에서 빠져나갔다. 우리 생각엔 마치 새로운 "
+"차원으로 옮겨가려는 ‘무임승차’ 현상처럼 보였지만, 회의에서 시두 박사는 의인화를 그만두라고 했다. 그의 말에 따르면 이는 지능의 징후가"
+" 아니라, 재채기와 함께 튀어나오는 감기 바이러스 같은 현상일 뿐이다."
 
 #: data/json/snippets/music.json
 msgid "some <musicgenre>."
@@ -179412,6 +179444,7 @@ msgid ""
 "The stripes -so uniform at a distance- reveal themselves to be jagged, "
 "strangely familiar patterns, like the cursive of an unknown language"
 msgstr ""
+"멀리서 균일해 보이던 줄무늬는 가까이에서 보면 삐죽이고, 묘하게 익숙한 패턴으로 드러난다. 마치 정체 모를 언어의 필기체 같다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid "<bug_harvest_flying_deeper>"
@@ -179428,6 +179461,8 @@ msgid ""
 "comparatively neat rows of venom-filled glands, each feeding into a "
 "reservoir at the base of the stinger"
 msgstr ""
+"몸통에 뒤엉킨 장기 덩어리는 다른 변이 곤충들과 비슷해 보인다. 그러나 복부에 다가서면 혼돈 속에서 질서가 드러난다. 독으로 가득 찬 "
+"샘들이 비교적 가지런히 줄지어 있고, 각각이 침 기저부의 저장소로 이어진다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid "You open a stomach, releasing a gush of sweet-smelling grey fluid"
@@ -179500,41 +179535,41 @@ msgstr ""
 msgid ""
 "The mandibles keep snapping, and acrid-smelling venom wets the soil.  You "
 "decide to begin your work at its tail"
-msgstr ""
+msgstr "턱은 끊임없이 덜컥거리며 닫히고, 톡 쏘는 냄새의 독이 흙을 적신다. 당신은 꼬리부터 작업을 시작하기로 한다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid "You're startled as its antenna whips out and briefly coils on your arm"
-msgstr ""
+msgstr "더듬이가 휘몰아치듯 뻗어와 순간 당신의 팔에 감기자, 당신은 흠칫 놀란다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
 "Underneath the surface, there are small plates of chitin dotted about, much "
 "harder than the rest"
-msgstr ""
+msgstr "표면 아래에는 작은 키틴질 판들이 점점이 박혀 있으며, 나머지 조직보다 훨씬 단단하다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
 "On its tail end the segments get smaller and smaller, until they terminate "
 "in a small copy of the head, looking backwards"
-msgstr ""
+msgstr "꼬리 끝으로 갈수록 마디가 점점 작아지며, 결국 뒤를 향한 작은 머리의 복제품으로 끝난다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
 "The chitin of the head is caked in old blood and lymph of its previous "
 "victims"
-msgstr ""
+msgstr "머리의 키틴질은 지난 희생자들의 오래된 피와 림프로 들러붙어 있다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
 "You find vacuoles filled with its venom in the most unexpected nooks, "
 "forcing you to work carefully"
-msgstr ""
+msgstr "예상치 못한 구석마다 독이 가득 찬 액포가 숨어 있어, 당신은 신중히 작업할 수밖에 없다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
 "The indescribable stench of the remains of its last meal make you question "
 "your decision to butcher it"
-msgstr ""
+msgstr "마지막 먹이의 잔해에서 풍기는 형언할 수 없는 악취가, 이것을 손질하기로 한 당신의 결정을 의심하게 만든다."
 
 #: data/json/snippets/mutant_anatomy.json
 msgid ""
@@ -190258,7 +190293,7 @@ msgstr[0] "광학 연산 코어"
 #. ~ Description for {'str': 'photonic computation core'}
 #: data/mods/Aftershock/items/crafting_scrap/circuity_scrap.json
 msgid "A monolithic circuit shaped as a glowing cube of crystal."
-msgstr "반짝이는 크리스탈 큐브 형상으로 만들어진 단일 회로입니다."
+msgstr "반짝이는 크리스털 큐브 형상으로 만들어진 단일 회로입니다."
 
 #: data/mods/Aftershock/items/crafting_scrap/circuity_scrap.json
 msgid "hypergeometric photonics"
@@ -192490,7 +192525,7 @@ msgstr "배가 너무 고파. 뭐라도 줄 수 있어?"
 #: data/mods/Aftershock/npcs/milly_whately_dialogue.json
 #: data/mods/Aftershock/npcs/whately_dialogue.json
 msgid "You are aware of the Cataclysm?"
-msgstr "대격변이 왔다는건 알고 있어?"
+msgstr "대격변이 왔다는 건 알고 있어?"
 
 #: data/mods/Aftershock/npcs/milly_whately_dialogue.json
 #: data/mods/Aftershock/npcs/whately_dialogue.json
@@ -192907,8 +192942,8 @@ msgid ""
 " a joke because we use physical coins.  Barter only gets you so far.  And "
 "one day we'll have the Net back up."
 msgstr ""
-"우리는 한때 암호화폐라고 불렸던걸 돈으로 써. 대격변 이전에도 돈의 개념을 확장해 전자화폐를 만드려는 시도가 있었지. 그렇지만 지금은 "
-"물리적인 화폐를 쓰니까 농담에 지나지 않아. 물물교환이 있으니 더 그렇고. 그래도 언젠가는 인터넷이 돌아올거야."
+"우리는 한때 암호화폐라고 불렸던 걸 돈으로 써. 대격변 이전에도 돈의 개념을 확장해 전자화폐를 만드려는 시도가 있었지. 그렇지만 지금은 "
+"물리적인 화폐를 쓰니까 농담에 지나지 않아. 물물교환이 있으니 더 그렇고. 그래도 언젠가는 인터넷이 돌아올 거야."
 
 #: data/mods/Aftershock/npcs/prepnet_dialogue.json
 msgid "Big Game Hunting"
@@ -230408,11 +230443,11 @@ msgstr "정사면체"
 
 #: src/artifact.cpp
 msgid "crystal"
-msgstr "크리스탈"
+msgstr "크리스털"
 
 #: src/artifact.cpp
 msgid "translucent crystal"
-msgstr "반투명한 크리스탈"
+msgstr "반투명한 크리스털"
 
 #: src/artifact.cpp
 msgid "knot"
@@ -271148,8 +271183,8 @@ msgstr "소음"
 
 #: src/sounds.cpp
 #, c-format
-msgid "Heard %s!"
-msgstr "%s 소리가 들립니다!"
+msgid "Heard %s"
+msgstr ""
 
 #: src/sounds.cpp
 #, c-format

@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-12 01:50+0000\n"
+"POT-Creation-Date: 2025-09-13 01:27+0000\n"
 "Last-Translator: afqwt34r q34t4w3qt4, 2025\n"
 "Language-Team: Portuguese (Brazil) (https://app.transifex.com/bn-team/teams/113585/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -288841,8 +288841,8 @@ msgstr "um barulho"
 
 #: src/sounds.cpp
 #, c-format
-msgid "Heard %s!"
-msgstr "Ouviu %s!"
+msgid "Heard %s"
+msgstr ""
 
 #: src/sounds.cpp
 #, c-format
