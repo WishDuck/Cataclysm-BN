@@ -25,18 +25,18 @@
 # LunaeLum, 2025
 # Pururun kun, 2025
 # Ivan Saikyo, 2025
-# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # Ekaterina Aleksashkina <donjonn@yandex.ru>, 2025
 # Vorpal Void <vorpal.void@gmail.com>, 2025
 # Vlados <vuradoz@gmail.com>, 2025
 # GostBug <blackday8990@gmx.de>, 2025
 # Vadim, 2025
+# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-13 01:27+0000\n"
-"Last-Translator: Vadim, 2025\n"
+"POT-Creation-Date: 2025-09-14 01:40+0000\n"
+"Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11949,6 +11949,55 @@ msgid ""
 msgstr ""
 "Эта одежда подходит <good>исключительно</good> мутантам, обладающим "
 "<info>змеевидным телом</info>."
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>clawed fingers.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>toe claws.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>hooves, foot-paws, or otherwise altered feet.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>horns on their head.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a tail.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>wings.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a snout, beak, or mandibles.</info>."
+msgstr ""
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -27225,6 +27274,82 @@ msgstr ""
 "Вы всегда восхищались красотой заброшенных городов и были готовы к следующей"
 " поездке, когда конец света сделал ваше хобби гораздо более актуальным."
 
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Escape Team"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Escape Team"
+msgstr ""
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr ""
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Mutant Escape Team"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Mutant Escape Team"
+msgstr ""
+
+#. ~ Profession (male Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr ""
+
+#. ~ Profession (female Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr ""
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
 msgctxt "scenario_male"
@@ -37927,6 +38052,20 @@ msgstr ""
 " энергией. Турбину можно разобрать и использовать для генерации "
 "электроэнергии в другом месте, но это даст гораздо меньше энергии, чем "
 "полностью рабочая турбина."
+
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid "hydroelectric turbine assembly"
+msgstr ""
+
+#. ~ Description for hydroelectric turbine assembly
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid ""
+"A huge turbine meant for generating power from flowing water.  What's left "
+"of it is a far cry from the megawatts of power it used to output, but it "
+"could still be hooked up to provide power to a nearby base.  Alternatively, "
+"it could be salvaged for parts that could be used for power generation "
+"elsewhere."
+msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-medical.json
 #: data/json/items/tool/med.json
@@ -62651,12 +62790,9 @@ msgstr[3] "длинный тканевый шарф"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to loosen it if you get too warm."
 msgstr ""
-"Очень длинный лёгкий тканевый платок, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы развязать его, если вам стало жарко."
 
 #: data/json/items/tool_armor.json
 msgid "long patchwork scarf (loose)"
@@ -62671,12 +62807,9 @@ msgstr[3] "длинный тканевый шарф (расслаблен)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"Очень длинный лёгкий тканевый платок, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы завязать его плотнее, если вам стало холодно."
 
 #: data/json/items/tool_armor.json
 msgid "knit scarf"
@@ -62725,12 +62858,9 @@ msgstr[3] "длинный вязаный шарф"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to loosen it if you get too warm."
 msgstr ""
-"Действительно длинный вязаный шарф, прикрывающий рот. Удлинённый для того, "
-"чтобы прикрыть нестандартные черты лица или прикрыть руки. Используйте его, "
-"чтобы расслабить его, если вам стало жарко."
 
 #: data/json/items/tool_armor.json
 msgid "long knit scarf (loose)"
@@ -62745,12 +62875,9 @@ msgstr[3] "длинный вязаный шарф (развязано)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"Действительно длинный вязаный шарф, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы завязать его плотнее, если вам стало холодно."
 
 #: data/json/items/tool_armor.json
 msgid "wool scarf"
@@ -62807,12 +62934,9 @@ msgstr[3] "длинный шерстяной шарф"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
 msgstr ""
-"Действительно длинный шерстяной шарф, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы расслабить его, если вам стало жарко."
 
 #: data/json/items/tool_armor.json
 msgid "long wool scarf (loose)"
@@ -62827,12 +62951,9 @@ msgstr[3] "длинный шерстяной шарф (развязано)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"Действительно длинный шерстяной шарф, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы завязать его плотнее, если вам стало холодно."
 
 #: data/json/items/tool_armor.json
 msgid "fur scarf"
@@ -62881,12 +63002,9 @@ msgstr[3] "длинный меховой шарф"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
 msgstr ""
-"Действительно длинный меховой шарф, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы расслабить его, если вам стало жарко."
 
 #: data/json/items/tool_armor.json
 msgid "long fur scarf (loose)"
@@ -62901,12 +63019,9 @@ msgstr[3] "длинный меховой шарф (развязано)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"Действительно длинный меховой шарф, прикрывающий рот. Он имеет достаточно "
-"длины, чтобы прикрыть нестандартные черты лица, а также прикрыть руки. "
-"Используйте его, чтобы завязать его плотнее, если вам стало холодно."
 
 #: data/json/items/tool_armor.json
 msgid "thermal electric outfit"
@@ -69089,6 +69204,51 @@ msgstr[3] ""
 msgid ""
 "An oversized leg warmer clearly designed for legless mutants, or an awkward "
 "tube skirt for more normal survivors."
+msgstr ""
+
+#: data/json/items/armor/boots.json
+msgid "fur tail warmer"
+msgid_plural "fur tail warmers"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'fur tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of fur.  Clearly designed for legless mutants, "
+"or an awkward tube skirt for more normal survivors."
+msgstr ""
+
+#: data/json/items/armor/boots.json
+msgid "leather tail warmer"
+msgid_plural "leather tail warmers"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'leather tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of leather.  Clearly designed for legless "
+"mutants, or an awkward tube skirt for more normal survivors."
+msgstr ""
+
+#: data/json/items/armor/boots.json
+msgid "wool tail warmer"
+msgid_plural "wool tail warmers"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'wool tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of wool.  Clearly designed for legless mutants,"
+" or an awkward tube skirt for more normal survivors."
 msgstr ""
 
 #: data/json/items/armor/boots.json
@@ -78656,10 +78816,8 @@ msgstr[3] "пара сапог для рыбалки"
 #. ~ Description for {'str': 'pair of fishing waders', 'str_pl': 'pairs of
 #. fishing waders'}
 #: data/json/items/armor/legs_clothes.json
-msgid "Waterproof plastic fishing waders with a single large front pocket."
+msgid "Waterproof fishing waders with a single large front pocket."
 msgstr ""
-"Пластиковые водонепроницаемые сапоги для рыбалки, с большим передним "
-"карманом."
 
 #: data/json/items/armor/legs_clothes.json
 msgid "hot pants"
@@ -81193,6 +81351,56 @@ msgid ""
 msgstr ""
 "Большой щит, усиленный металлом и c торчащими шипами. Может использоваться в"
 " качестве оружия ближнего боя."
+
+#: data/json/items/armor/shields.json
+msgid "bronze shield"
+msgid_plural "bronze shields"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'bronze shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A simple round shield made of wood, faced with a sheet of work-hardened "
+"bronze in the vein of a Greek hoplon.  Tougher against cutting weapons than "
+"iron-banded shields for the same encumbrance, but heavier and less "
+"protective against bashing weapons."
+msgstr ""
+
+#: data/json/items/armor/shields.json
+msgid "scaleskin shield"
+msgid_plural "scaleskin shields"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'scaleskin shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A tall oval shield made from the hardened scales of large reptiles, stitched"
+" together and boiled to harden it into a single stiff panel, then mounted on"
+" a central wooden handgrip similar to shields historically associated with "
+"southeastern Africa.  Surprisingly light and durable."
+msgstr ""
+
+#: data/json/items/armor/shields.json
+msgid "wooden targe"
+msgid_plural "wooden targes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'wooden targe'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A small, round wooden shield designed more for swashbuckling than for "
+"fending off arrows.  It's small and light enough to not hinder the use of "
+"your hands."
+msgstr ""
 
 #: data/json/items/armor/shields.json
 msgid "carbon fiber buckler"
@@ -161559,11 +161767,9 @@ msgstr "Когти"
 #. ~ Description for {'str': 'Claws'}
 #: data/json/mutations/mutations.json
 msgid ""
-"You have claws on the ends of your fingers.  If you aren't wearing gloves, "
-"your unarmed attacks deal a minor amount of cutting damage."
+"You have claws on the ends of your fingers.  Prevents wearing gloves, unless"
+" they're fingerless."
 msgstr ""
-"У вас есть когти на концах пальцев. Ели вы не носите перчаток, то ваши "
-"безоружные атаки наносят небольшие режущие повреждения."
 
 #: data/json/mutations/mutations.json
 msgid "Rat Claws"
@@ -161571,8 +161777,10 @@ msgstr "Крысиные когти"
 
 #. ~ Description for {'str': 'Rat Claws'}
 #: data/json/mutations/mutations.json
-msgid "Your claws have grown tougher and slightly gnarled."
-msgstr "Ваши когти выросли более крепкими и слегка искривлёнными."
+msgid ""
+"Your claws have grown tougher and slightly gnarled.  Prevents wearing gloves"
+" that aren't fingerless."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Stainless Claws"
@@ -161582,10 +161790,9 @@ msgstr "Нержавеющие когти"
 #: data/json/mutations/mutations.json
 msgid ""
 "Your paws are bone, muscle, and claw with a thin layer of skin and fur.  "
-"They might as well be made of stainless steel."
+"They might as well be made of stainless steel.  Prevents wearing gloves that"
+" aren't fingerless."
 msgstr ""
-"Ваши лапы — кости, мышцы и когти с тонким слоем кожи и меха. Им впору быть "
-"из нержавеющей стали."
 
 #: data/json/mutations/mutations.json
 msgid "Retractable Claws"
@@ -161650,12 +161857,9 @@ msgstr "Большие когти"
 msgid ""
 "Your index fingers have grown into huge talons.  After a bit of practice, "
 "you find that this does not affect your dexterity, but allows for a deadly "
-"unarmed attack.  They also prevent wearing gloves."
+"unarmed attack.  They also prevent wearing gloves, though fingerless gloves "
+"are fair game."
 msgstr ""
-"Ваши указательные пальцы превратились в огромные когти. После небольшой "
-"практики вы обнаружили, что они никак не влияют на вашу ловкость, но "
-"позволяют наносить смертоносные безоружные атаки. А также не позволяют вам "
-"носить перчатки."
 
 #: data/json/mutations/mutations.json
 msgid "Radiogenic"
@@ -185923,6 +186127,30 @@ msgstr "Идём со мной, если хочешь жить."
 msgid "I've no use for weaklings.  Run.  Now."
 msgstr "Мне слабаки ни к чему. Бегом. Живо."
 
+#: data/json/npcs/professions/escape_team.json
+msgid "Escapist"
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "I'm looking for a way out."
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Mutant Patient"
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Captive"
+msgstr "Пленник"
+
+#: data/json/npcs/professions/frat.json
+msgid "Frat Member"
+msgstr ""
+
+#: data/json/npcs/professions/frat.json
+msgid "I'm looking for parties."
+msgstr ""
+
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json
 msgid "Reach Refugee Center"
 msgstr "Добраться до центра беженцев"
@@ -206635,6 +206863,26 @@ msgstr "крыша игрового магазина"
 msgid "convention center"
 msgstr "конференц-центр"
 
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam Passthrough"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (overpass)"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ground)"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ramp)"
+msgstr ""
+
 #: data/json/overmap/overmap_terrain/overmap_terrain_evac_center.json
 #: data/mods/alt_map_key/overmap_terrain.json
 msgid "refugee center"
@@ -208409,6 +208657,11 @@ msgstr "НОГИ"
 #: data/json/recipes/recipes.json
 msgid "FEET"
 msgstr "СТУПНИ"
+
+#. ~ Crafting recipes subcategory of 'ARMOR' category
+#: data/json/recipes/recipes.json
+msgid "SHIELD"
+msgstr ""
 
 #. ~ Crafting recipes subcategory of 'OTHER' category
 #: data/json/recipes/recipes.json
@@ -237036,6 +237289,14 @@ msgstr ""
 "Оружие, которое носят самоуверенные офицеры-монстры, отличается меньшей "
 "точностью из соображений баланса."
 
+#: data/mods/Civilians/npcs.json
+msgid "Militia Member"
+msgstr ""
+
+#: data/mods/Civilians/npcs.json
+msgid "Ready to fight."
+msgstr ""
+
 #: data/mods/Civilians/professions.json
 msgctxt "profession_male"
 msgid "Futile Fighter"
@@ -237060,6 +237321,34 @@ msgctxt "prof_desc_female"
 msgid ""
 "The cataclysm may have caught you off guard, but you're not going down "
 "without a fight!"
+msgstr ""
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_male"
+msgid "Makeshift Militia"
+msgstr ""
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_female"
+msgid "Makeshift Militia"
+msgstr ""
+
+#. ~ Profession (male Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
+msgstr ""
+
+#. ~ Profession (female Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
 msgstr ""
 
 #: data/mods/Civilians/speech.json
@@ -272799,6 +273088,10 @@ msgstr "Отменить сделку"
 msgid "Change profession name"
 msgstr "Переименовать профессию"
 
+#: data/raw/keybindings/keybindings.json src/character_display.cpp
+msgid "Change name"
+msgstr ""
+
 #: data/raw/keybindings/keybindings.json
 msgid "Wear"
 msgstr "Надеть"
@@ -281060,6 +281353,10 @@ msgstr "[<color_yellow>%s</color>]"
 msgid "Profession Name: "
 msgstr "Название профессии:"
 
+#: src/character_display.cpp src/veh_interact.cpp
+msgid "Name: "
+msgstr "Название: "
+
 #: src/character_display.cpp
 #, c-format
 msgid "Strength -%d"
@@ -285399,7 +285696,7 @@ msgstr "Новые завершённые задания:"
 msgid "New failed missions:"
 msgstr "Новые проваленные задания:"
 
-#: src/diary.cpp src/memorial_logger.cpp
+#: src/diary.cpp src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Bionics:"
 msgstr "Бионика:"
 
@@ -287442,6 +287739,10 @@ msgid "Steal"
 msgstr "Обокрасть"
 
 #: src/game.cpp
+msgid "Control"
+msgstr ""
+
+#: src/game.cpp
 #, c-format
 msgid "You swap places with %s."
 msgstr "Вы и %s поменялись местами."
@@ -288958,8 +289259,8 @@ msgid "Take off item"
 msgstr "Снять"
 
 #: src/game_inventory.cpp
-msgid "You don't wear anything."
-msgstr "На вас ничто не надето."
+msgid "You aren't wearing anything."
+msgstr ""
 
 #: src/game_inventory.cpp
 #, c-format
@@ -292231,7 +292532,7 @@ msgstr "Как много %1$s убрать в %2$s?"
 msgid "The %1$s contains %2$d %3$s."
 msgstr "%1$s содержит %2$d %3$s."
 
-#: src/iexamine.cpp
+#: src/iexamine.cpp src/vehicle_use.cpp
 msgid "Which tool do you want to use?"
 msgstr "Какой инструмент вы хотите использовать?"
 
@@ -296002,8 +296303,8 @@ msgid "You do not have an item that can perform this action."
 msgstr "У вас нет этого предмета, чтобы выполнить действие."
 
 #: src/item_action.cpp
-msgid "You don't have any items with registered uses"
-msgstr "У вас нет предметов с зарегистрированным использованием."
+msgid "You don't have any items with registered uses!"
+msgstr ""
 
 #: src/item_action.cpp
 msgid "Execute which action?"
@@ -304541,7 +304842,7 @@ msgstr "Всего убийств: %d"
 msgid "%s: %d (%d %%)"
 msgstr "%s: %d (%d %%)"
 
-#: src/memorial_logger.cpp
+#: src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Traits:"
 msgstr "Черты:"
 
@@ -309931,17 +310232,9 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession traits:"
-msgstr "Черты профессии:"
-
-#: src/newcharacter.cpp
 msgctxt "set_profession_trait"
 msgid "None"
 msgstr "Нет"
-
-#: src/newcharacter.cpp
-msgid "Profession skills:"
-msgstr "Навыки профессии:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_skill"
@@ -309955,8 +310248,8 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession items:"
-msgstr "Экипировка:"
+msgid "Items:"
+msgstr ""
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_item"
@@ -309985,10 +310278,6 @@ msgstr "Ничего\n"
 msgctxt "set_profession_item_inventory"
 msgid "None\n"
 msgstr "Ничего\n"
-
-#: src/newcharacter.cpp
-msgid "Profession bionics:"
-msgstr "Бионика профессии:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_bionic"
@@ -310023,8 +310312,12 @@ msgid "%s level %d"
 msgstr "%s уровень %d"
 
 #: src/newcharacter.cpp
-msgid "Profession money:"
-msgstr "Деньги профессии:"
+msgid "Money:"
+msgstr ""
+
+#: src/newcharacter.cpp
+msgid "Companions:"
+msgstr ""
 
 #: src/newcharacter.cpp
 #, c-format
@@ -319960,10 +320253,6 @@ msgstr ""
 "м/<color_light_red>%4.2f</color> м"
 
 #: src/veh_interact.cpp
-msgid "Name: "
-msgstr "Название: "
-
-#: src/veh_interact.cpp
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
@@ -321401,8 +321690,8 @@ msgid "Use a towel"
 msgstr "Вытереться полотенцем"
 
 #: src/vehicle_use.cpp
-msgid "Use the welding rig"
-msgstr "Использовать сварочный аппарат"
+msgid "Use the integrated tools"
+msgstr ""
 
 #: src/vehicle_use.cpp
 msgid "Purify water in carried container"

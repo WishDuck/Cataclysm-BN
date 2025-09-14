@@ -25,19 +25,19 @@
 # Jaesung Han (Re_Star), 2024
 # DelFe, 2024
 # JJ J <congstrot@gmail.com>, 2024
-# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 백도 <tmtm1379@gmail.com>, 2025
 # 김동현, 2025
 # Tae Heon Lim, 2025
 # Fruitybite, 2025
 # 김예준, 2025
 # ARDOR Flag, 2025
+# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-13 01:27+0000\n"
-"Last-Translator: ARDOR Flag, 2025\n"
+"POT-Creation-Date: 2025-09-14 01:40+0000\n"
+"Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11042,6 +11042,55 @@ msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>serpentine bodies.</info>."
 msgstr "이 옷은 <good>독특하게도 <info>뱀의 몸을 지닌 존재들에게</info> 호환이 됩니다.</good>"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>clawed fingers.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>toe claws.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>hooves, foot-paws, or otherwise altered feet.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>horns on their head.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a tail.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>wings.</info>."
+msgstr ""
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a snout, beak, or mandibles.</info>."
+msgstr ""
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -25432,6 +25481,82 @@ msgstr ""
 "당신은 언제나 도시의 황량함 속에 숨겨진 아름다움에 매료되어 있었습니다. 세상의 종말이 당신의 취미를 더 유용하게 만들었을 때, 당신은 "
 "도시로의 다음 여행 준비를 끝마쳤습니다."
 
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Escape Team"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Escape Team"
+msgstr ""
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr ""
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Mutant Escape Team"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Mutant Escape Team"
+msgstr ""
+
+#. ~ Profession (male Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr ""
+
+#. ~ Profession (female Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr ""
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
 msgctxt "scenario_male"
@@ -35482,6 +35607,20 @@ msgid ""
 msgstr ""
 "바람을 전력으로 바꿀 수 있도록 거대한 날개가 달린 풍력 발전기입니다. 근처 건물에 연결되어 전력을 공급할 수 있도록 공회전하고 있으며,"
 " 해체하여 지역 전력 공급에 이바지하도록 쓸 수 있습니다. 단, 제대로 된 터빈보다는 훨씬 적은 전력을 생산할 것입니다."
+
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid "hydroelectric turbine assembly"
+msgstr ""
+
+#. ~ Description for hydroelectric turbine assembly
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid ""
+"A huge turbine meant for generating power from flowing water.  What's left "
+"of it is a far cry from the megawatts of power it used to output, but it "
+"could still be hooked up to provide power to a nearby base.  Alternatively, "
+"it could be salvaged for parts that could be used for power generation "
+"elsewhere."
+msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-medical.json
 #: data/json/items/tool/med.json
@@ -55782,11 +55921,9 @@ msgstr[0] "긴 간이 스카프"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to loosen it if you get too warm."
 msgstr ""
-"아주 길고 가벼운 스카프입니다. 길이가 충분히 길어 평범하지 않은 얼굴 특징을 숨기고 손까지 감쌀 수 있습니다. 너무 덥다면 사용하여 "
-"느슨하게 할 수 있습니다."
 
 #: data/json/items/tool_armor.json
 msgid "long patchwork scarf (loose)"
@@ -55798,11 +55935,9 @@ msgstr[0] "긴 간이 스카프 (풀림)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"아주 길고 가벼운 스카프입니다. 길이가 충분히 길어 평범하지 않은 얼굴 특징을 숨기고 손까지 감쌀 수 있습니다. 너무 춥다면 사용하여 "
-"단단히 맬 수 있습니다."
 
 #: data/json/items/tool_armor.json
 msgid "knit scarf"
@@ -55838,11 +55973,9 @@ msgstr[0] "긴 니트 스카프"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to loosen it if you get too warm."
 msgstr ""
-"면을 뜨개질해서 만든 정말로 긴 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 "
-"정도로 길다. 사용하면 살짝 풀어서 체온을 내릴 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "long knit scarf (loose)"
@@ -55854,11 +55987,9 @@ msgstr[0] "긴 니트 스카프 (풀림)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"면을 뜨개질해서 만든 정말로 긴 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 "
-"정도로 길다. 사용하면 다시 둘러서 체온을 높일 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "wool scarf"
@@ -55902,11 +56033,9 @@ msgstr[0] "긴 양모 스카프"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
 msgstr ""
-"정말로 긴 양모 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 정도로 길다. "
-"사용하면 살짝 풀어서 체온을 내릴 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "long wool scarf (loose)"
@@ -55918,11 +56047,9 @@ msgstr[0] "긴 양모 스카프 (풀림)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"정말로 긴 양모 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 정도로 길다. "
-"사용하면 다시 둘러서 체온을 높일 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "fur scarf"
@@ -55958,11 +56085,9 @@ msgstr[0] "긴 모피 스카프"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
 msgstr ""
-"정말로 긴 모피 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 정도로 길다. "
-"사용하면 살짝 풀어서 체온을 내릴 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "long fur scarf (loose)"
@@ -55974,11 +56099,9 @@ msgstr[0] "긴 모피 스카프 (풀림)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
 msgstr ""
-"정말로 긴 모피 스카프. 온기 유지를 위해 입에 착용한다. 평범하지 않은 얼굴 생김새를 가리고 손까지도 감쌀 수 있을 정도로 길다. "
-"사용하면 다시 둘러서 체온을 높일 수 있다."
 
 #: data/json/items/tool_armor.json
 msgid "thermal electric outfit"
@@ -60627,6 +60750,42 @@ msgid ""
 msgstr ""
 "다리가 없는 돌연변이들이 착용하라고 만들어진 거대한 토시입니다.  일반적인 생존자들에겐 일종의 기묘한 튜브 스커트처럼 착용할 수 있을 "
 "겁니다."
+
+#: data/json/items/armor/boots.json
+msgid "fur tail warmer"
+msgid_plural "fur tail warmers"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'fur tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of fur.  Clearly designed for legless mutants, "
+"or an awkward tube skirt for more normal survivors."
+msgstr ""
+
+#: data/json/items/armor/boots.json
+msgid "leather tail warmer"
+msgid_plural "leather tail warmers"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'leather tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of leather.  Clearly designed for legless "
+"mutants, or an awkward tube skirt for more normal survivors."
+msgstr ""
+
+#: data/json/items/armor/boots.json
+msgid "wool tail warmer"
+msgid_plural "wool tail warmers"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'wool tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of wool.  Clearly designed for legless mutants,"
+" or an awkward tube skirt for more normal survivors."
+msgstr ""
 
 #: data/json/items/armor/boots.json
 msgid "pair of tabi"
@@ -67632,8 +67791,8 @@ msgstr[0] "낚시용 장화"
 #. ~ Description for {'str': 'pair of fishing waders', 'str_pl': 'pairs of
 #. fishing waders'}
 #: data/json/items/armor/legs_clothes.json
-msgid "Waterproof plastic fishing waders with a single large front pocket."
-msgstr "앞에 큰 주머니가 달린, 낚시용 방수 장화."
+msgid "Waterproof fishing waders with a single large front pocket."
+msgstr ""
 
 #: data/json/items/armor/legs_clothes.json
 msgid "hot pants"
@@ -69593,6 +69752,47 @@ msgid ""
 "A large metal reinforced shield with spikes jutting out of it.  Can be used "
 "as a melee weapon if need be."
 msgstr "가시가 여럿 돋혀있는 커다란 금속보강 방패입니다. 필요하다면 근접무기로 써먹을 수도 있습니다."
+
+#: data/json/items/armor/shields.json
+msgid "bronze shield"
+msgid_plural "bronze shields"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'bronze shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A simple round shield made of wood, faced with a sheet of work-hardened "
+"bronze in the vein of a Greek hoplon.  Tougher against cutting weapons than "
+"iron-banded shields for the same encumbrance, but heavier and less "
+"protective against bashing weapons."
+msgstr ""
+
+#: data/json/items/armor/shields.json
+msgid "scaleskin shield"
+msgid_plural "scaleskin shields"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'scaleskin shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A tall oval shield made from the hardened scales of large reptiles, stitched"
+" together and boiled to harden it into a single stiff panel, then mounted on"
+" a central wooden handgrip similar to shields historically associated with "
+"southeastern Africa.  Surprisingly light and durable."
+msgstr ""
+
+#: data/json/items/armor/shields.json
+msgid "wooden targe"
+msgid_plural "wooden targes"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'wooden targe'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A small, round wooden shield designed more for swashbuckling than for "
+"fending off arrows.  It's small and light enough to not hinder the use of "
+"your hands."
+msgstr ""
 
 #: data/json/items/armor/shields.json
 msgid "carbon fiber buckler"
@@ -131526,9 +131726,9 @@ msgstr "동물의 발톱"
 #. ~ Description for {'str': 'Claws'}
 #: data/json/mutations/mutations.json
 msgid ""
-"You have claws on the ends of your fingers.  If you aren't wearing gloves, "
-"your unarmed attacks deal a minor amount of cutting damage."
-msgstr "손가락 끝에 동물의 발톱이 생겼습니다. 장갑을 끼지 않았을 경우에 비무장 공격에 베기 피해량이 조금 생깁니다."
+"You have claws on the ends of your fingers.  Prevents wearing gloves, unless"
+" they're fingerless."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Rat Claws"
@@ -131536,8 +131736,10 @@ msgstr "쥐 발톱"
 
 #. ~ Description for {'str': 'Rat Claws'}
 #: data/json/mutations/mutations.json
-msgid "Your claws have grown tougher and slightly gnarled."
-msgstr "발톱이 조금 울퉁불퉁하고 단단하게 자라났습니다."
+msgid ""
+"Your claws have grown tougher and slightly gnarled.  Prevents wearing gloves"
+" that aren't fingerless."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Stainless Claws"
@@ -131547,8 +131749,9 @@ msgstr "스테인리스 발톱"
 #: data/json/mutations/mutations.json
 msgid ""
 "Your paws are bone, muscle, and claw with a thin layer of skin and fur.  "
-"They might as well be made of stainless steel."
-msgstr "당신의 앞발은 이제 뼈, 근육, 그리고 얇은 피부와 털로 덮인 발톱입니다. 그리고 스테인리스 재질이기도 합니다."
+"They might as well be made of stainless steel.  Prevents wearing gloves that"
+" aren't fingerless."
+msgstr ""
 
 #: data/json/mutations/mutations.json
 msgid "Retractable Claws"
@@ -131606,10 +131809,9 @@ msgstr "커다란 발톱"
 msgid ""
 "Your index fingers have grown into huge talons.  After a bit of practice, "
 "you find that this does not affect your dexterity, but allows for a deadly "
-"unarmed attack.  They also prevent wearing gloves."
+"unarmed attack.  They also prevent wearing gloves, though fingerless gloves "
+"are fair game."
 msgstr ""
-"검지가 커다란 발톱으로 성장했습니다. 약간의 연습을 거치고 나니 이 발톱은 당신의 손재주에 별 영향을 주지 않으면서, 동시에 치명적인 "
-"비무장공격도 가능케 합니다. 대신 손에 장갑을 낄 수 없습니다."
 
 #: data/json/mutations/mutations.json
 msgid "Radiogenic"
@@ -154067,6 +154269,30 @@ msgstr "따라와, 살고 싶다면 말이야."
 msgid "I've no use for weaklings.  Run.  Now."
 msgstr "약자는 필요없다. 뛰어. 당장."
 
+#: data/json/npcs/professions/escape_team.json
+msgid "Escapist"
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "I'm looking for a way out."
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Mutant Patient"
+msgstr ""
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Captive"
+msgstr "포로"
+
+#: data/json/npcs/professions/frat.json
+msgid "Frat Member"
+msgstr ""
+
+#: data/json/npcs/professions/frat.json
+msgid "I'm looking for parties."
+msgstr ""
+
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json
 msgid "Reach Refugee Center"
 msgstr "피난시설에 도달"
@@ -172018,6 +172244,26 @@ msgstr "게임 가게 지붕"
 msgid "convention center"
 msgstr "컨벤션 센터"
 
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam Passthrough"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (overpass)"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ground)"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ramp)"
+msgstr ""
+
 #: data/json/overmap/overmap_terrain/overmap_terrain_evac_center.json
 #: data/mods/alt_map_key/overmap_terrain.json
 msgid "refugee center"
@@ -173792,6 +174038,11 @@ msgstr "다리"
 #: data/json/recipes/recipes.json
 msgid "FEET"
 msgstr "발"
+
+#. ~ Crafting recipes subcategory of 'ARMOR' category
+#: data/json/recipes/recipes.json
+msgid "SHIELD"
+msgstr ""
 
 #. ~ Crafting recipes subcategory of 'OTHER' category
 #: data/json/recipes/recipes.json
@@ -197928,6 +198179,14 @@ msgid ""
 "balancing reasons."
 msgstr "지나치게 자신만만한 경관이 소지하는 총입니다. 밸런스상의 이유로 원본 총기에 비해 훨씬 부정확합니다."
 
+#: data/mods/Civilians/npcs.json
+msgid "Militia Member"
+msgstr ""
+
+#: data/mods/Civilians/npcs.json
+msgid "Ready to fight."
+msgstr ""
+
 #: data/mods/Civilians/professions.json
 msgctxt "profession_male"
 msgid "Futile Fighter"
@@ -197953,6 +198212,34 @@ msgid ""
 "The cataclysm may have caught you off guard, but you're not going down "
 "without a fight!"
 msgstr "대격변이 당신을 기습했을지언정, 싸워보지도 않고 순순히 죽을 수는 없죠!"
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_male"
+msgid "Makeshift Militia"
+msgstr ""
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_female"
+msgid "Makeshift Militia"
+msgstr ""
+
+#. ~ Profession (male Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
+msgstr ""
+
+#. ~ Profession (female Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
+msgstr ""
 
 #: data/mods/Civilians/speech.json
 msgid "howling in terror."
@@ -227505,6 +227792,10 @@ msgstr "거래 취소하기"
 msgid "Change profession name"
 msgstr "직업명 변경"
 
+#: data/raw/keybindings/keybindings.json src/character_display.cpp
+msgid "Change name"
+msgstr ""
+
 #: data/raw/keybindings/keybindings.json
 msgid "Wear"
 msgstr "착용"
@@ -235373,6 +235664,10 @@ msgstr "[<color_yellow>%s</color>]"
 msgid "Profession Name: "
 msgstr "직업명:"
 
+#: src/character_display.cpp src/veh_interact.cpp
+msgid "Name: "
+msgstr "이름: "
+
 #: src/character_display.cpp
 #, c-format
 msgid "Strength -%d"
@@ -239622,7 +239917,7 @@ msgstr "새로 완수한 임무: "
 msgid "New failed missions:"
 msgstr "새로 실패한 임무: "
 
-#: src/diary.cpp src/memorial_logger.cpp
+#: src/diary.cpp src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Bionics:"
 msgstr "바이오닉:"
 
@@ -241631,6 +241926,10 @@ msgid "Steal"
 msgstr "훔치기"
 
 #: src/game.cpp
+msgid "Control"
+msgstr ""
+
+#: src/game.cpp
 #, c-format
 msgid "You swap places with %s."
 msgstr "%s와(과) 자리를 바꿉니다."
@@ -243079,8 +243378,8 @@ msgid "Take off item"
 msgstr "장비 벗기"
 
 #: src/game_inventory.cpp
-msgid "You don't wear anything."
-msgstr "입고 있는 것이 없습니다."
+msgid "You aren't wearing anything."
+msgstr ""
 
 #: src/game_inventory.cpp
 #, c-format
@@ -246248,7 +246547,7 @@ msgstr "%1$s(을)를 %2$s에 얼마나 넣습니까?"
 msgid "The %1$s contains %2$d %3$s."
 msgstr "%1$s에 %2$d개의 %3$s(이)가 들어 있습니다."
 
-#: src/iexamine.cpp
+#: src/iexamine.cpp src/vehicle_use.cpp
 msgid "Which tool do you want to use?"
 msgstr "어느 도구를 사용합니까?"
 
@@ -249816,8 +250115,8 @@ msgid "You do not have an item that can perform this action."
 msgstr "그 행동을 하는데 필요한 물품이 없습니다."
 
 #: src/item_action.cpp
-msgid "You don't have any items with registered uses"
-msgstr "사용 등록된 물품을 갖고 있지 않습니다."
+msgid "You don't have any items with registered uses!"
+msgstr ""
 
 #: src/item_action.cpp
 msgid "Execute which action?"
@@ -258115,7 +258414,7 @@ msgstr "죽인 수 총합: %d"
 msgid "%s: %d (%d %%)"
 msgstr "%s: %d (%d %%)"
 
-#: src/memorial_logger.cpp
+#: src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Traits:"
 msgstr "특성:"
 
@@ -263375,17 +263674,9 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession traits:"
-msgstr "직업 특성:"
-
-#: src/newcharacter.cpp
 msgctxt "set_profession_trait"
 msgid "None"
 msgstr "없음"
-
-#: src/newcharacter.cpp
-msgid "Profession skills:"
-msgstr "직업 기술:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_skill"
@@ -263399,8 +263690,8 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession items:"
-msgstr "직업 물품:"
+msgid "Items:"
+msgstr ""
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_item"
@@ -263429,10 +263720,6 @@ msgstr "없음\n"
 msgctxt "set_profession_item_inventory"
 msgid "None\n"
 msgstr "없음\n"
-
-#: src/newcharacter.cpp
-msgid "Profession bionics:"
-msgstr "직업 바이오닉:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_bionic"
@@ -263467,8 +263754,12 @@ msgid "%s level %d"
 msgstr "%s 레벨 %d"
 
 #: src/newcharacter.cpp
-msgid "Profession money:"
-msgstr "직업 금액:"
+msgid "Money:"
+msgstr ""
+
+#: src/newcharacter.cpp
+msgid "Companions:"
+msgstr ""
 
 #: src/newcharacter.cpp
 #, c-format
@@ -272962,10 +273253,6 @@ msgstr ""
 "흘수선/여유 간격: <color_light_blue>%4.2f</color>m/<color_light_blue>%4.2f</color>m"
 
 #: src/veh_interact.cpp
-msgid "Name: "
-msgstr "이름: "
-
-#: src/veh_interact.cpp
 #, c-format
 msgid "%s (%s)"
 msgstr "%s(%s)"
@@ -274385,8 +274672,8 @@ msgid "Use a towel"
 msgstr "수건 사용"
 
 #: src/vehicle_use.cpp
-msgid "Use the welding rig"
-msgstr "용접장비 사용"
+msgid "Use the integrated tools"
+msgstr ""
 
 #: src/vehicle_use.cpp
 msgid "Purify water in carried container"

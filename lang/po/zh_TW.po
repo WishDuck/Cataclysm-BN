@@ -8,14 +8,14 @@
 # Zarathustra, 2024
 # hiro9888 <hiro9888@gmail.com>, 2025
 # H_Hedgehog, 2025
-# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # 嘿咻大侠, 2025
+# Coolthulhu <Coolthulhu@gmail.com>, 2025
 # Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-13 01:27+0000\n"
+"POT-Creation-Date: 2025-09-14 01:40+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -10609,6 +10609,55 @@ msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>serpentine bodies.</info>."
 msgstr "这件衣物<good>特别适配</good>拥有<info>蛇形躯体</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>clawed fingers.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>爪状手指</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>toe claws.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>趾爪</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>hooves, foot-paws, or otherwise altered feet.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>蹄子、足爪或其他变异脚掌</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>horns on their head.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>头角</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a tail.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>尾巴</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>wings.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>翅膀</info>的突变者。"
+
+#. ~ Please leave anything in <angle brackets> unchanged.
+#: data/json/flags.json
+msgid ""
+"This clothing is <good>uniquely compatible</good> with mutants possessing "
+"<info>a snout, beak, or mandibles.</info>."
+msgstr "这件衣物<good>特别适配</good>拥有<info>口鼻部、鸟喙或口器</info>的突变者。"
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -24218,6 +24267,84 @@ msgid ""
 " relevant."
 msgstr "你向来钟情于城市废墟之美，正准备开启下一次进城之旅时，世界末日的到来却让你的这项爱好变得无比应景。"
 
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Escape Team"
+msgstr "逃亡小队"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Escape Team"
+msgstr "逃亡小队"
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr "你说服了几名囚犯加入你的逃亡计划。过去几个月里，狱警们的行为一直很古怪，但谁能想到真正的威胁竟然是在院子里巡逻的丧尸呢？"
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few convicts to join your escape. The guards have been "
+"acting strangely these past months, but who would have guessed the real "
+"threat would be the undead patrolling the yard?"
+msgstr "你说服了几名囚犯加入你的逃亡计划。过去几个月里，狱警们的行为一直很古怪，但谁能想到真正的威胁竟然是在院子里巡逻的丧尸呢？"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Mutant Escape Team"
+msgstr "变种人逃亡小队"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Mutant Escape Team"
+msgstr "变种人逃亡小队"
+
+#. ~ Profession (male Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr "你说服了几名实验体同伴加入你的逃亡计划。过去几个月里，实验室人员的行为一直很古怪，但谁能想到真正的威胁竟然是在走廊里巡逻的丧尸呢？"
+
+#. ~ Profession (female Mutant Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You’ve convinced a few fellow test subjects to join your escape. The lab "
+"personnel have been acting strangely these past months, but who would have "
+"guessed the real threat would be the undead patrolling the halls?"
+msgstr "你说服了几名实验体同伴加入你的逃亡计划。过去几个月里，实验室人员的行为一直很古怪，但谁能想到真正的威胁竟然是在走廊里巡逻的丧尸呢？"
+
+#. ~ Profession (male Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+"你和同伴们被关在这个异界地狱里已经好几天了，你不停地抠刮墙壁，直到找到一块松动的碎片，可以把它做成一把粗糙的尖刀。令人窒息的高温和烟雾让你们头晕目眩，要么现在动手，要么死路一条。"
+
+#. ~ Profession (female Escape Team) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow captives have been held in this alien hellhole for a "
+"couple days, picking at the walls until you found a loose piece you could "
+"fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
+"it's now or never."
+msgstr ""
+"你和同伴们被关在这个异界地狱里已经好几天了，你不停地抠刮墙壁，直到找到一块松动的碎片，可以把它做成一把粗糙的尖刀。令人窒息的高温和烟雾让你们头晕目眩，要么现在动手，要么死路一条。"
+
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
 msgctxt "scenario_male"
@@ -34107,6 +34234,21 @@ msgid ""
 msgstr ""
 "用于风力发电的大型叶片式涡轮机。 "
 "涡轮机在微风中闲散地旋转着，可以连接到附近的基地为其提供电力。涡轮机也可以拆解用于其他地方的本地发电，但其功率远不及完全运转的专用涡轮机。"
+
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid "hydroelectric turbine assembly"
+msgstr "水力涡轮发电机组"
+
+#. ~ Description for hydroelectric turbine assembly
+#: data/json/furniture_and_terrain/furniture-industrial.json
+msgid ""
+"A huge turbine meant for generating power from flowing water.  What's left "
+"of it is a far cry from the megawatts of power it used to output, but it "
+"could still be hooked up to provide power to a nearby base.  Alternatively, "
+"it could be salvaged for parts that could be used for power generation "
+"elsewhere."
+msgstr ""
+"一个用于水力发电的巨型涡轮机。其残骸与过去数兆瓦的功率输出相去甚远，但仍然可以连接起来为附近的基地供电。或者，也可以将其拆解，回收可用于其他地方发电的零件。"
 
 #: data/json/furniture_and_terrain/furniture-medical.json
 #: data/json/items/tool/med.json
@@ -53655,10 +53797,9 @@ msgstr[0] "彩織長圍巾"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
-msgstr ""
-"一條非常長且質地輕巧的圍巾, 可穿戴以覆蓋嘴部保持溫暖。因為特別加長的緣故, 足以同時保暖臉部以及雙手。當你覺得悶熱時可按下使用鍵以解下圍巾。"
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to loosen it if you get too warm."
+msgstr "一条很长的轻薄布围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太热时，可以用它来放松围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "long patchwork scarf (loose)"
@@ -53670,10 +53811,9 @@ msgstr[0] "彩織長圍巾 (攤開)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A very long light cloth scarf, worn over the mouth for warmth.  With the "
-"extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
-msgstr ""
-"一條非常長且質地輕巧的圍巾, 可穿戴以覆蓋嘴部保持溫暖。因為特別加長的緣故, 足以同時保暖臉部以及雙手。當你覺得寒冷時可按下使用鍵以披上圍巾。"
+"extra length, it's enough to handle oversized wearers and accommodate your "
+"hands too.  Use it to wear it tighter if you get too cold."
+msgstr "一条很长的轻薄布围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太冷时，可以用它来系紧围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "knit scarf"
@@ -53709,10 +53849,9 @@ msgstr[0] "針織長圍巾"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to loosen it if you get too warm."
-msgstr ""
-"一條非常長的針織棉質圍巾, 可穿戴以覆蓋嘴部保持溫暖。因為特別加長的緣故, 足以同時保暖臉部以及雙手。當你覺得悶熱時可按下使用鍵以解下圍巾。"
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to loosen it if you get too warm."
+msgstr "一条很长的棉织围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太热时，可以用它来放松围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "long knit scarf (loose)"
@@ -53724,10 +53863,9 @@ msgstr[0] "針織長圍巾 (攤開)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long knitted cotton scarf, worn over the mouth for warmth.  With "
-"the extra length, it's enough to handle nonstandard facial features and "
-"accommodate your hands too.  Use it to wear it tighter if you get too cold."
-msgstr ""
-"一條非常長的針織棉質圍巾, 可穿戴以覆蓋嘴部保持溫暖。因為特別加長的緣故, 足以同時保暖臉部以及雙手。當你覺得寒冷時可按下使用鍵以圍上圍巾。"
+"the extra length, it's enough to handle oversized wearers and accommodate "
+"your hands too.  Use it to wear it tighter if you get too cold."
+msgstr "一条很长的棉织围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太冷时，可以用它来系紧围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "wool scarf"
@@ -53771,10 +53909,9 @@ msgstr[0] "羊毛長圍巾"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
-msgstr ""
-"一條非常長的羊毛圍巾, 可以用來遮住嘴部保暖。特別長的它可以用來遮住一些臉上的異變特徵, 也可以幫你的手保暖。當你覺得悶熱時可按下使用鍵以解下圍巾。"
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
+msgstr "一条很长的羊毛围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太热时，可以用它来放松围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "long wool scarf (loose)"
@@ -53786,10 +53923,9 @@ msgstr[0] "羊毛長圍巾 (攤開)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long wool scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
-msgstr ""
-"一條非常長的羊毛圍巾, 可以用來遮住嘴部保暖。特別長的它可以用來遮住一些臉上的異變特徵, 也可以幫你的手保暖。當你覺得寒冷時可按下使用鍵以圍上圍巾。"
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
+msgstr "一条很长的羊毛围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太冷时，可以用它来系紧围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "fur scarf"
@@ -53825,11 +53961,9 @@ msgstr[0] "毛皮長圍巾"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to loosen it if you get too warm."
-msgstr ""
-"一條非常長的毛皮圍巾, 可以用來遮住嘴部保暖。特別長的它可以用來遮住一些臉上的異變特徵, 也可以幫你的手保暖。如果你覺得太熱, "
-"你可以把它弄鬆一點。當你覺得悶熱時可按下使用鍵以鬆開圍巾。"
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to loosen it if you get too warm."
+msgstr "一条很长的毛皮围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太热时，可以用它来放松围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "long fur scarf (loose)"
@@ -53841,11 +53975,9 @@ msgstr[0] "毛皮長圍巾 (攤開)"
 #: data/json/items/tool_armor.json
 msgid ""
 "A really long fur scarf, worn over the mouth for warmth.  With the extra "
-"length, it's enough to handle nonstandard facial features and accommodate "
-"your hands too.  Use it to wear it tighter if you get too cold."
-msgstr ""
-"一條非常長的毛皮圍巾, 可以用來遮住嘴部保暖。特別長的它可以用來遮住一些臉上的異變特徵, 也可以幫你的手保暖。如果你覺得太熱, "
-"你可以把它弄鬆一點。當你覺得寒冷時可按下使用鍵以圍上圍巾。"
+"length, it's enough to handle oversized wearers and accommodate your hands "
+"too.  Use it to wear it tighter if you get too cold."
+msgstr "一条很长的毛皮围巾，可以围在嘴上保暖。超长的尺寸足以应对体型庞大的穿戴者，甚至还能包住你的双手。当你觉得太冷时，可以用它来系紧围巾。"
 
 #: data/json/items/tool_armor.json
 msgid "thermal electric outfit"
@@ -58337,6 +58469,42 @@ msgid ""
 "An oversized leg warmer clearly designed for legless mutants, or an awkward "
 "tube skirt for more normal survivors."
 msgstr "一个超大的暖腿套，显然是为无腿的突变者设计的，或者对于更普通的幸存者来说，是一件尴尬的筒裙。"
+
+#: data/json/items/armor/boots.json
+msgid "fur tail warmer"
+msgid_plural "fur tail warmers"
+msgstr[0] "毛皮尾部保暖套"
+
+#. ~ Description for {'str': 'fur tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of fur.  Clearly designed for legless mutants, "
+"or an awkward tube skirt for more normal survivors."
+msgstr "一个毛皮制成的超大暖腿套，显然是为无腿的突变者设计的，或者对于更普通的幸存者来说，是一件尴尬的筒裙。"
+
+#: data/json/items/armor/boots.json
+msgid "leather tail warmer"
+msgid_plural "leather tail warmers"
+msgstr[0] "皮革尾部保暖套"
+
+#. ~ Description for {'str': 'leather tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of leather.  Clearly designed for legless "
+"mutants, or an awkward tube skirt for more normal survivors."
+msgstr "一个皮革制成的超大暖腿套，显然是为无腿的突变者设计的，或者对于更普通的幸存者来说，是一件尴尬的筒裙。"
+
+#: data/json/items/armor/boots.json
+msgid "wool tail warmer"
+msgid_plural "wool tail warmers"
+msgstr[0] "羊毛尾部保暖套"
+
+#. ~ Description for {'str': 'wool tail warmer'}
+#: data/json/items/armor/boots.json
+msgid ""
+"An oversized leg warmer made of wool.  Clearly designed for legless mutants,"
+" or an awkward tube skirt for more normal survivors."
+msgstr "一个羊毛制成的超大暖腿套，显然是为无腿的突变者设计的，或者对于更普通的幸存者来说，是一件尴尬的筒裙。"
 
 #: data/json/items/armor/boots.json
 msgid "pair of tabi"
@@ -65239,8 +65407,8 @@ msgstr[0] "漁夫裝"
 #. ~ Description for {'str': 'pair of fishing waders', 'str_pl': 'pairs of
 #. fishing waders'}
 #: data/json/items/armor/legs_clothes.json
-msgid "Waterproof plastic fishing waders with a single large front pocket."
-msgstr "由防水橡膠製成的漁夫裝, 前面有一個大口袋。"
+msgid "Waterproof fishing waders with a single large front pocket."
+msgstr "一件有着一个前置大口袋的防水渔夫装。"
 
 #: data/json/items/armor/legs_clothes.json
 msgid "hot pants"
@@ -67095,6 +67263,49 @@ msgid ""
 "A large metal reinforced shield with spikes jutting out of it.  Can be used "
 "as a melee weapon if need be."
 msgstr "一种金属加固的大型盾牌，上面突出着尖刺。如果需要，可以用作近战武器。"
+
+#: data/json/items/armor/shields.json
+msgid "bronze shield"
+msgid_plural "bronze shields"
+msgstr[0] "青铜盾"
+
+#. ~ Description for {'str': 'bronze shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A simple round shield made of wood, faced with a sheet of work-hardened "
+"bronze in the vein of a Greek hoplon.  Tougher against cutting weapons than "
+"iron-banded shields for the same encumbrance, but heavier and less "
+"protective against bashing weapons."
+msgstr ""
+"一面简单的木制圆盾，盾面覆盖着一张经过冷锻硬化的青铜板，类似于希腊重装步兵圆盾。在同等负重下，它比铁箍盾更能抵抗劈砍武器，但重量更大，对钝击武器的防护能力也较弱。"
+
+#: data/json/items/armor/shields.json
+msgid "scaleskin shield"
+msgid_plural "scaleskin shields"
+msgstr[0] "鳞甲盾"
+
+#. ~ Description for {'str': 'scaleskin shield'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A tall oval shield made from the hardened scales of large reptiles, stitched"
+" together and boiled to harden it into a single stiff panel, then mounted on"
+" a central wooden handgrip similar to shields historically associated with "
+"southeastern Africa.  Surprisingly light and durable."
+msgstr ""
+"一面高大的椭圆形盾牌，由大型爬行动物的硬化鳞片制成。这些鳞片被缝合在一起，经过煮沸硬化成一整块坚硬的面板，然后安装在中央的木制握把上，类似于历史上非洲东南部的盾牌。出人意料地轻便耐用。"
+
+#: data/json/items/armor/shields.json
+msgid "wooden targe"
+msgid_plural "wooden targes"
+msgstr[0] "木制小圆盾"
+
+#. ~ Description for {'str': 'wooden targe'}
+#: data/json/items/armor/shields.json
+msgid ""
+"A small, round wooden shield designed more for swashbuckling than for "
+"fending off arrows.  It's small and light enough to not hinder the use of "
+"your hands."
+msgstr "一面小巧的木制圆盾，它更适合用于近身格挡，而非抵御箭矢。它小而轻，不会妨碍你使用双手。"
 
 #: data/json/items/armor/shields.json
 msgid "carbon fiber buckler"
@@ -126830,9 +127041,9 @@ msgstr "狼爪"
 #. ~ Description for {'str': 'Claws'}
 #: data/json/mutations/mutations.json
 msgid ""
-"You have claws on the ends of your fingers.  If you aren't wearing gloves, "
-"your unarmed attacks deal a minor amount of cutting damage."
-msgstr "你的手指末端有爪子。假如你沒有戴手套, 你的徒手攻擊能造成少量的砍劈傷害。"
+"You have claws on the ends of your fingers.  Prevents wearing gloves, unless"
+" they're fingerless."
+msgstr "你的指尖长有爪子。这使你无法穿戴手套，露指手套除外。"
 
 #: data/json/mutations/mutations.json
 msgid "Rat Claws"
@@ -126840,8 +127051,10 @@ msgstr "鼠爪"
 
 #. ~ Description for {'str': 'Rat Claws'}
 #: data/json/mutations/mutations.json
-msgid "Your claws have grown tougher and slightly gnarled."
-msgstr "你的爪子變得更粗更硬。"
+msgid ""
+"Your claws have grown tougher and slightly gnarled.  Prevents wearing gloves"
+" that aren't fingerless."
+msgstr "你的爪子变得更坚硬，略带扭曲。这使你无法穿戴非露指的手套。"
 
 #: data/json/mutations/mutations.json
 msgid "Stainless Claws"
@@ -126851,8 +127064,9 @@ msgstr "不銹鋼爪"
 #: data/json/mutations/mutations.json
 msgid ""
 "Your paws are bone, muscle, and claw with a thin layer of skin and fur.  "
-"They might as well be made of stainless steel."
-msgstr "你的手是由骨頭、肌肉還有爪子構成, 外面覆蓋一層皮膚和毛皮, 他們或許也可以用不鏽鋼組成。"
+"They might as well be made of stainless steel.  Prevents wearing gloves that"
+" aren't fingerless."
+msgstr "你的爪子由骨骼、肌肉和利爪构成，仅覆盖着一层薄薄的皮肤和毛发。它们简直就像不锈钢一样坚硬。这使你无法穿戴非露指的手套。"
 
 #: data/json/mutations/mutations.json
 msgid "Retractable Claws"
@@ -126908,8 +127122,10 @@ msgstr "巨爪"
 msgid ""
 "Your index fingers have grown into huge talons.  After a bit of practice, "
 "you find that this does not affect your dexterity, but allows for a deadly "
-"unarmed attack.  They also prevent wearing gloves."
-msgstr "你的手指突變成了大型的爪子。經過了練習，你發現這不會影響你的敏捷，反而能讓你使出致命的徒手攻擊。只是不能戴手套。"
+"unarmed attack.  They also prevent wearing gloves, though fingerless gloves "
+"are fair game."
+msgstr ""
+"你的食指已经长成了巨大的利爪。经过一些练习后，你发现这并不会影响你的灵巧度，反而能让你进行致命的徒手攻击。它们也让你无法穿戴手套，不过露指手套还是可以的。"
 
 #: data/json/mutations/mutations.json
 msgid "Radiogenic"
@@ -148344,6 +148560,30 @@ msgstr "跟我走吧，如果你想活命的話。"
 msgid "I've no use for weaklings.  Run.  Now."
 msgstr "我對懦夫沒興趣。快滾，現在。"
 
+#: data/json/npcs/professions/escape_team.json
+msgid "Escapist"
+msgstr "逃亡者"
+
+#: data/json/npcs/professions/escape_team.json
+msgid "I'm looking for a way out."
+msgstr "我在寻找出路。"
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Mutant Patient"
+msgstr "变种人病人"
+
+#: data/json/npcs/professions/escape_team.json
+msgid "Captive"
+msgstr "俘虜"
+
+#: data/json/npcs/professions/frat.json
+msgid "Frat Member"
+msgstr "兄弟会成员"
+
+#: data/json/npcs/professions/frat.json
+msgid "I'm looking for parties."
+msgstr "我在找派对。"
+
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json
 msgid "Reach Refugee Center"
 msgstr "到達難民中心"
@@ -165437,6 +165677,26 @@ msgstr "桌游店（屋顶）"
 msgid "convention center"
 msgstr "会展中心"
 
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam"
+msgstr "大坝"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam Passthrough"
+msgstr "大坝通道"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (overpass)"
+msgstr "大坝（天桥）"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ground)"
+msgstr "大坝（地面）"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_dams.json
+msgid "Dam (ramp)"
+msgstr "大坝（斜坡）"
+
 #: data/json/overmap/overmap_terrain/overmap_terrain_evac_center.json
 #: data/mods/alt_map_key/overmap_terrain.json
 msgid "refugee center"
@@ -167211,6 +167471,11 @@ msgstr "腿部"
 #: data/json/recipes/recipes.json
 msgid "FEET"
 msgstr "腳掌"
+
+#. ~ Crafting recipes subcategory of 'ARMOR' category
+#: data/json/recipes/recipes.json
+msgid "SHIELD"
+msgstr "盾牌"
 
 #. ~ Crafting recipes subcategory of 'OTHER' category
 #: data/json/recipes/recipes.json
@@ -190186,6 +190451,14 @@ msgid ""
 "balancing reasons."
 msgstr "一款由自信过头的警员怪物携带的手枪，为了平衡而稍显不准。"
 
+#: data/mods/Civilians/npcs.json
+msgid "Militia Member"
+msgstr "民兵成员"
+
+#: data/mods/Civilians/npcs.json
+msgid "Ready to fight."
+msgstr "准备战斗。"
+
 #: data/mods/Civilians/professions.json
 msgctxt "profession_male"
 msgid "Futile Fighter"
@@ -190211,6 +190484,34 @@ msgid ""
 "The cataclysm may have caught you off guard, but you're not going down "
 "without a fight!"
 msgstr "大灾变可能让你措手不及，但你绝不会不战而降！"
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_male"
+msgid "Makeshift Militia"
+msgstr "临时民兵"
+
+#: data/mods/Civilians/professions.json
+msgctxt "profession_female"
+msgid "Makeshift Militia"
+msgstr "临时民兵"
+
+#. ~ Profession (male Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
+msgstr "你和几位邻居抓起了所有能找到的棍棒和废料。如今大灾变降临，你成了一名临时民兵——装备简陋，训练不足，但决心奋战至死。"
+
+#. ~ Profession (female Makeshift Militia) description
+#: data/mods/Civilians/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and a few neighbors grabbed whatever sticks and scraps you could find. "
+"Now the cataclysm is here, and you’re a futile fighter in a makeshift "
+"militia - badly equipped, badly trained, but determined to go down swinging."
+msgstr "你和几位邻居抓起了所有能找到的棍棒和废料。如今大灾变降临，你成了一名临时民兵——装备简陋，训练不足，但决心奋战至死。"
 
 #: data/mods/Civilians/speech.json
 msgid "howling in terror."
@@ -219167,6 +219468,10 @@ msgstr "取消交易"
 msgid "Change profession name"
 msgstr "更改职业名称"
 
+#: data/raw/keybindings/keybindings.json src/character_display.cpp
+msgid "Change name"
+msgstr "更改名称"
+
 #: data/raw/keybindings/keybindings.json
 msgid "Wear"
 msgstr "穿戴"
@@ -227023,6 +227328,10 @@ msgstr "[<color_yellow>%s</color>]"
 msgid "Profession Name: "
 msgstr "职业名称："
 
+#: src/character_display.cpp src/veh_interact.cpp
+msgid "Name: "
+msgstr "名稱: "
+
 #: src/character_display.cpp
 #, c-format
 msgid "Strength -%d"
@@ -231261,7 +231570,7 @@ msgstr "新已完成任务："
 msgid "New failed missions:"
 msgstr "新已失败任务："
 
-#: src/diary.cpp src/memorial_logger.cpp
+#: src/diary.cpp src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Bionics:"
 msgstr "生化插件:"
 
@@ -233271,6 +233580,10 @@ msgid "Steal"
 msgstr "偷竊"
 
 #: src/game.cpp
+msgid "Control"
+msgstr "控制"
+
+#: src/game.cpp
 #, c-format
 msgid "You swap places with %s."
 msgstr "你和 %s 互換位置。"
@@ -234708,8 +235021,8 @@ msgid "Take off item"
 msgstr "脫掉物品"
 
 #: src/game_inventory.cpp
-msgid "You don't wear anything."
-msgstr "你沒有穿戴任何東西。"
+msgid "You aren't wearing anything."
+msgstr "你什么都没穿。"
 
 #: src/game_inventory.cpp
 #, c-format
@@ -237877,7 +238190,7 @@ msgstr "要把多少的 %1$s 放入 %2$s?"
 msgid "The %1$s contains %2$d %3$s."
 msgstr "%1$s 由 %2$d 個 %3$s 構成。"
 
-#: src/iexamine.cpp
+#: src/iexamine.cpp src/vehicle_use.cpp
 msgid "Which tool do you want to use?"
 msgstr "你想用哪个工具？"
 
@@ -241416,8 +241729,8 @@ msgid "You do not have an item that can perform this action."
 msgstr "你沒有可以執行這個動作的物品。"
 
 #: src/item_action.cpp
-msgid "You don't have any items with registered uses"
-msgstr "你沒有可以使用動作選單的物品。"
+msgid "You don't have any items with registered uses!"
+msgstr "你没有任何可使用的物品！"
 
 #: src/item_action.cpp
 msgid "Execute which action?"
@@ -249705,7 +250018,7 @@ msgstr "總擊殺數: %d"
 msgid "%s: %d (%d %%)"
 msgstr "%s: %d (%d%%)"
 
-#: src/memorial_logger.cpp
+#: src/memorial_logger.cpp src/newcharacter.cpp
 msgid "Traits:"
 msgstr "特質:"
 
@@ -254957,17 +255270,9 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession traits:"
-msgstr "職業特質:"
-
-#: src/newcharacter.cpp
 msgctxt "set_profession_trait"
 msgid "None"
 msgstr "無"
-
-#: src/newcharacter.cpp
-msgid "Profession skills:"
-msgstr "職業技能:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_skill"
@@ -254981,8 +255286,8 @@ msgid "%1$s (%2$d)"
 msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
-msgid "Profession items:"
-msgstr "職業物品:"
+msgid "Items:"
+msgstr "物品："
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_item"
@@ -255011,10 +255316,6 @@ msgstr "無\n"
 msgctxt "set_profession_item_inventory"
 msgid "None\n"
 msgstr "無\n"
-
-#: src/newcharacter.cpp
-msgid "Profession bionics:"
-msgstr "職業生化插件:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_bionic"
@@ -255049,8 +255350,12 @@ msgid "%s level %d"
 msgstr "%s（%d级）"
 
 #: src/newcharacter.cpp
-msgid "Profession money:"
-msgstr "职业初始资金："
+msgid "Money:"
+msgstr "金钱："
+
+#: src/newcharacter.cpp
+msgid "Companions:"
+msgstr "同伴："
 
 #: src/newcharacter.cpp
 #, c-format
@@ -264458,10 +264763,6 @@ msgstr ""
 "吃水/最高水位：<color_light_blue>%4.2f</color>米/<color_light_red>%4.2f</color>米"
 
 #: src/veh_interact.cpp
-msgid "Name: "
-msgstr "名稱: "
-
-#: src/veh_interact.cpp
 #, c-format
 msgid "%s (%s)"
 msgstr "%s (%s)"
@@ -265880,8 +266181,8 @@ msgid "Use a towel"
 msgstr "使用毛巾"
 
 #: src/vehicle_use.cpp
-msgid "Use the welding rig"
-msgstr "使用車載電焊機"
+msgid "Use the integrated tools"
+msgstr "使用集成工具"
 
 #: src/vehicle_use.cpp
 msgid "Purify water in carried container"
