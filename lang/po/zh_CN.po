@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-14 01:40+0000\n"
+"POT-Creation-Date: 2025-09-15 01:33+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -24324,6 +24324,96 @@ msgid ""
 "it's now or never."
 msgstr ""
 "你和同伴们被关在这个异界地狱里已经好几天了，你不停地抠刮墙壁，直到找到一块松动的碎片，可以把它做成一把粗糙的尖刀。令人窒息的高温和烟雾让你们头晕目眩，要么现在动手，要么死路一条。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Graffiti Crew"
+msgstr "涂鸦帮"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Graffiti Crew"
+msgstr "涂鸦帮"
+
+#. ~ Profession (male Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr "你和你的街头艺术家同伴们靠着团结一致，在最初的混乱中幸存了下来。现在，有了比被警察抓住更为紧迫的事情。"
+
+#. ~ Profession (female Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr "你和你的街头艺术家同伴们靠着团结一致，在最初的混乱中幸存了下来。现在，有了比被警察抓住更为紧迫的事情。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Heist Crew"
+msgstr "劫案帮"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Heist Crew"
+msgstr "劫案帮"
+
+#. ~ Profession (male Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr "从你记事起，你就一直过着双重生活：白天是普通司机，晚上是劫案车手。现在，你接了最后一单活。"
+
+#. ~ Profession (female Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr "从你记事起，你就一直过着双重生活：白天是普通司机，晚上是劫案车手。现在，你接了最后一单活。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Neighborhood Watch"
+msgstr "邻里守望队"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Neighborhood Watch"
+msgstr "邻里守望队"
+
+#. ~ Profession (male Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
+msgstr ""
+"你一直都知道末日将至——也许不是丧尸，但肯定是某种灾难。在深夜末日电影、廉价啤酒和油腻披萨的陪伴下，你说服了邻居们把这事当真。当末日真的降临时，你开上卡车，叫上兄弟们，并发誓要保护好这片街区。现在，是时候将那些计划付诸行动了。"
+
+#. ~ Profession (female Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
+msgstr ""
+"你一直都知道末日将至——也许不是丧尸，但肯定是某种灾难。在深夜末日电影、廉价啤酒和油腻披萨的陪伴下，你说服了邻居们把这事当真。当末日真的降临时，你开上卡车，叫上兄弟们，并发誓要保护好这片街区。现在，是时候将那些计划付诸行动了。"
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -65451,31 +65541,30 @@ msgid ""
 msgstr "一件镶嵌有凯夫拉片的长裤，有许多的口袋，非常舒适、耐用、易于穿戴。"
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored skirt"
-msgid_plural "armored skirt"
-msgstr[0] "装甲裙"
+msgid "padded skirt"
+msgid_plural "padded skirt"
+msgstr[0] "衬垫护裙"
 
-#. ~ Description for {'str_sp': 'armored skirt'}
+#. ~ Description for {'str_sp': 'padded skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping quilted pads, similar to those used "
-"by ancient Roman and Greek soldiers.  Not quite as protective as a gambeson,"
-" but it's far less hot and encumbering."
-msgstr "这是一种及膝长度的裙子，由重叠的夹棉垫制成，类似于古罗马和希腊士兵所使用的装甲裙。虽然不如护身衣那样防护，但要凉爽轻便得多。"
+"by ancient Roman and Greek soldiers.  Doesn't cover as much as a gambeson, "
+"but it's far less hot and encumbering."
+msgstr "这是一种及膝长度的裙子，由重叠的夹棉垫制成，类似于古罗马和希腊士兵所使用的装甲裙。覆盖范围不如棉甲，但要凉爽轻便得多。"
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored leather skirt"
-msgid_plural "armored leather skirt"
-msgstr[0] "装甲皮裙"
+msgid "leather armor skirt"
+msgid_plural "leather armor skirt"
+msgstr[0] "皮甲护裙"
 
-#. ~ Description for {'str_sp': 'armored leather skirt'}
+#. ~ Description for {'str_sp': 'leather armor skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping leather armor plates, similar to "
 "those used by ancient Roman and Greek soldiers.  It's not very encumbering "
-"compared to proper legplates, but it's less protective as well."
-msgstr ""
-"这是一种及膝长度的裙子，由重叠的皮革铠甲板制成，类似于古罗马和希腊士兵所使用的装甲裙。相比于合适的护腿板，它并不会造成太多负担，但保护性也相对较弱。"
+"compared to proper legplates, but provides less coverage too."
+msgstr "这是一种及膝长度的裙子，由重叠的皮革铠甲板制成，类似于古罗马和希腊士兵所使用的装甲裙。比起正规的腿甲，它没那么累赘，但覆盖范围也较小。"
 
 #: data/json/items/armor/legs_armor.json
 msgid "plated leather skirt"
@@ -65486,9 +65575,9 @@ msgstr[0] "金属皮裙"
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "An armored skirt made of leather with metal plates expertly sewn into it.  "
-"It's not as protective as proper leg armor, but it's also far more tolerable"
-" to wear in the summer and far easier to move in."
-msgstr "这是一种由皮革制成的装甲裙，其内精巧缝入金属板。相比于合适的腿部装甲，它的防护性稍逊一筹，但在夏天穿着更为舒适，也更容易活动。"
+"Covers less than proper leg armor, but it's also far more tolerable to wear "
+"in the summer and far easier to move in."
+msgstr "这是一种由皮革制成的装甲裙，其内精巧缝入金属板。覆盖范围不如正规的腿甲，但在夏天穿着更为舒适，也更容易活动。"
 
 #: data/json/items/armor/legs_armor.json
 msgid "pair of bone greaves"
@@ -68831,6 +68920,19 @@ msgid ""
 "A cuirass made of multiple pieces of tough leather, laced together for "
 "durable yet flexible protection."
 msgstr "一件将多块坚韧皮革系在一起而制成的胸甲，耐用且轻便灵活，能提供不错的防护。"
+
+#: data/json/items/armor/torso_armor.json
+msgid "plated lamellar cuirass"
+msgid_plural "plated lamellar cuirasses"
+msgstr[0] "鳞甲胸甲"
+
+#. ~ Description for {'str': 'plated lamellar cuirass', 'str_pl': 'plated
+#. lamellar cuirasses'}
+#: data/json/items/armor/torso_armor.json
+msgid ""
+"A cuirass made of multiple pieces of tough leather and metal scales laced "
+"together, forming durable yet flexible protection."
+msgstr "一种由多片坚韧皮革与金属鳞片编连而成的胸甲，既坚固又灵活。"
 
 #: data/json/items/armor/torso_armor.json
 msgid "lorica segmentata"
@@ -120740,7 +120842,7 @@ msgstr[0] "鳞甲熊"
 #. ~ Description for {'str': 'scaled bear'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This bear is covered by large, black, scales.  It seems to have slight "
+"This bear is covered in large, black, scales.  It seems to have slight "
 "problems turning around, but its sinuous movement is no slower than that of "
 "normal bears."
 msgstr "这只熊全身覆盖着巨大的黑色鳞片。它转身似乎有点困难，但蜿蜒的动作并不比普通的熊慢。"
@@ -120815,7 +120917,7 @@ msgstr[0] "恐狼"
 #. ~ Description for {'str': 'dire wolf'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This wolf has grown to terrifying proportions, rivalling a small car.  Its "
+"This wolf has grown to terrifying proportions, rivaling a small car.  Its "
 "teeth give steak knives a run for their money, and it definitely doesn't "
 "look friendly."
 msgstr "这只长得特别吓人的狼，大小堪比小汽车。它的牙齿异常锋利，足以与牛排刀匹敌，而且看来明显不太友善。"
@@ -134516,6 +134618,7 @@ msgstr "拾荒者"
 
 #: data/json/npcs/classes.json data/json/npcs/homeless/shelter_survivors.json
 #: data/json/npcs/prisoners/mi-go_prisoners.json
+#: data/json/npcs/professions/neighborhood_watch.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_1_Reena_Sandhu.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_2_Dino_Dave.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_3_Luo_Meizhen.json
@@ -137771,6 +137874,31 @@ msgid ""
 "Search any nearby pet stores for armor for your pups. You think you remember"
 " the location of one..."
 msgstr "搜寻附近的宠物店，为你的狗狗们寻找护甲。你似乎记得其中一家的位置……"
+
+#: data/json/npcs/missiondef.json
+msgid "The Final Heist"
+msgstr "终极劫案"
+
+#. ~ Description for mission '{'str': 'The Final Heist'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"You and your crew swore the last job was the last job - until the dead "
+"started getting involved. Now, with old friends, loaded guns, and one "
+"impossible score, you’ve got one shot to pull this off before the grave "
+"claims you too."
+msgstr ""
+"你和你的弟兄们发过誓，上一票就是最后一票——直到死人也掺和了进来。现在，带上老朋友，揣上上了膛的枪，再干一票不可能的任务，在被拖进坟墓之前，你们只有这一次机会了。"
+
+#: data/json/npcs/missiondef.json
+msgid "Rebuild the Neighborhood"
+msgstr "重建社区"
+
+#. ~ Description for mission '{'str': 'Rebuild the Neighborhood'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"The old neighborhood may never be the same - but we can rebuild a new one "
+"from the ground up, starting at the hardware store."
+msgstr "老社区可能再也回不去了——但我们可以从零开始，重建一个新的家园，就从五金店开始。"
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -148943,6 +149071,42 @@ msgstr "兄弟会成员"
 #: data/json/npcs/professions/frat.json
 msgid "I'm looking for parties."
 msgstr "我在找派对。"
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "Street Artist"
+msgstr "街头艺术家"
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "I'm just looking for a good spot to tag."
+msgstr "我只是在找个好地方涂鸦。"
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Shooter"
+msgstr "劫案枪手"
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "I'm just looking for a quick buck."
+msgstr "我只是想捞一笔快钱。"
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Thief"
+msgstr "劫案窃贼"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Hunter"
+msgstr "社区猎人"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Mechanic"
+msgstr "社区技工"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Doctor"
+msgstr "社区医生"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Delinquent"
+msgstr "社区小混混"
 
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json
 msgid "Reach Refugee Center"

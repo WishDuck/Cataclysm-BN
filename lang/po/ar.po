@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-14 01:40+0000\n"
+"POT-Creation-Date: 2025-09-15 01:33+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2023\n"
 "Language-Team: Arabic (https://app.transifex.com/bn-team/teams/113585/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -23931,6 +23931,94 @@ msgid ""
 "couple days, picking at the walls until you found a loose piece you could "
 "fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
 "it's now or never."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Graffiti Crew"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Graffiti Crew"
+msgstr ""
+
+#. ~ Profession (male Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr ""
+
+#. ~ Profession (female Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Heist Crew"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Heist Crew"
+msgstr ""
+
+#. ~ Profession (male Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr ""
+
+#. ~ Profession (female Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Neighborhood Watch"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Neighborhood Watch"
+msgstr ""
+
+#. ~ Profession (male Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
+msgstr ""
+
+#. ~ Profession (female Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
 msgstr ""
 
 #. ~ Name for scenario 'Evacuee' for a male character
@@ -73897,8 +73985,8 @@ msgid ""
 msgstr ""
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored skirt"
-msgid_plural "armored skirt"
+msgid "padded skirt"
+msgid_plural "padded skirt"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
@@ -73906,17 +73994,17 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#. ~ Description for {'str_sp': 'armored skirt'}
+#. ~ Description for {'str_sp': 'padded skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping quilted pads, similar to those used "
-"by ancient Roman and Greek soldiers.  Not quite as protective as a gambeson,"
-" but it's far less hot and encumbering."
+"by ancient Roman and Greek soldiers.  Doesn't cover as much as a gambeson, "
+"but it's far less hot and encumbering."
 msgstr ""
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored leather skirt"
-msgid_plural "armored leather skirt"
+msgid "leather armor skirt"
+msgid_plural "leather armor skirt"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
@@ -73924,12 +74012,12 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#. ~ Description for {'str_sp': 'armored leather skirt'}
+#. ~ Description for {'str_sp': 'leather armor skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping leather armor plates, similar to "
 "those used by ancient Roman and Greek soldiers.  It's not very encumbering "
-"compared to proper legplates, but it's less protective as well."
+"compared to proper legplates, but provides less coverage too."
 msgstr ""
 
 #: data/json/items/armor/legs_armor.json
@@ -73946,8 +74034,8 @@ msgstr[5] ""
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "An armored skirt made of leather with metal plates expertly sewn into it.  "
-"It's not as protective as proper leg armor, but it's also far more tolerable"
-" to wear in the summer and far easier to move in."
+"Covers less than proper leg armor, but it's also far more tolerable to wear "
+"in the summer and far easier to move in."
 msgstr ""
 
 #: data/json/items/armor/legs_armor.json
@@ -78460,6 +78548,24 @@ msgstr[5] ""
 msgid ""
 "A cuirass made of multiple pieces of tough leather, laced together for "
 "durable yet flexible protection."
+msgstr ""
+
+#: data/json/items/armor/torso_armor.json
+msgid "plated lamellar cuirass"
+msgid_plural "plated lamellar cuirasses"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. ~ Description for {'str': 'plated lamellar cuirass', 'str_pl': 'plated
+#. lamellar cuirasses'}
+#: data/json/items/armor/torso_armor.json
+msgid ""
+"A cuirass made of multiple pieces of tough leather and metal scales laced "
+"together, forming durable yet flexible protection."
 msgstr ""
 
 #: data/json/items/armor/torso_armor.json
@@ -148930,7 +149036,7 @@ msgstr[5] ""
 #. ~ Description for {'str': 'scaled bear'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This bear is covered by large, black, scales.  It seems to have slight "
+"This bear is covered in large, black, scales.  It seems to have slight "
 "problems turning around, but its sinuous movement is no slower than that of "
 "normal bears."
 msgstr ""
@@ -149035,7 +149141,7 @@ msgstr[5] ""
 #. ~ Description for {'str': 'dire wolf'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This wolf has grown to terrifying proportions, rivalling a small car.  Its "
+"This wolf has grown to terrifying proportions, rivaling a small car.  Its "
 "teeth give steak knives a run for their money, and it definitely doesn't "
 "look friendly."
 msgstr ""
@@ -163618,6 +163724,7 @@ msgstr ""
 
 #: data/json/npcs/classes.json data/json/npcs/homeless/shelter_survivors.json
 #: data/json/npcs/prisoners/mi-go_prisoners.json
+#: data/json/npcs/professions/neighborhood_watch.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_1_Reena_Sandhu.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_2_Dino_Dave.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_3_Luo_Meizhen.json
@@ -166808,6 +166915,30 @@ msgstr ""
 msgid ""
 "Search any nearby pet stores for armor for your pups. You think you remember"
 " the location of one..."
+msgstr ""
+
+#: data/json/npcs/missiondef.json
+msgid "The Final Heist"
+msgstr ""
+
+#. ~ Description for mission '{'str': 'The Final Heist'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"You and your crew swore the last job was the last job - until the dead "
+"started getting involved. Now, with old friends, loaded guns, and one "
+"impossible score, you’ve got one shot to pull this off before the grave "
+"claims you too."
+msgstr ""
+
+#: data/json/npcs/missiondef.json
+msgid "Rebuild the Neighborhood"
+msgstr ""
+
+#. ~ Description for mission '{'str': 'Rebuild the Neighborhood'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"The old neighborhood may never be the same - but we can rebuild a new one "
+"from the ground up, starting at the hardware store."
 msgstr ""
 
 #: data/json/npcs/npc.json
@@ -177687,6 +177818,42 @@ msgstr ""
 
 #: data/json/npcs/professions/frat.json
 msgid "I'm looking for parties."
+msgstr ""
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "Street Artist"
+msgstr ""
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "I'm just looking for a good spot to tag."
+msgstr ""
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Shooter"
+msgstr ""
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "I'm just looking for a quick buck."
+msgstr ""
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Thief"
+msgstr ""
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Hunter"
+msgstr ""
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Mechanic"
+msgstr ""
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Doctor"
+msgstr ""
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Delinquent"
 msgstr ""
 
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json

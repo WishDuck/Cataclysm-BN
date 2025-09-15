@@ -28,16 +28,16 @@
 # 백도 <tmtm1379@gmail.com>, 2025
 # 김동현, 2025
 # Tae Heon Lim, 2025
-# Fruitybite, 2025
 # 김예준, 2025
 # ARDOR Flag, 2025
 # Coolthulhu <Coolthulhu@gmail.com>, 2025
+# Fruitybite, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-14 01:40+0000\n"
-"Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
+"POT-Creation-Date: 2025-09-15 01:33+0000\n"
+"Last-Translator: Fruitybite, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11041,21 +11041,21 @@ msgstr "이 장비는 <info>비행이 가능합니다</info>."
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>serpentine bodies.</info>."
-msgstr "이 옷은 <good>독특하게도 <info>뱀의 몸을 지닌 존재들에게</info> 호환이 됩니다.</good>"
+msgstr "이 옷은 <info>파충류 몸체</info>가 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>clawed fingers.</info>."
-msgstr ""
+msgstr "이 의복은 <info>발톱 달린 손가락</info>이 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>toe claws.</info>."
-msgstr ""
+msgstr "이 의복은 <info>엄지 발톱</info>이 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -11063,34 +11063,35 @@ msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>hooves, foot-paws, or otherwise altered feet.</info>."
 msgstr ""
+"이 의복은 <info>발굽, 동물 앞발 등의 변형된 발</info>이 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>horns on their head.</info>."
-msgstr ""
+msgstr "이 의복은 <info>뿔 달린 머리</info>가 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>a tail.</info>."
-msgstr ""
+msgstr "이 의복은 <info>꼬리</info>가 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>wings.</info>."
-msgstr ""
+msgstr "이 의복은 <info>날개</info>가 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
 msgid ""
 "This clothing is <good>uniquely compatible</good> with mutants possessing "
 "<info>a snout, beak, or mandibles.</info>."
-msgstr ""
+msgstr "이 의복은 <info>주둥이, 부리, 위턱</info>이 있는 돌연변이에게 <good>특별히 잘 맞습니다</good>."
 
 #. ~ Please leave anything in <angle brackets> unchanged.
 #: data/json/flags.json
@@ -25484,12 +25485,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Escape Team"
-msgstr ""
+msgstr "탈출 팀"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Escape Team"
-msgstr ""
+msgstr "탈출 팀"
 
 #. ~ Profession (male Escape Team) description
 #: data/json/professions.json
@@ -25499,6 +25500,8 @@ msgid ""
 "acting strangely these past months, but who would have guessed the real "
 "threat would be the undead patrolling the yard?"
 msgstr ""
+"당신은 탈옥수 몇 명을 설득해 당신의 탈옥에 함께하게 했습니다. 경비병들은 지난 몇 달 동안 꽤나 기이하게 굴어왔는데, 진짜 위협이 저 "
+"마당을 거니는 살아있는 시체들이라고 누가 상상이나 했을까요?"
 
 #. ~ Profession (female Escape Team) description
 #: data/json/professions.json
@@ -25508,16 +25511,18 @@ msgid ""
 "acting strangely these past months, but who would have guessed the real "
 "threat would be the undead patrolling the yard?"
 msgstr ""
+"당신은 탈옥수 몇 명을 설득해 당신의 탈옥에 함께하게 했습니다. 경비병들은 지난 몇 달 동안 꽤나 기이하게 굴어왔는데, 진짜 위협이 저 "
+"마당을 거니는 살아있는 시체들이라고 누가 상상이나 했을까요?"
 
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Mutant Escape Team"
-msgstr ""
+msgstr "돌연변이 탈옥수 팀"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Mutant Escape Team"
-msgstr ""
+msgstr "돌연변이 탈옥수 팀"
 
 #. ~ Profession (male Mutant Escape Team) description
 #: data/json/professions.json
@@ -25527,6 +25532,8 @@ msgid ""
 "personnel have been acting strangely these past months, but who would have "
 "guessed the real threat would be the undead patrolling the halls?"
 msgstr ""
+"당신은 실험체 몇 명을 설득해 당신의 탈출에 함께하게 했습니다. 연구소 직원들은 지난 몇 달 동안 꽤나 기이하게 굴어왔는데, 진짜 위협이"
+" 저 방들을 거니는 살아있는 시체들이라고 누가 상상이나 했을까요?"
 
 #. ~ Profession (female Mutant Escape Team) description
 #: data/json/professions.json
@@ -25536,6 +25543,8 @@ msgid ""
 "personnel have been acting strangely these past months, but who would have "
 "guessed the real threat would be the undead patrolling the halls?"
 msgstr ""
+"당신은 실험체 몇 명을 설득해 당신의 탈출에 함께하게 했습니다. 연구소 직원들은 지난 몇 달 동안 꽤나 기이하게 굴어왔는데, 진짜 위협이"
+" 저 방들을 거니는 살아있는 시체들이라고 누가 상상이나 했을까요?"
 
 #. ~ Profession (male Escape Team) description
 #: data/json/professions.json
@@ -25546,6 +25555,8 @@ msgid ""
 "fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
 "it's now or never."
 msgstr ""
+"당신과 동료 포로들은 이 거지같은 외계인 동굴에 며칠 동안 갇힌 채, 비수로 다듬을만한 조각이 나올 때까지 벽을 긁어내고 있었습니다. "
+"숨이 턱턱 막히는 더위와 연기 탓에 점점 어지러워지고 있습니다. 지금 빠져나가지 못하면 다시는 기회가 없을겁니다."
 
 #. ~ Profession (female Escape Team) description
 #: data/json/professions.json
@@ -25556,6 +25567,112 @@ msgid ""
 "fashion into a shiv.  Your group is getting dizzy from the heat and fumes, "
 "it's now or never."
 msgstr ""
+"당신과 동료 포로들은 이 거지같은 외계인 동굴에 며칠 동안 갇힌 채, 비수로 다듬을만한 조각이 나올 때까지 벽을 긁어내고 있었습니다. "
+"숨이 턱턱 막히는 더위와 연기 탓에 점점 어지러워지고 있습니다. 지금 빠져나가지 못하면 다시는 기회가 없을겁니다."
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Graffiti Crew"
+msgstr "그래피티 크루"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Graffiti Crew"
+msgstr "그래피티 크루"
+
+#. ~ Profession (male Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr ""
+"당신과 동료 거리 예술가들은 대재앙 초기의 혼란 속에서 함께 딱 붙어 살아남았습니다. 지금은 경찰에 잡히는 것보다도 더 시급한 문제가 "
+"많은 시대니까요."
+
+#. ~ Profession (female Graffiti Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You and your fellow street artists have survived the initial chaos by "
+"sticking together. Now there's much more pressing matters than being caught "
+"by the police."
+msgstr ""
+"당신과 동료 거리 예술가들은 대재앙 초기의 혼란 속에서 함께 딱 붙어 살아남았습니다. 지금은 경찰에 잡히는 것보다도 더 시급한 문제가 "
+"많은 시대니까요."
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Heist Crew"
+msgstr "하이스트 크루"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Heist Crew"
+msgstr "하이스트 크루"
+
+#. ~ Profession (male Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr ""
+"당신이 기억하기로 당신은 늘 이중 생활을 해왔습니다. 낮에는 평범하게 운전했지만 밤에는 하이스트에 참여해 운전수 역할을 맡았지요. 지금은"
+" 후자의 일만 남았습니다."
+
+#. ~ Profession (female Heist Crew) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"For as long as you can remember, you have lived a double life: a normal "
+"driver by the day and a heist driver in the night.  Now you've got one last "
+"job."
+msgstr ""
+"당신이 기억하기로 당신은 늘 이중 생활을 해왔습니다. 낮에는 평범하게 운전했지만 밤에는 하이스트에 참여해 운전수 역할을 맡았지요. 지금은"
+" 후자의 일만 남았습니다."
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Neighborhood Watch"
+msgstr "동네 순찰대"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Neighborhood Watch"
+msgstr "동네 순찰대"
+
+#. ~ Profession (male Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
+msgstr ""
+"당신은 항상 세상이 끝장나리라는 것을 알고 있었습니다. 좀비에 의한 것이 아닐지라도 뭔가 지독한 게 일어날거라는 것을 말이죠. 늦은 "
+"밤마다 세계멸망 영화, 싸구려 맥주, 기름이 줄줄 흐르는 피자를 앞에 두고 당신은 이웃들과 함께 진지한 이야기를 나누고는 했습니다. 그 "
+"일이 진짜 벌어지자 당신은 곧장 트럭에 올라타 친구들을 불렀고, 다함께 동네를 안전하게 지키리라 맹세했습니다. 그간 세워온 계획들을 "
+"실행할 시간입니다."
+
+#. ~ Profession (female Neighborhood Watch) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You always knew the end was coming - maybe not zombies, but something bad. "
+"Between late-night doomsday movies, cheap beer, and greasy pizza, you talked"
+" your neighbors into taking it seriously. When it all went down, you grabbed"
+" the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
+" it’s time to put those plans into action."
+msgstr ""
+"당신은 항상 세상이 끝장나리라는 것을 알고 있었습니다. 좀비에 의한 것이 아닐지라도 뭔가 지독한 게 일어날거라는 것을 말이죠. 늦은 "
+"밤마다 세계멸망 영화, 싸구려 맥주, 기름이 줄줄 흐르는 피자를 앞에 두고 당신은 이웃들과 함께 진지한 이야기를 나누고는 했습니다. 그 "
+"일이 진짜 벌어지자 당신은 곧장 트럭에 올라타 친구들을 불렀고, 다함께 동네를 안전하게 지키리라 맹세했습니다. 그간 세워온 계획들을 "
+"실행할 시간입니다."
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -35610,7 +35727,7 @@ msgstr ""
 
 #: data/json/furniture_and_terrain/furniture-industrial.json
 msgid "hydroelectric turbine assembly"
-msgstr ""
+msgstr "수력 전기 터빈 장비"
 
 #. ~ Description for hydroelectric turbine assembly
 #: data/json/furniture_and_terrain/furniture-industrial.json
@@ -60754,7 +60871,7 @@ msgstr ""
 #: data/json/items/armor/boots.json
 msgid "fur tail warmer"
 msgid_plural "fur tail warmers"
-msgstr[0] ""
+msgstr[0] "모피 꼬리 토시"
 
 #. ~ Description for {'str': 'fur tail warmer'}
 #: data/json/items/armor/boots.json
@@ -60766,7 +60883,7 @@ msgstr ""
 #: data/json/items/armor/boots.json
 msgid "leather tail warmer"
 msgid_plural "leather tail warmers"
-msgstr[0] ""
+msgstr[0] "가죽 꼬리 토시"
 
 #. ~ Description for {'str': 'leather tail warmer'}
 #: data/json/items/armor/boots.json
@@ -60778,7 +60895,7 @@ msgstr ""
 #: data/json/items/armor/boots.json
 msgid "wool tail warmer"
 msgid_plural "wool tail warmers"
-msgstr[0] ""
+msgstr[0] "양털 꼬리 토시"
 
 #. ~ Description for {'str': 'wool tail warmer'}
 #: data/json/items/armor/boots.json
@@ -67688,34 +67805,34 @@ msgid ""
 msgstr "케블라로 보강된, 속주머니와 겉주머니가 달린 바지입니다. 튼튼하고, 편안하고, 착용하기 쉽도록 맞춤제작했습니다."
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored skirt"
-msgid_plural "armored skirt"
-msgstr[0] "장갑화 치마"
+msgid "padded skirt"
+msgid_plural "padded skirt"
+msgstr[0] "보강된 치마"
 
-#. ~ Description for {'str_sp': 'armored skirt'}
+#. ~ Description for {'str_sp': 'padded skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping quilted pads, similar to those used "
-"by ancient Roman and Greek soldiers.  Not quite as protective as a gambeson,"
-" but it's far less hot and encumbering."
+"by ancient Roman and Greek soldiers.  Doesn't cover as much as a gambeson, "
+"but it's far less hot and encumbering."
 msgstr ""
 "누비천을 겹겹이 덧대 만든 무릎까지 오는 치마로, 고대 그리스 및 로마 병사들이 착용했던 것과 유사합니다. 갬비슨만큼 방어력이 뛰어나지는"
 " 않지만, 훨씬 덜 덥고 거치적거리는 것도 덜합니다."
 
 #: data/json/items/armor/legs_armor.json
-msgid "armored leather skirt"
-msgid_plural "armored leather skirt"
-msgstr[0] "장갑화 가죽 치마"
+msgid "leather armor skirt"
+msgid_plural "leather armor skirt"
+msgstr[0] "가죽 갑옷 치마"
 
-#. ~ Description for {'str_sp': 'armored leather skirt'}
+#. ~ Description for {'str_sp': 'leather armor skirt'}
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "A knee-length skirt made of overlapping leather armor plates, similar to "
 "those used by ancient Roman and Greek soldiers.  It's not very encumbering "
-"compared to proper legplates, but it's less protective as well."
+"compared to proper legplates, but provides less coverage too."
 msgstr ""
-"가죽판을 겹겹이 덧대 만든 무릎까지 오는 치마로, 고대 그리스 및 로마 병사들이 착용했던 것과 유사합니다. 제대로 된 다리 보호구보다는 "
-"거치적거리지 않지만, 그만큼 방어력도 낮습니다."
+"가죽판을 겹겹이 덧대 만든 무릎까지 오는 치마로, 고대 그리스 및 로마 병사들이 착용했던 것과 유사합니다. 갬비슨만큼 방어력이 뛰어나지는"
+" 않지만, 훨씬 덜 덥고 거치적거리는 것도 덜합니다."
 
 #: data/json/items/armor/legs_armor.json
 msgid "plated leather skirt"
@@ -67726,8 +67843,8 @@ msgstr[0] "철판 가죽 치마"
 #: data/json/items/armor/legs_armor.json
 msgid ""
 "An armored skirt made of leather with metal plates expertly sewn into it.  "
-"It's not as protective as proper leg armor, but it's also far more tolerable"
-" to wear in the summer and far easier to move in."
+"Covers less than proper leg armor, but it's also far more tolerable to wear "
+"in the summer and far easier to move in."
 msgstr ""
 "가죽 사이에 금속판을 솜씨좋게 달아 고정시킨 장갑화 치마입니다. 제대로 된 다리 보호구보다는 방어력이 낮지만, 대신 여름에도 상대적으로 "
 "입을만하고 착용한 채로 움직이기도 편합니다."
@@ -69756,7 +69873,7 @@ msgstr "가시가 여럿 돋혀있는 커다란 금속보강 방패입니다. �
 #: data/json/items/armor/shields.json
 msgid "bronze shield"
 msgid_plural "bronze shields"
-msgstr[0] ""
+msgstr[0] "청동 방패"
 
 #. ~ Description for {'str': 'bronze shield'}
 #: data/json/items/armor/shields.json
@@ -69770,7 +69887,7 @@ msgstr ""
 #: data/json/items/armor/shields.json
 msgid "scaleskin shield"
 msgid_plural "scaleskin shields"
-msgstr[0] ""
+msgstr[0] "파충류 가죽 방패"
 
 #. ~ Description for {'str': 'scaleskin shield'}
 #: data/json/items/armor/shields.json
@@ -69784,7 +69901,7 @@ msgstr ""
 #: data/json/items/armor/shields.json
 msgid "wooden targe"
 msgid_plural "wooden targes"
-msgstr[0] ""
+msgstr[0] "나무 소방패"
 
 #. ~ Description for {'str': 'wooden targe'}
 #: data/json/items/armor/shields.json
@@ -71192,6 +71309,19 @@ msgid ""
 "A cuirass made of multiple pieces of tough leather, laced together for "
 "durable yet flexible protection."
 msgstr "튼튼한 가죽 여러 장을 묶어 만든 유연한 갑옷. "
+
+#: data/json/items/armor/torso_armor.json
+msgid "plated lamellar cuirass"
+msgid_plural "plated lamellar cuirasses"
+msgstr[0] "철판 찰갑 흉갑"
+
+#. ~ Description for {'str': 'plated lamellar cuirass', 'str_pl': 'plated
+#. lamellar cuirasses'}
+#: data/json/items/armor/torso_armor.json
+msgid ""
+"A cuirass made of multiple pieces of tough leather and metal scales laced "
+"together, forming durable yet flexible protection."
+msgstr "질긴 가죽 조각과 금속 조각을 여럿 모아 만든 흉갑입니다. 튼튼하면서도 유연합니다."
 
 #: data/json/items/armor/torso_armor.json
 msgid "lorica segmentata"
@@ -124706,12 +124836,12 @@ msgstr[0] "비늘 달린 곰"
 #. ~ Description for {'str': 'scaled bear'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This bear is covered by large, black, scales.  It seems to have slight "
+"This bear is covered in large, black, scales.  It seems to have slight "
 "problems turning around, but its sinuous movement is no slower than that of "
 "normal bears."
 msgstr ""
-"이 곰은 크고 새카만 비늘로 덮여있습니다. 몸을 돌리는데 약간의 문제가 있어보이지만, 구불거리는 움직임은 다른 곰에 비해 딱히 느리지 "
-"않습니다."
+"이 곰은 크고 새카만데다 비늘로 덮여있습니다. 몸을 돌리는데 약간의 문제가 있어보이지만, 구불거리는 움직임은 다른 곰에 비해 딱히 느리지"
+" 않습니다."
 
 #: data/json/monsters/mutant_animal.json
 msgid "Cerbearus"
@@ -124791,11 +124921,11 @@ msgstr[0] "다이어울프"
 #. ~ Description for {'str': 'dire wolf'}
 #: data/json/monsters/mutant_animal.json
 msgid ""
-"This wolf has grown to terrifying proportions, rivalling a small car.  Its "
+"This wolf has grown to terrifying proportions, rivaling a small car.  Its "
 "teeth give steak knives a run for their money, and it definitely doesn't "
 "look friendly."
 msgstr ""
-"이 늑대는 소형차와도 겨뤄볼만한 무시무시한 크기로 자라났습니다. 놈의 이빨은 스테이크용 나이프를 백수로 만들만큼 예리할 뿐더러, 놈은 "
+"이 늑대는 소형차와도 겨뤄볼만한 무시무시한 크기로 자라났습니다. 놈의 이빨은 스테이크용 나이프를 백수로 만들 만큼 예리할 뿐더러, "
 "당신에게 전혀 우호적이지 않은 것 같습니다."
 
 #: data/json/monsters/mutant_animal.json
@@ -139097,6 +139227,7 @@ msgstr "수색꾼"
 
 #: data/json/npcs/classes.json data/json/npcs/homeless/shelter_survivors.json
 #: data/json/npcs/prisoners/mi-go_prisoners.json
+#: data/json/npcs/professions/neighborhood_watch.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_1_Reena_Sandhu.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_2_Dino_Dave.json
 #: data/json/npcs/refugee_center/beggars/BEGGAR_3_Luo_Meizhen.json
@@ -142592,6 +142723,32 @@ msgid ""
 "Search any nearby pet stores for armor for your pups. You think you remember"
 " the location of one..."
 msgstr "근처 애완동물 가게를 살펴 멍멍이들에게 입힐 방어구를 찾으세요. 아마 이 근처에 하나쯤 있었을겁니다..."
+
+#: data/json/npcs/missiondef.json
+msgid "The Final Heist"
+msgstr "마지막 하이스트"
+
+#. ~ Description for mission '{'str': 'The Final Heist'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"You and your crew swore the last job was the last job - until the dead "
+"started getting involved. Now, with old friends, loaded guns, and one "
+"impossible score, you’ve got one shot to pull this off before the grave "
+"claims you too."
+msgstr ""
+"당신과 크루원들은 지난 작업이 마지막이 되리라 맹세했습니다... 시체들이 깨어나는 일에 휘말리기 전까지는요. 이제 옛 친구들, 장전된 "
+"총들, 그리고 불가능한 목표를 눈앞에 둔 당신에게는 죽음이 당신을 부르기 전 이 모든 걸 끝장낼 한 방이 남아있습니다."
+
+#: data/json/npcs/missiondef.json
+msgid "Rebuild the Neighborhood"
+msgstr "이웃 재건"
+
+#. ~ Description for mission '{'str': 'Rebuild the Neighborhood'}'
+#: data/json/npcs/missiondef.json
+msgid ""
+"The old neighborhood may never be the same - but we can rebuild a new one "
+"from the ground up, starting at the hardware store."
+msgstr "옛 동네가 다시 돌아올 수는 없겠지만, 차근차근 다시 쌓아올릴 수는 있을겁니다. 우선 철물점부터 시작할까요."
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -154271,7 +154428,7 @@ msgstr "약자는 필요없다. 뛰어. 당장."
 
 #: data/json/npcs/professions/escape_team.json
 msgid "Escapist"
-msgstr ""
+msgstr "탈출자"
 
 #: data/json/npcs/professions/escape_team.json
 msgid "I'm looking for a way out."
@@ -154279,7 +154436,7 @@ msgstr ""
 
 #: data/json/npcs/professions/escape_team.json
 msgid "Mutant Patient"
-msgstr ""
+msgstr "돌연변이 환자"
 
 #: data/json/npcs/professions/escape_team.json
 msgid "Captive"
@@ -154292,6 +154449,42 @@ msgstr ""
 #: data/json/npcs/professions/frat.json
 msgid "I'm looking for parties."
 msgstr ""
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "Street Artist"
+msgstr "거리의 예술가"
+
+#: data/json/npcs/professions/graffiti_crew.json
+msgid "I'm just looking for a good spot to tag."
+msgstr "낙서할만한 곳을 찾고 있어."
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Shooter"
+msgstr "하이스트 총잡이"
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "I'm just looking for a quick buck."
+msgstr "돈 몇 푼 벌러 온거야."
+
+#: data/json/npcs/professions/heist_crew.json
+msgid "Heist Thief"
+msgstr "하이스트 도둑"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Hunter"
+msgstr "동네 사냥꾼"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Mechanic"
+msgstr "동네 기계공"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Doctor"
+msgstr "동네 의사"
+
+#: data/json/npcs/professions/neighborhood_watch.json
+msgid "Neighborhood Delinquent"
+msgstr "동네 범죄자"
 
 #: data/json/npcs/refugee_center/missiondef_free_merchants.json
 msgid "Reach Refugee Center"
