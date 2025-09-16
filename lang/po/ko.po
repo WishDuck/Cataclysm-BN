@@ -27,17 +27,17 @@
 # JJ J <congstrot@gmail.com>, 2024
 # 백도 <tmtm1379@gmail.com>, 2025
 # 김동현, 2025
-# Tae Heon Lim, 2025
 # 김예준, 2025
 # ARDOR Flag, 2025
 # Coolthulhu <Coolthulhu@gmail.com>, 2025
 # Fruitybite, 2025
+# Tae Heon Lim, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-15 01:33+0000\n"
-"Last-Translator: Fruitybite, 2025\n"
+"POT-Creation-Date: 2025-09-16 01:30+0000\n"
+"Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17938,7 +17938,7 @@ msgstr[0] "조잡한 직조기"
 msgid ""
 "This is a rather bulky and primitive wooden frame which can be used to weave"
 " cloth sheets.  It is very slow, though."
-msgstr "꽤나 크고 원시적인 목재 프레임입니다. 천 시트를 짤 때 쓸 수 있지만, 무척 느릴겁니다."
+msgstr "꽤나 크고 원시적인 나무 프레임입니다. 천 시트를 짤 때 쓸 수 있지만, 무척 느릴겁니다."
 
 #: data/json/player_activities.json
 msgid "reloading"
@@ -35738,6 +35738,9 @@ msgid ""
 "it could be salvaged for parts that could be used for power generation "
 "elsewhere."
 msgstr ""
+"흐르는 물을 이용해 전력을 생산하는데 쓰이는 거대한 터빈입니다. 과거 수 메가와트에 달하던 발전량이 지금은 비할 수 없을 만큼 "
+"줄어들었지만, 그래도 여전히 근처 기치에 전력을 보내도록 연결할 수는 있습니다. 아니면 분해하여 다른 곳에서 발전시설을 꾸리는데 쓸 수 "
+"있도록 해체하여 부품을 얻을 수도 있습니다."
 
 #: data/json/furniture_and_terrain/furniture-medical.json
 #: data/json/items/tool/med.json
@@ -38794,7 +38797,7 @@ msgstr "부두"
 #. ~ Description for shallow bridge
 #: data/json/furniture_and_terrain/terrain-bridges-docks.json
 msgid "A wooden platform held by a support made of logs dug into the ground."
-msgstr "땅에 통나무를 매립해 만든 지지대로 떠받쳐지는 목재 플랫폼입니다."
+msgstr "땅에 통나무를 매립해 만든 지지대로 떠받쳐지는 나무 플랫폼입니다."
 
 #: data/json/furniture_and_terrain/terrain-bridges-docks.json
 msgid "deep dock pile"
@@ -39952,7 +39955,7 @@ msgstr "수중 난간"
 msgid ""
 "A flooded section of wooden railing.  Much less effective at stopping you "
 "from jumping overboard, now."
-msgstr "물속에 잠긴 목제 난간입니다.  이제 당신이 바다로 뛰어들게 하는 데 더더욱 쓸모가 없어졌습니다."
+msgstr "물속에 잠긴 나무 난간입니다. 이제 당신이 바다로 뛰어들지 못하게 막는 용도에서 훨씬 쓸모없어졌습니다."
 
 #: data/json/furniture_and_terrain/terrain-fences-gates.json
 msgid "glass railing"
@@ -40190,7 +40193,7 @@ msgstr "원시적 바닥"
 #. ~ Description for primitive floor
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
 msgid "Timber floor and supports, holding up a sod roof."
-msgstr "목재 바닥과 지지대가 잔디 지붕을 받치고 있습니다."
+msgstr "나무 바닥과 지지대가 잔디 지붕을 받치고 있습니다."
 
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
 msgid "simple metal floor"
@@ -40212,7 +40215,7 @@ msgstr "왁스칠한 바닥"
 msgid ""
 "Hardwood flooring that has been treated with chemicals to improve slip "
 "resistance and sliding, commonly for recreational sports."
-msgstr "주로 레크리에이션 스포츠를 위해 미끄럼 방지를 위해 화학처리된 단단한 목재 바닥입니다."
+msgstr "주로 레크리에이션 스포츠를 위해 미끄럼 방지를 위해 화학처리된 단단한 나무 바닥입니다."
 
 #: data/json/furniture_and_terrain/terrain-floors-indoor.json
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
@@ -40776,12 +40779,12 @@ msgstr "나무판을 촘촘히 깔고 못을 박은 나무 바닥입니다. 테�
 
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid "underwater wooden floor"
-msgstr "수중 목제 바닥"
+msgstr "수중 나무 바닥"
 
 #. ~ Description for underwater wooden floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
 msgid "Rotting old floorboards long since repurposed as Davy Jones's patio."
-msgstr "데비 존스의 안마당으로 개조된지 한참은 지난 썩어가는 오래된 목제 바닥입니다."
+msgstr "데비 존스의 안마당으로 개조된지 한참은 지난 썩어가는 오래된 나무 바닥입니다."
 
 #. ~ Description for metal floor
 #: data/json/furniture_and_terrain/terrain-floors-outdoors.json
@@ -44081,14 +44084,14 @@ msgstr "많은 수의 널빤지가 유실되어 처지고 무너지기 시작합
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "underwater wooden wall"
-msgstr "수중 목제 벽"
+msgstr "수중 나무 벽"
 
 #. ~ Description for underwater wooden wall
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid ""
 "A decaying old section of wooden wall, soaked through and leaking.  It will "
 "likely crumble to bits if damaged."
-msgstr "썩어가는 오래된 목제 벽으로, 푹 젖은데다 물이 새고 있습니다.  피해를 받을 경우 조각들로 부숴질 가능성이 높습니다."
+msgstr "썩어가는 오래된 나무 벽으로, 푹 젖은데다 물이 새고 있습니다. 피해를 받으면 산산조각날 것입니다."
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "half-built log wall"
@@ -44558,7 +44561,7 @@ msgstr "광산의 천장과 벽이 무너지지 않게 지지해주는 콘크리
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "wooden fortification"
-msgstr "목제 요새"
+msgstr "나무 요새"
 
 #. ~ Description for wooden fortification
 #: data/json/furniture_and_terrain/terrain-walls.json
@@ -44567,12 +44570,12 @@ msgid ""
 "through unimpeded if you're adjacent to it.  It doesn't take much out of "
 "incoming fire, but it's better than nothing."
 msgstr ""
-"발사용 구멍이 파여 있는 목제 벽으로, 당신이 근처에 있다면 방해받지 않고 사격이 가능할 겁니다.  화력을 그렇게 많이 받아주지는 "
-"않지만, 없는 것 보다는 낫습니다."
+"인접해있을 때 벽에 방해받지 않고 사격할 수 있도록 총안구가 파여있는 나무 벽입니다. 당신을 향하는 공격을 그다지 많이 받아내지는 "
+"못하겠지만, 없는 것보다는 낫습니다."
 
 #: data/json/furniture_and_terrain/terrain-walls.json
 msgid "underwater wooden fortification"
-msgstr "수중 목제 요새"
+msgstr "수중 나무 요새"
 
 #. ~ Description for underwater wooden fortification
 #: data/json/furniture_and_terrain/terrain-walls.json
@@ -44885,7 +44888,7 @@ msgid ""
 "laboriously placed metal sheeting to further strengthen the wooden "
 "reinforcements underneath."
 msgstr ""
-"한때는 평범한 유리창이었지만, 지금은 모서리를 따라 박힌 위협적인 스파이크가 있으며, 수고스럽게 배치된 금속판으로 밑에 있는 목재 "
+"한때는 평범한 유리창이었지만, 지금은 모서리를 따라 박힌 위협적인 스파이크가 있으며, 수고스럽게 배치된 금속판으로 밑에 있는 나무 "
 "보강재를 더욱 강화했습니다."
 
 #. ~ Description for armored boarded up window
@@ -44895,7 +44898,7 @@ msgid ""
 "laboriously placed metal sheeting to further strengthen the wooden "
 "reinforcements underneath."
 msgstr ""
-"한때는 평범한 창틀이었지만, 지금은 모서리를 따라 박힌 위협적인 스파이크가 있으며, 수고스럽게 배치된 금속판으로 밑에 있는 목재 보강재를"
+"한때는 평범한 창틀이었지만, 지금은 모서리를 따라 박힌 위협적인 스파이크가 있으며, 수고스럽게 배치된 금속판으로 밑에 있는 나무 보강재를"
 " 더욱 강화했습니다."
 
 #: data/json/furniture_and_terrain/terrain-windows.json
@@ -50329,7 +50332,7 @@ msgid ""
 "A water canteen made from wood, secured by metal bands and sealed with wax "
 "or pitch.  Holds 1.5 liters and has a simple carry strap."
 msgstr ""
-"목재로 만든 수통입니다, 금속 띠로 보강을 하고 왁스나 역청으로 구멍을 매웠습니다. 1.5 리터를 담을수 있고 간단한 운반용 줄이 "
+"나무로 만든 수통입니다, 금속 띠로 보강을 하고 왁스나 역청으로 구멍을 매웠습니다. 1.5 리터를 담을수 있고 간단한 운반용 줄이 "
 "달려있습니다."
 
 #: data/json/items/containers.json
@@ -56041,6 +56044,8 @@ msgid ""
 "extra length, it's enough to handle oversized wearers and accommodate your "
 "hands too.  Use it to loosen it if you get too warm."
 msgstr ""
+"아주 길고 가벼운 스카프입니다.  길이가 충분히 길어 큰 덩치를 지닌 착용자의 손까지 감쌀 수 있습니다.  너무 덥다면 사용하여 느슨하게"
+" 할 수 있습니다."
 
 #: data/json/items/tool_armor.json
 msgid "long patchwork scarf (loose)"
@@ -56330,7 +56335,7 @@ msgstr[0] "어쿠스틱 기타"
 msgid ""
 "A simple wooden acoustic guitar with a strap so you can wear it around, even"
 " when not playing."
-msgstr "평범하게 생긴 목제 어쿠스틱 기타. 끈이 달려있어서 연주하지 않을 때에도 몸에 매고 다닐 수 있다."
+msgstr "평범한 나무 어쿠스틱 기타입니다. 끈이 달려있어 연주 중이 아닐 때도 몸에 매어 다닐 수 있습니다."
 
 #: data/json/items/tool_armor.json
 msgid "electric guitar"
@@ -98154,7 +98159,7 @@ msgid ""
 "synthetic model, carefully balanced to the same weight and handling yet "
 "offering support for modern accessories."
 msgstr ""
-"전통적인 목재 개머리판을 합금으로 교채한 모신나강 소총. 기존의 무게와 착용감을 유지하는데 성공했지만 오늘날의 총기 부착물을 부착할 수는"
+"전통적인 나무 개머리판을 합금으로 교채한 모신나강 소총. 기존의 무게와 착용감을 유지하는데 성공했지만 오늘날의 총기 부착물을 부착할 수는"
 " 없습니다."
 
 #: data/json/items/gun/84x246mm.json
@@ -104089,7 +104094,7 @@ msgstr[0] "당구 큐대"
 msgid ""
 "A hard-wood stick designed for hitting colorful balls around a felt table.  "
 "Truly, the coolest of sports."
-msgstr "펠트 테이블 위의 여러색의 공을 치기 위해 만든 단단한 목제 막대기. 진정, 최고로 멋진 스포츠다."
+msgstr "펠트 테이블 위에 놓인 알록달록한 공들을 치기 위해 만들어진 단단한 나무 막대입니다. 아, 스포츠 중에서도 최고랍니다."
 
 #: data/json/items/melee/bludgeons.json
 msgid "PR-24 baton (retracted)"
@@ -104300,7 +104305,7 @@ msgstr ""
 #: data/json/items/melee/bludgeons.json
 msgid "wooden tonfa"
 msgid_plural "wooden tonfas"
-msgstr[0] "목제 톤파"
+msgstr[0] "나무 톤파"
 
 #. ~ Description for {'str': 'wooden tonfa'}
 #: data/json/items/melee/bludgeons.json
@@ -105060,7 +105065,7 @@ msgstr "끝에 검날이 달린 이 튼튼한 강철 막대는 베고 찌르기�
 #: data/json/items/melee/spears_and_polearms.json
 msgid "wooden javelin"
 msgid_plural "wooden javelins"
-msgstr[0] "목제 재블린"
+msgstr[0] "나무 재블린"
 
 #. ~ Description for {'str': 'wooden javelin'}
 #: data/json/items/melee/spears_and_polearms.json
@@ -105079,7 +105084,7 @@ msgstr[0] "철제 재블린"
 msgid ""
 "An iron-tipped wooden throwing spear.  The grip area has been carved and "
 "covered for better grip."
-msgstr "쇠로 촉을 만든 목제 투창. 손잡이 부분은 잡기 좋도록 조각하고 덧대놓았습니다."
+msgstr "무쇠 촉이 달린 나무 투창입니다. 손잡이 부분은 미끄러지지 않게 무늬를 새기고 덮개를 씌웠습니다."
 
 #: data/json/items/melee/spears_and_polearms.json
 msgctxt "weapon"
@@ -107619,7 +107624,7 @@ msgstr[0] "합성단궁"
 msgid ""
 "A bow made from multiple materials for increased energy efficiency.  "
 "Complicated to make, but stronger than an all-wood short bow."
-msgstr "에너지 효율을 위해 다양한 재료를 이용해 만든 활입니다. 제작이 까다롭지만, 목제 단궁에 비해 강력합니다."
+msgstr "에너지 효율을 위해 다양한 재료를 이용해 만든 활입니다. 제작이 까다롭지만, 나무 단궁에 비해 강력합니다."
 
 #: data/json/items/ranged/archery.json
 msgid "longbow"
@@ -108079,7 +108084,7 @@ msgstr[0] "새총"
 msgid ""
 "A wooden slingshot, easy to use and accurate.  It uses pebbles as "
 "ammunition."
-msgstr "목재 새총. 사용이 간편하고 정확도가 높습니다. 탄환으로 조약돌을 사용합니다."
+msgstr "나무 새총. 사용이 간편하고 정확도가 높습니다. 탄환으로 조약돌을 사용합니다."
 
 #: data/json/items/ranged/slings.json
 msgid "brace slingshot"
@@ -113925,7 +113930,7 @@ msgstr "페인트가 들어있는 스프레이 캔. 바닥에 그래피티를 �
 #. ~ Description for {'str': 'stepladder'}
 #: data/json/items/tool/misc.json
 msgid "This is a wooden stepladder.  Use it to set it down."
-msgstr "목제 발판 사다리. 사용(a)해서 설치할 수 있습니다."
+msgstr "나무 발판 사다리입니다. 사용하여 설치할 수 있습니다."
 
 #: data/json/items/tool/misc.json
 msgid "survival marker"
@@ -114237,7 +114242,7 @@ msgstr "애완동물들을 운반하는데 쓰이는 플라스틱 상자입니�
 #: data/json/items/tool/pets.json
 msgid "wooden pet carrier"
 msgid_plural "wooden pet carriers"
-msgstr[0] "애완동물 목제 이동장"
+msgstr[0] "애완동물 나무 이동장"
 
 #. ~ Description for {'str': 'wooden pet carrier'}
 #: data/json/items/tool/pets.json
@@ -114249,7 +114254,7 @@ msgstr "애완동물들을 운반하는데 쓰이는 나무 상자입니다. 적
 #: data/json/items/tool/pets.json
 msgid "wooden dog whistle"
 msgid_plural "wooden dog whistles"
-msgstr[0] "목제 개 호루라기"
+msgstr[0] "나무 개 호루라기"
 
 #. ~ Description for {'str': 'wooden dog whistle'}
 #: data/json/items/tool/pets.json
@@ -116688,7 +116693,7 @@ msgstr "배터리로 작동하는, 전기 아크를 이용해 금속조각을 �
 #: data/json/items/tool/workshop.json
 msgid "wooden smoother"
 msgid_plural "wooden smoothers"
-msgstr[0] "목제 흙손"
+msgstr[0] "나무 흙손"
 
 #. ~ Description for {'str': 'wooden smoother'}
 #: data/json/items/tool/workshop.json
@@ -117968,7 +117973,7 @@ msgstr "군용 차량 건조에 사용되는 대형 강화 강철 프레임입�
 #: data/json/items/vehicle/frames.json data/json/vehicleparts/frames.json
 msgid "wooden frame"
 msgid_plural "wooden frames"
-msgstr[0] "목재 프레임"
+msgstr[0] "나무 프레임"
 
 #. ~ Description for {'str': 'wooden frame'}
 #: data/json/items/vehicle/frames.json
@@ -117978,7 +117983,7 @@ msgstr "나무 재질의 대형 프레임입니다. 제작에 쓰입니다."
 #: data/json/items/vehicle/frames.json data/json/vehicleparts/frames.json
 msgid "foldable wooden frame"
 msgid_plural "foldable wooden frames"
-msgstr[0] "접이식 목재 프레임"
+msgstr[0] "접이식 나무 프레임"
 
 #. ~ Description for {'str': 'foldable wooden frame'}
 #: data/json/items/vehicle/frames.json
@@ -117988,7 +117993,7 @@ msgstr "폐목재 재질의 접이식 소형 프레임입니다."
 #: data/json/items/vehicle/frames.json data/json/vehicleparts/frames.json
 msgid "light wooden frame"
 msgid_plural "light wooden frames"
-msgstr[0] "경량 목재 프레임"
+msgstr[0] "경량 나무 프레임"
 
 #. ~ Description for {'str': 'light wooden frame'}
 #: data/json/items/vehicle/frames.json
@@ -118372,7 +118377,7 @@ msgstr[0] "차량용 나무장갑판"
 #. ~ Description for {'str': 'wooden armor kit'}
 #: data/json/items/vehicle/plating.json
 msgid "A bundle of two by fours prepared to be used as vehicle armor."
-msgstr "차량용 장갑으로 사용할 수 있도록 준비한 목재 묶음이다."
+msgstr "차량용 장갑으로 쓰기 위한 널빤지 묶음입니다."
 
 #: data/json/items/vehicle/plating.json
 #: data/json/vehicleparts/vehicle_parts.json
@@ -140226,7 +140231,7 @@ msgstr ""
 msgid ""
 "You know what makes a nice weapon?  Take a two by four, or a baseball bat or"
 " something, and stick a bunch of nails through the end!"
-msgstr "좋은 근접 무기를 찾고 있나요? 목재나 야구 방망이를 찾아보세요. 그 끝부분에 못을 왕창 박으면 완벽한 무기가 완성되죠!"
+msgstr "좋은 근접 무기를 찾고 있나요? 널빤지나 야구 방망이를 찾아보세요. 그 끝부분에 못을 왕창 박으면 완벽한 무기가 완성되죠!"
 
 #: data/json/npcs/hints.json
 msgid ""
@@ -155101,7 +155106,7 @@ msgstr "이제 거의 다왔어."
 
 #: data/json/npcs/refugee_center/beggars/BEGGAR_2_Dino_Dave.json
 msgid "They keep a lot of this stuff in hardware stores and lumber yards."
-msgstr "철물점이나 목재 판매점에 많아."
+msgstr "철물점이나 목재 적재소에 잔뜩 보관되어있을거야."
 
 #: data/json/npcs/refugee_center/beggars/BEGGAR_2_Dino_Dave.json
 msgid ""
@@ -166638,7 +166643,7 @@ msgstr[0] "나무 분리 막대"
 msgid ""
 "This is a short thin flat wooden stick, used as a tool while weaving cloth "
 "with a frame loom."
-msgstr "짧고 얇고 납작한 목제 나무막대로, 방직기로 천을 짤 때 도구로 사용됩니다."
+msgstr "짧고 얇고 평평한 나무막대입니다. 방직기로 천을 짤 때 쓰는 도구입니다."
 
 #: data/json/obsoletion/items.json
 msgid "wicker sieve"
@@ -177965,9 +177970,10 @@ msgid ""
 " weren't able to interact with it with any of our spectrographs.  We're "
 "dubbing the contaminant XE037 per naming protocol."
 msgstr ""
-"타카토시 박사가 직접 000XE에서 가져온 시료에 대한 실험을 요청했다. 그것은 목재처럼 보이는 물질이었다. 물질 자체도 흥미로웠지만, "
-"그녀가 원한 건 그게 아니었다. 그녀는 그 ‘나무 사이’에 있는 것을 연구하길 원했다. 그녀의 프로토콜에 따라 분석한 결과, 틈새에서 "
-"질량은 감지되었으나 어떤 분광 장비로도 관측할 수는 없었다. 우리는 명명 규칙에 따라 이 오염체를 XE037로 지정했다."
+"타카토시 박사가 000XE에서 가져온 샘플에 대한 실험을 개인적으로 요청했다. 나무처럼 보이는 물질이었는데, 그 자체로도 꽤 흥미롭지만 "
+"그녀가 원한건 그게 아니라 나무 '사이에' 있는 것들에 대해 연구하는 것이었다. 그녀의 프로토콜에 기반해 분석한 결과, 물질 내부 "
+"공간에서 질량을 감지해냈지만 우리가 가진 어떤 분광 장비로도 상호작용하는 것에는 실패했다. 명명 규칙에 따라 해당 오염물을 XE037 로"
+" 지정하는 바이다."
 
 #: data/json/snippets/lab.json
 msgid ""
@@ -184850,7 +184856,7 @@ msgstr "나무 벽입니다. 좀비들이 차량에 들어오는 것을 막고 �
 
 #: data/json/vehicleparts/boards.json
 msgid "wooden quarterpanel"
-msgstr "목제 쿼터패널"
+msgstr "나무 쿼터패널"
 
 #. ~ Description for {'str': 'wooden quarterpanel'}
 #: data/json/vehicleparts/boards.json
@@ -185561,7 +185567,7 @@ msgid ""
 " the vehicle can be folding into a small package and picked up as a normal "
 "item."
 msgstr ""
-"접을 수 있게 설계된 경량 목재 프레임입니다. 다른 차량 부품들을 탑재할 수 있습니다. 모든 프레임과 부품들이 접이식이라면, 차량을 작게"
+"접을 수 있게 설계된 경량 나무 프레임입니다. 다른 차량 부품들을 탑재할 수 있습니다. 모든 프레임과 부품들이 접이식이라면, 차량을 작게"
 " 접어 단일 물품으로 들고 다닐 수 있습니다."
 
 #: data/json/vehicleparts/frames.json
@@ -185584,7 +185590,7 @@ msgid ""
 "nail construction means it can be constructed and added to the vehicle "
 "without welding tools."
 msgstr ""
-"목재 프레임입니다. 프레임 위에 다른 차량 부품들을 장착할 수 있고, 또 다른 프레임을 붙여서 차량 크기를 늘릴 수 있습니다. 나무와 "
+"나무 프레임입니다. 프레임 위에 다른 차량 부품들을 장착할 수 있고, 또 다른 프레임을 붙여서 차량 크기를 늘릴 수 있습니다. 나무와 "
 "못으로 만드는 특성상 용접기가 없어도 만들어 차량에 장착할 수 있습니다."
 
 #. ~ Description for {'str': 'light wooden frame'}
@@ -185595,7 +185601,7 @@ msgid ""
 " and rope constructions means it can be constructed and added to the vehicle"
 " without welding tools or nails."
 msgstr ""
-"경량 목재 프레임입니다. 프레임 위에 다른 차량 부품들을 장착할 수 있고, 또 다른 프레임을 붙여서 차량 크기를 늘릴 수 있습니다. "
+"경량 나무 프레임입니다. 프레임 위에 다른 차량 부품들을 장착할 수 있고, 또 다른 프레임을 붙여서 차량 크기를 늘릴 수 있습니다. "
 "나무와 밧줄로 만드는 특성상 용접기가 없어도 만들어 차량에 장착할 수 있습니다."
 
 #. ~ Description for {'str': 'heavy duty frame'}
@@ -186964,7 +186970,7 @@ msgstr "앉는데 씁니다."
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "light wooden seat"
-msgstr "경량 목재 좌석"
+msgstr "경량 나무 좌석"
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "wooden spike"
@@ -187178,7 +187184,7 @@ msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple foldable wooden turret mount"
-msgstr "수동형 접이식 목재 터렛 장착대"
+msgstr "수동형 접이식 나무 터렛 장착대"
 
 #. ~ Description for {'str': 'simple foldable wooden turret mount'}
 #: data/json/vehicleparts/vehicle_parts.json
@@ -187209,7 +187215,7 @@ msgstr ""
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple wooden turret mount"
-msgstr "수동형 목재 터렛 장착대"
+msgstr "수동형 나무 터렛 장착대"
 
 #: data/json/vehicleparts/vehicle_parts.json
 msgid "simple steel turret mount"
@@ -201596,7 +201602,7 @@ msgstr ""
 #: data/mods/DinoMod/items/pets.json
 msgid "large wooden pet carrier"
 msgid_plural "large wooden pet carriers"
-msgstr[0] "대형 애완동물 목제 이동장"
+msgstr[0] "대형 애완동물 나무 이동장"
 
 #. ~ Description for {'str': 'large wooden pet carrier'}
 #: data/mods/DinoMod/items/pets.json
@@ -201604,7 +201610,7 @@ msgid ""
 "A sturdy reinforced wooden container meant to hold dinosaurs for transport."
 "  Use it on a suitable animal to capture, use it on an empty tile to "
 "release."
-msgstr "공룡들을 운반하는데 쓰이는 튼튼한 강화 목제 이동장입니다. 적당한 동물에게 사용하면 담고, 빈 타일에 사용하면 풀어줍니다."
+msgstr "공룡들을 운반하는데 쓰이는 튼튼한 강화 나무 이동장입니다. 적당한 동물에게 사용하면 담고, 빈 타일에 사용하면 풀어줍니다."
 
 #: data/mods/DinoMod/items/pets_bear_armor.json
 msgid "bear armor"
@@ -217609,7 +217615,7 @@ msgstr ""
 #: data/mods/MagicalNights/items/monster_weapons.json
 msgid "wood trident"
 msgid_plural "wood tridents"
-msgstr[0] "목제 삼지창"
+msgstr[0] "나무 삼지창"
 
 #. ~ Description for wood trident
 #: data/mods/MagicalNights/items/monster_weapons.json
@@ -217618,7 +217624,7 @@ msgid ""
 "the end.  It can be used for stabbing opponents either in close-range or as "
 "a thrown weapon, and in the right hands can also readily disarm opponents."
 msgstr ""
-"손수 만든 포크 모양 창날이 달린 목제 근접 무기입니다. 가까운 거리의 적을 찌르거나 혹은 적에게 던지는 용도로 쓰이며, 제대로 "
+"나무 창대에 수제 포크 모양 강철 창날이 달린 근접 무기입니다. 가까운 거리의 적을 찌르거나 혹은 적에게 던지는 용도로 쓰이며, 제대로 "
 "숙련되었다면 상대를 무장해제시키는데도 쓸 수 있습니다."
 
 #: data/mods/MagicalNights/items/monster_weapons.json
@@ -219163,7 +219169,7 @@ msgstr[0] "구리 서클릿"
 msgid ""
 "A wooden band with copper trimmings to be worn on the head.  Touching your "
 "temples with it on makes you feel very calm."
-msgstr "구리 장식이 된 머리에 장식하는 목제 띠.  이것을 머리에 쓴 채 관자놀이를 문지르면 마음이 매우 차분해집니다."
+msgstr "구리 장식이 달린 나무 띠입니다. 머리에 착용하는 용도이며, 머리에 쓴 채로 관자놀이를 문지르면 무척 차분해집니다."
 
 #: data/mods/MagicalNights/items/enchanted/enchanted.json
 msgid "minor staff of the magi"
@@ -229522,7 +229528,7 @@ msgstr "벌목을 마쳤다."
 
 #: src/activity_handlers.cpp
 msgid "You finish chopping wood."
-msgstr "목재를 잘라냈다."
+msgstr "나무를 잘라냈습니다."
 
 #: src/activity_handlers.cpp
 #, c-format
