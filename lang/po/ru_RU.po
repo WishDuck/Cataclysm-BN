@@ -29,14 +29,14 @@
 # Vorpal Void <vorpal.void@gmail.com>, 2025
 # Vlados <vuradoz@gmail.com>, 2025
 # GostBug <blackday8990@gmx.de>, 2025
-# Vadim, 2025
 # Coolthulhu <Coolthulhu@gmail.com>, 2025
+# Vadim, 2025
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-15 01:33+0000\n"
-"Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
+"POT-Creation-Date: 2025-09-17 01:27+0000\n"
+"Last-Translator: Vadim, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21017,12 +21017,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Test Subject"
-msgstr ""
+msgstr "Испытуемый"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Test Subject"
-msgstr ""
+msgstr "Испытуемая"
 
 #. ~ Profession (male Test Subject) description
 #: data/json/professions.json
@@ -21034,6 +21034,11 @@ msgid ""
 "lighter than it used to, but you don't intend to gamble on surviving a "
 "second round of surgery."
 msgstr ""
+"Вы уже не помните, сколько времени вас здесь держат. Они что-то с вами "
+"сделали, вы помните только, что потеряли сознание от боли, когда они начали "
+"вас резать. Вы очнулись, не чувствуя ни боли, ни чего-либо еще, и воздух "
+"кажется вам более легким, чем раньше, но вы не собираетесь рисковать, "
+"пытаясь пережить вторую такую операцию."
 
 #. ~ Profession (female Test Subject) description
 #: data/json/professions.json
@@ -21045,6 +21050,11 @@ msgid ""
 "lighter than it used to, but you don't intend to gamble on surviving a "
 "second round of surgery."
 msgstr ""
+"Вы уже не помните, сколько времени вас здесь держат. Они что-то с вами "
+"сделали, вы помните только, что потеряли сознание от боли, когда они начали "
+"вас резать. Вы очнулись, не чувствуя ни боли, ни чего-либо еще, и воздух "
+"кажется вам более легким, чем раньше, но вы не собираетесь рисковать, "
+"пытаясь пережить вторую такую операцию."
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -27409,12 +27419,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Neighborhood Watch"
-msgstr ""
+msgstr "Районный дозор"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Neighborhood Watch"
-msgstr ""
+msgstr "Районный дозор"
 
 #. ~ Profession (male Neighborhood Watch) description
 #: data/json/professions.json
@@ -27426,6 +27436,12 @@ msgid ""
 " the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
 " it’s time to put those plans into action."
 msgstr ""
+"Вы всегда знали, что конец приближается — может быть, не в виде зомби, но в "
+"виде чего-то плохого. В перерывах между ночными просмотрами фильмов про "
+"конец света, дешевым пивом и жирной пиццей вы убеждали соседей отнестись к "
+"этому серьезно. Когда все началось, вы сели в грузовик, позвонили ребятам и "
+"поклялись, что будете защищать район. Теперь пришло время воплотить эти "
+"планы в жизнь."
 
 #. ~ Profession (female Neighborhood Watch) description
 #: data/json/professions.json
@@ -27437,6 +27453,12 @@ msgid ""
 " the truck, called the boys, and swore you’d keep the neighborhood safe. Now"
 " it’s time to put those plans into action."
 msgstr ""
+"Вы всегда знали, что конец приближается — может быть, не в виде зомби, но в "
+"виде чего-то плохого. В перерывах между ночными просмотрами фильмов про "
+"конец света, дешевым пивом и жирной пиццей вы убеждали соседей отнестись к "
+"этому серьезно. Когда все началось, вы сели в грузовик, позвонили ребятам и "
+"поклялись, что будете защищать район. Теперь пришло время воплотить эти "
+"планы в жизнь."
 
 #. ~ Name for scenario 'Evacuee' for a male character
 #: data/json/scenarios.json
@@ -173663,7 +173685,7 @@ msgstr ""
 
 #: data/json/npcs/missiondef.json
 msgid "Rebuild the Neighborhood"
-msgstr ""
+msgstr "Восстановить район"
 
 #. ~ Description for mission '{'str': 'Rebuild the Neighborhood'}'
 #: data/json/npcs/missiondef.json
@@ -173671,6 +173693,8 @@ msgid ""
 "The old neighborhood may never be the same - but we can rebuild a new one "
 "from the ground up, starting at the hardware store."
 msgstr ""
+"Старый район, возможно, никогда не будет прежним, но мы можем построить "
+"новый с нуля, начав с магазина строительных материалов."
 
 #: data/json/npcs/npc.json
 msgid "Psycho"
@@ -186242,11 +186266,11 @@ msgstr "Мне слабаки ни к чему. Бегом. Живо."
 
 #: data/json/npcs/professions/escape_team.json
 msgid "Escapist"
-msgstr ""
+msgstr "Беглец"
 
 #: data/json/npcs/professions/escape_team.json
 msgid "I'm looking for a way out."
-msgstr ""
+msgstr "Я ищу способ выбраться."
 
 #: data/json/npcs/professions/escape_team.json
 msgid "Mutant Patient"
@@ -186266,23 +186290,23 @@ msgstr ""
 
 #: data/json/npcs/professions/graffiti_crew.json
 msgid "Street Artist"
-msgstr ""
+msgstr "Уличный художник"
 
 #: data/json/npcs/professions/graffiti_crew.json
 msgid "I'm just looking for a good spot to tag."
-msgstr ""
+msgstr "Я просто ищу хорошее место для тегов."
 
 #: data/json/npcs/professions/heist_crew.json
 msgid "Heist Shooter"
-msgstr ""
+msgstr "Грабитель-стрелок"
 
 #: data/json/npcs/professions/heist_crew.json
 msgid "I'm just looking for a quick buck."
-msgstr ""
+msgstr "Я просто хочу быстро заработать."
 
 #: data/json/npcs/professions/heist_crew.json
 msgid "Heist Thief"
-msgstr ""
+msgstr "Грабитель-вор"
 
 #: data/json/npcs/professions/neighborhood_watch.json
 msgid "Neighborhood Hunter"
@@ -208810,7 +208834,7 @@ msgstr "СТУПНИ"
 #. ~ Crafting recipes subcategory of 'ARMOR' category
 #: data/json/recipes/recipes.json
 msgid "SHIELD"
-msgstr ""
+msgstr "ЩИТ"
 
 #. ~ Crafting recipes subcategory of 'OTHER' category
 #: data/json/recipes/recipes.json
@@ -273239,7 +273263,7 @@ msgstr "Переименовать профессию"
 
 #: data/raw/keybindings/keybindings.json src/character_display.cpp
 msgid "Change name"
-msgstr ""
+msgstr "Изменить имя"
 
 #: data/raw/keybindings/keybindings.json
 msgid "Wear"
@@ -289409,7 +289433,7 @@ msgstr "Снять"
 
 #: src/game_inventory.cpp
 msgid "You aren't wearing anything."
-msgstr ""
+msgstr "На вас ничего не надето."
 
 #: src/game_inventory.cpp
 #, c-format
@@ -296453,7 +296477,7 @@ msgstr "У вас нет этого предмета, чтобы выполни�
 
 #: src/item_action.cpp
 msgid "You don't have any items with registered uses!"
-msgstr ""
+msgstr "У вас нет предметов с зарегистрированными способами использования!"
 
 #: src/item_action.cpp
 msgid "Execute which action?"
@@ -310398,7 +310422,7 @@ msgstr "%1$s (%2$d)"
 
 #: src/newcharacter.cpp
 msgid "Items:"
-msgstr ""
+msgstr "Предметы:"
 
 #: src/newcharacter.cpp
 msgctxt "set_profession_item"
@@ -310462,11 +310486,11 @@ msgstr "%s уровень %d"
 
 #: src/newcharacter.cpp
 msgid "Money:"
-msgstr ""
+msgstr "Деньги:"
 
 #: src/newcharacter.cpp
 msgid "Companions:"
-msgstr ""
+msgstr "Спутники:"
 
 #: src/newcharacter.cpp
 #, c-format
