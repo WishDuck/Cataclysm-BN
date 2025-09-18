@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-15 01:33+0000\n"
+"POT-Creation-Date: 2025-09-18 01:30+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Italian (Italy) (https://app.transifex.com/bn-team/teams/113585/it_IT/)\n"
 "MIME-Version: 1.0\n"
@@ -118366,8 +118366,9 @@ msgstr "Tiri la leva, preparando il LAW a fare fuoco."
 #. ~ Description for {'str': 'packed M72 LAW'}
 #: data/json/items/tool/explosives.json
 msgid ""
-"This is a M72 LAW, packed in its storage form.  Use it to pop it out and "
-"make it ready to fire.  Once it is activated, it cannot be repacked."
+"This is a M72 LAW, packed in its storage form with attached shoulder strap."
+"  Use it to pop it out and make it ready to fire.  Once it is activated, it "
+"cannot be repacked."
 msgstr ""
 
 #: data/json/items/tool/explosives.json
@@ -118899,6 +118900,20 @@ msgstr[2] ""
 msgid ""
 "A battery-powered lighter.  More efficient than a crude electric "
 "firestarter, its batteries last for quite a while."
+msgstr ""
+
+#: data/json/items/tool/fire.json
+msgid "survivor lighter"
+msgid_plural "survivor lighters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'survivor lighter'}
+#: data/json/items/tool/fire.json
+msgid ""
+"This makeshift refillable lighter contains a simple wick and ignitor that "
+"can be used with improvised fuels such as diesel or lamp oil."
 msgstr ""
 
 #: data/json/items/tool/firefighting.json

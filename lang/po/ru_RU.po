@@ -35,7 +35,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-17 01:27+0000\n"
+"POT-Creation-Date: 2025-09-18 01:30+0000\n"
 "Last-Translator: Vadim, 2025\n"
 "Language-Team: Russian (Russia) (https://app.transifex.com/bn-team/teams/113585/ru_RU/)\n"
 "MIME-Version: 1.0\n"
@@ -136530,12 +136530,10 @@ msgstr "Вы дёрнули за рычаг и приготовили грана
 #. ~ Description for {'str': 'packed M72 LAW'}
 #: data/json/items/tool/explosives.json
 msgid ""
-"This is a M72 LAW, packed in its storage form.  Use it to pop it out and "
-"make it ready to fire.  Once it is activated, it cannot be repacked."
+"This is a M72 LAW, packed in its storage form with attached shoulder strap."
+"  Use it to pop it out and make it ready to fire.  Once it is activated, it "
+"cannot be repacked."
 msgstr ""
-"Одноразовый гранатомёт M72 LAW, упакованный для хранения и перевозки. "
-"Активируйте его, чтобы привести в состояние боевой готовности, после чего он"
-" уже не может быть упакован."
 
 #: data/json/items/tool/explosives.json
 msgid "improvised grenade"
@@ -137159,6 +137157,21 @@ msgid ""
 msgstr ""
 "Зажигалка с питанием от батареи. Более эффективная, чем простая "
 "электрическая зажигалка, её батареи хватает надолго."
+
+#: data/json/items/tool/fire.json
+msgid "survivor lighter"
+msgid_plural "survivor lighters"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#. ~ Description for {'str': 'survivor lighter'}
+#: data/json/items/tool/fire.json
+msgid ""
+"This makeshift refillable lighter contains a simple wick and ignitor that "
+"can be used with improvised fuels such as diesel or lamp oil."
+msgstr ""
 
 #: data/json/items/tool/firefighting.json
 msgid "crash axe"

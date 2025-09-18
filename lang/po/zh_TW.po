@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-15 01:33+0000\n"
+"POT-Creation-Date: 2025-09-18 01:30+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -107605,9 +107605,10 @@ msgstr "你拉起保險, 準備發射66火箭彈。"
 #. ~ Description for {'str': 'packed M72 LAW'}
 #: data/json/items/tool/explosives.json
 msgid ""
-"This is a M72 LAW, packed in its storage form.  Use it to pop it out and "
-"make it ready to fire.  Once it is activated, it cannot be repacked."
-msgstr "這是一把 M72 火箭筒, 目前已經裝彈了。隨時使用它就可以將其擊發。一旦它被發射後, 就無法再次裝填。"
+"This is a M72 LAW, packed in its storage form with attached shoulder strap."
+"  Use it to pop it out and make it ready to fire.  Once it is activated, it "
+"cannot be repacked."
+msgstr "M72式单兵火箭筒，处于收缩状态，并配有肩带。将其展开即可准备发射。一旦展开，便无法重新收起。"
 
 #: data/json/items/tool/explosives.json
 msgid "improvised grenade"
@@ -108081,6 +108082,18 @@ msgid ""
 "A battery-powered lighter.  More efficient than a crude electric "
 "firestarter, its batteries last for quite a while."
 msgstr "一款电池供电的点火器。比简单的电子火种工具更高效，其电池寿命相当长。"
+
+#: data/json/items/tool/fire.json
+msgid "survivor lighter"
+msgid_plural "survivor lighters"
+msgstr[0] "幸存者打火机"
+
+#. ~ Description for {'str': 'survivor lighter'}
+#: data/json/items/tool/fire.json
+msgid ""
+"This makeshift refillable lighter contains a simple wick and ignitor that "
+"can be used with improvised fuels such as diesel or lamp oil."
+msgstr "这款可补充燃料的自制打火机内含一根简易灯芯和一个点火器，能够使用柴油或灯油之类的应急燃料。"
 
 #: data/json/items/tool/firefighting.json
 msgid "crash axe"

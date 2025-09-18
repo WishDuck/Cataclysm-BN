@@ -36,7 +36,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-17 01:27+0000\n"
+"POT-Creation-Date: 2025-09-18 01:30+0000\n"
 "Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -25517,12 +25517,12 @@ msgstr ""
 #: data/json/professions.json
 msgctxt "profession_male"
 msgid "Mutant Escape Team"
-msgstr "돌연변이 탈옥수 팀"
+msgstr "돌연변이 탈출 팀"
 
 #: data/json/professions.json
 msgctxt "profession_female"
 msgid "Mutant Escape Team"
-msgstr "돌연변이 탈옥수 팀"
+msgstr "돌연변이 탈출 팀"
 
 #. ~ Profession (male Mutant Escape Team) description
 #: data/json/professions.json
@@ -69907,6 +69907,9 @@ msgid ""
 "iron-banded shields for the same encumbrance, but heavier and less "
 "protective against bashing weapons."
 msgstr ""
+"목제로 이루어진 단순한 원형의 방패로, 그리스의 호제로 이루어진 단순한 원형의 방패로, 그리스의 호플론 방패와 유사하게 청동으로 가공되어"
+" 있습니다.  같은 방해도를 지녔음에도 불구하고 강철제 방패보다 베기 무기에 더욱 강하지만, 더 무거운데다 타격 무기에 대한 공격은 "
+"보호도가 더 낮습니다."
 
 #: data/json/items/armor/shields.json
 msgid "scaleskin shield"
@@ -69934,6 +69937,8 @@ msgid ""
 "fending off arrows.  It's small and light enough to not hinder the use of "
 "your hands."
 msgstr ""
+"화살보다는 결투 중에 상대 무기를 막는데 유용하도록 만들어진 작고 둥근 나무 방패입니다. 작고 가벼운 덕분에 손을 쓰는데 걸리적거리지 "
+"않습니다."
 
 #: data/json/items/armor/shields.json
 msgid "carbon fiber buckler"
@@ -111498,8 +111503,9 @@ msgstr "작동 레버를 당겨서, LAW를 발사 준비 상태로 만들었습�
 #. ~ Description for {'str': 'packed M72 LAW'}
 #: data/json/items/tool/explosives.json
 msgid ""
-"This is a M72 LAW, packed in its storage form.  Use it to pop it out and "
-"make it ready to fire.  Once it is activated, it cannot be repacked."
+"This is a M72 LAW, packed in its storage form with attached shoulder strap."
+"  Use it to pop it out and make it ready to fire.  Once it is activated, it "
+"cannot be repacked."
 msgstr ""
 "보관 상태인 M72 LAW입니다. 사용하면 꼬리날개를 펼쳐 발사 준비 상태로 만듭니다. 한번 펼치면 다시 보관 상태로 되돌릴 수 "
 "없습니다."
@@ -112001,6 +112007,18 @@ msgid ""
 "A battery-powered lighter.  More efficient than a crude electric "
 "firestarter, its batteries last for quite a while."
 msgstr "배터리로 작동하는 라이터입니다. 수제 전기 발화기구에 비해 훨씬 효율적이며, 배터리가 꽤 오랫동안 유지될 것입니다."
+
+#: data/json/items/tool/fire.json
+msgid "survivor lighter"
+msgid_plural "survivor lighters"
+msgstr[0] "생존용 라이터"
+
+#. ~ Description for {'str': 'survivor lighter'}
+#: data/json/items/tool/fire.json
+msgid ""
+"This makeshift refillable lighter contains a simple wick and ignitor that "
+"can be used with improvised fuels such as diesel or lamp oil."
+msgstr "이 라이터는 간단한 심지와 격발기로 되어 있으며, 디젤이나 램프 오일 등의 급조 연료를 사용할 수 있습니다."
 
 #: data/json/items/tool/firefighting.json
 msgid "crash axe"
@@ -198453,6 +198471,8 @@ msgid ""
 "Now the cataclysm is here, and you’re a futile fighter in a makeshift "
 "militia - badly equipped, badly trained, but determined to go down swinging."
 msgstr ""
+"당신과 몇몇 이웃들은 손에 잡히는 대로 막대기와 잡동사니를 집어들었습니다. 대재앙이 도래한 지금, 당신은 급조된 민병대의 무능한 "
+"전사입니다. 무장 수준도, 훈련 수준도 낮지만 상대를 향해 휘두를 준비는 되어있습니다."
 
 #. ~ Profession (female Makeshift Militia) description
 #: data/mods/Civilians/professions.json
@@ -198462,6 +198482,8 @@ msgid ""
 "Now the cataclysm is here, and you’re a futile fighter in a makeshift "
 "militia - badly equipped, badly trained, but determined to go down swinging."
 msgstr ""
+"당신과 몇몇 이웃들은 손에 잡히는 대로 막대기와 잡동사니를 집어들었습니다. 대재앙이 도래한 지금, 당신은 급조된 민병대의 무능한 "
+"전사입니다. 무장 수준도, 훈련 수준도 낮지만 상대를 향해 휘두를 준비는 되어있습니다."
 
 #: data/mods/Civilians/speech.json
 msgid "howling in terror."

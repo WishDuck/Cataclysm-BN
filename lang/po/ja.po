@@ -11,7 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-15 01:33+0000\n"
+"POT-Creation-Date: 2025-09-18 01:30+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Japanese (https://app.transifex.com/bn-team/teams/113585/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -107911,9 +107911,10 @@ msgstr "起動レバーを引き、LAWの発射準備を完了しました。"
 #. ~ Description for {'str': 'packed M72 LAW'}
 #: data/json/items/tool/explosives.json
 msgid ""
-"This is a M72 LAW, packed in its storage form.  Use it to pop it out and "
-"make it ready to fire.  Once it is activated, it cannot be repacked."
-msgstr "保管用に梱包されたM72 LAWです。使用することで中身を取り出し、発射できるように準備します。一度展開した後は元に戻すことはできません。"
+"This is a M72 LAW, packed in its storage form with attached shoulder strap."
+"  Use it to pop it out and make it ready to fire.  Once it is activated, it "
+"cannot be repacked."
+msgstr ""
 
 #: data/json/items/tool/explosives.json
 msgid "improvised grenade"
@@ -108390,6 +108391,18 @@ msgstr[0] "電気ライター"
 msgid ""
 "A battery-powered lighter.  More efficient than a crude electric "
 "firestarter, its batteries last for quite a while."
+msgstr ""
+
+#: data/json/items/tool/fire.json
+msgid "survivor lighter"
+msgid_plural "survivor lighters"
+msgstr[0] ""
+
+#. ~ Description for {'str': 'survivor lighter'}
+#: data/json/items/tool/fire.json
+msgid ""
+"This makeshift refillable lighter contains a simple wick and ignitor that "
+"can be used with improvised fuels such as diesel or lamp oil."
 msgstr ""
 
 #: data/json/items/tool/firefighting.json
