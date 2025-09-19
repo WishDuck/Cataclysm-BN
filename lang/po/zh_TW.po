@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-18 01:30+0000\n"
+"POT-Creation-Date: 2025-09-19 01:41+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2025\n"
 "Language-Team: Chinese (Taiwan) (https://app.transifex.com/bn-team/teams/113585/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -11666,6 +11666,10 @@ msgstr "挖水道"
 #: data/json/item_actions.json
 msgid "Dig through rock"
 msgstr "挖穿岩石"
+
+#: data/json/item_actions.json
+msgid "Analyze nearby minerals"
+msgstr "分析附近矿物"
 
 #: data/json/item_actions.json
 msgid "Pack CBM in pouch"
@@ -42711,6 +42715,7 @@ msgid ""
 msgstr "坚硬的岩石，带有裸露的灰色闪亮银矿石。其中可能藏有一些天然银块，但大部分都需要加工。"
 
 #: data/json/furniture_and_terrain/terrain-walls.json
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "gold vein"
 msgstr "金矿脉"
 
@@ -112471,6 +112476,54 @@ msgid ""
 msgstr "這是一把大鐵鎬, 適用於擊碎堅硬的東西 (需有足夠的技能)。擊向地球!"
 
 #: data/json/items/tool/workshop.json
+msgid "debugging prospecting pick"
+msgid_plural "debugging prospecting picks"
+msgstr[0] "调试用勘探镐"
+
+#. ~ Description for {'str': 'debugging prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a medium pickaxe-slash-hammer that could reveal close by ore "
+"pockets. This one has an obscene range, for debugging. God save your CPU."
+msgstr "这是一把中型镐锤，可以揭示附近的矿藏。这把是调试用的，探测范围大得离谱。愿上帝保佑你的CPU。"
+
+#: data/json/items/tool/workshop.json
+msgid "crude prospecting pick"
+msgid_plural "crude prospecting picks"
+msgstr[0] "粗制勘探镐"
+
+#. ~ Description for {'str': 'crude prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a crude hammer-pick used for finding nearby mineral veins. Terrible "
+"for anything you're not basically standing on."
+msgstr "这是一把粗制的镐锤，用于寻找附近的矿脉。如果你不是直接站在矿脉上，那它就没什么用。"
+
+#: data/json/items/tool/workshop.json
+msgid "copper prospecting pick"
+msgid_plural "copper prospecting picks"
+msgstr[0] "铜制勘探镐"
+
+#. ~ Description for copper prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a copper hammer-pick used for finding nearby mineral veins. Not "
+"accurate enough for long range, but works."
+msgstr "这是一把铜制镐锤，用于寻找附近的矿脉。远距离勘探不够精确，但还算管用。"
+
+#: data/json/items/tool/workshop.json
+msgid "steel prospecting pick"
+msgid_plural "steel prospecting picks"
+msgstr[0] "钢制勘探镐"
+
+#. ~ Description for steel prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a steel hammer-pick used for finding nearby mineral veins. Can help "
+"you sniff out even faint traces of minerals."
+msgstr "这是一把钢制镐锤，用于寻找附近的矿脉。它甚至能帮你嗅出最微弱的矿物痕迹。"
+
+#: data/json/items/tool/workshop.json
 msgid "pin reamer"
 msgid_plural "pin reamers"
 msgstr[0] "銷子鉸刀"
@@ -164814,6 +164867,26 @@ msgstr "岩石露头"
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "mineral vein"
 msgstr "矿脉"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "silver vein"
+msgstr "银脉"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "lead vein"
+msgstr "铅脉"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "copper vein"
+msgstr "铜脉"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "tin vein"
+msgstr "锡脉"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "iron vein"
+msgstr "铁脉"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_abstract.json
 msgid "generic_cropland"
@@ -246564,6 +246637,25 @@ msgstr "你想淹死自己吗？"
 #: src/iuse_actor.cpp
 msgid "You can't listen to multiple music players at once!"
 msgstr "你不能同时收听多个音乐播放器！"
+
+#: src/iuse_actor.cpp
+msgid "Actually how. You're an NPC. You can't do long actions. No."
+msgstr "到底是怎么做到的？你是个NPC，不能执行长时间动作。不行。"
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect from a vehicle!"
+msgstr "你不能在载具上进行勘探！"
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect underwater!"
+msgstr "你不能在水下进行勘探！"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid ""
+"You use the %s to gather a few samples and gauge where minerals may lie "
+"nearby."
+msgstr "你使用%s收集了一些样本，以此来估测附近可能存在的矿藏。"
 
 #: src/iuse_actor.h
 msgid "Carve"

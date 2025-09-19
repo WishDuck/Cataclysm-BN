@@ -36,7 +36,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-18 01:30+0000\n"
+"POT-Creation-Date: 2025-09-19 01:41+0000\n"
 "Last-Translator: Tae Heon Lim, 2025\n"
 "Language-Team: Korean (https://app.transifex.com/bn-team/teams/113585/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -12123,6 +12123,10 @@ msgstr "물길내기"
 #: data/json/item_actions.json
 msgid "Dig through rock"
 msgstr "돌 파내기"
+
+#: data/json/item_actions.json
+msgid "Analyze nearby minerals"
+msgstr "근처 광맥 분석"
 
 #: data/json/item_actions.json
 msgid "Pack CBM in pouch"
@@ -44463,6 +44467,7 @@ msgid ""
 msgstr "은광석의 회색 빛이 드러나는 단단한 암석.  그 안에 몇 조각의 천연 은이 숨겨져 있을 수 있지만 대부분 처리해야 합니다."
 
 #: data/json/furniture_and_terrain/terrain-walls.json
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "gold vein"
 msgstr "금 광맥"
 
@@ -69924,6 +69929,8 @@ msgid ""
 " a central wooden handgrip similar to shields historically associated with "
 "southeastern Africa.  Surprisingly light and durable."
 msgstr ""
+"거대한 파충류의 비늘로 만든 큰 타원형의 방패로, 꿰메어진 다음 끓여 한 개의 단단한 판으로 만든 뒤, 동남아프리카의 방패처럼 중앙의 "
+"목제 손잡이에 장착되었습니다.  놀랍게도 가벼운데다 튼튼합니다."
 
 #: data/json/items/armor/shields.json
 msgid "wooden targe"
@@ -116553,6 +116560,57 @@ msgid ""
 "This is a large steel pickaxe, suitable for breaking up hard things or (with"
 " enough skill) hard targets.  Strike the earth!"
 msgstr "큰 강철 곡괭이, 단단한 것을 부수거나 적절한 기술이 있다면 단단한 적을 부수는데 적합합니다. 땅을 내려치세요!"
+
+#: data/json/items/tool/workshop.json
+msgid "debugging prospecting pick"
+msgid_plural "debugging prospecting picks"
+msgstr[0] "디버그 탐사용 곡괭이"
+
+#. ~ Description for {'str': 'debugging prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a medium pickaxe-slash-hammer that could reveal close by ore "
+"pockets. This one has an obscene range, for debugging. God save your CPU."
+msgstr ""
+"광맥 덩어리를 드러낼 수 있는 중간 크기의 곡괭이 겸 망치입니다. 이 곡괭이는 디버그를 위해 터무니없는 범위를 갖고 있으므로, 사용할 때"
+" 신에게 CPU를 구해달라고 기도 한번 올리고 쓰세요."
+
+#: data/json/items/tool/workshop.json
+msgid "crude prospecting pick"
+msgid_plural "crude prospecting picks"
+msgstr[0] "조잡한 탐사용 곡괭이"
+
+#. ~ Description for {'str': 'crude prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a crude hammer-pick used for finding nearby mineral veins. Terrible "
+"for anything you're not basically standing on."
+msgstr "이것은 근처의 광맥을 찾아보기 위한 망치-곡괭이입니다.  기본적으로 서 있지 않은 곳에는 사용하기에 최악입니다."
+
+#: data/json/items/tool/workshop.json
+msgid "copper prospecting pick"
+msgid_plural "copper prospecting picks"
+msgstr[0] "구리 탐사용 곡괭이"
+
+#. ~ Description for copper prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a copper hammer-pick used for finding nearby mineral veins. Not "
+"accurate enough for long range, but works."
+msgstr ""
+"이것은 근처의 광맥을 찾아보기 위한 구리로 만들어진 망치-곡괭이입니다.  긴 범위에는 그리 정확한 편은 아니지만 일단 작동은 합니다."
+
+#: data/json/items/tool/workshop.json
+msgid "steel prospecting pick"
+msgid_plural "steel prospecting picks"
+msgstr[0] "강철 탐사용 곡괭이"
+
+#. ~ Description for steel prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a steel hammer-pick used for finding nearby mineral veins. Can help "
+"you sniff out even faint traces of minerals."
+msgstr "이것은 근처의 광맥을 찾아보기 위한 강철로 만들어진 망치-곡괭이입니다.  희미한 광맥의 흔적까지 찾아볼 수 있게 합니다."
 
 #: data/json/items/tool/workshop.json
 msgid "pin reamer"
@@ -171443,6 +171501,26 @@ msgstr "바위투성이 노출부"
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "mineral vein"
 msgstr "광맥"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "silver vein"
+msgstr "은 광맥"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "lead vein"
+msgstr "납 광맥"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "copper vein"
+msgstr "구리 광맥"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "tin vein"
+msgstr "주석 광맥"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "iron vein"
+msgstr "철 광맥"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_abstract.json
 msgid "generic_cropland"
@@ -255025,6 +255103,25 @@ msgstr "스스로를 익사시킬 셈인가요?"
 #: src/iuse_actor.cpp
 msgid "You can't listen to multiple music players at once!"
 msgstr "여러 음악 재생기기를 동시에 들을 수 없습니다!"
+
+#: src/iuse_actor.cpp
+msgid "Actually how. You're an NPC. You can't do long actions. No."
+msgstr "도대체 어떻게요? 당신은 NPC고, NPC는 긴 행동을 할 수 없습니다. 안돼요."
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect from a vehicle!"
+msgstr "차량에 탄 채로 탐사할 수 없습니다!"
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect underwater!"
+msgstr "수중을 탐사할 수 없습니다!"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid ""
+"You use the %s to gather a few samples and gauge where minerals may lie "
+"nearby."
+msgstr "%s(을)를 이용해 샘플을 그러모으며 광맥이 어디쯤 있을지 짐작해봅니다."
 
 #: src/iuse_actor.h
 msgid "Carve"

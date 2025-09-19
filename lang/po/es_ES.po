@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2025-09-18 01:30+0000\n"
+"POT-Creation-Date: 2025-09-19 01:41+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2025\n"
 "Language-Team: Spanish (Spain) (https://app.transifex.com/bn-team/teams/113585/es_ES/)\n"
 "MIME-Version: 1.0\n"
@@ -12744,6 +12744,10 @@ msgstr "Cavar canal de agua"
 #: data/json/item_actions.json
 msgid "Dig through rock"
 msgstr "Cavar en piedra"
+
+#: data/json/item_actions.json
+msgid "Analyze nearby minerals"
+msgstr ""
 
 #: data/json/item_actions.json
 msgid "Pack CBM in pouch"
@@ -45321,6 +45325,7 @@ msgid ""
 msgstr ""
 
 #: data/json/furniture_and_terrain/terrain-walls.json
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "gold vein"
 msgstr ""
 
@@ -132230,6 +132235,62 @@ msgstr ""
 "habilidad) enemigos duros. ¡Picá la tierra!"
 
 #: data/json/items/tool/workshop.json
+msgid "debugging prospecting pick"
+msgid_plural "debugging prospecting picks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'debugging prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a medium pickaxe-slash-hammer that could reveal close by ore "
+"pockets. This one has an obscene range, for debugging. God save your CPU."
+msgstr ""
+
+#: data/json/items/tool/workshop.json
+msgid "crude prospecting pick"
+msgid_plural "crude prospecting picks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for {'str': 'crude prospecting pick'}
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a crude hammer-pick used for finding nearby mineral veins. Terrible "
+"for anything you're not basically standing on."
+msgstr ""
+
+#: data/json/items/tool/workshop.json
+msgid "copper prospecting pick"
+msgid_plural "copper prospecting picks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for copper prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a copper hammer-pick used for finding nearby mineral veins. Not "
+"accurate enough for long range, but works."
+msgstr ""
+
+#: data/json/items/tool/workshop.json
+msgid "steel prospecting pick"
+msgid_plural "steel prospecting picks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. ~ Description for steel prospecting pick
+#: data/json/items/tool/workshop.json
+msgid ""
+"This is a steel hammer-pick used for finding nearby mineral veins. Can help "
+"you sniff out even faint traces of minerals."
+msgstr ""
+
+#: data/json/items/tool/workshop.json
 msgid "pin reamer"
 msgid_plural "pin reamers"
 msgstr[0] ""
@@ -189228,6 +189289,26 @@ msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "mineral vein"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "silver vein"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "lead vein"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "copper vein"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "tin vein"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain.json
+msgid "iron vein"
 msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_abstract.json
@@ -275980,6 +276061,25 @@ msgstr ""
 
 #: src/iuse_actor.cpp
 msgid "You can't listen to multiple music players at once!"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "Actually how. You're an NPC. You can't do long actions. No."
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect from a vehicle!"
+msgstr ""
+
+#: src/iuse_actor.cpp
+msgid "You can't prospect underwater!"
+msgstr ""
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid ""
+"You use the %s to gather a few samples and gauge where minerals may lie "
+"nearby."
 msgstr ""
 
 #: src/iuse_actor.h
