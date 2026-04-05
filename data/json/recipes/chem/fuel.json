@@ -174,7 +174,7 @@
       [ "reference_cooking", 4 ]
     ],
     "qualities": [ { "id": "CHEM", "level": 2 }, { "id": "PRESSURIZATION", "level": 1 } ],
-    "tools": [ [ [ "electrolysis_kit", 200 ] ] ],
+    "tools": [ [ [ "electrolysis_kit", 20 ] ] ],
     "components": [ [ [ "water_clean", 1 ], [ "water", 1 ] ] ]
   },
   {
