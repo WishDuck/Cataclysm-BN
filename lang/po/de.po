@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2026-04-19 17:29+0000\n"
+"POT-Creation-Date: 2026-04-25 21:27+0000\n"
 "Last-Translator: Coolthulhu <Coolthulhu@gmail.com>, 2026\n"
 "Language-Team: German (https://app.transifex.com/bn-team/teams/113585/de/)\n"
 "MIME-Version: 1.0\n"
@@ -25459,6 +25459,68 @@ msgstr ""
 
 #: data/json/professions.json
 msgctxt "profession_male"
+msgid "Fighter Pilot"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Fighter Pilot"
+msgstr ""
+
+#. ~ Profession (male Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"They had you pushing your aircraft to the breaking point dropping ordinance "
+"on the undead.  After a mid-air collision forced you to eject, you were "
+"picked up by the unit you were providing air support for only for them to be"
+" wiped out to the last man."
+msgstr ""
+
+#. ~ Profession (female Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"They had you pushing your aircraft to the breaking point dropping ordinance "
+"on the undead.  After a mid-air collision forced you to eject, you were "
+"picked up by the unit you were providing air support for only for them to be"
+" wiped out to the last man."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "F-35 Fighter Pilot"
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "F-35 Fighter Pilot"
+msgstr ""
+
+#. ~ Profession (male F-35 Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You thought the end of the world would see you dueling the PLAAF while ICBMs"
+" streak overhead.  Instead the end was a long day of desperate sorties as "
+"monstrosities swarmed every city within your craft's operational range.  "
+"Your airbase was overrun too, and every landing strip just seems more "
+"hostile than the last."
+msgstr ""
+
+#. ~ Profession (female F-35 Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You thought the end of the world would see you dueling the PLAAF while ICBMs"
+" streak overhead.  Instead the end was a long day of desperate sorties as "
+"monstrosities swarmed every city within your craft's operational range.  "
+"Your airbase was overrun too, and every landing strip just seems more "
+"hostile than the last."
+msgstr ""
+
+#: data/json/professions.json
+msgctxt "profession_male"
 msgid "Hitman"
 msgstr ""
 
@@ -31004,6 +31066,46 @@ msgstr ""
 
 #: data/json/speech.json
 msgid "\" Time to collect my bonus!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"Enemy spotted!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"Contact!  One more loose end…\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"This shouldn't take long!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"Tango dead ahead!  This one's lasted longer than the others…\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"You chose the wrong military installation, kid!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"We call this a difficulty tweak!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"You'll be nothing more than a redaction line when I'm done with you!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"Everyone move up!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"CBM power in the red, cover me!\""
+msgstr ""
+
+#: data/json/speech.json
+msgid "\"I bet five dollars this guy doesn't last another thirty seconds!\""
 msgstr ""
 
 #: data/json/spells_trap.json
@@ -40240,8 +40342,11 @@ msgstr[0] "gefüllter Holzkohleofen"
 msgstr[1] "gefüllte Holzkohleöfen"
 
 #: data/json/furniture_and_terrain/furniture-tools.json
+#: data/json/items/tool/deployable.json
 msgid "metal charcoal kiln"
-msgstr "Metallholzkohleofen"
+msgid_plural "metal charcoal kilns"
+msgstr[0] ""
+msgstr[1] ""
 
 #. ~ Description for metal charcoal kiln
 #. ~ Description for filled metal charcoal kiln
@@ -60450,7 +60555,7 @@ msgid ""
 "An active headset used by the military.  Without batteries or when turned "
 "off they function like normal earmuffs and block all sound.  They will block"
 " sounds over a certain decibel amount as well as function as a two-way radio"
-" when turned on.  The earmuffs are currently off."
+" when turned on.  The headset is currently off."
 msgstr ""
 
 #: data/json/items/tool_armor.json
@@ -79349,6 +79454,19 @@ msgstr ""
 "Dieses wuchtige Buch enthält eine große Menge an wichtigen Informationen für"
 " Anfänger im Bogenschießen."
 
+#: data/json/items/book/archery.json
+msgid "The Professional Bowhunter's Journal"
+msgid_plural "The Professional Bowhunter's Journals"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': "The Professional Bowhunter's Journal"}
+#: data/json/items/book/archery.json
+msgid ""
+"A lengthy autobiography from an award-winning hunter, filled with detailed "
+"and advanced descriptions of bow techniques."
+msgstr ""
+
 #: data/json/items/book/barter.json
 msgid "car buyer's guide"
 msgid_plural "car buyer's guides"
@@ -79436,6 +79554,21 @@ msgstr ""
 "Schlagstöcken. Die Zielgruppe ist die Polizei und das Militär und der Führer"
 " ist gefüllt mit lange erprobten, nicht blödsinnigen Informationen und ist "
 "so geschrieben, um von Anfängern verstanden zu werden."
+
+#: data/json/items/book/bashing.json
+msgid "TC 7-21.1 (CUI) Special Forces Blunt Weapon Techniques"
+msgid_plural "TC 7-21.1 (CUI) Special Forces Blunt Weapon Techniquess"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'TC 7-21.1 (CUI) Special Forces Blunt Weapon
+#. Techniques'}
+#: data/json/items/book/bashing.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of blunt weapons, from batons and quarterstaffs to makeshift clubs "
+"and large rocks. Requires some experience to understand."
+msgstr ""
 
 #: data/json/items/book/bloat.json
 msgid "Mycenacean Hymns"
@@ -80717,6 +80850,21 @@ msgstr ""
 "Ein klassischer sowjetischer Text über die Kunst, mit einer Klinge "
 "anzugreifen."
 
+#: data/json/items/book/cutting.json
+msgid "TC 7-21.2 (CUI) Special Forces Cutting Weapon Techniques"
+msgid_plural "TC 7-21.2 (CUI) Special Forces Cutting Weapon Techniquess"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'TC 7-21.2 (CUI) Special Forces Cutting Weapon
+#. Techniques'}
+#: data/json/items/book/cutting.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of cutting weapons, from large knives and swords to razors and sharp"
+" rocks. Requires some experience to understand."
+msgstr ""
+
 #: data/json/items/book/dodge.json
 msgid "Dance Dance Dance!"
 msgid_plural "issues of Dance Dance Dance!"
@@ -80758,6 +80906,20 @@ msgstr[1] ""
 #: data/json/items/book/dodge.json
 msgid "The Kids' Guide to Acting and Stagecraft."
 msgstr "Der Führer über die Schauspiel- und Bühnenkunst für Kinder."
+
+#: data/json/items/book/dodge.json
+msgid "Professional Dancer's Textbook"
+msgid_plural "Professional Dancer's Textbooks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': "Professional Dancer's Textbook"}
+#: data/json/items/book/dodge.json
+msgid ""
+"A giant textbook aimed towards those pursuing professional dance, with "
+"descriptions of highly advanced footwork which could be invaluable to those "
+"wishing to dance around enemy attacks."
+msgstr ""
 
 #: data/json/items/book/driving.json
 msgid "AAA Guide"
@@ -82767,6 +82929,21 @@ msgstr ""
 "Ein zerlesenes gebundenes Buch, welches einfache Nahkampfstrategien und "
 "-techniken illustriert."
 
+#: data/json/items/book/melee.json
+msgid "TC 7-21 (CUI) Special Forces Close Quarters Combat"
+msgid_plural "TC 7-21 (CUI) Special Forces Close Quarters Combats"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'TC 7-21 (CUI) Special Forces Close Quarters
+#. Combat'}
+#: data/json/items/book/melee.json
+msgid ""
+"A large military manual describing advanced techniques and practices for "
+"melee combat, both armed and unarmed, based on the experiences of a "
+"legendary soldier.  Requires some experience to understand."
+msgstr ""
+
 #: data/json/items/book/misc.json
 msgid "paperback abstract"
 msgid_plural "paperback abstracts"
@@ -84772,6 +84949,21 @@ msgstr ""
 "Eine große Felddienstvorschrift über die Benutzung von Bajonetten und "
 "Kampftheorie."
 
+#: data/json/items/book/stabbing.json
+msgid "TC 7-21.3 (CUI) Special Forces Piercing Weapon Techniques"
+msgid_plural "TC 7-21.3 (CUI) Special Forces Piercing Weapon Techniquess"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'TC 7-21.3 (CUI) Special Forces Piercing Weapon
+#. Techniques'}
+#: data/json/items/book/stabbing.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of piercing weapons, from knives and bayonets to shivs and long "
+"pointy sticks. Requires some experience to understand."
+msgstr ""
+
 #: data/json/items/book/survival.json
 msgid "Survival Under Atomic Attack"
 msgid_plural "copies of Survival Under Atomic Attack"
@@ -85238,6 +85430,20 @@ msgstr ""
 "Es scheint ein Handbuch für Ringer zu sein, schlecht fotokopiert und auf "
 "spiralgebundenem Papier veröffentlicht. Trotzdem enthält es viele nützliche "
 "Tipps für den unbewaffneten Kampf."
+
+#: data/json/items/book/unarmed.json
+msgid "TC 7-21.4 (CUI) Special Forces Unarmed Combat Techniques"
+msgid_plural "TC 7-21.4 (CUI) Special Forces Unarmed Combat Techniquess"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'TC 7-21.4 (CUI) Special Forces Unarmed Combat
+#. Techniques'}
+#: data/json/items/book/unarmed.json
+msgid ""
+"A large military manual describing advanced techniques and practices for "
+"unarmed combat. Requires some experience to understand."
+msgstr ""
 
 #: data/json/items/classes/book.json
 msgid "readable magazine"
@@ -90215,6 +90421,31 @@ msgstr[1] ""
 #: data/json/items/comestibles/egg.json
 msgid "Common roe from an unknown fish."
 msgstr "Gewöhnlicher Rogen von einem unbekannten Fisch."
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown tiny fish."
+msgstr ""
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown small fish."
+msgstr ""
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown medium fish."
+msgstr ""
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown large fish."
+msgstr ""
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown huge fish."
+msgstr ""
 
 #: data/json/items/comestibles/egg.json
 msgid "powdered egg"
@@ -110688,11 +110919,8 @@ msgstr[1] "Mündungsbremsen"
 #: data/json/items/gunmod/muzzle.json
 msgid ""
 "A muzzle brake redirects exhaust gases to compensate for muzzle climb, "
-"improving recoil but increasing bulk, noise, and reducing accuracy slightly."
+"improving recoil but increasing bulk and noise."
 msgstr ""
-"Eine Mündungsbremse leitet Abgase um, um die Verreißung zu kompensieren und "
-"den Rückstoß zu verbessern, aber sie erhöht das Gewicht, den Lärm und "
-"verringert die Treffgenauigkeit leicht."
 
 #: data/json/items/gunmod/muzzle.json
 msgid "modified muzzle brake"
@@ -111101,10 +111329,8 @@ msgstr[1] "Leuchtpunktvisiere"
 #: data/json/items/gunmod/sights.json
 msgid ""
 "Adds a red dot optic to the top of your gun, replacing the iron sights.  "
-"Increases accuracy and weight."
+"Provides a balance of improved accuracy and faster target acquisition."
 msgstr ""
-"Fügt ein Leuchtpunktvisier auf der Oberseite deiner Feuerwaffe hinzu. Die "
-"offene Visierung wird dadurch ersetzt. Erhöht Treffgenauigkeit und Gewicht."
 
 #: data/json/items/gunmod/sights.json
 msgid "rifle scope"
@@ -113293,6 +113519,18 @@ msgstr[1] ""
 #. ~ Description for {'str': 'TAC-50 magazine'}
 #: data/json/items/magazine/50.json
 msgid "5-round box magazine for McMillan TAC-50."
+msgstr ""
+
+#: data/json/items/magazine/50.json
+msgid "Barrett drum magazine"
+msgid_plural "Barrett drum magazines"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'Barrett drum magazine'}
+#: data/json/items/magazine/50.json
+msgid ""
+"Standard 20-round drum magazine for a Barrett M107A1 anti-materiel rifle."
 msgstr ""
 
 #: data/json/items/magazine/5x50.json
@@ -119886,18 +120124,6 @@ msgid "A large sheet of glass strengthened with steel wiring."
 msgstr "Eine große, mit Stahlverdrahtung verstärkte Glasscheibe."
 
 #: data/json/items/resources/glass.json
-msgid "pane of reinforced glass"
-msgid_plural "panes of reinforced glass"
-msgstr[0] "kleine Panzerglasscheibe"
-msgstr[1] "kleine Panzerglasscheiben"
-
-#. ~ Description for {'str': 'pane of reinforced glass', 'str_pl': 'panes of
-#. reinforced glass'}
-#: data/json/items/resources/glass.json
-msgid "A small pane of glass strengthened with steel wiring."
-msgstr "Eine kleine, mit Stahldrähten verstärkte Glasscheibe."
-
-#: data/json/items/resources/glass.json
 msgid "sheet of tempered glass"
 msgid_plural "sheets of tempered glass"
 msgstr[0] ""
@@ -121935,6 +122161,14 @@ msgstr ""
 #. ~ Description for {'str': 'folding chair'}
 #: data/json/items/tool/deployable.json
 msgid "Folded plastic chair on a metal frame, deploy to sit down."
+msgstr ""
+
+#. ~ Description for {'str': 'metal charcoal kiln'}
+#: data/json/items/tool/deployable.json
+msgid ""
+"A huge metal kiln with a door cut in to allow easy loading and unloading of "
+"char materials. When deployed, it can process up to 200L of bone or wood "
+"into charcoal."
 msgstr ""
 
 #: data/json/items/tool/dimensional_travel.json
@@ -131234,8 +131468,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. ~ Description for {'str': 'VTOL thruster'}
-#. ~ Description for VTOL thruster
-#: data/json/items/vehicle/jets.json data/json/vehicleparts/jets.json
+#: data/json/items/vehicle/jets.json
 msgid ""
 "This is a vertical takeoff and landing (VTOL) propulsion system used in "
 "military VTOL aircraft and large transport drones.  It allows for free "
@@ -135412,6 +135645,33 @@ msgstr ""
 
 #: data/json/monsters/feral_humans.json
 msgid "The feral bodyguard fires their pistol!"
+msgstr ""
+
+#: data/json/monsters/feral_humans.json
+msgid "feral black-ops"
+msgid_plural "feral black-opss"
+msgstr[0] ""
+msgstr[1] ""
+
+#. ~ Description for {'str': 'feral black-ops'}
+#: data/json/monsters/feral_humans.json
+msgid ""
+"Dressed in a suit of unmarked black armor and surrounded by a shadowy field,"
+" this heavily armed feral looks to be part of an elite unit. Now that you've"
+" stumbled upon their operation, you're just another loose thread to clean "
+"up..."
+msgstr ""
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their smg!"
+msgstr ""
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their automagnum!"
+msgstr ""
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their sniper rifle!"
 msgstr ""
 
 #: data/json/monsters/fish.json
@@ -151678,6 +151938,10 @@ msgstr ""
 
 #: data/json/npcs/TALK_COMMON_ALLY.json
 msgid "Please do some farming work."
+msgstr ""
+
+#: data/json/npcs/TALK_COMMON_ALLY.json
+msgid "Can you craft this item?"
 msgstr ""
 
 #: data/json/npcs/TALK_COMMON_ALLY.json
@@ -182306,6 +182570,18 @@ msgid ""
 "everything nice."
 msgstr ""
 
+#: data/json/obsoletion/items.json
+msgid "pane of reinforced glass"
+msgid_plural "panes of reinforced glass"
+msgstr[0] "kleine Panzerglasscheibe"
+msgstr[1] "kleine Panzerglasscheiben"
+
+#. ~ Description for {'str': 'pane of reinforced glass', 'str_pl': 'panes of
+#. reinforced glass'}
+#: data/json/obsoletion/items.json
+msgid "A small pane of glass strengthened with steel wiring."
+msgstr "Eine kleine, mit Stahldrähten verstärkte Glasscheibe."
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr "Finde einen Grippeimpfstoff"
@@ -184341,6 +184617,10 @@ msgid ""
 "laurel."
 msgstr ""
 
+#: data/json/overmap/overmap_special/mil_blacksite_multitile.json
+msgid "military blacksite"
+msgstr ""
+
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "nether-chewed field"
 msgstr ""
@@ -186155,9 +186435,8 @@ msgid "lab"
 msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
-#: data/mods/alt_map_key/overmap_terrain.json
-msgid "fema camp"
-msgstr "FEMA-Lager"
+msgid "military camp"
+msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
 msgid "FEMA refugee camp"
@@ -186261,6 +186540,26 @@ msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
 msgid "minefield"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "generic military airfield"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield roof"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield entrance"
+msgstr ""
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield runway"
 msgstr ""
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_necropolis.json
@@ -199641,6 +199940,14 @@ msgstr ""
 msgid "external jet thruster"
 msgstr ""
 
+#. ~ Description for VTOL thruster
+#: data/json/vehicleparts/jets.json
+msgid ""
+"This is a vertical takeoff and landing (VTOL) propulsion system used in "
+"military VTOL aircraft and large transport drones.  It provides both lift "
+"for taking off and thrust when in the air."
+msgstr ""
+
 #: data/json/vehicleparts/ladders.json
 msgid "A ladder that lets you down from heights."
 msgstr ""
@@ -201362,6 +201669,14 @@ msgstr ""
 
 #: data/json/vehicles/aircraft_other.json
 msgid "F-35 Strike Fighter"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "AV-8 Harrier"
+msgstr ""
+
+#: data/json/vehicles/aircraft_other.json
+msgid "F-15E Strike Eagle"
 msgstr ""
 
 #: data/json/vehicles/bikes.json
@@ -239263,6 +239578,10 @@ msgid "razorclaw nest"
 msgstr "Rasierklauennest"
 
 #: data/mods/alt_map_key/overmap_terrain.json
+msgid "fema camp"
+msgstr "FEMA-Lager"
+
+#: data/mods/alt_map_key/overmap_terrain.json
 msgid "sewage treatment"
 msgstr "Abwasserkläranlage"
 
@@ -247661,6 +247980,14 @@ msgstr ""
 msgid ""
 "<npcname> no longer has the in progress craft in their possession.  "
 "<npcname> stops crafting."
+msgstr ""
+
+#: src/activity_handlers.cpp
+msgid "You cannot continue crafting."
+msgstr ""
+
+#: src/activity_handlers.cpp
+msgid "<npcname> cannot continue crafting."
 msgstr ""
 
 #: src/activity_handlers.cpp
@@ -256733,6 +257060,10 @@ msgid "You can no longer see well enough to keep crafting."
 msgstr "Du kannst nicht mehr genug sehen, um mit der Fertigung fortzufahren."
 
 #: src/crafting.cpp
+msgid "<npcname> can no longer see well enough to keep crafting."
+msgstr ""
+
+#: src/crafting.cpp
 #, c-format
 msgid ""
 "The %s is too large and/or heavy to work on.  You may want to use a "
@@ -256740,7 +257071,18 @@ msgid ""
 msgstr ""
 
 #: src/crafting.cpp
+#, c-format
+msgid ""
+"The %s is too large and/or heavy for <npcname> to work on.  They may need a "
+"workbench or a smaller batch size"
+msgstr ""
+
+#: src/crafting.cpp
 msgid "Your morale is too low to continue crafting."
+msgstr ""
+
+#: src/crafting.cpp
+msgid "<npcname>'s morale is too low to continue crafting."
 msgstr ""
 
 #: src/crafting.cpp
@@ -256769,6 +257111,10 @@ msgstr "Fertige zuerst etwas an."
 #: src/crafting.cpp
 msgid "You can no longer make that craft!"
 msgstr "Du kannst nicht noch mehr davon anfertigen!"
+
+#: src/crafting.cpp
+msgid "<npcname> can no longer make that craft!"
+msgstr ""
 
 #: src/crafting.cpp
 #, c-format
@@ -256892,6 +257238,10 @@ msgid "You don't have the required components to continue crafting!"
 msgstr ""
 
 #: src/crafting.cpp
+msgid "<npcname> don't have the required components to continue crafting!"
+msgstr ""
+
+#: src/crafting.cpp
 msgid "Consume the missing components and continue crafting?"
 msgstr ""
 
@@ -256907,6 +257257,10 @@ msgstr "Du hörst mit der Fertigung auf."
 
 #: src/crafting.cpp
 msgid "You don't have the necessary tools to continue crafting!"
+msgstr ""
+
+#: src/crafting.cpp
+msgid "<npcname> don't have the necessary tools to continue crafting!"
 msgstr ""
 
 #: src/crafting.cpp
@@ -274271,11 +274625,6 @@ msgid "<npcname> starts playing their %s"
 msgstr "<npcname> fängt an, %s zu spielen"
 
 #: src/iuse_actor.cpp
-#, c-format
-msgid "%1$s %2$s"
-msgstr "%1$s %2$s"
-
-#: src/iuse_actor.cpp
 msgid "You produce an annoying sound"
 msgstr "Du machst ein nervtötendes Geräusch"
 
@@ -274283,6 +274632,11 @@ msgstr "Du machst ein nervtötendes Geräusch"
 #, c-format
 msgid "%s produces an annoying sound"
 msgstr "%s macht ein nervtötendes Geräusch"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
 
 #: src/iuse_actor.cpp
 msgid "You can't do that while mounted."
@@ -276611,7 +276965,7 @@ msgstr ""
 msgid "Loading"
 msgstr "Laden"
 
-#: src/locations.cpp
+#: src/locations.cpp src/npc.cpp
 msgid "inventory"
 msgstr "Inventar"
 
@@ -284884,6 +285238,35 @@ msgid "%s starts reading."
 msgstr ""
 
 #: src/npc.cpp
+msgid "Craft what?"
+msgstr ""
+
+#: src/npc.cpp
+msgid "Craft new item"
+msgstr ""
+
+#: src/npc.cpp
+msgid "Resume a craft"
+msgstr ""
+
+#: src/npc.cpp
+msgid "No in-progress crafts within reach."
+msgstr ""
+
+#: src/npc.cpp
+msgid "Resume which craft?"
+msgstr ""
+
+#: src/npc.cpp
+msgid "ground"
+msgstr ""
+
+#: src/npc.cpp
+#, c-format
+msgid "%1$s picks up the %2$s."
+msgstr ""
+
+#: src/npc.cpp
 msgid "This can't be worn."
 msgstr ""
 
@@ -289073,6 +289456,26 @@ msgstr ""
 "setzen, um Monsteraufwertungen abzuschalten."
 
 #: src/options.cpp
+msgid "Maximum Evolution Half Lives"
+msgstr ""
+
+#: src/options.cpp
+msgid ""
+"The maximum number of attempts for a zombie to evolve at the next half life "
+"for one evolution stage"
+msgstr ""
+
+#: src/options.cpp
+msgid "Zombies Always Evolve"
+msgstr ""
+
+#: src/options.cpp
+msgid ""
+"When reaching the maximum half lives, instead of never evolving they will "
+"evolve at that time."
+msgstr ""
+
+#: src/options.cpp
 msgid "Merchant restock scaling factor"
 msgstr ""
 
@@ -291649,7 +292052,7 @@ msgid "You feel something probing your mind, but it is rebuffed!"
 msgstr ""
 
 #: src/player_hardcoded_effects.cpp
-msgid "A terrifying image in the back out your mind paralyzes you."
+msgid "A terrifying image in the back of your mind paralyzes you."
 msgstr ""
 
 #: src/player_hardcoded_effects.cpp
@@ -296531,22 +296934,7 @@ msgstr "Ein Blitzstrahl erhellt deine Umgebung!"
 
 #: src/weather.cpp
 #, c-format
-msgid "Your umbrella protects you from the %s."
-msgstr ""
-
-#: src/weather.cpp
-#, c-format
-msgid "Your rainproof clothing protects you from the %s."
-msgstr ""
-
-#: src/weather.cpp
-#, c-format
-msgid "Your clothing protects you from the %s."
-msgstr ""
-
-#: src/weather.cpp
-#, c-format
-msgid "Your power armor protects you from the %s."
+msgid "Your %s protects you from the %s."
 msgstr ""
 
 #: src/weather.cpp

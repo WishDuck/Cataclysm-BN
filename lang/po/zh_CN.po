@@ -15,7 +15,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cataclysm-bn\n"
-"POT-Creation-Date: 2026-04-19 17:29+0000\n"
+"POT-Creation-Date: 2026-04-25 21:27+0000\n"
 "Last-Translator: Jeremy Wu <jeremy7986111@yahoo.com.tw>, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/bn-team/teams/113585/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -19308,7 +19308,7 @@ msgid ""
 "You were hoping to see some action, only to get more than you bargained for "
 "deployed stateside responding to a national emergency.  As far as you can "
 "tell, military command abandoned you to this hellhole."
-msgstr "你原本期望参与一些行动，却没想到在国内响应国家紧急情况时遭遇了更多超出预期的困境。据你所知， 据你所知，军方指挥部把你抛弃到了这个鬼地方。"
+msgstr "你本渴望投身实战，却没料到在国内应对这场国家危机时，情况完全超出了你的掌控。据你所知，军方指挥部已经把你遗弃在这个鬼地方自生自灭了。"
 
 #. ~ Profession (female Military Rifleman) description
 #: data/json/professions.json
@@ -19317,7 +19317,7 @@ msgid ""
 "You were hoping to see some action, only to get more than you bargained for "
 "deployed stateside responding to a national emergency.  As far as you can "
 "tell, military command abandoned you to this hellhole."
-msgstr "你原本期望参与一些行动，却没想到在国内响应国家紧急情况时遭遇了更多超出预期的困境。据你所知， 据你所知，军方指挥部把你抛弃到了这个鬼地方。"
+msgstr "你本渴望投身实战，却没料到在国内应对这场国家危机时，情况完全超出了你的掌控。据你所知，军方指挥部已经把你遗弃在这个鬼地方自生自灭了。"
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -24660,6 +24660,72 @@ msgid ""
 " holdout to the next, but now it's just you and your bird."
 msgstr ""
 "你成功到达了你的UH-60直升机。你的副驾驶员没能幸存下来。你从天空中目睹了一切的崩溃，将士兵和幸存者从一个据点运送到另一个据点，但现在只剩下你和你的飞行载具了。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "Fighter Pilot"
+msgstr "战斗机飞行员"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "Fighter Pilot"
+msgstr "战斗机飞行员"
+
+#. ~ Profession (male Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"They had you pushing your aircraft to the breaking point dropping ordinance "
+"on the undead.  After a mid-air collision forced you to eject, you were "
+"picked up by the unit you were providing air support for only for them to be"
+" wiped out to the last man."
+msgstr ""
+"上级让你把战机推向极限，向不死生物倾泻弹药。一场空中相撞事故迫使你弹射跳伞，随后你被自己负责提供空中支援的地面部队救起，结果却眼睁睁看着他们全军覆没，无一生还。"
+
+#. ~ Profession (female Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"They had you pushing your aircraft to the breaking point dropping ordinance "
+"on the undead.  After a mid-air collision forced you to eject, you were "
+"picked up by the unit you were providing air support for only for them to be"
+" wiped out to the last man."
+msgstr ""
+"上级让你把战机推向极限，向不死生物倾泻弹药。一场空中相撞事故迫使你弹射跳伞，随后你被自己负责提供空中支援的地面部队救起，结果却眼睁睁看着他们全军覆没，无一生还。"
+
+#: data/json/professions.json
+msgctxt "profession_male"
+msgid "F-35 Fighter Pilot"
+msgstr "F-35战斗机飞行员"
+
+#: data/json/professions.json
+msgctxt "profession_female"
+msgid "F-35 Fighter Pilot"
+msgstr "F-35战斗机飞行员"
+
+#. ~ Profession (male F-35 Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_male"
+msgid ""
+"You thought the end of the world would see you dueling the PLAAF while ICBMs"
+" streak overhead.  Instead the end was a long day of desperate sorties as "
+"monstrosities swarmed every city within your craft's operational range.  "
+"Your airbase was overrun too, and every landing strip just seems more "
+"hostile than the last."
+msgstr ""
+"你本以为世界末日会是你在划过头顶的洲际弹道导弹下，与中国空军展开空中决战。然而，末日的真面目却是漫长且令人绝望的不断出击——各种怪物蜂拥吞噬了你战机作战半径内的每一座城市。你的空军基地也已沦陷，如今你遇到的每一条起降跑道似乎都比前一条更加险恶"
+
+#. ~ Profession (female F-35 Fighter Pilot) description
+#: data/json/professions.json
+msgctxt "prof_desc_female"
+msgid ""
+"You thought the end of the world would see you dueling the PLAAF while ICBMs"
+" streak overhead.  Instead the end was a long day of desperate sorties as "
+"monstrosities swarmed every city within your craft's operational range.  "
+"Your airbase was overrun too, and every landing strip just seems more "
+"hostile than the last."
+msgstr ""
+"你本以为世界末日会是你在划过头顶的洲际弹道导弹下，与中国空军展开空中决战。然而，末日的真面目却是漫长且令人绝望的不断出击——各种怪物蜂拥吞噬了你战机作战半径内的每一座城市。你的空军基地也已沦陷，如今你遇到的每一条起降跑道似乎都比前一条更加险恶"
 
 #: data/json/professions.json
 msgctxt "profession_male"
@@ -30101,6 +30167,46 @@ msgstr "\"妈的，今天本来是老子休假的！\""
 #: data/json/speech.json
 msgid "\" Time to collect my bonus!\""
 msgstr "\"是时候拿我的奖金了！\""
+
+#: data/json/speech.json
+msgid "\"Enemy spotted!\""
+msgstr "\"发现敌人！\""
+
+#: data/json/speech.json
+msgid "\"Contact!  One more loose end…\""
+msgstr "\"遇敌！又多了一个需要清理的隐患……\""
+
+#: data/json/speech.json
+msgid "\"This shouldn't take long!\""
+msgstr "\"这用不了多久！\""
+
+#: data/json/speech.json
+msgid "\"Tango dead ahead!  This one's lasted longer than the others…\""
+msgstr "\"正前方发现目标！这个比其他的人活得都要久点……\""
+
+#: data/json/speech.json
+msgid "\"You chose the wrong military installation, kid!\""
+msgstr "\"你选错军事基地了，小子！\""
+
+#: data/json/speech.json
+msgid "\"We call this a difficulty tweak!\""
+msgstr "\"我们管这叫难度微调！\""
+
+#: data/json/speech.json
+msgid "\"You'll be nothing more than a redaction line when I'm done with you!\""
+msgstr "\"等我搞定你，你在绝密档案上就只剩下一道涂黑的屏蔽线了！\""
+
+#: data/json/speech.json
+msgid "\"Everyone move up!\""
+msgstr "\"所有人推进！\""
+
+#: data/json/speech.json
+msgid "\"CBM power in the red, cover me!\""
+msgstr "\"CBM能量飘红，掩护我！\""
+
+#: data/json/speech.json
+msgid "\"I bet five dollars this guy doesn't last another thirty seconds!\""
+msgstr "\"我赌五块钱，这家伙撑不过三十秒！\""
 
 #: data/json/spells_trap.json
 msgid "Can Alarm Trigger"
@@ -39221,8 +39327,10 @@ msgid_plural "filled charcoal kilns"
 msgstr[0] "炭窑（满）"
 
 #: data/json/furniture_and_terrain/furniture-tools.json
+#: data/json/items/tool/deployable.json
 msgid "metal charcoal kiln"
-msgstr "金属炭窑（空）"
+msgid_plural "metal charcoal kilns"
+msgstr[0] "金属炭窑（空）"
 
 #. ~ Description for metal charcoal kiln
 #. ~ Description for filled metal charcoal kiln
@@ -57471,7 +57579,7 @@ msgid ""
 "An active headset used by the military.  Without batteries or when turned "
 "off they function like normal earmuffs and block all sound.  They will block"
 " sounds over a certain decibel amount as well as function as a two-way radio"
-" when turned on.  The earmuffs are currently off."
+" when turned on.  The headset is currently off."
 msgstr ""
 "军方使用的有源耳机。在没有电池或关闭电源时，它们会像普通的隔音耳罩一样阻挡所有声音。开启后，它们能阻挡超过特定分贝的噪音，并可作为双向对讲机使用。耳机当前处于关闭状态。"
 
@@ -74035,6 +74143,18 @@ msgid ""
 "archer."
 msgstr "这本厚重的书包含了大量对于弓箭初学者来说至关重要的信息。"
 
+#: data/json/items/book/archery.json
+msgid "The Professional Bowhunter's Journal"
+msgid_plural "The Professional Bowhunter's Journals"
+msgstr[0] "职业弓猎人日志"
+
+#. ~ Description for {'str': "The Professional Bowhunter's Journal"}
+#: data/json/items/book/archery.json
+msgid ""
+"A lengthy autobiography from an award-winning hunter, filled with detailed "
+"and advanced descriptions of bow techniques."
+msgstr "一部屡获殊荣的猎人撰写的长篇自传，其中充满了对弓箭技巧详细而高阶的描述。"
+
 #: data/json/items/book/barter.json
 msgid "car buyer's guide"
 msgid_plural "car buyer's guides"
@@ -74105,6 +74225,20 @@ msgid ""
 "law enforcement and military market, it is packed with time tested, no-"
 "nonsense information and written to be understandable for beginners."
 msgstr "一个经验丰富的作者所写的如何使用军用制式武器的技巧，针对警棍枪械等，经受了时间的考验，严肃的信息和难以理解的内容对初学者很不友好。"
+
+#: data/json/items/book/bashing.json
+msgid "TC 7-21.1 (CUI) Special Forces Blunt Weapon Techniques"
+msgid_plural "TC 7-21.1 (CUI) Special Forces Blunt Weapon Techniquess"
+msgstr[0] "TC 7-21.1 (CUI) 特种部队钝器技巧"
+
+#. ~ Description for {'str': 'TC 7-21.1 (CUI) Special Forces Blunt Weapon
+#. Techniques'}
+#: data/json/items/book/bashing.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of blunt weapons, from batons and quarterstaffs to makeshift clubs "
+"and large rocks. Requires some experience to understand."
+msgstr "一本厚重的军事手册，描述了各种钝器的高阶技巧与实战应用，从警棍和长棍到简易棍棒和巨大的石头。需要具备一定的经验才能理解。"
 
 #: data/json/items/book/bloat.json
 msgid "Mycenacean Hymns"
@@ -75210,6 +75344,20 @@ msgstr[0] "雪域特战队的刀具技术"
 msgid "A classic Soviet text on the art of attacking with a blade."
 msgstr "一本讲述苏联特战部队刀剑艺术的书。"
 
+#: data/json/items/book/cutting.json
+msgid "TC 7-21.2 (CUI) Special Forces Cutting Weapon Techniques"
+msgid_plural "TC 7-21.2 (CUI) Special Forces Cutting Weapon Techniquess"
+msgstr[0] "TC 7-21.2 (CUI) 特种部队切割武器技巧"
+
+#. ~ Description for {'str': 'TC 7-21.2 (CUI) Special Forces Cutting Weapon
+#. Techniques'}
+#: data/json/items/book/cutting.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of cutting weapons, from large knives and swords to razors and sharp"
+" rocks. Requires some experience to understand."
+msgstr "一本厚重的军事手册，描述了各种挥砍武器的高阶技巧与实战应用，从大刀和剑到剃刀和锋利的石头。需要具备一定的经验才能理解。"
+
 #: data/json/items/book/dodge.json
 msgid "Dance Dance Dance!"
 msgid_plural "issues of Dance Dance Dance!"
@@ -75245,6 +75393,19 @@ msgstr[0] "祝你表演成功！"
 #: data/json/items/book/dodge.json
 msgid "The Kids' Guide to Acting and Stagecraft."
 msgstr "儿童舞台表演指南。"
+
+#: data/json/items/book/dodge.json
+msgid "Professional Dancer's Textbook"
+msgid_plural "Professional Dancer's Textbooks"
+msgstr[0] "专业舞者教材"
+
+#. ~ Description for {'str': "Professional Dancer's Textbook"}
+#: data/json/items/book/dodge.json
+msgid ""
+"A giant textbook aimed towards those pursuing professional dance, with "
+"descriptions of highly advanced footwork which could be invaluable to those "
+"wishing to dance around enemy attacks."
+msgstr "一本面向追求专业舞蹈之人的大部头教材，其中描述了极其高阶的步法。对于那些希望在敌人的攻击中闪转腾挪的人来说，这些知识将是无价之宝。"
 
 #: data/json/items/book/driving.json
 msgid "AAA Guide"
@@ -76983,6 +77144,20 @@ msgid ""
 "A well-thumbed hardbound book which illustrates simple strategies and "
 "techniques for close quarters combat encounters."
 msgstr "一个被翻旧了的精装书，里面有插画来说明简单的近身格斗策略和技巧。"
+
+#: data/json/items/book/melee.json
+msgid "TC 7-21 (CUI) Special Forces Close Quarters Combat"
+msgid_plural "TC 7-21 (CUI) Special Forces Close Quarters Combats"
+msgstr[0] "TC 7-21 (CUI) 特种部队近身格斗"
+
+#. ~ Description for {'str': 'TC 7-21 (CUI) Special Forces Close Quarters
+#. Combat'}
+#: data/json/items/book/melee.json
+msgid ""
+"A large military manual describing advanced techniques and practices for "
+"melee combat, both armed and unarmed, based on the experiences of a "
+"legendary soldier.  Requires some experience to understand."
+msgstr "一本厚重的军事手册，基于一位传奇士兵的经验，描述了武装与徒手近战的高阶技巧与实战应用。需要具备一定的经验才能理解。"
 
 #: data/json/items/book/misc.json
 msgid "paperback abstract"
@@ -78872,6 +79047,20 @@ msgstr[0] "FM 23-25陆军手册：刺刀"
 msgid "A hefty military field manual about bayonet usage and combat theory."
 msgstr "一本沉重的军事战地手册，讲述了刺刀的使用方法和实战理论。"
 
+#: data/json/items/book/stabbing.json
+msgid "TC 7-21.3 (CUI) Special Forces Piercing Weapon Techniques"
+msgid_plural "TC 7-21.3 (CUI) Special Forces Piercing Weapon Techniquess"
+msgstr[0] "TC 7-21.3 (CUI) 特种部队穿刺武器技巧"
+
+#. ~ Description for {'str': 'TC 7-21.3 (CUI) Special Forces Piercing Weapon
+#. Techniques'}
+#: data/json/items/book/stabbing.json
+msgid ""
+"A large military manual describing advanced techniques and practices for all"
+" manner of piercing weapons, from knives and bayonets to shivs and long "
+"pointy sticks. Requires some experience to understand."
+msgstr "一本厚重的军事手册，描述了各种穿刺武器的高阶技巧与实战应用，从小刀和刺刀到自制匕首和长尖棍。需要具备一定的经验才能理解。"
+
 #: data/json/items/book/survival.json
 msgid "Survival Under Atomic Attack"
 msgid_plural "copies of Survival Under Atomic Attack"
@@ -79247,6 +79436,19 @@ msgid ""
 "spiral-bound paper.  Still, there are lots of useful tips for unarmed "
 "combat."
 msgstr "一本摔跤手册，印刷质量很差，草草进行装订后就发行了，但即使如此，你仍能从中学会很多空手格斗方面的技巧。"
+
+#: data/json/items/book/unarmed.json
+msgid "TC 7-21.4 (CUI) Special Forces Unarmed Combat Techniques"
+msgid_plural "TC 7-21.4 (CUI) Special Forces Unarmed Combat Techniquess"
+msgstr[0] "TC 7-21.4 (CUI) 特种部队徒手格斗技巧"
+
+#. ~ Description for {'str': 'TC 7-21.4 (CUI) Special Forces Unarmed Combat
+#. Techniques'}
+#: data/json/items/book/unarmed.json
+msgid ""
+"A large military manual describing advanced techniques and practices for "
+"unarmed combat. Requires some experience to understand."
+msgstr "一本厚重的军事手册，描述了徒手格斗的高阶技巧与实战应用。需要具备一定的经验才能理解。"
 
 #: data/json/items/classes/book.json
 msgid "readable magazine"
@@ -83606,7 +83808,32 @@ msgstr[0] "鱼卵"
 #. ~ Description for roe
 #: data/json/items/comestibles/egg.json
 msgid "Common roe from an unknown fish."
-msgstr "一只不知道什么品种的鱼生的鱼卵。"
+msgstr "来自未知鱼类的普通鱼卵。"
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown tiny fish."
+msgstr "来自未知微型鱼类的普通鱼卵。"
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown small fish."
+msgstr "来自未知小型鱼类的普通鱼卵。"
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown medium fish."
+msgstr "来自未知中型鱼类的普通鱼卵。"
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown large fish."
+msgstr "来自未知大型鱼类的普通鱼卵。"
+
+#. ~ Description for roe
+#: data/json/items/comestibles/egg.json
+msgid "Common roe from an unknown huge fish."
+msgstr "来自未知巨型鱼类的普通鱼卵。"
 
 #: data/json/items/comestibles/egg.json
 msgid "powdered egg"
@@ -101878,8 +102105,8 @@ msgstr[0] "枪口制退器"
 #: data/json/items/gunmod/muzzle.json
 msgid ""
 "A muzzle brake redirects exhaust gases to compensate for muzzle climb, "
-"improving recoil but increasing bulk, noise, and reducing accuracy slightly."
-msgstr "枪口制退器通过提供枪管制退机构来降低枪口上扬的幅度，改善了后坐力但是增大了噪音并且轻微的降低了精度。"
+"improving recoil but increasing bulk and noise."
+msgstr "枪口制退器通过改变火药气体的排出方向来抑制枪口上扬，从而减轻后坐力，但会增加体积和噪音。"
 
 #: data/json/items/gunmod/muzzle.json
 msgid "modified muzzle brake"
@@ -102227,8 +102454,8 @@ msgstr[0] "红点瞄准镜"
 #: data/json/items/gunmod/sights.json
 msgid ""
 "Adds a red dot optic to the top of your gun, replacing the iron sights.  "
-"Increases accuracy and weight."
-msgstr "在你的枪上安装一个战术红点瞄具以取代机械瞄准具。提高命中率，增加重量。"
+"Provides a balance of improved accuracy and faster target acquisition."
+msgstr "在枪械顶部加装红点瞄准镜以取代机械瞄具。在提升射击精度与加快锁定目标速度之间取得了平衡。"
 
 #: data/json/items/gunmod/sights.json
 msgid "rifle scope"
@@ -104164,6 +104391,17 @@ msgstr[0] "TAC-50 步枪弹匣"
 #: data/json/items/magazine/50.json
 msgid "5-round box magazine for McMillan TAC-50."
 msgstr "一个 5 发盒式弹匣，可用于麦克米兰公司出品的 TAC-50 步枪。"
+
+#: data/json/items/magazine/50.json
+msgid "Barrett drum magazine"
+msgid_plural "Barrett drum magazines"
+msgstr[0] "巴雷特弹鼓"
+
+#. ~ Description for {'str': 'Barrett drum magazine'}
+#: data/json/items/magazine/50.json
+msgid ""
+"Standard 20-round drum magazine for a Barrett M107A1 anti-materiel rifle."
+msgstr "用于巴雷特M107A1反器材狙击步枪的20发弹鼓。"
 
 #: data/json/items/magazine/5x50.json
 msgid "RMFB100 5x50mm extended magazine"
@@ -109763,17 +110001,6 @@ msgid "A large sheet of glass strengthened with steel wiring."
 msgstr "一大片的钢化玻璃。"
 
 #: data/json/items/resources/glass.json
-msgid "pane of reinforced glass"
-msgid_plural "panes of reinforced glass"
-msgstr[0] "钢化玻璃碎块"
-
-#. ~ Description for {'str': 'pane of reinforced glass', 'str_pl': 'panes of
-#. reinforced glass'}
-#: data/json/items/resources/glass.json
-msgid "A small pane of glass strengthened with steel wiring."
-msgstr "一小块钢化玻璃。"
-
-#: data/json/items/resources/glass.json
 msgid "sheet of tempered glass"
 msgid_plural "sheets of tempered glass"
 msgstr[0] "钢化玻璃片"
@@ -111544,6 +111771,14 @@ msgid "Folded plastic chair on a metal frame, deploy to sit down."
 msgstr ""
 "已折叠的塑料椅，带有金属框架，展开它来坐下。\n"
 "\"WWE指定武器。\""
+
+#. ~ Description for {'str': 'metal charcoal kiln'}
+#: data/json/items/tool/deployable.json
+msgid ""
+"A huge metal kiln with a door cut in to allow easy loading and unloading of "
+"char materials. When deployed, it can process up to 200L of bone or wood "
+"into charcoal."
+msgstr "一座巨大的金属炭窑，带有专为方便装卸烧炭原料而开的窑门。部署后，最多可将200升的骨头或木材烧制成木炭。"
 
 #: data/json/items/tool/dimensional_travel.json
 msgid "dimensional pocket watch (desert)"
@@ -119607,8 +119842,7 @@ msgid_plural "VTOL thrusters"
 msgstr[0] "垂直起降推进器"
 
 #. ~ Description for {'str': 'VTOL thruster'}
-#. ~ Description for VTOL thruster
-#: data/json/items/vehicle/jets.json data/json/vehicleparts/jets.json
+#: data/json/items/vehicle/jets.json
 msgid ""
 "This is a vertical takeoff and landing (VTOL) propulsion system used in "
 "military VTOL aircraft and large transport drones.  It allows for free "
@@ -123447,6 +123681,33 @@ msgstr ""
 #: data/json/monsters/feral_humans.json
 msgid "The feral bodyguard fires their pistol!"
 msgstr "疯人保镖击发了它的手枪！"
+
+#: data/json/monsters/feral_humans.json
+msgid "feral black-ops"
+msgid_plural "feral black-opss"
+msgstr[0] "疯人黑色行动特战队"
+
+#. ~ Description for {'str': 'feral black-ops'}
+#: data/json/monsters/feral_humans.json
+msgid ""
+"Dressed in a suit of unmarked black armor and surrounded by a shadowy field,"
+" this heavily armed feral looks to be part of an elite unit. Now that you've"
+" stumbled upon their operation, you're just another loose thread to clean "
+"up..."
+msgstr ""
+"穿着一套没有标识的黑色装甲，周身环绕着暗影力场，这个全副武装的疯人看起来属于某支精锐部队。既然你无意中撞破了他们的行动，对他们而言，你也就成了另一个需要清理掉的隐患……"
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their smg!"
+msgstr "疯人黑色行动特战队击发了它的冲锋枪！"
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their automagnum!"
+msgstr "疯人黑色行动特战队击发了它的自动马格南手枪！"
+
+#: data/json/monsters/feral_humans.json
+msgid "The feral black-ops fires their sniper rifle!"
+msgstr "疯人黑色行动特战队击发了它的狙击步枪！"
 
 #: data/json/monsters/fish.json
 msgid "alpha razorclaw"
@@ -138188,6 +138449,10 @@ msgstr "去钓点鱼。"
 #: data/json/npcs/TALK_COMMON_ALLY.json
 msgid "Please do some farming work."
 msgstr "做些农活。"
+
+#: data/json/npcs/TALK_COMMON_ALLY.json
+msgid "Can you craft this item?"
+msgstr ""
 
 #: data/json/npcs/TALK_COMMON_ALLY.json
 msgid "*pssshht* ten-four, I'll make my way there, over."
@@ -167044,6 +167309,17 @@ msgid ""
 "everything nice."
 msgstr "你的掌心工具箱，从你的手上伸出。它能帮助你切、剁，还能做其它的很多事情。"
 
+#: data/json/obsoletion/items.json
+msgid "pane of reinforced glass"
+msgid_plural "panes of reinforced glass"
+msgstr[0] "钢化玻璃碎块"
+
+#. ~ Description for {'str': 'pane of reinforced glass', 'str_pl': 'panes of
+#. reinforced glass'}
+#: data/json/obsoletion/items.json
+msgid "A small pane of glass strengthened with steel wiring."
+msgstr "一小块钢化玻璃。"
+
 #: data/json/obsoletion/missions.json
 msgid "Find a Flu Shot"
 msgstr "收集 1 支流感疫苗"
@@ -169009,6 +169285,10 @@ msgid ""
 "laurel."
 msgstr "主要地区（>25%）被灌木覆盖，有些尚为成年或不够茂密的幼树，不能归类为森林。还包括一些永久性的灌丛地带，如荒地、野生蓝莓丛或山月桂丛。"
 
+#: data/json/overmap/overmap_special/mil_blacksite_multitile.json
+msgid "military blacksite"
+msgstr "秘密军事基地"
+
 #: data/json/overmap/overmap_terrain/overmap_terrain.json
 msgid "nether-chewed field"
 msgstr "虚空吞噬之地"
@@ -170823,9 +171103,8 @@ msgid "lab"
 msgstr "实验室"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
-#: data/mods/alt_map_key/overmap_terrain.json
-msgid "fema camp"
-msgstr "联邦应急管理局营地"
+msgid "military camp"
+msgstr "军营"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
 msgid "FEMA refugee camp"
@@ -170930,6 +171209,26 @@ msgstr "停车场"
 #: data/json/overmap/overmap_terrain/overmap_terrain_military.json
 msgid "minefield"
 msgstr "雷区"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "generic military airfield"
+msgstr "通用军用机场"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield"
+msgstr "军用机场"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield roof"
+msgstr "军用机场屋顶"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield entrance"
+msgstr "军用机场入口"
+
+#: data/json/overmap/overmap_terrain/overmap_terrain_military.json
+msgid "military airfield runway"
+msgstr "军用机场跑道"
 
 #: data/json/overmap/overmap_terrain/overmap_terrain_necropolis.json
 #: data/json/overmap/overmap_terrain/overmap_terrain_residential.json
@@ -183794,6 +184093,14 @@ msgstr "一种用于气垫车辆的推进器和裙边，使其能够在陆地或
 msgid "external jet thruster"
 msgstr "外置喷气推进器"
 
+#. ~ Description for VTOL thruster
+#: data/json/vehicleparts/jets.json
+msgid ""
+"This is a vertical takeoff and landing (VTOL) propulsion system used in "
+"military VTOL aircraft and large transport drones.  It provides both lift "
+"for taking off and thrust when in the air."
+msgstr "这是一种应用于军用垂直起降（VTOL）战机和大型运输无人机的垂直起降推进系统。它既能提供起飞所需的升力，也能提供在空中飞行时的推力。"
+
 #: data/json/vehicleparts/ladders.json
 msgid "A ladder that lets you down from heights."
 msgstr "一架能让你从高处下来的梯子。"
@@ -185376,6 +185683,14 @@ msgstr "飞行自行车"
 #: data/json/vehicles/aircraft_other.json
 msgid "F-35 Strike Fighter"
 msgstr "F-35 攻击战斗机"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "AV-8 Harrier"
+msgstr "AV-8 鹞式战斗机"
+
+#: data/json/vehicles/aircraft_other.json
+msgid "F-15E Strike Eagle"
+msgstr "F-15E 攻击鹰式战斗机"
 
 #: data/json/vehicles/bikes.json
 msgid "Bicycle"
@@ -221805,6 +222120,10 @@ msgid "razorclaw nest"
 msgstr "利爪怪巢穴"
 
 #: data/mods/alt_map_key/overmap_terrain.json
+msgid "fema camp"
+msgstr "联邦应急管理局营地"
+
+#: data/mods/alt_map_key/overmap_terrain.json
 msgid "sewage treatment"
 msgstr "污水处理站"
 
@@ -229928,6 +230247,14 @@ msgid ""
 "<npcname> no longer has the in progress craft in their possession.  "
 "<npcname> stops crafting."
 msgstr "<npcname> 失去了制造中的物品。<npcname> 停止了制造。"
+
+#: src/activity_handlers.cpp
+msgid "You cannot continue crafting."
+msgstr ""
+
+#: src/activity_handlers.cpp
+msgid "<npcname> cannot continue crafting."
+msgstr ""
 
 #: src/activity_handlers.cpp
 #, c-format
@@ -238935,6 +239262,10 @@ msgid "You can no longer see well enough to keep crafting."
 msgstr "光线太暗，你无法继续制造那件物品！"
 
 #: src/crafting.cpp
+msgid "<npcname> can no longer see well enough to keep crafting."
+msgstr ""
+
+#: src/crafting.cpp
 #, c-format
 msgid ""
 "The %s is too large and/or heavy to work on.  You may want to use a "
@@ -238942,8 +239273,19 @@ msgid ""
 msgstr "%s太大/重了，无法制造，你应该使用一个工作台，或者减少制造的数量。"
 
 #: src/crafting.cpp
+#, c-format
+msgid ""
+"The %s is too large and/or heavy for <npcname> to work on.  They may need a "
+"workbench or a smaller batch size"
+msgstr ""
+
+#: src/crafting.cpp
 msgid "Your morale is too low to continue crafting."
 msgstr "你心情值过低，无法继续制造物品。"
+
+#: src/crafting.cpp
+msgid "<npcname>'s morale is too low to continue crafting."
+msgstr ""
 
 #: src/crafting.cpp
 msgid "You are too frustrated to continue and should just give up."
@@ -238971,6 +239313,10 @@ msgstr "需要先制造些物品"
 #: src/crafting.cpp
 msgid "You can no longer make that craft!"
 msgstr "你无法继续制造那件物品！"
+
+#: src/crafting.cpp
+msgid "<npcname> can no longer make that craft!"
+msgstr ""
 
 #: src/crafting.cpp
 #, c-format
@@ -239094,6 +239440,10 @@ msgid "You don't have the required components to continue crafting!"
 msgstr "你没有继续制造所需的材料！"
 
 #: src/crafting.cpp
+msgid "<npcname> don't have the required components to continue crafting!"
+msgstr ""
+
+#: src/crafting.cpp
 msgid "Consume the missing components and continue crafting?"
 msgstr "消耗缺少的材料并继续制造？"
 
@@ -239112,6 +239462,10 @@ msgstr "你停止制造。"
 #: src/crafting.cpp
 msgid "You don't have the necessary tools to continue crafting!"
 msgstr "你没有继续制造所需的工具！"
+
+#: src/crafting.cpp
+msgid "<npcname> don't have the necessary tools to continue crafting!"
+msgstr ""
 
 #: src/crafting.cpp
 msgid "Use which selection of components?"
@@ -256280,11 +256634,6 @@ msgid "<npcname> starts playing their %s"
 msgstr "<npcname> 开始演奏 %s。"
 
 #: src/iuse_actor.cpp
-#, c-format
-msgid "%1$s %2$s"
-msgstr "[神器]%1$s%2$s"
-
-#: src/iuse_actor.cpp
 msgid "You produce an annoying sound"
 msgstr "你弹出了刺耳的噪音。"
 
@@ -256292,6 +256641,11 @@ msgstr "你弹出了刺耳的噪音。"
 #, c-format
 msgid "%s produces an annoying sound"
 msgstr "%s弹出了刺耳的噪音。"
+
+#: src/iuse_actor.cpp
+#, c-format
+msgid "%1$s %2$s"
+msgstr "[神器]%1$s%2$s"
 
 #: src/iuse_actor.cpp
 msgid "You can't do that while mounted."
@@ -258593,7 +258947,7 @@ msgstr "< <color_green>鼠标视图</color> >"
 msgid "Loading"
 msgstr "读取中"
 
-#: src/locations.cpp
+#: src/locations.cpp src/npc.cpp
 msgid "inventory"
 msgstr "物品栏"
 
@@ -266759,6 +267113,35 @@ msgid "%s starts reading."
 msgstr "%s 开始阅读。"
 
 #: src/npc.cpp
+msgid "Craft what?"
+msgstr ""
+
+#: src/npc.cpp
+msgid "Craft new item"
+msgstr ""
+
+#: src/npc.cpp
+msgid "Resume a craft"
+msgstr ""
+
+#: src/npc.cpp
+msgid "No in-progress crafts within reach."
+msgstr ""
+
+#: src/npc.cpp
+msgid "Resume which craft?"
+msgstr ""
+
+#: src/npc.cpp
+msgid "ground"
+msgstr ""
+
+#: src/npc.cpp
+#, c-format
+msgid "%1$s picks up the %2$s."
+msgstr ""
+
+#: src/npc.cpp
 msgid "This can't be worn."
 msgstr "这个可穿不了。"
 
@@ -270864,6 +271247,26 @@ msgid ""
 msgstr "决定怪物每次进化时间间隔的比率。数字越大代表进化越慢。设为 0.00 会停止怪物进化。"
 
 #: src/options.cpp
+msgid "Maximum Evolution Half Lives"
+msgstr "最大进化半衰期"
+
+#: src/options.cpp
+msgid ""
+"The maximum number of attempts for a zombie to evolve at the next half life "
+"for one evolution stage"
+msgstr "丧尸在单一进化阶段的下一个半衰期内，尝试进化的最大次数。"
+
+#: src/options.cpp
+msgid "Zombies Always Evolve"
+msgstr "丧尸必定进化"
+
+#: src/options.cpp
+msgid ""
+"When reaching the maximum half lives, instead of never evolving they will "
+"evolve at that time."
+msgstr "当达到最大半衰期次数时，它们并不会永远停止进化，而是在那时直接完成进化。"
+
+#: src/options.cpp
 msgid "Merchant restock scaling factor"
 msgstr "商人补货速率缩放系数"
 
@@ -273339,8 +273742,8 @@ msgid "You feel something probing your mind, but it is rebuffed!"
 msgstr "你觉得有什么东西在试图进入你的意识，但它被阻挡了！"
 
 #: src/player_hardcoded_effects.cpp
-msgid "A terrifying image in the back out your mind paralyzes you."
-msgstr "你脑海中浮现的可怕画面让你当场呆住。"
+msgid "A terrifying image in the back of your mind paralyzes you."
+msgstr "脑海深处浮现的恐怖画面让你动弹不得。"
 
 #: src/player_hardcoded_effects.cpp
 msgid "You feel a buzzing in the back of your mind, but it passes."
@@ -278162,23 +278565,8 @@ msgstr "一道闪电照亮了你的周围！"
 
 #: src/weather.cpp
 #, c-format
-msgid "Your umbrella protects you from the %s."
-msgstr "你的雨伞保护你免受 %s 的影响。"
-
-#: src/weather.cpp
-#, c-format
-msgid "Your rainproof clothing protects you from the %s."
-msgstr "你的防雨衣物保护你免受 %s 的影响。"
-
-#: src/weather.cpp
-#, c-format
-msgid "Your clothing protects you from the %s."
-msgstr "你的衣物保护你免受 %s 的影响。"
-
-#: src/weather.cpp
-#, c-format
-msgid "Your power armor protects you from the %s."
-msgstr "你的动力装甲保护你免受 %s 的影响。"
+msgid "Your %s protects you from the %s."
+msgstr "你的 %s 保护你免受 %s 的影响。"
 
 #: src/weather.cpp
 msgid "#####"
