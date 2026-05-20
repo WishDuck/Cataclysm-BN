@@ -1725,7 +1725,7 @@ int reveal_map_actor::use( player &p, item &it, bool, const tripoint_bub_ms & ) 
     }
 
     const tripoint_abs_omt plrPos = p.abs_omt_pos();
-    const tripoint_abs_omt mapPos( it.get_var( "reveal_map_center_omt", plrPos.raw() ) );
+    const tripoint_abs_omt mapPos = it.get_var( "reveal_map_center_omt", plrPos );
 
     if( it.already_used_by_player( p ) ) {
         show_revealed( p, it, mapPos );
