@@ -124,9 +124,8 @@ struct mongroup {
     bool is_safe() const;
     bool empty() const;
     void clear();
-    void set_target( const point_om_sm &p ) {
-        target.x() = p.x();
-        target.y() = p.y();
+    void set_target( const tripoint_abs_sm &p ) {
+        target = p;
     }
     void set_nemesis_target( const tripoint_abs_sm &p ) {
         nemesis_target.x() = p.x();

@@ -3703,12 +3703,17 @@ void mongroup::wander( const overmap &om )
         // TODO: somehow use the same algorithm that distributes zombie
         // density at world gen to spread the hordes over the actual
         // city, rather than the center city tile
-        target.x() = target_city->pos.x() * 2 + rng( -target_city->size * 2, target_city->size * 2 );
-        target.y() = target_city->pos.y() * 2 + rng( -target_city->size * 2, target_city->size * 2 );
+        const auto city_sm = project_to<coords::sm>( target_city->pos );
+        target = project_combine( om.pos(), tripoint_om_sm(
+                                      city_sm.x() + rng( -target_city->size * 2, target_city->size * 2 ),
+                                      city_sm.y() + rng( -target_city->size * 2, target_city->size * 2 ),
+                                      abs_pos.z() ) );
         interest = 100;
     } else {
-        target.x() = local_pos.x() + rng( -10, 10 );
-        target.y() = local_pos.y() + rng( -10, 10 );
+        target = project_combine( om.pos(), tripoint_om_sm(
+                                      local_pos.x() + rng( -10, 10 ),
+                                      local_pos.y() + rng( -10, 10 ),
+                                      abs_pos.z() ) );
         interest = 30;
     }
 }
@@ -3735,8 +3740,6 @@ void overmap::move_hordes()
 
         if( ( mg.abs_pos.xy() == mg.target.xy() ) || mg.interest <= 15 ) {
             const auto om_abs = pos();
-            const auto group_abs = mg.abs_pos.xy();
-            const auto target_abs = mg.target.xy();
             auto used_hook_target = false;
 
             if( auto *state = DynamicDataLoader::get_instance().lua.get() ) {
@@ -3803,16 +3806,16 @@ void overmap::move_hordes()
         // or one space per 5 minutes.
         if( one_in( movement_chance ) && rng( 0, 100 ) < mg.interest && rng( 0, 200 ) < mg.avg_speed() ) {
             // TODO: Handle moving to adjacent overmaps.
-            if( local_pos.x() > mg.target.x() ) {
+            if( mg.abs_pos.x() > mg.target.x() ) {
                 local_pos.x()--;
             }
-            if( local_pos.x() < mg.target.x() ) {
+            if( mg.abs_pos.x() < mg.target.x() ) {
                 local_pos.x()++;
             }
-            if( local_pos.y() > mg.target.y() ) {
+            if( mg.abs_pos.y() > mg.target.y() ) {
                 local_pos.y()--;
             }
-            if( local_pos.y() < mg.target.y() ) {
+            if( mg.abs_pos.y() < mg.target.y() ) {
                 local_pos.y()++;
             }
 
@@ -4000,14 +4003,13 @@ void overmap::signal_hordes( const tripoint_abs_sm &p, const int sig_power )
             const int targ_dist = rl_dist( p, mg.target );
             // TODO: Base this on targ_dist:dist ratio.
             if( targ_dist < 5 ) {  // If signal source already pursued by horde
-                auto new_target = project_remain<coords::om>( midpoint( mg.target, p ) ).remainder;
-                mg.set_target( new_target );
+                mg.set_target( midpoint( mg.target, p ) );
                 const int min_inc_inter = 3; // Min interest increase to already targeted source
                 const int inc_roll = rng( min_inc_inter, calculated_inter );
                 mg.inc_interest( inc_roll );
                 add_msg( m_debug, "horde inc interest %d dist %d", inc_roll, dist );
             } else { // New signal source
-                mg.set_target( project_remain<coords::om>( p ).remainder );
+                mg.set_target( p );
                 mg.set_interest( min_capped_inter );
                 add_msg( m_debug, "horde set interest %d dist %d", min_capped_inter, dist );
             }
@@ -4017,17 +4019,12 @@ void overmap::signal_hordes( const tripoint_abs_sm &p, const int sig_power )
 
 void overmap::signal_nemesis( const tripoint_abs_sm &p_abs_sm )
 {
-    point_abs_om omp;
-    tripoint_om_sm local_sm;
-    std::tie( omp, local_sm ) = project_remain<coords::om>( p_abs_sm );
-    const point_om_sm pos_om = local_sm.xy();
-
     for( std::pair<const tripoint_om_sm, mongroup> &elem : zg ) {
         mongroup &mg = elem.second;
 
         if( mg.horde_behaviour == "nemesis" ) {
             // If the horde is a nemesis, we set its target directly on the player.
-            mg.set_target( pos_om );
+            mg.set_target( p_abs_sm );
             mg.set_nemesis_target( p_abs_sm );
         }
     }
