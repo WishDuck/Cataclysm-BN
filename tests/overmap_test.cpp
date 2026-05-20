@@ -8,6 +8,7 @@
 #include "coordinates.h"
 #include "enums.h"
 #include "game_constants.h"
+#include "mongroup.h"
 #include "numeric_interval.h"
 #include "omdata.h"
 #include "overmap.h"
@@ -212,4 +213,41 @@ TEST_CASE( "mutable_overmap_placement", "[overmap][slow]" )
 
         CHECK( successes > num_trials_per_overmap / 2 );
     }
+}
+
+// For an overmap at point_abs_om(1,0), abs_sm x ∈ [360,719] and om_sm x ∈ [0,359].
+// These ranges are disjoint, so target.x() >= OMAPX*2 distinguishes the two spaces.
+
+TEST_CASE( "signal_hordes_sets_abs_sm_target", "[overmap][mongroup]" )
+{
+    clear_all_state();
+    // Place horde in overmap (1,0); abs_sm x starts at OMAPX*2 = 360.
+    const tripoint_abs_sm horde_pos( OMAPX * 2 + 10, 90, 0 );
+    mongroup mg( mongroup_id( "GROUP_ZOMBIE" ), horde_pos, 1, 10 );
+    mg.horde = true;
+    mg.interest = 0;
+    mongroup *mg_ptr = ACTIVE_OVERMAP_BUFFER.create_horde( mg );
+    REQUIRE( mg_ptr != nullptr );
+
+    const tripoint_abs_sm signal_pos( OMAPX * 2 + 15, 90, 0 );
+    ACTIVE_OVERMAP_BUFFER.signal_hordes( signal_pos, 100 );
+
+    // target must be in abs_sm space, not om_sm-relative space.
+    CHECK( mg_ptr->target.x() >= OMAPX * 2 );
+}
+
+TEST_CASE( "wander_sets_abs_sm_target", "[overmap][mongroup]" )
+{
+    clear_all_state();
+    // Get overmap at (1,0); abs_sm x starts at OMAPX*2 = 360.
+    overmap *om = ACTIVE_OVERMAP_BUFFER.get_om_global( tripoint_abs_omt( OMAPX, 0, 0 ) ).om;
+    REQUIRE( om != nullptr );
+
+    const tripoint_abs_sm horde_pos( OMAPX * 2 + 90, 90, 0 );
+    mongroup mg( mongroup_id( "GROUP_ZOMBIE" ), horde_pos, 1, 10 );
+    mg.horde_behaviour = "roam";
+    mg.wander( *om );
+
+    // target must be in abs_sm space, not om_sm-relative space.
+    CHECK( mg.target.x() >= OMAPX * 2 );
 }
