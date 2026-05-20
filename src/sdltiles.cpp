@@ -875,7 +875,7 @@ void cata_tiles::draw_om( point dest, const tripoint_abs_omt &center_abs_omt, bo
 
     const auto global_omt_to_draw_position = []( const tripoint_abs_omt & omp ) {
         // z position is hardcoded to 0 because the things this will be used to draw should not be skipped
-        return tripoint_bub_ms( omp.x(), omp.y(), 0 );
+        return tripoint_bub_ms( omp.xy().reinterpret_as<point_bub_ms>(), 0 );
     };
     const auto has_player_label = [&]( const tripoint_abs_omt & pos ) -> bool {
         const auto player_label = overmap_label_note::extract_label( ACTIVE_OVERMAP_BUFFER.note( pos ) );
