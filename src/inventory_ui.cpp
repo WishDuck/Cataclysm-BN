@@ -1127,7 +1127,7 @@ const item_category *inventory_selector::naturalize_category( const item_categor
     const int dist = rl_dist( u.bub_pos(), pos );
 
     if( dist != 0 ) {
-        const std::string suffix = direction_suffix( u.bub_pos().raw(), pos.raw() );
+        const std::string suffix = direction_suffix( u.bub_pos(), pos );
         const item_category_id id = item_category_id( string_format( "%s_%s", category.get_id().c_str(),
                                     suffix.c_str() ) );
 

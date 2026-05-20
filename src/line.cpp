@@ -660,6 +660,11 @@ std::string direction_suffix( const tripoint &p, const tripoint &q )
     return string_format( "%d%s", dist, trim( direction_name_short( direction_from( p, q ) ) ) );
 }
 
+std::string direction_suffix( const tripoint_bub_ms &p, const tripoint_bub_ms &q )
+{
+    return direction_suffix( p.raw(), q.raw() );
+}
+
 // Cardinals are cardinals. Result is cardinal and adjacent sub-cardinals.
 // Sub-Cardinals are sub-cardinals && abs(x) == abs(y). Result is sub-cardinal and adjacent cardinals.
 // Sub-sub-cardinals are direction && abs(x) > abs(y) or vice versa.

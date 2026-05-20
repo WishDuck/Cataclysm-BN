@@ -313,7 +313,7 @@ std::string tile_item_location::describe( const Character *ch, const item * ) co
     const auto local = here.abs_to_bub( pos );
     std::string res = here.name( local );
     if( ch ) {
-        res += std::string( " " ) += direction_suffix( ch->bub_pos().raw(), local.raw() );
+        res += std::string( " " ) += direction_suffix( ch->bub_pos(), local );
     }
     return res;
 }
@@ -474,7 +474,7 @@ std::string vehicle_item_location::describe( const Character *ch, const item * )
         return "Error: vehicle part without storage";
     }
     if( ch ) {
-        res += " " + direction_suffix( ch->bub_pos().raw(), part_pos.pos().raw() );
+        res += " " + direction_suffix( ch->bub_pos(), part_pos.pos() );
     }
     return res;
 }

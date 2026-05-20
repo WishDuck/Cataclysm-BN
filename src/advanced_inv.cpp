@@ -1839,7 +1839,7 @@ void advanced_inventory::draw_minimap()
     };
     static const std::array<side, NUM_PANES> sides = {{left, right}};
     // get the center of the window
-    tripoint_rel_ms pc = {getmaxx( minimap ) / 2, getmaxy( minimap ) / 2, 0};
+    point pc = {getmaxx( minimap ) / 2, getmaxy( minimap ) / 2};
     // draw the 3x3 tiles centered around player
     get_map().draw( minimap, g->u.bub_pos() );
     for( auto s : sides ) {
@@ -1848,11 +1848,11 @@ void advanced_inventory::draw_minimap()
             continue;
         }
         auto sq = squares[panes[s].get_area()];
-        auto pt = pc + sq.off;
+        point pt = pc + sq.off.xy().raw();
         // invert the color if pointing to the player's position
         auto cl = sq.id == AIM_INVENTORY || sq.id == AIM_WORN ?
                   invert_color( c_light_cyan ) : c_light_cyan.blink();
-        mvwputch( minimap, pt.xy().raw(), cl, sym );
+        mvwputch( minimap, pt, cl, sym );
     }
 
     // Invert player's tile color if exactly one pane points to player's tile
