@@ -256,8 +256,9 @@ std::set<tripoint_bub_ms> spell_effect::spell_effect_line( const spell &,
         const tripoint_bub_ms &source,
         const tripoint_bub_ms &target, const int aoe_radius, const bool ignore_walls )
 {
-    const auto delta = ( target - source ).raw().xy();
-    const int dist = square_dist( point_zero, delta );
+    const auto delta_rel = ( target - source );
+    const point delta = delta_rel.raw().xy();
+    const int dist = square_dist( delta_rel.xy(), point_rel_ms::zero() );
     // Early out to prevent unnecessary calculations
     if( dist == 0 ) {
         return std::set<tripoint_bub_ms>();
