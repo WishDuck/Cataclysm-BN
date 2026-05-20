@@ -610,10 +610,10 @@ static void cast_zlight_segment(
 
                 const float new_transparency = ic.at( current.x, current.y );
                 const bool new_floor = ( ( xf.zz < 0 )
-                                         ? ( z_index + 1 < OVERMAP_LAYERS
+                                         ? floor_caches[z_index].at( current.x, current.y )
+                                         : ( z_index + 1 < OVERMAP_LAYERS
                                              ? floor_caches[z_index + 1].at( current.x, current.y )
-                                             : false )
-                                         : floor_caches[z_index].at( current.x, current.y ) );
+                                             : false ) );
 
                 if( !started_block ) {
                     started_block = true;
