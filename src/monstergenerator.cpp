@@ -7,6 +7,7 @@
 #include <optional>
 #include <set>
 #include <utility>
+#include <vector>
 
 #include "assign.h"
 #include "bodypart.h"
