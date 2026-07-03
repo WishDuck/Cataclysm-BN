@@ -20,6 +20,7 @@
 #include "generic_factory.h"
 #include "item.h"
 #include "item_group.h"
+#include "item_group_readers.h"
 #include "json.h"
 #include "mattack_actors.h"
 #include "monattack.h"
@@ -887,14 +888,10 @@ void mtype::load( const JsonObject &jo, const std::string &src )
         melee_damage.add_damage( DT_CUT, bonus_cut );
     }
 
-    if( jo.has_member( "monster_weapon" ) ) {
-        monster_weapon = item_group::load_item_group( jo.get_member( "monster_weapon" ),
-                         "distribution" );
-    }
-    if( jo.has_member( "death_drops" ) ) {
-        death_drops = item_group::load_item_group( jo.get_member( "death_drops" ),
-                      "distribution" );
-    }
+    optional( jo, was_loaded, "monster_weapon", monster_weapon, itemgroup_reader( "distribution" ),
+              item_group::empty );
+    optional( jo, was_loaded, "death_drops", death_drops, itemgroup_reader( "distribution" ),
+              item_group::empty );
 
     assign( jo, "harvest", harvest );
 
@@ -1561,7 +1558,7 @@ void MonsterGenerator::check_monster_definitions() const
                 debugmsg( "monster %s has invalid species %s", mon.id.c_str(), spec.c_str() );
             }
         }
-        if( mon.death_drops && !item_group::group_is_defined( mon.death_drops ) ) {
+        if( mon.death_drops && !mon.death_drops.is_valid() ) {
             debugmsg( "monster %s has unknown death drop item group: %s", mon.id.c_str(),
                       mon.death_drops.c_str() );
         }
@@ -1582,7 +1579,7 @@ void MonsterGenerator::check_monster_definitions() const
             debugmsg( "monster %s has unknown mech_battery: %s", mon.id.c_str(),
                       mon.mech_battery.c_str() );
         }
-        if( mon.monster_weapon && !item_group::group_is_defined( mon.monster_weapon ) ) {
+        if( mon.monster_weapon && !mon.monster_weapon.is_valid() ) {
             debugmsg( "monster %s has unknown monster weapon item group: %s", mon.id.c_str(),
                       mon.monster_weapon.c_str() );
         }
