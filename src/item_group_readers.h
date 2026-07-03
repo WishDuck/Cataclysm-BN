@@ -110,7 +110,7 @@ class spawn_data_reader : generic_typed_reader<spawn_data_reader>
         }
 };
 
-class itemgroup_reader : public generic_typed_reader<itemgroup_reader>
+class itemgroup_reader : generic_typed_reader<itemgroup_reader>
 {
     public:
         const std::string default_subtype;
@@ -119,7 +119,8 @@ class itemgroup_reader : public generic_typed_reader<itemgroup_reader>
 
         // Mild little hack, when getting a single object, start some shennangans
         // When it is an array always add dont try to stack them
-        bool read_normal( const JsonObject &jo, const std::string &name, item_group_id &member ) const {
+        bool read_normal_with_member( const JsonObject &jo, const std::string &name,
+                                      item_group_id &member ) const {
             if( jo.has_member( name ) ) {
                 const itemgroup_reader &derived = static_cast<const itemgroup_reader &>( *this );
                 member = derived.get_next( *jo.get_raw( name ), member );
@@ -127,6 +128,19 @@ class itemgroup_reader : public generic_typed_reader<itemgroup_reader>
             }
             return false;
 
+        }
+
+        /**
+         * Implements the reader interface, handles a simple data member.
+         */
+        // was_loaded is ignored here, if the value is not found in JSON, report to
+        // the caller, which will take action on their own.
+        template<typename C> requires( !reader_detail::Container<C> )
+        bool operator()( const JsonObject &jo, const std::string &member_name,
+                         C &member, bool /*was_loaded*/ ) const {
+            return read_normal_with_member( jo, member_name, member ) ||
+                   handle_proportional( jo, member_name, member ) ||
+                   do_relative( jo, member_name, member );
         }
 
         item_group_id get_next( JsonIn &jin, item_group_id member = item_group_id::NULL_ID() ) const;

@@ -624,3 +624,19 @@ TEST_CASE("zombie_technician_pull_uses_physical_clear_path", "[monster][z-level]
         CHECK(you.primary_weapon().typeId() == flaregun_id);
     }
 }
+
+TEST_CASE("monster death drops append to inherited drops", "[monster][death_drops]") {
+    clear_all_state();
+    const auto& test_append = mtype_id("mon_test_death_drops_append");
+    const auto items = item_group::items_from(test_append->death_drops);
+
+    bool has_rock = false;
+    bool has_stick = false;
+    for (const auto& item : items) {
+        if (item->typeId() == itype_id("rock")) { has_rock = true; }
+        if (item->typeId() == itype_id("stick")) { has_stick = true; }
+    }
+
+    CHECK(has_rock);
+    CHECK(has_stick);
+}

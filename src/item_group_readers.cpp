@@ -14,7 +14,7 @@
 item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) const
 {
     if( jin.test_string() ) {
-        if( member.is_valid() ) {
+        if( member.is_valid() && member != item_group::empty ) {
             auto nested_group = Item_group( Item_group::G_COLLECTION, 100, 100, 100 );
             nested_group.add_group_entry( item_group_id( jin.get_string() ), 100 );
             nested_group.add_group_entry( member, 100 );
@@ -32,19 +32,10 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
         auto g = Item_group( Item_group::G_COLLECTION, 100, 100, 100 );
         item_group_id group_id = item_group::get_unique_group_id();
         bool need_nested = false;
-        if( member.is_valid() ) {
-            // If the fine prefix is the prefix
-            // We know this is an INLINE item group
-            // And thus fine to be copied
-            if( member.str().rfind( random_group_id_prefix, 0 ) == 0 ) {
-                auto g = Item_group( *member );
-                g.id = member;
-            } else {
-                // Minor issue here, we have something like an external item group
-                // ( Which could be later extended ) and an inline item group
-                // This means we have to make the added item group nested.
-                need_nested = true;
-            }
+        if( member.is_valid() && member != item_group::empty ) {
+            // Initial assumption was that copying would at points be fine
+            // But that does not appear to be the case, so always nest them
+            need_nested = true;
         } else {
             g.id = group_id;
         }
@@ -64,7 +55,7 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
         auto g = Item_group( Item_group::G_COLLECTION, 100, 100, 100 );
         item_group_id group_id = item_group::get_unique_group_id();
         bool need_nested = false;
-        if( member.is_valid() ) {
+        if( member.is_valid() && member != item_group::empty ) {
             need_nested = true;
         } else {
             g.id = group_id;
