@@ -681,10 +681,6 @@ TEST_CASE("monster death drops can itemgroup strings append", "[monster][death_d
 
 TEST_CASE("monster death drops can delete things", "[monster][death_drops]") {
     clear_all_state();
-
-    const auto global_spawn_rate = override_option("ITEM_SPAWNRATE", "1.0");
-    const auto rock_spawn_rate = override_option("SPAWN_RATE_rocks", "1.0");
-    const auto wood_spawn_rate = override_option("SPAWN_RATE_scrap_wood", "1.0");
     const auto& test_append = mtype_id("mon_test_death_drops_delete");
     const auto items = item_group::items_from(test_append->death_drops);
 

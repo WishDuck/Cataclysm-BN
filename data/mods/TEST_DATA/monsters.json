@@ -78,6 +78,6 @@
     "type": "MONSTER",
     "name": { "str": "death drop delete test monster" },
     "description": "This monster exists only for testing purposes.",
-    "death_drops": { "entries": [ { "item": "rock" } ], "delete": [ { "item": "fetid_goop" } ] }
+    "death_drops": { "delete": [ { "item": "fetid_goop" } ] }
   }
 ]
