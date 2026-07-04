@@ -715,7 +715,7 @@ bool Item_group::remove_specific_item( const std::string &itemid )
             ++a;
         } else if( b->type == Single_item_creator::Type::S_ITEM ) {
             if( itemid == b->id ) {
-                sum_prob -= ( *a )->probability;
+                sum_prob -= b->probability;
                 a = items.erase( a );
                 return true;
             }
@@ -735,7 +735,7 @@ bool Item_group::remove_specific_group( const std::string &itemid )
             ++a;
         } else if( b->type == Single_item_creator::Type::S_ITEM_GROUP ) {
             if( itemid == b->id ) {
-                sum_prob -= ( *a )->probability;
+                sum_prob -= b->probability;
                 a = items.erase( a );
                 return true;
             }

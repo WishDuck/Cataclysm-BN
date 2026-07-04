@@ -640,3 +640,64 @@ TEST_CASE("monster death drops append to inherited drops", "[monster][death_drop
     CHECK(has_rock);
     CHECK(has_stick);
 }
+
+TEST_CASE("monster death drops can purge inherited drops", "[monster][death_drops]") {
+    clear_all_state();
+    const auto& test_append = mtype_id("mon_test_death_drops_replace");
+    const auto items = item_group::items_from(test_append->death_drops);
+
+    bool has_rock = false;
+    bool has_stick = false;
+    bool has_goop = false;
+    for (const auto& item : items) {
+        if (item->typeId() == itype_id("rock")) { has_rock = true; }
+        if (item->typeId() == itype_id("stick")) { has_stick = true; }
+        if (item->typeId() == itype_id("fetid_goop")) { has_goop = true; }
+    }
+
+    CHECK(!has_rock);
+    CHECK(!has_stick);
+    CHECK(has_goop);
+}
+
+TEST_CASE("monster death drops can itemgroup strings append", "[monster][death_drops]") {
+    clear_all_state();
+    const auto& test_append = mtype_id("mon_test_death_drops_string_append");
+    const auto items = item_group::items_from(test_append->death_drops);
+
+    bool has_rock = false;
+    bool has_stick = false;
+    bool has_goop = false;
+    for (const auto& item : items) {
+        if (item->typeId() == itype_id("rock")) { has_rock = true; }
+        if (item->typeId() == itype_id("stick")) { has_stick = true; }
+        if (item->typeId() == itype_id("fetid_goop")) { has_goop = true; }
+    }
+
+    CHECK(has_rock);
+    CHECK(has_stick);
+    CHECK(has_goop);
+}
+
+TEST_CASE("monster death drops can delete things", "[monster][death_drops]") {
+    clear_all_state();
+
+    const auto global_spawn_rate = override_option("ITEM_SPAWNRATE", "1.0");
+    const auto rock_spawn_rate = override_option("SPAWN_RATE_rocks", "1.0");
+    const auto wood_spawn_rate = override_option("SPAWN_RATE_scrap_wood", "1.0");
+    const auto& test_append = mtype_id("mon_test_death_drops_delete");
+    const auto items = item_group::items_from(test_append->death_drops);
+
+    bool has_rock = false;
+    bool has_stick = false;
+    bool has_goop = false;
+    for (const auto& item : items) {
+        if (item->typeId() == itype_id("rock")) { has_rock = true; }
+        if (item->typeId() == itype_id("stick")) { has_stick = true; }
+        if (item->typeId() == itype_id("fetid_goop")) { has_goop = true; }
+    }
+
+    CHECK(has_rock);
+    CHECK(has_stick);
+    CHECK(!has_goop);
+}

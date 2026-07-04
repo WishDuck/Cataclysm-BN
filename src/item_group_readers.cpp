@@ -19,6 +19,7 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
             nested_group.add_group_entry( item_group_id( jin.get_string() ), 100 );
             nested_group.add_group_entry( member, 100 );
             nested_group.id = item_group::get_unique_group_id();
+            nested_group.is_inline = true;
             item_group::insert_itemgroup( nested_group );
             return nested_group.id;
         }
@@ -33,11 +34,23 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
         item_group_id group_id = item_group::get_unique_group_id();
         bool need_nested = false;
         if( member.is_valid() && member != item_group::empty ) {
-            // Initial assumption was that copying would at points be fine
-            // But that does not appear to be the case, so always nest them
-            need_nested = true;
+            // If the fine prefix is the prefix
+            // We know this is an INLINE item group
+            // And thus fine to be copied
+            if( member->is_inline ) {
+                g = Item_group( *member );
+                g.probability = 100;
+                g.id = group_id;
+                g.is_inline = true;
+            } else {
+                // Minor issue here, we have something like an external item group
+                // ( Which could be later extended ) and an inline item group
+                // This means we have to make the added item group nested.
+                need_nested = true;
+            }
         } else {
             g.id = group_id;
+            g.is_inline = true;
         }
         g.load( jo, "", subtype );
         if( !need_nested ) {
@@ -48,6 +61,7 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
             nested_group.add_entry( std::make_shared<Item_group>( g ) );
             nested_group.add_group_entry( member, 100 );
             nested_group.id = group_id;
+            nested_group.is_inline = true;
             item_group::insert_itemgroup( nested_group );
             return nested_group.id;
         }
@@ -56,9 +70,17 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
         item_group_id group_id = item_group::get_unique_group_id();
         bool need_nested = false;
         if( member.is_valid() && member != item_group::empty ) {
-            need_nested = true;
+            if( member->is_inline ) {
+                g = Item_group( *member );
+                g.probability = 100;
+                g.id = group_id;
+                g.is_inline = true;
+            } else {
+                need_nested = true;
+            }
         } else {
             g.id = group_id;
+            g.is_inline = true;
         }
         for( const JsonValue subobj : jin.get_array() ) {
             if( subobj.test_object() ) {
@@ -76,6 +98,7 @@ item_group_id itemgroup_reader::get_next( JsonIn &jin, item_group_id member ) co
             nested_group.add_entry( std::make_shared<Item_group>( g ) );
             nested_group.add_group_entry( member, 100 );
             nested_group.id = group_id;
+            nested_group.is_inline = true;
             item_group::insert_itemgroup( nested_group );
             return nested_group.id;
         } else {

@@ -301,6 +301,7 @@ class Item_group : public Item_spawn_data
 
         item_group_id id = item_group_id::NULL_ID();
         bool was_loaded = false;
+        bool is_inline = true;
 
         static void load_item_groups( const JsonObject &jo, const std::string &src );
 
