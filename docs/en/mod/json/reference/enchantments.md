@@ -237,6 +237,7 @@ For all basegame values see [here](#Basegame-Enchantment-Value-ID-List)
     "can_mult": true, // Weather multiplying to the enchantment value will do anything; Default true
     "can_max": false, // Weather getting the maximum value of this type will do anything; Default false
     "desc": "Affects Outgoing Ranged Damage", // Description of the enchantment used in some menus
+    "increase_good": true, // Color for enchantment descriptions, if true > 0 or > 1 == green else == red
     "suffixes": [ // All the suffixes. These appear as `RANGED_DAMAGE_XXX` in this case
       [ "BASH", "Affects Outgoing Ranged Bash Damage" ], // Suffixes reference the value of the parent in calculations automatically
       [ "CUT", "Affects Outgoing Ranged Cut Damage" ], // The second value here is the description of the enchantment
