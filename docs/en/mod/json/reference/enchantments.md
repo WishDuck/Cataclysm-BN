@@ -645,4 +645,3 @@ value, in addition to the global `ITEM_ARMOR`:
 - `ITEM_ARMOR_HEAT`
 - `ITEM_ARMOR_STAB`
 - `ITEM_ARMOR_TRUE`
-

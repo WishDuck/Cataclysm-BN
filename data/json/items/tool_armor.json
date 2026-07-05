@@ -1091,7 +1091,7 @@
           "values": [ { "value": "ARMOR_PSI", "add": -25 }, { "value": "CLIMATE_CONTROL", "add": 1250 } ]
         }
       ]
-    },
+    }
   },
   {
     "id": "phase_immersion_suit_on",

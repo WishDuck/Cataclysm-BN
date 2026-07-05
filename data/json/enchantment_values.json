@@ -74,10 +74,7 @@
     "id": "CONSTRUCTION_SPEED",
     "type": "enchantment_value",
     "desc": "Affects Construction Speed ( Construction and Vehicle )",
-    "suffixes": [
-      [ "CON", "Affects Construction Speed ( Construction )" ],
-      [ "VEH", "Affects Construction Speed ( Vehicle )" ]
-    ]
+    "suffixes": [ [ "CON", "Affects Construction Speed ( Construction )" ], [ "VEH", "Affects Construction Speed ( Vehicle )" ] ]
   },
   {
     "id": "METABOLISM",
@@ -184,10 +181,7 @@
   {
     "id": "CLIMATE_CONTROL",
     "type": "enchantment_value",
-    "suffixes": [
-      [ "COOLING", "Cools towards ideal temperature" ],
-      [ "HEATING", "Heats towards ideal temperature" ]
-    ],
+    "suffixes": [ [ "COOLING", "Cools towards ideal temperature" ], [ "HEATING", "Heats towards ideal temperature" ] ],
     "desc": "Moves temperature towards ideal temperature"
   },
   {
@@ -313,8 +307,8 @@
       [ "COLD", "Affects Outgoing Ranged Cold Damage" ],
       [ "ELECTRIC", "Affects Outgoing Ranged Electric Damage" ],
       [ "ACID", "Affects Outgoing Ranged Acid Damage" ],
-      [ "BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"  ],
-      [ "TRUE", "Affects Outgoing Ranged True Damage"  ],
+      [ "BIOLOGICAL", "Affects Outgoing Ranged Biological Damage" ],
+      [ "TRUE", "Affects Outgoing Ranged True Damage" ]
     ],
     "desc": "Affects Outgoing Ranged Damage"
   },
@@ -392,7 +386,7 @@
       [ "CUTTING", "Affects Cutting Skill Level" ],
       [ "DODGE", "Affects Dodging Skill Level" ],
       [ "STABBING", "Affects Stabbing Skill Level" ],
-      [ "UNARMED", "Affects Unarmed Skill Level" ],
+      [ "UNARMED", "Affects Unarmed Skill Level" ]
     ],
     "desc": "Affects All Skill Levels"
   },
@@ -429,7 +423,7 @@
       [ "CUTTING", "Affects Cutting Skill Exp Gain" ],
       [ "DODGE", "Affects Dodging Skill Exp Gain" ],
       [ "STABBING", "Affects Stabbing Skill Exp Gain" ],
-      [ "UNARMED", "Affects Unarmed Skill Exp Gain" ],
+      [ "UNARMED", "Affects Unarmed Skill Exp Gain" ]
     ],
     "desc": "Affects All Exp Gain"
   },

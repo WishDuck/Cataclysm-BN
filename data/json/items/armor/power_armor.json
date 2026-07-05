@@ -98,7 +98,7 @@
           "values": [ { "value": "STRENGTH", "add": 2 }, { "value": "CLIMATE_CONTROL", "add": 2000 } ]
         }
       ]
-    },
+    }
   },
   {
     "id": "power_armor_basic_on",
@@ -168,7 +168,7 @@
           "values": [ { "value": "STRENGTH", "add": 6 }, { "value": "CLIMATE_CONTROL", "add": 2000 } ]
         }
       ]
-    },
+    }
   },
   {
     "id": "power_armor_heavy_on",
@@ -238,7 +238,7 @@
           "values": [ { "value": "STRENGTH", "add": 4 }, { "value": "CLIMATE_CONTROL", "add": 2000 } ]
         }
       ]
-    },
+    }
   },
   {
     "id": "power_armor_light_on",
