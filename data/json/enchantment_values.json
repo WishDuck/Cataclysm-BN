@@ -181,7 +181,7 @@
   {
     "id": "CLIMATE_CONTROL",
     "type": "enchantment_value",
-    "suffixes": [ [ "COOLING", "Cools towards ideal temperature" ], [ "HEATING", "Heats towards ideal temperature" ] ],
+    "suffixes": [ [ "COOLING", "Keeps you comfortable against hot temperatures" ], [ "HEATING", "Keeps you comfortable against cold temperatures" ] ],
     "desc": "Moves temperature towards ideal temperature"
   },
   {
