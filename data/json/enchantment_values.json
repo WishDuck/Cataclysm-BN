@@ -247,7 +247,7 @@
     "can_add": false,
     "can_mult": false,
     "can_max": true,
-    "desc": "Determines Luminosity"
+    "desc": "Grants Lighting"
   },
   {
     "id": "NIGHT_VISION",
@@ -255,7 +255,7 @@
     "can_add": false,
     "can_mult": false,
     "can_max": true,
-    "desc": "Affects Night Vision"
+    "desc": "Grants Night Vision"
   },
   {
     "id": "CLAIRVOYANCE",
@@ -263,7 +263,7 @@
     "can_add": false,
     "can_mult": false,
     "can_max": true,
-    "desc": "Affects Clarivoyance"
+    "desc": "Grants Clarivoyance"
   },
   {
     "id": "ARMOR",
