@@ -181,7 +181,10 @@
   {
     "id": "CLIMATE_CONTROL",
     "type": "enchantment_value",
-    "suffixes": [ [ "COOLING", "Keeps you comfortable against hot temperatures" ], [ "HEATING", "Keeps you comfortable against cold temperatures" ] ],
+    "suffixes": [
+      [ "COOLING", "Keeps you comfortable against hot temperatures" ],
+      [ "HEATING", "Keeps you comfortable against cold temperatures" ]
+    ],
     "desc": "Grants climate control, which keeps you at a comfortable temperature"
   },
   {
