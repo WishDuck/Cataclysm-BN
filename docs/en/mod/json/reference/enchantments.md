@@ -244,6 +244,7 @@ Prevents environmental effects of fields from being applied
     "flags": ["FOOD_POISON_IMMUNE"],
     "immune_fields": ["fd_fire"],
     "immune_effects": ["poison"]
+    }
   }
 ]
 ```
@@ -252,26 +253,29 @@ Prevents environmental effects of fields from being applied
 
 ```jsonc
 {
-  "id": "RANGED_DAMAGE", // Id of the enchantment
-  "type": "enchantment_value", // Needed Type
+  "id": "RANGED_DAMAGE", // Id of enchantment
+  "type": "enchantment_value", // Needed type
   "can_add": true, // Weather adding to the enchantment value will do anything; Default true
   "can_mult": true, // Weather multiplying to the enchantment value will do anything; Default true
   "can_max": false, // Weather getting the maximum value of this type will do anything; Default false
-  "suffixes": [ // All the suffixes. These appear as in this case RANGED_DAMAGE_XXX
-    "BASH",     // In addition suffixes will also reference the parent type when in use
-    "CUT",
-    "DARK",
-    "LIGHT",
-    "PSI",
-    "STAB",
-    "BULLET",
-    "HEAT",
-    "COLD",
-    "ELECTRIC",
-    "ACID",
-    "BIOLOGICAL"
-  ]
-},
+  "desc": "Affects Outgoing Ranged Damage", // Description of the enchantment used in some menus
+  "increase_good": true, // Color for enchantment descriptions, if true > 0 or > 1 == green else == red
+  "suffixes": [ // All the suffixes. These appear as `RANGED_DAMAGE_XXX` in this case
+    [ "BASH", "Affects Outgoing Ranged Bash Damage" ], // Suffixes reference the value of the parent in calculations automatically
+    [ "CUT", "Affects Outgoing Ranged Cut Damage" ], // The second value here is the description of the enchantment
+    [ "DARK", "Affects Outgoing Ranged Dark Damage" ],
+    [ "LIGHT", "Affects Outgoing Ranged Light Damage" ],
+    [ "PSI", "Affects Outgoing Ranged Psi Damage" ],
+    [ "STAB", "Affects Outgoing Ranged Stab Damage" ],
+    [ "BULLET", "Affects Outgoing Ranged Ballistic Damage" ],
+    [ "HEAT", "Affects Outgoing Ranged Heat Damage" ],
+    [ "COLD", "Affects Outgoing Ranged Cold Damage" ],
+    [ "ELECTRIC", "Affects Outgoing Ranged Electric Damage" ],
+    [ "ACID", "Affects Outgoing Ranged Acid Damage" ],
+    [ "BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"  ],
+    [ "TRUE", "Affects Outgoing Ranged True Damage"  ],
+  ],
+}
 ```
 
 ## Basegame Enchantment Value ID List

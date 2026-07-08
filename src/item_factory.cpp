@@ -286,12 +286,6 @@ void Item_factory::finalize_pre( itype &obj )
         return f.str().starts_with( "LIGHT_" );
     } );
 
-    // Set max volume for containers to prevent integer overflow
-    if( obj.container && obj.container->contains > 10000_liter ) {
-        debugmsg( obj.id.str() + " storage volume is too large, reducing to 10000 liters" );
-        obj.container->contains = 10000_liter;
-    }
-
     if( obj.ammo ) {
         // for ammo not specifying loudness (or an explicit less than zero) derive value from other properties
         // 343 is the speed of sound in atmosphere, but guns are still loud.
@@ -1956,7 +1950,7 @@ void Item_factory::load( islot_gun &slot, const JsonObject &jo, const std::strin
     assign( jo, "clip_size", slot.clip, strict, 0 );
     assign( jo, "reload", slot.reload_time, strict, 0 );
     assign( jo, "reload_noise", slot.reload_noise, strict );
-    assign( jo, "reload_noise_volume_dB", slot.reload_noise_volume, strict, 0, 191 );
+    assign( jo, "reload_noise_volume_dB", slot.reload_noise_volume, strict, 0_dB, 191_dB );
     // Depreciated alias, use barrel_volume instead.
     assign( jo, "barrel_length", slot.barrel_volume, strict, 0_ml );
     assign( jo, "barrel_volume", slot.barrel_volume, strict, 0_ml );
@@ -1977,10 +1971,8 @@ void Item_factory::load( islot_gun &slot, const JsonObject &jo, const std::strin
         }
     }
     // Depreciated alias, use reload_noise_dB_volume instead.
-    if( jo.has_int( "reload_noise_volume" ) ) {
-        int volume = jo.get_int( "reload_noise_volume" );
-        volume = approximate_dB_volume_from_legacy_tile_distance_vol( volume );
-        slot.reload_noise_volume = volume;
+    if( jo.has_member( "reload_noise_volume" ) ) {
+        assign( jo, "reload_noise_volume", slot.reload_noise_volume, strict, 0_dB, 191_dB );
     }
     assign( jo, "modes", slot.modes );
 }

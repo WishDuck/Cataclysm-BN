@@ -42,7 +42,7 @@
 #include "json.h"
 #include "lightmap.h"
 #include "npc_class.h"
-#include "magic.h"
+#include "magic/magic.h"
 #include "make_static.h"
 #include "mapsharing.h"
 #include "martialarts.h"
@@ -4067,7 +4067,8 @@ trait_id newcharacter::random_good_trait()
     std::vector<trait_id> vTraitsGood;
 
     for( auto &traits_iter : mutation_branch::get_all() ) {
-        if( traits_iter.points > 0 && g->scen->traitquery( traits_iter.id ) ) {
+        if( traits_iter.points > 0 && g->scen->traitquery( traits_iter.id ) &&
+            traits_iter.randomstartingtrait ) {
             vTraitsGood.push_back( traits_iter.id );
         }
     }
@@ -4080,7 +4081,8 @@ trait_id newcharacter::random_bad_trait()
     std::vector<trait_id> vTraitsBad;
 
     for( auto &traits_iter : mutation_branch::get_all() ) {
-        if( traits_iter.points < 0 && g->scen->traitquery( traits_iter.id ) ) {
+        if( traits_iter.points < 0 && g->scen->traitquery( traits_iter.id ) &&
+            traits_iter.randomstartingtrait ) {
             vTraitsBad.push_back( traits_iter.id );
         }
     }

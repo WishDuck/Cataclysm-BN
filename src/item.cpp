@@ -71,7 +71,7 @@
 #include "iuse_actor.h"
 #include "line.h"
 #include "locations.h"
-#include "magic.h"
+#include "magic/magic.h"
 #include "map.h"
 #include "mapbuffer.h"
 #include "martialarts.h"
@@ -636,7 +636,7 @@ void item::activate()
     invalidate_processing_cache_upwards();
 }
 
-bool item::revert( const Character *ch, bool alert )
+bool item::revert( Character *ch, bool alert )
 {
     const auto &tooldata = type->tool;
     // Can't be reverted, prevents destruction of irrevertable items.
@@ -647,6 +647,9 @@ bool item::revert( const Character *ch, bool alert )
         ch->add_msg_if_player( m_info, _( tooldata->revert_msg ), tname() );
     }
     convert( *tooldata->revert_to );
+    if( ch ) {
+        ch->recalculate_enchantment_cache();
+    }
     return true;
 }
 
@@ -1095,16 +1098,20 @@ int item::charges_per_volume( const units::volume &vol ) const
             debugmsg( "Item '%s' with zero volume", tname() );
             return INFINITE_CHARGES;
         }
-        // Type cast to prevent integer overflow with large volume containers like the cargo
-        // dimension
-        return vol * static_cast<int64_t>( type->stack_size ) / type->volume;
+        if( type->stack_size > 0 && vol > units::volume_max / type->stack_size ) {
+            return INFINITE_CHARGES;
+        }
+        const auto result = vol * static_cast<decltype( units::to_milliliter( vol ) )>(
+                                type->stack_size ) / type->volume;
+        return static_cast<int>( std::min( result, static_cast<decltype( result )>( INFINITE_CHARGES ) ) );
     } else {
         units::volume my_volume = volume();
         if( my_volume == 0_ml ) {
             debugmsg( "Item '%s' with zero volume", tname() );
             return INFINITE_CHARGES;
         }
-        return vol / my_volume;
+        const auto result = vol / my_volume;
+        return static_cast<int>( std::min( result, static_cast<decltype( result )>( INFINITE_CHARGES ) ) );
     }
 }
 
@@ -3541,16 +3548,17 @@ void item::qualities_info( std::vector<iteminfo> &info, const iteminfo_query *pa
     auto name_quality = [&info]( const std::pair<quality_id, int> &q ) {
         std::string str;
         if( q.first == qual_JACK || q.first == qual_LIFT ) {
-            str = string_format( _( "Has level <info>%1$d %2$s</info> quality and "
-                                    "is rated at <info>%3$d</info> %4$s" ),
-                                 q.second, q.first.obj().name,
+            str = string_format( _( "Has level <num> <info>%1$s</info> quality and "
+                                    "is rated at <info>%2$d</info> %3$s." ),
+                                 q.first.obj().name,
                                  static_cast<int>( convert_weight( q.second * TOOL_LIFT_FACTOR ) ),
                                  weight_units() );
         } else {
-            str = string_format( _( "Has level <info>%1$d %2$s</info> quality." ),
-                                 q.second, q.first.obj().name );
+            str = string_format( _( "Has level <num> <info>%1$s</info> quality." ),
+                                 q.first.obj().name );
         }
-        info.emplace_back( "QUALITIES", "", str );
+        info.emplace_back( "QUALITIES", string_format( "%s", q.first.obj().name ), str,
+                           iteminfo::flags::no_name, q.second );
     };
 
     if( parts->test( iteminfo_parts::QUALITIES ) ) {
@@ -4019,46 +4027,47 @@ void item::throw_info( std::vector < iteminfo > &info, const iteminfo_query *par
 
     if( dmg_bash || dmg_cut || dmg_stab ) {
         std::string sep;
-        info.emplace_back( "BASE", _( "<bold>Base throw damage</bold>: " ), "", iteminfo::no_newline );
+        info.emplace_back( "BASE_THROW", _( "<bold>Base throw damage</bold>: " ), "",
+                           iteminfo::no_newline );
         if( dmg_bash ) {
-            info.emplace_back( "BASE", _( "Bash: " ), "", iteminfo::no_newline, dmg_bash );
+            info.emplace_back( "BASE_THROW", _( "Bash: " ), "", iteminfo::no_newline, dmg_bash );
             sep = " ";
         }
         if( dmg_cut ) {
-            info.emplace_back( "BASE", sep + _( "Cut: " ), "", iteminfo::no_newline, dmg_cut );
+            info.emplace_back( "BASE_THROW", sep + _( "Cut: " ), "", iteminfo::no_newline, dmg_cut );
             sep = " ";
         }
         if( dmg_stab ) {
-            info.emplace_back( "BASE", sep + _( "Pierce: " ), "", iteminfo::no_newline, dmg_stab );
+            info.emplace_back( "BASE_THROW", sep + _( "Pierce: " ), "", iteminfo::no_newline, dmg_stab );
         }
-        info.emplace_back( "BASE", "\n", "", iteminfo::no_newline );
+        info.emplace_back( "BASE_THROW", "\n", "", iteminfo::no_newline );
     }
 
     if( proj_dmg_bash || proj_dmg_cut || proj_dmg_stab ) {
         std::string sep;
-        info.emplace_back( "BASE", _( "<bold>Throw damage</bold>: " ), "", iteminfo::no_newline );
+        info.emplace_back( "THROW", _( "<bold>Throw damage</bold>: " ), "", iteminfo::no_newline );
         if( proj_dmg_bash ) {
-            info.emplace_back( "BASE", _( "Bash: " ), "", iteminfo::no_newline, proj_dmg_bash );
+            info.emplace_back( "THROW", _( "Bash: " ), "", iteminfo::no_newline, proj_dmg_bash );
             sep = " ";
         }
         if( proj_dmg_cut ) {
-            info.emplace_back( "BASE", sep + _( "Cut: " ), "", iteminfo::no_newline, proj_dmg_cut );
+            info.emplace_back( "THROW", sep + _( "Cut: " ), "", iteminfo::no_newline, proj_dmg_cut );
             sep = " ";
         }
         if( proj_dmg_stab ) {
-            info.emplace_back( "BASE", sep + _( "Pierce: " ), "", iteminfo::no_newline, proj_dmg_stab );
+            info.emplace_back( "THROW", sep + _( "Pierce: " ), "", iteminfo::no_newline, proj_dmg_stab );
         }
-        info.emplace_back( "BASE", "\n", "", iteminfo::no_newline );
+        info.emplace_back( "THROW", "\n", "", iteminfo::no_newline );
     }
 
-    info.emplace_back( "BASE", _( "Throw range: " ), "<num>", iteminfo::no_flags, throw_range );
+    info.emplace_back( "THROW", _( "Throw range: " ), "<num>", iteminfo::no_flags, throw_range );
 
     const int throw_cost = ranged::throw_cost( you, *this );
-    info.emplace_back( "BASE", _( "Moves per throw: " ), "<num>", iteminfo::lower_is_better,
+    info.emplace_back( "THROW", _( "Moves per throw: " ), "<num>", iteminfo::lower_is_better,
                        throw_cost );
 
     const int stamina_cost = ranged::throw_stamina_cost( you, *this );
-    info.emplace_back( "BASE", _( "Stamina cost: " ), "<num>", iteminfo::lower_is_better,
+    info.emplace_back( "THROW", _( "Stamina cost: " ), "<num>", iteminfo::lower_is_better,
                        stamina_cost );
 
     insert_separation_line( info );
@@ -4184,22 +4193,10 @@ void item::final_info( std::vector<iteminfo> &info, const iteminfo_query &parts_
     }
 
     if( parts->test( iteminfo_parts::BASE_RIGIDITY ) ) {
-        if( const islot_armor *armor = find_armor_data() ) {
-            if( !type->rigid ) {
-                info.emplace_back( "BASE",
-                                   _( "* This item is <info>not rigid</info>.  Its"
-                                      " volume and encumbrance increase with contents." ) );
-            } else {
-                bool any_encumb_increase = std::ranges::any_of( armor->data,
-                []( armor_portion_data data ) {
-                    return data.encumber != data.max_encumber;
-                } );
-                if( any_encumb_increase ) {
-                    info.emplace_back( "BASE",
-                                       _( "* This item is <info>not rigid</info>.  Its"
-                                          " volume and encumbrance increase with contents." ) );
-                }
-            }
+        if( is_non_rigid() ) {
+            info.emplace_back( "BASE",
+                               _( "* This item is <info>not rigid</info>.  Its"
+                                  " volume and encumbrance increase with contents." ) );
         }
     }
 
@@ -4503,6 +4500,22 @@ void item::final_info( std::vector<iteminfo> &info, const iteminfo_query &parts_
     }
 }
 
+void item::enchantment_info( std::vector<iteminfo> &info, const iteminfo_query &parts_ref,
+                             int batch,
+                             bool debug ) const
+{
+    const std::vector<enchantment> &enchs = get_enchantments();
+    if( is_null() || enchs.empty() || has_flag( flag_SECRET_ENCHANTMENTS ) ) {
+        return;
+    }
+    insert_separation_line( info );
+    for( const enchantment &ench : get_enchantments() ) {
+        for( std::string str : ench.get_effect_string( true ) ) {
+            info.emplace_back( "DESCRIPTION", str );
+        }
+    }
+    insert_separation_line( info );
+}
 std::vector<iteminfo> item::info() const
 {
     return info( iteminfo_query::no_conditions, 1, temperature_flag::TEMP_NORMAL );
@@ -4589,6 +4602,8 @@ std::vector<iteminfo> item::info( const iteminfo_query &parts_ref, int batch,
 
     repair_info( info, parts, batch, debug );
     disassembly_info( info, parts, batch, debug );
+
+    enchantment_info( info, parts_ref, batch, debug );
 
     final_info( info, parts_ref, batch, debug );
 
@@ -5373,7 +5388,11 @@ std::string item::tname( unsigned int quantity, bool with_prefix, unsigned int t
         tagtext += string_format( " (%s)", group_id_str );
     } else if( has_var( "NANOFAB_ITEM_ID" ) ) {
         itype_id item = itype_id( get_var( "NANOFAB_ITEM_ID" ) );
-        tagtext += string_format( " (%s [%d])", nname( item ), std::max( 1, item->volume / 250_ml ) * 5 );
+        const auto volume_ratio = item->volume / 250_ml;
+        const auto min_charge_units = decltype( volume_ratio ) { 1 };
+        const auto max_charge_units = decltype( volume_ratio ) { INT_MAX / 5 };
+        const auto charge_units = std::clamp( volume_ratio, min_charge_units, max_charge_units );
+        tagtext += string_format( " (%s [%d])", nname( item ), static_cast<int>( charge_units * 5 ) );
     }
 
     if( already_used_by_player( you ) ) {
@@ -6119,6 +6138,21 @@ bool item::can_shatter() const
     return only_made_of( is_glass ) || has_flag( flag_SHATTERS );
 }
 
+bool item::is_non_rigid() const
+{
+    if( const islot_armor *armor = find_armor_data() ) {
+        if( !type->rigid ) {
+            return true;
+        }
+        bool any_encumb_increase = std::ranges::any_of( armor->data,
+        []( armor_portion_data data ) {
+            return data.encumber != data.max_encumber;
+        } );
+        return any_encumb_increase;
+    }
+    return false;
+}
+
 void item::unset_flags()
 {
     const bool affects_processing = item_tags.count( flag_RADIO_ACTIVATION ) ||
@@ -6722,24 +6756,29 @@ int item::get_encumber( const Character &who, const bodypart_id &bodypart ) cons
 
     contents_volume += contents.item_size_modifier();
 
-    if( who.is_worn( *this ) ) {
+    if( who.is_worn( *this ) && this->is_non_rigid() ) {
         const islot_armor *armor = find_armor_data();
 
         if( armor != nullptr ) {
             for( const armor_portion_data &entry : armor->data ) {
-                if( entry.covers.test( bodypart.id() ) ) {
-                    if( entry.max_encumber != 0 ) {
-                        units::volume char_storage( 0_ml );
+                if( entry.max_encumber != 0 && entry.covers.test( bodypart.id() ) ) {
+                    units::volume rigid_storage( 0_ml );
+                    units::volume non_rigid_storage( 0_ml );
+                    const units::volume volume_carried = who.volume_carried();
 
-                        for( const item * const &e : who.worn ) {
-                            char_storage += e->get_storage();
+                    for( const item * const &e : who.worn ) {
+                        if( e->is_non_rigid() ) {
+                            non_rigid_storage += e->get_storage();
+                        } else {
+                            rigid_storage += e->get_storage();
                         }
+                    }
 
-                        if( char_storage != 0_ml ) {
-                            // Cast up to 64 to prevent overflow. Dividing before would prevent this but lose data.
-                            contents_volume += units::from_milliliter( static_cast<int64_t>( armor->storage.value() ) *
-                                               who.inv_volume().value() / char_storage.value() );
-                        }
+                    if( volume_carried > rigid_storage && non_rigid_storage > 0_ml ) {
+                        // Cast up to 64 to prevent overflow. Dividing before would prevent this but lose data.
+                        contents_volume += units::from_milliliter( static_cast<int64_t>( armor->storage.value() ) *
+                                           ( static_cast<int64_t>( volume_carried.value() ) - rigid_storage.value() ) /
+                                           non_rigid_storage.value() );
                     }
                 }
             }
@@ -6764,11 +6803,7 @@ int item::get_encumber_when_containing(
         if( entry.covers.test( bodypart.id() ) ) {
             encumber = entry.encumber;
             // Non-rigid items add additional encumbrance proportional to their volume
-            bool any_encumb_increase = std::ranges::any_of( armor->data,
-            []( armor_portion_data data ) {
-                return data.encumber != data.max_encumber;
-            } );
-            if( !type->rigid || any_encumb_increase ) {
+            if( this->is_non_rigid() ) {
                 const int capacity = get_total_capacity().value();
                 if( entry.max_encumber == 0 ) {
                     encumber += contents_volume / 500_ml;
@@ -6841,7 +6876,9 @@ int item::get_avg_coverage() const
     const islot_armor *armor = find_armor_data();
     if( !armor ) {
         // handle wearable guns (e.g. shoulder strap) as special case
-        return is_gun() ? std::min( volume() / 500_ml, 100 ) : 0;
+        const auto volume_coverage = volume() / 500_ml;
+        const auto max_coverage = decltype( volume_coverage ) { 100 };
+        return is_gun() ? static_cast<int>( std::min( volume_coverage, max_coverage ) ) : 0;
     }
     int avg_coverage = 0;
     int avg_ctr = 0;
