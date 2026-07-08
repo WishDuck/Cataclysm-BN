@@ -261,19 +261,19 @@ Prevents environmental effects of fields from being applied
   "desc": "Affects Outgoing Ranged Damage", // Description of the enchantment used in some menus
   "increase_good": true, // Color for enchantment descriptions, if true > 0 or > 1 == green else == red
   "suffixes": [ // All the suffixes. These appear as `RANGED_DAMAGE_XXX` in this case
-    [ "BASH", "Affects Outgoing Ranged Bash Damage" ], // Suffixes reference the value of the parent in calculations automatically
-    [ "CUT", "Affects Outgoing Ranged Cut Damage" ], // The second value here is the description of the enchantment
-    [ "DARK", "Affects Outgoing Ranged Dark Damage" ],
-    [ "LIGHT", "Affects Outgoing Ranged Light Damage" ],
-    [ "PSI", "Affects Outgoing Ranged Psi Damage" ],
-    [ "STAB", "Affects Outgoing Ranged Stab Damage" ],
-    [ "BULLET", "Affects Outgoing Ranged Ballistic Damage" ],
-    [ "HEAT", "Affects Outgoing Ranged Heat Damage" ],
-    [ "COLD", "Affects Outgoing Ranged Cold Damage" ],
-    [ "ELECTRIC", "Affects Outgoing Ranged Electric Damage" ],
-    [ "ACID", "Affects Outgoing Ranged Acid Damage" ],
-    [ "BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"  ],
-    [ "TRUE", "Affects Outgoing Ranged True Damage"  ],
+    ["BASH", "Affects Outgoing Ranged Bash Damage"], // Suffixes reference the value of the parent in calculations automatically
+    ["CUT", "Affects Outgoing Ranged Cut Damage"], // The second value here is the description of the enchantment
+    ["DARK", "Affects Outgoing Ranged Dark Damage"],
+    ["LIGHT", "Affects Outgoing Ranged Light Damage"],
+    ["PSI", "Affects Outgoing Ranged Psi Damage"],
+    ["STAB", "Affects Outgoing Ranged Stab Damage"],
+    ["BULLET", "Affects Outgoing Ranged Ballistic Damage"],
+    ["HEAT", "Affects Outgoing Ranged Heat Damage"],
+    ["COLD", "Affects Outgoing Ranged Cold Damage"],
+    ["ELECTRIC", "Affects Outgoing Ranged Electric Damage"],
+    ["ACID", "Affects Outgoing Ranged Acid Damage"],
+    ["BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"],
+    ["TRUE", "Affects Outgoing Ranged True Damage"],
   ],
 }
 ```
@@ -699,6 +699,14 @@ Restricts vision greatly, solved by some glasses
 
 Conflict to NEARSIGHTED, cures and removes it
 
+##### BLIND
+
+Prevents seeing any tile, bumping into walls does reveal them
+
+##### FIX_BLIND
+
+Conflict to BLIND, cures and removes it
+
 ##### INFRARED_VISION
 
 Gain infrared vision
@@ -743,6 +751,10 @@ Gives the ability to set an alarm while sleeping
 
 Has the effects of `ALARMCLOCK`, but does not produce sound
 It also should prevent sleeping through it.
+
+##### VIEW_DRONE_CAM
+
+Allows viewing any creature with `effect_drone_marker`, generally applied by `PHOTOGRAPH` robots
 
 ##### RADIO
 

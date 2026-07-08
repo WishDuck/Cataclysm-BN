@@ -664,7 +664,7 @@
     "act_cost": "10 J",
     "starting_bionic": true,
     "points": 1,
-    "bio_enchantments": [ { "condition": "ALWAYS", "flags": [ "INTERNAL_ALARMCLOCK", "WATCH", "RADIO", "THERMOMETER" ] } ]
+    "bio_enchantments": [ { "condition": "ALWAYS", "flags": [ "INTERNAL_ALARMCLOCK", "WATCH", "RADIO", "THERMOMETER", "VIEW_DRONE_CAM" ] } ]
   },
   {
     "id": "bio_infrared",

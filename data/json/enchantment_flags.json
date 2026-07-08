@@ -18,6 +18,16 @@
     "conflicts": [ "NEARSIGHTED" ]
   },
   {
+    "id": "BLIND",
+    "type": "enchantment_flag",
+    "conflicts": [ "FIX_BLIND" ]
+  },
+  {
+    "id": "FIX_BLIND",
+    "type": "enchantment_flag",
+    "conflicts": [ "BLIND" ]
+  },
+  {
     "id": "INFRARED_VISION",
     "type": "enchantment_flag"
   },
@@ -57,6 +67,10 @@
     "id": "INTERNAL_ALARMCLOCK",
     "type": "enchantment_flag",
     "parents": [ "ALARMCLOCK" ]
+  },
+  {
+    "id": "VIEW_DRONE_CAM",
+    "type": "enchantment_flag",
   },
   {
     "id": "RADIO",

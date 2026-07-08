@@ -7259,7 +7259,8 @@ tripoint_abs_omt Character::abs_omt_pos() const
 
 bool Character::is_blind() const
 {
-    return worn_with_flag( flag_BLIND ) || has_effect( effect_blind );
+    return worn_with_flag( flag_BLIND ) || has_effect( effect_blind ) ||
+           has_enchantment_flag( enchantment_flag_id( "BLIND" ) );
 }
 
 bool Character::is_invisible() const
@@ -7379,7 +7380,7 @@ bool Character::sees_with_specials( const Creature &critter ) const
     }
     // Friendly eyebots can designate targets for the player
     if( critter.has_effect( effect_drone_marker ) && ( has_item_with_flag( flag_DRONE_CAM ) ||
-            has_bionic( bio_infolink ) ) ) {
+            has_enchantment_flag( enchantment_flag_id( "VIEW_DRONE_CAM" ) ) ) ) {
         return true;
     }
 
