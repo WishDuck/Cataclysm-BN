@@ -73,7 +73,8 @@ public:
      * Assumes condition is satisfied.
      */
     bool is_active_when_wielded() const {
-        return has::WIELD == active_conditions.first || has::HELD == active_conditions.first;
+        return conditions.contains( enchantment_condition_id( "HELD" ) ) ||
+               conditions.contains( enchantment_condition_id( "WIELD" ) );
     }
 
     // modifies character stats, or does other passive effects
@@ -130,7 +131,7 @@ private:
 
     std::map<time_duration, std::vector<fake_spell>> intermittent_activation;
 
-    std::pair<has, condition> active_conditions;
+    std::set<enchantment_condition_id> conditions;
 
     std::set<efftype_id> immune_effects;
 

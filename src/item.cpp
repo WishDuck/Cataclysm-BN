@@ -5871,9 +5871,7 @@ int item::lift_strength() const
 int item::attack_cost() const
 {
     int base = 65 + ( volume() / 62.5_ml + weight() / 60_gram ) / count();
-    int bonus = bonus_from_enchantments_wielded( base, enchantment_value_id( "ITEM_ATTACK_COST" ),
-                true );
-    return std::max( 0, base + bonus );
+    return std::max( 0, base );
 }
 
 int item::stamina_cost() const

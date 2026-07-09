@@ -683,8 +683,9 @@ class item : public location_visitable<item>, public game_object<item>
         /**
          * Base number of moves (@ref Creature::moves) that a single melee attack with this items
          * takes. The actual time depends heavily on the attacker, see melee.cpp.
+         * This does not take into account enchantments either
          */
-        int attack_cost() const;
+        int attack_cost( Character* who = nullptr ) const;
         /**
          * Stamina consumed to use this weapon in melee
          */

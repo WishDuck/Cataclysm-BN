@@ -5,6 +5,7 @@
 #include "character.h"
 #include "creature.h"
 #include "debug.h"
+#include "enchantment_condition.h"
 #include "enchantment_flag.h"
 #include "enchantment_value.h"
 #include "enum_conversions.h"
@@ -26,66 +27,6 @@
 #include <set>
 #include <vector>
 
-template <typename E> struct enum_traits;
-
-template <> struct enum_traits<enchantment::has> {
-    static constexpr enchantment::has last = enchantment::has::NUM_HAS;
-};
-
-template <> struct enum_traits<enchantment::condition> {
-    static constexpr enchantment::condition last = enchantment::condition::NUM_CONDITION;
-};
-
-namespace io {
-// TODO: Migrate these enums to ids too
-// *INDENT-OFF*
-template <> std::string enum_to_string<enchantment::has>(enchantment::has data) {
-    switch (data) {
-        case enchantment::has::HELD:
-            return "HELD";
-        case enchantment::has::WIELD:
-            return "WIELD";
-        case enchantment::has::WORN:
-            return "WORN";
-        case enchantment::has::NUM_HAS:
-            break;
-    }
-    debugmsg("Invalid enchantment::has");
-    abort();
-}
-
-template <> std::string enum_to_string<enchantment::condition>(enchantment::condition data) {
-    switch (data) {
-        case enchantment::condition::ALWAYS:
-            return "ALWAYS";
-        case enchantment::condition::UNDERGROUND:
-            return "UNDERGROUND";
-        case enchantment::condition::ABOVEGROUND:
-            return "ABOVEGROUND";
-        case enchantment::condition::UNDERWATER:
-            return "UNDERWATER";
-        case enchantment::condition::DAY:
-            return "DAY";
-        case enchantment::condition::NIGHT:
-            return "NIGHT";
-        case enchantment::condition::DUSK:
-            return "DUSK";
-        case enchantment::condition::DAWN:
-            return "DAWN";
-        case enchantment::condition::ACTIVE:
-            return "ACTIVE";
-        case enchantment::condition::INACTIVE:
-            return "INACTIVE";
-        case enchantment::condition::NUM_CONDITION:
-            break;
-    }
-    debugmsg("Invalid enchantment::condition");
-    abort();
-}
-
-// *INDENT-ON*
-} // namespace io
-
 namespace {
 generic_factory<enchantment> enchant_factory("enchantment");
 } // namespace
@@ -94,30 +35,12 @@ IMPLEMENT_STRING_AND_INT_IDS(enchantment, enchant_factory);
 
 std::vector<std::string> enchantment::get_effect_string(bool is_item) const {
     std::string cond_string;
-    if (is_item) {
-        if (active_conditions.first == has::WIELD) {}
-        const auto itemCond = active_conditions.first;
-        cond_string =
-            itemCond == has::WIELD  ? _("While wielded and ")
-            : itemCond == has::WORN ? _("While worn and ")
-            : itemCond == has::HELD
-                ? _("While held and ")
-                : "You shouldn't see this";
+    for( const enchantment_condition_id cond_id : conditions ) {
+        if( !cond_string.empty() ) {
+            cond_string += _(" and ");
+        }
+        cond_string += cond_id->condition_info;
     }
-    const auto genCond = active_conditions.second;
-    cond_string +=
-        genCond == condition::ALWAYS        ? _("At all times:")
-        : genCond == condition::ACTIVE      ? _("While active:")
-        : genCond == condition::INACTIVE    ? _("While inactive:")
-        : genCond == condition::UNDERGROUND ? _("While underground:")
-        : genCond == condition::ABOVEGROUND ? _("While aboveground:")
-        : genCond == condition::UNDERWATER  ? _("While underwater:")
-        : genCond == condition::NIGHT       ? _("During the night:")
-        : genCond == condition::DAY         ? _("During the day:")
-        : genCond == condition::DUSK        ? _("At dusk:")
-        : genCond == condition::DAWN
-            ? _("At dawn:")
-            : "You shouldn't see this";
 
     std::map<enchantment_value_id, int> value_effects;
     for (const auto [ench_id, effect] : values_add) {
@@ -160,38 +83,31 @@ void enchantment::load_enchantment(const JsonObject& jo, const std::string& src)
 void enchantment::reset() { enchant_factory.reset(); }
 
 bool enchantment::is_active(const Character& guy, const item& parent) const {
-    if (!guy.has_item(parent)) { return false; }
 
-    if (active_conditions.first == has::WIELD && !guy.is_wielding(parent)) { return false; }
-
-    if (active_conditions.first == has::WORN && !guy.is_worn(parent)) { return false; }
-
-    return is_active(guy, parent.is_active());
+    bool is_active = parent.is_active();
+    bool active = true;
+    for( const enchantment_condition_id cond_id : conditions ) {
+        if( cond_id->is_item_condition ) {
+            active &= cond_id->item_condition(guy, parent);
+        } else {
+            active &= cond_id->generic_condition(guy, is_active)
+        }
+    }
+    return active
 }
 
 bool enchantment::is_active(const Character& guy, const bool active) const {
-    if (active_conditions.second == condition::ACTIVE) { return active; }
-
-    if (active_conditions.second == condition::INACTIVE) { return !active; }
-
-    if (active_conditions.second == condition::ALWAYS) { return true; }
-
-    if (active_conditions.second == condition::NIGHT) { return is_night(calendar::turn); }
-
-    if (active_conditions.second == condition::DAY) { return is_day(calendar::turn); }
-
-    if (active_conditions.second == condition::DUSK) { return is_dusk(calendar::turn); }
-
-    if (active_conditions.second == condition::DAWN) { return is_dawn(calendar::turn); }
-
-    if (active_conditions.second == condition::UNDERGROUND) { return guy.bub_pos().z() < 0; }
-
-    if (active_conditions.second == condition::ABOVEGROUND) { return guy.bub_pos().z() > -1; }
-
-    if (active_conditions.second == condition::UNDERWATER) {
-        return get_map().is_divable(guy.bub_pos());
+    bool is_active = parent.is_active();
+    bool active = true;
+    for( const enchantment_condition_id cond_id : conditions ) {
+        if( cond_id->is_item_condition ) {
+            debugmsg( "Enchantment %s has item condition %s on a non-item, it will never trigger.", id.str(). cond_id.str() );
+            return false;
+        } else {
+            active &= cond_id->generic_condition(guy, is_active)
+        }
     }
-    return false;
+    return active;
 }
 
 void enchantment::add_activation(const time_duration& freq, const fake_spell& fake) {
@@ -225,8 +141,13 @@ void enchantment::load(const JsonObject& jo, const std::string&) {
         }
     }
 
-    active_conditions.first = io::string_to_enum<has>(jo.get_string("has", "HELD"));
-    active_conditions.second = io::string_to_enum<condition>(jo.get_string("condition", "ALWAYS"));
+    optional(jo, was_loaded, "conditions", conditions);
+    if( jo.has_string( "has" ) ) {
+        conditions.push_back(enchantment_condition_id( jo.get_string( "has" ) ) );
+    }
+    if( jo.has_string( "condition" ) ) {
+        conditions.push_back(enchantment_condition_id( jo.get_string( "condition" ) ) );
+    }
 
     for (JsonObject jsobj : jo.get_array("ench_effects")) {
         ench_effects.emplace(efftype_id(jsobj.get_string("effect")), jsobj.get_int("intensity"));
@@ -269,8 +190,7 @@ void enchantment::serialize(JsonOut& jsout) const {
         return;
     }
 
-    jsout.member("has", io::enum_to_string<has>(active_conditions.first));
-    jsout.member("condition", io::enum_to_string<condition>(active_conditions.second));
+    jsout.member("conditions", conditions);
     if (emitter) { jsout.member("emitter", emitter); }
 
     if (!hit_you_effect.empty()) { jsout.member("hit_you_effect", hit_you_effect); }
@@ -337,7 +257,7 @@ void enchantment::serialize(JsonOut& jsout) const {
 }
 
 bool enchantment::stacks_with(const enchantment& rhs) const {
-    return active_conditions == rhs.active_conditions;
+    return conditions == rhs.conditions;
 }
 
 bool enchantment::add(const enchantment& rhs) {
@@ -518,7 +438,7 @@ bool enchantment::operator==(const enchantment& rhs) const {
         && values_add == rhs.values_add && values_max == rhs.values_max
         && hit_me_effect == rhs.hit_me_effect && hit_you_effect == rhs.hit_you_effect
         && intermittent_activation == intermittent_activation
-        && active_conditions == rhs.active_conditions;
+        && conditions == rhs.conditions;
 }
 
 namespace {
