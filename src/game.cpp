@@ -7351,26 +7351,6 @@ void game::clear_zombies()
  */
 bool game::spawn_hallucination( const tripoint_bub_ms &p )
 {
-    if( one_in( 100 ) ) {
-        shared_ptr_fast<npc> tmp = make_shared_fast<npc>();
-        tmp->randomize( NC_HALLU );
-        const auto proj = project_remain<coords::sm>( bub_to_abs( p ) );
-        tmp->spawn_at_precise( proj.quotient, proj.remainder_tripoint );
-        cata::run_hooks( "on_creature_spawn", [&]( sol::table & params ) {
-            params["creature"] = tmp.get();
-        } );
-        cata::run_hooks( "on_npc_spawn", [&]( sol::table & params ) {
-            params["npc"] = tmp.get();
-        } );
-        if( !critter_at( p, true ) ) {
-            get_overmapbuffer( current_dimension_id_ ).insert_npc( tmp );
-            load_npcs();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     const mtype_id &mt = MonsterGenerator::generator().get_valid_hallucination();
     const shared_ptr_fast<monster> phantasm = make_shared_fast<monster>( mt );
     phantasm->hallucination = true;

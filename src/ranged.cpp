@@ -1052,31 +1052,6 @@ bool ranged::handle_gun_damage( Character &shooter, item &it )
     return true;
 }
 
-void npc::pretend_fire( npc *source, int shots, item &gun )
-{
-    int curshot = 0;
-    avatar &you = get_avatar();
-    if( you.sees( *source ) && one_in( 50 ) ) {
-        add_msg( m_info, _( "%s shoots something." ), source->disp_name() );
-    }
-    while( curshot != shots ) {
-        if( gun.ammo_consume( gun.ammo_required(), bub_pos() ) != gun.ammo_required() ) {
-            debugmsg( "Unexpected shortage of ammo whilst firing %s", gun.tname().c_str() );
-            break;
-        }
-
-        item *weapon = &gun;
-        const auto data = weapon->gun_noise( shots > 1 );
-
-        if( you.sees( *source ) ) {
-            add_msg( m_warning, _( "You hear %s." ), data.sound );
-        }
-        curshot++;
-        moves -= 100;
-    }
-}
-
-
 namespace ranged
 {
 

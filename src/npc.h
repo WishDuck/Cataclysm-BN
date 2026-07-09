@@ -823,7 +823,6 @@ class npc : public player
         std::string pick_talk_topic( const Character &u );
         float character_danger( const Character &u ) const;
         float vehicle_danger( int radius ) const;
-        void pretend_fire( npc *source, int shots, item &gun ); // fake ranged attack for hallucination
         // True if our anger is at least equal to...
         bool turned_hostile() const;
         // ... this value!
@@ -853,7 +852,8 @@ class npc : public player
         bool is_following() const;
         bool is_obeying( const Character &p ) const;
 
-        bool is_hallucination() const override; // true if the NPC isn't actually real
+        // NPCs cannot be hallucinations
+        bool is_hallucination() const override { return false; }
 
         // Ally of or traveling with p
         bool is_friendly( const Character &p ) const;
@@ -1175,7 +1175,6 @@ class npc : public player
         bool alt_attack();
         void heal_player( Character &patient );
         void heal_self();
-        void pretend_heal( Character &patient, item &used ); // healing action of hallucinations
         void mug_player( Character &mark );
         void look_for_player( const Character &sought );
         // Do we have an idea of where u are?
@@ -1324,7 +1323,6 @@ class npc : public player
         npc_follower_rules rules;
         bool marked_for_death = false; // If true, we die as soon as we respawn!
         bool hit_by_player = false;
-        bool hallucination = false; // If true, NPC is an hallucination
         std::vector<npc_need> needs;
         std::optional<int> confident_range_cache;
         // Dummy point that indicates that the goal is invalid.

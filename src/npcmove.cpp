@@ -489,7 +489,7 @@ void npc::assess_danger()
     // True if this NPC has traits/effects that cause monster::attitude() to return a
     // result different from what a generic NPC would get.  When false, we can use each
     // monster's per-npcmove-pass cached attitude instead of recomputing it.
-    const auto has_special_attitude_traits = guaranteed_hostile() || is_hallucination() ||
+    const auto has_special_attitude_traits = guaranteed_hostile() ||
             has_mutation_attitude_rules ||
             has_trait( trait_ANIMALEMPATH ) || has_trait( trait_ANIMALEMPATH2 ) ||
             has_trait( trait_ANIMALDISCORD ) || has_trait( trait_ANIMALDISCORD2 ) ||
@@ -1411,15 +1411,11 @@ void npc::execute_action( npc_action action )
             }
 
             aim();
-            if( is_hallucination() ) {
-                pretend_fire( this, mode.qty, *mode );
-            } else {
-                add_msg( m_debug, "%s recoil on firing: %s", name, recoil );
-                ranged::fire_gun( *this, tar, mode.qty, *mode, nullptr );
-                // Clear the ranged cbm entry and item so next turn a new comparison is made.
-                if( !cbm_active.is_null() ) {
-                    discharge_cbm_weapon();
-                }
+            add_msg( m_debug, "%s recoil on firing: %s", name, recoil );
+            ranged::fire_gun( *this, tar, mode.qty, *mode, nullptr );
+            // Clear the ranged cbm entry and item so next turn a new comparison is made.
+            if( !cbm_active.is_null() ) {
+                discharge_cbm_weapon();
             }
             // Important, once they've fired their gun, wield calculations have to be redone
             // else they'll fail to realize when they run out of ammo.
@@ -2214,12 +2210,6 @@ npc_action npc::address_needs( float danger )
             return npc_noop;
         }
     }
-    //Does the hallucination needs to disappear ?
-    if( is_hallucination() && player_character.sees( *this ) ) {
-        if( !player_character.has_effect( effect_hallu ) ) {
-            die( nullptr );
-        }
-    }
 
     if( danger > NPC_DANGER_VERY_LOW ) {
         return npc_undecided;
@@ -2650,8 +2640,7 @@ bool npc::can_move_to( const tripoint_bub_ms &p, bool no_bashing ) const
     // Allow moving into any bashable spots, but penalize them during pathing
     // Doors are not passable for hallucinations
     return( rl_dist( bub_pos(), p ) <= 1 && here.has_floor( p ) && !g->is_dangerous_tile( p ) &&
-            ( here.passable( p ) || ( can_open_door( p, !here.is_outside( bub_pos() ) ) &&
-                                      !is_hallucination() ) ||
+            ( here.passable( p ) || can_open_door( p, !here.is_outside( bub_pos() ) ) ||
               ( !no_bashing && here.bash_rating( smash_ability(), p ) > 0 ) )
           );
 }
@@ -2776,7 +2765,7 @@ void npc::move_to( const tripoint_bub_ms &pt, bool no_bashing, std::set<tripoint
         // Let NPCs push each other when non-hostile
         // TODO: Have them attack each other when hostile
         npc *np = dynamic_cast<npc *>( critter );
-        if( !is_hallucination() && np != nullptr && !np->in_sleep_state() ) {
+        if( np != nullptr && !np->in_sleep_state() ) {
             std::unique_ptr<std::set<tripoint_bub_ms>> newnomove;
             std::set<tripoint_bub_ms> *realnomove;
             if( nomove != nullptr ) {
@@ -2852,13 +2841,8 @@ void npc::move_to( const tripoint_bub_ms &pt, bool no_bashing, std::set<tripoint
         }
         moved = true;
     } else if( here.can_open_door( this, p, !here.is_outside( bub_pos() ) ) ) {
-        if( !is_hallucination() ) { // hallucinations don't open doors
-            here.open_door( this, p, !here.is_outside( bub_pos() ) );
-            moves -= 100;
-        } else { // hallucinations teleport through doors
-            moves -= 100;
-            moved = true;
-        }
+        here.open_door( this, p, !here.is_outside( bub_pos() ) );
+        moves -= 100;
     } else if( get_dex() > 1 && here.has_flag_ter_or_furn( "CLIMBABLE", p ) &&
                !ceiling_blocking_climb ) {
         ///\EFFECT_DEX_NPC increases chance to climb CLIMBABLE furniture or terrain
@@ -2895,9 +2879,6 @@ void npc::move_to( const tripoint_bub_ms &pt, bool no_bashing, std::set<tripoint
         } else {
             facing = FD_LEFT;
         }
-        if( is_hallucination() ) {
-            return;
-        }
         if( is_mounted() ) {
             if( mounted_creature->bub_pos() != bub_pos() ) {
                 mounted_creature->setpos( bub_pos() );
@@ -2924,8 +2905,7 @@ void npc::move_to( const tripoint_bub_ms &pt, bool no_bashing, std::set<tripoint
         }
 
         // Close doors behind self (if you can)
-        if( ( rules.has_flag( ally_rule::close_doors ) &&
-              is_player_ally() ) && !is_hallucination() ) {
+        if( rules.has_flag( ally_rule::close_doors ) && is_player_ally() ) {
             doors::close_door( here, *this, old_pos );
         }
 
@@ -3179,12 +3159,6 @@ void npc::see_item_say_smth( const itype_id &object, const std::string &smth )
 
 void npc::find_item()
 {
-    if( is_hallucination() ) {
-        see_item_say_smth( itype_thorazine, "<no_to_thorazine>" );
-        see_item_say_smth( itype_lsd, "<yes_to_lsd>" );
-        return;
-    }
-
     if( is_player_ally() && !rules.has_flag( ally_rule::allow_pick_up ) ) {
         // Grabbing stuff not allowed by our "owner"
         return;
@@ -3367,10 +3341,6 @@ void npc::find_item()
 
 void npc::pick_up_item()
 {
-    if( is_hallucination() ) {
-        return;
-    }
-
     if( !rules.has_flag( ally_rule::allow_pick_up ) && is_player_ally() ) {
         add_msg( m_debug, "%s::pick_up_item(); Canceling on player's request", name );
         fetching_item = false;
@@ -3624,9 +3594,7 @@ void npc::drop_items( units::mass drop_weight, units::volume drop_volume, int mi
         } else if( num_items_dropped == 2 ) {
             item_name += _( " and " ) + dropped->tname();
         }
-        if( !is_hallucination() ) { // hallucinations can't drop real items
-            here.add_item_or_charges( bub_pos(), std::move( dropped ) );
-        }
+        here.add_item_or_charges( bub_pos(), std::move( dropped ) );
     }
     // Finally, describe the action if u can see it
     if( get_player_character().sees( *this ) ) {
@@ -3644,8 +3612,7 @@ bool npc::find_corpse_to_pulp()
 {
     Character &player_character = get_player_character();
     if( ( is_player_ally() && ( !rules.has_flag( ally_rule::allow_pulp ) ||
-                                player_character.in_vehicle ) ) ||
-        is_hallucination() ) {
+                                player_character.in_vehicle ) ) ) {
         return false;
     }
 
@@ -3962,15 +3929,13 @@ static void npc_throw( npc &np, item &it, const tripoint_bub_ms &pos )
 
     detached_ptr<item> det = it.count_by_charges() ? it.split( 1 ) : it.detach();
 
-    if( !np.is_hallucination() ) { // hallucinations only pretend to throw
-        ranged::throw_item( np, pos, std::move( det ), std::nullopt );
-    }
+    ranged::throw_item( np, pos, std::move( det ), std::nullopt );
     np.clear_npc_ai_info_cache( npc_ai_info::range );
 }
 
 bool npc::alt_attack()
 {
-    if( ( is_player_ally() && !rules.has_flag( ally_rule::use_grenades ) ) || is_hallucination() ) {
+    if( is_player_ally() && !rules.has_flag( ally_rule::use_grenades ) ) {
         return false;
     }
 
@@ -4111,10 +4076,6 @@ bool npc::alt_attack()
 
 void npc::activate_item( int item_index )
 {
-    if( is_hallucination() ) {
-        move_pause();
-        return;
-    }
     const int oldmoves = moves;
     item &it = i_at( item_index );
     if( it.is_tool() || it.is_food() ) {
@@ -4151,31 +4112,13 @@ void npc::heal_player( Character &patient )
         debugmsg( "%s tried to heal you but has no healing item", disp_name() );
         return;
     }
-    if( !is_hallucination() ) {
-        int charges_used = used.type->invoke( *this, used, patient.bub_pos(), "heal" );
-        consume_charges( used, charges_used );
-    } else {
-        pretend_heal( patient, used );
-    }
+    int charges_used = used.type->invoke( *this, used, patient.bub_pos(), "heal" );
+    consume_charges( used, charges_used );
 
-}
-
-void npc:: pretend_heal( Character &patient, item &used )
-{
-    if( get_player_character().sees( *this ) ) {
-        add_msg( _( "%1$s heals %2$s." ), disp_name(),
-                 patient.disp_name() ); // you can tell that it's not real by looking at your HP though
-    }
-    consume_charges( used, 1 ); // empty hallucination's inventory to avoid spammming
-    moves -= 100; // consumes moves to avoid infinite loop
 }
 
 void npc::heal_self()
 {
-    if( is_hallucination() ) {
-        move_pause();
-        return;
-    }
     if( has_effect( effect_asthma ) ) {
         item *treatment = &null_item_reference();
         std::string iusage = "OXYGEN_BOTTLE";
@@ -4213,10 +4156,6 @@ void npc::heal_self()
 
 void npc::use_painkiller()
 {
-    if( is_hallucination() ) {
-        move_pause();
-        return;
-    }
     // First, find the best painkiller for our pain level
     item *it = inv.most_appropriate_painkiller( get_pain() );
 
@@ -4321,10 +4260,6 @@ static float rate_food( const item &it, int want_nutr, int want_quench )
 
 bool npc::consume_food()
 {
-    if( is_hallucination() ) {
-        move_pause();
-        return false;
-    }
     float best_weight = 0.0f;
     int index = -1;
     int want_hunger = std::max<int>( 0, ( max_stored_kcal() - get_stored_kcal() ) / 10 );
@@ -4379,10 +4314,8 @@ void npc::mug_player( Character &mark )
     Character &player_character = get_player_character();
     const bool u_see = player_character.sees( *this ) || player_character.sees( mark );
     if( mark.cash > 0 ) {
-        if( !is_hallucination() ) { // hallucinations can't take items
-            cash += mark.cash;
-            mark.cash = 0;
-        }
+        cash += mark.cash;
+        mark.cash = 0;
         moves = 0;
         // Describe the action
         if( mark.is_npc() ) {
@@ -4425,15 +4358,13 @@ void npc::mug_player( Character &mark )
         moves -= 100;
         return;
     }
-    if( !is_hallucination() ) {
-        i_add( to_steal->detach( ) );
-        if( mark.is_npc() ) {
-            if( u_see ) {
-                add_msg( _( "%1$s takes %2$s's %3$s." ), name, mark.name, to_steal->tname() );
-            }
-        } else {
-            add_msg( m_bad, _( "%1$s takes your %2$s." ), name, to_steal->tname() );
+    i_add( to_steal->detach( ) );
+    if( mark.is_npc() ) {
+        if( u_see ) {
+            add_msg( _( "%1$s takes %2$s's %3$s." ), name, mark.name, to_steal->tname() );
         }
+    } else {
+        add_msg( m_bad, _( "%1$s takes your %2$s." ), name, to_steal->tname() );
     }
     moves -= 100;
     if( !mark.is_npc() ) {
@@ -5020,10 +4951,6 @@ bool npc::complain()
 
 void npc::do_reload( item &it )
 {
-    if( is_hallucination() ) {
-        move_pause();
-        return;
-    }
     item_reload_option reload_opt = character_funcs::select_ammo( *this, it );
 
     if( !reload_opt ) {

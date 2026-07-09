@@ -125,7 +125,6 @@ static const bionic_id bio_memory( "bio_memory" );
 static const trait_id trait_BEE( "BEE" );
 static const trait_id trait_CANNIBAL( "CANNIBAL" );
 static const trait_id trait_DEBUG_MIND_CONTROL( "DEBUG_MIND_CONTROL" );
-static const trait_id trait_HALLUCINATION( "HALLUCINATION" );
 static const trait_id trait_HYPEROPIC( "HYPEROPIC" );
 static const trait_id trait_ILLITERATE( "ILLITERATE" );
 static const trait_id trait_KILLER( "KILLER" );
@@ -170,7 +169,6 @@ npc::npc()
     death_drops = true;
     dead = false;
     hit_by_player = false;
-    hallucination = false;
     moves = 100;
     mission = NPC_MISSION_NULL;
     myclass = npc_class_id::NULL_ID();
@@ -505,7 +503,7 @@ void npc::set_fac( const faction_id &id )
     }
     my_fac = g->faction_manager_ptr->get( id );
     if( my_fac ) {
-        if( !is_fake() && !is_hallucination() ) {
+        if( !is_fake() ) {
             my_fac->add_to_membership( getID(), disp_name(), known_to_u );
         }
         fac_id = my_fac->id;
@@ -1659,9 +1657,6 @@ void npc::make_angry()
 
 void npc::on_attacked( const Creature &attacker )
 {
-    if( is_hallucination() ) {
-        die( nullptr );
-    }
     if( attacker.is_player() && !is_enemy() ) {
         const auto attacked_faction = get_monster_faction();
         make_angry();
@@ -1777,11 +1772,6 @@ void npc::say( const std::string &line, const sounds::sound_t spriority ) const
     std::string sound = string_format( _( "%1$s saying \"%2$s\"" ), name, formatted_line );
     if( g->u.sees( *this ) && g->u.is_deaf() ) {
         add_msg( m_warning, _( "%1$s says something but you can't hear it!" ), name );
-    }
-    // Hallucinations don't make noise when they speak
-    if( is_hallucination() ) {
-        add_msg( _( "%1$s saying \"%2$s\"" ), name, formatted_line );
-        return;
     }
     // Sound happens even if we can't hear it
     if( spriority == sounds::sound_t::order || spriority == sounds::sound_t::alert ) {
@@ -2434,7 +2424,7 @@ void npc::npc_dismount()
 
 int npc::smash_ability() const
 {
-    if( !is_hallucination() && ( !is_player_ally() || rules.has_flag( ally_rule::allow_bash ) ) ) {
+    if( !is_player_ally() || rules.has_flag( ally_rule::allow_bash ) ) {
         ///\EFFECT_STR_NPC increases smash ability
         return str_cur + primary_weapon().damage_melee( DT_BASH );
     }
@@ -2788,7 +2778,7 @@ void npc::die( Creature *nkiller )
     }
     // if this NPC was the only member of a micro-faction, clean it up.
     if( my_fac ) {
-        if( !is_fake() && !is_hallucination() ) {
+        if( !is_fake() ) {
             if( my_fac->members.size() == 1 ) {
                 for( auto elem : inv_dump() ) {
                     elem->remove_owner();
@@ -2800,13 +2790,6 @@ void npc::die( Creature *nkiller )
     }
     dead = true;
     Character::die( nkiller );
-
-    if( is_hallucination() ) {
-        if( g->u.sees( *this ) ) {
-            add_msg( _( "%s disappears." ), name.c_str() );
-        }
-        return;
-    }
 
     if( g->u.sees( *this ) ) {
         add_msg( _( "%s dies!" ), name );
@@ -2865,7 +2848,7 @@ void npc::erase()
         critter->mounted_player_id = character_id();
     }
     if( my_fac ) {
-        if( !is_fake() && !is_hallucination() ) {
+        if( !is_fake() ) {
             if( my_fac->members.size() == 1 ) {
                 for( auto elem : inv_dump() ) {
                     elem->remove_owner();
@@ -3098,10 +3081,6 @@ void npc::on_load()
                      disp_name() );
         }
     }
-    if( has_trait( trait_HALLUCINATION ) ) {
-        hallucination = true;
-    }
-
     cata::run_hooks( "on_creature_loaded", [this]( sol::table & params ) {
         params["creature"] = this;
     } );
@@ -3367,10 +3346,6 @@ std::ostream &operator<< ( std::ostream &os, const npc_need &need )
 
 bool npc::will_accept_from_player( const item &it ) const
 {
-    if( is_hallucination() ) {
-        return false;
-    }
-
     if( is_minion() || g->u.has_trait( trait_DEBUG_MIND_CONTROL ) ||
         it.has_flag( flag_NPC_SAFE ) ) {
         return true;
@@ -3799,11 +3774,6 @@ void npc_follower_rules::toggle_specific_override_state( ally_rule rule, bool st
     } else {
         set_specific_override_state( rule, state );
     }
-}
-
-bool npc::is_hallucination() const
-{
-    return hallucination;
 }
 
 bool npc_follower_rules::has_override_enable( ally_rule test ) const
