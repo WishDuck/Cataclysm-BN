@@ -200,7 +200,8 @@ std::vector<npc *> player_activity::get_assistants( const Character &who, unsign
         bool ok = guy.is_npc() && &guy != &who && !guy.in_sleep_state() && guy.is_obeying( who ) &&
                   guy.activity->id() != ACT_ASSIST &&
                   rl_dist( guy.bub_pos(), who.bub_pos() ) < PICKUP_RANGE &&
-                  get_map().clear_path( who.bub_pos(), guy.bub_pos(), PICKUP_RANGE, 1, 100 );
+                  get_map().clear_path( who.bub_pos(), guy.bub_pos(), PICKUP_RANGE, 1, 100 ) &&
+                  !guy.is_hallucination();
         if( ok ) {
             n++;
         }
