@@ -644,7 +644,9 @@ void player_activity::do_turn( player &p )
             }
         }
         for( Character *npc : assistants() ) {
-            npc->cancel_activity();
+            if( npc != nullptr ) {
+                npc->cancel_activity();
+            }
         }
 
     }
@@ -665,7 +667,9 @@ void player_activity::canceled( Character &who )
         actor->canceled( *this, who );
     }
     for( Character *npc : assistants() ) {
-        npc->cancel_activity();
+        if( npc != nullptr ) {
+            npc->cancel_activity();
+        }
     }
 }
 
