@@ -771,3 +771,7 @@ Gives the ability to see the precise time
 ##### FIRE_FIELD_IMMUNE
 
 Provides immunity to fire fields.
+
+##### SILENT
+
+Prevents player sound from movement
