@@ -1127,7 +1127,7 @@
     "id": "bio_sleep_shutdown",
     "type": "bionic",
     "name": { "str": "Sleep Mode Shutdown" },
-    "description": "For better or worse, this CBM suppresses pain and audio stimuli while asleep, preventing you from waking up from those causes.",
+    "description": "For better or worse, this CBM suppresses most stimuli while asleep, preventing you from waking up from those causes.",
     "occupied_bodyparts": [ [ "head", 1 ] ],
     "flags": [ "BIONIC_FAULTY", "BIONIC_SHOCKPROOF" ],
     "points": -2,
