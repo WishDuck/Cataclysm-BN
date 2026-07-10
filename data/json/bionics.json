@@ -603,14 +603,7 @@
     "flags": [ "BIONIC_FAULTY" ],
     "points": -1,
     "starting_bionic": true,
-    "bio_enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [
-          { "value": "FOOD_FUN", "add": -4 }
-        ],
-      }
-    ]
+    "bio_enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "FOOD_FUN", "add": -4 } ] } ]
   },
   {
     "id": "bio_ground_sonar",
