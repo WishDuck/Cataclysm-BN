@@ -4,6 +4,7 @@
 #include "character.h"
 #include "debug.h"
 #include "generic_factory.h"
+#include "generic_readers.h"
 #include "item.h"
 #include "type_id_implement.h"
 
@@ -22,8 +23,8 @@ void enchantment_condition::load_enchantment_conditions(
 }
 
 void enchantment_condition::load(const JsonObject& jo, const std::string& src) {
-    optional(jo, was_loaded, "item_condition", is_item_condition, false);
-    optional(jo, was_loaded, "condition_function", condition_function, "always");
+    mandatory(jo, was_loaded, "condition_type", cond_type, enum_flags_reader<enchantment_condition::condition_type>( "enchantment_condition::condition_type" ) );
+    mandatory(jo, was_loaded, "condition_function", condition_function);
 }
 
 void enchantment_condition::check() const {}
@@ -37,125 +38,150 @@ std::vector<enchantment_condition> enchantment_condition::get_all() {
 
 void enchantment_condition::reset() { all_enchantment_conditions.reset(); }
 
-bool enchantment_condition::item_condition(const Character& guy, const item& it) const {
-    return condition_functions[condition_function]->check_item_condition(guy, it);
+bool enchantment_condition::item_condition(const item& it) const {
+    return condition_functions[condition_function]->check_item_condition(it);
 }
 
-bool enchantment_condition::generic_condition(const Character& guy, const bool active) const {
-    return condition_functions[condition_function]->check_generic_condition(guy, active);
+bool enchantment_condition::item_character_condition(const Character& guy, const item& it) const {
+    return condition_functions[condition_function]->check_item_character_condition(guy, it);
 }
 
+bool enchantment_condition::character_condition(const Character& guy, const bool active) const {
+    return condition_functions[condition_function]->check_character_condition(guy, active);
+}
+
+bool enchantment_condition::generic_condition(const bool active) const {
+    return condition_functions[condition_function]->check_generic_condition(active);
+}
+
+// condition_type enum stuff
+
+template <typename E> struct enum_traits;
+template <> struct enum_traits<enchantment_condition::condition_type> {
+    static constexpr enchantment_condition::condition_type last = enchantment_condition::condition_type::NUM_CONDITIONS;
+};
+
+namespace io {
+template <> std::string enum_to_string<enchantment_condition::condition_type>(enchantment_condition::condition_type data) {
+    switch (data) {
+        case enchantment_condition::condition_type::CHARACTER:
+            return "character";
+        case enchantment_condition::condition_type::ITEM:
+            return "item";
+        case enchantment_condition::condition_type::ITEM_CHARACTER:
+            return "item_and_character";
+        case enchantment_condition::condition_type::GLOBAL:
+            return "global";
+    }
+    debugmsg("Invalid enchantment_condition::condition_type; Defaulting to `global`");
+    return "global";
+}
+}
+
+// Condition classes + Hardcode Condition Map
 class enchantment_condition_always: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool /*active*/) const override {
+    bool check_generic_condition(const bool /*active*/) const override {
         return true;
     }
 };
 
 class enchantment_condition_dawn: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool /*active*/) const override {
+    bool check_generic_condition(const bool /*active*/) const override {
         return is_dawn(calendar::turn);
     }
 };
 
 class enchantment_condition_day: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool /*active*/) const override {
+    bool check_generic_condition(const bool /*active*/) const override {
         return is_day(calendar::turn);
     }
 };
 
 class enchantment_condition_dusk: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool /*active*/) const override {
+    bool check_generic_condition(const bool /*active*/) const override {
         return is_dusk(calendar::turn);
     }
 };
 
 class enchantment_condition_night: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool /*active*/) const override {
+    bool check_generic_condition(const bool /*active*/) const override {
         return is_night(calendar::turn);
     }
 };
 
 class enchantment_condition_active: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool active) const override {
+    bool check_generic_condition(const bool active) const override {
         return active;
     }
 };
 
 class enchantment_condition_inactive: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& /*guy*/, const bool active) const override {
+    bool check_generic_condition(const bool active) const override {
         return !active;
     }
 };
 
 class enchantment_condition_inside: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& guy, const bool /*active*/) const override {
+    bool check_character_condition(const Character& guy, const bool /*active*/) const override {
         return !get_map().is_outside(guy.bub_pos());
     }
 };
 
 class enchantment_condition_outside: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& guy, const bool /*active*/) const override {
+    bool check_character_condition(const Character& guy, const bool /*active*/) const override {
         return get_map().is_outside(guy.bub_pos());
     }
 };
 
 class enchantment_condition_underground: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& guy, const bool /*active*/) const override {
+    bool check_character_condition(const Character& guy, const bool /*active*/) const override {
         return guy.bub_pos().z() < 0;
     }
 };
 
 class enchantment_condition_aboveground: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& guy, const bool /*active*/) const override {
+    bool check_character_condition(const Character& guy, const bool /*active*/) const override {
         return guy.bub_pos().z() >= 0;
     }
 };
 
 class enchantment_condition_underwater: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const Character& guy, const bool /*active*/) const override {
+    bool check_character_condition(const Character& guy, const bool /*active*/) const override {
         return get_map().is_divable(guy.bub_pos());
     }
 };
 
 class enchantment_condition_has: public virtual enchantment_condition_function {
 public:
-    bool check_item_condition(const Character& guy, const item& it) const override {
+    bool check_item_character_condition(const Character& guy, const item& it) const override {
         return guy.has_item(it);
     }
 };
 
 class enchantment_condition_wield: public virtual enchantment_condition_function {
 public:
-    bool check_item_condition(const Character& guy, const item& it) const override {
+    bool check_item_character_condition(const Character& guy, const item& it) const override {
         return guy.is_wielding(it);
     }
 };
 
 class enchantment_condition_worn: public virtual enchantment_condition_function {
 public:
-    bool check_item_condition(const Character& guy, const item& it) const override {
+    bool check_item_character_condition(const Character& guy, const item& it) const override {
         return guy.is_worn(it);
     }
-};
-
-class enchantment_condition_lua: public virtual enchantment_condition_function {
-public:
-    std::string lua_func;
-    enchantment_condition_lua(std::string func): lua_func(func) {}
-    bool check_item_condition(const Character& guy, const item& it) const override;
-    bool check_generic_condition(const Character& guy, const bool active) const override;
 };
 
 auto enchantment_condition::condition_functions = std::map<

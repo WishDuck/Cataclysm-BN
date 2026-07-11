@@ -65,6 +65,9 @@ public:
     // this enchantment has a valid condition and is in the right location
     bool is_active(const Character& guy, const item& parent) const;
 
+    // this enchantment has a valid condition and is in the right location
+    bool is_active(const item& parent) const;
+
     // @active means the container for the enchantment is active, for comparison to active flag.
     bool is_active(const Character& guy, bool active) const;
 

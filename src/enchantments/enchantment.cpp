@@ -87,24 +87,82 @@ bool enchantment::is_active(const Character& guy, const item& parent) const {
     bool is_active = parent.is_active();
     bool active = true;
     for( const enchantment_condition_id cond_id : conditions ) {
-        if( cond_id->is_item_condition ) {
-            active &= cond_id->item_condition(guy, parent);
-        } else {
-            active &= cond_id->generic_condition(guy, is_active)
+        if(!active) { break; }
+        switch (cond_id->cond_type) {
+            case enchantment_condition::condition_type::ITEM:
+                active &= cond_id->item_condition(parent);
+                break;
+            case enchantment_condition::condition_type::ITEM_CHARACTER:
+                active &= cond_id->item_character_condition(guy, parent);
+                break;
+            case enchantment_condition::condition_type::CHARACTER:
+                active &= cond_id->character_condition(guy, is_active);
+                break;
+            case enchantment_condition::condition_type::GLOBAL:
+                active &= cond_id->generic_condition(is_active);
+                break;
+            default:
+                debugmsg( "Enchantment %s has.... AN INVALID ENCHANTMENT CONDITION TYPE, it will never trigger.", id.str() );
+                active = false;
+                break;
         }
     }
-    return active
+    return active;
 }
 
-bool enchantment::is_active(const Character& guy, const bool active) const {
+bool enchantment::is_active(const item& parent) const {
+
     bool is_active = parent.is_active();
     bool active = true;
     for( const enchantment_condition_id cond_id : conditions ) {
-        if( cond_id->is_item_condition ) {
-            debugmsg( "Enchantment %s has item condition %s on a non-item, it will never trigger.", id.str(). cond_id.str() );
-            return false;
-        } else {
-            active &= cond_id->generic_condition(guy, is_active)
+        if(!active) { break; }
+        switch (cond_id->cond_type) {
+            case enchantment_condition::condition_type::ITEM:
+                active &= cond_id->item_condition(parent);
+                break;
+            case enchantment_condition::condition_type::ITEM_CHARACTER:
+                debugmsg( "Enchantment %s has item and character condition %s on a non-supporting enchantment value, it will never trigger.", id.str(), cond_id.str() );
+                active = false;
+                break;
+            case enchantment_condition::condition_type::CHARACTER:
+                debugmsg( "Enchantment %s has character condition %s on a non-supporting enchantment value, it will never trigger.", id.str(), cond_id.str() );
+                active = false;
+                break;
+            case enchantment_condition::condition_type::GLOBAL:
+                active &= cond_id->generic_condition(is_active);
+                break;
+            default:
+                debugmsg( "Enchantment %s has.... AN INVALID ENCHANTMENT CONDITION TYPE, it will never trigger.", id.str() );
+                active = false;
+                break;
+        }
+    }
+    return active;
+}
+
+bool enchantment::is_active(const Character& guy, const bool is_active) const {
+    bool active = true;
+    for( const enchantment_condition_id cond_id : conditions ) {
+        if(!active) { break; }
+        switch (cond_id->cond_type) {
+            case enchantment_condition::condition_type::ITEM:
+                debugmsg( "Enchantment %s has item condition %s on a non-item, it will never trigger.", id.str(), cond_id.str() );
+                active = false;
+                break;
+            case enchantment_condition::condition_type::ITEM_CHARACTER:
+                debugmsg( "Enchantment %s has item and character condition %s on a non-item, it will never trigger.", id.str(), cond_id.str() );
+                active = false;
+                break;
+            case enchantment_condition::condition_type::CHARACTER:
+                active &= cond_id->character_condition(guy, is_active);
+                break;
+            case enchantment_condition::condition_type::GLOBAL:
+                active &= cond_id->generic_condition(is_active);
+                break;
+            default:
+                debugmsg( "Enchantment %s has.... AN INVALID ENCHANTMENT CONDITION TYPE, it will never trigger.", id.str() );
+                active = false;
+                break;
         }
     }
     return active;
@@ -143,10 +201,10 @@ void enchantment::load(const JsonObject& jo, const std::string&) {
 
     optional(jo, was_loaded, "conditions", conditions);
     if( jo.has_string( "has" ) ) {
-        conditions.push_back(enchantment_condition_id( jo.get_string( "has" ) ) );
+        conditions.insert(enchantment_condition_id( jo.get_string( "has" ) ) );
     }
     if( jo.has_string( "condition" ) ) {
-        conditions.push_back(enchantment_condition_id( jo.get_string( "condition" ) ) );
+        conditions.insert(enchantment_condition_id( jo.get_string( "condition" ) ) );
     }
 
     for (JsonObject jsobj : jo.get_array("ench_effects")) {
