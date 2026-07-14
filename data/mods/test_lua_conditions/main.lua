@@ -4,14 +4,10 @@ mod.rain_functions = {}
 
 local weather = "null"
 
-mod.on_weather_updated = function(params)
-  weather = params.weather_id
-end
+mod.on_weather_updated = function(params) weather = params.weather_id end
 
 mod.rain_functions.global = function(params)
-  if weather == "rain" then
-    return true
-  end
+  if weather == "rain" then return true end
   return false
 end
 

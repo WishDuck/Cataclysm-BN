@@ -23,7 +23,6 @@ This field is relevant only for items.
 
 Values:
 
-
 ### emitter
 
 (string) Identifier of an emitter that's active as long as this enchantment is active. Default: no
@@ -259,7 +258,7 @@ Prevents environmental effects of fields from being applied
     ["BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"],
     ["TRUE", "Affects Outgoing Ranged True Damage"],
   ],
-  "unsupported_conditions": [ "character", "item_and_character" ] // These values are called where these conditions cannot ever be used
+  "unsupported_conditions": ["character", "item_and_character"], // These values are called where these conditions cannot ever be used
 }
 ```
 
@@ -761,11 +760,11 @@ Provides immunity to fire fields.
 
 ```jsonc
 {
-  "id": "WORN",                          // Id of condition
-  "type": "enchantment_condition",       // Mandatory Type
-  "condition_type": "item_and_character",// Type of condition, `global`, `item`, `character` and `item_and_character` are possible values
-  "condition_function": "worn",          // What function to use, generally references a hardcode or lua function
-  "condition_info": "While worn"         // Enchantment condition info to display on items
+  "id": "WORN", // Id of condition
+  "type": "enchantment_condition", // Mandatory Type
+  "condition_type": "item_and_character", // Type of condition, `global`, `item`, `character` and `item_and_character` are possible values
+  "condition_function": "worn", // What function to use, generally references a hardcode or lua function
+  "condition_info": "While worn", // Enchantment condition info to display on items
 }
 ```
 
@@ -836,4 +835,3 @@ When the owner of the item is at or above Z-level 0
 ##### UNDERWATER
 
 When the owner is in swimmable terrain
-
