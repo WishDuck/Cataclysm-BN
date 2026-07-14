@@ -72,9 +72,7 @@
     "cutting": 32,
     "price": "75 USD",
     "price_postapoc": "3 USD",
-    "relic_data": {
-      "passive_effects": [ { "condition": "ALWAYS", "values": [ { "value": "ITEM_ATTACK_COST", "add": -15 } ] } ]
-    }
+    "relic_data": { "passive_effects": [ { "condition": "ALWAYS", "values": [ { "value": "ITEM_ATTACK_COST", "add": -15 } ] } ] }
   },
   {
     "type": "GENERIC",
@@ -202,10 +200,7 @@
     "relic_data": {
       "passive_effects": [
         { "condition": "ALWAYS", "values": [ { "value": "ITEM_ARMOR_CUT", "multiply": -0.5, "add": 3 } ] },
-        {
-          "condition": "ALWAYS",
-          "values": [ { "value": "ITEM_ARMOR_BASH", "multiply": 0.5, "add": -3 } ]
-        }
+        { "condition": "ALWAYS", "values": [ { "value": "ITEM_ARMOR_BASH", "multiply": 0.5, "add": -3 } ] }
       ]
     }
   },
