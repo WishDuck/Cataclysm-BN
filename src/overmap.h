@@ -153,7 +153,8 @@ static const std::map<std::string, oter_flags> oter_flags_map = {
     { "SOURCE_TAILORING", oter_flags::source_tailoring },
     { "SOURCE_VEHICLES", oter_flags::source_vehicles },
     { "SOURCE_WEAPON", oter_flags::source_weapon },
-    { "IS_BRIDGE", oter_flags::is_bridge }
+    { "IS_BRIDGE", oter_flags::is_bridge },
+    { "NO_ROOF_ABOVE", oter_flags::no_roof_above }
 };
 
 /*

@@ -48,8 +48,10 @@
 #include "mongroup.h"
 #include "mtype.h"
 #include "options.h"
+#include "overmap.h"
 #include "overmapbuffer.h"
 #include "output.h"
+#include "overmapbuffer_registry.h"
 #include "popup.h"
 #include "profile.h"
 #include "rng.h"
@@ -61,6 +63,7 @@
 #include "thread_pool.h"
 #include "translations.h"
 #include "trap.h"
+#include "type_id.h"
 #include "ui_manager.h"
 #include "units_mass.h"
 #include "veh_type.h"
@@ -4201,6 +4204,9 @@ auto mapbuffer::run_omt_pillar_post_pass( const point_abs_omt &omt_pos ) -> void
             auto *const sub_below = zlev > -OVERMAP_DEPTH ?
                                     lookup_submap_in_memory( sm_pos + tripoint_below ) : nullptr;
 
+            auto const &omt_below = zlev > -OVERMAP_DEPTH ?
+                                    get_overmapbuffer( g->get_current_dimension_id() ).ter( omt_addr + tripoint_below ) : oter_id(
+                                        -100 );
             auto changed = false;
             for( const auto local : submap_tiles() ) {
                 const auto terrain_here = sub_here->get_ter( local );
@@ -4232,6 +4238,9 @@ auto mapbuffer::run_omt_pillar_post_pass( const point_abs_omt &omt_pos ) -> void
                     continue;
                 }
                 if( sub_below == nullptr ) {
+                    continue;
+                }
+                if( omt_below->has_flag( oter_flags::no_roof_above ) ) {
                     continue;
                 }
 

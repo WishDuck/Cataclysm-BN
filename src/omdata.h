@@ -153,6 +153,7 @@ enum class oter_flags : int {
     source_vehicles,
     source_weapon,
     is_bridge,
+    no_roof_above,
     num_oter_flags
 };
 
