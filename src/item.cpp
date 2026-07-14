@@ -8069,7 +8069,7 @@ double item::bonus_from_enchantments( const Character &owner, double base,
     double ret = 0.0;
     for( const enchantment &ench : get_enchantments() ) {
         if( ench.is_active( owner, *this ) ) {
-            ret += bonus_from_enchantments( ret, value, round );
+            ret += ench.calc_bonus( value, base, round );
         }
     }
     // In case of floating point errors
@@ -8087,7 +8087,7 @@ double item::bonus_from_enchantments( double base, enchantment_value_id value,
         // Check if it has the value first, because these enchantments
         // Are more limited in scope then most enchantments
         if( ench.has_value( value ) && ench.is_active( *this ) ) {
-            ret += bonus_from_enchantments( ret, value, round );
+            ret += ench.calc_bonus( value, base, round );
         }
     }
     // In case of floating point errors

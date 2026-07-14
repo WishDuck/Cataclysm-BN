@@ -476,8 +476,7 @@
       [ "TRUE", "Affects Incoming True Damage ( This Item Only )" ]
     ],
     "desc": "Affects All Incoming Damage ( This Item Only )",
-    "increase_good": false,
-    "unsupported_conditions": [ "character", "item_and_character" ]
+    "increase_good": false
   },
   {
     "id": "ITEM_ATTACK_COST",
