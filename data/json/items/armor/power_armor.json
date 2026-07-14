@@ -844,10 +844,7 @@
     "valid_mods": [ "steel_padded", "hard_steel_padded", "alloy_padded" ],
     "relic_data": {
       "passive_effects": [
-        {
-          "conditions": [ "WORN", "ACTIVE" ],
-          "values": [ { "value": "STRENGTH", "add": 4 }, { "value": "SPEED", "add": 25 } ]
-        }
+        { "conditions": [ "WORN", "ACTIVE" ], "values": [ { "value": "STRENGTH", "add": 4 }, { "value": "SPEED", "add": 25 } ] }
       ]
     },
     "use_action": {
@@ -918,10 +915,7 @@
     "valid_mods": [ "steel_padded", "hard_steel_padded", "alloy_padded" ],
     "relic_data": {
       "passive_effects": [
-        {
-          "conditions": [ "WORN", "ACTIVE" ],
-          "values": [ { "value": "STRENGTH", "add": 6 }, { "value": "SPEED", "add": 10 } ]
-        }
+        { "conditions": [ "WORN", "ACTIVE" ], "values": [ { "value": "STRENGTH", "add": 6 }, { "value": "SPEED", "add": 10 } ] }
       ]
     },
     "use_action": {

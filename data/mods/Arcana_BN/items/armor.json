@@ -77,9 +77,7 @@
     "name": { "str": "horned halo" },
     "description": "A strange radiance permeating your body, granting you a life-draining touch.",
     "color": "dark_gray",
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN" ], "hit_you_effect": [ { "id": "arcana_react_drain_life" } ] } ]
-    },
+    "relic_data": { "passive_effects": [ { "conditions": [ "WORN" ], "hit_you_effect": [ { "id": "arcana_react_drain_life" } ] } ] },
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
@@ -127,9 +125,7 @@
     "name": { "str": "guardian aura" },
     "description": "A strange radiance permeating your body, adding to your defenses.",
     "color": "white",
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR", "multiply": -0.25 } ] } ]
-    },
+    "relic_data": { "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR", "multiply": -0.25 } ] } ] },
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {

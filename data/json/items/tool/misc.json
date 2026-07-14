@@ -173,9 +173,7 @@
     "color": "blue",
     "weight": "400 g",
     "volume": "500 ml",
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WIELD" ], "mutations": [ "CRAFTY", "WAKEFUL3", "NIGHTVISION3" ] } ]
-    }
+    "relic_data": { "passive_effects": [ { "conditions": [ "WIELD" ], "mutations": [ "CRAFTY", "WAKEFUL3", "NIGHTVISION3" ] } ] }
   },
   {
     "id": "e_tool",

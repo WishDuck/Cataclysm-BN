@@ -452,9 +452,7 @@
       "NONCONDUCTIVE",
       "POWERARMOR_COMPATIBLE"
     ],
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR_ACID", "multiply": -0.25 } ] } ]
-    }
+    "relic_data": { "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR_ACID", "multiply": -0.25 } ] } ] }
   },
   {
     "id": "acid_res_aura_greater",
@@ -478,9 +476,7 @@
       "NONCONDUCTIVE",
       "POWERARMOR_COMPATIBLE"
     ],
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR_ACID", "multiply": -0.6 } ] } ]
-    }
+    "relic_data": { "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "ARMOR_ACID", "multiply": -0.6 } ] } ] }
   },
   {
     "id": "armor_frost",

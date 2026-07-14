@@ -75,12 +75,7 @@
     "color": "dark_gray",
     "material": [ "hardsteel" ],
     "relic_data": {
-      "passive_effects": [
-        {
-          "conditions": [ "WIELD" ],
-          "values": [ { "value": "DEXTERITY", "add": 4 }, { "value": "SPEED", "add": 30 } ]
-        }
-      ]
+      "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "DEXTERITY", "add": 4 }, { "value": "SPEED", "add": 30 } ] } ]
     },
     "weight": "2500 g",
     "volume": "2500 ml",

@@ -137,9 +137,7 @@
     "looks_like": "small_relic",
     "color": "yellow",
     "flags": [ "MAGIC_FOCUS", "USE_PLAYER_ENERGY", "NO_SALVAGE" ],
-    "relic_data": {
-      "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "MANA_REGEN", "multiply": 0.25 } ] } ]
-    },
+    "relic_data": { "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "MANA_REGEN", "multiply": 0.25 } ] } ] },
     "use_action": [
       "MEDITATE",
       {
