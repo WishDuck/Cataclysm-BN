@@ -32,7 +32,7 @@ public:
 
     enchantment_value_id id;
 
-    std::set<enchantment_condition::condition_type> unsupported_conditions;
+    std::set<enchantment_condition_type> unsupported_conditions;
 
     bool was_loaded = false;
     bool can_add = true;

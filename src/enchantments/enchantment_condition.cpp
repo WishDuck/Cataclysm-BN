@@ -26,8 +26,7 @@ void enchantment_condition::load_enchantment_conditions(
 
 void enchantment_condition::load(const JsonObject& jo, const std::string& src) {
     mandatory(jo, was_loaded, "condition_type", cond_type,
-              enum_flags_reader<enchantment_condition::condition_type>(
-                  "enchantment_condition::condition_type"));
+              enum_flags_reader<enchantment_condition_type>("enchantment_condition_type"));
     mandatory(jo, was_loaded, "condition_function", condition_function);
     mandatory(jo, was_loaded, "condition_info", condition_info);
 }
@@ -67,19 +66,18 @@ bool enchantment_condition::generic_condition(const bool active) const {
 
 namespace io {
 template <>
-std::string enum_to_string<enchantment_condition::condition_type>(
-    enchantment_condition::condition_type data) {
+std::string enum_to_string<enchantment_condition_type>(enchantment_condition_type data) {
     switch (data) {
-        case enchantment_condition::condition_type::CHARACTER:
+        case enchantment_condition_type::CHARACTER:
             return "character";
-        case enchantment_condition::condition_type::ITEM:
+        case enchantment_condition_type::ITEM:
             return "item";
-        case enchantment_condition::condition_type::ITEM_CHARACTER:
+        case enchantment_condition_type::ITEM_CHARACTER:
             return "item_and_character";
-        case enchantment_condition::condition_type::GLOBAL:
+        case enchantment_condition_type::GLOBAL:
             return "global";
     }
-    debugmsg("Invalid enchantment_condition::condition_type; Defaulting to `global`");
+    debugmsg("Invalid enchantment_condition_type; Defaulting to `global`");
     return "global";
 }
 } // namespace io

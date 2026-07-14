@@ -88,16 +88,16 @@ bool enchantment::is_active(const Character& guy, const item& parent) const {
     for (const enchantment_condition_id cond_id : conditions) {
         if (!active) { break; }
         switch (cond_id->cond_type) {
-            case enchantment_condition::condition_type::ITEM:
+            case enchantment_condition_type::ITEM:
                 active &= cond_id->item_condition(parent);
                 break;
-            case enchantment_condition::condition_type::ITEM_CHARACTER:
+            case enchantment_condition_type::ITEM_CHARACTER:
                 active &= cond_id->item_character_condition(guy, parent);
                 break;
-            case enchantment_condition::condition_type::CHARACTER:
+            case enchantment_condition_type::CHARACTER:
                 active &= cond_id->character_condition(guy, is_active);
                 break;
-            case enchantment_condition::condition_type::GLOBAL:
+            case enchantment_condition_type::GLOBAL:
                 active &= cond_id->generic_condition(is_active);
                 break;
             default:
@@ -118,22 +118,22 @@ bool enchantment::is_active(const item& parent) const {
     for (const enchantment_condition_id cond_id : conditions) {
         if (!active) { break; }
         switch (cond_id->cond_type) {
-            case enchantment_condition::condition_type::ITEM:
+            case enchantment_condition_type::ITEM:
                 active &= cond_id->item_condition(parent);
                 break;
-            case enchantment_condition::condition_type::ITEM_CHARACTER:
+            case enchantment_condition_type::ITEM_CHARACTER:
                 debugmsg(
                     "Enchantment %s has item and character condition %s on a non-supporting enchantment value, it will never trigger.",
                     id.str(), cond_id.str());
                 active = false;
                 break;
-            case enchantment_condition::condition_type::CHARACTER:
+            case enchantment_condition_type::CHARACTER:
                 debugmsg(
                     "Enchantment %s has character condition %s on a non-supporting enchantment value, it will never trigger.",
                     id.str(), cond_id.str());
                 active = false;
                 break;
-            case enchantment_condition::condition_type::GLOBAL:
+            case enchantment_condition_type::GLOBAL:
                 active &= cond_id->generic_condition(is_active);
                 break;
             default:
@@ -152,22 +152,22 @@ bool enchantment::is_active(const Character& guy, const bool is_active) const {
     for (const enchantment_condition_id cond_id : conditions) {
         if (!active) { break; }
         switch (cond_id->cond_type) {
-            case enchantment_condition::condition_type::ITEM:
+            case enchantment_condition_type::ITEM:
                 debugmsg(
                     "Enchantment %s has item condition %s on a non-item, it will never trigger.",
                     id.str(), cond_id.str());
                 active = false;
                 break;
-            case enchantment_condition::condition_type::ITEM_CHARACTER:
+            case enchantment_condition_type::ITEM_CHARACTER:
                 debugmsg(
                     "Enchantment %s has item and character condition %s on a non-item, it will never trigger.",
                     id.str(), cond_id.str());
                 active = false;
                 break;
-            case enchantment_condition::condition_type::CHARACTER:
+            case enchantment_condition_type::CHARACTER:
                 active &= cond_id->character_condition(guy, is_active);
                 break;
-            case enchantment_condition::condition_type::GLOBAL:
+            case enchantment_condition_type::GLOBAL:
                 active &= cond_id->generic_condition(is_active);
                 break;
             default:
@@ -614,16 +614,21 @@ bool nested_enchant_check(
     return true;
 }
 
-void enchantment::check() const {
+void enchantment::check(std::set<enchantment_condition_type> incompatible_cond_types) const {
     // TODO: Where was it declared? CONTEXT!
     const char* ench_desc = id.is_empty() ? "An inline enchantment" : "Enchantment";
-    std::set<enchantment_condition::condition_type> cond_types;
     std::vector<std::string> problems;
+    std::set<enchantment_condition_type> cond_types;
     for (const auto& ench_cond_id : conditions) {
         if (!ench_cond_id.is_valid()) {
             problems.push_back(
                 string_format("\nenchantment condition %s is invalid", ench_cond_id.str()));
         } else {
+            if (incompatible_cond_types.contains(ench_cond_id->cond_type)) {
+                problems.push_back(string_format(
+                    "\nenchantment condition %s has type %s unsupported by the enchantment's usage",
+                    ench_cond_id.str(), io::enum_to_string(ench_cond_id->cond_type)));
+            }
             cond_types.insert(ench_cond_id->cond_type);
         }
     }

@@ -24,8 +24,7 @@ void enchantment_value::load(const JsonObject& jo, const std::string& src) {
     optional(jo, was_loaded, "can_max", can_max, false);
     optional(jo, was_loaded, "increase_good", increase_good, true);
     optional(jo, was_loaded, "unsupported_conditions", unsupported_conditions,
-             enum_flags_reader<enchantment_condition::condition_type>(
-                 "enchantment_condition::condition_type"));
+             enum_flags_reader<enchantment_condition_type>("enchantment_condition_type"));
 
     mandatory(jo, was_loaded, "desc", desc);
     if (jo.has_array("suffixes")) {

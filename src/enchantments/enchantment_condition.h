@@ -49,10 +49,16 @@ public:
     virtual bool check_generic_condition(const bool active) const override;
 };
 
+enum enchantment_condition_type : unsigned int {
+    GLOBAL,
+    ITEM,
+    ITEM_CHARACTER,
+    CHARACTER,
+    NUM_CONDITIONS
+};
+
 class enchantment_condition {
 public:
-    enum condition_type { GLOBAL, ITEM, ITEM_CHARACTER, CHARACTER, NUM_CONDITIONS };
-
     enchantment_condition() = default;
 
     static void load_enchantment_conditions(const JsonObject& jo, const std::string& src);
@@ -77,7 +83,7 @@ public:
     bool was_loaded = false;
 
     // Should check_item_condition or check_generic_condition be called?
-    condition_type cond_type;
+    enchantment_condition_type cond_type;
 
     // String used as key for condition_function map
     std::string condition_function;
@@ -91,7 +97,6 @@ public:
         condition_functions;
 };
 
-template <> struct enum_traits<enchantment_condition::condition_type> {
-    static constexpr enchantment_condition::condition_type last =
-        enchantment_condition::condition_type::NUM_CONDITIONS;
+template <> struct enum_traits<enchantment_condition_type> {
+    static constexpr enchantment_condition_type last = enchantment_condition_type::NUM_CONDITIONS;
 };
