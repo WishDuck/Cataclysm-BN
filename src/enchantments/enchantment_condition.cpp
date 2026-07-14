@@ -14,7 +14,8 @@
 
 namespace {
 generic_factory<enchantment_condition> all_enchantment_conditions("Enchantment flags");
-}
+void reset_condition_functions();
+} // namespace
 
 IMPLEMENT_STRING_AND_INT_IDS(enchantment_condition, all_enchantment_conditions);
 
@@ -40,7 +41,11 @@ std::vector<enchantment_condition> enchantment_condition::get_all() {
     return all_enchantment_conditions.get_all();
 }
 
-void enchantment_condition::reset() { all_enchantment_conditions.reset(); }
+void enchantment_condition::reset() {
+    all_enchantment_conditions.reset();
+    reset_condition_functions();
+}
+
 
 bool enchantment_condition::item_condition(const item& it) const {
     return condition_functions[condition_function]->check_item_condition(it);
@@ -264,6 +269,7 @@ bool enchantment_condition_lua::check_generic_condition(const bool active) const
     }
 }
 
+// Both this and the function below have to match
 auto enchantment_condition::condition_functions = std::map<
     std::string, std::shared_ptr<enchantment_condition_function>>{
     {"always", std::make_shared<enchantment_condition_always>()},
@@ -281,3 +287,28 @@ auto enchantment_condition::condition_functions = std::map<
     {"has", std::make_shared<enchantment_condition_has>()},
     {"wield", std::make_shared<enchantment_condition_wield>()},
     {"worn", std::make_shared<enchantment_condition_worn>()}};
+
+namespace {
+
+void reset_condition_functions() {
+    // Reset to original state as it is populated during loading
+    enchantment_condition::condition_functions = std::map<
+        std::string, std::shared_ptr<enchantment_condition_function>>{
+        {"always", std::make_shared<enchantment_condition_always>()},
+        {"dawn", std::make_shared<enchantment_condition_dawn>()},
+        {"day", std::make_shared<enchantment_condition_day>()},
+        {"dusk", std::make_shared<enchantment_condition_dusk>()},
+        {"night", std::make_shared<enchantment_condition_night>()},
+        {"active", std::make_shared<enchantment_condition_active>()},
+        {"inactive", std::make_shared<enchantment_condition_inactive>()},
+        {"inside", std::make_shared<enchantment_condition_inside>()},
+        {"outside", std::make_shared<enchantment_condition_outside>()},
+        {"underground", std::make_shared<enchantment_condition_underground>()},
+        {"aboveground", std::make_shared<enchantment_condition_aboveground>()},
+        {"underwater", std::make_shared<enchantment_condition_underwater>()},
+        {"has", std::make_shared<enchantment_condition_has>()},
+        {"wield", std::make_shared<enchantment_condition_wield>()},
+        {"worn", std::make_shared<enchantment_condition_worn>()}};
+}
+
+} // namespace
