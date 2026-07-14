@@ -77,8 +77,7 @@
     "relic_data": {
       "passive_effects": [
         {
-          "has": "WIELD",
-          "condition": "ALWAYS",
+          "conditions": [ "WIELD" ],
           "values": [ { "value": "DEXTERITY", "add": 4 }, { "value": "SPEED", "add": 30 } ]
         }
       ]
@@ -158,8 +157,7 @@
     "relic_data": {
       "passive_effects": [
         {
-          "has": "WIELD",
-          "condition": "ALWAYS",
+          "conditions": [ "WIELD" ],
           "values": [ { "value": "STRENGTH", "add": 10 }, { "value": "ARMOR_ELECTRIC", "multiply": -1 } ],
           "mutations": [ "CRT_BERSERK_EFFECT" ],
           "hit_you_effect": [

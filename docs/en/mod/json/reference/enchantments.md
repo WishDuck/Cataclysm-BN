@@ -12,16 +12,9 @@ Enchantments make it possible to specify custom effects provided by item, bionic
 
 (string array) How an enchantment determines if it should be active
 
+All conditions must pass for it to be valid, if there are no conditions it is automatically true
+
 For all basegame values see [here](#Basegame-Enchantment-Condition-ID-List)
-
-### has
-
-(string) How an enchantment determines if it is in the right location in order to qualify for being
-active.
-
-This field is relevant only for items.
-
-Values:
 
 ### emitter
 
@@ -774,7 +767,7 @@ Provides immunity to fire fields.
 
 ##### HELD
 
-When in your inventory ( Basically true )
+When in your inventory
 
 ##### WIELD
 
@@ -788,7 +781,7 @@ When worn as armor
 
 ##### ALWAYS
 
-Always active
+Always active ( Obsolete but supported: Comes out to be true, thus no condition is needed )
 
 ##### NIGHT
 

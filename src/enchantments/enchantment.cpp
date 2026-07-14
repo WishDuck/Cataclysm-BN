@@ -35,6 +35,7 @@ IMPLEMENT_STRING_AND_INT_IDS(enchantment, enchant_factory);
 
 std::vector<std::string> enchantment::get_effect_string(bool is_item) const {
     std::string cond_string;
+    if (conditions.empty()) { cond_string = _("At all times"); }
     for (const enchantment_condition_id cond_id : conditions) {
         if (!cond_string.empty()) { cond_string += _(" and "); }
         cond_string += cond_id->condition_info;

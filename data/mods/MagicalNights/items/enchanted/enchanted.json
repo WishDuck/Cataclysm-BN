@@ -11,7 +11,7 @@
     "weapon_category": [ "QUARTERSTAVES" ],
     "flags": [ "SHEATH_SPEAR", "ALWAYS_TWOHAND", "FRAGILE_MELEE", "MAGIC_FOCUS" ],
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "values": [ { "value": "MANA_CAP", "multiply": 0.25 } ] } ]
+      "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "MANA_CAP", "multiply": 0.25 } ] } ]
     },
     "weight": "1400 g",
     "volume": "3 L",
@@ -31,7 +31,7 @@
     "material": "wood",
     "flags": [ "SHEATH_SPEAR", "ALWAYS_TWOHAND", "FRAGILE_MELEE", "MAGIC_FOCUS" ],
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "values": [ { "value": "MANA_CAP", "multiply": 0.5 } ] } ]
+      "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "MANA_CAP", "multiply": 0.5 } ] } ]
     },
     "weight": "1400 g",
     "volume": "3 L",
@@ -52,7 +52,7 @@
     "weapon_category": [ "QUARTERSTAVES" ],
     "flags": [ "SHEATH_SPEAR", "ALWAYS_TWOHAND", "FRAGILE_MELEE", "MAGIC_FOCUS" ],
     "relic_data": {
-      "passive_effects": [ { "has": "WIELD", "condition": "ALWAYS", "values": [ { "value": "MANA_CAP", "multiply": 1.25 } ] } ]
+      "passive_effects": [ { "conditions": [ "WIELD" ], "values": [ { "value": "MANA_CAP", "multiply": 1.25 } ] } ]
     },
     "weight": "1400 g",
     "volume": "3 L",
@@ -78,7 +78,7 @@
     "material_thickness": 2,
     "environmental_protection": 2,
     "relic_data": {
-      "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "values": [ { "value": "MANA_REGEN", "multiply": 1 } ] } ]
+      "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "MANA_REGEN", "multiply": 1 } ] } ]
     },
     "flags": [ "VARSIZE" ]
   },
@@ -91,8 +91,7 @@
     "relic_data": {
       "passive_effects": [
         {
-          "has": "WIELD",
-          "condition": "ALWAYS",
+          "conditions": [ "WIELD" ],
           "hit_you_effect": [ { "id": "fireball" } ],
           "hit_me_effect": [ { "id": "light_healing" } ]
         }
