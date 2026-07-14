@@ -330,7 +330,7 @@
     "starting_bionic": true,
     "points": -1,
     "flags": [ "BIONIC_FAULTY" ],
-    "bio_enchantments": [ { "values": [ { "value": "PERSUADE", "add": -50 } ] }, { "values": [ { "value": "INTIMIDATE", "add": 20 } ] } ]
+    "bio_enchantments": [ { "values": [ { "value": "PERSUADE", "add": -50 }, { "value": "INTIMIDATE", "add": 20 } ] } ]
   },
   {
     "id": "bio_dex_enhancer",
@@ -471,9 +471,9 @@
     "points": 1,
     "occupied_bodyparts": [ [ "head", 3 ], [ "mouth", 1 ] ],
     "bio_enchantments": [
-      { "values": [ { "value": "LIE", "add": 20 } ] },
-      { "values": [ { "value": "PERSUADE", "add": 10 } ] },
-      { "values": [ { "value": "INTIMIDATE", "add": 10 } ] }
+      {
+        "values": [ { "value": "LIE", "add": 20 }, { "value": "PERSUADE", "add": 10 }, { "value": "INTIMIDATE", "add": 10 } ]
+      }
     ]
   },
   {
@@ -1318,9 +1318,9 @@
     "starting_bionic": true,
     "points": -1,
     "bio_enchantments": [
-      { "values": [ { "value": "LIE", "add": 10 } ] },
-      { "values": [ { "value": "PERSUADE", "add": -20 } ] },
-      { "values": [ { "value": "INTIMIDATE", "add": 20 } ] }
+      {
+        "values": [ { "value": "LIE", "add": 10 }, { "value": "PERSUADE", "add": -20 }, { "value": "INTIMIDATE", "add": 20 } ]
+      }
     ]
   },
   {
