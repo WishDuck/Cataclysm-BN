@@ -43,7 +43,6 @@
     "type": "enchantment",
     "id": "ENCH_WEAPON_DEBUGGY_ACIDIC",
     "condition": "ALWAYS",
-    "has": "WIELD",
     "values": [ { "value": "ITEM_DAMAGE_ACID", "add": 9999 } ]
   },
   {
@@ -57,7 +56,6 @@
   {
     "type": "enchantment",
     "id": "ENCH_INSECT_WINGS_ACTIVE",
-    "has": "HELD",
     "condition": "ACTIVE",
     "values": [ { "value": "MOVE_COST", "multiply": -0.25 } ]
   }

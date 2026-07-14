@@ -683,9 +683,8 @@ class item : public location_visitable<item>, public game_object<item>
         /**
          * Base number of moves (@ref Creature::moves) that a single melee attack with this items
          * takes. The actual time depends heavily on the attacker, see melee.cpp.
-         * This does not take into account enchantments either
          */
-        int attack_cost( Character* who = nullptr ) const;
+        int attack_cost() const;
         /**
          * Stamina consumed to use this weapon in melee
          */
@@ -2432,10 +2431,10 @@ class item : public location_visitable<item>, public game_object<item>
 
         /**
          * Calculate bonus from enchantments that affect this item only,
-         * assume it's wielded and all enchantments' conditions are satisfied.
+         * Only supports item only conditions.
          */
-        double bonus_from_enchantments_wielded( double base, enchantment_value_id value,
-                                                bool round = false ) const;
+        double bonus_from_enchantments( double base, enchantment_value_id value,
+                                        bool round = false ) const;
 
         /** Returns the type of location where the item is found */
         item_location_type where() const;

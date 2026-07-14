@@ -50,6 +50,9 @@ public:
     // adds two enchantments together and ignores their conditions
     void force_add(const enchantment& rhs);
 
+    // Check if the enchantment has a certain value
+    bool has_value(enchantment_value_id value) const;
+
     int get_value_add(enchantment_value_id value) const;
     double get_value_multiply(enchantment_value_id value) const;
     int get_value_max(enchantment_value_id value) const;
@@ -76,8 +79,8 @@ public:
      * Assumes condition is satisfied.
      */
     bool is_active_when_wielded() const {
-        return conditions.contains( enchantment_condition_id( "HELD" ) ) ||
-               conditions.contains( enchantment_condition_id( "WIELD" ) );
+        return conditions.contains(enchantment_condition_id("HELD"))
+            || conditions.contains(enchantment_condition_id("WIELD"));
     }
 
     // modifies character stats, or does other passive effects

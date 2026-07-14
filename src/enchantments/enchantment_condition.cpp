@@ -1,6 +1,7 @@
 #include "enchantment_condition.h"
 
 #include "assign.h"
+#include "catalua_impl.h"
 #include "character.h"
 #include "debug.h"
 #include "generic_factory.h"
@@ -23,8 +24,11 @@ void enchantment_condition::load_enchantment_conditions(
 }
 
 void enchantment_condition::load(const JsonObject& jo, const std::string& src) {
-    mandatory(jo, was_loaded, "condition_type", cond_type, enum_flags_reader<enchantment_condition::condition_type>( "enchantment_condition::condition_type" ) );
+    mandatory(jo, was_loaded, "condition_type", cond_type,
+              enum_flags_reader<enchantment_condition::condition_type>(
+                  "enchantment_condition::condition_type"));
     mandatory(jo, was_loaded, "condition_function", condition_function);
+    mandatory(jo, was_loaded, "condition_info", condition_info);
 }
 
 void enchantment_condition::check() const {}
@@ -56,13 +60,10 @@ bool enchantment_condition::generic_condition(const bool active) const {
 
 // condition_type enum stuff
 
-template <typename E> struct enum_traits;
-template <> struct enum_traits<enchantment_condition::condition_type> {
-    static constexpr enchantment_condition::condition_type last = enchantment_condition::condition_type::NUM_CONDITIONS;
-};
-
 namespace io {
-template <> std::string enum_to_string<enchantment_condition::condition_type>(enchantment_condition::condition_type data) {
+template <>
+std::string enum_to_string<enchantment_condition::condition_type>(
+    enchantment_condition::condition_type data) {
     switch (data) {
         case enchantment_condition::condition_type::CHARACTER:
             return "character";
@@ -76,14 +77,12 @@ template <> std::string enum_to_string<enchantment_condition::condition_type>(en
     debugmsg("Invalid enchantment_condition::condition_type; Defaulting to `global`");
     return "global";
 }
-}
+} // namespace io
 
 // Condition classes + Hardcode Condition Map
 class enchantment_condition_always: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const bool /*active*/) const override {
-        return true;
-    }
+    bool check_generic_condition(const bool /*active*/) const override { return true; }
 };
 
 class enchantment_condition_dawn: public virtual enchantment_condition_function {
@@ -116,16 +115,12 @@ public:
 
 class enchantment_condition_active: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const bool active) const override {
-        return active;
-    }
+    bool check_generic_condition(const bool active) const override { return active; }
 };
 
 class enchantment_condition_inactive: public virtual enchantment_condition_function {
 public:
-    bool check_generic_condition(const bool active) const override {
-        return !active;
-    }
+    bool check_generic_condition(const bool active) const override { return !active; }
 };
 
 class enchantment_condition_inside: public virtual enchantment_condition_function {
@@ -183,6 +178,91 @@ public:
         return guy.is_worn(it);
     }
 };
+
+bool enchantment_condition_lua::check_item_character_condition(
+    const Character& guy, const item& it) const {
+    if (item_character_func == sol::lua_nil) {
+        debugmsg(
+            "Enchantment condition %s was called for `item_and_character` function. But it has none, it will never trigger.",
+            name);
+        return false;
+    }
+    try {
+        sol::state_view lua(item_character_func.lua_state());
+        auto params = lua.create_table();
+        params["guy"] = &guy;
+        params["item"] = &it;
+        sol::protected_function_result res = item_character_func(params);
+        check_func_result(res);
+        bool ret = res;
+        return ret;
+    } catch (std::runtime_error& e) {
+        debugmsg("Failed to run enchantment condition %s for `item_and_character`", name);
+        return false;
+    }
+}
+bool enchantment_condition_lua::check_item_condition(const item& it) const {
+    if (item_func == sol::lua_nil) {
+        debugmsg(
+            "Enchantment condition %s was called for `item` function. But it has none, it will never trigger.",
+            name);
+        return false;
+    }
+    try {
+        sol::state_view lua(item_func.lua_state());
+        auto params = lua.create_table();
+        params["item"] = &it;
+        sol::protected_function_result res = item_func(params);
+        check_func_result(res);
+        bool ret = res;
+        return ret;
+    } catch (std::runtime_error& e) {
+        debugmsg("Failed to run enchantment condition %s for `item`", name);
+        return false;
+    }
+}
+bool enchantment_condition_lua::check_character_condition(
+    const Character& guy, const bool active) const {
+    if (character_func == sol::lua_nil) {
+        debugmsg(
+            "Enchantment condition %s was called for `character` function. But it has none, it will never trigger.",
+            name);
+        return false;
+    }
+    try {
+        sol::state_view lua(character_func.lua_state());
+        auto params = lua.create_table();
+        params["guy"] = &guy;
+        params["active"] = active;
+        sol::protected_function_result res = character_func(params);
+        check_func_result(res);
+        bool ret = res;
+        return ret;
+    } catch (std::runtime_error& e) {
+        debugmsg("Failed to run enchantment condition %s for `character`", name);
+        return false;
+    }
+}
+bool enchantment_condition_lua::check_generic_condition(const bool active) const {
+    if (generic_func == sol::lua_nil) {
+        debugmsg(
+            "Enchantment condition %s was called for `global` function. But it has none, it will never trigger.",
+            name);
+        return false;
+    }
+    try {
+        sol::state_view lua(generic_func.lua_state());
+        auto params = lua.create_table();
+        params["active"] = active;
+        sol::protected_function_result res = generic_func(params);
+        check_func_result(res);
+        bool ret = res;
+        return ret;
+    } catch (std::runtime_error& e) {
+        debugmsg("Failed to run enchantment condition %s for `global`", name);
+        return false;
+    }
+}
 
 auto enchantment_condition::condition_functions = std::map<
     std::string, std::shared_ptr<enchantment_condition_function>>{

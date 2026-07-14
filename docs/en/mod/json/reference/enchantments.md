@@ -8,6 +8,12 @@ Enchantments make it possible to specify custom effects provided by item, bionic
 
 (string) Unique identifier for this enchantment.
 
+### conditions
+
+(string array) How an enchantment determines if it should be active
+
+For all basegame values see [here](#Basegame-Enchantment-Condition-ID-List)
+
 ### has
 
 (string) How an enchantment determines if it is in the right location in order to qualify for being
@@ -17,28 +23,6 @@ This field is relevant only for items.
 
 Values:
 
-- `HELD` (default) - when in your inventory
-- `WIELD` - when wielded in your hand
-- `WORN` - when worn as armor
-
-### condition
-
-(string) How an enchantment determines if you are in the right environments in order for the
-enchantment to qualify for being active.
-
-Values:
-
-- `ALWAYS` (default) - Always active
-- `UNDERGROUND` - When the owner of the item is below Z-level 0
-- `ABOVEGROUND` - When the owner of the item is at or above Z-level 0
-- `UNDERWATER` - When the owner is in swimmable terrain
-- `NIGHT` - When it is night time
-- `DUSK` - When it is dusk
-- `DAY` - When it is day time
-- `DAWN` - When it is dawn
-- `ACTIVE` - whenever the item, mutation, bionic, or whatever the enchantment is attached to is
-  active.
-- `INACTIVE` - the opposite of `ACTIVE`
 
 ### emitter
 
@@ -275,6 +259,7 @@ Prevents environmental effects of fields from being applied
     ["BIOLOGICAL", "Affects Outgoing Ranged Biological Damage"],
     ["TRUE", "Affects Outgoing Ranged True Damage"],
   ],
+  "unsupported_conditions": [ "character", "item_and_character" ] // These values are called where these conditions cannot ever be used
 }
 ```
 
@@ -771,3 +756,84 @@ Gives the ability to see the precise time
 ##### FIRE_FIELD_IMMUNE
 
 Provides immunity to fire fields.
+
+# Enchantment Condition
+
+```jsonc
+{
+  "id": "WORN",                          // Id of condition
+  "type": "enchantment_condition",       // Mandatory Type
+  "condition_type": "item_and_character",// Type of condition, `global`, `item`, `character` and `item_and_character` are possible values
+  "condition_function": "worn",          // What function to use, generally references a hardcode or lua function
+  "condition_info": "While worn"         // Enchantment condition info to display on items
+}
+```
+
+## Basegame Enchantment Condition ID List
+
+#### Item and Character
+
+##### HELD
+
+When in your inventory ( Basically true )
+
+##### WIELD
+
+When wielded in your hand
+
+##### WORN
+
+When worn as armor
+
+#### Global
+
+##### ALWAYS
+
+Always active
+
+##### NIGHT
+
+When it is night time
+
+##### DUSK
+
+When it is dusk
+
+##### DAY
+
+When it is day time
+
+##### DAWN
+
+When it is dawn
+
+##### ACTIVE
+
+Whenever the item, mutation, bionic, or whatever the enchantment is attached to is active.
+
+##### INACTIVE
+
+The opposite of ACTIVE
+
+#### Character
+
+##### INSIDE
+
+When the owner of the item is inside
+
+##### OUTSIDE
+
+When the owner of the item is outside
+
+##### UNDERGROUND
+
+When the owner of the item is below Z-level 0
+
+##### ABOVEGROUND
+
+When the owner of the item is at or above Z-level 0
+
+##### UNDERWATER
+
+When the owner is in swimmable terrain
+
