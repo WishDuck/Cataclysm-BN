@@ -96,9 +96,9 @@ scopes:
   - mods/tablet_ebook
   - mods/teleportation_tech
   - mods/test_data
+  - mods/test_lua_conditions
   - mods/test_lua_hooks
   - mods/test_lua_require
-  - mods/test_lua_conditions
   - mods/udp_redux
   - mods/underground_dynamic_temperature
   - mods/vehicle_color_expansion
