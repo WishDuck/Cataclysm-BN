@@ -8139,6 +8139,14 @@ void iexamine::multicooker( player &p, const tripoint_bub_ms &pos )
         }
     }
 }
+
+void iexamine::enchanter( player &p, const tripoint_bub_ms &pos )
+{
+    map &here = get_map();
+    const furn_id furn_id = here.furn( pos );
+    const auto& furn = here.furn( pos );
+    p.primary_weapon().relic_data->add_passive_effect( furn.enchanter[enchantment_iexamine::enchantment_selector_menu( furn.enchanter, p )] );
+}
 /**
  * Given then name of one of the above functions, returns the matching function
  * pointer. If no match is found, defaults to iexamine::none but prints out a

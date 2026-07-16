@@ -147,6 +147,25 @@ struct furn_workbench_info {
 
     bool operator==( const furn_workbench_info &rhs ) const = default;
 };
+struct enchant_info {
+    // Name to display
+    std::string name;
+    // Resulting enchantment applied
+    enchantment_id to_enchant_with;
+    // Requirements and requirement multiplier
+    std::vector<std::pair<requirement_id, int>> requirements;
+    // Skills and levels to do the skill
+    std::map<skill_id, int> required_skills;
+    // Time to complete
+    time_duration time_to_enchant;
+    // Flag to apply to take note it was applied, and weather that flag is a blocker
+    flag_id applied_flag_id;
+    bool apply_once;
+    // Callbacks
+    std::string can_make;
+    std::string can_use_on;
+};
+
 struct plant_data {
     // What the furniture turns into when it grows or you plant seeds in it
     furn_str_id transform;
@@ -665,6 +684,7 @@ struct furn_t : map_data_common_t {
     cata::value_ptr<activity_data_furn> oxytorch; // Oxytorch action data
 
     cata::value_ptr<furn_workbench_info> workbench;
+    std::vector<enchant_info> enchanter;
 
     cata::value_ptr<plant_data> plant;
 
