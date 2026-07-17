@@ -8098,16 +8098,16 @@ double item::bonus_from_enchantments( const Character &owner, double base,
 double item::bonus_from_enchantments( double base, enchantment_value_id value,
                                       bool round ) const
 {
+    // Check if it has the value first, because these enchantments
+    // Are more limited in scope then most enchantments
+    // Thus it can cause unwanted errors if `has_value` is not checked first
+    double ret = 0.0;
     for( const enchantment &ench : get_enchantments( true ) ) {
-        // Check if it has the value first, because these enchantments
-        // Are more limited in scope then most enchantments
         if( ench.has_value( value ) && ench.is_active( *this ) ) {
             ret += ench.calc_bonus( value, base, round );
         }
     }
     for( const enchantment &ench : get_enchantments( false ) ) {
-        // Check if it has the value first, because these enchantments
-        // Are more limited in scope then most enchantments
         if( ench.has_value( value ) && ench.is_active( *this ) ) {
             ret += ench.calc_bonus( value, base, round );
         }
