@@ -4499,12 +4499,13 @@ void item::enchantment_info( std::vector<iteminfo> &info, const iteminfo_query &
                              int batch,
                              bool debug ) const
 {
-    const std::vector<enchantment> &enchs = get_enchantments();
+    std::vector<enchantment> enchs = get_enchantments( true );
+    enchs.append_range( get_enchantments( false ) );
     if( is_null() || enchs.empty() || has_flag( flag_SECRET_ENCHANTMENTS ) ) {
         return;
     }
     insert_separation_line( info );
-    for( const enchantment &ench : get_enchantments() ) {
+    for( const enchantment ench : enchs ) {
         for( std::string str : ench.get_effect_string( true ) ) {
             info.emplace_back( "DESCRIPTION", str );
         }
@@ -8051,17 +8052,27 @@ bool item::is_relic( bool not_itype ) const
     return !!relic_data || ( !not_itype && type->relic_data );
 }
 
-const std::vector<enchantment> &item::get_enchantments() const
+bool item::add_enchantment( const enchantment_id &ench )
 {
-    if( !is_relic() ) {
-        static const std::vector<enchantment> fallback;
-        return fallback;
+    if( !ench.is_valid() ) {
+        return false;
     }
-    if( is_relic( true ) ) {
+    if( !relic_data ) {
+        relic_data = cata::make_value<relic>();
+    }
+    relic_data->add_passive_effect( ench.obj() );
+    return true;
+}
+
+const std::vector<enchantment> &item::get_enchantments( bool dynamic ) const
+{
+    if( dynamic && is_relic( true ) ) {
         return relic_data->get_enchantments();
-    } else {
+    } else if( !dynamic && type->relic_data ) {
         return type->relic_data->get_enchantments();
     }
+    static const std::vector<enchantment> fallback;
+    return fallback;
 }
 
 double item::bonus_from_enchantments( const Character &owner, double base,
@@ -8069,7 +8080,13 @@ double item::bonus_from_enchantments( const Character &owner, double base,
 {
     double add = 0.0;
     double mul = 0.0;
-    for( const enchantment &ench : get_enchantments() ) {
+    for( const enchantment ench : get_enchantments( true ) ) {
+        if( ench.is_active( owner, *this ) ) {
+            add += ench.get_value_add( value );
+            mul += ench.get_value_multiply( value );
+        }
+    }
+    for( const enchantment ench : get_enchantments( false ) ) {
         if( ench.is_active( owner, *this ) ) {
             add += ench.get_value_add( value );
             mul += ench.get_value_multiply( value );
@@ -8088,7 +8105,13 @@ double item::bonus_from_enchantments_wielded( double base, enchantment_value_id 
 {
     double add = 0.0;
     double mul = 0.0;
-    for( const enchantment &ench : get_enchantments() ) {
+    for( const enchantment ench : get_enchantments( true ) ) {
+        if( ench.is_active_when_wielded() ) {
+            add += ench.get_value_add( value );
+            mul += ench.get_value_multiply( value );
+        }
+    }
+    for( const enchantment ench : get_enchantments( false ) ) {
         if( ench.is_active_when_wielded() ) {
             add += ench.get_value_add( value );
             mul += ench.get_value_multiply( value );
@@ -10483,12 +10506,19 @@ std::vector<trait_id> item::mutations_from_wearing( const Character &guy ) const
     }
     std::vector<trait_id> muts;
 
-    const auto rel_data = is_relic( true ) ? relic_data : type->relic_data;
-    for( const enchantment &ench : rel_data->get_enchantments() ) {
+    for( const enchantment ench : get_enchantments( true ) ) {
         if( ench.is_active( guy, is_active() ) ) {
-            for( const trait_id &mut : ench.get_mutations() ) {
+            for( const trait_id mut : ench.get_mutations() ) {
                 // this may not be perfectly accurate due to conditions
-                muts.push_back( mut );
+                muts.push_back( trait_id( mut.str() ) );
+            }
+        }
+    }
+    for( const enchantment ench : get_enchantments( false ) ) {
+        if( ench.is_active( guy, is_active() ) ) {
+            for( const trait_id mut : ench.get_mutations() ) {
+                // this may not be perfectly accurate due to conditions
+                muts.push_back( trait_id( mut.str() ) );
             }
         }
     }
@@ -10511,16 +10541,6 @@ void item::process_relic( Character *carrier )
     if( !is_relic() ) {
         return;
     }
-    std::vector<enchantment> active_enchantments;
-
-    if( carrier ) {
-        for( const enchantment &ench : get_enchantments() ) {
-            if( ench.is_active( *carrier, *this ) ) {
-                active_enchantments.emplace_back( ench );
-            }
-        }
-    }
-
     relic_funcs::process_recharge( *this, carrier );
 }
 

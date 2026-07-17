@@ -128,9 +128,9 @@ std::vector<std::string> enchantment::get_effect_string(bool is_item) const {
         }
     }
     for (const auto [ench_id, effect] : values_multiply) {
-        if (effect > 1) {
+        if (effect > 0) {
             value_effects[ench_id] += (ench_id->increase_good) ? 1 : -1;
-        } else if (effect < 1) {
+        } else if (effect < 0) {
             value_effects[ench_id] += (ench_id->increase_good) ? -1 : 1;
         }
     }
@@ -343,6 +343,9 @@ bool enchantment::stacks_with(const enchantment& rhs) const {
 bool enchantment::add(const enchantment& rhs) {
     if (!stacks_with(rhs)) { return false; }
     force_add(rhs);
+    // Because it is no longer a default enchantment
+    // We must make it "" so that it saves properly
+    if (id.str() != "") { id = enchantment_id(""); }
     return true;
 }
 

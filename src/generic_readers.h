@@ -369,7 +369,7 @@ class temperature_reader : public unit_reader<units::temperature>
 class time_reader : public unit_reader<time_duration>
 {
     public:
-        time_reader() : unit_reader( time_duration::units ) = default;
+        time_reader() : unit_reader( time_duration::units ) {};
 };
 
 /**
