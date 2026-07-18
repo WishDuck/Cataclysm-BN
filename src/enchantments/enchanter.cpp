@@ -236,7 +236,7 @@ int enchantment_selector_menu(std::vector<enchant_info> options, Character& user
             auto info = options[line];
             auto total_reqs =
                 total_requirements(info)
-                * std::max(1L, (info.volume_batch_effect ? vol / info.volume_per_batch : 1));
+                * std::max(1, (info.volume_batch_effect ? int( vol / info.volume_per_batch ) : 1));
             if (!total_reqs.can_make_with_inventory(crafting_inv, return_true<item>)) {
                 popup("You have insufficient items to make this enchantment.");
             } else if (itm.get_var<int>(info.count_var, 0) >= info.max_count) {
