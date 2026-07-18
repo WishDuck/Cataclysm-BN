@@ -2727,7 +2727,7 @@ void enchant_activity_actor::finish( player_activity &act, Character &who )
     auto total_reqs =
         enchanter::total_requirements( info )
         * std::max(
-            1L, ( info.volume_batch_effect ? target->base_volume() / info.volume_per_batch : 1 ) );
+            1, ( info.volume_batch_effect ? int( target->base_volume() / info.volume_per_batch ) : 1 ) );
     for( const auto &comp : total_reqs.get_components() ) { who.consume_items( comp ); }
     for( const auto &comp : total_reqs.get_tools() ) { who.consume_tools( comp ); }
     target->add_enchantment( info.to_enchant_with );

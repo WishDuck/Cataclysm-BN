@@ -1,11 +1,5 @@
 #include "enchanter.h"
 
-#include <algorithm>
-#include <ranges>
-#include <string>
-#include <type_traits>
-#include <vector>
-
 #include "activity_actor_definitions.h"
 #include "catalua_hooks.h"
 #include "catalua_impl.h"
@@ -39,6 +33,12 @@
 #include "ui.h"
 #include "ui_manager.h"
 #include "uistate.h"
+
+#include <algorithm>
+#include <ranges>
+#include <string>
+#include <type_traits>
+#include <vector>
 
 namespace {
 
@@ -89,7 +89,7 @@ bool run_can_use_on_callback(const std::string id, const std::string ench_id, co
 } // namespace
 
 namespace enchanter {
-requirement_data total_requirements(enchant_info& info) {
+requirement_data total_requirements(const enchant_info& info) {
     return std::accumulate(
         info.requirements.begin(), info.requirements.end(), requirement_data(),
         [](const requirement_data& lhs, const std::pair<requirement_id, int>& rhs) {
@@ -128,16 +128,14 @@ std::vector<std::string> enchantment_info(
 
     if (info.requirements.size() > 0) {
         auto crafting_inv = crafter.crafting_inventory(true);
-        std::vector<std::string> tools;
-        std::vector<std::string> comps;
-        for (const auto& [id, count] : info.requirements) {
-            auto real_req =
-                (*id) * std::max(1L, (info.volume_batch_effect ? vol / info.volume_per_batch : 1));
-            tools.append_range(
-                real_req.get_folded_tools_list(fold_width, c_white, crafting_inv, count));
-            comps.append_range(real_req.get_folded_components_list(
-                fold_width, c_white, crafting_inv, return_true<item>, count, ""));
-        }
+        auto real_req =
+            total_requirements(info)
+            * std::max(1, (info.volume_batch_effect ? int(vol / info.volume_per_batch) : 1));
+        std::vector<std::string> tools =
+            real_req.get_folded_tools_list(fold_width, c_white, crafting_inv, 1);
+        std::vector<std::string> comps = real_req.get_folded_components_list(
+            fold_width, c_white, crafting_inv, return_true<item>, 1, "");
+
         oss << "\n";
         for (const std::string& str : tools) { oss << str << "\n"; }
         for (const std::string& str : comps) { oss << str << "\n"; }

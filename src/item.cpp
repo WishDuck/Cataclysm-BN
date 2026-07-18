@@ -4500,7 +4500,8 @@ void item::enchantment_info( std::vector<iteminfo> &info, const iteminfo_query &
                              bool debug ) const
 {
     std::vector<enchantment> enchs = get_enchantments( true );
-    enchs.append_range( get_enchantments( false ) );
+    std::vector<enchantment> enchs_2 = get_enchantments( false );
+    enchs.insert( enchs.end(), enchs_2.begin(), enchs_2.end() );
     if( is_null() || enchs.empty() || has_flag( flag_SECRET_ENCHANTMENTS ) ) {
         return;
     }
