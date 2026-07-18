@@ -41,7 +41,8 @@ game.mapgen_functions["lab"] = function(...) return mod.lab.draw(...) end
 game.mapgen_functions["lab_ice"] = function(...) return mod.lab.ice_draw(...) end
 
 -- Enchanter
-game.enchanter_can_use_on["cvd_machine"] = function(...) return mod.cvd_machine.can_use_on(...) end
+game.enchanter_can_use_on["cvd_machine_cut"] = function(...) return mod.cvd_machine.can_use_on_cut(...) end
+game.enchanter_can_use_on["cvd_machine_stab"] = function(...) return mod.cvd_machine.can_use_on_stab(...) end
 
 game.add_hook("on_make_mapgen_factory_list", function(params)
   params.results:insert(#params.results + 1, "lab_1side")

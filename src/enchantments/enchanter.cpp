@@ -35,6 +35,7 @@
 #include "uistate.h"
 
 #include <algorithm>
+#include <numeric>
 #include <ranges>
 #include <string>
 #include <type_traits>
@@ -180,7 +181,10 @@ int enchantment_selector_menu(std::vector<enchant_info> options, Character& user
     int line = 0;
     int names_scroll_min = 0;
     int names_scroll_max = 0;
+    int info_lines = 0;
     int info_scroll = 0;
+    int info_scroll_min = 0;
+    int info_scroll_max = 0;
     int num_options = names.size();
     ui.on_redraw([&](ui_adaptor& ui) {
         werase(w_ench);
@@ -203,10 +207,12 @@ int enchantment_selector_menu(std::vector<enchant_info> options, Character& user
             const std::vector<std::string>& info =
                 enchantment_info(options[line], user, width, itm);
             const int total_lines = info.size();
-            for (int i = 0; i < total_lines; ++i) {
-                // NOTE: needed because it expects an lvalue
+            info_lines = total_lines;
+            calcStartPos(info_scroll_min, info_scroll, height, total_lines);
+            info_scroll_max = std::min(total_lines, info_scroll_min + height);
+            for (int i = info_scroll_min; i < info_scroll_max; ++i) {
                 auto dummy = c_white;
-                trim_and_print(w_info, point(2, i + 1), width, c_white, info[i]);
+                trim_and_print(w_info, point(2, i - info_scroll_min + 1), width, c_white, info[i]);
             }
 
             if (total_lines > height) {
@@ -226,17 +232,21 @@ int enchantment_selector_menu(std::vector<enchant_info> options, Character& user
         const std::string action = ctxt.handle_input();
         if (action == "PAGE_UP") {
             info_scroll -= scroll_info_lines;
+            if (info_scroll < 0) { info_scroll = info_lines; }
         } else if (action == "PAGE_DOWN") {
             info_scroll += scroll_info_lines;
+            if (info_scroll > info_lines) { info_scroll = 0; }
         } else if (action == "DOWN") {
             line++;
+            info_scroll = 0;
         } else if (action == "UP") {
             line--;
+            info_scroll = 0;
         } else if (action == "CONFIRM") {
             auto info = options[line];
             auto total_reqs =
                 total_requirements(info)
-                * std::max(1, (info.volume_batch_effect ? int( vol / info.volume_per_batch ) : 1));
+                * std::max(1, (info.volume_batch_effect ? int(vol / info.volume_per_batch) : 1));
             if (!total_reqs.can_make_with_inventory(crafting_inv, return_true<item>)) {
                 popup("You have insufficient items to make this enchantment.");
             } else if (itm.get_var<int>(info.count_var, 0) >= info.max_count) {
@@ -314,9 +324,9 @@ void iexamine::enchanter(player& p, const tripoint_bub_ms& pos) {
                 break;
             }
         }
-        if (quit) { break; }
+        if (quit) { continue; }
 
-        if (info.can_make != "" && !run_can_make_callback(info.can_make, info.id)) { break; }
+        if (info.can_make != "" && !run_can_make_callback(info.can_make, info.id)) { continue; }
 
         valid_infos.push_back(info);
     }

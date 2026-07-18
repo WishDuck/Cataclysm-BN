@@ -188,7 +188,7 @@ The following is an enchant info object
   "name": "Cutting Diamonds", // Display name on the enchantment ui ( mandatory )
   "enchant": "ENCH_CVD_MACHINE_CUT", // Enchantment id to give ( mandatory )
   "time_to_enchant": "10 minutes", // Time duration of the enchantment ( mandatory )
-  "using": "cvd_diamond", // Requirement info ( Also supports `components` `qualities` and `tools` variant of defining inline requirements )
+  "using": "cvd_diamond", // Requirement info ( mandatory )
   "volume_per_batch": "250 ml", // Every x volume will multiply requirement info
   "volume_batch_effect": true, // Weather `volume_per_batch` is used
   "count_var": "DIAMONDIZE", // Item variable for counting how many can be applied
