@@ -178,7 +178,7 @@ auto get_active_lua_state() -> lua_state * // *NOPAD*
     return DynamicDataLoader::get_instance().lua.get();
 }
 
-auto get_lua_callback( lua_state &state, const char *table_name,
+auto get_lua_callback( lua_state &state, const std::string table_name,
                        const std::string &callback_id ) -> sol::protected_function
 {
     const auto maybe_table = state.lua.globals()["game"][table_name].get<sol::optional<sol::table>>();
@@ -190,7 +190,7 @@ auto get_lua_callback( lua_state &state, const char *table_name,
     return maybe_table->get_or<sol::protected_function>( callback_id, sol::lua_nil );
 }
 
-auto run_lua_callback( const char *table_name, const std::string &callback_id,
+auto run_lua_callback( const std::string table_name, const std::string &callback_id,
                        const std::function<void( sol::table & )> &fill_params ) -> void
 {
     lua_state *state = get_active_lua_state();
@@ -354,6 +354,9 @@ void init_global_state_tables( lua_state &state, const std::vector<mod_id> &modl
 
     // mapgen functions
     gt["mapgen_functions"] = lua.create_table();
+
+    // Itemgroup modification functions
+    gt["itemgroup_postprocessors"] = lua.create_table();
 
     // monster / npc functions
     gt["monster_attitude_functions"] = lua.create_table();
