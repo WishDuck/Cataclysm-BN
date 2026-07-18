@@ -1,5 +1,11 @@
 #include "enchanter.h"
 
+#include <algorithm>
+#include <ranges>
+#include <string>
+#include <type_traits>
+#include <vector>
+
 #include "activity_actor_definitions.h"
 #include "catalua_hooks.h"
 #include "catalua_impl.h"
@@ -33,11 +39,6 @@
 #include "ui.h"
 #include "ui_manager.h"
 #include "uistate.h"
-
-#include <algorithm>
-#include <string>
-#include <type_traits>
-#include <vector>
 
 namespace {
 
