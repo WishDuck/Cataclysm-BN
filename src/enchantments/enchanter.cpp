@@ -125,7 +125,10 @@ std::vector<std::string> enchantment_info(
     oss << "\n";
 
     oss << string_format(
-        _("Time to complete: <color_cyan>%s</color>\n"), to_string(info.time_to_enchant));
+        _("Time to complete: <color_cyan>%s</color>\n"),
+        to_string(info.time_to_enchant
+                  * std::max(1, (info.volume_time_effect ? int(vol / info.volume_per_time) : 1))));
+
 
     if (info.requirements.size() > 0) {
         auto crafting_inv = crafter.crafting_inventory(true);
@@ -275,6 +278,8 @@ void enchant_info::deserialize(JsonIn& jin) {
     mandatory(obj, false, "name", name);
     mandatory(obj, false, "enchant", to_enchant_with);
     mandatory(obj, false, "time_to_enchant", time_to_enchant, time_reader());
+    optional(obj, false, "volume_per_time", volume_per_time, volume_reader());
+    optional(obj, false, "volume_time_effect", volume_time_effect, false);
     optional(obj, false, "volume_per_batch", volume_per_batch, volume_reader());
     optional(obj, false, "volume_batch_effect", volume_batch_effect, false);
     optional(obj, false, "applied_flag", applied_flag_id, flag_NULL);
@@ -362,6 +367,11 @@ void iexamine::enchanter(player& p, const tripoint_bub_ms& pos) {
     int index = enchanter::enchantment_selector_menu(infos, p, *to_ench);
     if (index != -1) {
         auto info = infos[index];
+        int moves =
+            to_moves<int>(info.time_to_enchant)
+            * std::max(
+                1,
+                (info.volume_time_effect ? int(to_ench->base_volume() / info.volume_per_time) : 1));
         p.assign_activity(
             std::make_unique<player_activity>(std::make_unique<enchant_activity_actor>(
                 *to_ench, furn_id.id(), info.id, to_moves<int>(info.time_to_enchant))));

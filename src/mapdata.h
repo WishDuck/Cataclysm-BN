@@ -162,6 +162,8 @@ struct enchant_info {
     std::map<skill_id, int> required_skills;
     // Time to complete
     time_duration time_to_enchant;
+    units::volume volume_per_time;
+    bool volume_time_effect;
     // Flag to apply to take note it was applied
     flag_id applied_flag_id;
     // Data var to add to the item. Along with the max count of the counter for that var

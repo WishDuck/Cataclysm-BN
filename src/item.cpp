@@ -5905,14 +5905,6 @@ int item::damage_melee( const attack_statblock &attack, damage_type dt ) const
                 res *= 0.5;
             }
             break;
-
-        case DT_CUT:
-        case DT_STAB:
-            if( has_flag( flag_DIAMOND ) ) {
-                res *= 1.3;
-            }
-            break;
-
         default:
             break;
     }
@@ -5958,14 +5950,6 @@ std::map<std::string, attack_statblock> item::get_attacks() const
                         du.amount *= 0.5;
                     }
                     break;
-
-                case DT_CUT:
-                case DT_STAB:
-                    if( has_flag( flag_DIAMOND ) ) {
-                        du.amount *= 1.3;
-                    }
-                    break;
-
                 default:
                     break;
             }

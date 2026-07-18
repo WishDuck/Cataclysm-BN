@@ -59,12 +59,12 @@
   },
   {
     "type": "enchantment",
-    "id": "ENCH_CVD_MACHINE_CUT",
-    "values": [ { "value": "ITEM_DAMAGE_CUT", "multiply": 0.3 } ]
-  },
-  {
-    "type": "enchantment",
-    "id": "ENCH_CVD_MACHINE_STAB",
-    "values": [ { "value": "ITEM_DAMAGE_STAB", "multiply": 0.3 } ]
+    "id": "ENCH_CVD_MACHINE",
+    "values": [
+      { "value": "ITEM_DAMAGE_CUT", "multiply": 0.3 },
+      { "value": "ITEM_DAMAGE_STAB", "multiply": 0.3 },
+      { "value": "ITEM_ARMOR_PENETRATION_CUT", "multiply": 0.35, "add": 10 },
+      { "value": "ITEM_ARMOR_PENETRATION_STAB", "multiply": 0.35, "add": 10 }
+    ]
   }
 ]

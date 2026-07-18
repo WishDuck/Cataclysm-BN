@@ -188,6 +188,8 @@ The following is an enchant info object
   "name": "Cutting Diamonds", // Display name on the enchantment ui ( mandatory )
   "enchant": "ENCH_CVD_MACHINE_CUT", // Enchantment id to give ( mandatory )
   "time_to_enchant": "10 minutes", // Time duration of the enchantment ( mandatory )
+  "volume_per_time": "250 ml", // Every x volume will multiply time required
+  "volume_time_effect": true, // Weather `volume_per_time` is used
   "using": "cvd_diamond", // Requirement info ( mandatory )
   "volume_per_batch": "250 ml", // Every x volume will multiply requirement info
   "volume_batch_effect": true, // Weather `volume_per_batch` is used
