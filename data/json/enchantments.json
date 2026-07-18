@@ -60,17 +60,11 @@
   {
     "type": "enchantment",
     "id": "ENCH_CVD_MACHINE_CUT",
-    "condition": "ALWAYS",
-    "values": [
-      { "value": "ITEM_DAMAGE_CUT", "multiply": 0.3 }
-    ]
+    "values": [ { "value": "ITEM_DAMAGE_CUT", "multiply": 0.3 } ]
   },
   {
     "type": "enchantment",
     "id": "ENCH_CVD_MACHINE_STAB",
-    "condition": "ALWAYS",
-    "values": [
-      { "value": "ITEM_DAMAGE_STAB", "multiply": 0.3 }
-    ]
+    "values": [ { "value": "ITEM_DAMAGE_STAB", "multiply": 0.3 } ]
   }
 ]

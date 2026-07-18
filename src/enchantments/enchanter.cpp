@@ -2,6 +2,7 @@
 
 #include "activity_actor_definitions.h"
 #include "catalua_hooks.h"
+#include "catalua_impl.h"
 #include "catalua_sol.h"
 #include "character.h"
 #include "cursesdef.h"
@@ -35,7 +36,56 @@
 
 #include <algorithm>
 #include <string>
+#include <type_traits>
 #include <vector>
+
+namespace {
+
+bool run_can_make_callback(const std::string id, const std::string ench_id) {
+    auto& state = *DynamicDataLoader::get_instance().lua.get();
+    auto func = cata::get_lua_callback(state, "enchanter_can_make", id);
+    if (!func) {
+        debugmsg("Lua callback %s for `enchanter_can_make` does not exist. Defaulting to true", id);
+        return true;
+    }
+    auto params = state.lua.create_table();
+    params["enchant_info_id"] = ench_id;
+    sol::protected_function_result res = func(params);
+
+    check_func_result(res);
+    if (res.get_type() != sol::type::boolean) {
+        debugmsg(
+            "Lua callback %s for `enchanter_can_make` expected boolean result. Defaulting to true",
+            id);
+        return true;
+    }
+    return res.get<bool>();
+}
+
+bool run_can_use_on_callback(const std::string id, const std::string ench_id, const item& itm) {
+    auto& state = *DynamicDataLoader::get_instance().lua.get();
+    auto func = cata::get_lua_callback(state, "enchanter_can_use_on", id);
+    if (!func) {
+        debugmsg("Lua callback %s for `enchanter_can_use_on` does not exist. Defaulting to true",
+                 id);
+        return true;
+    }
+    auto params = state.lua.create_table();
+    params["enchant_info_id"] = ench_id;
+    params["item"] = &itm;
+    sol::protected_function_result res = func(params);
+
+    check_func_result(res);
+    if (res.get_type() != sol::type::boolean) {
+        debugmsg(
+            "Lua callback %s for `enchanter_can_use_on` expected boolean result. Defaulting to true",
+            id);
+        return true;
+    }
+    return res.get<bool>();
+}
+
+} // namespace
 
 namespace enchanter {
 requirement_data total_requirements(enchant_info& info) {
@@ -255,12 +305,55 @@ void iexamine::enchanter(player& p, const tripoint_bub_ms& pos) {
     map& here = get_map();
     const furn_id& furn_id = here.furn(pos);
     if (furn_id->enchanter.size() == 0) { debugmsg("Enchanter iuse has no enchanter info"); }
-    item& to_ench = p.primary_weapon();
-    int index = enchanter::enchantment_selector_menu(furn_id->enchanter, p, to_ench);
+    std::vector<enchant_info> valid_infos;
+    for (enchant_info info : furn_id->enchanter) {
+        bool quit = false;
+        for (const auto& [skill_id, level] : info.required_skills) {
+            if (p.get_skill_level(skill_id, false) < level) {
+                quit = true;
+                break;
+            }
+        }
+        if (quit) { break; }
+
+        if (info.can_make != "" && !run_can_make_callback(info.can_make, info.id)) { break; }
+
+        valid_infos.push_back(info);
+    }
+    if (valid_infos.size() == 0) {
+        popup("You are unable to make anything here yet.");
+        return;
+    }
+
+    item* to_ench = g->inv_map_splice(
+        [&](const item& e) {
+            for (enchant_info info : valid_infos) {
+                if (e.get_var<int>(info.count_var, 0) >= info.max_count) { continue; }
+                if (info.can_use_on != ""
+                    && !run_can_use_on_callback(info.can_use_on, info.id, e)) {
+                    continue;
+                }
+                return true;
+            }
+            return false;
+        },
+        _("Enchant What?"), 1, _("You dont have a suitable item to enchant here"));
+
+    if (!to_ench) { return; }
+
+    std::vector<enchant_info> infos;
+    for (enchant_info info : valid_infos) {
+        if (info.can_use_on != "" && !run_can_use_on_callback(info.can_use_on, info.id, *to_ench)) {
+            continue;
+        }
+        infos.push_back(info);
+    }
+
+    int index = enchanter::enchantment_selector_menu(infos, p, *to_ench);
     if (index != -1) {
-        auto info = furn_id->enchanter[index];
+        auto info = infos[index];
         p.assign_activity(
             std::make_unique<player_activity>(std::make_unique<enchant_activity_actor>(
-                to_ench, furn_id.id(), info.id, to_moves<int>(info.time_to_enchant))));
+                *to_ench, furn_id.id(), info.id, to_moves<int>(info.time_to_enchant))));
     }
 }
