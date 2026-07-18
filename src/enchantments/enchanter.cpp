@@ -130,7 +130,8 @@ std::vector<std::string> enchantment_info(
         std::vector<std::string> tools;
         std::vector<std::string> comps;
         for (const auto& [id, count] : info.requirements) {
-            auto real_req = (*id) * (info.volume_batch_effect ? vol / info.volume_per_batch : 1);
+            auto real_req =
+                (*id) * std::max(1L, (info.volume_batch_effect ? vol / info.volume_per_batch : 1));
             tools.append_range(
                 real_req.get_folded_tools_list(fold_width, c_white, crafting_inv, count));
             comps.append_range(real_req.get_folded_components_list(
