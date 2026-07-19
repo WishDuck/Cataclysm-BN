@@ -111,22 +111,6 @@ std::vector<std::string> enchantment::get_effect_string(bool is_item) const {
             string_format(_("  <color_%s>Gives mutation %s</color>"), color, trait_id->name()));
         describe = true;
     }
-    for (const auto eff_id : immune_effects) {
-        if (!eff_id->is_show_in_info()) { continue; }
-        effect_rating rating = eff_id->get_rating();
-        const std::string color =
-            rating == effect_rating::e_bad ? "green"
-            : rating == effect_rating::e_good
-                ? "red"
-                : "magenta";
-        const std::string name =
-            effect(&*eff_id, 1_turns, bodypart_str_id::NULL_ID(), 1, calendar::turn).disp_name();
-        if (name != "") {
-            result.push_back(
-                string_format(_("  <color_%s>Provides Immunity To %s</color>"), color, name));
-            describe = true;
-        }
-    }
     for (const auto [flag, _] : flags) { result.push_back(string_format("  %s", flag->info)); }
     if (describe) {
         return result;
