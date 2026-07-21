@@ -176,13 +176,25 @@ enum {
 
 namespace
 {
+
+static bool has_any_magic( const profession_id &prof )
+{
+    for( spell_type spell : spell_type::get_all() ) {
+        if( spell.starting_spell || g->scen->spellquery( spell.id ) ||
+            prof->is_allowed_spell( spell.id ) ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 static int get_max_tabs( const profession_id &prof )
 {
     int max = 8;
     if( prof->forbids_bionics() || g->scen->forbids_bionics() ) {
         max--;
     }
-    if( !get_option<bool>( "CHARGEN_MAGIC" ) || prof->forbids_spells() || g->scen->forbids_spells() ) {
+    if( !has_any_magic( prof ) || prof->forbids_spells() || g->scen->forbids_spells() ) {
         max--;
     }
     return max;
@@ -653,7 +665,7 @@ bool avatar::create( character_type type, const std::string &tempname )
                 break;
             case 5:
                 if( prof->forbids_bionics() || g->scen->forbids_bionics() ) {
-                    if( !get_option<bool>( "CHARGEN_MAGIC" ) ||
+                    if( !has_any_magic( prof ) ||
                         prof->forbids_spells() || g->scen->forbids_spells() ) {
                         result = set_skills( *this, points );
                     } else {
@@ -665,13 +677,13 @@ bool avatar::create( character_type type, const std::string &tempname )
                 break;
             case 6:
                 if( prof->forbids_bionics() || g->scen->forbids_bionics() ) {
-                    if( !get_option<bool>( "CHARGEN_MAGIC" ) ||
+                    if( !has_any_magic( prof ) ||
                         prof->forbids_spells() || g->scen->forbids_spells() ) {
                         result = set_description( *this, allow_reroll, points );
                     } else {
                         result = set_skills( *this, points );
                     }
-                } else if( !get_option<bool>( "CHARGEN_MAGIC" ) ||
+                } else if( !has_any_magic( prof ) ||
                            prof->forbids_spells() || g->scen->forbids_spells() ) {
                     result = set_skills( *this, points );
                 } else {
@@ -681,7 +693,7 @@ bool avatar::create( character_type type, const std::string &tempname )
             case 7:
                 if( prof->forbids_bionics() || g->scen->forbids_bionics() ) {
                     result = set_description( *this, allow_reroll, points );
-                } else if( !get_option<bool>( "CHARGEN_MAGIC" ) ||
+                } else if( !has_any_magic( prof ) ||
                            prof->forbids_spells() || g->scen->forbids_spells() ) {
                     result = set_description( *this, allow_reroll, points );
                 } else {
@@ -849,8 +861,8 @@ static void draw_character_tabs( const catacurses::window &w, const std::string 
         _( "SKILLS" ),
         _( "OVERVIEW" ),
     };
-    if( get_option<bool>( "CHARGEN_MAGIC" ) && !( prof->forbids_spells() ||
-            g->scen->forbids_spells() ) ) {
+    if( has_any_magic( prof ) && !( prof->forbids_spells() ||
+                                    g->scen->forbids_spells() ) ) {
         tab_captions.insert( tab_captions.begin() + 5, _( "MAGIC" ) );
     }
     if( !prof->forbids_bionics() && !g->scen->forbids_bionics() ) {

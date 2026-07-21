@@ -271,12 +271,5 @@
     "info": "A multiplier on the amount of XP you gain from skills. 0 completely disables it (a la skills through kills)",
     "stype": "float",
     "value": 1.0
-  },
-  {
-    "type": "EXTERNAL_OPTION",
-    "name": "CHARGEN_MAGIC",
-    "info": "Weather the magic tab in chargen is enabled.",
-    "stype": "bool",
-    "value": false
   }
 ]
