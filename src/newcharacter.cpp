@@ -2928,7 +2928,7 @@ tab_direction set_magic( avatar &u, points_left &points )
     const auto init_windows = [&]( ui_adaptor & ui ) {
         iContentHeight = TERMY - 6;
         w = catacurses::newwin( TERMY, TERMX, point_zero );
-        w_description = catacurses::newwin( iContentHeight, TERMX - 35, point( 31, 5 ) );
+        w_description = catacurses::newwin( iContentHeight, TERMX / 2 - 4, point( TERMX / 2, 5 ) );
         ui.position_from_window( w );
     };
     init_windows( ui );
@@ -2947,6 +2947,9 @@ tab_direction set_magic( avatar &u, points_left &points )
         if( left->spell_class == right->spell_class ) {
             return localized_compare( left->name.translated(), right->name.translated() );
         } else {
+            if( left->spell_class == trait_id::NULL_ID() ) {
+                return true;
+            }
             return localized_compare( left->spell_class->name(), right->spell_class->name() );
         }
         return false;
@@ -2954,13 +2957,11 @@ tab_direction set_magic( avatar &u, points_left &points )
 
     // Actual line that the skill takes up.
     int display_line = 0;
-    trait_id current_spell_class;
+    trait_id current_spell_class = trait_id( "" );
     std::vector<std::pair<spell_id, int>> spell_list;
-    std::vector<std::pair<std::string, int>> spell_cat_list;
     for( const spell_id &spell : sorted_spells ) {
         if( current_spell_class != spell->spell_class ) {
             current_spell_class = spell->spell_class;
-            spell_cat_list.emplace_back( current_spell_class->name(), display_line );
             display_line++;
         }
         spell_list.emplace_back( spell, display_line );
@@ -3030,7 +3031,7 @@ tab_direction set_magic( avatar &u, points_left &points )
         // display_line - 1 and iContentHeight - 1 compensates for the offset by the prior.
         // same application in the draw_scrolbar function later.
         calcStartPos( cur_offset, spell_list[cur_pos].second - 1, iContentHeight - 1, display_line - 1 );
-        current_spell_class = trait_id::NULL_ID();
+        current_spell_class = trait_id( "" );
         for( int i = 0; i < num_spells && spell_list[i].second - cur_offset - 1 < iContentHeight; ++i ) {
             const int y = 5 + spell_list[i].second - cur_offset;
             // Necessary because cur_offset doesn't indicate the first object to read. A bit hacky.
@@ -3042,7 +3043,11 @@ tab_direction set_magic( avatar &u, points_left &points )
             if( current_spell_class != spell_class && y - 1 >= 5 ) {
                 // Clear the line
                 mvwprintz( w, point( 2, y - 1 ), c_light_gray, std::string( getmaxx( w ) - 3, ' ' ) );
-                mvwprintz( w, point( 2, y - 1 ), c_yellow, spell_class->name() );
+                if( spell_class == trait_id::NULL_ID() ) {
+                    mvwprintz( w, point( 2, y - 1 ), c_yellow, _( "Classless" ) );
+                } else {
+                    mvwprintz( w, point( 2, y - 1 ), c_yellow, spell_class->name() );
+                }
                 current_spell_class = spell_class;
             }
             if( y < iContentHeight + 5 ) {
@@ -3055,7 +3060,7 @@ tab_direction set_magic( avatar &u, points_left &points )
                     mvwprintz( w, point( 4, y ),
                                ( i == cur_pos ? hilite( COL_SKILL_USED ) : COL_SKILL_USED ),
                                thisspell->name.translated() );
-                    mvwprintz( w, point( 20, y ),
+                    mvwprintz( w, point( TERMX / 2 - 10, y ),
                                ( i == cur_pos ? hilite( COL_SKILL_USED ) : COL_SKILL_USED ),
                                " (%d)", u.magic->get_spell( thisspell ).get_level() );
                 }
@@ -3101,16 +3106,17 @@ tab_direction set_magic( avatar &u, points_left &points )
                 popup( _( "This scenario prevents you from taking this spell" ) );
             } else if( u.prof->is_forbidden_spell( thisspell ) ) {
                 popup( _( "This profession prevents you from taking this spell" ) );
-            }
-            const bool knows = u.magic->knows_spell( thisspell );
-            const int level = knows ? u.magic->get_spell( thisspell ).get_level() : -1;
-            if( level < thisspell->max_starting_level ) {
-                const int cost = knows ? thisspell->increase_points : thisspell->starting_points;
-                points.trait_points -= cost;
-                if( !knows ) {
-                    u.magic->learn_spell( thisspell, u, true );
-                } else {
-                    u.magic->get_spell( thisspell ).set_level( level + 1 );
+            } else {
+                const bool knows = u.magic->knows_spell( thisspell );
+                const int level = knows ? u.magic->get_spell( thisspell ).get_level() : -1;
+                if( level < thisspell->max_starting_level ) {
+                    const int cost = knows ? thisspell->increase_points : thisspell->starting_points;
+                    points.trait_points -= cost;
+                    if( !knows ) {
+                        u.magic->learn_spell( thisspell, u, true );
+                    } else {
+                        u.magic->get_spell( thisspell ).set_level( level + 1 );
+                    }
                 }
             }
         } else if( action == "SCROLL_DOWN" ) {
