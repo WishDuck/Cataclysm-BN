@@ -172,6 +172,10 @@
     "final_energy_cost": 400,
     "min_duration": 3300000,
     "max_duration": 6300000,
+    "starting_spell": true,
+    "starting_points": 1,
+    "increase_points": 1,
+    "max_starting_level": 3,
     "duration_increment": 200000
   },
   {
