@@ -23,5 +23,12 @@
     "info": "If true, always display the mana in the sidebar. Primarily useful for magic-related mods.",
     "stype": "bool",
     "value": true
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "CHARGEN_MAGIC",
+    "info": "Weather the magic tab in chargen is enabled.",
+    "stype": "bool",
+    "value": true
   }
 ]
