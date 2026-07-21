@@ -26,7 +26,9 @@
     "min_duration": 144000,
     "max_duration": 288000,
     "duration_increment": 14400,
-    "spell_class": "SPELL_AGILE"
+    "//": "Point cost tends to be half that of Spell Rank, rounded up where relevant.",
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_capacitance",
@@ -82,7 +84,8 @@
     "min_duration": 216000,
     "max_duration": 432000,
     "duration_increment": 21600,
-    "spell_class": "SPELL_CLAIRVOYANCE"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_clarity_blood",
@@ -111,7 +114,8 @@
     "min_duration": 48000,
     "max_duration": 96000,
     "duration_increment": 4800,
-    "spell_class": "SPELL_CLARITY"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_cold_ward",
@@ -170,7 +174,8 @@
     "min_duration": 1800,
     "max_duration": 3600,
     "duration_increment": 180,
-    "spell_class": "SPELL_CONFUSE"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_conjure_acid",
@@ -217,7 +222,8 @@
     "max_field_intensity": 3,
     "field_intensity_increment": 0.2,
     "field_intensity_variance": 0.5,
-    "spell_class": "SPELL_ACID"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_conjure_flame",
@@ -264,7 +270,8 @@
     "max_field_intensity": 3,
     "field_intensity_increment": 0.2,
     "field_intensity_variance": 0.5,
-    "spell_class": "SPELL_FIRE"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_consecrate",
@@ -379,7 +386,8 @@
     "max_field_intensity": 3,
     "field_intensity_increment": 0.2,
     "field_intensity_variance": 0.5,
-    "spell_class": "SPELL_DAMPENING"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_earthweaving",
@@ -506,7 +514,8 @@
     "min_duration": 36000,
     "max_duration": 72000,
     "duration_increment": 3600,
-    "spell_class": "SPELL_FREEACTION"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_harden_senses",
@@ -569,7 +578,8 @@
     "min_duration": 100,
     "max_duration": 100,
     "energy_source": "STAMINA",
-    "spell_class": "SPELL_HEAL"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_heat_ward",
@@ -598,7 +608,8 @@
     "min_duration": 60000,
     "max_duration": 120000,
     "duration_increment": 6000,
-    "spell_class": "SPELL_FLAMEARMOR"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_insight",
@@ -627,7 +638,8 @@
     "min_duration": 108000,
     "max_duration": 216000,
     "duration_increment": 10800,
-    "spell_class": "SPELL_INSIGHT"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_light",
@@ -663,7 +675,8 @@
     "field_chance": 2,
     "min_field_intensity": 1,
     "max_field_intensity": 1,
-    "spell_class": "SPELL_LIGHT"
+    "starting_points": 1,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_lightning_ward",
@@ -692,7 +705,8 @@
     "min_duration": 48000,
     "max_duration": 96000,
     "duration_increment": 4800,
-    "spell_class": "SPELL_ELECRESIST"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_might",
@@ -721,7 +735,8 @@
     "min_duration": 180000,
     "max_duration": 360000,
     "duration_increment": 18000,
-    "spell_class": "SPELL_STRENGTH"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_open_lock",
@@ -756,7 +771,8 @@
     "base_energy_cost": 2500,
     "final_energy_cost": 1250,
     "energy_increment": -125,
-    "spell_class": "SPELL_LOCKPICK"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_overgrowth",
@@ -788,7 +804,8 @@
     "base_energy_cost": 2000,
     "final_energy_cost": 1000,
     "energy_increment": -100,
-    "spell_class": "SPELL_PLANTS"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_phase_shield",
@@ -842,7 +859,8 @@
     "min_duration": 36000,
     "max_duration": 72000,
     "duration_increment": 3600,
-    "spell_class": "SPELL_POISONARMOR"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_serpentine_shield",
@@ -869,7 +887,8 @@
     "min_duration": 72000,
     "max_duration": 144000,
     "duration_increment": 7200,
-    "spell_class": "SPELL_SHADOWSNAKES"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_shockstorm",
@@ -918,7 +937,8 @@
     "max_field_intensity": 3,
     "field_intensity_increment": 0.2,
     "field_intensity_variance": 0.5,
-    "spell_class": "SPELL_LIGHTNING"
+    "starting_points": 3,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_sundering_quake",
@@ -1019,7 +1039,8 @@
     "min_duration": 360000,
     "max_duration": 720000,
     "duration_increment": 36000,
-    "spell_class": "SPELL_SUMMONDOG"
+    "starting_points": 2,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_summon_shadow",
@@ -1109,7 +1130,8 @@
     "max_duration": 144000,
     "duration_increment": 7200,
     "energy_source": "STAMINA",
-    "spell_class": "SPELL_DAYLIGHT"
+    "starting_points": 1,
+    "max_starting_level": 0
   },
   {
     "id": "arcana_magic_temporal_aura",
@@ -1166,6 +1188,7 @@
     "min_duration": 60000,
     "max_duration": 120000,
     "duration_increment": 6000,
-    "spell_class": "SPELL_CLERIC"
+    "starting_points": 3,
+    "max_starting_level": 0
   }
 ]
