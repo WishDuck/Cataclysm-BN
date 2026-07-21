@@ -31,13 +31,13 @@
     "type": "keybinding",
     "id": "DESC_UP",
     "name": "Pan description up",
-    "bindings": [ { "input_method": "keyboard", "key": "HOME" } ]
+    "bindings": [ { "input_method": "keyboard", "key": "^" } ]
   },
   {
     "type": "keybinding",
     "id": "DESC_DOWN",
     "name": "Pan description down",
-    "bindings": [ { "input_method": "keyboard", "key": "END" } ]
+    "bindings": [ { "input_method": "keyboard", "key": "V" } ]
   },
   {
     "type": "keybinding",
