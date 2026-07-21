@@ -2947,8 +2947,10 @@ tab_direction set_magic( avatar &u, points_left &points )
         if( left->spell_class == right->spell_class ) {
             return localized_compare( left->name.translated(), right->name.translated() );
         } else {
-            if( left->spell_class == trait_id::NULL_ID() ) {
+            if( left->spell_class == trait_id( "NONE" ) ) {
                 return true;
+            } else if( right->spell_class == trait_id( "NONE" ) ) {
+                return false;
             }
             return localized_compare( left->spell_class->name(), right->spell_class->name() );
         }
@@ -2957,7 +2959,7 @@ tab_direction set_magic( avatar &u, points_left &points )
 
     // Actual line that the skill takes up.
     int display_line = 0;
-    trait_id current_spell_class = trait_id( "" );
+    trait_id current_spell_class = trait_id::NULL_ID();
     std::vector<std::pair<spell_id, int>> spell_list;
     for( const spell_id &spell : sorted_spells ) {
         if( current_spell_class != spell->spell_class ) {
@@ -3031,7 +3033,7 @@ tab_direction set_magic( avatar &u, points_left &points )
         // display_line - 1 and iContentHeight - 1 compensates for the offset by the prior.
         // same application in the draw_scrolbar function later.
         calcStartPos( cur_offset, spell_list[cur_pos].second - 1, iContentHeight - 1, display_line - 1 );
-        current_spell_class = trait_id( "" );
+        current_spell_class = trait_id::NULL_ID();
         for( int i = 0; i < num_spells && spell_list[i].second - cur_offset - 1 < iContentHeight; ++i ) {
             const int y = 5 + spell_list[i].second - cur_offset;
             // Necessary because cur_offset doesn't indicate the first object to read. A bit hacky.
@@ -3043,7 +3045,7 @@ tab_direction set_magic( avatar &u, points_left &points )
             if( current_spell_class != spell_class && y - 1 >= 5 ) {
                 // Clear the line
                 mvwprintz( w, point( 2, y - 1 ), c_light_gray, std::string( getmaxx( w ) - 3, ' ' ) );
-                if( spell_class == trait_id::NULL_ID() ) {
+                if( spell_class == trait_id( "NONE" ) ) {
                     mvwprintz( w, point( 2, y - 1 ), c_yellow, _( "Classless" ) );
                 } else {
                     mvwprintz( w, point( 2, y - 1 ), c_yellow, spell_class->name() );
