@@ -2123,22 +2123,12 @@ class jmapgen_loot : public jmapgen_piece
 
         void apply( const mapgendata &dat, const jmapgen_int &x, const jmapgen_int &y
                   ) const override {
-            const auto spawn_rate = get_option<float>( "ITEM_SPAWNRATE" );
-            const auto spawn_count = roll_remainder( chance * spawn_rate / 100.0f );
-            for( int i = 0; i < spawn_count; i++ ) {
+            if( rng( 0, 99 ) < chance ) {
                 const Item_spawn_data *const isd = &result_group;
                 std::vector<detached_ptr<item>> spawn = isd->create( calendar::start_of_cataclysm );
-                const auto pnt = point_omt_ms( rng( x.val, x.valmax ), rng( y.val, y.valmax ) );
-                std::ranges::for_each( spawn, [&]( detached_ptr<item> &itm ) {
-                    int spawns = dat.m.edit_item_for_spawn_rate( *itm );
-                    if( spawns == 0 ) {
-                        return;
-                    }
-                    for( int i = 1; i < spawns; i++ ) {
-                        dat.m.add_item_or_charges( pnt, item::spawn( *itm ) );
-                    }
-                    dat.m.add_item_or_charges( pnt, std::move( itm ) );
-                } );
+                dat.m.spawn_items( point_omt_ms( rng( x.val, x.valmax ),
+                                                 rng( y.val, y.valmax ) ),
+                                   std::move( spawn ) );
             }
         }
 
