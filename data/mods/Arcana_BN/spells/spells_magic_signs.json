@@ -918,7 +918,7 @@
     "flags": [ "NO_EXPLOSION_VFX", "NO_HANDS", "NO_LEGS", "VERBAL", "NO_FAIL", "BRAWL" ],
     "extra_effects": [ { "id": "arcana_aftermath_magic_sign_exertion_6", "hit_self": true, "max_level": 10 } ],
     "effect": "target_attack",
-    "effect_str": "spell_might",
+    "effect_str": "arcana_effect_shadowy_shield",
     "min_range": 1,
     "max_range": 10,
     "range_increment": 0.9,
