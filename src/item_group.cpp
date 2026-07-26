@@ -413,7 +413,7 @@ std::vector<detached_ptr<item>> Single_item_creator::every_item_modified( bool m
             detached_ptr<item> itm = item::spawn( itype_id( id ) );
             if( modifier && modify && itm ) {
                 items.push_back( modifier->modify( std::move( itm ) ) );
-            } else if( itm ) {
+            } else if( modify && itm ) {
                 items.push_back( item::in_its_container( std::move( itm ) ) );
             }
             return items;
@@ -436,7 +436,7 @@ std::vector<detached_ptr<item>> Single_item_creator::every_item_modified( bool m
             for( auto &itm : item_group_items ) {
                 if( modifier && modify ) {
                     items.push_back( modifier->modify( std::move( itm ) ) );
-                } else {
+                } else if( modify ) {
                     items.push_back( item::in_its_container( std::move( itm ) ) );
                 }
             }
