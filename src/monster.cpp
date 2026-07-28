@@ -1805,18 +1805,6 @@ auto monster::attitude( const Character *u ) const -> monster_attitude
     }
 
     const auto *np = u == nullptr ? nullptr : u->as_npc();
-    if( np != nullptr ) {
-        const auto faction_att = faction.obj().attitude( np->get_monster_faction() );
-        if( faction_att == MFA_FRIENDLY ) {
-            return MATT_FRIEND;
-        }
-        if( faction_att == MFA_NEUTRAL ) {
-            return MATT_IGNORE;
-        }
-        if( faction_att == MFA_HATE ) {
-            return MATT_ATTACK;
-        }
-    }
 
     int effective_anger  = anger;
     int effective_morale = morale;
