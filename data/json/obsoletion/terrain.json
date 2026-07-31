@@ -10,7 +10,6 @@
     "move_cost": 0,
     "coverage": 50,
     "flags": [ "TRANSPARENT", "NOITEM", "PERMEABLE" ],
-    "examine_action": "cvdmachine",
     "bash": {
       "str_min": 8,
       "str_max": 150,
