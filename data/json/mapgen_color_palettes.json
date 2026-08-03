@@ -6,6 +6,11 @@
   },
   {
     "type": "mapgen_color_palette",
+    "id": "plaster_wall_palette_colorful",
+    "colors": [ "Emerald Green", "Traffic Purple", "Carmine Red", "Olive Yellow" ]
+  },
+  {
+    "type": "mapgen_color_palette",
     "id": "wooden_furniture_palette",
     "colors": [
       "Green beige",
