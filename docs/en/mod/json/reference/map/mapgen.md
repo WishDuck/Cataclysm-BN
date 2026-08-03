@@ -663,7 +663,7 @@ times):
 It is also possible to specify a color palette to apply
 The palette is a `mapgen_color_palette`
 
-```json
+````json
 "terrain": {
   "|": { "ter": "t_wall_paintable", "palette": "plaster_wall_palette" }
 }
@@ -674,7 +674,7 @@ Example (places a blood and a bile field on each '.' square):
 "fields" : {
     ".": [ { "field": "fd_blood" }, { "field": "fd_bile" } ]
 }
-```
+````
 
 Or define the mappings for one character at once:
 
