@@ -355,7 +355,7 @@ Example:
   "O": "f_oven",
   "r": "f_rack",
   "^": "f_indoor_plant",
-  "t": "f_table",
+  "t": { "furn": "f_table" "palette": "wooden_furniture_palette" },
   "T": "f_toilet",
   "S": "f_sink",
   "e": "f_fridge",
@@ -364,6 +364,9 @@ Example:
   "l": "f_locker"
 },
 ```
+
+The palette causes the furniture to be default painted based off the palette
+The palette randomly chooses a color based of the position on the global overmap
 
 ## Set terrain, furniture, or traps with a "set" array
 
@@ -656,6 +659,14 @@ times):
     ".": [ [ "t_grass", 2 ], "t_dirt" ]
 }
 ```
+
+It is also possible to specify a color palette to apply
+The palette is a `mapgen_color_palette`
+
+```json
+"terrain": {
+  "|": { "ter": "t_wall_paintable", "palette": "plaster_wall_palette" }
+}
 
 Example (places a blood and a bile field on each '.' square):
 
