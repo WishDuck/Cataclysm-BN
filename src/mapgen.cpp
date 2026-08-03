@@ -2525,7 +2525,7 @@ class jmapgen_furniture : public jmapgen_piece
                     assign( jsi, "palette", palette );
                 } else {
                     // If this object is using parameters distributions etc
-                    id = mapgen_value<furn_id>( jsv );
+                    id = mapgen_value<furn_id>( jsi );
                 }
             } else {
                 // Pass the value because it can be a not-string
@@ -2593,7 +2593,7 @@ class jmapgen_terrain : public jmapgen_piece
                     assign( jsi, "palette", palette );
                 } else {
                     // If this object is using parameters distributions etc
-                    id = mapgen_value<ter_id>( jsv );
+                    id = mapgen_value<ter_id>( jsi );
                 }
             } else {
                 // Pass the value because it can be a not-string

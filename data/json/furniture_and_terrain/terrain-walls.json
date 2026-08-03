@@ -51,7 +51,6 @@
   {
     "type": "terrain",
     "id": "t_wall_paintable",
-    "copy-from": "t_wall",
     "looks_like": "t_wall",
     "name": "dark plastered wooden wall",
     "description": "The stereotypical wall with wooden support structure filled with insulation and drywalled.  Paint job is by default is the all too common and neutral off-white, but it is simple and easy to paint with spray cans.  The underlying material is still somewhat flammable.",
