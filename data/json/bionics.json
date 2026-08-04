@@ -1206,7 +1206,8 @@
     "flags": [ "BIONIC_NPC_USABLE" ],
     "fake_item": "fake_goggles",
     "starting_bionic": true,
-    "points": 1
+    "points": 1,
+    "bio_enchantments": [ { "flags": [ "ANTIGLARE" ] } ]
   },
   {
     "id": "bio_targeting",
