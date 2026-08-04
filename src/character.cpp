@@ -252,7 +252,6 @@ static const trait_id trait_ANTLERS( "ANTLERS" );
 static const trait_id trait_ASTHMA( "ASTHMA" );
 static const trait_id trait_BADBACK( "BADBACK" );
 static const trait_id trait_CF_HAIR( "CF_HAIR" );
-static const trait_id trait_GLASSJAW( "GLASSJAW" );
 static const trait_id trait_DEBUG_NODMG( "DEBUG_NODMG" );
 static const trait_id trait_DEBUG_STAMINA( "DEBUG_STAMINA" );
 static const trait_id trait_DEFT( "DEFT" );
@@ -1983,11 +1982,10 @@ void Character::calc_all_parts_hp( float hp_mod, float hp_adjustment, int str_ma
         float hp_ratio = static_cast<float>( bp.get_hp_cur() ) / bp.get_hp_max();
         int new_max = ( part.first->base_hp + str_max * 3 + hp_adjustment ) * hp_mod;
 
-        if( has_trait( trait_GLASSJAW ) && part.first == bodypart_str_id( "head" ) ) {
-            new_max *= 0.8;
+        const auto ench = enchantment_value_id( "HEALTH_POINTS_" + to_upper_case( part.first.str() ) );
+        if( ench.is_valid() ) {
+            new_max += bonus_from_enchantments( new_max, ench, true );
         }
-
-        new_max += bonus_from_enchantments( new_max, enchantment_value_id( "HEALTH_POINTS" ) );
         new_max = std::max( new_max, 1 );
         int new_cur = std::ceil( static_cast<float>( new_max ) * hp_ratio );
 

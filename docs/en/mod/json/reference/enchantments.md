@@ -278,6 +278,20 @@ Intelligence stat. `base_value` here is the base stat value. The final value can
 ##### HEALTH_POINTS
 
 Hit points stat. `base_value` here is the base health value, The final value cannot go below 1.
+Note: This is the first enchantment with two tiers of parents, left arm inherits arm which inherits overall
+These are the children.
+
+- `HEALTH_POINTS_TORSO`
+- `HEALTH_POINTS_HEAD`
+- `HEALTH_POINTS_ARM`
+  - `HEALTH_POINTS_ARM_L`
+  - `HEALTH_POINTS_ARM_R`
+- `HEALTH_POINTS_HAND`
+  - `HEALTH_POINTS_HAND_L`
+  - `HEALTH_POINTS_HAND_R`
+- `HEALTH_POINTS_LEG`
+  - `HEALTH_POINTS_LEG_L`
+  - `HEALTH_POINTS_LEG_R`
 
 ##### SPEED
 
@@ -484,11 +498,34 @@ There is no limit
 Modifier to food morale. `base_value` is current food morale
 There is no limit.
 
+##### ADDICTION_STRENGTH
+
+Modifier to likelyhood to gain another addiction intensity.
+`base_value` is the strength of the added addiction.
+There is no limit.
+
+##### ADDICTION_TIME_PER_ADDITION
+
+Modifier to how long addiction applications increase addition time. `base_value` is base time added each time additions are applied in seconds.
+There is no limit.
+
+##### ADDICTION_TIME_PER_INTENSITY
+
+Modifier to how long addictions last. `base_value` is time to remove one addiction stack.
+Reducing _increases_ addiction time, adding _reduces_ addiction time
+There is no limit.
+
 ##### BONUS_DODGE
 
 Additional dodges per turn before dodge penalty kicks in. `base_value` here is character's base
 dodges per turn before penalty (usually 1). The final value can go below 0, which results in penalty
 to dodge roll.
+
+##### CROWD_CRUSH_RESIST
+
+Modifier to how likely it is to get crowd crushed `base_value` is 5, it is always 5.
+Increasing it reduces the chance to get crowd crushed
+From 0 ( no chance to resist ) to 95 ( 5% chance to not resist )
 
 ##### BLISTER_COUNT
 

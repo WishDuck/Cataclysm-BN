@@ -153,10 +153,8 @@ static const trait_id trait_SHELL2( "SHELL2" );
 static const trait_id trait_SHOUT1( "SHOUT1" );
 static const trait_id trait_SHOUT2( "SHOUT2" );
 static const trait_id trait_SHOUT3( "SHOUT3" );
-static const trait_id trait_SLIMESPAWNER( "SLIMESPAWNER" );
 static const trait_id trait_SORES( "SORES" );
 static const trait_id trait_SUNBURN( "SUNBURN" );
-static const trait_id trait_TRANSPIRATION( "TRANSPIRATION" );
 static const trait_id trait_TROGLO( "TROGLO" );
 static const trait_id trait_TROGLO2( "TROGLO2" );
 static const trait_id trait_TROGLO3( "TROGLO3" );
@@ -176,6 +174,13 @@ static const mtype_id mon_zombie_soldier( "mon_zombie_soldier" );
 static const std::string flag_PLOWABLE( "PLOWABLE" );
 
 static const enchantment_flag_id ench_flag_ANTIGLARE( "ANTIGLARE" );
+
+static const enchantment_value_id ench_val_CROWD_CRUSH_RESIST( "CROWD_CRUSH_RESIST" );
+static const enchantment_value_id ench_val_ADDICTION_STRENGTH( "ADDICTION_STRENGTH" );
+static const enchantment_value_id
+ench_val_ADDICTION_TIME_PER_ADDITION( "ADDICTION_TIME_PER_ADDITION" );
+static const enchantment_value_id
+ench_val_ADDICTION_TIME_PER_INTENSITY( "ADDICTION_TIME_PER_INTENSITY" );
 
 void Character::suffer_water_damage( const mutation_branch &mdata )
 {
@@ -302,15 +307,7 @@ auto adjacent_grabbing_strength( Character &you ) -> int
 auto crowd_crush_resist_chance( Character &you ) -> int
 {
     auto chance = 5;
-    if( you.has_effect( effect_downed ) && !you.has_trait( trait_SLIMESPAWNER ) ) {
-        chance -= 4;
-    }
-    if( you.has_trait( trait_TRANSPIRATION ) || you.has_trait( trait_SLIMESPAWNER ) ) {
-        chance += 4;
-    }
-    if( you.has_active_mutation( trait_SHELL2 ) ) {
-        chance += 20;
-    }
+    chance += you.bonus_from_enchantments( chance, ench_val_CROWD_CRUSH_RESIST );
     return std::clamp( chance, 0, 95 );
 }
 
@@ -355,11 +352,10 @@ auto suffer_while_grabbed( Character &you ) -> void
 void Character::suffer_from_addictions()
 {
     time_duration timer = -6_hours;
-    if( has_trait( trait_ADDICTIVE ) ) {
-        timer = -10_hours;
-    } else if( has_trait( trait_NONADDICTIVE ) ) {
-        timer = -3_hours;
-    }
+
+    timer += bonus_from_enchantments( timer / 1_seconds,
+                                      ench_val_ADDICTION_TIME_PER_INTENSITY ) * 1_seconds;
+
     for( addiction &cur_addiction : addictions ) {
         if( cur_addiction.sated <= 0_turns &&
             cur_addiction.intensity >= MIN_ADDICTION_LEVEL ) {
@@ -2027,13 +2023,9 @@ void Character::add_addiction( add_type type, int strength )
         return;
     }
     time_duration timer = 2_hours;
-    if( has_trait( trait_ADDICTIVE ) ) {
-        strength *= 2;
-        timer = 1_hours;
-    } else if( has_trait( trait_NONADDICTIVE ) ) {
-        strength /= 2;
-        timer = 6_hours;
-    }
+    strength += bonus_from_enchantments( strength, ench_val_ADDICTION_STRENGTH );
+    timer += bonus_from_enchantments( timer / 1_seconds,
+                                      ench_val_ADDICTION_TIME_PER_ADDITION ) * 1_seconds;
     //Update existing addiction
     for( auto &i : addictions ) {
         if( i.type != type ) {
