@@ -1207,7 +1207,7 @@
     "fake_item": "fake_goggles",
     "starting_bionic": true,
     "points": 1,
-    "bio_enchantments": [ { "flags": [ "ANTIGLARE" ] } ]
+    "bio_enchantments": [ { "flags": [ "ANTIGLARE" ], "values": [ { "value": "FLASH_PROTECTION", "max": 6 } ] } ]
   },
   {
     "id": "bio_targeting",

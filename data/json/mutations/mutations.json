@@ -4279,7 +4279,8 @@
     "prereqs2": [ "AMORPHOUS" ],
     "threshreq": [ "THRESH_SLIME" ],
     "category": [ "SLIME" ],
-    "passive_mods": { "per_mod": -8 }
+    "passive_mods": { "per_mod": -8 },
+    "mut_enchantments": [ { "values": [ { "value": "FLASH_PROTECTION", "max": 3 } ] } ]
   },
   {
     "type": "mutation",
@@ -4297,7 +4298,7 @@
     "threshreq": [ "THRESH_SLIME" ],
     "category": [ "SLIME" ],
     "passive_mods": { "per_mod": 5 },
-    "mut_enchantments": [ { "flags": [ "UNDERWATER_SIGHT" ] } ]
+    "mut_enchantments": [ { "flags": [ "UNDERWATER_SIGHT" ], "values": [ { "value": "FLASH_PROTECTION", "max": 8 } ] } ]
   },
   {
     "type": "mutation",
