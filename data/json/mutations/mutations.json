@@ -3167,7 +3167,8 @@
     "starts_active": true,
     "restricts_gear": [ "head" ],
     "allowed_items": [ "ALLOWS_HORNS" ],
-    "allow_soft_gear": true
+    "allow_soft_gear": true,
+    "mut_enchantments": [ { "values": [ { "value": "GROUNDED_CREATURE_SIGHT", "max": 5 } ] } ]
   },
   {
     "type": "mutation",
