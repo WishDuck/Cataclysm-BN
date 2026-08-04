@@ -511,6 +511,16 @@ Clairvoyance value for the player. `CLAIRVOYANCE_SUPER` is 40.0 while `CLAIRVOYA
 And `CLAIRVOYANCE` is 3
 Only `max` works, and it will take the highest of enchantment and other clairvoyance effects
 
+##### FLASH_PROTECTION
+
+Flash protection value for the player. Item and effect flags give 3.
+Only `max` works, and it will take the highest of enchantment, item and effect effects.
+
+##### GROUNDED_CREATURE_SIGHT
+
+Sight that passes through walls of grounded creatures in the form of infrared.
+Number of tiles it works on. Only `max` works.
+
 ##### ARMOR_X
 
 Incoming damage modifier. Applied after Active Defense System bionic but before the damage is
@@ -741,6 +751,14 @@ Gain infrared vision
 ##### ELECTROSENSE
 
 Can see robots and electrical creatures through walls
+
+##### SONAR
+
+Can see burrowing creatures with the INFRARED_VISION sprite
+
+##### ANTIGLARE
+
+Prevents glare effects from sunlight and such
 
 ### Consumption
 
