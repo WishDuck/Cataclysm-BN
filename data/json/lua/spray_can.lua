@@ -18,7 +18,12 @@ local choose_color = function(params)
 
   local choice = menu:query()
 
-  if choice < 0 then return end
+  if choice < 0 then
+    local col = rgb_colors.get_random("")
+    item:set_var_col( "PAINT_COLOR", col )
+    item:set_var_col( "tint_color", col)
+    return
+  end
 
   iter = 0
   for col, name in pairs(allcolors) do
