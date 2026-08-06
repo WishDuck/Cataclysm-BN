@@ -463,6 +463,18 @@
     "components": [ [ [ "weldtank", 1 ] ], [ [ "oxyacetylene", 240 ] ] ]
   },
   {
+    "result": "spray_can",
+    "type": "recipe",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_OTHER",
+    "skill_used": "fabrication",
+    "difficulty": 2,
+    "time": "90 m",
+    "book_learn": [ [ "welding_book", 2 ] ],
+    "components": [ [ [ "can_drink_unsealed", 1 ] ], [ [ "spray_paint", 10 ] ] ],
+    "flags": [ "CRAFT_WITH_FULL_MAG" ]
+  },
+  {
     "type": "recipe",
     "result": "ac_unit_item",
     "category": "CC_OTHER",

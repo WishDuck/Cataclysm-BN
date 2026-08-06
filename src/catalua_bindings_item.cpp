@@ -8,6 +8,7 @@
 
 #include "artifact.h"
 #include "avatar.h"
+#include "hsv_color.h"
 #include "itype.h"
 #include "mtype.h"
 #include "material.h"
@@ -562,6 +563,10 @@ void reg_item( sol::state &lua )
         luna::set_fx( ut, "set_var_tri", []( UT_CLASS & c, const std::string & name, const tripoint & val )
         {
             c.set_var( name, val );
+        } );
+        luna::set_fx( ut, "set_var_col", []( UT_CLASS & c, const std::string & name, const RGBColor & val )
+        {
+            c.set_var<RGBColor>( name, val );
         } );
         SET_FX( attack_cost );
         SET_FX( stamina_cost );
