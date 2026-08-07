@@ -402,6 +402,7 @@ void reg_item( sol::state &lua )
         SET_FX( is_tainted );
         SET_FX( is_soft );
         SET_FX( is_reloadable );
+        luna::set_fx( ut, "has_use", []( item & it, std::string use ) { return it.get_use( use ); } );
         DOC( "DEPRECATED: Items are no longer filthy" );
         luna::set_fx( ut, "is_filthy", []() { return false; } );
         SET_FX( is_active );
