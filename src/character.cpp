@@ -252,7 +252,6 @@ static const trait_id trait_ANTLERS( "ANTLERS" );
 static const trait_id trait_ASTHMA( "ASTHMA" );
 static const trait_id trait_BADBACK( "BADBACK" );
 static const trait_id trait_CF_HAIR( "CF_HAIR" );
-static const trait_id trait_GLASSJAW( "GLASSJAW" );
 static const trait_id trait_DEBUG_NODMG( "DEBUG_NODMG" );
 static const trait_id trait_DEBUG_STAMINA( "DEBUG_STAMINA" );
 static const trait_id trait_DEFT( "DEFT" );
@@ -389,6 +388,9 @@ static const enchantment_flag_id ench_flag_ALARMCLOCK( "ALARMCLOCK" );
 static const enchantment_flag_id ench_flag_WATCH( "WATCH" );
 static const enchantment_flag_id ench_flag_SLEEP_SIGHT( "SLEEP_SIGHT" );
 static const enchantment_flag_id ench_flag_INFRARED_VISION( "INFRARED_VISION" );
+static const enchantment_flag_id ench_flag_SONAR( "SONAR" );
+
+static const enchantment_value_id ench_val_GROUNDED_CREATURE_SIGHT( "GROUNDED_CREATURE_SIGHT" );
 
 namespace io
 {
@@ -1980,11 +1982,10 @@ void Character::calc_all_parts_hp( float hp_mod, float hp_adjustment, int str_ma
         float hp_ratio = static_cast<float>( bp.get_hp_cur() ) / bp.get_hp_max();
         int new_max = ( part.first->base_hp + str_max * 3 + hp_adjustment ) * hp_mod;
 
-        if( has_trait( trait_GLASSJAW ) && part.first == bodypart_str_id( "head" ) ) {
-            new_max *= 0.8;
+        const auto ench = enchantment_value_id( "HEALTH_POINTS_" + to_upper_case( part.first.str() ) );
+        if( ench.is_valid() ) {
+            new_max += bonus_from_enchantments( new_max, ench, true );
         }
-
-        new_max += bonus_from_enchantments( new_max, enchantment_value_id( "HEALTH_POINTS" ) );
         new_max = std::max( new_max, 1 );
         int new_cur = std::ceil( static_cast<float>( new_max ) * hp_ratio );
 
@@ -3374,7 +3375,7 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
             return ret_val<bool>::make_failure(
                        _( "You can only wear power armor components with power armor!" ) );
         }
-        if( it.has_flag( flag_POWERARMOR_EXTERNAL ) ) {
+        if( it.has_flag( flag_POWERARMOR_EXTERNAL ) && !it.has_flag( flag_POWERARMOR_PLATING ) ) {
             for( auto &elem : worn ) {
                 if( elem->has_flag( flag_POWERARMOR_EXO ) &&
                     elem->get_covered_body_parts().make_intersection( it.get_covered_body_parts() ).any() ) {
@@ -3382,6 +3383,14 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
                 } else if( elem->has_flag( flag_POWERARMOR_EXTERNAL ) &&
                            elem->get_covered_body_parts().make_intersection( it.get_covered_body_parts() ).any() ) {
                     return ret_val<bool>::make_failure( _( "Can't wear externals over one another!" ) );
+                }
+            }
+        }
+        if( it.has_flag( flag_POWERARMOR_PLATING ) ) {
+            for( auto &elem : worn ) {
+                if( elem->has_flag( flag_POWERARMOR_PLATING ) &&
+                    elem->get_covered_body_parts().make_intersection( it.get_covered_body_parts() ).any() ) {
+                    return ret_val<bool>::make_failure( _( "Can't wear overlapping sets of plating!" ) );
                 }
             }
         }
@@ -3402,7 +3411,8 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
                 // To check if there's an external/exoskeleton for the mod to attach to.
                 for( std::pair< bodypart_str_id, bool > &attachment : attachments ) {
                     if( elem->get_covered_body_parts().test( attachment.first ) &&
-                        ( elem->has_flag( flag_POWERARMOR_EXO ) || elem->has_flag( flag_POWERARMOR_EXTERNAL ) ) ) {
+                        ( elem->has_flag( flag_POWERARMOR_EXO ) || elem->has_flag( flag_POWERARMOR_EXTERNAL ) ) &&
+                        !elem->has_flag( flag_POWERARMOR_PLATING ) ) {
                         if( elem->is_sided() && elem->get_side() == attachment.first->part_side ) {
                             attachment.second = true;
                         } else {
@@ -3487,7 +3497,7 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
           ( it.covers( bodypart_id( "foot_r" ) ) && is_wearing_shoes( side::RIGHT ) ) ) &&
         ( !it.has_flag( flag_OVERSIZE ) || !it.has_flag( flag_OUTER ) ) && !it.has_flag( flag_SKINTIGHT ) &&
         !it.has_flag( flag_BELTED ) && !it.has_flag( flag_PERSONAL ) && !it.has_flag( flag_AURA ) &&
-        !it.has_flag( flag_SEMITANGIBLE ) ) {
+        !it.has_flag( flag_SEMITANGIBLE ) && !it.has_flag( flag_POWERARMOR_PLATING ) ) {
         // Checks to see if the player is wearing shoes
         return ret_val<bool>::make_failure( ( is_player() ? _( "You're already wearing footwear!" )
                                               : string_format( _( "%s is already wearing footwear!" ), name ) ) );
@@ -4506,16 +4516,14 @@ char_encumbrance_data Character::calc_encumbrance( const item &new_item ) const
     mut_cbm_encumb( enc );
 
     // Get swimming skill level
-    if( get_option<bool>( "althletics_encumbrance_buff" ) ) {
-        int swim_skill = get_skill_level( skill_swimming );
+    int swim_skill = get_skill_level( skill_swimming );
+    bool althletics_buff = get_option<bool>( "althletics_encumbrance_buff" );
+    for( auto &iter : enc.elems ) {
+        encumbrance_data &edata = iter.second;
 
-        // Reduce encumbrance for each body part based on swimming skill
-        for( auto &iter : enc.elems ) {
-            encumbrance_data &edata = iter.second;
-
-            // Reduce encumbrance by swim_skill, clamped at 0
-            edata.encumbrance = std::max( 0, edata.encumbrance - swim_skill );
-        }
+        // Reduce encumbrance by swim_skill, clamped at 0
+        // Enchantments can bring encumbrance below 0, so account for that here too
+        edata.encumbrance = std::max( 0, edata.encumbrance - ( althletics_buff ? swim_skill : 0 ) );
     }
 
     return enc;
@@ -4900,17 +4908,18 @@ void Character::mut_cbm_encumb( char_encumbrance_data &vals ) const
         }
     }
 
-    if( has_active_bionic( bio_shock_absorber ) ) {
-        for( auto &val : vals.elems ) {
-            val.second.encumbrance += 3; // Slight encumbrance to all parts except eyes
-        }
-        vals.elems[body_part_eyes].encumbrance -= 3;
-    }
-
     // Lower penalty for bps covered only by XL armor
     const auto oversize = exclusive_flag_coverage( flag_OVERSIZE );
     for( const trait_id &mut : get_mutations() ) {
         apply_mut_encumbrance( vals, mut, oversize );
+    }
+
+    for( const auto &id : get_all_body_parts() ) {
+        const auto ench_id = enchantment_value_id( "ENCUMBRANCE_" + to_upper_case( id.id().str() ) );
+        if( ench_id.is_valid() ) {
+            vals.elems[id.id()].encumbrance += bonus_from_enchantments( vals.elems[id.id()].encumbrance,
+                                               ench_id );
+        }
     }
 }
 
@@ -5218,7 +5227,7 @@ std::pair<std::string, nc_color> Character::get_thirst_description() const
         hydration_string = _( "Dehydrated" );
     } else if( thirst > thirst_levels::very_thirsty ) {
         hydration_color = c_yellow;
-        hydration_string = _( "Very thirsty" );
+        hydration_string = _( "Very Thirsty" );
     } else if( thirst > thirst_levels::thirsty ) {
         hydration_color = c_yellow;
         hydration_string = _( "Thirsty" );
@@ -7385,7 +7394,7 @@ bool Character::sees_with_specials( const Creature &critter ) const
         return true;
     }
 
-    if( critter.digging() && has_active_bionic( bio_ground_sonar ) ) {
+    if( critter.digging() && has_enchantment_flag( ench_flag_SONAR ) ) {
         // Bypass the check below, the bionic sonar also bypasses the sees(point) check because
         // walls don't block sonar which is transmitted in the ground, not the air.
         // TODO: this might need checks whether the player is in the air, or otherwise not connected
@@ -7399,8 +7408,15 @@ bool Character::sees_with_specials( const Creature &critter ) const
     }
 
     const int dist = rl_dist( bub_pos(), critter.bub_pos() );
-    return ( dist <= 5 && ( has_active_mutation( trait_ANTENNAE ) ||
-                            ( has_active_bionic( bio_ground_sonar ) && !critter.has_flag( MF_FLIES ) ) ) );
+
+    // Distance cannot be 0, so this is always safe
+    if( dist <= bonus_from_enchantments( 0, ench_val_GROUNDED_CREATURE_SIGHT ) &&
+        !critter.has_flag( MF_FLIES ) ) {
+        return true;
+    }
+
+    // TODO: Add more range based enchantments here ( I.E. Limited Electrosense ranges )
+    return false;
 }
 
 detached_ptr<item> Character::pour_into( item &container, detached_ptr<item> &&liquid, int limit )
@@ -8977,7 +8993,13 @@ void Character::recalculate_enchantment_cache()
     enchantment_sources.clear();
 
     visit_items( [&]( const item * it ) {
-        for( const enchantment &ench : it->get_enchantments() ) {
+        for( const enchantment &ench : it->get_enchantments( true ) ) {
+            if( ench.is_active( *this, *it ) ) {
+                enchantment_cache->force_add( ench );
+                enchantment_sources.emplace_back( &ench, it );
+            }
+        }
+        for( const enchantment &ench : it->get_enchantments( false ) ) {
             if( ench.is_active( *this, *it ) ) {
                 enchantment_cache->force_add( ench );
                 enchantment_sources.emplace_back( &ench, it );
@@ -9025,6 +9047,14 @@ void Character::recalculate_enchantment_cache()
         }
     }
 
+    for( const auto &[eff_type, eff_by_part] : get_effects() ) {
+        const effect &eff = eff_by_part.begin()->second;
+        for( const enchantment &ench : eff.get_enchantments() ) {
+            if( ench.is_active( *this, true ) ) {
+                enchantment_cache->force_add( ench );
+            }
+        }
+    }
     enchantment_cache->activate_effects( *this );
     enchantment_cache->deactivate_removed_effects( *this, old_ench_sources );
 
@@ -9032,6 +9062,9 @@ void Character::recalculate_enchantment_cache()
 
     // Enchantments can give HP now, so recalc it
     recalc_hp();
+
+    // Enchantments can also give encumbrance
+    reset_encumbrance();
 }
 
 void Character::rebuild_mutation_cache()
@@ -11878,9 +11911,9 @@ bool Character::sees( const Creature &critter ) const
 {
     // This handles only the player/npc specific stuff (monsters don't have traits or bionics).
     const int dist = rl_dist( bub_pos(), critter.bub_pos() );
-    if( bub_pos().z() == critter.bub_pos().z() && dist <= 5 &&
-        ( has_active_mutation( trait_ANTENNAE ) ||
-          ( has_active_bionic( bio_ground_sonar ) && !critter.has_flag( MF_FLIES ) ) ) ) {
+    if( bub_pos().z() == critter.bub_pos().z() &&
+        dist <= bonus_from_enchantments( 0, ench_val_GROUNDED_CREATURE_SIGHT ) &&
+        !critter.has_flag( MF_FLIES ) ) {
         return true;
     }
 

@@ -4156,20 +4156,18 @@ void activity_handlers::chop_tree_finish( player_activity *act, player *p )
     here.collapse_at( pos, false, true, false );
     // sound of falling tree
     sfx::play_variant_sound( "misc", "timber",
-                             sfx::get_heard_volume( pos, 95 ) );
+                             sfx::get_heard_volume( pos, 95 ), false );
     act->set_to_null();
 
     // Quality of tool used and assistants can together both reduce intensity of work.
     if( act->get_tools().empty() ) {
         debugmsg( "woodcutting item location not set" );
-        resume_for_multi_activities( *p );
         return;
     }
 
     safe_reference<item> &loc = act->get_tools_mut()[ 0 ];
     if( !loc ) {
         debugmsg( "woodcutting item location lost" );
-        resume_for_multi_activities( *p );
         return;
     }
 

@@ -278,6 +278,20 @@ Intelligence stat. `base_value` here is the base stat value. The final value can
 ##### HEALTH_POINTS
 
 Hit points stat. `base_value` here is the base health value, The final value cannot go below 1.
+Note: This is the first enchantment with two tiers of parents, left arm inherits arm which inherits overall
+These are the children.
+
+- `HEALTH_POINTS_TORSO`
+- `HEALTH_POINTS_HEAD`
+- `HEALTH_POINTS_ARM`
+  - `HEALTH_POINTS_ARM_L`
+  - `HEALTH_POINTS_ARM_R`
+- `HEALTH_POINTS_HAND`
+  - `HEALTH_POINTS_HAND_L`
+  - `HEALTH_POINTS_HAND_R`
+- `HEALTH_POINTS_LEG`
+  - `HEALTH_POINTS_LEG_L`
+  - `HEALTH_POINTS_LEG_R`
 
 ##### SPEED
 
@@ -484,11 +498,34 @@ There is no limit
 Modifier to food morale. `base_value` is current food morale
 There is no limit.
 
+##### ADDICTION_STRENGTH
+
+Modifier to likelyhood to gain another addiction intensity.
+`base_value` is the strength of the added addiction.
+There is no limit.
+
+##### ADDICTION_TIME_PER_ADDITION
+
+Modifier to how long addiction applications increase addition time. `base_value` is base time added each time additions are applied in seconds.
+There is no limit.
+
+##### ADDICTION_TIME_PER_INTENSITY
+
+Modifier to how long addictions last. `base_value` is time to remove one addiction stack.
+Reducing _increases_ addiction time, adding _reduces_ addiction time
+There is no limit.
+
 ##### BONUS_DODGE
 
 Additional dodges per turn before dodge penalty kicks in. `base_value` here is character's base
 dodges per turn before penalty (usually 1). The final value can go below 0, which results in penalty
 to dodge roll.
+
+##### CROWD_CRUSH_RESIST
+
+Modifier to how likely it is to get crowd crushed `base_value` is 5, it is always 5.
+Increasing it reduces the chance to get crowd crushed
+From 0 ( no chance to resist ) to 95 ( 5% chance to not resist )
 
 ##### BLISTER_COUNT
 
@@ -510,6 +547,16 @@ Only `max` works, and it will take the highest of enchantment and other night vi
 Clairvoyance value for the player. `CLAIRVOYANCE_SUPER` is 40.0 while `CLAIRVOYANCE_PLUS` is 8.0
 And `CLAIRVOYANCE` is 3
 Only `max` works, and it will take the highest of enchantment and other clairvoyance effects
+
+##### FLASH_PROTECTION
+
+Flash protection value for the player. Item and effect flags give 3.
+Only `max` works, and it will take the highest of enchantment, item and effect effects.
+
+##### GROUNDED_CREATURE_SIGHT
+
+Sight that passes through walls of grounded creatures in the form of infrared.
+Number of tiles it works on. Only `max` works.
 
 ##### ARMOR_X
 
@@ -601,6 +648,29 @@ In addition there are the following children of this enchantment
 - `SKILL_EXP_STABBING`
 - `SKILL_EXP_UNARMED`
 
+##### Encumbrance
+
+Character wide encumbrance modifier, children modify certain bodyparts.
+Note: This is the first enchantment with two tiers of parents, left arm inherits arm which inherits overall
+These are the children.
+
+- `ENCUMBRANCE_TORSO`
+- `ENCUMBRANCE_HEAD`
+- `ENCUMBRANCE_EYES`
+- `ENCUMBRANCE_MOUTH`
+- `ENCUMBRANCE_ARM`
+  - `ENCUMBRANCE_ARM_L`
+  - `ENCUMBRANCE_ARM_R`
+- `ENCUMBRANCE_HAND`
+  - `ENCUMBRANCE_HAND_L`
+  - `ENCUMBRANCE_HAND_R`
+- `ENCUMBRANCE_LEG`
+  - `ENCUMBRANCE_LEG_L`
+  - `ENCUMBRANCE_LEG_R`
+- `ENCUMBRANCE_FOOT`
+  - `ENCUMBRANCE_FOOT_L`
+  - `ENCUMBRANCE_FOOT_R`
+
 #### Item values
 
 ##### ITEM_ATTACK_COST
@@ -627,6 +697,26 @@ There is the global damage modifier `ITEM_DAMAGE` in addition to the supported d
 - `ITEM_DAMAGE_LIGHT`
 - `ITEM_DAMAGE_PSI`
 - `ITEM_DAMAGE_TRUE`
+
+##### ITEM_ARMOR_PENETRATION_X
+
+Armor penetration of this item. `base_value` here is base armor penetration of corresponding type.
+Note that the final value cannot go below 0.
+There is the global modifier `ITEM_ARMOR_PENTRATION` in addition to the supported damage types:
+
+- `ITEM_ARMOR_PENETRATION_BASH`
+- `ITEM_ARMOR_PENETRATION_CUT`
+- `ITEM_ARMOR_PENETRATION_STAB`
+- `ITEM_ARMOR_PENETRATION_BULLET`
+- `ITEM_ARMOR_PENETRATION_ACID`
+- `ITEM_ARMOR_PENETRATION_BIOLOGICAL`
+- `ITEM_ARMOR_PENETRATION_COLD`
+- `ITEM_ARMOR_PENETRATION_DARK`
+- `ITEM_ARMOR_PENETRATION_ELECTRIC`
+- `ITEM_ARMOR_PENETRATION_FIRE`
+- `ITEM_ARMOR_PENETRATION_LIGHT`
+- `ITEM_ARMOR_PENETRATION_PSI`
+- `ITEM_ARMOR_PENETRATION_TRUE`
 
 ##### ITEM_ARMOR_X
 
@@ -655,7 +745,9 @@ value, in addition to the global `ITEM_ARMOR`:
 {
   "id": "NEARSIGHTED",               // Id of the enchantment flag
   "type": "enchantment_flag",        // Needed type
+  "parents": [ "BLIND" ],            // Array of other enchantment_flags it also gives
   "conflicts": [ "FIX_NEARSIGHTED" ] // Array of other enchantment_flags of which it cancels
+  "info": "<bad>Causes nearsightedness</bad>" // Info string showed in enchantment info
 },
 ```
 
@@ -696,6 +788,14 @@ Gain infrared vision
 ##### ELECTROSENSE
 
 Can see robots and electrical creatures through walls
+
+##### SONAR
+
+Can see burrowing creatures with the INFRARED_VISION sprite
+
+##### ANTIGLARE
+
+Prevents glare effects from sunlight and such
 
 ### Consumption
 

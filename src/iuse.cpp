@@ -238,6 +238,7 @@ static const itype_id itype_arrow_flamming( "arrow_flamming" );
 static const itype_id itype_battery( "battery" );
 static const itype_id itype_barometer( "barometer" );
 static const itype_id itype_c4armed( "c4armed" );
+static const itype_id itype_c4_breaching_armed( "c4_breaching_armed" );
 static const itype_id itype_canister_empty( "canister_empty" );
 static const itype_id itype_cig( "cig" );
 static const itype_id itype_cigar( "cigar" );
@@ -1563,7 +1564,7 @@ int iuse::petfood( player *p, item *it, bool, const tripoint_bub_ms & )
             p->add_msg_if_player( _( petfood.feed ), mon.get_name() );
         }
 
-        mon.make_pet();
+        mon.make_pet( *p->as_character() );
 
         // Apply well_fed effect to improve monster productivity
         // This effect increases reproduction rate, milk production, growth speed, and HP recovery
@@ -2288,7 +2289,7 @@ int iuse::note_bionics( player *p, item *it, bool t, const tripoint_bub_ms &pos 
         if( !cbms.empty() ) {
             corpse->set_flag( flag_CBM_SCANNED );
             auto bionics_string = enumerate_as_string( cbms.begin(), cbms.end(),
-            []( const auto entry ) { return entry->display_name(); }, enumeration_conjunction::none );
+            []( const auto entry ) { return entry->type_name(); }, enumeration_conjunction::none );
             //~ %1 is corpse name, %2 is direction, %3 is bionic name
             p->add_msg_if_player( m_good, _( "A %1$s located %2$s contains %3$s." ),
                                   corpse->display_name().c_str(),
@@ -3510,6 +3511,21 @@ int iuse::c4( player *p, item *it, bool, const tripoint_bub_ms & )
     }
     p->add_msg_if_player( _( "You set the timer to %d." ), time );
     it->convert( itype_c4armed );
+    it->charges = time;
+    it->activate();
+    return it->type->charges_to_use();
+}
+
+int iuse::c4_breaching( player *p, item *it, bool, const tripoint_bub_ms & )
+{
+    int time;
+    bool got_value = query_int( time, _( "Set the timer to (0 to cancel)?" ) );
+    if( !got_value || time <= 0 ) {
+        p->add_msg_if_player( _( "Never mind." ) );
+        return 0;
+    }
+    p->add_msg_if_player( _( "You set the timer to %d." ), time );
+    it->convert( itype_c4_breaching_armed );
     it->charges = time;
     it->activate();
     return it->type->charges_to_use();
