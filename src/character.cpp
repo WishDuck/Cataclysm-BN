@@ -6656,8 +6656,8 @@ float Character::get_dodge_base() const
     /** @EFFECT_DEX increases dodge base */
     /** @EFFECT_DODGE increases dodge_base */
     return get_dex() / 4.0f + ( has_active_bionic( bionic_id( bio_cqb ) ) ? std::max( get_skill_level(
-                skill_dodge ), BIO_CQB_LEVEL ) : get_skill_level(
-               skill_dodge ) );
+                                    skill_dodge ), BIO_CQB_LEVEL ) : get_skill_level(
+                                    skill_dodge ) );
 }
 float Character::get_hit_base() const
 {
