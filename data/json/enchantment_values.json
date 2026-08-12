@@ -249,7 +249,7 @@
       ]
     ],
     "desc": "Keeps you comfortable against %1s temperatures ( %2s )",
-    "desc_insert": [ "all bodyparts", "" ]
+    "desc_insert": [ "All", "All Bodyparts" ]
   },
   {
     "id": "LIE",
