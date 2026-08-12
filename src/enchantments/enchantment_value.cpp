@@ -39,7 +39,7 @@ std::vector<enchantment_value_id> enchantment_value::define_child_enchantments(
         if (obj.has_array("suffixes")) {
             for (JsonObject jo : obj.get_array("suffixes")) {
                 auto temp = std::vector<enchantment_value_id>{suffixed.id};
-                res.append_range(suffixed.define_child_enchantments(main, temp, jo, false));
+                res.insert_range(res.end(), suffixed.define_child_enchantments(main, temp, jo, false));
             }
         } else {
             // End of the chain, this is the lowest node
@@ -65,7 +65,7 @@ void enchantment_value::load(const JsonObject& jo, const std::string& src) {
             last_enchantment_id_set.push_back(id);
             std::vector<enchantment_value_id> new_defined_id_set;
             for (const JsonObject& suffix : suffix_set) {
-                new_defined_id_set.append_range(
+                new_defined_id_set.insert_range( new_defined_id_set.end(),
                     define_child_enchantments(*this, last_enchantment_id_set, suffix, first));
             }
             last_enchantment_id_set = new_defined_id_set;
