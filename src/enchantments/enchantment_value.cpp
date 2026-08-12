@@ -66,8 +66,10 @@ void enchantment_value::load(const JsonObject& jo, const std::string& src) {
             last_enchantment_id_set.push_back(id);
             std::vector<enchantment_value_id> new_defined_id_set;
             for (const JsonObject& suffix : suffix_set) {
-                auto children = define_child_enchantments(*this, last_enchantment_id_set, suffix, first);
-                new_defined_id_set.insert( new_defined_id_set.end(), children.begin(), children.end());
+                auto children =
+                    define_child_enchantments(*this, last_enchantment_id_set, suffix, first);
+                new_defined_id_set
+                    .insert(new_defined_id_set.end(), children.begin(), children.end());
             }
             last_enchantment_id_set = new_defined_id_set;
             first = false;
