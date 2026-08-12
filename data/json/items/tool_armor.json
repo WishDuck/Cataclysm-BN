@@ -567,9 +567,7 @@
     "flags": [ "VARSIZE", "SKINTIGHT", "TRADER_AVOID", "ONLY_ONE", "THERMOMETER" ],
     "weight": "1652 g",
     "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN", "ACTIVE" ], "values": [
-        { "value": "CLIMATE_CONTROL", "add": 1250 }
-      ] } ]
+      "passive_effects": [ { "conditions": [ "WORN", "ACTIVE" ], "values": [ { "value": "CLIMATE_CONTROL", "add": 1250 } ] } ]
     },
     "use_action": {
       "type": "transform",
@@ -601,10 +599,12 @@
     "flags": [ "VARSIZE", "SKINTIGHT", "TRADER_AVOID", "ONLY_ONE", "THERMOMETER" ],
     "weight": "204 g",
     "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN", "ACTIVE" ], "values": [
-        { "value": "CLIMATE_CONTROL_HEAD", "add": 1250 },
-        { "value": "CLIMATE_CONTROL_MOUTH", "add": 1250 },
-      ] } ]
+      "passive_effects": [
+        {
+          "conditions": [ "WORN", "ACTIVE" ],
+          "values": [ { "value": "CLIMATE_CONTROL_HEAD", "add": 1250 }, { "value": "CLIMATE_CONTROL_MOUTH", "add": 1250 } ]
+        }
+      ]
     },
     "use_action": {
       "type": "transform",
@@ -635,11 +635,16 @@
     "flags": [ "VARSIZE", "SKINTIGHT", "TRADER_AVOID", "ONLY_ONE", "THERMOMETER" ],
     "weight": "1652 g",
     "relic_data": {
-      "passive_effects": [ { "conditions": [ "WORN", "ACTIVE" ], "values": [
-        { "value": "CLIMATE_CONTROL_TORSO", "add": 1250 },
-        { "value": "CLIMATE_CONTROL_ARM", "add": 1250 },
-        { "value": "CLIMATE_CONTROL_LEG", "add": 1250 }
-      ] } ]
+      "passive_effects": [
+        {
+          "conditions": [ "WORN", "ACTIVE" ],
+          "values": [
+            { "value": "CLIMATE_CONTROL_TORSO", "add": 1250 },
+            { "value": "CLIMATE_CONTROL_ARM", "add": 1250 },
+            { "value": "CLIMATE_CONTROL_LEG", "add": 1250 }
+          ]
+        }
+      ]
     },
     "use_action": {
       "type": "transform",
