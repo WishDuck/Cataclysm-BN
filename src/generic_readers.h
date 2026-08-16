@@ -8,6 +8,7 @@
 #include "translations.h"
 #include "units.h"
 
+class time_duration;
 /*
  * Template vodoo:
  * The compiler will construct the appropriate one of these based on if the
