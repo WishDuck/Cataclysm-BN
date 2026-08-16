@@ -2,13 +2,13 @@
 
 #include <map>
 #include <vector>
+#include "calendar.h"
 #include "debug.h"
 #include "json.h"
 #include "reader_detail.h"
 #include "translations.h"
 #include "units.h"
 
-class time_duration;
 /*
  * Template vodoo:
  * The compiler will construct the appropriate one of these based on if the
