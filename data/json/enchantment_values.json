@@ -313,6 +313,11 @@
     "desc": "Affects Focus"
   },
   {
+    "id": "OVERKILL",
+    "type": "enchantment_value",
+    "desc": "Affects how damaged killed corpses are"
+  },
+  {
     "id": "FOOD_FUN",
     "type": "enchantment_value",
     "desc": "Affects Food Taste"
@@ -398,6 +403,29 @@
     "id": "BONUS_DODGE",
     "type": "enchantment_value",
     "desc": "Affects Dodging Ability"
+  },
+  {
+    "id": "FORCEFIELD",
+    "type": "enchantment_value",
+    "desc": "Provides Mitigation of %s Damage",
+    "desc_insert": [ "all" ],
+    "suffixes": [
+      [
+        { "suffix": "BASH", "desc_insert": [ "Bash" ] },
+        { "suffix": "CUT", "desc_insert": [ "Cut" ] },
+        { "suffix": "DARK", "desc_insert": [ "Dark" ] },
+        { "suffix": "LIGHT", "desc_insert": [ "Light" ] },
+        { "suffix": "PSI", "desc_insert": [ "Psi" ] },
+        { "suffix": "STAB", "desc_insert": [ "Stab" ] },
+        { "suffix": "BULLET", "desc_insert": [ "Ballistic" ] },
+        { "suffix": "HEAT", "desc_insert": [ "Heat" ] },
+        { "suffix": "COLD", "desc_insert": [ "Cold" ] },
+        { "suffix": "ELECTRIC", "desc_insert": [ "Electric" ] },
+        { "suffix": "ACID", "desc_insert": [ "Acidic" ] },
+        { "suffix": "BIOLOGICAL", "desc_insert": [ "Biological" ] },
+        { "suffix": "TRUE", "desc_insert": [ "True" ] }
+      ]
+    ]
   },
   {
     "id": "CROWD_CRUSH_RESIST",

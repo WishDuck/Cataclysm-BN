@@ -9185,7 +9185,18 @@ void Character::absorb_hit( const bodypart_id &bp, damage_instance &dam )
     std::vector<detached_ptr<item>> worn_remains;
     bool armor_destroyed = false;
 
+    bool forcefield_message = false;
     for( damage_unit &elem : dam.damage_units ) {
+        float prot = bonus_from_enchantments( 0.0, enchantment_value_id( "FORCEFIELD_" + elem.get_internal_name() ) ) * 100;
+        if( prot != 0 && prot > rng_float( 0.0, 100.0 ) ) {
+            elem.amount = 0;
+            if( !forcefield_message ) {
+                forcefield_message = true;
+                add_msg_if_player( _( "The incoming attack was deflected" ) );
+            }
+            continue;
+        }
+
         if( elem.amount < 0 ) {
             // Prevents 0 damage hits (like from hallucinations) from ripping armor
             elem.amount = 0;
