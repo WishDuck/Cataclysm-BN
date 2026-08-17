@@ -3480,7 +3480,15 @@
     "prereqs": [ "MASOCHIST_MED" ],
     "threshreq": [ "THRESH_MEDICAL" ],
     "category": [ "MEDICAL" ],
-    "mut_enchantments": [ { "values": [ { "value": "PAIN_PENALTY_STR", "multiply": -1 }, { "value": "PAIN_PENALTY_DEX", "multiply": -1 }, { "value": "PAIN_PENALTY_SPD", "multiply": -0.5 } ] } ]
+    "mut_enchantments": [
+      {
+        "values": [
+          { "value": "PAIN_PENALTY_STR", "multiply": -1 },
+          { "value": "PAIN_PENALTY_DEX", "multiply": -1 },
+          { "value": "PAIN_PENALTY_SPD", "multiply": -0.5 }
+        ]
+      }
+    ]
   },
   {
     "type": "mutation",

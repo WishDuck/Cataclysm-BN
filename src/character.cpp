@@ -9187,7 +9187,8 @@ void Character::absorb_hit( const bodypart_id &bp, damage_instance &dam )
 
     bool forcefield_message = false;
     for( damage_unit &elem : dam.damage_units ) {
-        float prot = bonus_from_enchantments( 0.0, enchantment_value_id( "FORCEFIELD_" + elem.get_internal_name() ) ) * 100;
+        float prot = bonus_from_enchantments( 0.0,
+                                              enchantment_value_id( "FORCEFIELD_" + elem.get_internal_name() ) ) * 100;
         if( prot != 0 && prot > rng_float( 0.0, 100.0 ) ) {
             elem.amount = 0;
             if( !forcefield_message ) {

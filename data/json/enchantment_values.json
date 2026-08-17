@@ -298,9 +298,9 @@
         { "suffix": "BODY", "desc_insert": [ "body" ] },
         { "suffix": "INVENTORY", "desc_insert": [ "inventory" ] },
         { "suffix": "BIONICS", "desc_insert": [ "bionics" ] },
-        { "suffix": "WEAPON", "desc_insert": [ "wielded" ] },
+        { "suffix": "WEAPON", "desc_insert": [ "wielded" ] }
       ]
-    ],
+    ]
   },
   {
     "id": "OVERMAP_SIGHT",
@@ -333,12 +333,7 @@
     "type": "enchantment_value",
     "desc": "Affects %s in pain",
     "desc_insert": [ "all shifts" ],
-    "suffixes": [
-      [
-        { "suffix": "GAIN", "desc_insert": [ "increases" ] },
-        { "suffix": "LOSS", "desc_insert": [ "reductions" ] }
-      ]
-    ],
+    "suffixes": [ [ { "suffix": "GAIN", "desc_insert": [ "increases" ] }, { "suffix": "LOSS", "desc_insert": [ "reductions" ] } ] ],
     "increase_good": false
   },
   {
@@ -486,12 +481,7 @@
     "can_max": true,
     "desc": "Grants additional range for %s attacks",
     "desc_insert": [ "all" ],
-    "suffixes": [
-      [
-        { "suffix": "UNARMED", "desc_insert": [ "unarmed" ] },
-        { "suffix": "ARMED", "desc_insert": [ "armed" ] }
-      ]
-    ]
+    "suffixes": [ [ { "suffix": "UNARMED", "desc_insert": [ "unarmed" ] }, { "suffix": "ARMED", "desc_insert": [ "armed" ] } ] ]
   },
   {
     "id": "ARMOR",
