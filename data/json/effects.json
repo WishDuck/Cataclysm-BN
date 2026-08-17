@@ -425,7 +425,8 @@
     "desc": [ "Your footing is unstable.  It's more difficult to fight while standing here." ],
     "apply_message": "You try to keep your balance.",
     "rating": "bad",
-    "permanent": true
+    "permanent": true,
+    "base_enchantments": [ { "values": [ { "value": "MELEE_HIT", "multiply": -0.25 } ] } ],
   },
   {
     "type": "effect_type",

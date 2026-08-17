@@ -6338,7 +6338,7 @@ void game::monmove( const monster_activity_ai_mode mode, activity_monmove_cache 
                     rl_dist( u.bub_pos(), critter.bub_pos() ) <= 5 &&
                     !critter.is_hallucination() ) {
                     do_alarm = true;
-                } 
+                }
             }
         }
         if( do_alarm ) {

@@ -321,6 +321,11 @@
     "desc": "Affects Focus"
   },
   {
+    "id": "MELEE_HIT",
+    "type": "enchantment_value",
+    "desc": "Affects melee hit chance"
+  },
+  {
     "id": "OVERKILL",
     "type": "enchantment_value",
     "desc": "Affects how damaged killed corpses are"

@@ -126,6 +126,8 @@ static const auto skill_unarmed = skill_id( "unarmed" );
 static const auto skill_bashing = skill_id( "bashing" );
 static const auto skill_melee = skill_id( "melee" );
 
+static const enchantment_value_id ench_val_MELEE_HIT( "MELEE_HIT" );
+
 static auto hardcoded_mutation_attack( const Character &u, const trait_id &id ) -> damage_instance;
 
 namespace
@@ -1369,12 +1371,9 @@ float Character::get_melee_hit( const item &weapon, const attack_statblock &atta
         hit -= 2.0f;
     }
 
-    //Unstable ground chance of failure
-    if( has_effect( effect_bouldering ) ) {
-        hit *= 0.75f;
-    }
-
     hit *= std::max( 0.25f, 1.0f - encumb( body_part_torso ) / 100.0f );
+
+    hit += bonus_from_enchantments( hit, ench_val_MELEE_HIT );
 
     return hit;
 }
