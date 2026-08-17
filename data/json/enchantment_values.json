@@ -177,7 +177,7 @@
     "desc": "Alerts on creatures moving nearby",
     "can_add": false,
     "can_mult": false,
-    "can_max": true,
+    "can_max": true
   },
   {
     "id": "BODYTEMP_MIN",

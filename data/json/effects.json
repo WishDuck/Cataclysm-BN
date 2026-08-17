@@ -426,7 +426,7 @@
     "apply_message": "You try to keep your balance.",
     "rating": "bad",
     "permanent": true,
-    "base_enchantments": [ { "values": [ { "value": "MELEE_HIT", "multiply": -0.25 } ] } ],
+    "base_enchantments": [ { "values": [ { "value": "MELEE_HIT", "multiply": -0.25 } ] } ]
   },
   {
     "type": "effect_type",
