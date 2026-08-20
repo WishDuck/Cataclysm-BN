@@ -730,9 +730,10 @@ bool try_uncanny_dodge( Character &who )
             return false;
         }
         who.mod_power_level( -trigger_cost );
-    } else if( !who.has_enchantment_flag( ench_flag_UNCANNY_DODGE ) ) {
+    } else if( who.has_enchantment_flag( ench_flag_UNCANNY_DODGE ) && who.get_stamina() > 300 ) {
         // NOTE: Potential improvement, allow lua hook to burn resources
-        // Base stamina drain or the sort was denied under the fact that many things could grant it
+        who.mod_stamina( -300 );
+    } else {
         return false;
     }
 

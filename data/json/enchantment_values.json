@@ -706,6 +706,52 @@
     "desc_insert": [ "All" ]
   },
   {
+    "id": "MELEE_DAMAGE",
+    "type": "enchantment_value",
+    "suffixes": [
+      [
+        { "suffix": "BASH", "desc_insert": [ "Bash" ] },
+        { "suffix": "CUT", "desc_insert": [ "Cut" ] },
+        { "suffix": "DARK", "desc_insert": [ "Dark" ] },
+        { "suffix": "LIGHT", "desc_insert": [ "Light" ] },
+        { "suffix": "PSI", "desc_insert": [ "Psi" ] },
+        { "suffix": "STAB", "desc_insert": [ "Stab" ] },
+        { "suffix": "BULLET", "desc_insert": [ "Ballistic" ] },
+        { "suffix": "HEAT", "desc_insert": [ "Heat" ] },
+        { "suffix": "COLD", "desc_insert": [ "Cold" ] },
+        { "suffix": "ELECTRIC", "desc_insert": [ "Electric" ] },
+        { "suffix": "ACID", "desc_insert": [ "Acidic" ] },
+        { "suffix": "BIOLOGICAL", "desc_insert": [ "Biological" ] },
+        { "suffix": "TRUE", "desc_insert": [ "True" ] }
+      ]
+    ],
+    "desc": "Affects Outgoing Melee %s Damage",
+    "desc_insert": [ "" ]
+  },
+  {
+    "id": "MELEE_ARMOR_PENETRATION",
+    "type": "enchantment_value",
+    "suffixes": [
+      [
+        { "suffix": "BASH", "desc_insert": [ "Bash" ] },
+        { "suffix": "CUT", "desc_insert": [ "Cut" ] },
+        { "suffix": "DARK", "desc_insert": [ "Dark" ] },
+        { "suffix": "LIGHT", "desc_insert": [ "Light" ] },
+        { "suffix": "PSI", "desc_insert": [ "Psi" ] },
+        { "suffix": "STAB", "desc_insert": [ "Stab" ] },
+        { "suffix": "BULLET", "desc_insert": [ "Ballistic" ] },
+        { "suffix": "HEAT", "desc_insert": [ "Heat" ] },
+        { "suffix": "COLD", "desc_insert": [ "Cold" ] },
+        { "suffix": "ELECTRIC", "desc_insert": [ "Electric" ] },
+        { "suffix": "ACID", "desc_insert": [ "Acidic" ] },
+        { "suffix": "BIOLOGICAL", "desc_insert": [ "Biological" ] },
+        { "suffix": "TRUE", "desc_insert": [ "True" ] }
+      ]
+    ],
+    "desc": "Affects Outgoing Melee %s Armor Penetration",
+    "desc_insert": [ "" ]
+  },
+  {
     "id": "ITEM_DAMAGE",
     "type": "enchantment_value",
     "suffixes": [
