@@ -11284,7 +11284,6 @@ detached_ptr<item> item::process_internal( detached_ptr<item> &&self, player *ca
         if( self->type->invoke( carrier != nullptr ? *carrier : you, *self, pos ) > 0 ) {
             return detached_ptr<item>();
         }
-        std::cout << "Activating: " << self->display_name() << "\n";
         return std::move( self );
     }
     // How this works: it checks what kind of processing has to be done
