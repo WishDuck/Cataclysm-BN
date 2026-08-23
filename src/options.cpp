@@ -2393,7 +2393,7 @@ void options_manager::add_options_performance()
     const static bool is_android = false;
 #endif
 #if defined(__ANDROID__)
-    add( "LOAD_FROM_EXTERNAL", page_id, translate_marker( "External Storage Saving" ),
+    add( "LOAD_FROM_EXTERNAL", performance, translate_marker( "External Storage Saving" ),
          translate_marker( "Save in data/catalcysm... instead of Documents/..." ),
          false );
 
