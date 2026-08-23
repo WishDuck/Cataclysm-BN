@@ -2124,7 +2124,7 @@ bool game::do_turn()
     {
         ZoneScopedN( "do_turn_pre_action_updates" );
         perhaps_add_random_npc();
-        refresh_player_visibility_cache_if_needed();
+        refresh_player_visibility_cache_if_needed( m.is_map_cache_valid( u.bub_pos().z() ) );
         process_voluntary_act_interrupt();
         process_activity();
         update_performance_bubble();

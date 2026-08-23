@@ -845,6 +845,7 @@ class map : public submap_load_listener
         auto take_memory_seen_cache_dirty_points( int zlev ) -> std::vector<tripoint_bub_ms>;
         auto mark_memory_seen_cache_dirty_all_clean( int zlev ) -> void;
 
+        bool is_map_cache_valid( const int zlev );
         void invalidate_map_cache( const int zlev );
 
         /// Mark lightmap_dirty for every loaded z-level.

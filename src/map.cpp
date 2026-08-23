@@ -10661,6 +10661,18 @@ bool map::check_and_set_seen_cache( const tripoint_bub_ms &p ) const
     return false;
 }
 
+bool map::is_map_cache_valid( const int zlev )
+{
+    if( inbounds_z( zlev ) ) {
+        level_cache &ch = get_cache( zlev );
+        // NOTE: Purposely excludes visibility cache, that is handled seperately in the game loop
+        return ch.floor_cache_dirty.any() || ch.transparency_cache_dirty.any() ||
+               ch.absorption_cache_dirty.any() || ch.sound_wall_cache_dirty.any() ||
+               ch.seen_cache_dirty || ch.lightmap_dirty || ch.outside_cache_dirty.any() ||
+               ch.suspension_cache_dirty;
+    }
+}
+
 void map::invalidate_map_cache( const int zlev )
 {
     if( inbounds_z( zlev ) ) {
