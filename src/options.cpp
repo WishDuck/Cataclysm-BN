@@ -2404,7 +2404,7 @@ void options_manager::add_options_performance()
         add( "ACTIVITY_SKIP_VISIBILITY", page_id,
              translate_marker( "Skip Activity Visibility Calculations" ),
              translate_marker( "Turns recaclculation of visibility cache on or off during activity slow paths" ),
-             is_android ? true : false );
+             true );
         add( "SLEEP_SKIP_VEH", page_id, translate_marker( "Skip Vehicle Movement" ),
              translate_marker( "Turns off vehicle movement and autodrive while sleeping" ),
              true );
