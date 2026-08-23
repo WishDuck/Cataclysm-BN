@@ -2124,7 +2124,11 @@ bool game::do_turn()
     {
         ZoneScopedN( "do_turn_pre_action_updates" );
         perhaps_add_random_npc();
-        refresh_player_visibility_cache_if_needed( m.is_map_cache_valid( u.bub_pos().z() ), true );
+        if( ( ( !u.activity || !*u.activity || u.activity->complete() ) && !u.in_sleep_state() ) ||
+            !get_option<bool>( "ACTIVITY_SKIP_VISIBILITY" ) ) {
+            // If map cache needs to be updated visibility cache will handle it.
+            refresh_player_visibility_cache_if_needed( true, true );
+        }
         process_voluntary_act_interrupt();
         process_activity();
         update_performance_bubble();
