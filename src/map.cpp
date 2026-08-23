@@ -951,7 +951,7 @@ void map::add_vehicle_to_cache( vehicle *veh )
         }
         level_cache &ch = get_cache( p.z() );
         ch.veh_in_active_range = true;
-        ch.vehicle_caches_dirty = true;
+        set_vehicle_cache_dirty( p.z() );
 
         if( !ch.veh_cached_parts.contains( p ) ||
             !veh->part_info( vpr.part_index() ).has_flag( VPFLAG_NOCOLLIDE ) ||
@@ -974,8 +974,7 @@ void map::clear_vehicle_point_from_cache( vehicle *veh, const tripoint_bub_ms &p
     }
 
     level_cache &ch = get_cache( pt.z() );
-    ch.vehicle_floor_cache_dirty = true;
-    ch.vehicle_caches_dirty = true;
+    set_vehicle_cache_dirty( pt.z() );
     auto it = ch.veh_cached_parts.find( pt );
     if( it != ch.veh_cached_parts.end() && it->second.first == veh ) {
         if( inbounds( pt ) ) {
