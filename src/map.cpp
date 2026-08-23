@@ -9683,61 +9683,28 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
     }
 
     {
-        ZoneScopedN( "Phase1_parallel_caches" );
+        ZoneScopedN( "Phase1_seen_and_vehicle_caches" );
         // Vehicle cache clearing only — floor/outside/sheltered are already done above.
-        if( false /*parallel_enabled && parallel_map_cache*/ ) {
-            std::mutex seen_mutex;
-            std::mutex veh_mutex;
-            parallel_for( -OVERMAP_DEPTH, OVERMAP_HEIGHT + 1, [&]( int z ) {
-                level_cache &ch = get_cache( z );
-                const bool vehicle_floor_was_dirty = ch.vehicle_floor_cache_dirty;
-                if( vehicle_floor_was_dirty || ch.vehicle_caches_dirty ) {
-                    ZoneScopedN( "veh_await_mutex" );
-                    std::lock_guard<std::mutex> lock( veh_mutex );
-                    if( vehicle_floor_was_dirty ) {
-                        ZoneScopedN( "fill_veh_caches_zabove" );
-                        std::fill( ch.vehicle_floor_cache.begin(), ch.vehicle_floor_cache.end(), '\0' );
-                        ch.has_any_vehicle_floor = false;
-                        add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
-                    }
-                    if( ch.vehicle_caches_dirty ) {
-                        ZoneScopedN( "fill_veh_caches_thisz" );
-                        const diagonal_blocks fill = {false, false};
-                        std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
-                        std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
-                        add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
-                    }
-                }
-                const bool level_seen_dirty = ch.seen_cache_dirty;
-                if( level_seen_dirty ) {
-                    ZoneScopedN( "seen_dirty" );
-                    std::lock_guard<std::mutex> lock( seen_mutex );
-                    seen_cache_dirty = true;
-                    dirty_seen_cache_levels.push_back( z );
-                }
-            } );
-        } else {
-            for( int z = -OVERMAP_DEPTH; z <= OVERMAP_HEIGHT; ++z ) {
-                level_cache &ch = get_cache( z );
+        for( int z = -OVERMAP_DEPTH; z <= OVERMAP_HEIGHT; ++z ) {
+            level_cache &ch = get_cache( z );
 
-                if( ch.vehicle_floor_cache_dirty ) {
-                    ZoneScopedN( "fill_veh_caches_zabove" );
-                    std::fill( ch.vehicle_floor_cache.begin(), ch.vehicle_floor_cache.end(), '\0' );
-                    ch.has_any_vehicle_floor = false;
-                    add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
-                }
-                if( ch.vehicle_caches_dirty ) {
-                    ZoneScopedN( "fill_veh_caches_thisz" );
-                    const diagonal_blocks fill = {false, false};
-                    std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
-                    std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
-                    add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
-                }
-                if( ch.seen_cache_dirty ) {
-                    ZoneScopedN( "seen_dirty" );
-                    seen_cache_dirty = true;
-                    dirty_seen_cache_levels.push_back( z );
-                }
+            if( ch.vehicle_floor_cache_dirty ) {
+                ZoneScopedN( "fill_veh_caches_zabove" );
+                std::fill( ch.vehicle_floor_cache.begin(), ch.vehicle_floor_cache.end(), '\0' );
+                ch.has_any_vehicle_floor = false;
+                add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
+            }
+            if( ch.vehicle_caches_dirty ) {
+                ZoneScopedN( "fill_veh_caches_thisz" );
+                const diagonal_blocks fill = {false, false};
+                std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
+                std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
+                add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
+            }
+            if( ch.seen_cache_dirty ) {
+                ZoneScopedN( "seen_dirty" );
+                seen_cache_dirty = true;
+                dirty_seen_cache_levels.push_back( z );
             }
         }
     }
