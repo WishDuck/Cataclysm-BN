@@ -10659,12 +10659,7 @@ void map::invalidate_map_cache( const int zlev )
         ch.seen_cache_dirty = true;
         ch.lightmap_dirty = true;
         ch.lm_cpu_cache_valid = false;
-        ch.vehicle_caches_dirty = true;
-        if( inbounds_z( zlev - 1 ) ) {
-            ch.vehicle_floor_cache_dirty = true;
-        } else {
-            ch.vehicle_floor_cache_dirty = false;
-        }
+        set_vehicle_cache_dirty( zlev );
         ++ch.lm_cpu_cache_generation;
         mark_visibility_cache_dirty( zlev );
         ch.outside_cache_dirty.set();
