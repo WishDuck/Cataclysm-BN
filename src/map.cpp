@@ -3747,7 +3747,7 @@ void map::decay_fields_and_scent( const time_duration &amount )
         }
 
         if( to_proc > 0 ) {
-            for( const auto sm_ms : cur_submap->field_cache ) {
+            for( const auto sm_ms : submap_tiles() ) {
                 const auto ms_pos = project_combine( p, sm_ms );
 
                 field &fields = cur_submap->get_field( sm_ms );
