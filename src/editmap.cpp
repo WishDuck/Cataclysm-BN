@@ -1749,9 +1749,6 @@ void editmap::mapgen_preview( const point_abs_ms &tc, uilist &gmenu )
 
                 submap::swap( *destsm,  *srcsm );
 
-                if( !destsm->spawns.empty() ) {                              // trigger spawnpoints
-                    here.spawn_monsters( true );
-                }
             }
         }
     };
@@ -1866,6 +1863,9 @@ void editmap::mapgen_preview( const point_abs_ms &tc, uilist &gmenu )
             con.rotate( 1 );
             swap_buffers();
             invalidate_cache();
+        } else if( gpmenu.ret == 2 ) {
+            // Trigger spawns now, they are dependent on the map so only can be added at this point
+            here.spawn_monsters( true );
         } else if( gpmenu.ret == 3 ) {
             popup( _( "Changed oter_id from '%s' (%s) to '%s' (%s)" ),
                    orig_oters->get_name(), orig_oters.id().str(),
