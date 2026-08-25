@@ -111,11 +111,12 @@ void mdeath::normal( monster &z )
     }
 
     const int max_hp = std::max( z.get_hp_max(), 1 );
-    float overflow_damage = std::max( -z.get_hp(), 0 );
+    float overflow_damage = -z.get_hp();
     player *ch = dynamic_cast<player *>( z.get_killer() );
     if( ch ) {
         overflow_damage += ch->bonus_from_enchantments( overflow_damage, ench_val_OVERKILL );
     }
+    overflow_damage = std::max( overflow_damage, 0.0f );
     const float corpse_damage = 2.5 * overflow_damage / max_hp;
     const bool pulverized = corpse_damage > 5 && overflow_damage > z.get_hp_max();
 

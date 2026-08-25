@@ -578,8 +578,8 @@ Cannot go below 0
 Modifier to the current weight of the player. `base_value` is the respective weight of one of the categories listed below.
 Minimum is 0, maximum is uncapped
 
-| Set         | Values                                               | Use                                                                        |
-| ----------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| Set      | Values                                 | Use                                         |
+| -------- | -------------------------------------- | ------------------------------------------- |
 | Category | BIONICS, WEAPON, INVENTORY, BODY, WORN | What part of player weight it is applied to |
 
 ##### OVERMAP_SIGHT
@@ -616,8 +616,8 @@ Minimum value of 0.
 
 Modifier to shifts in pain. `base_value` is the pain mod.
 
-| Set         | Values                                               | Use                                                                        |
-| ----------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| Set  | Values     | Use                                           |
+| ---- | ---------- | --------------------------------------------- |
 | Type | GAIN, LOSS | Apply specifically to increases or decreases. |
 
 ##### PAIN_MOD
@@ -635,8 +635,8 @@ Minimum value of 0 after being added to value after `PAIN_MOD`
 Modifier to percieved pain. `base_value` is current pain after `PAIN_MOD`.
 Minimum value of 0
 
-| Set         | Values                                               | Use                                                                        |
-| ----------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| Set  | Values                  | Use                                                                                 |
+| ---- | ----------------------- | ----------------------------------------------------------------------------------- |
 | Stat | SPD, STR, DEX, INT, PER | Apply only to speed, strength, dexterity, intellegence and perception respectively. |
 
 ##### PAIN_PENALTY
@@ -723,8 +723,8 @@ Number of tiles it works on. Only `max` works.
 Value that adds reach to all melee attacks ( unarmed or armed ).
 `base_value` is always 0. Only `max` works
 
-| Set         | Values                                               | Use                                                                        |
-| ----------- | ---------------------------------------------------- | -------------------------------------------------------------------------- |
+| Set  | Values         | Use                                     |
+| ---- | -------------- | --------------------------------------- |
 | Type | UNARMED, ARMED | Apply only to armed or unarmed attacks. |
 
 ##### ARMOR_X
@@ -775,6 +775,7 @@ Character wide melee damage modifier ( reach attacks included ), children modify
 ##### MELEE_ARMOR_PENETRATION
 
 Character wide melee armor penetration modifier. Children modify certain damage types.
+
 | Set         | Values                                                 | Use                            |
 | ----------- | ------------------------------------------------------ | ------------------------------ |
 | Damage Type | See general damage type suffixes [here](#damage-types) | Damage Type that it applies to |
