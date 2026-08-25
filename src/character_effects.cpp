@@ -127,7 +127,7 @@ double vomit_mod( const Character &ch )
     if( ch.stomach.get_calories() > 0 && ch.has_effect( effect_nausea ) ) {
         mod *= 5 * ch.get_effect_int( effect_nausea );
     }
-    return mod;
+    return std::max( 0.0, mod );
 }
 
 int talk_skill( const Character &ch )

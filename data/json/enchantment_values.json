@@ -409,8 +409,8 @@
   },
   {
     "id": "UNCANNY_DODGE",
-    "type": "enchantment_flag",
-    "info": "Affects dodging of bullets"
+    "type": "enchantment_value",
+    "desc": "Affects dodging of bullets"
   },
   {
     "id": "BONUS_DODGE",

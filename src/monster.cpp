@@ -179,7 +179,6 @@ static const species_id PLANT( "PLANT" );
 static const species_id ROBOT( "ROBOT" );
 static const species_id ZOMBIE( "ZOMBIE" );
 
-static const enchantment_value_id ench_val_OVERKILL_DMG( "OVERKILL_DMG" );
 namespace
 {
 
@@ -3406,9 +3405,6 @@ void monster::die( Creature *nkiller )
         return;
     }
 
-    if( nkiller && ( nkiller->is_avatar() || nkiller->is_npc() ) ) {
-        hp -= nkiller->as_character()->bonus_from_enchantments( hp, ench_val_OVERKILL_DMG );
-    }
     // We were carrying a creature, deposit the rider
     if( has_effect( effect_ridden ) && mounted_player ) {
         mounted_player->forced_dismount();

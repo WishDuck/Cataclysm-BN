@@ -198,7 +198,7 @@
     "id": "debug_pain_enchantment",
     "type": "GENERIC",
     "category": "tools",
-    "name": { "str_sp": "Triacontahedron of Reaching" },
+    "name": { "str_sp": "Triacontahedron of Weightlessness" },
     "description": "This is a debug-only item for testing weight modification enchantments.",
     "material": [ "steel" ],
     "symbol": ";",
@@ -206,5 +206,31 @@
     "weight": "400 g",
     "volume": "500 ml",
     "relic_data": { "passive_effects": [ { "values": [ { "value": "WEIGHTMOD", "multiply": -1 } ] } ] }
+  },
+  {
+    "id": "debug_pacifist_enchantment",
+    "type": "GENERIC",
+    "category": "tools",
+    "name": { "str_sp": "Hexecontahedron of Pacifism" },
+    "description": "This is a debug-only item for testing melee hit and forcefield enchantments.",
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "MELEE_HIT", "add": -100 }, { "value": "FORCEFIELD", "add": 1 } ] } ] }
+  },
+  {
+    "id": "debug_pacifist_enchantment",
+    "type": "GENERIC",
+    "category": "tools",
+    "name": { "str_sp": "Pyramid of Explosiveness" },
+    "description": "This is a debug-only item for testing overkill enchantments.",
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "OVERKILL", "add": 10000 } ] } ] }
   }
 ]

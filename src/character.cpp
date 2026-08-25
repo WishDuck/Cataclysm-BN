@@ -4539,17 +4539,21 @@ units::mass Character::get_weight() const
     []( const auto sum, const auto * const itm ) { return sum + itm->weight(); } );
     worn_weight += bonus_from_enchantments( worn_weight / 1_gram,
                                             ench_val_WEIGHTMOD_WORN ) * 1_gram; // Weight of worn items
-
+    worn_weight = std::max( 0_gram, worn_weight );
     auto weight = bodyweight();
     weight += bonus_from_enchantments( weight / 1_gram, ench_val_WEIGHTMOD_BODY ) * 1_gram;
+    weight = std::max( 0_gram, weight );
     auto invweight = inv.weight();  // Weight of the stored inventory
     invweight += bonus_from_enchantments( invweight / 1_gram, ench_val_WEIGHTMOD_INVENTORY ) * 1_gram;
+    invweight = std::max( 0_gram, invweight );
     auto weaponweight = primary_weapon().weight();
     weaponweight += bonus_from_enchantments( weaponweight / 1_gram,
                     ench_val_WEIGHTMOD_WEAPON ) * 1_gram;
+    weaponweight = std::max( 0_gram, weaponweight );
     auto bionicsweight = bionics_weight();
     bionicsweight += bonus_from_enchantments( bionicsweight / 1_gram,
                      ench_val_WEIGHTMOD_BIONICS ) * 1_gram;
+    bionicsweight = std::max( 0_gram, bionicsweight );
     return weight + invweight + weaponweight + bionicsweight + worn_weight;
 }
 
