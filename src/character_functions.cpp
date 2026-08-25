@@ -83,7 +83,7 @@ static const skill_id skill_throw( "throw" );
 
 static const quality_id qual_SLEEP_AID( "SLEEP_AID" );
 
-static const enchantment_flag_id ench_flag_UNCANNY_DODGE( "UNCANNY_DODGE" );
+static const enchantment_value_id ench_val_UNCANNY_DODGE( "UNCANNY_DODGE" );
 
 namespace character_funcs
 {
@@ -730,9 +730,12 @@ bool try_uncanny_dodge( Character &who )
             return false;
         }
         who.mod_power_level( -trigger_cost );
-    } else if( who.has_enchantment_flag( ench_flag_UNCANNY_DODGE ) && who.get_stamina() > 300 ) {
-        // NOTE: Potential improvement, allow lua hook to burn resources
-        who.mod_stamina( -300 );
+    } else if( who.get_stamina() > 100 ) {
+        float ench_chance = who.bonus_from_enchantments( 0.0, ench_val_UNCANNY_DODGE );
+        if( ench_chance > rng_float( 0.0, 1.0 ) ) {
+            // NOTE: Potential improvement, allow lua hook to burn resources
+            who.mod_stamina( -100 );
+        }
     } else {
         return false;
     }

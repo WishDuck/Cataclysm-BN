@@ -408,6 +408,11 @@
     "desc": "Affects Addiction Duration Per Intensity"
   },
   {
+    "id": "UNCANNY_DODGE",
+    "type": "enchantment_flag",
+    "info": "Affects dodging of bullets"
+  },
+  {
     "id": "BONUS_DODGE",
     "type": "enchantment_value",
     "desc": "Affects Dodging Ability"

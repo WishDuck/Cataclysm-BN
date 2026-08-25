@@ -59,7 +59,8 @@
       "menu_text": "Turn on",
       "type": "transform"
     },
-    "flags": [ "STAB", "TRADER_AVOID" ]
+    "flags": [ "STAB", "TRADER_AVOID" ],
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "MELEE_DAMAGE_DARK", "multiply": 2 } ] } ] }
   },
   {
     "id": "chaos_dagger_on",
@@ -89,7 +90,8 @@
     "techniques": [ "RAPID" ],
     "qualities": [ [ "BUTCHER", 5 ] ],
     "use_action": { "target": "chaos_dagger", "msg": "The chaos dagger goes still", "menu_text": "Turn off", "type": "transform" },
-    "flags": [ "STAB", "TRADER_AVOID" ]
+    "flags": [ "STAB", "TRADER_AVOID" ],
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "MELEE_DAMAGE_DARK", "add": 100 } ] } ] }
   },
   {
     "id": "onyx_eye",
@@ -178,5 +180,31 @@
     "weight": "400 g",
     "volume": "500 ml",
     "relic_data": { "passive_effects": [ { "conditions": [ "WIELD" ], "mutations": [ "CRAFTY", "WAKEFUL3", "NIGHTVISION3" ] } ] }
+  },
+  {
+    "id": "debug_pain_enchantment",
+    "type": "GENERIC",
+    "category": "tools",
+    "name": { "str_sp": "Hexecontahedron of Reaching" },
+    "description": "This is a debug-only item for testing reaching enchantments.",
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "REACH_RANGE", "max": 10 } ] } ] }
+  },
+  {
+    "id": "debug_pain_enchantment",
+    "type": "GENERIC",
+    "category": "tools",
+    "name": { "str_sp": "Triacontahedron of Reaching" },
+    "description": "This is a debug-only item for testing weight modification enchantments.",
+    "material": [ "steel" ],
+    "symbol": ";",
+    "color": "blue",
+    "weight": "400 g",
+    "volume": "500 ml",
+    "relic_data": { "passive_effects": [ { "values": [ { "value": "WEIGHTMOD", "multiply": -1 } ] } ] }
   }
 ]
