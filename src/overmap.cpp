@@ -2877,6 +2877,12 @@ void overmap_special::load( const JsonObject &jo, const std::string &src )
     assign( jo, "rotate", rotatable_, strict );
     assign( jo, "flags", flags_, strict );
 
+    if( jo.has_array( "absolute_spawn_loc" ) ) {
+        use_absolute_spawn_loc_ = true;
+        JsonArray arr = jo.get_array( "absolute_spawn_loc" );
+        absolute_spawn_loc_ = point_abs_om( arr.next_int(), arr.next_int() );
+    }
+
     if( jo.has_array( "dimensions" ) ) {
         dimensions_.clear();
         for( const std::string &dim : jo.get_array( "dimensions" ) ) {
@@ -7017,12 +7023,14 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
     bool is_true_center = pos() == point_abs_om();
     const auto special_weight = [&]( const overmap_special * s ) {
         int weight = special_area[s->id];
-        if( is_true_center && s->has_flag( "ENDGAME" ) ) {
-            weight *= 1000;
-        }
-        // Make certain global unique specials flagged as specific to endgame don't spawn elsewhere.
-        if( !is_true_center && s->has_flag( "ENDGAME" ) && s->has_flag( "GLOBALLY_UNIQUE" ) ) {
-            weight = 0;
+        if( s->use_absolute_spawn_loc() ) {
+            if( s->at_absolute_spawn_loc( pos() ) ) {
+                weight *= 1000;
+            }
+            // Make certain global unique specials flagged as specific to endgame don't spawn elsewhere.
+            if( !s->at_absolute_spawn_loc( pos() ) && s->has_flag( "GLOBALLY_UNIQUE" ) ) {
+                weight = 0;
+            }
         }
         return weight;
     };
@@ -7083,8 +7091,8 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
 
         zone current = special_zone[special.id];
 
-        const float rate = is_true_center && special.has_flag( "ENDGAME" ) ? 1 :
-                           zone_ratio[current];
+        const float rate = special.use_absolute_spawn_loc() &&
+                           special.at_absolute_spawn_loc( pos() ) ? 1 : zone_ratio[current];
 
         const bool unique = iter.special_details->has_flag( "UNIQUE" );
         const bool globally_unique = iter.special_details->has_flag( "GLOBALLY_UNIQUE" );
@@ -7098,8 +7106,8 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
             amount_to_place = 0;
         } else if( unique || globally_unique ) {
             const overmap_special_id &id = iter.special_details->id;
-            if( special.has_flag( "ENDGAME" ) && globally_unique ) {
-                amount_to_place = is_true_center ? 1 : 0;
+            if( special.use_absolute_spawn_loc() && globally_unique ) {
+                amount_to_place = special.at_absolute_spawn_loc( pos() ) ? 1 : 0;
             } else {
                 //FINGERS CROSSED EMOGI
                 amount_to_place = x_in_y( min, max ) && ( !globally_unique ||
