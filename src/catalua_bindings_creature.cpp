@@ -1334,6 +1334,11 @@ void cata::detail::reg_character( sol::state &lua )
             ch.consume_tools( tools );
         } );
 
+        DOC( "Gets the bonus from the enchantment value. Doesn't handle max logic itself." );
+        luna::set_fx( ut, "bonus_from_enchantments", []( UT_CLASS & ch, const double base, const enchantment_value_id & ench_val_id, sol::optional<bool> round ) -> double {
+            return ch.bonus_from_enchantments( base, ench_val_id, round.value_or( false ) );
+        } );
+        SET_FX( has_enchantment_flag );
     }
 #undef UT_CLASS // #define UT_CLASS Character
 
