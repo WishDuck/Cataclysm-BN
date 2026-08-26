@@ -7027,15 +7027,15 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
     // Sort specials be they sizes - placing big things is faster
     // and easier while we have most of map still empty, and also
     // that central lab will have top priority
-    bool is_true_center = pos() == point_abs_om();
+    point_abs_om current_om = pos();
     const auto special_weight = [&]( const overmap_special * s ) {
         int weight = special_area[s->id];
         if( s->use_absolute_spawn_loc() ) {
-            if( s->at_absolute_spawn_loc( pos() ) ) {
+            if( s->at_absolute_spawn_loc( current_om ) ) {
                 weight *= 1000;
             }
             // Make certain global unique specials flagged as specific to endgame don't spawn elsewhere.
-            if( !s->at_absolute_spawn_loc( pos() ) && s->has_flag( "GLOBALLY_UNIQUE" ) ) {
+            if( !s->at_absolute_spawn_loc( current_om ) && s->has_flag( "GLOBALLY_UNIQUE" ) ) {
                 weight = 0;
             }
         }
@@ -7099,7 +7099,7 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
         zone current = special_zone[special.id];
 
         const float rate = special.use_absolute_spawn_loc() &&
-                           special.at_absolute_spawn_loc( pos() ) ? 1 : zone_ratio[current];
+                           special.at_absolute_spawn_loc( current_om ) ? 1 : zone_ratio[current];
 
         const bool unique = iter.special_details->has_flag( "UNIQUE" );
         const bool globally_unique = iter.special_details->has_flag( "GLOBALLY_UNIQUE" );
@@ -7114,7 +7114,7 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
         } else if( unique || globally_unique ) {
             const overmap_special_id &id = iter.special_details->id;
             if( special.use_absolute_spawn_loc() && globally_unique ) {
-                amount_to_place = special.at_absolute_spawn_loc( pos() ) ? 1 : 0;
+                amount_to_place = special.at_absolute_spawn_loc( current_om ) ? 1 : 0;
             } else {
                 //FINGERS CROSSED EMOGI
                 amount_to_place = x_in_y( min, max ) && ( !globally_unique ||
