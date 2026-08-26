@@ -2877,10 +2877,13 @@ void overmap_special::load( const JsonObject &jo, const std::string &src )
     assign( jo, "rotate", rotatable_, strict );
     assign( jo, "flags", flags_, strict );
 
-    if( jo.has_array( "absolute_spawn_loc" ) ) {
-        use_absolute_spawn_loc_ = true;
-        JsonArray arr = jo.get_array( "absolute_spawn_loc" );
-        absolute_spawn_loc_ = point_abs_om( arr.next_int(), arr.next_int() );
+    if( jo.has_object( "absolute_spawn_loc" ) ) {
+        const auto &obj = jo.get_object( "absolute_spawn_loc" );
+        use_absolute_spawn_loc_ = obj.has_member( "x" ) || obj.has_member( "y" ) ||
+                                  obj.get_bool( "do_absolute_spawn_loc" );
+        if( obj.has_member( "x" ) ) {
+            absolute_spawn_loc_ = point_abs_om( obj.get_int( "x" ), obj.get_int( "y" ) );
+        }
     }
 
     if( jo.has_array( "dimensions" ) ) {

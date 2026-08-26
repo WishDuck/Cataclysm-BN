@@ -3106,7 +3106,7 @@
     "city_sizes": [ 1, 16 ],
     "occurrences": [ 1, 1 ],
     "rotate": false,
-    "absolute_spawn_loc": [ 0, 0 ],
+    "absolute_spawn_loc": { "x": 1, "y": 0 },
     "flags": [ "ELECTRIC_GRID", "UNIQUE", "GLOBALLY_UNIQUE" ]
   },
   {
