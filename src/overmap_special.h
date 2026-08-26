@@ -146,8 +146,7 @@ class overmap_special
             return use_absolute_spawn_loc_;
         }
         bool at_absolute_spawn_loc( point_abs_om point ) const {
-            return point == absolute_spawn_loc_ ||
-                   ( has_flag( "ENDGAME" ) && point == point_abs_om() );
+            return point == absolute_spawn_loc_;
         }
 
         int longest_side() const;
