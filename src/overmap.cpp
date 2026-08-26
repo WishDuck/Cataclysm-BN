@@ -2886,6 +2886,10 @@ void overmap_special::load( const JsonObject &jo, const std::string &src )
         }
     }
 
+    if( has_flag( "ENDGAME" ) ) {
+        use_absolute_spawn_loc_ = true;
+    }
+
     if( jo.has_array( "dimensions" ) ) {
         dimensions_.clear();
         for( const std::string &dim : jo.get_array( "dimensions" ) ) {
