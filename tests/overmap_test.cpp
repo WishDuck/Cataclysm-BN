@@ -58,7 +58,7 @@ namespace {
 
 void do_lab_finale_test() {
     const oter_id labt_endgame("central_lab_endgame");
-    const point_abs_om origin = point_abs_om( 0, 0 );
+    const point_abs_om origin = point_abs_om(0, 0);
     auto batch = overmap_specials::get_default_batch(origin);
     ACTIVE_OVERMAP_BUFFER.create_custom_overmap(origin, batch);
     overmap* test_overmap = ACTIVE_OVERMAP_BUFFER.get_existing(origin);
