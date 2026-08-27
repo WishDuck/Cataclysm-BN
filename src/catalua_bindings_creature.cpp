@@ -1091,7 +1091,7 @@ void cata::detail::reg_character( sol::state &lua )
         } );
 
         DOC( "Checks if a given `Item` can be taken off." );
-        luna::set_fx( ut, "can_takeoff", []( UT_CLASS & c, const item & it )
+        luna::set_fx( ut, "can_takeoff", []( const UT_CLASS & c, const item & it )
         {
             const auto res = c.can_takeoff( it );
             return res.success() && res.value();
@@ -1133,7 +1133,7 @@ void cata::detail::reg_character( sol::state &lua )
         } );
 
         DOC( "Checks if creature can wear a given item. If boolean parameter is true, ignores already worn items" );
-        luna::set_fx( ut, "can_wear", []( UT_CLASS & c, const item & it, bool ignore_worn )
+        luna::set_fx( ut, "can_wear", []( const UT_CLASS & c, const item & it, bool ignore_worn )
         {
             auto res = c.can_wear( it, ignore_worn );
             return res.success() && res.value();
