@@ -2879,8 +2879,7 @@ void overmap_special::load( const JsonObject &jo, const std::string &src )
 
     if( jo.has_object( "absolute_spawn_loc" ) ) {
         const auto &obj = jo.get_object( "absolute_spawn_loc" );
-        use_absolute_spawn_loc_ = obj.has_member( "x" ) || obj.has_member( "y" ) ||
-                                  obj.get_bool( "do_absolute_spawn_loc" );
+        optional( obj, was_loaded, "do_absolute_spawn_loc", use_absolute_spawn_loc_, true );
         if( obj.has_member( "x" ) ) {
             absolute_spawn_loc_ = point_abs_om( obj.get_int( "x" ), obj.get_int( "y" ) );
         }
