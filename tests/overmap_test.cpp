@@ -59,16 +59,16 @@ namespace {
 void do_lab_finale_test() {
     const oter_id labt_endgame("central_lab_entrance");
     const point_abs_om origin = point_abs_om(0, 0);
-    static const tripoint_om_omt om_mid{ OMAPX / 2, OMAPY / 2, 0 };
+    static const tripoint_om_omt om_mid{OMAPX / 2, OMAPY / 2, 0};
 
     ACTIVE_OVERMAP_BUFFER.clear();
     omt_find_params find_params{};
-    find_params.types.emplace_back( "central_lab_endgame", ot_match_type::exact );
-    find_params.search_range = { 0, OMAPX / 2 };
+    find_params.types.emplace_back("central_lab_endgame", ot_match_type::exact);
+    find_params.search_range = {0, OMAPX / 2};
     find_params.search_layers = omt_find_all_layers;
-    const tripoint_abs_omt abs_mid = project_combine( origin, om_mid );
-    const tripoint_abs_omt start = ACTIVE_OVERMAP_BUFFER.find_closest( abs_mid, find_params );
-    CHECK( start != overmap::invalid_tripoint );
+    const tripoint_abs_omt abs_mid = project_combine(origin, om_mid);
+    const tripoint_abs_omt start = ACTIVE_OVERMAP_BUFFER.find_closest(abs_mid, find_params);
+    CHECK(start != overmap::invalid_tripoint);
 }
 
 } // namespace
