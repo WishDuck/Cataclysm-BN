@@ -198,7 +198,7 @@ class overmap_special
         mapgen_parameters mapgen_params_;
         std::unordered_map<tripoint_rel_omt, overmap_special_id> nested_;
         bool use_absolute_spawn_loc_ = false;
-        point_abs_om absolute_spawn_loc_;
+        point_abs_om absolute_spawn_loc_ = point_abs_om( 0, 0 );
 };
 
 namespace overmap_specials
