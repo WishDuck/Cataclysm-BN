@@ -3051,7 +3051,8 @@
     "prereqs2": [ "INCISORS" ],
     "threshreq": [ "THRESH_RAT", "THRESH_RABBIT" ],
     "category": [ "RAT", "RABBIT" ],
-    "active": true
+    "active": true,
+    "mut_enchantments": [ { "fake_items": [ "fake_burrowing" ] } ]
   },
   {
     "type": "mutation",
