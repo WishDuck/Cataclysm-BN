@@ -7115,6 +7115,8 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
             const overmap_special_id &id = iter.special_details->id;
             if( special.use_absolute_spawn_loc() && globally_unique ) {
                 amount_to_place = special.at_absolute_spawn_loc( current_om ) ? 1 : 0;
+            } else if( special.use_absolute_spawn_loc() && special.at_absolute_spawn_loc( current_om ) ) {
+                amount_to_place = 1;
             } else {
                 //FINGERS CROSSED EMOGI
                 amount_to_place = x_in_y( min, max ) && ( !globally_unique ||
