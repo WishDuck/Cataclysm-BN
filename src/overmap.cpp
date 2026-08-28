@@ -7116,6 +7116,7 @@ void overmap::place_specials( overmap_special_batch &enabled_specials )
             if( special.use_absolute_spawn_loc() && globally_unique ) {
                 amount_to_place = special.at_absolute_spawn_loc( current_om ) ? 1 : 0;
             } else if( special.use_absolute_spawn_loc() && special.at_absolute_spawn_loc( current_om ) ) {
+                std::cout << "Going this route with: " << special.id.str() << "\n";
                 amount_to_place = 1;
             } else {
                 //FINGERS CROSSED EMOGI

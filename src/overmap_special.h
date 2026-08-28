@@ -197,7 +197,7 @@ class overmap_special
         cata::flat_set<overmap_location_id> default_locations_;
         mapgen_parameters mapgen_params_;
         std::unordered_map<tripoint_rel_omt, overmap_special_id> nested_;
-        bool use_absolute_spawn_loc_;
+        bool use_absolute_spawn_loc_ = false;
         point_abs_om absolute_spawn_loc_;
 };
 
