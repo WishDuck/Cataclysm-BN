@@ -57,7 +57,6 @@ TEST_CASE("default_overmap_generation_always_succeeds", "[overmap][slow]") {
 namespace {
 
 void do_lab_finale_test() {
-    const oter_id labt_endgame("central_lab_entrance");
     const point_abs_om origin = point_abs_om(0, 0);
     static const tripoint_om_omt om_mid{OMAPX / 2, OMAPY / 2, 0};
 
