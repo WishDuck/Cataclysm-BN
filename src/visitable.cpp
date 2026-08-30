@@ -26,6 +26,7 @@
 #include "player.h"
 #include "point.h"
 #include "submap.h"
+#include "type_id.h"
 #include "units.h"
 #include "value_ptr.h"
 #include "veh_type.h"
@@ -272,6 +273,15 @@ bool visitable<Character>::has_quality( const quality_id &qual, int level, int q
                 return true;
             }
 
+            qty--;
+        }
+    }
+    for( const auto it : self->get_enchantment_fake_items() ) {
+        for( const auto &[itqual, lev] : it->qualities ) {
+            if( qual != itqual || lev < level ) { continue; }
+            if( qty <= 1 ) {
+                return true;
+            }
             qty--;
         }
     }
