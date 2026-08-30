@@ -3608,6 +3608,7 @@ void Item_factory::emplace_usage( std::map<std::string, use_function> &container
 std::pair<std::string, use_function> Item_factory::usage_from_object( const JsonObject &obj )
 {
     auto type = obj.get_string( "type" );
+    auto internal_name = obj.get_string( "internal_name", type );
 
     if( type == "repair_item" ) {
         type = obj.get_string( "item_action_type" );
@@ -3624,7 +3625,7 @@ std::pair<std::string, use_function> Item_factory::usage_from_object( const Json
     }
 
     method.get_actor_ptr()->load( obj );
-    return std::make_pair( type, method );
+    return std::make_pair( internal_name, method );
 }
 
 use_function Item_factory::usage_from_string( const std::string &type ) const
