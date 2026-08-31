@@ -224,7 +224,7 @@ class iuse_actor
 {
     protected:
         iuse_actor( const std::string &type, int cost = -1 ) : type( type ), cost( cost ) {}
-        bool use_local_display_name;
+        bool use_local_display_name = false;
         translation display_name;
 
     public:
