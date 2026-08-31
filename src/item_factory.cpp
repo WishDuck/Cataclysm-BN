@@ -3625,6 +3625,9 @@ std::pair<std::string, use_function> Item_factory::usage_from_object( const Json
     }
 
     method.get_actor_ptr()->load( obj );
+    if( obj.has_string( "menu_text" ) ) {
+        method.get_actor_ptr()->set_name( obj.get_string( "menu_text" ) );
+    }
     return std::make_pair( internal_name, method );
 }
 
