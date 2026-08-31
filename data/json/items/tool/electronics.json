@@ -162,7 +162,7 @@
     "name": { "str": "control laptop - music", "str_pl": "control laptops - music" },
     "power_draw": 7000,
     "revert_to": "control_laptop",
-    "use_action": { "target": "control_laptop", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "flags": [ "WATCH", "TRADER_AVOID", "RECHARGE", "NO_UNLOAD", "NO_RELOAD", "DRONE_CAM" ]
   },
   {
@@ -248,7 +248,7 @@
     "description": "This wrist computer is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
     "power_draw": 5000,
     "revert_to": "wrist_comp_budget",
-    "use_action": { "target": "wrist_comp_budget", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "flags": [
       "WATCH",
       "WATER_FRIENDLY",
@@ -365,7 +365,7 @@
     "description": "This wrist computer is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
     "power_draw": 5000,
     "revert_to": "wrist_comp_control",
-    "use_action": { "target": "wrist_comp_control", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "magazine_well": "250 ml"
   },
   {
@@ -464,7 +464,7 @@
     "description": "This e-ink tablet PC is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
     "power_draw": 2500,
     "revert_to": "eink_tablet_pc",
-    "use_action": { "target": "eink_tablet_pc", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" }
+    "use_action": [ "MP3_ON" ],
   },
   {
     "id": "electrohack",
@@ -630,7 +630,7 @@
     "name": { "str": "laptop computer - music", "str_pl": "laptop computers - music" },
     "power_draw": 7000,
     "revert_to": "laptop",
-    "use_action": { "target": "laptop", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "flags": [ "WATCH", "TRADER_AVOID", "RECHARGE", "NO_UNLOAD", "NO_RELOAD" ]
   },
   {
@@ -685,7 +685,7 @@
     "description": "This mp3 player is turned on and playing some great tunes, raising your morale steadily while on your person.  It runs through batteries quickly; you can turn it off by using it.  It also obscures your hearing.",
     "power_draw": 3500,
     "revert_to": "mp3",
-    "use_action": { "target": "mp3", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "flags": [ "TRADER_AVOID", "RECHARGE", "NO_UNLOAD", "NO_RELOAD" ]
   },
   {
@@ -806,7 +806,7 @@
     "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
     "power_draw": 7000,
     "revert_to": "smart_phone",
-    "use_action": { "target": "smart_phone", "msg": "You stop listening to music.", "menu_text": "Turn off", "type": "transform" },
+    "use_action": [ "MP3_ON" ],
     "flags": [ "WATCH", "TRADER_AVOID", "ALARMCLOCK", "RECHARGE", "NO_UNLOAD", "NO_RELOAD" ],
     "magazine_well": "250 ml"
   },
@@ -880,12 +880,7 @@
     "name": { "str": "atomic smartphone - music", "str_pl": "atomic smartphones - music" },
     "description": "This phone is playing music, steadily raising your morale.  You can't hear anything else while you're listening.",
     "revert_to": "afs_atomic_smartphone",
-    "use_action": {
-      "target": "afs_atomic_smartphone",
-      "msg": "You stop listening to music.",
-      "menu_text": "Turn off",
-      "type": "transform"
-    },
+    "use_action": [ "MP3_ON" ],
     "flags": [ "WATCH", "TRADER_AVOID", "ALARMCLOCK", "NO_UNLOAD", "NO_RELOAD" ]
   },
   {
