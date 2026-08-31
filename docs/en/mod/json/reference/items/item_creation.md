@@ -871,6 +871,7 @@ All object defined use actions support the following two types.
   "menu_text": "xyz", // What string is shown in the activate menu
   // Unique key for the iuse, defaults to the `type`
   // Note: This should only be used on repeated type definitions
+  // WARN: This does not work on `repair_item` iuse actors -> they have their own special `item_action_type`
   "internal_name": "test"
 }
 ```
