@@ -1043,7 +1043,7 @@ mutable structure.
 | neighbors          | (optional) Any of the neighboring overmaps that should be checked before placing the chunk. Each direction is associated with a list of overmap `"id"` substrings.        |
 | joins              | (optional) Any mutable overmap special joins that should be checked before placing the chunk. Each direction is associated with a list of join `"id"` strings.            |
 | connections        | (optional) Any connection that should be directed toward this overmap before placing the chunk. Each direction is associated with a list of connection `"id"` strings.    |
-| rotation | (optional) How many turns to rotate the map, 90 degree turns |
+| rotation           | (optional) How many turns to rotate the map, 90 degree turns                                                                                                              |
 |                    |                                                                                                                                                                           |
 
 The adjacent overmaps which can be checked in this manner are:
