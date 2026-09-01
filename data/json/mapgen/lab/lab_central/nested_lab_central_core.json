@@ -1079,13 +1079,13 @@
     "object": {
       "mapgensize": [ 20, 7 ],
       "rows": [
-        "        !  !        ",
-        "C       !!!!       C",
+        "       !    !       ",
+        "C      !!!!!!      C",
         "##                ##",
         "u#                #u",
         "##                ##",
-        "C       !!!!       C",
-        "        !  !        "
+        "C      !!!!!!      C",
+        "       !    !       "
       ],
       "terrain": { "!": "t_floor_red", "/": "t_floor_red", "u": [ "t_metal_floor", "t_metal_floor_olight" ] },
       "furniture": { "#": "f_sandbag_half" },
