@@ -1,0 +1,24 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_crt_hydrogen_converter",
+    "name": "central air filter",
+    "description": "Cleans out dust mites, smoke particles, and more!",
+    "symbol": "#",
+    "bgcolor": "white",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": -1,
+    "looks_like": "f_air_conditioner",
+    "flags": [ "ADV_DECONSTRUCT" ],
+    "deconstruct": { "items": [ { "item": "crt_hydrogen_converter_item", "count": 1 } ] },
+    "bash": {
+      "str_min": 12,
+      "str_max": 50,
+      "sound": "metal screeching!",
+      "sound_fail": "clang!",
+      "//": "Variable reduction since might hit more or less material.",
+      "ranged": { "reduction": [ 6, 12 ], "destroy_threshold": 50 }
+    }
+  }
+]

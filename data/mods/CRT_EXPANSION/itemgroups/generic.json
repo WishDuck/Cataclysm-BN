@@ -1,0 +1,7 @@
+[
+  {
+    "type": "item_group",
+    "id": "hydrogen_canister",
+    "items": [ { "item": "plasma", "prob": 100, "charges": 1 } ]
+  }
+]

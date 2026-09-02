@@ -1,0 +1,68 @@
+[
+  {
+    "id": "crt_soldier_hobby",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "group": "antique_guns_with_ammo", "prob": 100, "//": "Rare gun collector is the idea" },
+      { "group": "crt_soldier_hobby_explosives", "prob": 75, "//": "Homemade explosives maker" },
+      { "group": "crt_soldier_hobby_gunmod", "prob": 100, "//": "Has to be real right" },
+      { "group": "crt_soldier_hobby_drugs", "prob": 25, "//": "Sadly I assume for purposes this would make sense..." },
+      {
+        "group": "crt_soldier_hobby_alcohol",
+        "prob": 25,
+        "//": "Sadly I assume for purposes this would make sense..."
+      }
+    ]
+  },
+  {
+    "id": "crt_soldier_hobby_explosives",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "item": "can_bomb", "count": [ 1, 10 ], "prob": 50 },
+      { "item": "improvised_grenade", "count": [ 1, 5 ], "prob": 50 },
+      { "item": "molotov", "count": [ 1, 5 ], "prob": 25 },
+      { "item": "improvised_pipebomb", "count": [ 1, 10 ], "prob": 10 }
+    ]
+  },
+  {
+    "id": "crt_soldier_hobby_gunmod",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "group": "gunmod_rare", "count": [ 1, 2 ], "prob": 50 },
+      { "group": "gunmod_milspec", "count": [ 1, 2 ], "prob": 50 },
+      { "group": "gunmod_common", "count": [ 2, 4 ], "prob": 25 },
+      { "group": "military_accessories_standard" }
+    ]
+  },
+  {
+    "id": "crt_soldier_hobby_drugs",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "group": "baddrugs", "count": [ 1, 3 ], "prob": 50 },
+      { "group": "smokedrugs", "count": [ 2, 4 ], "prob": 50 },
+      { "group": "harddrugs", "count": [ 3, 6 ], "prob": 50 }
+    ]
+  },
+  {
+    "id": "crt_soldier_hobby_alcohol",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      { "group": "misc_alcohol", "count": [ 1, 3 ], "prob": 50 },
+      { "group": "mixed_alcoholic_drinks", "count": [ 2, 4 ], "prob": 50 }
+    ]
+  },
+  {
+    "id": "crt_scientist_hobby",
+    "type": "item_group",
+    "subtype": "distribution",
+    "entries": [
+      { "group": "crt_inactive_robots", "prob": 100, "//": "Drone tinkerer, give em some hacks" },
+      { "group": "civilian_helicopter_parts", "prob": 75, "//": "Works on small flight vehicles ( like the lab )" }
+    ]
+  }
+]

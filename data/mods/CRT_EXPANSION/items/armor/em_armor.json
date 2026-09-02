@@ -1,0 +1,199 @@
+[
+  {
+    "id": "crt_em_vest",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM vest (off)", "str_pl": "C.R.I.T. EM vests (off)" },
+    "description": "The C.R.I.T. Enhanced Movement vest is embedded with high-tech filaments and reactive servos which protects its wearer and assists in movement at the cost high of power usage.  It is commonly worn by C.R.I.T. for its ease of use and maneuverability.  Turn it on for extra movement and strength.",
+    "weight": "5 kg",
+    "volume": "7500 ml",
+    "price": "70 kUSD",
+    "price_postapoc": "250 USD",
+    "to_hit": -3,
+    "bashing": 6,
+    "material": [ "kevlar", "superalloy" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "covers": [ "torso" ],
+    "max_charges": 1000,
+    "initial_charges": 1000,
+    "ammo": "battery",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "C.R.I.T. EM vest activated.",
+        "target": "crt_em_vest_on",
+        "active": true,
+        "transform_charges": 1,
+        "need_charges": 1,
+        "need_charges_msg": "Power levels too low for safe activation"
+      },
+      "TOGGLE_UPS_CHARGING"
+    ],
+    "relic_data": {
+      "recharge_scheme": [
+        { "type": "solar", "interval": "1 m", "rate": 2, "//": "Sunlight at 12% per hour, ~33 watts" },
+        { "type": "time", "interval": "12 m", "rate": 2, "//": "Integrated plutonium at 1% per hour, ~2.78 watts" }
+      ],
+      "passive_effects": [
+        {
+          "conditions": [ "WORN", "ACTIVE" ],
+          "values": [ { "value": "STRENGTH", "add": 2 }, { "value": "SPEED", "add": 20 }, { "value": "BONUS_DODGE", "add": 4 } ]
+        }
+      ]
+    },
+    "coverage": 85,
+    "encumbrance": 20,
+    "storage": "2500 ml",
+    "warmth": 10,
+    "material_thickness": 4,
+    "flags": [ "WATERPROOF", "STURDY", "VARSIZE", "RECHARGE", "NO_UNLOAD", "OUTER", "COMBAT_NPC_USE", "ALLOWS_WINGS" ]
+  },
+  {
+    "id": "crt_em_vest_on",
+    "copy-from": "crt_em_vest",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM vest (on)", "str_pl": "C.R.I.T. EM vests (on)" },
+    "description": "The C.R.I.T. Enhanced Movement vest is embedded with high-tech filaments, reactive servos and a generator which pumps a crystallized liquid that protects its wearer from most heavy combat situations at the cost of extreme power usage.  It is commonly worn by C.R.I.T..  This vest is currently in suit form and draining your UPS power at high rates.",
+    "material": [ "kevlar", "superalloy" ],
+    "color": "light_green",
+    "encumbrance": 0,
+    "turns_per_charge": 1,
+    "revert_to": "crt_em_vest",
+    "use_action": { "type": "transform", "menu_text": "Turn off armor", "msg": "C.R.I.T. E.M powering off…", "target": "crt_em_vest" },
+    "extend": { "flags": [ "TRADER_AVOID", "COMBAT_NPC_ON" ] }
+  },
+  {
+    "id": "crt_em_gloves",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM gloves (off)", "str_pl": "C.R.I.T. EM gloves (off)" },
+    "description": "The C.R.I.T. Enhanced Movement gloves is a mesh of carbon fiber and other high-tech filaments and precision motion servos which provide precise high power motion to the wearer at the cost of high power usage.  Turn it on for extra attack speed and dexterity.",
+    "weight": "2 kg",
+    "volume": "2500 ml",
+    "price": "35 kUSD",
+    "price_postapoc": "125 USD",
+    "to_hit": -3,
+    "bashing": 6,
+    "material": [ "carbon_fiber", "superalloy" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "armor_portion_data": [
+      { "covers": [ "arms" ], "coverage": 20, "encumbrance": 2 },
+      { "covers": [ "hands" ], "coverage": 100, "encumbrance": 10 }
+    ],
+    "max_charges": 1000,
+    "initial_charges": 1000,
+    "ammo": "battery",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "C.R.I.T. EM booting up…",
+        "target": "crt_em_gloves_on",
+        "active": true,
+        "transform_charges": 1,
+        "need_charges": 1,
+        "need_charges_msg": "Power levels too low for safe bootup…"
+      },
+      "TOGGLE_UPS_CHARGING"
+    ],
+    "relic_data": {
+      "recharge_scheme": [
+        { "type": "solar", "interval": "1 m", "rate": 2, "//": "Sunlight at 12% per hour, ~33 watts" },
+        { "type": "time", "interval": "12 m", "rate": 2, "//": "Integrated plutonium at 1% per hour, ~2.78 watts" }
+      ],
+      "passive_effects": [
+        {
+          "conditions": [ "WORN", "ACTIVE" ],
+          "values": [ { "value": "DEXTERITY", "add": 2 }, { "value": "ATTACK_COST", "add": -10 } ]
+        }
+      ]
+    },
+    "warmth": 10,
+    "material_thickness": 2,
+    "flags": [ "STURDY", "VARSIZE", "RECHARGE", "NO_UNLOAD", "OUTER", "COMBAT_NPC_USE", "ALLOWS_WINGS" ]
+  },
+  {
+    "id": "crt_em_gloves_on",
+    "copy-from": "crt_em_gloves",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM gloves (on)", "str_pl": "C.R.I.T. EM glovess (on)" },
+    "color": "light_green",
+    "turns_per_charge": 1,
+    "revert_to": "crt_em_gloves",
+    "armor_portion_data": [
+      { "covers": [ "arms" ], "coverage": 20, "encumbrance": 0 },
+      { "covers": [ "hands" ], "coverage": 100, "encumbrance": 0 }
+    ],
+    "use_action": { "type": "transform", "menu_text": "Turn off armor", "msg": "C.R.I.T. E.M powering off…", "target": "crt_em_gloves" },
+    "extend": { "flags": [ "TRADER_AVOID", "COMBAT_NPC_ON" ] }
+  },
+  {
+    "id": "crt_em_boots",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM boots (off)", "str_pl": "C.R.I.T. EM boots (off)" },
+    "description": "The C.R.I.T. Enhanced Movement boots is a rubber sole surrounded by a mesh of superalloy hardened carbon fiber and high powered motion servos which provide effient and powerful motion to the wearer at the cost of high power usage.  Turn it on for extra movement speed and dodge.",
+    "weight": "2 kg",
+    "volume": "2500 ml",
+    "price": "35 kUSD",
+    "price_postapoc": "125 USD",
+    "to_hit": -3,
+    "bashing": 6,
+    "material": [ "carbon_fiber", "superalloy" ],
+    "symbol": "[",
+    "color": "light_gray",
+    "armor_portion_data": [
+      { "covers": [ "legs" ], "coverage": 20, "encumbrance": 2 },
+      { "covers": [ "feet" ], "coverage": 100, "encumbrance": 10 }
+    ],
+    "max_charges": 1000,
+    "initial_charges": 1000,
+    "ammo": "battery",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "C.R.I.T. EM booting up…",
+        "target": "crt_em_boots_on",
+        "active": true,
+        "transform_charges": 1,
+        "need_charges": 1,
+        "need_charges_msg": "Power levels too low for safe bootup…"
+      },
+      "TOGGLE_UPS_CHARGING"
+    ],
+    "relic_data": {
+      "recharge_scheme": [
+        { "type": "solar", "interval": "1 m", "rate": 2, "//": "Sunlight at 12% per hour, ~33 watts" },
+        { "type": "time", "interval": "12 m", "rate": 2, "//": "Integrated plutonium at 1% per hour, ~2.78 watts" }
+      ],
+      "passive_effects": [
+        {
+          "conditions": [ "WORN", "ACTIVE" ],
+          "values": [ { "value": "BONUS_DODGE", "add": 4 }, { "value": "MOVE_COST", "add": -20 } ]
+        }
+      ]
+    },
+    "warmth": 10,
+    "material_thickness": 2,
+    "flags": [ "STURDY", "VARSIZE", "RECHARGE", "NO_UNLOAD", "OUTER", "COMBAT_NPC_USE", "ALLOWS_WINGS" ]
+  },
+  {
+    "id": "crt_em_boots_on",
+    "copy-from": "crt_em_boots",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. EM boots (on)", "str_pl": "C.R.I.T. EM boots (on)" },
+    "color": "light_green",
+    "turns_per_charge": 1,
+    "revert_to": "crt_em_boots",
+    "armor_portion_data": [
+      { "covers": [ "legs" ], "coverage": 20, "encumbrance": 0 },
+      { "covers": [ "feet" ], "coverage": 100, "encumbrance": 0 }
+    ],
+    "use_action": { "type": "transform", "menu_text": "Turn off armor", "msg": "C.R.I.T. E.M powering off…", "target": "crt_em_boots" },
+    "extend": { "flags": [ "TRADER_AVOID", "COMBAT_NPC_ON" ] }
+  }
+]

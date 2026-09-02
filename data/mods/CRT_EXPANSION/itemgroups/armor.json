@@ -1,0 +1,163 @@
+[
+  {
+    "type": "item_group",
+    "id": "crt_underwear",
+    "//": "Give them what C.R.I.T. Professions have",
+    "subtype": "collection",
+    "items": [ { "item": "sports_bra", "prob": 50 }, { "item": "boxer_shorts" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_head",
+    "//": "Headwear for C.R.I.T. Pretty limited so no group divisions",
+    "subtype": "distribution",
+    "items": [ { "item": "crt_helmet", "prob": 50 }, { "item": "crt_rec_hat", "prob": 50 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_employee_torso",
+    "//": "The standard torso stuff, non-military variant",
+    "subtype": "collection",
+    "items": [
+      { "distribution": [ { "item": "crt_jacket", "prob": 50 }, { "item": "crt_rec_duster", "prob": 50 } ] },
+      { "item": "army_top" },
+      { "item": "crt_belt" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_employee_legs",
+    "//": "Here for future changes",
+    "subtype": "collection",
+    "items": [ { "item": "crt_pants" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_employee_gloves",
+    "//": "Just weather they get the hand warmers or not",
+    "subtype": "collection",
+    "items": [ { "item": "crt_rec_gloves" }, { "item": "crt_gloves_liner", "prob": 50 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_employee_shoes",
+    "subtype": "collection",
+    "items": [
+      { "group": "socks_unisex" },
+      { "distribution": [ { "item": "crt_dress_shoes", "prob": 50 }, { "item": "boots_steel", "prob": 25 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_soldier_torso",
+    "//": "The standard torso stuff, military variant",
+    "subtype": "collection",
+    "items": [
+      { "distribution": [ { "item": "crt_jacket", "prob": 50 }, { "item": "crt_iduster", "prob": 50 } ] },
+      { "item": "army_top" },
+      { "item": "crt_belt" },
+      { "item": "crt_chestrig", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_soldier_legs",
+    "subtype": "collection",
+    "items": [ { "item": "crt_pants" }, { "item": "crt_legguard", "prob": 50 }, { "item": "crt_legrig", "prob": 50 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_soldier_gloves",
+    "//": "Just weather they get the hand warmers or not",
+    "subtype": "collection",
+    "items": [ { "item": "crt_gloves" }, { "item": "crt_gloves_liner", "prob": 50 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_soldier_shoes",
+    "subtype": "collection",
+    "items": [
+      { "group": "socks_unisex" },
+      { "distribution": [ { "item": "crt_la_boots", "prob": 50 }, { "item": "crt_boots", "prob": 25 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_uniform",
+    "//": "C.R.I.T. Standard Lab Uniform",
+    "subtype": "collection",
+    "items": [
+      { "group": "crt_underwear" },
+      { "group": "crt_head" },
+      { "group": "crt_employee_torso" },
+      { "group": "crt_employee_legs" },
+      { "group": "crt_employee_gloves" },
+      { "group": "crt_employee_shoes" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_soldier_uniform",
+    "//": "C.R.I.T. Standard soldier Uniform",
+    "subtype": "collection",
+    "items": [
+      { "group": "crt_underwear" },
+      { "group": "crt_head" },
+      { "group": "crt_soldier_torso" },
+      { "group": "crt_soldier_legs" },
+      { "group": "crt_soldier_gloves" },
+      { "group": "crt_soldier_shoes" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_science_uniform",
+    "//": "C.R.I.T. Standard Science Uniform",
+    "subtype": "collection",
+    "items": [
+      { "group": "crt_underwear" },
+      { "group": "crt_head" },
+      { "group": "crt_employee_torso" },
+      { "item": "coat_lab" },
+      { "group": "crt_employee_legs" },
+      { "group": "crt_employee_gloves" },
+      { "group": "crt_employee_shoes" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_enforcer_armor",
+    "//": "C.R.I.T. Full Enforcer Armor",
+    "subtype": "collection",
+    "items": [
+      { "group": "crt_underwear" },
+      { "group": "crt_soldier_gloves" },
+      { "item": "crt_earmor" },
+      { "item": "crt_sarmor" },
+      { "item": "crt_earmor_boots" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_wolf_armor",
+    "//": "C.R.I.T. Full Lone Wolf Armor",
+    "subtype": "collection",
+    "items": [
+      { "group": "crt_underwear" },
+      { "group": "crt_head" },
+      { "group": "crt_soldier_gloves" },
+      { "item": "crt_warmor" },
+      { "item": "crt_sarmor" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_armor",
+    "subtype": "distribution",
+    "items": [
+      { "group": "crt_wolf_armor", "prob": 10 },
+      { "group": "crt_enforcer_armor", "prob": 10 },
+      { "group": "crt_soldier_uniform", "prob": 80 }
+    ]
+  }
+]

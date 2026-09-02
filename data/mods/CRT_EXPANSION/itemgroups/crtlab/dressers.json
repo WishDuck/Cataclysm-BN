@@ -1,0 +1,14 @@
+[
+  {
+    "id": "crt_locker_soldier",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "group": "crt_armor" }, { "group": "crt_soldier_hobby", "count": [ 1, 2 ] } ]
+  },
+  {
+    "id": "crt_locker_sci",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [ { "group": "crt_science_uniform" }, { "group": "crt_scientist_hobby", "count": [ 1, 2 ] } ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "crt_morale_depression",
+    "type": "morale_type",
+    "text": "Beem Slapped",
+    "permanent": true
+  },
+  {
+    "id": "crt_depression",
+    "type": "effect_type",
+    "int_add_val": 1,
+    "max_intensity": 10,
+    "max_effective_intensity": 100,
+    "name": [ { "str": "Been Slapped" } ],
+    "desc": [ "You've been slapped by a manslap. How did you even survive this long if that got you." ],
+    "rating": "bad",
+    "apply_message": "You were slapped by a manslap. For some reason this instills true disappointment in your mind.",
+    "miss_messages": [ [ "While you should be over it by now, you still are disappointed that you were slapped by a manslap", 10 ] ],
+    "morale": "crt_morale_depression",
+    "base_mods": { "morale": [ -10 ] },
+    "scaling_mods": { "morale": [ -10 ] }
+  }
+]

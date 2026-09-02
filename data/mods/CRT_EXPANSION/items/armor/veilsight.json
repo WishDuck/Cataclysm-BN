@@ -1,0 +1,56 @@
+[
+  {
+    "type": "effect_type",
+    "id": "crt_veilsight",
+    "max_duration": "10 m",
+    "max_intensity": 1,
+    "flags": [ "EFFECT_CLAIRVOYANCE_PLUS" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "crt_veilsight_quick_swaps",
+    "max_duration": "60 m",
+    "max_intensity": 50,
+    "int_add_val": 1
+  },
+  {
+    "id": "crt_veilsight",
+    "type": "TOOL_ARMOR",
+    "category": "armor",
+    "name": { "str": "C.R.I.T. veilsight (off)", "str_pl": "C.R.I.T. veilsights (off)" },
+    "description": "An experimental HUD that allows you to see beyond normal vision. It appears to be self-sustaining, but you get a splitting headache whenever you look through it.",
+    "weight": "5 kg",
+    "volume": "1 L",
+    "price": "25 kUSD",
+    "price_postapoc": "250 USD",
+    "to_hit": 1,
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "C.R.I.T. HUD booting up…",
+        "target": "crt_veilsight_on",
+        "active": true,
+        "need_charges_msg": "Power levels too low for safe boot up"
+      }
+    ],
+    "material": [ "plastic", "kevlar" ],
+    "symbol": "[",
+    "color": "dark_gray",
+    "covers": [ "eyes" ],
+    "coverage": 100,
+    "encumbrance": 10,
+    "warmth": 20,
+    "material_thickness": 3,
+    "environmental_protection": 8,
+    "qualities": [ [ "GLARE", 1 ] ],
+    "flags": [ "WATERPROOF", "STURDY", "VARSIZE" ]
+  },
+  {
+    "id": "crt_veilsight_on",
+    "type": "TOOL_ARMOR",
+    "copy-from": "crt_veilsight",
+    "name": { "str": "C.R.I.T. veilsight (on)", "str_pl": "C.R.I.T. veilsights (on)" },
+    "revert_to": "crt_veilsight",
+    "use_action": [ { "type": "transform", "msg": "C.R.I.T. HUD shutting down…", "target": "crt_veilsight" } ]
+  }
+]

@@ -44,7 +44,7 @@
     "weight": "500 g",
     "volume": "125 ml",
     "integral_volume": "0 ml",
-    "volume_multiplier": 0.67,
+    "volume_multiplier": 0.8,
     "price": "420 USD",
     "price_postapoc": "10 USD",
     "material": [ "plastic", "steel" ],

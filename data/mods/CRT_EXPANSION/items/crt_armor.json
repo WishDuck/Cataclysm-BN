@@ -4,7 +4,7 @@
     "repairs_like": "mask_bal",
     "type": "ARMOR",
     "name": "C.R.I.T. face mask",
-    "description": "This is the C.R.I.T. standard issue face mask, lined with Kevlar for extra protection.  A few filters provide decent environmental safety, but it was not intended for extended use.  It has a basic integrated HUD and can receive targeting data from friendly drones.",
+    "description": "This is the C.R.I.T. standard issue face mask, lined with Kevlar for extra protection.  A few filters provide decent environmental safety, but it was not intended for extended use.  It has a basic integrated HUD that can receive targeting data from friendly drones.",
     "weight": "5 kg",
     "volume": "1 L",
     "price": "25 kUSD",
@@ -127,7 +127,7 @@
       "max_volume": "750 ml",
       "draw_cost": 40,
       "skills": [ "pistol", "smg", "shotgun", "launcher" ],
-      "flags": [ "SHEATH_KNIFE", "BELT_CLIP", "MAG_COMPACT", "SPEEDLOADER" ]
+      "flags": [ "SHEATH_KNIFE", "BELT_CLIP", "MAG_COMPACT", "SPEEDLOADER", "MAG_BULKY" ]
     },
     "flags": [ "STURDY", "WATER_FRIENDLY", "ALLOWS_NATURAL_ATTACKS", "ALLOWS_WINGS" ]
   },
@@ -223,7 +223,8 @@
     "relic_data": {
       "passive_effects": [
         {
-          "conditions": [ "WORN" ],
+          "has": "WORN",
+          "condition": "ALWAYS",
           "values": [
             { "value": "STRENGTH", "add": 2 },
             { "value": "DEXTERITY", "add": 2 },
@@ -260,8 +261,7 @@
     "material_thickness": 3,
     "environmental_protection": 18,
     "use_action": "WEATHER_TOOL",
-    "flags": [ "ELECTRIC_IMMUNE", "GAS_PROOF", "VARSIZE", "OVERSIZE", "STURDY", "ONLY_ONE", "WATERPROOF" ],
-    "relic_data": { "passive_effects": [ { "conditions": [ "WORN" ], "values": [ { "value": "CLIMATE_CONTROL", "add": 375 } ] } ] }
+    "flags": [ "ELECTRIC_IMMUNE", "GAS_PROOF", "VARSIZE", "OVERSIZE", "STURDY", "ONLY_ONE", "WATERPROOF", "CLIMATE_CONTROL" ]
   },
   {
     "id": "crt_aarmor",
@@ -291,7 +291,7 @@
     "repairs_like": "legrig",
     "type": "ARMOR",
     "name": { "str": "C.R.I.T. drop leg pouch", "str_pl": "C.R.I.T. drop leg pouches" },
-    "description": "A set of pouches that can be worn on the thighs using buckled straps.  This variety is more compact and is favored by the C.R.I.T. for its ease of use.",
+    "description": "A set of pouches and holsters that can be worn on the thighs using buckled straps.  This variety is more versatile and is favored by the C.R.I.T. for its ease of use.",
     "weight": "255 g",
     "volume": "500 ml",
     "price": "30 USD",
@@ -302,9 +302,20 @@
     "looks_like": "legrig",
     "covers": [ "legs" ],
     "coverage": 30,
-    "encumbrance": 3,
+    "encumbrance": 4,
     "storage": "1500 ml",
     "material_thickness": 2,
+    "use_action": {
+      "type": "holster",
+      "holster_prompt": "Stash ammo",
+      "holster_msg": "You stash your %s.",
+      "multi": 2,
+      "max_volume": "1 L",
+      "min_volume": "250 ml",
+      "draw_cost": 40,
+      "skills": [ "pistol", "smg", "shotgun", "launcher" ],
+      "flags": [ "HOLSTER_PISTOL", "SHEATH_KNIFE", "BELT_CLIP", "MAG_COMPACT", "SPEEDLOADER", "MAG_BULKY" ]
+    },
     "flags": [ "VARSIZE", "WATER_FRIENDLY", "BELTED", "COMPACT", "RAINPROOF", "ALLOWS_TAIL_SNAKE" ]
   },
   {

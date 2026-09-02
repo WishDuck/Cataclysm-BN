@@ -1,0 +1,82 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "crt_lab_veh_hall_hydrogen_storage",
+    "object": {
+      "mapgensize": [ 7, 7 ],
+      "rows": [
+        "TTTPTTT",
+        "Ps   sP",
+        "PTs sTP",
+        "Ps   sP",
+        "Ps   sP",
+        "PTs sTP",
+        " s   s "
+      ],
+      "//": "Hydrogen is 0.1 L, standing tank is 300L, thus 1500-3000 stored",
+      "mapping": {
+        "P": { "terrain": "t_sewage_pipe" },
+        "T": { "furniture": "f_standing_tank", "liquids": { "liquid": "c_hydrogen_gas", "amount": [ 1500, 3000 ], "chance": 1 } },
+        "s": { "vehicles": { "vehicle": "crt_autocart", "chance": 30, "status": 0 } }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "crt_lab_veh_hall_hydrogen_production",
+    "object": {
+      "mapgensize": [ 7, 7 ],
+      "rows": [
+        "CPIPIPI",
+        "FPFPFPF",
+        "VcVcVcV",
+        "FPFPFPF",
+        "TPTPTPT",
+        "sssssss",
+        "       "
+      ],
+      "mapping": {
+        "P": { "terrain": "t_sewage_pipe" },
+        "c": { "furniture": "f_crt_hydrogen_converter" },
+        "T": { "furniture": "f_standing_tank", "liquids": { "liquid": "c_hydrogen_gas", "amount": [ 1500, 3000 ], "chance": 1 } },
+        "s": { "vehicles": { "vehicle": "crt_autocart", "chance": 30, "status": 0 } },
+        "F": { "furniture": "f_air_filter" },
+        "I": { "terrain": "t_grate_indoor" },
+        "V": { "furniture": "f_vent_pipe" },
+        "C": { "furniture": "f_gun_safe_el", "item": [ { "item": "crt_artifact", "chance": 100 } ] }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "crt_lab_veh_hydrogen_product",
+    "object": {
+      "mapgensize": [ 7, 7 ],
+      "rows": [
+        " CCCCC ",
+        "RCSTSCR",
+        " CATAC ",
+        "RCSTSCR",
+        "SCATACS",
+        "RCOTOCR",
+        "cctttcc"
+      ],
+      "mapping": {
+        "T": { "furniture": "f_standing_tank", "liquids": { "liquid": "c_hydrogen_gas", "amount": [ 1500, 3000 ], "chance": 1 } },
+        "c": { "vehicles": { "vehicle": "crt_autocart", "chance": 30, "status": 0 } },
+        "t": { "vehicles": { "vehicle": "crt_autocart", "chance": 30, "status": 0, "//": "For hydrogen" } },
+        "S": { "furniture": "f_crate_o", "item": [ { "item": "canister_empty", "amount": [ 10, 40 ], "chance": 100 } ] },
+        "O": { "furniture": "f_crate_o", "items": [ { "item": "hydrogen_canister", "repeat": [ 0, 20 ], "chance": 100 } ] },
+        "C": {
+          "items": [ { "item": "canister_empty", "chance": 25 }, { "item": "hydrogen_canister", "chance": 5 } ],
+          "terrain": "t_conveyor"
+        },
+        "R": { "furniture": "f_robotic_arm" },
+        "A": { "furniture": "f_robotic_assembler" }
+      }
+    }
+  }
+]

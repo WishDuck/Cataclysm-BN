@@ -1,0 +1,88 @@
+[
+  {
+    "type": "item_group",
+    "id": "crt_lab_storage_pantry_food",
+    "subtype": "distribution",
+    "items": [
+      { "group": "crt_lab_fruit_shelf", "prob": 30, "count": [ 2, 4 ] },
+      { "group": "crt_lab_nuts_shelf", "prob": 15, "count": [ 2, 3 ] },
+      { "group": "MRE", "prob": 20 },
+      { "group": "dry_goods", "prob": 10, "count": [ 2, 4 ] },
+      { "item": "fish_pickled", "prob": 5, "charges": 12, "container-item": "jar_3l_glass_sealed" },
+      { "item": "meat_canned", "prob": 5, "charges": 12, "container-item": "jar_3l_glass_sealed" },
+      { "item": "potted_meat", "prob": 5, "charges": 12, "container-item": "jar_3l_glass_sealed" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_nuts_shelf",
+    "subtype": "collection",
+    "items": [
+      { "item": "almond", "prob": 20, "charges": 10, "container-item": "bag_zipper" },
+      { "item": "pecan", "prob": 20, "charges": 10, "container-item": "bag_zipper" },
+      { "item": "cashews", "prob": 20, "charges": 10, "container-item": "bag_zipper" },
+      { "item": "pistachio", "prob": 20, "charges": 10, "container-item": "bag_zipper" },
+      { "item": "peanut", "prob": 20, "charges": 10, "container-item": "bag_zipper" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_fruit_shelf",
+    "subtype": "collection",
+    "//": "Calories should be ~180 in irradiated fruit; Anything that is not single comes in a zipper bag ( grapes should be bunches tbh )",
+    "items": [
+      { "item": "irradiated_apple", "prob": 20, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "irradiated_orange", "prob": 10, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "irradiated_banana", "prob": 20, "charges": 2, "//": "Who stores banana's in a bag" },
+      { "item": "irradiated_pear", "prob": 20, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "irradiated_cherries", "prob": 15, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "irradiated_plums", "prob": 15, "charges": 5, "container-item": "bag_zipper" },
+      { "item": "irradiated_grapes", "prob": 25, "container-item": "bag_zipper", "//": "Grapes come in bags" },
+      { "item": "irradiated_cranberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "irradiated_raspberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "irradiated_blackberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "irradiated_blueberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "irradiated_strawberries", "prob": 20, "charges": 5, "container-item": "bag_zipper" }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_freezer_food",
+    "subtype": "collection",
+    "//": "Ice Cream and Frozen Fruit",
+    "items": [ { "group": "crt_lab_freezer_dessert", "prob": 100 }, { "group": "crt_lab_fruit", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_freezer_dessert",
+    "subtype": "collection",
+    "//": "Ice cream and other frozen desserts",
+    "items": [
+      { "item": "icecream", "prob": 20, "charges": 2 },
+      { "item": "icecream_fruit", "prob": 20, "charges": 2 },
+      { "item": "icecream_sorbet", "prob": 20, "charges": 2 },
+      { "item": "icecream_gelato", "prob": 20, "charges": 2 },
+      { "item": "icecream_yogurt", "prob": 20, "charges": 2 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "crt_lab_fruit",
+    "subtype": "collection",
+    "//": "Calories should be ~180 in fruit; Anything that is not single comes in a zipper bag ( grapes should be bunches tbh )",
+    "items": [
+      { "item": "apple", "prob": 20, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "orange", "prob": 10, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "banana", "prob": 20, "charges": 2, "//": "Who stores banana's in a bag" },
+      { "item": "pear", "prob": 20, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "cherries", "prob": 15, "charges": 2, "container-item": "bag_zipper" },
+      { "item": "plums", "prob": 15, "charges": 5, "container-item": "bag_zipper" },
+      { "item": "grapes", "prob": 25, "container-item": "bag_zipper", "//": "Grapes come in bags" },
+      { "item": "cranberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "raspberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "blackberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "blueberries", "prob": 20, "charges": 3, "container-item": "bag_zipper" },
+      { "item": "strawberries", "prob": 20, "charges": 5, "container-item": "bag_zipper" }
+    ]
+  }
+]
