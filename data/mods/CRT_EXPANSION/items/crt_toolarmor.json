@@ -42,6 +42,9 @@
             { "value": "INTELLIGENCE", "add": -2 },
             { "value": "PERCEPTION", "add": 2 }
           ]
+        },
+        {
+          "id": "DRONE_CAM"
         }
       ]
     },
@@ -58,8 +61,7 @@
       "RECHARGE",
       "NO_UNLOAD",
       "SLEEP_IGNORE",
-      "COMBAT_NPC_USE",
-      "DRONE_CAM"
+      "COMBAT_NPC_USE"
     ]
   },
   {
@@ -97,6 +99,9 @@
             { "value": "INTELLIGENCE", "add": -2 },
             { "value": "PERCEPTION", "add": 2 }
           ]
+        },
+        {
+          "id": "DRONE_CAM"
         }
       ]
     },
@@ -117,8 +122,7 @@
       "NO_UNLOAD",
       "SLEEP_IGNORE",
       "COMBAT_NPC_USE",
-      "COMBAT_NPC_ON",
-      "DRONE_CAM"
+      "COMBAT_NPC_ON"
     ],
     "hearing_protection": 6,
     "adv_hearing_protection": 24

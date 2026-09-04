@@ -876,8 +876,7 @@
       "SWIM_GOGGLES",
       "SUN_GLASSES",
       "RAD_RESIST",
-      "COMBAT_NPC_USE",
-      "DRONE_CAM"
+      "COMBAT_NPC_USE"
     ],
     "price": "500 kUSD",
     "price_postapoc": "100 USD",
@@ -918,6 +917,9 @@
             { "value": "FLASH_PROTECTION", "max": 6 }
           ],
           "flags": [ "FIRE_FIELD_IMMUNE" ]
+        },
+        {
+          "special_vision": [ "DRONE_CAM" ]
         }
       ]
     }
