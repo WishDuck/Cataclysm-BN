@@ -55,6 +55,7 @@ private:
     bool same_zlev;
     bool require_los;
     int max_distance;
+    bool detect_heat;
     std::vector<species_id> show_with_species;
     std::vector<m_flag> show_with_flags;
     std::vector<m_flag> show_without_any_flags;

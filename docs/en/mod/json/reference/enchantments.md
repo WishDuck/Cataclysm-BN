@@ -1059,6 +1059,7 @@ All conditions must pass to show
   "distance": 5,                                 // Max tile distance that this works
   "same_z_level": false,                         // Show across z-levels
   "require_los": true,                           // Require line of sight
+  "detect_heat": true,                           // Require `is_warm`
   "show_with_species": [ "ROBOT" ],              // List of species, any being true -> pass
   "show_with_flag": [ "ELECTRIC" ],              // List of monster flags, any true -> pass
   "show_without_any_flag": [ "FLIES" ],          // List of monster flags, any true -> fail

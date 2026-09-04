@@ -31,6 +31,7 @@ void enchantment_vision::load(const JsonObject& jo, const std::string& src) {
     optional(jo, was_loaded, "distance", max_distance, -1);
     optional(jo, was_loaded, "same_z_level", same_zlev, false);
     optional(jo, was_loaded, "require_los", require_los, false);
+    optional(jo, was_loaded, "detect_heat", detect_heat, false);
     optional(jo, was_loaded, "show_with_species", show_with_species,
              auto_flags_reader<species_id>{});
     optional(jo, was_loaded, "show_with_flag", show_with_flags,
@@ -117,6 +118,7 @@ bool enchantment_vision::mon_passes(
     if (use_distance && dist > max_distance) { return false; }
     if (same_zlev && !on_same_zlevel) { return false; }
     if (require_los && !has_los) { return false; }
+    if (detect_heat && !mon.is_warm()) { return false; }
 
     if (show_with_species.size() > 0) {
         bool species_passes = false;
