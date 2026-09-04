@@ -918,9 +918,7 @@
           ],
           "flags": [ "FIRE_FIELD_IMMUNE" ]
         },
-        {
-          "special_vision": [ "DRONE_CAM" ]
-        }
+        { "special_vision": [ "DRONE_CAM" ] }
       ]
     }
   },

@@ -353,7 +353,7 @@
       "NO_UNLOAD",
       "NO_RELOAD",
       "THERMOMETER",
-      "FANCY",
+      "FANCY"
     ],
     "relic_data": { "passive_effects": [ { "id": "DRONE_CAM" } ] },
     "coverage": 15,

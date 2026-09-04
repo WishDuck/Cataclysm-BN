@@ -43,9 +43,7 @@
             { "value": "PERCEPTION", "add": 2 }
           ]
         },
-        {
-          "id": "DRONE_CAM"
-        }
+        { "id": "DRONE_CAM" }
       ]
     },
     "material_thickness": 3,
@@ -100,9 +98,7 @@
             { "value": "PERCEPTION", "add": 2 }
           ]
         },
-        {
-          "id": "DRONE_CAM"
-        }
+        { "id": "DRONE_CAM" }
       ]
     },
     "material_thickness": 2,
