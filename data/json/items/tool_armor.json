@@ -1605,7 +1605,8 @@
     "coverage": 10,
     "material_thickness": 2,
     "magazines": [ [ "battery", [ "light_plus_battery_cell", "light_battery_cell" ] ] ],
-    "magazine_well": "250 ml"
+    "magazine_well": "250 ml",
+    "relic_data": { "passive_effects": [ { "conditions": [ "ACTIVE" ], "special_vision": [ "INFRARED" ] } ] }
   },
   {
     "id": "goggles_ir_on",
