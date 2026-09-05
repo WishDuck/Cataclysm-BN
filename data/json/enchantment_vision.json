@@ -34,6 +34,7 @@
     "id": "INFRARED",
     "desc": "Allows Sight Of Warm Creatures",
     "require_los": true,
+    "same_z_level": true,
     "detect_heat": true,
     "vision_desc": { "tile_id": "infrared_creature", "description": "You see something warm." }
   }
