@@ -663,7 +663,7 @@ auto get_hook_entries( sol::state_view lua, std::string_view hook_name,
 auto has_hooks( std::string_view hook_name, const hook_opts &opts ) -> bool
 {
     std::unique_lock lock( lua_lock );
-    auto &state = *get_active_lua_state();
+    auto &state = opts.state ? *opts.state : *get_active_lua_state();
     auto &lua = state.lua;
 
     const auto maybe_hooks = lua.globals()["game"]["hooks"][hook_name].get<sol::optional<sol::table>>();
@@ -697,7 +697,7 @@ auto run_hooks( std::string_view hook_name,
                 std::function < auto( sol::table &params ) -> void > init,
                 const hook_opts &opts ) -> sol::table
 {
-    auto &state = *get_active_lua_state();
+    auto &state = opts.state ? *opts.state : *get_active_lua_state();
     auto &lua = state.lua;
 
     auto params = lua.create_table();

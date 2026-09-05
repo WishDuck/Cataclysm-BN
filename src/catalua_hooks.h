@@ -12,6 +12,7 @@ struct lua_state;
 
 struct hook_opts {
     bool exit_early = false;
+    lua_state *state = nullptr;
 };
 
 /// Run Lua hooks registered with given name.
