@@ -7436,8 +7436,22 @@ float Character::active_light() const
     return lumination;
 }
 
-enchantment_vision_id Character::sees_with_specials( const Creature &critter ) const
+enchantment_vision_id Character::sees_with_specials( const Creature &critter,
+        const bool force_path ) const
 {
+    bool sees_position = false;
+    if( force_path ) {
+        if( is_player() || critter.is_player() ) {
+            // Players should not use map::sees
+            // Likewise, players should not be "looked at" with map::sees, not to break symmetry
+            sees_position = get_map().pl_line_of_sight( critter.bub_pos(),
+                            sight_range( current_daylight_level( calendar::turn ) ) );
+        } else {
+            sees_position = get_map().sees( bub_pos(), critter.bub_pos(),
+                                            sight_range( current_daylight_level( calendar::turn ) ) );
+        }
+        if( !sees_position ) { return enchantment_vision_id::NULL_ID(); }
+    }
     // electroreceptors grants vision of robots and electric monsters through walls
     if( has_enchantment_flag( ench_flag_ELECTROSENSE ) &&
         ( critter.in_species( ROBOT ) || critter.in_species( ROBOT_FLYING ) ||
@@ -7466,18 +7480,18 @@ enchantment_vision_id Character::sees_with_specials( const Creature &critter ) c
         return enchantment_vision_id( "GROUNDED_SONAR" );
     }
 
-    bool sees_position = false;
-
-    if( is_player() || critter.is_player() ) {
-        // Players should not use map::sees
-        // Likewise, players should not be "looked at" with map::sees, not to break symmetry
-        sees_position = get_map().pl_line_of_sight( critter.bub_pos(),
-                        sight_range( current_daylight_level( calendar::turn ) ) );
-    } else {
-        sees_position = get_map().sees( bub_pos(), critter.bub_pos(),
-                                        sight_range( current_daylight_level( calendar::turn ) ) );
+    // Dont recalc if unneeded
+    if( !force_path ) {
+        if( is_player() || critter.is_player() ) {
+            // Players should not use map::sees
+            // Likewise, players should not be "looked at" with map::sees, not to break symmetry
+            sees_position = get_map().pl_line_of_sight( critter.bub_pos(),
+                            sight_range( current_daylight_level( calendar::turn ) ) );
+        } else {
+            sees_position = get_map().sees( bub_pos(), critter.bub_pos(),
+                                            sight_range( current_daylight_level( calendar::turn ) ) );
+        }
     }
-
     enchantment_vision_id sees_with = enchantment_cache->mon_passes_special_vision(
                                           critter, dist, critter.bub_pos().z() == bub_pos().z(), sees_position
                                       );

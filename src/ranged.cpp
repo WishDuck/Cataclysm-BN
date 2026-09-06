@@ -2904,7 +2904,8 @@ std::vector<Creature *> targetable_creatures( const Character &c, const int rang
             return false;
         }
 
-        if( !c.sees( critter ) && !c.sees_with_infrared( critter ) )
+        if( !c.sees( critter ) && !c.sees_with_infrared( critter ) &&
+            c.sees_with_specials( critter, true ).is_null() )
         {
             return false;
         }
