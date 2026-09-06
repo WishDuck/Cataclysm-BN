@@ -2030,7 +2030,6 @@
       "max_level": 3,
       "level_flags": [ { "level": 1, "flags": [ "COMBAT_MOUNT" ] } ]
     },
-    "mountable_pixels_up": 50,
     "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PET_WONT_FOLLOW", "PET_MOUNTABLE", "PATH_AVOID_DANGER_1", "WARM" ]
   },
   {
