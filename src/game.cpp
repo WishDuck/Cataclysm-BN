@@ -4266,11 +4266,11 @@ bool game::save_maps()
         // Drain any in-flight load-manager tasks before save so save_omt workers
         // do not race with background workers calling add_submap().
         submap_loader.drain_lazy_loads();
-        save_all_overmapbuffers(); // can throw — saves every loaded dimension's overmapbuffer
         // Save mapbuffers for all registered dimensions (active + any kept/non-active).
         // save_all() dispatches dimension saves in parallel; each slot uses
         // notify_tracker=is_primary and show_progress=false (worker-thread safe).
         MAPBUFFER_REGISTRY.save_all(); // can throw
+        save_all_overmapbuffers(); // can throw — saves every loaded dimension's overmapbuffer
         return true;
     } catch( const std::exception &err ) {
         popup( _( "Failed to save the maps: %s" ), err.what() );
