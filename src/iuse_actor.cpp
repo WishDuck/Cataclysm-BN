@@ -1,23 +1,8 @@
 #include "iuse_actor.h"
 
-#include <algorithm>
-#include <array>
-#include <cctype>
-#include <cmath>
-#include <cstddef>
-#include <functional>
-#include <iterator>
-#include <list>
-#include <memory>
-#include <ret_val.h>
-#include <sstream>
-#include <string>
-#include <utility>
-#include <vector>
-#include <ranges>
-
-#include "action_time_scale.h"
 #include "action.h"
+#include "action_time_scale.h"
+#include "active_tile_data_def.h"
 #include "activity_handlers.h"
 #include "addiction.h"
 #include "ammo.h"
@@ -29,16 +14,17 @@
 #include "bodypart.h"
 #include "cached_options.h"
 #include "calendar.h"
-#include "catalua_hooks.h"
-#include "catalua_sol.h"
 #include "cata_utility.h"
+#include "catalua.h"
+#include "catalua_hooks.h"
 #include "catalua_icallback_actor.h"
+#include "catalua_sol.h"
 #include "character.h"
 #include "character_functions.h"
 #include "character_id.h"
+#include "cloning_utils.h"
 #include "clothing_mod.h"
 #include "crafting.h"
-#include "active_tile_data_def.h"
 #include "creature.h"
 #include "debug.h"
 #include "dimension_info.h"
@@ -46,6 +32,7 @@
 #include "enum_conversions.h"
 #include "enums.h"
 #include "explosion.h"
+#include "faction.h"
 #include "field_type.h"
 #include "flag.h"
 #include "flat_set.h"
@@ -64,11 +51,11 @@
 #include "json.h"
 #include "line.h"
 #include "locations.h"
-#include "magic.h"
+#include "magic/magic.h"
 #include "map.h"
+#include "map/utils/map_utils.h"
 #include "map_iterator.h"
 #include "map_selector.h"
-#include "map_utils.h"
 #include "mapdata.h"
 #include "material.h"
 #include "memory_fast.h"
@@ -93,10 +80,9 @@
 #include "rng.h"
 #include "skill.h"
 #include "sounds.h"
-#include "cloning_utils.h"
 #include "string_formatter.h"
-#include "string_utils.h"
 #include "string_input_popup.h"
+#include "string_utils.h"
 #include "submap_load_manager.h"
 #include "text_snippets.h"
 #include "translations.h"
@@ -106,6 +92,7 @@
 #include "uistate.h"
 #include "units_utility.h"
 #include "value_ptr.h"
+#include "veh_type.h"
 #include "vehicle.h"
 #include "vehicle_part.h"
 #include "vehicle_selector.h"
@@ -113,10 +100,24 @@
 #include "vitamin.h"
 #include "vpart_position.h"
 #include "vpart_range.h"
-#include "veh_type.h"
-#include "weather.h"
+#include "weather/weather.h"
 #include "world_type.h"
-#include "faction.h"
+
+#include <algorithm>
+#include <array>
+#include <cctype>
+#include <cmath>
+#include <cstddef>
+#include <functional>
+#include <iterator>
+#include <list>
+#include <memory>
+#include <ranges>
+#include <ret_val.h>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 
 static const activity_id ACT_FIRSTAID( "ACT_FIRSTAID" );
 static const activity_id ACT_HAND_CRANK( "ACT_HAND_CRANK" );
@@ -263,8 +264,6 @@ void iuse_transform::load( const JsonObject &obj )
     obj.read( "need_dry", need_dry );
 
     obj.read( "qualities_needed", qualities_needed );
-
-    obj.read( "menu_text", menu_text );
 }
 
 int iuse_transform::use( player &p, item &it, bool t, const tripoint_bub_ms &pos ) const
@@ -427,14 +426,6 @@ ret_val<bool> iuse_transform::can_use( const Character &p, const item &, bool,
     } );
     return ret_val<bool>::make_failure( vgettext( "You need a tool with %s.", "You need tools with %s.",
                                         unmet_reqs.size() ), unmet_reqs_string );
-}
-
-std::string iuse_transform::get_name() const
-{
-    if( !menu_text.empty() ) {
-        return menu_text.translated();
-    }
-    return iuse_actor::get_name();
 }
 
 void iuse_transform::finalize( const itype_id & )
@@ -639,7 +630,7 @@ void explosion_iuse::load( const JsonObject &obj )
     }
     obj.read( "emp_blast_radius", emp_blast_radius );
     obj.read( "scrambler_blast_radius", scrambler_blast_radius );
-    obj.read( "sound_volume", sound_volume );
+    assign( obj, "sound_volume", sound_volume );
     obj.read( "sound_msg", sound_msg );
     obj.read( "no_deactivate_msg", no_deactivate_msg );
 }
@@ -647,10 +638,10 @@ void explosion_iuse::load( const JsonObject &obj )
 int explosion_iuse::use( player &p, item &it, bool t, const tripoint_bub_ms &pos ) const
 {
     if( t ) {
-        if( sound_volume >= 0 ) {
+        if( sound_volume >= 0_dB ) {
             sound_event se;
             se.origin = pos;
-            se.volume = sound_volume;
+            se.volume = units::to_decibel( sound_volume );
             se.category = sounds::sound_t::alarm;
             se.movement_noise = true;
             se.description = sound_msg.empty() ? _( "Tick." ) : _( sound_msg );
@@ -1260,12 +1251,15 @@ int place_monster_iuse::use( player &p, item &it, bool, const tripoint_bub_ms &p
         newmon.no_extra_death_drops = true;
         it.deactivate();
     }
-    cata::run_hooks( "on_creature_spawn", [&]( sol::table & params ) {
-        params["creature"] = &newmon;
-    } );
-    cata::run_hooks( "on_monster_spawn", [&]( sol::table & params ) {
-        params["monster"] = &newmon;
-    } );
+    {
+        std::unique_lock lock( cata::lua_lock );
+        cata::run_hooks( "on_creature_spawn", [&]( sol::table & params ) {
+            params["creature"] = &newmon;
+        } );
+        cata::run_hooks( "on_monster_spawn", [&]( sol::table & params ) {
+            params["monster"] = &newmon;
+        } );
+    }
     if( place_random ) {
         // place_critter_around returns the same pointer as its parameter (or null)
         // Allow position to be different from the player for tossed or launched items
@@ -1294,25 +1288,40 @@ int place_monster_iuse::use( player &p, item &it, bool, const tripoint_bub_ms &p
         p.moves -= moves;
     }
     if( !newmon.has_flag( MF_INTERIOR_AMMO ) ) {
-        for( auto &amdef : newmon.ammo ) {
-            item &ammo_item = *item::spawn_temporary( amdef.first, calendar::start_of_cataclysm );
-            const int available = p.charges_of( amdef.first );
-            if( available == 0 ) {
-                amdef.second = 0;
+        for( const auto &[slot_ammo_id, max_ammo] : newmon.type->starting_ammo ) {
+            for( const auto &compatible_ammo_id : newmon.ammo_slot_items( slot_ammo_id ) ) {
+                newmon.ammo[compatible_ammo_id] = 0;
+            }
+
+            auto remaining_capacity = max_ammo;
+            auto loaded_any_ammo = false;
+            for( const auto &compatible_ammo_id : newmon.ammo_slot_items( slot_ammo_id ) ) {
+                if( remaining_capacity <= 0 ) {
+                    break;
+                }
+                item &ammo_item = *item::spawn_temporary( compatible_ammo_id, calendar::start_of_cataclysm );
+                const auto available = p.charges_of( compatible_ammo_id );
+                if( available <= 0 ) {
+                    continue;
+                }
+                ammo_item.charges = std::min( available, remaining_capacity );
+                p.use_charges( compatible_ammo_id, ammo_item.charges );
+                //~ First %s is the ammo item (with plural form and count included), second is the monster name
+                p.add_msg_if_player( vgettext( "You load %1$d x %2$s round into the %3$s.",
+                                               "You load %1$d x %2$s rounds into the %3$s.", ammo_item.charges ),
+                                     ammo_item.charges, ammo_item.type_name( ammo_item.charges ),
+                                     newmon.name() );
+                newmon.ammo[compatible_ammo_id] = ammo_item.charges;
+                remaining_capacity -= ammo_item.charges;
+                loaded_any_ammo = true;
+            }
+
+            if( !loaded_any_ammo ) {
+                item &slot_ammo_item = *item::spawn_temporary( slot_ammo_id, calendar::start_of_cataclysm );
                 p.add_msg_if_player( m_info,
                                      _( "If you had standard factory-built %1$s bullets, you could load the %2$s." ),
-                                     ammo_item.type_name( 2 ), newmon.name() );
-                continue;
+                                     slot_ammo_item.type_name( 2 ), newmon.name() );
             }
-            // Don't load more than the default from the monster definition.
-            ammo_item.charges = std::min( available, amdef.second );
-            p.use_charges( amdef.first, ammo_item.charges );
-            //~ First %s is the ammo item (with plural form and count included), second is the monster name
-            p.add_msg_if_player( vgettext( "You load %1$d x %2$s round into the %3$s.",
-                                           "You load %1$d x %2$s rounds into the %3$s.", ammo_item.charges ),
-                                 ammo_item.charges, ammo_item.type_name( ammo_item.charges ),
-                                 newmon.name() );
-            amdef.second = ammo_item.charges;
         }
     }
     int skill_offset = 0;
@@ -3301,8 +3310,18 @@ std::unique_ptr<iuse_actor> repair_item_actor::clone() const
     return std::make_unique<repair_item_actor>( *this );
 }
 
-bool repair_item_actor::handle_components( player &pl, const item &fix,
-        bool print_msg, bool just_check ) const
+int repair_item_actor::get_material_amt_needed( const item &fix, bool just_check ) const
+{
+    // Repairing or modifying items requires at least 1 repair item,
+    // otherwise number is related to size of item
+    // Round up if checking, but roll if actually consuming
+    // TODO: should 250_ml be part of the cost_scaling?
+    return std::max<int>( 1, just_check ?
+                          std::ceil( fix.volume() / 250_ml * cost_scaling ) :
+                          roll_remainder( fix.volume() / 250_ml * cost_scaling ) );
+}
+
+std::set<material_id> repair_item_actor::get_valid_materials( const item &fix ) const
 {
     // Entries valid for repaired items
     std::set<material_id> valid_entries;
@@ -3311,6 +3330,13 @@ bool repair_item_actor::handle_components( player &pl, const item &fix,
             valid_entries.insert( mat );
         }
     }
+    return valid_entries;
+}
+
+bool repair_item_actor::handle_components( player &pl, const item &fix,
+        bool print_msg, bool just_check ) const
+{
+    std::set<material_id> valid_entries = get_valid_materials( fix );
 
     if( valid_entries.empty() ) {
         if( print_msg ) {
@@ -3327,15 +3353,7 @@ bool repair_item_actor::handle_components( player &pl, const item &fix,
     }
 
     const inventory &crafting_inv = pl.crafting_inventory();
-
-    // Repairing or modifying items requires at least 1 repair item,
-    //  otherwise number is related to size of item
-    // Round up if checking, but roll if actually consuming
-    // TODO: should 250_ml be part of the cost_scaling?
-    const int items_needed = std::max<int>( 1, just_check ?
-                                            std::ceil( fix.volume() / 250_ml * cost_scaling ) :
-                                            roll_remainder( fix.volume() / 250_ml * cost_scaling ) );
-
+    const int items_needed = get_material_amt_needed( fix, just_check );
 
     // Go through all discovered repair items and see if we have any of them available
     std::vector<item_comp> comps;
@@ -7771,8 +7789,12 @@ auto iuse_paint_stuff_do_paint( player &who, item &it,
             }
 
             if( painter.set_color( thing, n_col.value(), layer ) ) {
-                who.add_msg_if_player( m_info, _( "You paint the %s %s." ), painter.describe( thing ),
-                                       target_color.friendly_name() );
+                if( target_color == RGBColor{} ) {
+                    who.add_msg_if_player( m_info, _( "You strip the paint from the %s." ), painter.describe( thing ) );
+                } else {
+                    who.add_msg_if_player( m_info, _( "You paint the %s %s." ), painter.describe( thing ),
+                                           target_color.friendly_name() );
+                }
                 charges_used += iter_cost;
                 who.moves -= to_turns<int>( 30_seconds );
             }
@@ -8458,7 +8480,7 @@ void iuse_paint_stuff_config::set_color( item &it )
 ret_val<bool> iuse_paint_stuff::can_use( const Character &, const item &it, bool,
         const tripoint_bub_ms & ) const
 {
-    if( it.ammo_remaining() < 1 ) {
+    if( it.ammo_remaining() < charge_cost ) {
         return ret_val<bool>::make_failure( _( "The %s doesn't have enough charges." ), it.tname() );
     }
 

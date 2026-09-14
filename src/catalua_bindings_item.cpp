@@ -8,6 +8,7 @@
 
 #include "artifact.h"
 #include "avatar.h"
+#include "hsv_color.h"
 #include "itype.h"
 #include "mtype.h"
 #include "material.h"
@@ -401,6 +402,7 @@ void reg_item( sol::state &lua )
         SET_FX( is_tainted );
         SET_FX( is_soft );
         SET_FX( is_reloadable );
+        luna::set_fx( ut, "has_use", []( item & it, std::string use ) { return it.get_use( use ); } );
         DOC( "DEPRECATED: Items are no longer filthy" );
         luna::set_fx( ut, "is_filthy", []() { return false; } );
         SET_FX( is_active );
@@ -562,6 +564,10 @@ void reg_item( sol::state &lua )
         luna::set_fx( ut, "set_var_tri", []( UT_CLASS & c, const std::string & name, const tripoint & val )
         {
             c.set_var( name, val );
+        } );
+        luna::set_fx( ut, "set_var_col", []( UT_CLASS & c, const std::string & name, const RGBColor & val )
+        {
+            c.set_var<RGBColor>( name, val );
         } );
         SET_FX( attack_cost );
         SET_FX( stamina_cost );
@@ -1155,6 +1161,9 @@ void reg_islot( sol::state &lua )
 
         DOC( "Increases gun weight by this many times" );
         SET_MEMB_RO( weight_multiplier );
+
+        DOC( "Increases gun volume by this many times" );
+        SET_MEMB_RO( volume_multiplier );
 
         DOC( "Firing modes added to or replacing those of the base gun" );
         luna::set_fx( ut, "get_mode_modifiers", []( const UT_CLASS & c )

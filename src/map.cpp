@@ -1,42 +1,19 @@
 #include "map.h"
 
-#include "active_tile_data.h"
-#include "faction.h"
-#include "mapdata.h"
-#include "mapgen_async.h"
-
-#include <algorithm>
-#include <array>
-#include <cassert>
-#include <climits>
-#include <cmath>
-#include <cstdlib>
-#include <cstring>
-#include <iterator>
-#include <ranges>
-#include <limits>
-#include <mutex>
-#include <shared_mutex>
-#include <optional>
-#include <ostream>
-#include <queue>
-#include <type_traits>
-#include <unordered_map>
-#include <variant>
-#include <vector>
-
 #include "active_item_cache.h"
+#include "active_tile_data.h"
 #include "ammo.h"
 #include "ammo_effect.h"
 #include "artifact.h"
 #include "avatar.h"
 #include "bodypart.h"
+#include "cached_options.h"
 #include "calendar.h"
-#include "catalua_hooks.h"
-#include "catalua_sol.h"
 #include "cata_cartesian_product.h"
 #include "cata_utility.h"
-#include "cached_options.h"
+#include "catalua.h"
+#include "catalua_hooks.h"
+#include "catalua_sol.h"
 #include "character.h"
 #include "character_id.h"
 #include "clzones.h"
@@ -54,12 +31,14 @@
 #include "event.h"
 #include "event_bus.h"
 #include "explosion.h"
+#include "explosion_queue.h"
+#include "faction.h"
 #include "field.h"
 #include "field_type.h"
 #include "flag.h"
 #include "flat_set.h"
-#include "fragment_cloud.h"
 #include "fluid_grid.h"
+#include "fragment_cloud.h"
 #include "fungal_effects.h"
 #include "game.h"
 #include "game_constants.h"
@@ -75,14 +54,17 @@
 #include "itype.h"
 #include "iuse.h"
 #include "iuse_actor.h"
+#include "legacy_pathfinding.h"
 #include "lightmap.h"
 #include "line.h"
-#include "map_functions.h"
+#include "map/utils/map_functions.h"
+#include "map_feature_descriptions.h"
 #include "map_iterator.h"
 #include "map_memory.h"
 #include "map_selector.h"
 #include "mapbuffer.h"
-#include "map_feature_descriptions.h"
+#include "mapdata.h"
+#include "mapgen_async.h"
 #include "math_defines.h"
 #include "memory_fast.h"
 #include "messages.h"
@@ -95,13 +77,13 @@
 #include "options.h"
 #include "output.h"
 #include "overmapbuffer.h"
-#include "legacy_pathfinding.h"
 #include "player.h"
 #include "point.h"
 #include "point_float.h"
-#include "projectile.h"
 #include "profile.h"
+#include "projectile.h"
 #include "rng.h"
+#include "rot.h"
 #include "safe_reference.h"
 #include "scent_map.h"
 #include "sounds.h"
@@ -122,8 +104,28 @@
 #include "visitable.h"
 #include "vpart_position.h"
 #include "vpart_range.h"
-#include "weather.h"
+#include "weather/weather.h"
 #include "weighted_list.h"
+
+#include <algorithm>
+#include <array>
+#include <cassert>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <cstring>
+#include <iterator>
+#include <limits>
+#include <mutex>
+#include <optional>
+#include <ostream>
+#include <queue>
+#include <ranges>
+#include <shared_mutex>
+#include <type_traits>
+#include <unordered_map>
+#include <variant>
+#include <vector>
 
 #if defined( CATA_SDL )
 #include "compute/compute_backend.h"
@@ -606,12 +608,18 @@ void map::on_submap_loaded( const tripoint_abs_sm &p, const dimension_id &dim_id
     get_mapbuffer().refresh_active_item_submap_index( p, resident_item_lookup() );
 
     // Register any funnel traps so fill_water_collectors can skip the mapbuffer scan.
+    // Guard against duplicate registration: on_submap_loaded() may be replayed for
+    // already-resident submaps (e.g. game::load_map() after m.load() cleared the
+    // list, or submap_loader.update() firing for the bubble), and funnel_locations_
+    // is a vector with no natural dedup — a double entry would fill at 2x rate (#10171).
     if( sm != nullptr && !sm->trap_cache.empty() ) {
-        std::ranges::for_each( sm->trap_cache, [&]( const point_sm_ms & lp ) {
-            if( sm->get_trap( lp ).obj().is_funnel() ) {
-                funnel_locations_.emplace_back( p, lp );
+        for( const point_sm_ms &lp : sm->trap_cache ) {
+            if( sm->get_effective_trap( lp ).obj().is_funnel() ) {
+                if( !std::ranges::contains( funnel_locations_, std::pair( p, lp ) ) ) {
+                    funnel_locations_.emplace_back( p, lp );
+                }
             }
-        } );
+        }
     }
 
 }
@@ -662,6 +670,7 @@ void map::set_seen_cache_dirty( const tripoint_bub_ms &change_location )
 {
     if( inbounds( change_location ) ) {
         level_cache &cache = get_cache( change_location.z() );
+        cache.vehicle_caches_dirty = true;
         if( cache.seen_cache_dirty ) {
             return;
         }
@@ -761,6 +770,16 @@ void map::set_floor_cache_dirty( const int zlev )
     set_absorption_cache_dirty( zlev - 1 );
 }
 
+void map::set_vehicle_cache_dirty( const int zlev )
+{
+    if( inbounds_z( zlev ) ) {
+        get_cache( zlev ).vehicle_caches_dirty = true;
+    }
+    if( inbounds_z( zlev + 1 ) ) {
+        get_cache( zlev + 1 ).vehicle_floor_cache_dirty = true;
+    }
+}
+
 void map::set_floor_cache_dirty( const tripoint_bub_ms &p )
 {
     if( !inbounds( p ) ) {
@@ -796,6 +815,7 @@ void map::set_transparency_cache_dirty( const tripoint_bub_ms &p )
     if( inbounds( p ) ) {
         const auto smp = project_to<coords::sm>( p );
         level_cache &ch = get_cache( smp.z() );
+        ch.vehicle_caches_dirty = true;
         ch.transparency_cache_dirty.set( static_cast<size_t>( ch.bidx( smp.x(), smp.y() ) ) );
         const auto abs_sm = map_local_to_abs( *this, smp );
         get_mapbuffer().mark_submap_caches_dirty( {
@@ -927,15 +947,23 @@ void map::add_vehicle_to_cache( vehicle *veh )
         int part = veh->part_with_feature( vpr.part_index(), VPFLAG_LADDER, true );
         if( part != -1 ) {
             // NOTE: This cache may need to be submapfied at some point
-            cached_veh_rope[p] = std::make_pair( veh, static_cast<int>( part ) );
+            // The rope hangs DOWN from the ladder part, so register the whole column from
+            // the part down to ladder_length() below it: has_rope_at() and the climb-up /
+            // rope-rendering paths look up the tile BELOW the part, not just the top tile
+            // (issue #9590). The top tile is kept so climbing down while boarded resolves.
+            const auto len = veh->part( part ).info().ladder_length();
+            const auto min_z = std::max( p.z() - len, -OVERMAP_DEPTH );
+            for( const auto z : std::views::iota( min_z, p.z() + 1 ) ) {
+                cached_veh_rope[tripoint_bub_ms( p.xy(), z )] = std::make_pair( veh, static_cast<int>( part ) );
+            }
         }
         level_cache &ch = get_cache( p.z() );
         ch.veh_in_active_range = true;
+        set_vehicle_cache_dirty( p.z() );
 
-        // DANGER: Unlike what you think where you can just use vpr.has_flag( VPFLAG_NOCOLLIDE )
-        // THAT DOES NOT WORK DO NOT TRY AND CHANGE THIS MESS
         if( !ch.veh_cached_parts.contains( p ) ||
-            ( !veh->part_info( vpr.part_index() ).has_flag( VPFLAG_NOCOLLIDE ) ) ) {
+            !veh->part_info( vpr.part_index() ).has_flag( VPFLAG_NOCOLLIDE ) ||
+            ch.veh_cached_parts.at( p ).first == veh ) {
             ch.veh_cached_parts[p] = std::make_pair( veh,  static_cast<int>( vpr.part_index() ) );
         }
         if( inbounds( p ) ) {
@@ -954,13 +982,29 @@ void map::clear_vehicle_point_from_cache( vehicle *veh, const tripoint_bub_ms &p
     }
 
     level_cache &ch = get_cache( pt.z() );
+    set_vehicle_cache_dirty( pt.z() );
     auto it = ch.veh_cached_parts.find( pt );
     if( it != ch.veh_cached_parts.end() && it->second.first == veh ) {
         if( inbounds( pt ) ) {
             ch.veh_exists_at[ch.idx( pt.x(), pt.y() )] = false;
         }
         ch.veh_cached_parts.erase( it );
-        cached_veh_rope.erase( pt );
+        // The rope-ladder cache stores the whole hanging column (see add_vehicle_to_cache),
+        // so a bare erase( pt ) would leave the rope tiles below the part. When pt is one of
+        // this vehicle's rope tiles (a column top), drop every tile this vehicle owns in that
+        // column. The gate keeps the common (no rope) path at a single lookup; the scan does
+        // NOT break on gaps, so an interleaved column from another vehicle can't strand this
+        // vehicle's lower tiles, and only this vehicle's entries are removed. Index-free on
+        // purpose: part indices may be stale here (this can run mid-part_removal_cleanup).
+        if( const auto top = cached_veh_rope.find( pt );
+            top != cached_veh_rope.end() && top->second.first == veh ) {
+            for( const auto z : std::views::iota( -OVERMAP_DEPTH, pt.z() + 1 ) ) {
+                const auto col_it = cached_veh_rope.find( tripoint_bub_ms( pt.xy(), z ) );
+                if( col_it != cached_veh_rope.end() && col_it->second.first == veh ) {
+                    cached_veh_rope.erase( col_it );
+                }
+            }
+        }
     }
 
 }
@@ -978,6 +1022,7 @@ void map::clear_vehicle_cache( )
             ch.veh_cached_parts.erase( part );
         }
         ch.veh_in_active_range = false;
+        set_vehicle_cache_dirty( zlev );
     }
     cached_veh_rope.clear();
 }
@@ -987,6 +1032,7 @@ void map::clear_vehicle_list( const int zlev )
     auto &ch = get_cache( zlev );
     ch.vehicle_list.clear();
     ch.zone_vehicles.clear();
+    set_vehicle_cache_dirty( zlev );
 
     last_full_vehicle_list_dirty = true;
 }
@@ -1000,6 +1046,7 @@ void map::update_vehicle_list( const submap *const to, const int zlev )
     level_cache &ch = get_cache( zlev );
     for( const auto &elem : to->vehicles ) {
         ch.vehicle_list.insert( elem.get() );
+        set_vehicle_cache_dirty( zlev );
         if( !elem->loot_zones.empty() ) {
             ch.zone_vehicles.insert( elem.get() );
         }
@@ -1023,6 +1070,41 @@ std::unique_ptr<vehicle> map::detach_vehicle( vehicle *veh )
         z = veh->abs_sm_pos.z() = z > OVERMAP_HEIGHT ? OVERMAP_HEIGHT : -OVERMAP_DEPTH;
     }
 
+    struct detached_vehicle_footprint {
+        tripoint_abs_sm min;
+        tripoint_abs_sm max;
+    };
+
+    auto footprints = std::array<std::optional<detached_vehicle_footprint>, OVERMAP_LAYERS> {};
+    for( const vpart_reference &vp : veh->get_all_parts() ) {
+        if( vp.part().removed ) {
+            continue;
+        }
+        const auto part_sm = project_to<coords::sm>( veh->abs_part_location( vp.part() ) );
+        if( !inbounds_z( part_sm.z() ) ) {
+            continue;
+        }
+        auto &footprint = footprints[part_sm.z() + OVERMAP_DEPTH];
+        if( !footprint ) {
+            footprint = detached_vehicle_footprint{ .min = part_sm, .max = part_sm };
+            continue;
+        }
+        footprint->min.x() = std::min( footprint->min.x(), part_sm.x() );
+        footprint->min.y() = std::min( footprint->min.y(), part_sm.y() );
+        footprint->max.x() = std::max( footprint->max.x(), part_sm.x() );
+        footprint->max.y() = std::max( footprint->max.y(), part_sm.y() );
+    }
+
+    const auto mark_detached_vehicle_footprint_dirty = [&]() {
+        for( const auto &footprint : footprints ) {
+            if( !footprint ) {
+                continue;
+            }
+            on_vehicle_moved( abs_to_bub( footprint->min ), abs_to_bub( footprint->max ),
+                              footprint->min.z() );
+        }
+    };
+
     // Unboard all passengers before detaching
     for( auto const &part : veh->get_avail_parts( VPFLAG_BOARDABLE ) ) {
         player *passenger = part.get_passenger();
@@ -1038,6 +1120,7 @@ std::unique_ptr<vehicle> map::detach_vehicle( vehicle *veh )
                   veh->name, veh->abs_sm_pos.x(), veh->abs_sm_pos.y(), veh->abs_sm_pos.z() );
         get_mapbuffer().unregister_vehicle( veh );
         dirty_vehicle_list.erase( veh );
+        mark_detached_vehicle_footprint_dirty();
         return std::unique_ptr<vehicle>();
     }
     level_cache &ch = get_cache( z );
@@ -1053,6 +1136,7 @@ std::unique_ptr<vehicle> map::detach_vehicle( vehicle *veh )
                 get_overmapbuffer( bound_dimension_ ).remove_vehicle( veh );
             }
             dirty_vehicle_list.erase( veh );
+            mark_detached_vehicle_footprint_dirty();
             veh->detach();
             veh->refresh_position();
             return result;
@@ -1078,6 +1162,13 @@ void map::on_vehicle_moved( const tripoint_bub_sm &sm_min, const tripoint_bub_sm
     }
 
     auto &ch = get_cache( smz );
+    // Vehicle-only caches are cleared by build_map_cache() when a z-level has vehicle
+    // cache effects.  Keep that cleanup path active even if this movement is a
+    // removal of the last vehicle on the level.
+    ch.veh_in_active_range = true;
+
+    // Vehicle
+    set_vehicle_cache_dirty( smz );
     invalidate_lightmap_caches();
     set_seen_cache_dirty( smz );
     mark_visibility_cache_dirty( smz );
@@ -3682,7 +3773,7 @@ void map::decay_fields_and_scent( const time_duration &amount )
         }
 
         if( to_proc > 0 ) {
-            for( const auto sm_ms : submap_tiles() ) {
+            for( const auto sm_ms : cur_submap->field_cache ) {
                 const auto ms_pos = project_combine( p, sm_ms );
 
                 field &fields = cur_submap->get_field( sm_ms );
@@ -4223,7 +4314,8 @@ static auto get_sound_volume( const map_bash_info &bash, const bash_params &para
     // Set maxvol to 140dB, which can be deafening for extreme impacts.
     const auto maxvol = 140;
     const auto impact_strength = params.destroy ? bash.str_max : params.strength;
-    return bash.sound_vol.value_or( std::clamp( minvol + impact_strength, minvol, maxvol ) );
+    return units::to_decibel( bash.sound_vol.value_or(
+                                  units::from_decibel( std::clamp( minvol + impact_strength, minvol, maxvol ) ) ) );
 }
 
 static void set_bash_sound_source( sound_event &se, const bash_params &params )
@@ -4607,7 +4699,8 @@ bash_results map::bash_ter_furn( const tripoint_bub_ms &p, const bash_params &pa
 
     if( !result.success ) {
         // Cap out bash volume to 120dB for sanity checking.
-        int sound_volume = std::min( 120, bash->sound_fail_vol.value_or( 70 ) );
+        const auto sound_volume =
+            std::min( 120, units::to_decibel( bash->sound_fail_vol.value_or( 70_dB ) ) );
 
         result.did_bash = true;
         if( !params.silent ) {
@@ -4622,7 +4715,7 @@ bash_results map::bash_ter_furn( const tripoint_bub_ms &p, const bash_params &pa
             sounds::sound( se );
         }
 
-        if( !smash_ter && smax > 0 ) {
+        if( !smash_ter && has_flag( TFLAG_BASH_TRANSFORM, p ) && smax > 0 ) {
             const auto flipped_version = get_furn_transforms_into( p );
             if( flipped_version != furn_str_id::NULL_ID() ) {
                 const int damage_percent = ( params.strength * 100 ) / smax;
@@ -5906,7 +5999,7 @@ void map::add_item( const tripoint_bub_ms &p, detached_ptr<item> &&new_item )
     // Process foods when they are added to the map, here instead of add_item_at()
     // to avoid double processing food and corpses during active item processing.
     if( new_item->is_food() ) {
-        new_item = item::process( std::move( new_item ), nullptr, p, false );
+        new_item = item::process( std::move( new_item ), nullptr, p, 1, false );
         if( !new_item ) {
             return;
         }
@@ -6092,11 +6185,11 @@ void map::update_lum( item &loc, bool add )
 }
 
 static bool process_map_items( item *item_ref, const tripoint_bub_ms &location,
-                               const temperature_flag flag )
+                               const temperature_flag flag, int turns )
 {
     ZoneScopedN( "process_map_items" );
-    return item_ref->attempt_detach( [&location, &flag]( detached_ptr<item> &&it ) {
-        return item::process( std::move( it ), nullptr, location, false, flag );
+    return item_ref->attempt_detach( [&location, &flag, &turns]( detached_ptr<item> &&it ) {
+        return item::process( std::move( it ), nullptr, location, false, turns, flag );
     } );
 }
 
@@ -6170,8 +6263,12 @@ std::vector<tripoint_abs_sm> map::check_submap_active_item_consistency()
     return result;
 }
 
-void map::process_items()
+void map::process_items( int turns )
 {
+    // Defer explosion drains during processing: an item here can be detached but
+    // still in-stack, and a re-entrant drain would re-detonate it forever (#9696).
+    explosion_handler::scoped_drain_deferral defer_explosion_drains;
+
     auto total_active_items = int64_t{ 0 };
     auto total_rottable_active_items = int64_t{ 0 };
 
@@ -6201,7 +6298,7 @@ void map::process_items()
                     total_rottable_active_items += counts.rottable;
                 }
             }
-            process_items_in_vehicles( *sm );
+            process_items_in_vehicles( *sm, turns );
         } );
     }
     // Snapshot because processing can add or remove active submaps.
@@ -6232,7 +6329,7 @@ void map::process_items()
                     total_active_items += counts.total;
                     total_rottable_active_items += counts.rottable;
                 }
-                process_items_in_submap( *current_submap, local_pos, active_items );
+                process_items_in_submap( *current_submap, local_pos, active_items, turns );
             }
         }
     }
@@ -6240,23 +6337,8 @@ void map::process_items()
     TracyPlot( "Total Rottable Active Items", total_rottable_active_items );
 }
 
-static temperature_flag temperature_flag_at_point( const map &m, const tripoint_bub_ms &p )
-{
-    if( m.ter( p ) == t_rootcellar ) {
-        return temperature_flag::TEMP_ROOT_CELLAR;
-    }
-    if( m.has_flag_furn( TFLAG_FRIDGE, p ) ) {
-        return temperature_flag::TEMP_FRIDGE;
-    }
-    if( m.has_flag_furn( TFLAG_FREEZER, p ) ) {
-        return temperature_flag::TEMP_FREEZER;
-    }
-
-    return temperature_flag::TEMP_NORMAL;
-}
-
 auto map::process_items_in_submap( submap &current_submap, const tripoint_bub_sm &gridp,
-                                   std::vector<item *> &active_items ) -> void
+                                   std::vector<item *> &active_items, int turns ) -> void
 {
     ZoneScopedN( "process_items_in_submap" );
     // Get a COPY of the active item list for this submap.
@@ -6276,13 +6358,13 @@ auto map::process_items_in_submap( submap &current_submap, const tripoint_bub_sm
             }
 
             const auto map_location = active_item_ref->bub_pos();
-            temperature_flag flag = temperature_flag_at_point( *this, tripoint_bub_ms( map_location ) );
-            process_map_items( active_item_ref, map_location, flag );
+            const auto flag = rot::temp::for_location( *this, *active_item_ref );
+            process_map_items( active_item_ref, map_location, flag, turns );
         }
     }
 }
 
-void map::process_items_in_vehicles( submap &current_submap )
+void map::process_items_in_vehicles( submap &current_submap, int turns )
 {
     // a copy, important if the vehicle list changes because a
     // vehicle got destroyed by a bomb (an active item!), this list
@@ -6300,11 +6382,11 @@ void map::process_items_in_vehicles( submap &current_submap )
             continue;
         }
 
-        process_items_in_vehicle( *cur_veh, current_submap );
+        process_items_in_vehicle( *cur_veh, current_submap, turns );
     }
 }
 
-void map::process_items_in_vehicle( vehicle &cur_veh, submap &current_submap )
+void map::process_items_in_vehicle( vehicle &cur_veh, submap &current_submap, int turns )
 {
     const bool engine_heater_is_on = cur_veh.has_part( "E_HEATER", true ) && cur_veh.engine_on;
     for( const vpart_reference &vp : cur_veh.get_any_parts( VPFLAG_FLUIDTANK ) ) {
@@ -6339,23 +6421,12 @@ void map::process_items_in_vehicle( vehicle &cur_veh, submap &current_submap )
         }
         const item &target = *active_item_ref;
         // Find the cargo part and coordinates corresponding to the current active item.
-        const vehicle_part &pt = it->part();
         const auto item_loc = it->pos();
-        auto items = cur_veh.get_items( static_cast<int>( it->part_index() ) );
-        temperature_flag flag = temperature_flag::TEMP_NORMAL;
+        auto flag = temperature_flag::TEMP_NORMAL;
         if( target.is_food() || target.is_food_container() || target.is_corpse() ) {
-            const vpart_info &pti = pt.info();
-            if( engine_heater_is_on ) {
-                flag = temperature_flag::TEMP_HEATER;
-            }
-
-            if( pt.enabled && pti.has_flag( VPFLAG_FRIDGE ) ) {
-                flag = temperature_flag::TEMP_FRIDGE;
-            } else if( pt.enabled && pti.has_flag( VPFLAG_FREEZER ) ) {
-                flag = temperature_flag::TEMP_FREEZER;
-            }
+            flag = rot::temp::for_part( cur_veh, it->part_index(), engine_heater_is_on );
         }
-        if( !process_map_items( active_item_ref, item_loc, flag ) ) {
+        if( !process_map_items( active_item_ref, item_loc, flag, turns ) ) {
             // If the item was NOT destroyed, we can skip the remainder,
             // which handles fallout from the vehicle being damaged.
             continue;
@@ -6636,58 +6707,42 @@ std::vector<detached_ptr<item>> map::use_charges( const tripoint_bub_ms &origin,
         const std::optional<vpart_reference> autoclavepart = vp.part_with_feature( "AUTOCLAVE", true );
         const std::optional<vpart_reference> cargo = vp.part_with_feature( "CARGO", true );
 
-        if( crafterpart ) {
-            for( itype_id id : crafterpart->info().craftertools() ) {
-                if( type == id ) {
-                    detached_ptr<item> tmp = item::spawn( type, calendar::start_of_cataclysm );
-                    tmp->charges = crafterpart->vehicle().drain( itype_battery, quantity );
-                    quantity -= tmp->charges;
-                    ret.push_back( std::move( tmp ) );
+        auto drain_vehicle_pseudo_item = [&ret, &quantity, &type]( vehicle & veh,
+        const itype_id & drain_type ) -> bool {
+            const auto drained = veh.drain( drain_type, quantity );
+            quantity -= drained;
+            if( drained <= 0 )
+            {
+                return quantity == 0;
+            }
+            auto tmp = item::spawn( type, calendar::turn );
+            tmp->charges = drained;
+            ret.push_back( std::move( tmp ) );
+            return quantity == 0;
+        };
 
-                    if( quantity == 0 ) {
-                        return ret;
-                    }
+        if( crafterpart ) {
+            for( const auto &id : crafterpart->info().craftertools() ) {
+                if( type == id && drain_vehicle_pseudo_item( crafterpart->vehicle(), itype_battery ) ) {
+                    return ret;
                 }
             }
         }
         if( faupart ) { // we have a faucet, now to see what to drain
-            itype_id ftype = itype_id::NULL_ID();
-
-            ftype = type;
-
-            // TODO: add a sane birthday arg
-            //TODO!: check if we actually need the return  here
-            detached_ptr<item> tmp = item::spawn( type, calendar::start_of_cataclysm );
-            tmp->charges = faupart->vehicle().drain( ftype, quantity );
             // TODO: Handle water poison when crafting starts respecting it
-            quantity -= tmp->charges;
-            // Don't return a 0-charge phantom for types the tanks can't provide:
-            // it would replace the real component during crafting (#9440)
-            if( tmp->charges > 0 ) {
-                ret.push_back( std::move( tmp ) );
-            }
-
-            if( quantity == 0 ) {
+            if( drain_vehicle_pseudo_item( faupart->vehicle(), type ) ) {
                 return ret;
             }
         }
 
         if( autoclavepart ) { // we have an autoclave, now to see what to drain
-            itype_id ftype = itype_id::NULL_ID();
+            auto ftype = itype_id::NULL_ID();
 
             if( type == itype_autoclave ) {
                 ftype = itype_battery;
             }
 
-            // TODO: add a sane birthday arg
-            detached_ptr<item> tmp = item::spawn( type, calendar::start_of_cataclysm );
-            tmp->charges = autoclavepart->vehicle().drain( ftype, quantity );
-            quantity -= tmp->charges;
-            if( tmp->charges > 0 ) {
-                ret.push_back( std::move( tmp ) );
-            }
-
-            if( quantity == 0 ) {
+            if( drain_vehicle_pseudo_item( autoclavepart->vehicle(), ftype ) ) {
                 return ret;
             }
         }
@@ -7925,8 +7980,14 @@ void map::reachable_flood_steps( std::vector<tripoint_bub_ms> &reachable_pts,
     for( const tripoint_bub_ms &p : points_in_radius( f, range ) ) {
         const tripoint_bub_ms tp = { p.xy(), f.z() };
         const int tp_cost = move_cost( tp );
+        const auto &veh = veh_at( tp );
+        const auto &veh_wall = veh.obstacle_at_part();
+        // Move cost is in right bounds
+        const bool bad_move_cost = tp_cost < cost_min || tp_cost > cost_max;
+        // It lacks floor in terrain or in veh
+        const bool no_floor = !has_floor_or_support( tp ) && ( veh_wall || !veh );
         // rejection conditions
-        if( tp_cost < cost_min || tp_cost > cost_max || !has_floor_or_support( tp ) ) {
+        if( bad_move_cost || no_floor || veh_wall ) {
             continue;
         }
         // set initial cost for grid point
@@ -8774,6 +8835,7 @@ void map::loadn( const tripoint_bub_sm &grid, const bool update_vehicles,
             set_seen_cache_dirty( grid.z() );
             set_pathfinding_cache_dirty( grid.z() );
             set_suspension_cache_dirty( grid.z() );
+            set_vehicle_cache_dirty( grid.z() );
         }
     }
     // Overlay boundary terrain on the edge tiles of this submap if it sits at the
@@ -9004,6 +9066,7 @@ void map::spawn_monsters_submap( const tripoint_bub_sm &gp, bool ignore_sight )
                 monster *const placed = g->place_critter_at( make_shared_fast<monster>( tmp ), p );
                 if( placed ) {
                     placed->on_load();
+                    std::unique_lock lock( cata::lua_lock );
                     cata::run_hooks( "on_creature_spawn", [&]( sol::table & params ) {
                         params["creature"] = placed;
                     } );
@@ -9497,12 +9560,16 @@ static void vehicle_caching_internal_above( level_cache &zch_above, const vpart_
         const tripoint_bub_ms &part_pos = v->bub_part_location( vp.part() );
         const int tile_idx = zch_above.idx( part_pos.x(), part_pos.y() );
         zch_above.vehicle_floor_cache[tile_idx] = true;
+        zch_above.has_any_vehicle_floor = true;
     }
 }
 
 void map::do_vehicle_caching( int z )
 {
     level_cache &ch = get_cache( z );
+    if( ch.vehicle_list.empty() && inbounds_z( z + 1 ) ) {
+        get_cache( z + 1 ).vehicle_floor_cache_dirty = false;
+    }
     for( vehicle *v : ch.vehicle_list ) {
         for( const vpart_reference &vp : v->get_all_parts() ) {
             const tripoint_bub_ms &part_pos = v->bub_part_location( vp.part() );
@@ -9511,10 +9578,13 @@ void map::do_vehicle_caching( int z )
             }
             vehicle_caching_internal( get_cache( part_pos.z() ), vp, v );
             if( part_pos.z() < OVERMAP_HEIGHT ) {
-                vehicle_caching_internal_above( get_cache( part_pos.z() + 1 ), vp, v );
+                level_cache &ch_above = get_cache( part_pos.z() + 1 );
+                vehicle_caching_internal_above( ch_above, vp, v );
+                ch_above.vehicle_floor_cache_dirty = false;
             }
         }
     }
+    ch.vehicle_caches_dirty = false;
 }
 
 void map::build_map_cache( const int zlev, bool skip_lightmap )
@@ -9537,11 +9607,17 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
     bool gpu_vehicle_floor_dirty = false;
     bool gpu_vehicle_obscured_dirty = false;
     std::vector<int> dirty_seen_cache_levels;
+    dirty_seen_cache_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
     std::vector<int> gpu_transparency_dirty_levels;
+    gpu_transparency_dirty_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
     std::vector<int> gpu_transparency_residency_invalid_levels;
+    gpu_transparency_residency_invalid_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
     std::vector<int> gpu_floor_dirty_levels;
+    gpu_floor_dirty_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
     std::vector<int> gpu_vehicle_floor_dirty_levels;
+    gpu_vehicle_floor_dirty_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
     std::vector<int> gpu_vehicle_obscured_dirty_levels;
+    gpu_vehicle_obscured_dirty_levels.reserve( OVERMAP_HEIGHT + OVERMAP_DEPTH + 1 );
 
     auto mark_lightmap_dirty = [this]( const int z ) {
         auto &cache = get_cache( z );
@@ -9560,9 +9636,8 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
         levels.erase( std::ranges::unique( levels ).begin(), levels.end() );
     };
     auto level_has_vehicle_floor = []( const level_cache & ch ) {
-        return std::ranges::any_of( ch.vehicle_floor_cache, []( const char c ) {
-            return c != '\0';
-        } );
+        ZoneScopedN( "Level_Has_Vehicle_Floor" );
+        return ch.has_any_vehicle_floor;
     };
 
     // Refresh the shared weather-transparency lookup table once, serially,
@@ -9617,61 +9692,28 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
     }
 
     {
-        ZoneScopedN( "Phase1_parallel_caches" );
+        ZoneScopedN( "Phase1_seen_and_vehicle_caches" );
         // Vehicle cache clearing only — floor/outside/sheltered are already done above.
-        if( parallel_enabled && parallel_map_cache ) {
-            std::mutex dirty_mutex;
-            parallel_for( -OVERMAP_DEPTH, OVERMAP_HEIGHT + 1, [&]( int z ) {
-                level_cache &ch = get_cache( z );
-                const bool vehicle_floor_was_dirty = level_has_vehicle_floor( ch );
-                // vehicle_floor_cache is written by vehicles one level below (via
-                // vehicle_caching_internal_above), so it must be cleared unconditionally —
-                // not gated on veh_in_active_range — to prevent stale entries after shifts.
+        for( int z = -OVERMAP_DEPTH; z <= OVERMAP_HEIGHT; ++z ) {
+            level_cache &ch = get_cache( z );
+
+            if( ch.vehicle_floor_cache_dirty ) {
+                ZoneScopedN( "fill_veh_caches_zabove" );
                 std::fill( ch.vehicle_floor_cache.begin(), ch.vehicle_floor_cache.end(), '\0' );
-                if( ch.veh_in_active_range ) {
-                    const diagonal_blocks fill = {false, false};
-                    std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
-                    std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
-                    std::lock_guard<std::mutex> lock( dirty_mutex );
-                    add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
-                }
-
-                const bool level_seen_dirty = ch.seen_cache_dirty;
-                if( level_seen_dirty || vehicle_floor_was_dirty ) {
-                    std::lock_guard<std::mutex> lock( dirty_mutex );
-                    if( level_seen_dirty ) {
-                        seen_cache_dirty = true;
-                        dirty_seen_cache_levels.push_back( z );
-                    }
-                    if( vehicle_floor_was_dirty ) {
-                        add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
-                    }
-                }
-            } );
-        } else {
-            for( int z = -OVERMAP_DEPTH; z <= OVERMAP_HEIGHT; ++z ) {
-                level_cache &ch = get_cache( z );
-                const bool vehicle_floor_was_dirty = level_has_vehicle_floor( ch );
-
-                // vehicle_floor_cache is written by vehicles one level below (via
-                // vehicle_caching_internal_above), so it must be cleared unconditionally —
-                // not gated on veh_in_active_range — to prevent stale entries after shifts.
-                std::fill( ch.vehicle_floor_cache.begin(), ch.vehicle_floor_cache.end(), '\0' );
-                if( ch.veh_in_active_range ) {
-                    const diagonal_blocks fill = {false, false};
-                    std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
-                    std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
-                    add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
-                }
-
-                const bool level_seen_dirty = ch.seen_cache_dirty;
-                if( level_seen_dirty ) {
-                    seen_cache_dirty = true;
-                    dirty_seen_cache_levels.push_back( z );
-                }
-                if( vehicle_floor_was_dirty ) {
-                    add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
-                }
+                ch.has_any_vehicle_floor = false;
+                add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
+            }
+            if( ch.vehicle_caches_dirty ) {
+                ZoneScopedN( "fill_veh_caches_thisz" );
+                const diagonal_blocks fill = {false, false};
+                std::fill( ch.vehicle_obscured_cache.begin(), ch.vehicle_obscured_cache.end(), fill );
+                std::fill( ch.vehicle_obstructed_cache.begin(), ch.vehicle_obstructed_cache.end(), fill );
+                add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
+            }
+            if( ch.seen_cache_dirty ) {
+                ZoneScopedN( "seen_dirty" );
+                seen_cache_dirty = true;
+                dirty_seen_cache_levels.push_back( z );
             }
         }
     }
@@ -9688,37 +9730,23 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
 
     {
         ZoneScopedN( "Phase3_vehicles" );
-        // needs a separate pass as it changes the caches on neighbour z-levels (e.g. floor_cache);
-        // otherwise such changes might be overwritten by main cache-building logic.
-        // This pass must remain serial: do_vehicle_caching() writes to neighbor z-level caches.
-        auto const mark_vehicle_gpu_structural_levels = [&]( const vehicle * const veh ) {
-            if( veh == nullptr ) {
-                return;
-            }
-            for( const vpart_reference &vp : veh->get_all_parts() ) {
-                const auto &part_pos = veh->bub_part_location( vp.part() );
-                if( !inbounds( part_pos ) || vp.part().removed ) {
-                    continue;
-                }
-                add_gpu_dirty_level( gpu_transparency_dirty_levels, part_pos.z() );
-                add_gpu_dirty_level( gpu_transparency_residency_invalid_levels, part_pos.z() );
-                add_gpu_dirty_level( gpu_floor_dirty_levels, part_pos.z() );
-                add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, part_pos.z() );
-            }
-        };
         for( int z = -OVERMAP_DEPTH; z <= OVERMAP_HEIGHT; z++ ) {
-            if( get_cache( z ).veh_in_active_range ) {
-                for( const vehicle *const veh : get_cache( z ).vehicle_list ) {
-                    mark_vehicle_gpu_structural_levels( veh );
+            // If one cache is dirty redo the entire cache for simplicity
+            if( get_cache( z ).vehicle_caches_dirty || ( inbounds_z( z + 1 ) &&
+                    get_cache( z + 1 ).vehicle_floor_cache_dirty ) ) {
+                add_gpu_dirty_level( gpu_transparency_dirty_levels, z );
+                add_gpu_dirty_level( gpu_transparency_residency_invalid_levels, z );
+                add_gpu_dirty_level( gpu_floor_dirty_levels, z );
+                add_gpu_dirty_level( gpu_vehicle_obscured_dirty_levels, z );
+                {
+                    ZoneScopedN( "Phase3_vehicles_cache" );
+                    do_vehicle_caching( z );
                 }
-                do_vehicle_caching( z );
             }
-        }
-        std::ranges::for_each( std::views::iota( -OVERMAP_DEPTH, OVERMAP_HEIGHT + 1 ), [&]( const int z ) {
-            if( level_has_vehicle_floor( get_cache_ref( z ) ) ) {
+            if( get_cache( z ).vehicle_floor_cache_dirty ) {
                 add_gpu_dirty_level( gpu_vehicle_floor_dirty_levels, z );
             }
-        } );
+        }
     }
 
     normalize_gpu_dirty_levels( gpu_transparency_dirty_levels );
@@ -9736,6 +9764,13 @@ void map::build_map_cache( const int zlev, bool skip_lightmap )
     }
     if( skip_lightmap && use_sdl_gpu_compute && gpu_transparency_dirty ) {
         cata_gpu::invalidate_lighting_transparency_levels( gpu_transparency_dirty_levels );
+    }
+    if( !use_sdl_gpu_compute && gpu_transparency_dirty ) {
+        invalidate_lightmap_caches();
+    }
+#else
+    if( gpu_transparency_dirty ) {
+        invalidate_lightmap_caches();
     }
 #endif
     TracyPlot( "Map GPU Transparency Dirty Levels",
@@ -10617,6 +10652,18 @@ bool map::check_and_set_seen_cache( const tripoint_bub_ms &p ) const
     return false;
 }
 
+bool map::is_map_cache_valid( const int zlev )
+{
+    if( inbounds_z( zlev ) ) {
+        level_cache &ch = get_cache( zlev );
+        // NOTE: Purposely excludes visibility cache, that is handled seperately in the game loop
+        return ch.floor_cache_dirty.any() || ch.transparency_cache_dirty.any() ||
+               ch.absorption_cache_dirty.any() || ch.sound_wall_cache_dirty.any() ||
+               ch.seen_cache_dirty || ch.lightmap_dirty || ch.outside_cache_dirty.any() ||
+               ch.suspension_cache_dirty;
+    }
+}
+
 void map::invalidate_map_cache( const int zlev )
 {
     if( inbounds_z( zlev ) ) {
@@ -10628,6 +10675,7 @@ void map::invalidate_map_cache( const int zlev )
         ch.seen_cache_dirty = true;
         ch.lightmap_dirty = true;
         ch.lm_cpu_cache_valid = false;
+        set_vehicle_cache_dirty( zlev );
         ++ch.lm_cpu_cache_generation;
         mark_visibility_cache_dirty( zlev );
         ch.outside_cache_dirty.set();

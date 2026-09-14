@@ -1,9 +1,3 @@
-#include "player.h" // IWYU pragma: associated
-
-#include <array>
-#include <cstdlib>
-#include <memory>
-
 #include "action_time_scale.h"
 #include "activity_handlers.h"
 #include "avatar.h"
@@ -23,10 +17,11 @@
 #include "mapdata.h"
 #include "martialarts.h"
 #include "messages.h"
-#include "morale_types.h"
 #include "mongroup.h"
 #include "monster.h"
+#include "morale_types.h"
 #include "mutation_data.h"
+#include "player.h" // IWYU pragma: associated
 #include "player_activity.h"
 #include "pldata.h"
 #include "rng.h"
@@ -37,10 +32,15 @@
 #include "teleport.h"
 #include "text_snippets.h"
 #include "translations.h"
-#include "weather.h"
+#include "type_id.h"
 #include "vitamin.h"
+#include "weather/weather.h"
+
 #include <algorithm>
+#include <array>
+#include <cstdlib>
 #include <functional>
+#include <memory>
 
 static const activity_id ACT_FIRSTAID( "ACT_FIRSTAID" );
 
@@ -99,8 +99,6 @@ static const mongroup_id GROUP_NETHER( "GROUP_NETHER" );
 
 static const mtype_id mon_dermatik_larva( "mon_dermatik_larva" );
 
-static const bionic_id bio_infolink( "bio_infolink" );
-
 static const trait_id trait_CHLOROMORPH( "CHLOROMORPH" );
 static const trait_id trait_HEAVYSLEEPER2( "HEAVYSLEEPER2" );
 static const trait_id trait_HIBERNATE( "HIBERNATE" );
@@ -108,10 +106,13 @@ static const trait_id trait_INFRESIST( "INFRESIST" );
 static const trait_id trait_M_IMMUNE( "M_IMMUNE" );
 static const trait_id trait_M_SKIN3( "M_SKIN3" );
 static const trait_id trait_NOPAIN( "NOPAIN" );
-static const trait_id trait_SEESLEEP( "SEESLEEP" );
 static const trait_id trait_SCHIZOPHRENIC( "SCHIZOPHRENIC" );
 static const trait_id trait_THRESH_MYCUS( "THRESH_MYCUS" );
 static const trait_id trait_WATERSLEEP( "WATERSLEEP" );
+
+static const enchantment_flag_id ench_flag_INTERNAL_ALARMCLOCK( "INTERNAL_ALARMCLOCK" );
+static const enchantment_flag_id ench_flag_SLEEP_SIGHT( "SLEEP_SIGHT" );
+static const enchantment_flag_id ench_flag_NO_LIGHT_WAKE( "NO_LIGHT_WAKE" );
 
 static void eff_fun_onfire( player &u, effect &it )
 {
@@ -416,7 +417,7 @@ static void eff_fun_hot( player &u, effect &it )
             debugmsg( "%s has no head(?!)", u.disp_name() );
             return;
         }
-        int temp_cur = iter->second.get_temp_cur();
+        const auto temp_cur = units::to_legacy_bodypart_temp( iter->second.get_temp_cur() );
         if( one_in( std::max( 25, std::min( 89500, 90000 - temp_cur ) ) ) ) {
             u.vomit();
         }
@@ -1168,8 +1169,9 @@ void Character::hardcoded_effects( effect &it )
         bool woke_up = false;
         int tirednessVal = rng( 5, 200 ) + rng( 0, std::abs( get_fatigue() * 2 * 5 ) );
         if( !is_blind() && !has_effect( effect_narcosis ) ) {
-            if( !has_trait(
-                    trait_SEESLEEP ) ) { // People who can see while sleeping are acclimated to the light.
+            // If you can see while sleeping light probably doesn't bother you
+            if( !has_enchantment_flag( ench_flag_SLEEP_SIGHT ) &&
+                !has_enchantment_flag( ench_flag_NO_LIGHT_WAKE ) ) {
                 if( has_trait( trait_HEAVYSLEEPER2 ) && !has_trait( trait_HIBERNATE ) ) {
                     // So you can too sleep through noon
                     if( ( tirednessVal * 1.25 ) < g->m.ambient_light_at( bub_pos() ) && ( get_fatigue() < 10 ||
@@ -1195,7 +1197,7 @@ void Character::hardcoded_effects( effect &it )
                     it.set_duration( 0_turns );
                     woke_up = true;
                 }
-            } else if( has_active_mutation( trait_SEESLEEP ) ) {
+            } else if( has_enchantment_flag( ench_flag_SLEEP_SIGHT ) ) {
                 Creature *hostile_critter = g->is_hostile_very_close();
                 if( hostile_critter != nullptr ) {
                     add_msg_if_player( _( "You see %s approaching!" ),
@@ -1211,12 +1213,12 @@ void Character::hardcoded_effects( effect &it )
             // Cold or heat may wake you up.
             // Player will sleep through cold or heat if fatigued enough
             for( const auto &pr : get_body() ) {
-                int temp_cur = pr.second.get_temp_cur();
-                if( temp_cur < BODYTEMP_VERY_COLD - get_fatigue() / 2 ) {
+                const auto temp_cur = units::to_legacy_bodypart_temp( pr.second.get_temp_cur() );
+                if( temp_cur < units::to_legacy_bodypart_temp( BODYTEMP_VERY_COLD ) - get_fatigue() / 2 ) {
                     if( one_in( 30000 ) ) {
                         add_msg_if_player( _( "You toss and turn trying to keep warm." ) );
                     }
-                    if( temp_cur < BODYTEMP_FREEZING - get_fatigue() / 2 ||
+                    if( temp_cur < units::to_legacy_bodypart_temp( BODYTEMP_FREEZING ) - get_fatigue() / 2 ||
                         one_in( temp_cur * 6 + 30000 ) ) {
                         add_msg_if_player( m_bad, _( "It's too cold to sleep." ) );
                         // Set ourselves up for removal
@@ -1224,11 +1226,11 @@ void Character::hardcoded_effects( effect &it )
                         woke_up = true;
                         break;
                     }
-                } else if( temp_cur > BODYTEMP_VERY_HOT + get_fatigue() / 2 ) {
+                } else if( temp_cur > units::to_legacy_bodypart_temp( BODYTEMP_VERY_HOT ) + get_fatigue() / 2 ) {
                     if( one_in( 30000 ) ) {
                         add_msg_if_player( _( "You toss and turn in the heat." ) );
                     }
-                    if( temp_cur > BODYTEMP_SCORCHING + get_fatigue() / 2 ||
+                    if( temp_cur > units::to_legacy_bodypart_temp( BODYTEMP_SCORCHING ) + get_fatigue() / 2 ||
                         one_in( 90000 - temp_cur ) ) {
                         add_msg_if_player( m_bad, _( "It's too hot to sleep." ) );
                         // Set ourselves up for removal
@@ -1271,7 +1273,7 @@ void Character::hardcoded_effects( effect &it )
     } else if( id == effect_alarm_clock ) {
         if( in_sleep_state() ) {
             const bool asleep = has_effect( effect_sleep );
-            if( has_bionic( bio_infolink ) ) {
+            if( has_enchantment_flag( ench_flag_INTERNAL_ALARMCLOCK ) ) {
                 if( dur == 1_turns ) {
                     if( !asleep ) {
                         add_msg_if_player( _( "Your internal chronometer went off and you haven't slept a wink." ) );

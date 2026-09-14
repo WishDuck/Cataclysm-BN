@@ -1,5 +1,58 @@
 #include "mapbuffer.h"
 
+#include "avatar.h"
+#include "batch_turns.h"
+#include "calendar.h"
+#include "cata_utility.h"
+#include "creature.h"
+#include "debug.h"
+#include "detached_ptr.h"
+#include "distribution_grid.h"
+#include "field_type.h"
+#include "filesystem.h"
+#include "flag.h"
+#include "fluid_grid.h"
+#include "fstream_utils.h"
+#include "game.h"
+#include "game_constants.h"
+#include "harvest.h"
+#include "iexamine.h"
+#include "item.h"
+#include "itype.h"
+#include "json.h"
+#include "map.h"
+#include "map_iterator.h"
+#include "map_mutation_hooks.h"
+#include "mapdata.h"
+#include "mapgen_constructor.h"
+#include "messages.h"
+#include "mongroup.h"
+#include "monster.h"
+#include "mtype.h"
+#include "npc.h"
+#include "options.h"
+#include "output.h"
+#include "overmapbuffer.h"
+#include "popup.h"
+#include "profile.h"
+#include "rng.h"
+#include "rot.h"
+#include "skill.h"
+#include "string_formatter.h"
+#include "submap.h"
+#include "submap_load_manager.h"
+#include "thread_pool.h"
+#include "translations.h"
+#include "trap.h"
+#include "ui_manager.h"
+#include "units_mass.h"
+#include "veh_type.h"
+#include "vehicle.h"
+#include "vehicle_part.h"
+#include "vpart_range.h"
+#include "weather/weather.h"
+#include "world.h"
+
 #include <algorithm>
 #include <array>
 #include <cassert>
@@ -16,58 +69,6 @@
 #include <sstream>
 #include <utility>
 #include <vector>
-
-#include "avatar.h"
-#include "batch_turns.h"
-#include "calendar.h"
-#include "cata_utility.h"
-#include "creature.h"
-#include "debug.h"
-#include "detached_ptr.h"
-#include "distribution_grid.h"
-#include "filesystem.h"
-#include "field_type.h"
-#include "fluid_grid.h"
-#include "flag.h"
-#include "fstream_utils.h"
-#include "game.h"
-#include "game_constants.h"
-#include "harvest.h"
-#include "iexamine.h"
-#include "item.h"
-#include "itype.h"
-#include "json.h"
-#include "map.h"
-#include "mapdata.h"
-#include "mapgen_constructor.h"
-#include "map_iterator.h"
-#include "map_mutation_hooks.h"
-#include "monster.h"
-#include "npc.h"
-#include "messages.h"
-#include "mongroup.h"
-#include "mtype.h"
-#include "options.h"
-#include "overmapbuffer.h"
-#include "output.h"
-#include "popup.h"
-#include "profile.h"
-#include "rng.h"
-#include "skill.h"
-#include "string_formatter.h"
-#include "submap.h"
-#include "submap_load_manager.h"
-#include "thread_pool.h"
-#include "translations.h"
-#include "trap.h"
-#include "ui_manager.h"
-#include "units_mass.h"
-#include "veh_type.h"
-#include "vehicle.h"
-#include "vehicle_part.h"
-#include "vpart_range.h"
-#include "weather.h"
-#include "world.h"
 
 namespace
 {
@@ -173,18 +174,12 @@ auto trap_at_tile( const submap &sm, const point_sm_ms &local ) -> const trap &
 
 auto temperature_flag_at_tile( const submap &sm, const point_sm_ms &local ) -> temperature_flag
 {
-    if( sm.get_ter( local ) == t_rootcellar ) {
-        return temperature_flag::TEMP_ROOT_CELLAR;
-    }
     const auto &furn = sm.get_furn( local ).obj();
-    if( furn.has_flag( TFLAG_FRIDGE ) ) {
-        return temperature_flag::TEMP_FRIDGE;
-    }
-    if( furn.has_flag( TFLAG_FREEZER ) ) {
-        return temperature_flag::TEMP_FREEZER;
-    }
-
-    return temperature_flag::TEMP_NORMAL;
+    return rot::temp::for_tile( {
+        .root_cellar = sm.get_ter( local ) == t_rootcellar,
+        .fridge = furn.has_flag( TFLAG_FRIDGE ),
+        .freezer = furn.has_flag( TFLAG_FREEZER ),
+    } );
 }
 
 auto add_item_to_actualized_tile( const actualize_tile_options &options,
@@ -4209,6 +4204,8 @@ auto mapbuffer::run_omt_pillar_post_pass( const point_abs_omt &omt_pos ) -> void
             auto changed = false;
             for( const auto local : submap_tiles() ) {
                 const auto terrain_here = sub_here->get_ter( local );
+                /* DO NOT UNCOMMENT THIS UNTIL IT IS MADE TOGGLEABLE BY OMT OR TILE
+                   BADLY EFFECTED MAPGENS INCLUDE: REF CENTER, LMOE SHELTER, and multiple modded OMTs
                 if( const auto target = vertical_transition_target_below( terrain_here );
                     target && zlev > -OVERMAP_DEPTH ) {
                     ensure_vertical_transition_link( {
@@ -4225,7 +4222,7 @@ auto mapbuffer::run_omt_pillar_post_pass( const point_abs_omt &omt_pos ) -> void
                         .desired = *target,
                     } );
                 }
-
+                */
                 if( terrain_here != t_open_air ) {
                     continue;
                 }

@@ -46,9 +46,10 @@
 #include "map.h"
 #include "map_iterator.h"
 #include "mapbuffer.h"
-#include "mission.h"
 #include "messages.h"
+#include "mission.h"
 #include "mongroup.h"
+#include "note_label_utils.h"
 #include "npc.h"
 #include "omdata.h"
 #include "options.h"
@@ -56,9 +57,9 @@
 #include "overmap.h"
 #include "overmap_label.h"
 #include "overmap_label_note.h"
+#include "overmap_special.h"
 #include "overmap_types.h"
 #include "overmapbuffer.h"
-#include "overmap_special.h"
 #include "player_activity.h"
 #include "regional_settings.h"
 #include "rng.h"
@@ -73,13 +74,12 @@
 #include "ui.h"
 #include "ui_manager.h"
 #include "uistate.h"
-#include "note_label_utils.h"
 #include "units.h"
 #include "vehicle.h"
 #include "vehicle_part.h"
 #include "vpart_position.h"
-#include "weather.h"
-#include "weather_gen.h"
+#include "weather/weather.h"
+#include "weather/weather_gen.h"
 #include "world_type.h"
 
 static const activity_id ACT_TRAVELLING( "ACT_TRAVELLING" );
@@ -2093,16 +2093,13 @@ static std::vector<tripoint_abs_omt> get_overmap_path_to( const tripoint_abs_omt
     }
 }
 
-static float overmap_zoom_level = DEFAULT_TILESET_ZOOM;
-
 static tripoint_abs_omt display( const tripoint_abs_omt &orig,
                                  const draw_data_t &data = draw_data_t() )
 {
-    const float previous_zoom = g->get_zoom();
-    g->set_zoom( overmap_zoom_level );
-    on_out_of_scope reset_zoom( [&]() {
-        overmap_zoom_level = g->get_zoom();
-        g->set_zoom( previous_zoom );
+    // the overmap context may be shared with the main view's; each view re-asserts zoom on takeover
+    g->reapply_overmap_zoom();
+    on_out_of_scope reset_zoom( []() {
+        g->reapply_zoom();
         g->mark_main_ui_adaptor_resize();
     } );
 

@@ -88,6 +88,7 @@ enum vpart_bitflags : int {
     VPFLAG_DROPPER,
     VPFLAG_LADDER,
     VPFLAG_POWERED_BY_ENGINE,
+    VPFLAG_TRAP_PROOF,
 
     NUM_VPFLAGS
 };
@@ -187,8 +188,6 @@ class vpart_info
 {
     private:
         /** Unique identifier for this part */
-        vpart_id id;
-
         std::optional<vpslot_engine> engine_info;
         std::optional<vpslot_wheel> wheel_info;
         std::optional<vpslot_rotor> rotor_info;
@@ -201,6 +200,10 @@ class vpart_info
         std::optional<vpslot_crafter> crafter_info;
 
     public:
+        vpart_id id;
+
+        bool was_loaded = false;
+
         /** Translated name of a part */
         std::string name() const;
 
@@ -347,7 +350,7 @@ class vpart_info
 
         /*Comfort data for sleeping in vehicles*/
         int comfort = 0;
-        int floor_bedding_warmth = 0;
+        units::temperature_delta floor_bedding_warmth = 0_c_delta;
         int bonus_fire_warmth_feet = 300;
 
         /**
@@ -429,12 +432,15 @@ class vpart_info
         static void load_propeller( std::optional<vpslot_propeller> &proptr, const JsonObject &jo );
         static void load_crafter( std::optional<vpslot_crafter> &craftptr, const JsonObject &jo );
         static void load_converter( std::optional<vpslot_converter> &convertptr, const JsonObject &jo );
-        static void load( const JsonObject &jo, const std::string &src );
-        static void finalize();
-        static void check();
+        void load( const JsonObject &jo, const std::string &src );
+        void finalize();
+        void check() const;
+        static void load_vehicle_parts( const JsonObject &jo, const std::string &src );
+        static void finalize_all();
+        static void check_consistency();
         static void reset();
 
-        static const std::map<vpart_id, vpart_info> &all();
+        static const std::vector<vpart_info> &get_all();
 };
 
 struct vehicle_item_spawn {

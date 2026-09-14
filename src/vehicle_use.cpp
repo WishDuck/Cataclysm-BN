@@ -1,30 +1,12 @@
-#include "character.h"
-#include "units_mass.h"
-#include "vehicle.h"
-#include "vehicle_part.h" // IWYU pragma: associated
-#include "units_temperature.h"
-
-#include <algorithm>
-#include <numeric>
-#include <ranges>
-#include <array>
-#include <cmath>
-#include <cstdlib>
-#include <iterator>
-#include <list>
-#include <memory>
-#include <optional>
-#include <sstream>
-#include <tuple>
-
 #include "action.h"
 #include "activity_handlers.h"
 #include "avatar.h"
 #include "avatar_functions.h"
 #include "bodypart.h"
 #include "catalua.h"
-#include "clzones.h"
+#include "character.h"
 #include "character_functions.h"
+#include "clzones.h"
 #include "color.h"
 #include "debug.h"
 #include "enums.h"
@@ -58,13 +40,30 @@
 #include "string_utils.h"
 #include "translations.h"
 #include "ui.h"
+#include "units_mass.h"
+#include "units_temperature.h"
 #include "value_ptr.h"
 #include "veh_interact.h"
 #include "veh_type.h"
+#include "vehicle.h"
 #include "vehicle_move.h"
+#include "vehicle_part.h" // IWYU pragma: associated
 #include "vpart_position.h"
 #include "vpart_range.h"
-#include "weather.h"
+#include "weather/weather.h"
+
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstdlib>
+#include <iterator>
+#include <list>
+#include <memory>
+#include <numeric>
+#include <optional>
+#include <ranges>
+#include <sstream>
+#include <tuple>
 
 static const activity_id ACT_HOTWIRE_CAR( "ACT_HOTWIRE_CAR" );
 static const activity_id ACT_RELOAD( "ACT_RELOAD" );
@@ -160,6 +159,7 @@ void vehicle::add_toggle_to_opts( std::vector<uilist_entry> &options,
         }
         refresh();
         get_map().invalidate_lightmap_caches();
+        get_map().set_vehicle_cache_dirty( abs_sm_pos.z() );
     } );
 }
 
@@ -361,6 +361,7 @@ void vehicle::set_electronics_menu_options( std::vector<uilist_entry> &options,
                 add_msg( _( "Camera system won't turn on" ) );
             }
             get_map().set_seen_cache_dirty( bub_ms_location().z() );
+            get_map().set_vehicle_cache_dirty( bub_ms_location().z() );
             get_map().invalidate_visibility_caches();
             refresh();
         } );
@@ -1716,7 +1717,7 @@ void vehicle::alarm()
             sound_event se;
             se.origin = bub_ms_location();
             se.volume = rng( 80, 130 );
-            se.category = sounds::sound_t::combat;
+            se.category = sounds::sound_t::alarm;
             se.description = random_entry_ref( sound_msgs );
             se.id = "vehicle";
             se.variant = "car_alarm";
@@ -1813,6 +1814,7 @@ void vehicle::open_or_close( const int part_index, const bool opening )
     here.set_transparency_cache_dirty( abs_sm_pos.z() );
     const auto part_location = mount_to_bubble( parts[part_index].mount );
     here.set_seen_cache_dirty( part_location );
+    here.set_vehicle_cache_dirty( part_location.z() );
     const int dist = rl_dist( get_player_character().bub_pos(), part_location );
     if( dist < 20 ) {
         sfx::play_variant_sound( opening ? "vehicle_open" : "vehicle_close",
@@ -2008,6 +2010,18 @@ void vehicle::interact_with( const tripoint_bub_ms &pos, int interact_part )
     const bool items_are_sealed = here.has_flag( "SEALED", pos );
 
     auto turret = turret_query( bub_to_abs( pos ) );
+    const auto turret_menu_name = [&turret]() -> std::string {
+        if( !turret )
+        {
+            return {};
+        }
+        const auto *const ammo_data = turret.ammo_data();
+        if( ammo_data == nullptr )
+        {
+            return turret.base().tname();
+        }
+        return string_format( _( "%1$s (%2$s)" ), turret.base().tname(), ammo_data->nname( 1 ) );
+    }();
 
     const int curtain_part = avail_part_with_feature( interact_part, "CURTAIN", true );
     const bool curtain_closed = ( curtain_part == -1 ) ? false : !parts[curtain_part].open;
@@ -2076,10 +2090,10 @@ void vehicle::interact_with( const tripoint_bub_ms &pos, int interact_part )
         selectmenu.addentry( FOLD_VEHICLE, true, 'f', _( "Fold vehicle" ) );
     }
     if( turret.can_unload() ) {
-        selectmenu.addentry( UNLOAD_TURRET, true, 'u', _( "Unload %s" ), turret.name() );
+        selectmenu.addentry( UNLOAD_TURRET, true, 'u', _( "Unload %s" ), turret_menu_name );
     }
     if( turret.can_reload() ) {
-        selectmenu.addentry( RELOAD_TURRET, true, 'r', _( "Reload %s" ), turret.name() );
+        selectmenu.addentry( RELOAD_TURRET, true, 'r', _( "Reload %s" ), turret_menu_name );
     }
     if( curtain_part >= 0 && curtain_closed ) {
         selectmenu.addentry( PEEK_CURTAIN, true, 'p', _( "Peek through the closed curtains" ) );

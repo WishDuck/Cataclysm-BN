@@ -445,7 +445,7 @@ class vehicle
         void refresh();
 
         // Do stuff like clean up blood and produce smoke from broken parts. Returns false if nothing needs doing.
-        bool do_environmental_effects();
+        bool do_environmental_effects( const int turns = 1 );
 
         units::volume total_folded_volume() const;
 
@@ -477,8 +477,9 @@ class vehicle
 
     public:
 
-        vehicle_part &get_part_hack( int );
-        int get_part_id_hack( int );
+        vehicle_part *find_part_hack( int id );
+        const vehicle_part *find_part_hack( int id ) const;
+        int get_part_id_hack( int id ) const;
         void refresh_locations_hack();
 
         int get_next_hack_id() {
@@ -877,6 +878,9 @@ class vehicle
         // get color for map
         nc_color part_color( int p, bool exact = false ) const;
 
+        // get text and color of damage summary (e.g. "like new" or "battered")
+        auto vehicle_damage_summary() const -> std::pair<std::string, nc_color>;
+
         // Get all printable fuel types
         std::vector<itype_id> get_printable_fuel_types() const;
 
@@ -980,7 +984,7 @@ class vehicle
         int max_reactor_epower_w() const;
         // Produce and consume electrical power, with excess power stored or
         // taken from batteries.
-        void power_parts();
+        void power_parts( const int turns = 1 );
 
         /**
          * Try to charge our (and, optionally, connected vehicles') batteries by the given amount.
@@ -1248,6 +1252,9 @@ class vehicle
                                         const std::set<vehicle *> &vehicle_list );
         // idle fuel consumption
         void idle( bool on_map = true );
+        // idle fuel consumption in bulk
+        // Called by update_time given the batched parameter
+        void idle_turns( const int turns );
         // continuous processing for running vehicle alarms
         void alarm();
         // leak from broken tanks
@@ -1636,7 +1643,8 @@ class vehicle
         bounding_box get_bounding_box();
         // Retroactively pass time spent outside bubble
         // Funnels, solar panels
-        void update_time( const time_point &update_to );
+        // If batched is used, it will also drain engines and batteries and use plutonium generators
+        void update_time( const time_point &update_to, const bool batched );
         // Process vehicle emitters
         void process_emitters();
 
@@ -1907,8 +1915,3 @@ class vehicle
         // Persisted across saves so cross-dimension processing survives reload.
         dimension_id dimension_id_;
 };
-
-namespace rot
-{
-temperature_flag temperature_flag_for_part( const vehicle &veh, size_t part );
-} // namespace rot

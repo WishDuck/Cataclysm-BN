@@ -1,11 +1,4 @@
-#include "vehicle.h"
 #include "vehicle_part.h" // IWYU pragma: associated
-
-#include <algorithm>
-#include <cassert>
-#include <cmath>
-#include <memory>
-#include <set>
 
 #include "avatar.h"
 #include "color.h"
@@ -25,9 +18,16 @@
 #include "translations.h"
 #include "value_ptr.h"
 #include "veh_type.h"
+#include "vehicle.h"
 #include "vpart_position.h"
-#include "weather.h"
+#include "weather/weather.h"
 #include "wheel_dimensions.h"
+
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <memory>
+#include <set>
 
 static const itype_id fuel_type_battery( "battery" );
 static const itype_id fuel_type_none( "null" );
@@ -36,6 +36,19 @@ static const itype_id itype_battery( "battery" );
 static const itype_id itype_muscle( "muscle" );
 
 static const flag_id flag_NO_PAINT( "NO_PAINT" );
+
+namespace
+{
+
+vehicle *vehicle_from_location( location<item> *loc )
+{
+    if( auto *const vloc = dynamic_cast<vehicle_item_location *>( loc ) ) {
+        return vloc->vehicle_ptr();
+    }
+    return nullptr;
+}
+
+} // namespace
 
 /*-----------------------------------------------------------------------------
  *                              VEHICLE_PART
@@ -51,7 +64,7 @@ vehicle_part::vehicle_part()
 
 vehicle_part::vehicle_part( const vpart_id &vp, const tripoint_mnt_veh &dp,
                             detached_ptr<item> &&obj, vehicle *veh )
-    : mount( dp ), id( vp ),
+    : mount( dp ), id( vp ), hack_id( veh->get_next_hack_id() ),
       base( new vehicle_base_item_location( veh, hack_id ) ),
       items( new vehicle_item_location( veh, hack_id ) )
 {
@@ -98,7 +111,9 @@ void vehicle_part::copy_static_from( const vehicle_part &source )
     info_cache = source.info_cache;
     ammo_pref = source.ammo_pref;
     crew_id = source.crew_id;
-    hack_id = source.hack_id;
+    // hack_id is per-vehicle identity. Copying it duplicates IDs on spawned
+    // vehicles and clobbers the destination during vector shift (erase/realloc),
+    // which desyncs cargo locations from the part they belong to.
     part_color_ = source.part_color_;
 }
 
@@ -114,21 +129,34 @@ vehicle_part::vehicle_part( const vehicle_part &source, vehicle *veh ) : vehicle
 
 vehicle_part::vehicle_part( vehicle_part &&source ) : vehicle_part()
 {
+    vehicle *const veh = vehicle_from_location( source.base.get_loc_hack() );
     copy_static_from( source );
-    base = source.base.release();
-    for( detached_ptr<item> &it : source.items.clear() ) {
-        items.push_back( std::move( it ) );
+    hack_id = source.hack_id;
+    if( veh ) {
+        refresh_locations_hack( veh );
     }
+    base = std::move( source.base );
+    items = std::move( source.items );
 }
 
 vehicle_part &vehicle_part::operator=( vehicle_part &&source )
 {
-    copy_static_from( source );
-    base = source.base.release();
-    items.clear();
-    for( detached_ptr<item> &it : source.items.clear() ) {
-        items.push_back( std::move( it ) );
+    if( this == &source ) {
+        return *this;
     }
+    // Drop destination cargo while this part's hack_id still matches its locations.
+    items.clear();
+    vehicle *veh = vehicle_from_location( source.base.get_loc_hack() );
+    if( !veh ) {
+        veh = vehicle_from_location( base.get_loc_hack() );
+    }
+    copy_static_from( source );
+    hack_id = source.hack_id;
+    if( veh ) {
+        refresh_locations_hack( veh );
+    }
+    base = std::move( source.base );
+    items = std::move( source.items );
     return *this;
 }
 
@@ -424,7 +452,7 @@ double vehicle_part::consume_energy( const itype_id &ftype, double energy_j )
         }
         //TODO!: push up
         item &fuel_consumed = *item::spawn_temporary( ftype, calendar::turn, charges_to_use );
-        return energy_p_mL * units::to_milliliter<int>( fuel_consumed.volume( true ) );
+        return energy_p_mL * units::to_milliliter( fuel_consumed.volume( true ) );
     }
     return 0.0;
 }
@@ -467,7 +495,7 @@ bool vehicle_part::can_reload( const item *obj ) const
     return ammo_remaining() < ammo_capacity();
 }
 
-void vehicle_part::process_contents( const tripoint_bub_ms &pos, const bool e_heater )
+void vehicle_part::process_contents( const tripoint_bub_ms &pos, const bool e_heater, int turns )
 {
     // for now we only care about processing food containers since things like
     // fuel don't care about temperature yet
@@ -484,7 +512,7 @@ void vehicle_part::process_contents( const tripoint_bub_ms &pos, const bool e_he
             flag = temperature_flag::TEMP_FREEZER;
         }
 
-        base = item::process( base.release(), nullptr, pos, false, flag );
+        base = item::process( base.release(), nullptr, pos, false, turns, flag );
     }
 }
 

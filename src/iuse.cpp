@@ -1,31 +1,10 @@
 #include "iuse.h"
 
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <climits>
-#include <cmath>
-#include <cstdlib>
-#include <exception>
-#include <functional>
-#include <iterator>
-#include <list>
-#include <map>
-#include <optional>
-#include <ranges>
-#include <set>
-#include <sstream>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
-#include <vector>
-
-#include "action_time_scale.h"
 #include "action.h"
+#include "action_time_scale.h"
+#include "active_tile_data_def.h"
 #include "activity_actor.h"
 #include "activity_actor_definitions.h"
-#include "active_tile_data_def.h"
 #include "animation.h"
 #include "artifact.h"
 #include "avatar.h"
@@ -53,8 +32,9 @@
 #include "field.h"
 #include "field_type.h"
 #include "flag.h"
-#include "fstream_utils.h"
 #include "flat_set.h"
+#include "fluid_grid.h"
+#include "fstream_utils.h"
 #include "fungal_effects.h"
 #include "game.h"
 #include "game_constants.h"
@@ -83,7 +63,6 @@
 #include "monattack.h"
 #include "mongroup.h"
 #include "monster.h"
-#include "fluid_grid.h"
 #include "morale_types.h"
 #include "mtype.h"
 #include "mutation.h"
@@ -103,6 +82,7 @@
 #include "requirements.h"
 #include "ret_val.h"
 #include "rng.h"
+#include "skill.h"
 #include "sounds.h"
 #include "speech.h"
 #include "string_formatter.h"
@@ -123,11 +103,31 @@
 #include "vehicle_part.h"
 #include "vehicle_selector.h"
 #include "visitable.h"
-#include "skill.h"
 #include "vpart_position.h"
 #include "vpart_range.h"
-#include "weather.h"
-#include "weather_gen.h"
+#include "weather/weather.h"
+#include "weather/weather_gen.h"
+
+#include <algorithm>
+#include <array>
+#include <bitset>
+#include <climits>
+#include <cmath>
+#include <cstdlib>
+#include <exception>
+#include <functional>
+#include <iterator>
+#include <list>
+#include <map>
+#include <optional>
+#include <ranges>
+#include <set>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
 static const activity_id ACT_BURROW( "ACT_BURROW" );
 static const activity_id ACT_CHOP_LOGS( "ACT_CHOP_LOGS" );
@@ -238,6 +238,7 @@ static const itype_id itype_arrow_flamming( "arrow_flamming" );
 static const itype_id itype_battery( "battery" );
 static const itype_id itype_barometer( "barometer" );
 static const itype_id itype_c4armed( "c4armed" );
+static const itype_id itype_c4_breaching_armed( "c4_breaching_armed" );
 static const itype_id itype_canister_empty( "canister_empty" );
 static const itype_id itype_cig( "cig" );
 static const itype_id itype_cigar( "cigar" );
@@ -353,7 +354,6 @@ static const mtype_id mon_spore( "mon_spore" );
 static const mtype_id mon_vortex( "mon_vortex" );
 static const mtype_id mon_wasp( "mon_wasp" );
 
-static const bionic_id bio_digestion( "bio_digestion" );
 static const bionic_id bio_eye_optic( "bio_eye_optic" );
 static const bionic_id bio_shock( "bio_shock" );
 
@@ -945,7 +945,7 @@ int iuse::blech( player *p, item *it, bool, const tripoint_bub_ms & )
 
 int iuse::blech_because_unclean( player *p, item *it, bool, const tripoint_bub_ms & )
 {
-    if( !p->is_npc()  && !p->has_bionic( bio_digestion ) ) {
+    if( !p->is_npc()  && !p->has_enchantment_flag( enchantment_flag_id( "CONSUME_UNCLEAN" ) ) ) {
         if( it->made_of( LIQUID ) ) {
             if( !p->query_yn( _( "This looks unclean, sure you want to drink it?" ) ) ) {
                 return 0;
@@ -1564,7 +1564,7 @@ int iuse::petfood( player *p, item *it, bool, const tripoint_bub_ms & )
             p->add_msg_if_player( _( petfood.feed ), mon.get_name() );
         }
 
-        mon.make_pet();
+        mon.make_pet( *p->as_character() );
 
         // Apply well_fed effect to improve monster productivity
         // This effect increases reproduction rate, milk production, growth speed, and HP recovery
@@ -2243,68 +2243,65 @@ int iuse::note_bionics( player *p, item *it, bool t, const tripoint_bub_ms &pos 
         return 0;
     }
 
-    if( here.visibility_caches_dirty() ) {
-        here.update_visibility_cache( p->bub_pos().z() );
-    }
-
     // Try to minimize the use of has_enough_charges() because it's kind of expensive.
-    bool no_charges = false;
-    for( const tripoint_bub_ms &pt : here.points_in_radius( pos, PICKUP_RANGE ) ) {
-        if( !here.has_items( pt ) || !p->sees( pt ) ) {
+    auto no_charges = false;
+    auto visibility_cache_updated = false;
+    for( const auto corpse : here.get_active_items_in_radius( pos, PICKUP_RANGE,
+            special_item_type::bionic_scannable_corpse ) ) {
+        if( corpse == nullptr || !corpse->is_corpse() ||
+            corpse->get_var( "bionics_scanned_by", -1 ) == p->getID().get_value() ) {
             continue;
         }
-        for( item * const &corpse : here.i_at( pt ) ) {
-            if( !corpse->is_corpse() ||
-                corpse->get_var( "bionics_scanned_by", -1 ) == p->getID().get_value() ) {
+        const auto pt = corpse->bub_pos();
+        if( !visibility_cache_updated && here.visibility_caches_dirty() ) {
+            here.update_visibility_cache( p->bub_pos().z() );
+            visibility_cache_updated = true;
+        }
+        if( !p->sees( pt ) ) {
+            continue;
+        }
+
+        using namespace std::views;
+        namespace ranges = std::ranges;
+        auto cbms = corpse->get_components()
+                    | filter( &item::is_bionic )
+                    | ranges::to<std::vector>();
+
+        auto charges = std::max( 1, static_cast<int>( cbms.size() ) );
+        charges -= it->ammo_consume( charges, pos );
+        if( possess && it->has_flag( flag_USE_UPS ) ) {
+            if( p->use_charges_if_avail( itype_UPS, charges ) ) {
+                charges = 0;
+            }
+        }
+        if( charges ) {
+            p->add_msg_if_player( m_bad, "Your %s doesn't have enough power for the %s", it->tname(),
+                                  corpse->display_name().c_str() );
+            if( !p->has_enough_charges( *it, false ) ) {
+                no_charges = true;
+                break;
+            } else {
                 continue;
             }
-
-            std::vector<const item *> cbms;
-            for( const item * const &maybe_cbm : corpse->get_components() ) {
-                if( maybe_cbm->is_bionic() ) {
-                    cbms.push_back( maybe_cbm );
-                }
-            }
-
-            int charges = std::max( 1, static_cast<int>( cbms.size() ) );
-            charges -= it->ammo_consume( charges, pos );
-            if( possess && it->has_flag( flag_USE_UPS ) ) {
-                if( p->use_charges_if_avail( itype_UPS, charges ) ) {
-                    charges = 0;
-                }
-            }
-            if( charges ) {
-                p->add_msg_if_player( m_bad, "Your %s doesn't have enough power for the %s", it->tname(),
-                                      corpse->display_name().c_str() );
-                if( !p->has_enough_charges( *it, false ) ) {
-                    no_charges = true;
-                    break;
-                } else {
-                    continue;
-                }
-            }
-
-            corpse->set_var( "bionics_scanned_by", p->getID().get_value() );
-            if( !cbms.empty() ) {
-                corpse->set_flag( flag_CBM_SCANNED );
-                std::string bionics_string =
-                    enumerate_as_string( cbms.begin(), cbms.end(),
-                []( const item * entry ) -> std::string {
-                    return entry->display_name();
-                }, enumeration_conjunction::none );
-                //~ %1 is corpse name, %2 is direction, %3 is bionic name
-                p->add_msg_if_player( m_good, _( "A %1$s located %2$s contains %3$s." ),
-                                      corpse->display_name().c_str(),
-                                      direction_name( direction_from( p->bub_pos(), pt ) ).c_str(),
-                                      bionics_string.c_str()
-                                    );
-            }
         }
-        if( no_charges ) {
-            it->revert( p );
-            it->deactivate();
-            return 0;
+
+        corpse->set_var( "bionics_scanned_by", p->getID().get_value() );
+        if( !cbms.empty() ) {
+            corpse->set_flag( flag_CBM_SCANNED );
+            auto bionics_string = enumerate_as_string( cbms.begin(), cbms.end(),
+            []( const auto entry ) { return entry->type_name(); }, enumeration_conjunction::none );
+            //~ %1 is corpse name, %2 is direction, %3 is bionic name
+            p->add_msg_if_player( m_good, _( "A %1$s located %2$s contains %3$s." ),
+                                  corpse->display_name().c_str(),
+                                  direction_name( direction_from( p->bub_pos(), pt ) ).c_str(),
+                                  bionics_string.c_str()
+                                );
         }
+    }
+    if( no_charges ) {
+        it->revert( p );
+        it->deactivate();
+        return 0;
     }
 
     return 0;
@@ -3514,6 +3511,21 @@ int iuse::c4( player *p, item *it, bool, const tripoint_bub_ms & )
     }
     p->add_msg_if_player( _( "You set the timer to %d." ), time );
     it->convert( itype_c4armed );
+    it->charges = time;
+    it->activate();
+    return it->type->charges_to_use();
+}
+
+int iuse::c4_breaching( player *p, item *it, bool, const tripoint_bub_ms & )
+{
+    int time;
+    bool got_value = query_int( time, _( "Set the timer to (0 to cancel)?" ) );
+    if( !got_value || time <= 0 ) {
+        p->add_msg_if_player( _( "Never mind." ) );
+        return 0;
+    }
+    p->add_msg_if_player( _( "You set the timer to %d." ), time );
+    it->convert( itype_c4_breaching_armed );
     it->charges = time;
     it->activate();
     return it->type->charges_to_use();
@@ -8332,7 +8344,7 @@ static void set_cable_active( player *const who, item *const it,
     data.set_vars( it );
     it->activate();
     it->attempt_detach( [&who]( detached_ptr<item> &&e ) {
-        return item::process( std::move( e ), who, who->bub_pos(), false );
+        return item::process( std::move( e ), who, who->bub_pos(), false, 1 );
     } );
     who->mod_moves( -15 );
 };

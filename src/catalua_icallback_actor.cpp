@@ -1,6 +1,7 @@
 #include "catalua_icallback_actor.h"
 
 #include "bionics.h"
+#include "catalua.h"
 #include "catalua_coord.h"
 #include "catalua_impl.h"
 #include "character.h"
@@ -8,7 +9,9 @@
 #include "damage.h"
 #include "debug.h"
 #include "item.h"
+#include "monster.h"
 #include "player.h"
+#include "trap.h"
 
 // --- lua_iuse_actor ---
 
@@ -33,6 +36,7 @@ int lua_iuse_actor::use( player &who, item &itm, bool tick, const tripoint_bub_m
         return 0;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( use_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = who.as_character();
@@ -52,6 +56,7 @@ ret_val<bool> lua_iuse_actor::can_use( const Character &who, const item &item, b
                                        const tripoint_bub_ms &pos ) const
 {
     if( can_use_func != sol::lua_nil ) {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_use_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = who.as_character();
@@ -96,6 +101,7 @@ void lua_iwieldable_actor::call_on_wield( Character &who, item &it, int mv ) con
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_wield_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -114,6 +120,7 @@ void lua_iwieldable_actor::call_on_unwield( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_unwield_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -131,6 +138,7 @@ bool lua_iwieldable_actor::call_can_wield( const Character &who, const item &it 
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_wield_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -151,6 +159,7 @@ bool lua_iwieldable_actor::call_can_unwield( const Character &who, const item &i
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_unwield_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -184,6 +193,7 @@ void lua_iwearable_actor::call_on_wear( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_wear_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -201,6 +211,7 @@ void lua_iwearable_actor::call_on_takeoff( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_takeoff_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -218,6 +229,7 @@ bool lua_iwearable_actor::call_can_wear( const Character &who, const item &it ) 
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_wear_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -238,6 +250,7 @@ bool lua_iwearable_actor::call_can_takeoff( const Character &who, const item &it
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_takeoff_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -270,6 +283,7 @@ void lua_iequippable_actor::call_on_durability_change( Character &who, item &it,
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_durability_change_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -289,6 +303,7 @@ void lua_iequippable_actor::call_on_repair( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_repair_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -306,6 +321,7 @@ void lua_iequippable_actor::call_on_break( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_break_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -322,11 +338,13 @@ void lua_iequippable_actor::call_on_break( Character &who, item &it ) const
 lua_istate_actor::lua_istate_actor( const std::string &item_id,
                                     sol::protected_function &&on_tick,
                                     sol::protected_function &&on_pickup,
-                                    sol::protected_function &&on_drop )
+                                    sol::protected_function &&on_drop,
+                                    sol::protected_function &&on_puff )
     : lua_icallback_actor_base( item_id ),
       on_tick_func( std::move( on_tick ) ),
       on_pickup_func( std::move( on_pickup ) ),
-      on_drop_func( std::move( on_drop ) ) {}
+      on_drop_func( std::move( on_drop ) ),
+      on_puff_func( std::move( on_puff ) ) {}
 
 bool lua_istate_actor::has_on_tick() const
 {
@@ -340,6 +358,7 @@ auto lua_istate_actor::call_on_tick( Character &who, item &it,
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_tick_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -358,6 +377,7 @@ void lua_istate_actor::call_on_pickup( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_pickup_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -375,6 +395,7 @@ bool lua_istate_actor::call_on_drop( Character &who, item &it, const tripoint_bu
         return false;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_drop_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -388,6 +409,24 @@ bool lua_istate_actor::call_on_drop( Character &who, item &it, const tripoint_bu
         debugmsg( "Failed to run istate on_drop for '%s': %s", item_id, e.what() );
     }
     return false;
+}
+
+void lua_istate_actor::call_on_puff( Character &who, item &it ) const
+{
+    if( on_puff_func == sol::lua_nil ) {
+        return;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( on_puff_func.lua_state() );
+        auto params = lua.create_table();
+        params["user"] = &who;
+        params["item"] = &it;
+        sol::protected_function_result res = on_puff_func( params );
+        check_func_result( res );
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run istate on_puff for '%s': %s", item_id, e.what() );
+    }
 }
 
 // --- lua_imelee_actor ---
@@ -410,6 +449,7 @@ bool lua_imelee_actor::call_on_melee_attack( Character &who, Creature &target,
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_melee_attack_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -432,6 +472,7 @@ void lua_imelee_actor::call_on_hit( Character &who, Creature &target, item &it,
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_hit_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -452,6 +493,7 @@ void lua_imelee_actor::call_on_block( Character &who, Creature &source, item &it
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_block_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -471,6 +513,7 @@ void lua_imelee_actor::call_on_miss( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_miss_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -502,6 +545,7 @@ bool lua_iranged_actor::call_on_fire( Character &who, item &gun,
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_fire_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -524,6 +568,7 @@ void lua_iranged_actor::call_on_reload( Character &who, item &it ) const
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_reload_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -541,6 +586,7 @@ bool lua_iranged_actor::call_can_fire( const Character &who, const item &gun ) c
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_fire_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -561,6 +607,7 @@ bool lua_iranged_actor::call_can_reload( const Character &who, const item &it ) 
         return true;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( can_reload_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -594,6 +641,7 @@ void lua_bionic_callback_actor::call_on_activate( Character &who, bionic &bio ) 
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_activate_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -611,6 +659,7 @@ void lua_bionic_callback_actor::call_on_deactivate( Character &who, bionic &bio 
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_deactivate_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -628,6 +677,7 @@ void lua_bionic_callback_actor::call_on_installed( Character &who, const bionic_
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_installed_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -645,6 +695,7 @@ void lua_bionic_callback_actor::call_on_removed( Character &who, const bionic_id
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_removed_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -675,6 +726,7 @@ void lua_mutation_callback_actor::call_on_activate( Character &who, const trait_
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_activate_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -692,6 +744,7 @@ void lua_mutation_callback_actor::call_on_deactivate( Character &who, const trai
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_deactivate_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -709,6 +762,7 @@ void lua_mutation_callback_actor::call_on_gain( Character &who, const trait_id &
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_gain_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -726,6 +780,7 @@ void lua_mutation_callback_actor::call_on_loss( Character &who, const trait_id &
         return;
     }
     try {
+        std::unique_lock lock( cata::lua_lock );
         sol::state_view lua( on_loss_func.lua_state() );
         auto params = lua.create_table();
         params["user"] = &who;
@@ -735,4 +790,181 @@ void lua_mutation_callback_actor::call_on_loss( Character &who, const trait_id &
     } catch( std::runtime_error &e ) {
         debugmsg( "Failed to run mutation on_loss for '%s': %s", trait_str_id, e.what() );
     }
+}
+
+lua_itrap_actor::lua_itrap_actor( const std::string &trap_id,
+                                  sol::protected_function &&can_trigger,
+                                  sol::protected_function &&on_trigger,
+                                  sol::protected_function &&on_trigger_aftermath
+                                )
+
+    : lua_icallback_actor_base( trap_id ),
+      can_trigger_func( std::move( can_trigger ) ),
+      on_trigger_func( std::move( on_trigger ) ),
+      on_trigger_aftermath_func( std::move( on_trigger_aftermath ) ) {}
+
+void lua_itrap_actor::call_on_trigger( Character &who, trap &trap,
+                                       const tripoint_bub_ms &loc ) const
+{
+    if( on_trigger_func == sol::lua_nil ) {
+        return;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( on_trigger_func.lua_state() );
+        auto params = lua.create_table();
+        params["target"] = &who;
+        params["trap"] = &trap;
+        params["pos"] = cata::detail::lua_coords::to_lua( loc );
+        sol::protected_function_result res = on_trigger_func( params );
+        check_func_result( res );
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run itrap on_trigger for '%s': %s", item_id, e.what() );
+    }
+}
+
+void lua_itrap_actor::call_on_trigger_aftermath( Character &who, trap &trap,
+        const tripoint_bub_ms &loc ) const
+{
+    if( on_trigger_aftermath_func == sol::lua_nil ) {
+        return;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( on_trigger_aftermath_func.lua_state() );
+        auto params = lua.create_table();
+        params["target"] = &who;
+        params["trap"] = &trap;
+        params["pos"] = cata::detail::lua_coords::to_lua( loc );
+        sol::protected_function_result res = on_trigger_aftermath_func( params );
+        check_func_result( res );
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run itrap on_trigger_aftermath for '%s': %s", item_id, e.what() );
+    }
+}
+
+bool lua_itrap_actor::call_can_trigger( const Character &who, const trap &trap,
+                                        const tripoint_bub_ms &loc ) const
+{
+    if( can_trigger_func == sol::lua_nil ) {
+        return true;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( can_trigger_func.lua_state() );
+        auto params = lua.create_table();
+        params["target"] = &who;
+        params["trap"] = &trap;
+        params["pos"] = cata::detail::lua_coords::to_lua( loc );
+        sol::protected_function_result res = can_trigger_func( params );
+        check_func_result( res );
+        const bool ret = res;
+        return ret;
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run itrap can_trigger for '%s': %s", item_id, e.what() );
+    }
+    return true;
+}
+
+
+lua_monster_callback_actor::lua_monster_callback_actor( const std::string &mon_str_id,
+        sol::protected_function &&on_tame,
+        sol::protected_function &&get_examine_menu_entries,
+        sol::protected_function &&on_examine_menu_entry
+                                                      )
+    : mon_str_id( mon_str_id ),
+      on_tame_func( std::move( on_tame ) ),
+      get_examine_menu_entries_func( std::move( get_examine_menu_entries ) ),
+      on_examine_menu_entry_func( std::move( on_examine_menu_entry ) ) {}
+
+void lua_monster_callback_actor::call_on_tame( Character &who, monster &pet ) const
+{
+    if( on_tame_func == sol::lua_nil ) {
+        return;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( on_tame_func.lua_state() );
+        auto params = lua.create_table();
+        params["avatar"] = &who;
+        params["pet"] = &pet;
+        sol::protected_function_result res = on_tame_func( params );
+        check_func_result( res );
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run pet on_tame for '%s' ('%s'): %s", pet.get_name(), mon_str_id, e.what() );
+    }
+}
+
+std::vector<lua_menu_entry> lua_monster_callback_actor::call_get_examine_menu_entries(
+    Character &who,
+    monster &monster ) const
+{
+    if( get_examine_menu_entries_func == sol::lua_nil ) {
+        return std::vector<lua_menu_entry>();
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( get_examine_menu_entries_func.lua_state() );
+        auto params = lua.create_table();
+        params["avatar"] = &who;
+        params["monster"] = &monster;
+        sol::protected_function_result res = get_examine_menu_entries_func( params );
+        check_func_result( res );
+        std::vector<lua_menu_entry> entries;
+        const auto value = res.get<sol::object>();
+        if( value.is<sol::table>() ) {
+            const sol::table entries_table = value.as<sol::table>();
+            const int size = entries_table.size();
+            entries.reserve( size );
+            for( int i = 1; i <= size; ++i ) {
+                sol::optional<sol::table> entry_opt = entries_table[i];
+                if( !entry_opt.has_value() ) {
+                    debugmsg( "Empty entry at index %d", i );
+                    continue;
+                }
+
+                const sol::table entry = *entry_opt;
+                std::string id = entry.get<std::string>( "menu_id" );
+                std::string label = entry.get<std::string>( "menu_label" );
+                auto lua_entry = lua_menu_entry( id, label );
+                entries.push_back( lua_entry );
+            }
+
+        } else if( value.is<sol::nil_t>() ) {
+            debugmsg( "Wrong monster get_examine_menu_entries return type for '%s' ('%s')", monster.get_name(),
+                      mon_str_id );
+        }
+
+        return entries;
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run monster get_examine_menu_entries for '%s' ('%s'): %s", monster.get_name(),
+                  mon_str_id, e.what() );
+    }
+    return std::vector<lua_menu_entry>();
+}
+
+void lua_monster_callback_actor::call_on_examine_menu_entry( Character &who, monster &monster,
+        std::string entry ) const
+{
+    if( on_examine_menu_entry_func == sol::lua_nil ) {
+        return;
+    }
+    try {
+        std::unique_lock lock( cata::lua_lock );
+        sol::state_view lua( on_examine_menu_entry_func.lua_state() );
+        auto params = lua.create_table();
+        params["avatar"] = &who;
+        params["monster"] = &monster;
+        params["entry"] = entry;
+        sol::protected_function_result res = on_examine_menu_entry_func( params );
+        check_func_result( res );
+    } catch( std::runtime_error &e ) {
+        debugmsg( "Failed to run monster on_examine_menu_entry_func for '%s' ('%s'): %s",
+                  monster.get_name(), entry,
+                  e.what() );
+    }
+}
+std::string lua_monster_callback_actor::get_mon_str_id() const
+{
+    return mon_str_id;
 }

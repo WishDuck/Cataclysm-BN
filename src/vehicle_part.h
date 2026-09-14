@@ -65,6 +65,9 @@ struct vehicle_part {
         /** this can be removed when vehicles are made into GOs */
         void set_vehicle_hack( vehicle * );
         void refresh_locations_hack( vehicle * );
+        int get_hack_id() const {
+            return hack_id;
+        }
 
         /**
          * Translated name of a part inclusive of any current status effects
@@ -125,7 +128,7 @@ struct vehicle_part {
          * @param pos Position of this part for item::process
          * @param e_heater Engine has a heater and is on
          */
-        void process_contents( const tripoint_bub_ms &pos, bool e_heater );
+        void process_contents( const tripoint_bub_ms &pos, bool e_heater, int turns = 1 );
 
         /**
          *  Try adding @param liquid to tank optionally limited by @param qty

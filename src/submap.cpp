@@ -1,13 +1,5 @@
 #include "submap.h"
 
-#include <algorithm>
-#include <array>
-#include <iterator>
-#include <memory>
-#include <ranges>
-#include <span>
-#include <utility>
-
 #include "debug.h"
 #include "int_id.h"
 #include "lightmap.h"
@@ -19,7 +11,15 @@
 #include "trap.h"
 #include "vehicle.h"
 #include "vehicle_part.h"
-#include "weather.h"
+#include "weather/weather.h"
+
+#include <algorithm>
+#include <array>
+#include <iterator>
+#include <memory>
+#include <ranges>
+#include <span>
+#include <utility>
 
 
 const data_vars::data_set submap::EMPTY_VARS{};
@@ -462,6 +462,8 @@ void submap::rotate( int turns )
     [this]( const point_sm_ms & p ) {
         if( trp[p.x()][p.y()] != tr_null ) {
             trap_cache.push_back( p );
+        } else if( ter[p.x()][p.y()].obj().trap != tr_null ) {
+            trap_cache.push_back( p );
         }
         if( fld[p.x()][p.y()].displayed_field_type() ) {
             field_cache.push_back( p );
@@ -619,7 +621,7 @@ auto submap::rebuild_transparency_cache( const map &m, const tripoint_bub_sm &gr
     const float sight_penalty = get_weather().weather_id->sight_penalty;
 
     for( const auto &sp : submap_tiles() ) {
-        if( ( get_ter( sp ).obj().transparent || !get_furn( sp ).obj().transparent ) ) {
+        if( ( get_ter( sp ).obj().transparent && get_furn( sp ).obj().transparent ) ) {
             auto value = LIGHT_TRANSPARENCY_OPEN_AIR;
             if( outside_cache[sp.x()][sp.y()] ) {
                 value *= sight_penalty;

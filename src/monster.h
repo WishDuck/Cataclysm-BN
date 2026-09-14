@@ -181,6 +181,9 @@ class monster : public Creature, public location_visitable<monster>
         bool flies() const;
         bool climbs() const;
         bool swims() const;
+        // see Creature::sees
+        bool sees( const Creature &critter ) const override;
+        bool sees( const tripoint_bub_ms &t, bool is_player = false, int range_mod = 0 ) const override;
         // Returns false if the monster is stunned, has 0 moves or otherwise wouldn't act this turn
         bool can_act() const;
         int sight_range( int light_level ) const override;
@@ -201,6 +204,7 @@ class monster : public Creature, public location_visitable<monster>
 
         // Movement
         auto shift( point_rel_sm sm_shift ) -> void; // Shifts local navigation state after a submap shift
+
         void set_goal( const tripoint_bub_ms &p );
         // Updates current pos AND our plans
         bool is_wandering() const; // Returns true if we have no plans
@@ -539,6 +543,9 @@ class monster : public Creature, public location_visitable<monster>
         void make_ally( const monster &z );
         // makes this monster a pet of the player
         void make_pet();
+
+        void make_pet( Character &actor );
+
         // check if this monster is a pet of the player
         bool is_pet() const;
 
@@ -560,6 +567,7 @@ class monster : public Creature, public location_visitable<monster>
                 detached_ptr<item> *result = nullptr );
         std::vector<detached_ptr<item>> clear_items();
         void drop_items();
+
         void drop_items( const tripoint_bub_ms &p );
 
         /**
@@ -614,6 +622,7 @@ class monster : public Creature, public location_visitable<monster>
         units::mass get_carried_weight() const;
         units::volume get_carried_volume() const;
 
+        enchantment_vision_id special_seen_with;
         // DEFINING VALUES
         // Is the monster friendly to the player.
         // 0 = hostile
@@ -678,6 +687,10 @@ class monster : public Creature, public location_visitable<monster>
 
         // Ammunition if we use a gun.
         std::map<itype_id, int> ammo;
+        auto ammo_slot_items( const itype_id &ammo_id ) const -> std::vector<itype_id>;
+        auto ammo_capacity_for_slot( const itype_id &ammo_id ) const -> int;
+        auto ammo_count_for_slot( const itype_id &ammo_id ) const -> int;
+        auto loaded_ammo_for_slot( const itype_id &ammo_id ) const -> itype_id;
 
         /**
          * Convert this monster into an item (see @ref mtype::revert_to_itype).
@@ -726,6 +739,7 @@ class monster : public Creature, public location_visitable<monster>
         detached_ptr<item> remove_tack_item( );
 
         item *get_tied_item() const;
+
         detached_ptr<item> set_tied_item( detached_ptr<item> &&to );
         detached_ptr<item> remove_tied_item( );
 
@@ -734,6 +748,7 @@ class monster : public Creature, public location_visitable<monster>
         detached_ptr<item> remove_armor_item( );
 
         item *get_storage_item() const;
+
         detached_ptr<item> set_storage_item( detached_ptr<item> &&to );
         detached_ptr<item> remove_storage_item( );
 
@@ -749,7 +764,10 @@ class monster : public Creature, public location_visitable<monster>
         void add_faction_anger( mfaction_id target_faction, int amount );
         auto get_faction_anger( mfaction_id target_faction ) const -> int;
 
+        const lua_monster_callback_actor *get_lua_callbacks() const;
+
         std::set<m_flag> monster_flags;
+
 
     private:
         auto action_move_factor() const -> int override;

@@ -68,9 +68,9 @@ struct map_bash_info {
     // (DEPRECATED! TODO: explosion struct) Explosion on destruction
     int explosive = -1;
     // sound volume of breaking terrain/furniture
-    std::optional<int> sound_vol = std::nullopt;
+    std::optional<units::sound> sound_vol = std::nullopt;
     // sound volume on fail
-    std::optional<int> sound_fail_vol = std::nullopt;
+    std::optional<units::sound> sound_fail_vol = std::nullopt;
     // Radius of the tent supported by this tile
     int collapse_radius = 1;
     // cost to bash a field
@@ -147,6 +147,37 @@ struct furn_workbench_info {
 
     bool operator==( const furn_workbench_info &rhs ) const = default;
 };
+struct enchant_info {
+    // Internal id referenced for use in saveload
+    std::string id;
+    // Name to display
+    std::string name;
+    // Resulting enchantment applied
+    enchantment_id to_enchant_with;
+    // Requirements and requirement multiplier
+    std::vector<std::pair<requirement_id, int>> requirements;
+    units::volume volume_per_batch;
+    bool volume_batch_effect;
+    // Skills and levels to do the skill
+    std::map<skill_id, int> required_skills;
+    // Time to complete
+    time_duration time_to_enchant;
+    units::volume volume_per_time;
+    bool volume_time_effect;
+    // Flag to apply to take note it was applied
+    flag_id applied_flag_id;
+    // Data var to add to the item. Along with the max count of the counter for that var
+    std::string count_var;
+    int max_count;
+    // Callbacks
+    std::string can_make;
+    std::string can_use_on;
+
+    void deserialize( JsonIn &jsin );
+
+    bool operator==( const enchant_info &rhs ) const = default;
+};
+
 struct plant_data {
     // What the furniture turns into when it grows or you plant seeds in it
     furn_str_id transform;
@@ -330,6 +361,7 @@ enum ter_bitflags : int {
     TFLAG_ELEVATOR,
     TFLAG_NO_MEMORY,
     TFLAG_ROAD,
+    TFLAG_BASH_TRANSFORM,
     NUM_TERFLAGS
 };
 
@@ -650,7 +682,7 @@ struct furn_t : map_data_common_t {
     std::set<itype_id> crafting_pseudo_items;
     units::volume keg_capacity = 0_ml;
     int comfort = 0;
-    int floor_bedding_warmth = 0;
+    units::temperature_delta floor_bedding_warmth = 0_c_delta;
     /** Emissions of furniture */
     std::set<emit_id> emissions;
 
@@ -664,6 +696,7 @@ struct furn_t : map_data_common_t {
     cata::value_ptr<activity_data_furn> oxytorch; // Oxytorch action data
 
     cata::value_ptr<furn_workbench_info> workbench;
+    std::vector<enchant_info> enchanter;
 
     cata::value_ptr<plant_data> plant;
 

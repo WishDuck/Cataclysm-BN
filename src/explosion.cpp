@@ -20,6 +20,7 @@
 #include "animation.h"
 #include "avatar.h"
 #include "ballistics.h"
+#include "catalua.h"
 #include "catalua_hooks.h"
 #include "catalua_sol.h"
 #include "bodypart.h"
@@ -27,7 +28,7 @@
 #include "character.h"
 #include "catalua_coord.h"
 #include "cata_utility.h"
-#include "cata_algo.h"
+#include "utils/algo.h"
 #include "color.h"
 #include "creature.h"
 #include "damage.h"
@@ -87,17 +88,13 @@ static const efftype_id effect_teleglow( "teleglow" );
 static const species_id ROBOT( "ROBOT" );
 
 static const trait_id trait_LEG_TENT_BRACE( "LEG_TENT_BRACE" );
-static const trait_id trait_PER_SLIME( "PER_SLIME" );
-static const trait_id trait_PER_SLIME_OK( "PER_SLIME_OK" );
 
 static const mongroup_id GROUP_NETHER( "GROUP_NETHER" );
 
-static const bionic_id bio_ears( "bio_ears" );
-static const bionic_id bio_sunglasses( "bio_sunglasses" );
-
 static const itype_id itype_battery( "battery" );
 static const itype_id itype_e_handcuffs( "e_handcuffs" );
-static const itype_id itype_rm13_armor_on( "rm13_armor_on" );
+
+static const enchantment_value_id ench_val_FLASH_PROTECTION( "FLASH_PROTECTION" );
 
 namespace
 {
@@ -1629,12 +1626,15 @@ void explosion_funcs::regular( const queued_explosion &qe )
     const explosion_data &ex = qe.exp_data;
     auto &shr = ex.fragment;
 
-    cata::run_hooks( "on_explosion_start", [&]( sol::table & params ) {
-        params["pos"] = cata::detail::lua_coords::to_lua( p );
-        params["damage"] = ex.damage;
-        params["radius"] = static_cast<int>( ex.radius );
-        params["fire"] = ex.fire;
-    } );
+    {
+        std::unique_lock lock( cata::lua_lock );
+        cata::run_hooks( "on_explosion_start", [&]( sol::table & params ) {
+            params["pos"] = cata::detail::lua_coords::to_lua( p );
+            params["damage"] = ex.damage;
+            params["radius"] = static_cast<int>( ex.radius );
+            params["fire"] = ex.fire;
+        } );
+    }
 
     // Explosions are very, very loud. A *small* landmine going off is about 155dB 1m away.
     // An antipersonel grenade/flashbang going off 1m away is about 170-180dB.
@@ -1757,18 +1757,10 @@ void explosion_funcs::flashbang( const queued_explosion &qe )
         // Deafening is now handled by the sound code.
         if( here.sees( g->u.bub_pos(), p, 8 ) ) {
             int flash_mod = 0;
-            if( g->u.has_trait( trait_PER_SLIME ) ) {
-                if( one_in( 2 ) ) {
-                    flash_mod = 3; // Yay, you weren't looking!
-                }
-            } else if( g->u.has_trait( trait_PER_SLIME_OK ) ) {
-                flash_mod = 8; // Just retract those and extrude fresh eyes
-            } else if( g->u.has_bionic( bio_sunglasses ) ||
-                       g->u.is_wearing( itype_rm13_armor_on ) ) {
-                flash_mod = 6;
-            } else if( g->u.worn_with_flag( flag_BLIND ) ||
-                       g->u.worn_with_flag( flag_FLASH_PROTECTION ) ) {
-                flash_mod = 3; // Not really proper flash protection, but better than nothing
+            flash_mod = g->u.bonus_from_enchantments( 0, ench_val_FLASH_PROTECTION );
+            if( g->u.worn_with_flag( flag_BLIND ) ||  g->u.worn_with_flag( flag_FLASH_PROTECTION ) ) {
+                // Not really proper flash protection, but better than nothing
+                flash_mod = std::max( flash_mod, 3 );
             }
             g->u.add_env_effect( effect_blind, body_part_eyes, ( 12 - flash_mod - dist ) / 2,
                                  time_duration::from_turns( 10 - dist ) );
@@ -2141,8 +2133,22 @@ explosion_queue &get_explosion_queue()
 
 void explosion_queue::execute()
 {
+    // Drain deferral (issue #9696) -- the primary fix. An item being processed can
+    // be detached but still in the map stack; a re-entrant drain (e.g. an EMP
+    // bomb's blast killing a searchlight) would re-detonate it forever. Defer to
+    // the turn-loop drain, which runs after processing (same turn).
+    if( drains_deferred() ) {
+        deferred_drain_requested = true;
+        return;
+    }
+    // Any real drain satisfies a pending suppressed request.
+    deferred_drain_requested = false;
+
+    // Per-drain backstop (not the #9696 fix): cap one runaway drain that re-feeds
+    // its own queue. Per drain, not per turn, so it never drops a later,
+    // independently-queued explosion.
     explosion_count = 0;
-    while( !elems.empty() ) {
+    while( !elems.empty() && explosion_count < max_pending_explosions ) {
         queued_explosion exp = std::move( elems.front() );
         elems.pop_front();
         explosion_count++;
@@ -2163,6 +2169,14 @@ void explosion_queue::execute()
                 debugmsg( "Explosion type not implemented." );
                 break;
         }
+    }
+    if( !elems.empty() ) {
+        // Leftovers mean the loop stopped at the per-drain cap (a runaway): drop
+        // them to avoid an OOM/hang and report once.
+        const auto dropped = static_cast<int>( elems.size() );
+        elems.clear();
+        debugmsg( "Explosion queue exceeded the per-drain cap of %d; dropped %d "
+                  "queued explosions to avoid a hang.", max_pending_explosions, dropped );
     }
 }
 

@@ -75,8 +75,8 @@
 #include "json.h"
 #include "kill_tracker.h"
 #include "lru_cache.h"
-#include "magic.h"
-#include "magic_teleporter_list.h"
+#include "magic/magic.h"
+#include "magic/magic_teleporter_list.h"
 #include "map.h"
 #include "map_memory.h"
 #include "mapdata.h"
@@ -572,8 +572,8 @@ void Character::load( const JsonObject &data )
             for( size_t bp_iter = 0; bp_iter < num_bp; bp_iter++ ) {
                 body_part bp_token = static_cast<body_part>( bp_iter );
                 auto &part = get_part( convert_bp( bp_token ) );
-                part.set_temp_cur( temp_cur_old[bp_iter] );
-                part.set_temp_conv( temp_conv_old[bp_iter] );
+                part.set_temp_cur( units::from_legacy_bodypart_temp( temp_cur_old[bp_iter] ) );
+                part.set_temp_conv( units::from_legacy_bodypart_temp( temp_conv_old[bp_iter] ) );
                 part.set_frostbite_timer( frostbite_timer_old[bp_iter] );
             }
         }
@@ -2751,7 +2751,13 @@ void item::io( Archive &archive )
     archive.io( "item_counter", item_counter, static_cast<decltype( item_counter )>( 0 ) );
     archive.io( "rot", rot, 0_turns );
     archive.io( "last_rot_check", last_rot_check, calendar::start_of_cataclysm );
+    if constexpr( !Archive::is_input::value ) {
+        erase_if( techniques, []( const matec_id & technique ) { return !technique.is_valid(); } );
+    }
     archive.io( "techniques", techniques, io::empty_default_tag() );
+    if constexpr( Archive::is_input::value ) {
+        erase_if( techniques, []( const matec_id & technique ) { return !technique.is_valid(); } );
+    }
     {
         auto serialized_melee = std::vector<damage_instance_serialization::serialized_damage_unit> {};
         auto serialized_ranged = std::vector<damage_instance_serialization::serialized_damage_unit> {};
@@ -4632,6 +4638,9 @@ void submap::load( JsonIn &jsin, const std::string &member_name, int version,
                 --remaining;
             }
             ter[sm_ms.x()][sm_ms.y()] = iid;
+            if( iid->trap != tr_null ) {
+                trap_cache.push_back( sm_ms );
+            }
         }
         if( remaining ) {
             debugmsg( "Mapbuffer terrain data is corrupt, tile data remaining." );

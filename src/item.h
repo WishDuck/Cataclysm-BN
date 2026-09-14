@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "calendar.h"
+#include "catalua_icallback_actor.h"
 #include "coordinates.h"
 #include "damage.h"
 #include "detached_ptr.h"
@@ -361,7 +362,7 @@ class item : public location_visitable<item>, public game_object<item>
          * @param alert whether to display any messages
          * @return true if item reverted or false if no revert available.
          */
-        bool revert( const Character *ch, bool alert = true );
+        bool revert( Character *ch, bool alert = true );
 
         /**
          * Add or remove energy from a battery.
@@ -581,12 +582,16 @@ class item : public location_visitable<item>, public game_object<item>
                           bool debug ) const;
         void combat_info( std::vector<iteminfo> &info, const iteminfo_query *parts, int batch,
                           bool debug ) const;
+        void throw_info( std::vector<iteminfo> &info, const iteminfo_query *parts, int batch,
+                         bool debug ) const;
         void damage_statblock_info( std::vector<iteminfo> &info, damage_instance attack,
                                     bool line_by_line ) const;
         void contents_info( std::vector<iteminfo> &info, const iteminfo_query *parts, int batch,
                             bool debug ) const;
         void final_info( std::vector<iteminfo> &info, const iteminfo_query &parts, int batch,
                          bool debug ) const;
+        void enchantment_info( std::vector<iteminfo> &info, const iteminfo_query &parts, int batch,
+                               bool debug ) const;
 
         /**
          * Calculate all burning calculations, but don't actually apply them to item.
@@ -1299,12 +1304,12 @@ class item : public location_visitable<item>, public game_object<item>
         /*@{*/
         static detached_ptr<item> process( detached_ptr<item> &&self, player *carrier,
                                            const tripoint_bub_ms &pos,
-                                           bool activate,
+                                           bool activate, const int ticks,
                                            temperature_flag flag = temperature_flag::TEMP_NORMAL );
         static detached_ptr<item> process( detached_ptr<item> &&self, player *carrier,
                                            const tripoint_bub_ms &pos,
                                            bool activate,
-                                           temperature_flag flag, const weather_manager &weather_generator );
+                                           temperature_flag flag, const weather_manager &weather_generator, const int ticks );
         /*@}*/
         /**
          * Helper to bring a cable back to its initial state.
@@ -1324,9 +1329,8 @@ class item : public location_visitable<item>, public game_object<item>
          * Process and apply artifact effects. This should be called exactly once each turn, it may
          * modify character stats (like speed, strength, ...), so call it after those have been reset.
          * @param carrier The character carrying the artifact, can be null.
-         * @param pos The location of the artifact (should be the player location if carried).
          */
-        void process_artifact( player *carrier, const tripoint_bub_ms &pos );
+        void process_artifact( player *carrier );
         void process_relic( Character *carrier );
 
         bool destroyed_at_zero_charges() const;
@@ -1358,7 +1362,7 @@ class item : public location_visitable<item>, public game_object<item>
         bool is_tool() const;
         bool is_transformable() const;
         bool is_artifact() const;
-        bool is_relic() const;
+        bool is_relic( bool not_itype = false ) const;
         bool is_pocket_dimension_key() const;
         bool is_bucket() const;
         bool is_bucket_nonempty() const;
@@ -1725,6 +1729,9 @@ class item : public location_visitable<item>, public game_object<item>
 
         /**If item made out of glass, or has the SHATTERS flag?*/
         bool can_shatter() const;
+
+        /** If the item is non-rigid: either has rigid = false or max_encumber higher than encumber */
+        bool is_non_rigid() const;
 
         /**
          * @name Item properties
@@ -2413,7 +2420,9 @@ class item : public location_visitable<item>, public game_object<item>
 
         std::optional<dimension_info> pocket_dim;
 
-        const std::vector<enchantment> &get_enchantments() const;
+        bool add_enchantment( const enchantment_id &ench );
+
+        const std::vector<enchantment> &get_enchantments( bool dynamic ) const;
 
         /**
          * Calculate bonus from enchantments that affect this item only.
@@ -2423,10 +2432,10 @@ class item : public location_visitable<item>, public game_object<item>
 
         /**
          * Calculate bonus from enchantments that affect this item only,
-         * assume it's wielded and all enchantments' conditions are satisfied.
+         * Only supports item only conditions.
          */
-        double bonus_from_enchantments_wielded( double base, enchantment_value_id value,
-                                                bool round = false ) const;
+        double bonus_from_enchantments( double base, enchantment_value_id value,
+                                        bool round = false ) const;
 
         /** Returns the type of location where the item is found */
         item_location_type where() const;
@@ -2459,10 +2468,16 @@ class item : public location_visitable<item>, public game_object<item>
         const use_function *get_use_internal( const std::string &use_name ) const;
         static detached_ptr<item> process_internal( detached_ptr<item> &&self, player *carrier,
                 const tripoint_bub_ms &pos, bool activate,
-                bool seals, temperature_flag flag, const weather_manager &weather_generator );
+                bool seals, temperature_flag flag, const weather_manager &weather_generator, const int ticks );
+        static auto actualize_rot( detached_ptr<item> &&self, const tripoint_bub_ms &pnt,
+                                   temperature_flag temperature,
+                                   const weather_manager &weather, bool seals ) -> detached_ptr<item>;
+        static auto actualize_rot( detached_ptr<item> &&self,
+                                   const rot_context &context, bool seals ) -> detached_ptr<item>;
         static auto process_rot( detached_ptr<item> &&self,
                                  const absolute_rot_process_options &options ) -> detached_ptr<item>;
         auto is_in_preserving_container() const -> bool;
+        auto is_in_sealing_container() const -> bool;
         auto mark_rot_checked_now() -> void;
 
         /** Helper for checking reloadability. **/
@@ -2508,7 +2523,7 @@ class item : public location_visitable<item>, public game_object<item>
         static detached_ptr<item> process_litcig( detached_ptr<item> &&self, player *carrier,
                 const tripoint_bub_ms &pos );
         static detached_ptr<item> process_extinguish( detached_ptr<item> &&self, player *carrier,
-                const tripoint_bub_ms &pos );
+                const tripoint_bub_ms &posi, const int ticks );
         // Place conditions that should remove fake smoke item in this sub-function
         static detached_ptr<item> process_fake_smoke( detached_ptr<item> &&self, player *carrier,
                 const tripoint_bub_ms &pos );
@@ -2520,9 +2535,10 @@ class item : public location_visitable<item>, public game_object<item>
                 const tripoint_bub_ms &pos );
         static detached_ptr<item> process_UPS( detached_ptr<item> &&self, player *carrier,
                                                const tripoint_bub_ms &pos );
-        static detached_ptr<item> process_blackpowder_fouling( detached_ptr<item> &&self, player *carrier );
+        static detached_ptr<item> process_blackpowder_fouling( detached_ptr<item> &&self, player *carrier,
+                const int ticks );
         static detached_ptr<item> process_tool( detached_ptr<item> &&self, player *carrier,
-                                                const tripoint_bub_ms &pos );
+                                                const tripoint_bub_ms &pos, const int ticks );
 
         //Process wet is built different because sigh
         bool process_wet( player *carrier, const tripoint_bub_ms &pos );
@@ -2555,6 +2571,8 @@ class item : public location_visitable<item>, public game_object<item>
         auto set_dispersion_bonus( int bonus ) -> void;
         auto get_recoil_bonus() const -> int;
         auto set_recoil_bonus( int bonus ) -> void;
+        // any relic data specific to this item
+        cata::value_ptr<relic> relic_data;
     private:
         location_vector<item> components;
         const itype *curammo = nullptr;
@@ -2591,8 +2609,6 @@ class item : public location_visitable<item>, public game_object<item>
 
         cata::value_ptr<craft_data> craft_data_;
 
-        // any relic data specific to this item
-        cata::value_ptr<relic> relic_data;
     public:
         int charges;
         units::energy energy;      // Amount of energy currently stored in a battery
