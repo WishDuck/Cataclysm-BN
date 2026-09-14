@@ -126,7 +126,6 @@
 #include "overmap.h"
 #include "overmap_ui.h"
 #include "overmapbuffer.h"
-#include "overmapbuffer_registry.h"
 #include "panels.h"
 #include "path_info.h"
 #include "pathfinding.h"
@@ -1482,7 +1481,6 @@ void game::on_submap_unloaded( const tripoint_abs_sm &pos,
         monster &critter = *critter_ptr;
         const auto sm = project_to<coords::sm>( critter.abs_pos() );
         if( sm == pos ) {
-            std::cout << "Despawning: " << critter.get_name() << "\n";
             despawn_monster( critter );
         }
     }
@@ -4154,6 +4152,10 @@ bool game::load( const save_t &name )
     // setup() already called init_bubble_config() + m.resize().
     init_bubble_config( g_reality_bubble_size );
     reality_bubble_radius_ = g_half_mapsize;
+    // Old saves can have duplicate authority for in-bubble monsters: one copy in
+    // active_monsters and another in overmap monster_map.  Purge the stale overmap
+    // buckets before update_map() gets a chance to spawn newly-entered submaps.
+    discard_monster_map_for_loaded_bubble( m, current_dimension_id_ );
     // Repair active monsters left outside every loaded submap by older broken saves.
     for( auto &critter : all_monsters() ) {
         if( m.get_submap_at( critter.bub_pos() ) == nullptr ) {
@@ -4161,6 +4163,7 @@ bool game::load( const save_t &name )
         }
     }
     update_map( u );
+    discard_monster_map_for_loaded_bubble( m, current_dimension_id_ );
     m.build_floor_cache( get_levz() );
     for( auto &e : u.inv_dump() ) {
         e->set_owner( g->u );
