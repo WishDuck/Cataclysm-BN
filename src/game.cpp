@@ -126,6 +126,7 @@
 #include "overmap.h"
 #include "overmap_ui.h"
 #include "overmapbuffer.h"
+#include "overmapbuffer_registry.h"
 #include "panels.h"
 #include "path_info.h"
 #include "pathfinding.h"
@@ -1481,6 +1482,7 @@ void game::on_submap_unloaded( const tripoint_abs_sm &pos,
         monster &critter = *critter_ptr;
         const auto sm = project_to<coords::sm>( critter.abs_pos() );
         if( sm == pos ) {
+            std::cout << "Despawning: " << critter.get_name() << "\n";
             despawn_monster( critter );
         }
     }
@@ -4266,11 +4268,25 @@ bool game::save_maps()
         // Drain any in-flight load-manager tasks before save so save_omt workers
         // do not race with background workers calling add_submap().
         submap_loader.drain_lazy_loads();
+        // Evict monsters whose absolute submap position is outside the bubble.
+        // These monsters need to be stored OUTSIDE of the game cache.
+        {
+            const auto &buffer = MAPBUFFER_REGISTRY.get( current_dimension_id_ );
+            const auto monster_refs = buffer.creature_tracker().get_monsters_list();
+            for( const shared_ptr_fast<monster> &critter_ptr : monster_refs ) {
+                if( !critter_ptr || critter_ptr->is_dead() ) {
+                    continue;
+                }
+                monster &critter = *critter_ptr;
+                std::cout << "Despawning2: " << critter.get_name() << "\n";
+                get_overmapbuffer( critter.get_dimension() ).despawn_monster( critter );
+            }
+        }
+        save_all_overmapbuffers(); // can throw — saves every loaded dimension's overmapbuffer
         // Save mapbuffers for all registered dimensions (active + any kept/non-active).
         // save_all() dispatches dimension saves in parallel; each slot uses
         // notify_tracker=is_primary and show_progress=false (worker-thread safe).
         MAPBUFFER_REGISTRY.save_all(); // can throw
-        save_all_overmapbuffers(); // can throw — saves every loaded dimension's overmapbuffer
         return true;
     } catch( const std::exception &err ) {
         popup( _( "Failed to save the maps: %s" ), err.what() );
