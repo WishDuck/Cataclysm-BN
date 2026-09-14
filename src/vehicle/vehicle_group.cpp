@@ -1,4 +1,4 @@
-#include "vehicle_group.h"
+#include "vehicle/vehicle_group.h"
 
 #include "debug.h"
 #include "json.h"
@@ -9,9 +9,7 @@
 #include "point.h"
 #include "rng.h"
 #include "translations.h"
-#include "type_id.h"
 #include "units_angle.h"
-#include "veh_type.h"
 #include "vehicle.h"
 #include "vehicle_part.h"
 #include "vpart_position.h"

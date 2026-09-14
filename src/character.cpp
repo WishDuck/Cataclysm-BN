@@ -100,14 +100,14 @@
 #include "units_temperature.h"
 #include "units_utility.h"
 #include "value_ptr.h"
-#include "veh_interact.h"
-#include "veh_type.h"
-#include "vehicle.h"
-#include "vehicle_part.h"
-#include "vehicle_selector.h"
+#include "vehicle/veh_interact.h"
+#include "vehicle/veh_type.h"
+#include "vehicle/vehicle.h"
+#include "vehicle/vehicle_part.h"
+#include "vehicle/vehicle_selector.h"
+#include "vehicle/vpart_position.h"
+#include "vehicle/vpart_range.h"
 #include "vitamin.h"
-#include "vpart_position.h"
-#include "vpart_range.h"
 #include "weather/weather.h"
 #include "weather/weather_gen.h"
 
@@ -12236,8 +12236,8 @@ float Character::stability_roll() const
 
     /** @EFFECT_DEX slightly improves player stability roll */
 
-    /** @EFFECT_DODGE improves player stability roll */
-    return get_dodge() + get_str() + ( get_per() / 3.0f ) + ( get_dex() / 4.0f );
+    /** @EFFECT_MELEE improves player stability roll */
+    return get_melee() + get_str() + ( get_per() / 3.0f ) + ( get_dex() / 4.0f );
 }
 
 bool Character::uncanny_dodge()
