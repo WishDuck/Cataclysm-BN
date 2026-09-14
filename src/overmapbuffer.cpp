@@ -1929,6 +1929,7 @@ void overmapbuffer::spawn_monster( const tripoint_abs_sm &p )
                       local.x(), local.y(), local.z(), ms.x(), ms.y(), ms.z() );
         }
         monster *const placed = g->place_critter_at( make_shared_fast<monster>( this_monster ), local );
+        std::cout << "Placing: " << placed->get_name() << "\n";
         if( placed ) {
             placed->on_load();
         }

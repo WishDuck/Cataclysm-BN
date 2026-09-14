@@ -699,7 +699,7 @@ void game::setup( bool load_world_modfiles )
         init::load_world_modfiles( ui, get_active_world(), SAVE_ARTIFACTS );
     }
 
-    init_bubble_config();
+    init_bubble_config( g_reality_bubble_size );
     m.resize( g_mapsize );
 
     next_npc_id = character_id( 1 );
@@ -4152,12 +4152,8 @@ bool game::load( const save_t &name )
     // Re-read the bubble-size option for the submap-loader request.
     // Do NOT call m.resize() here — the grid is already filled by unserialize().
     // setup() already called init_bubble_config() + m.resize().
-    init_bubble_config();
+    init_bubble_config( g_reality_bubble_size );
     reality_bubble_radius_ = g_half_mapsize;
-    // Old saves can have duplicate authority for in-bubble monsters: one copy in
-    // active_monsters and another in overmap monster_map.  Purge the stale overmap
-    // buckets before update_map() gets a chance to spawn newly-entered submaps.
-    discard_monster_map_for_loaded_bubble( m, current_dimension_id_ );
     // Repair active monsters left outside every loaded submap by older broken saves.
     for( auto &critter : all_monsters() ) {
         if( m.get_submap_at( critter.bub_pos() ) == nullptr ) {
@@ -4165,7 +4161,6 @@ bool game::load( const save_t &name )
         }
     }
     update_map( u );
-    discard_monster_map_for_loaded_bubble( m, current_dimension_id_ );
     m.build_floor_cache( get_levz() );
     for( auto &e : u.inv_dump() ) {
         e->set_owner( g->u );
@@ -4268,20 +4263,6 @@ bool game::save_maps()
         // Drain any in-flight load-manager tasks before save so save_omt workers
         // do not race with background workers calling add_submap().
         submap_loader.drain_lazy_loads();
-        // Evict monsters whose absolute submap position is outside the bubble.
-        // These monsters need to be stored OUTSIDE of the game cache.
-        {
-            const auto &buffer = MAPBUFFER_REGISTRY.get( current_dimension_id_ );
-            const auto monster_refs = buffer.creature_tracker().get_monsters_list();
-            for( const shared_ptr_fast<monster> &critter_ptr : monster_refs ) {
-                if( !critter_ptr || critter_ptr->is_dead() ) {
-                    continue;
-                }
-                monster &critter = *critter_ptr;
-                std::cout << "Despawning2: " << critter.get_name() << "\n";
-                get_overmapbuffer( critter.get_dimension() ).despawn_monster( critter );
-            }
-        }
         save_all_overmapbuffers(); // can throw — saves every loaded dimension's overmapbuffer
         // Save mapbuffers for all registered dimensions (active + any kept/non-active).
         // save_all() dispatches dimension saves in parallel; each slot uses
@@ -6729,10 +6710,7 @@ void game::monmove( const monster_activity_ai_mode mode, activity_monmove_cache 
     {
         ZoneScopedN( "monmove_despawn_oob" );
         for( monster &critter : all_monsters() ) {
-            if( critter.bub_pos().x() < 0 - ( g_mapsize_x ) / 6 ||
-                critter.bub_pos().y() < 0 - ( g_mapsize_y ) / 6 ||
-                critter.bub_pos().x() > ( g_mapsize_x * 7 ) / 6 ||
-                critter.bub_pos().y() > ( g_mapsize_y * 7 ) / 6 ) {
+            if( !m.inbounds( critter.bub_pos() ) ) {
                 despawn_monster( critter );
             }
         }

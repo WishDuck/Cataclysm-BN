@@ -241,6 +241,9 @@ auto game::unserialize( std::istream &fin ) -> bool
         auto saved_reality_bubble_size = g_reality_bubble_size;
         const auto has_saved_reality_bubble_size = data.read( "reality_bubble_size",
                 saved_reality_bubble_size );
+        if( has_saved_reality_bubble_size ) {
+            g_reality_bubble_size = saved_reality_bubble_size;
+        }
         auto saved_player_abs = tripoint_abs_ms::zero();
         auto has_saved_player_abs = false;
         if( data.has_object( "player" ) ) {
@@ -700,6 +703,7 @@ void overmap::unserialize( std::istream &fin, const std::string &file_path )
                 monster new_monster;
                 monster_location.deserialize( jsin );
                 new_monster.deserialize_from_overmap( jsin, pos(), monster_location );
+                std::cout << "Deserializing: " << new_monster.get_name() << "\n";
                 monster_map->insert( std::make_pair( monster_location, std::move( new_monster ) ) );
             }
         } else if( name == "tracked_vehicles" ) {
@@ -1142,6 +1146,7 @@ void overmap::serialize( std::ostream &fout ) const
     for( auto &i : *monster_map ) {
         i.first.serialize( json );
         i.second.serialize_for_overmap( json );
+        std::cout << "Serializing: " << i.second.get_name() << "\n";
     }
     json.end_array();
     fout << '\n';
