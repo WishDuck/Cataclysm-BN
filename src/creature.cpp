@@ -482,8 +482,17 @@ bool Creature::sees( const tripoint_bub_ms &t, bool /*is_avatar*/, int range_mod
         return false;
     }
     const auto ambient = here.ambient_light_at( t );
-    const auto range_cur = sight_range( ambient );
-    const auto range_min = std::min( range_cur, range_max );
+    auto range_cur = sight_range( ambient );
+    auto range_min = std::min( range_cur, range_max );
+    const auto *creature_at = g->critter_at( t );
+    if( creature_at ) {
+        const auto *character_at = creature_at->as_character();
+        if( character_at ) {
+            const auto visibility_mod = double( character_at->visibility() ) / 100;
+            range_cur *= visibility_mod;
+            range_min *= visibility_mod;
+        }
+    }
     const auto natural_light = g->natural_light_level( t.z() );
     const auto is_lit = ambient > natural_light;
     if( wanted_range <= range_min ||
