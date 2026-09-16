@@ -944,6 +944,10 @@ static void load_and_finalize_packs( loading_ui &ui, const std::string &msg,
         loader.load_data_from_path( mod->path, mod.str(), ui, false );
         ui.proceed();
     }
+    ui.new_context( msg );
+    for( const mod_id &e : available ) {
+        ui.add_entry( e->name() );
+    }
     ui.show();
     for( const mod_id &mod : available ) {
         loader.load_data_from_path( mod->path, mod.str(), ui, true );
