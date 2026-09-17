@@ -73,6 +73,7 @@
 #include "output.h"
 #include "overlay_ordering.h"
 #include "overmapbuffer.h"
+#include "perk.h"
 #include "player.h"
 #include "player_activity.h"
 #include "profession.h"
@@ -9155,6 +9156,15 @@ void Character::recalculate_enchantment_cache()
             }
         }
     }
+
+    for( const auto &perk_id : get_perks() ) {
+        for( const enchantment &ench : perk_id->get_enchantments() ) {
+            if( ench.is_active( *this, true ) ) {
+                enchantment_cache->force_add( ench );
+            }
+        }
+    }
+
     enchantment_cache->activate_effects( *this );
     enchantment_cache->deactivate_removed_effects( *this, old_ench_sources );
 
