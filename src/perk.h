@@ -29,6 +29,8 @@ class lua_bionic_callback_actor;
 
 enum class character_stat : char;
 
+void draw_perk_menu( Character &player );
+
 class perk {
 public:
     perk() = default;
