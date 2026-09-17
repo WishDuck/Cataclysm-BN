@@ -1033,8 +1033,8 @@
       "fatigue_chance": [ 6, 12 ]
     },
     "scaling_mods": {
-      "str_mod": [ -0.24, 0.12 ],
-      "dex_mod": [ -0.2, 0.12 ],
+      "str_mod": [ -0.24, -0.12 ],
+      "dex_mod": [ -0.2, -0.12 ],
       "int_mod": [ -0.24 ],
       "per_mod": [ -0.2 ],
       "stamina_min": [ -2.5 ],
