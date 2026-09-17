@@ -25,6 +25,7 @@ IMPLEMENT_STRING_AND_INT_IDS(perk, all_perks);
 void perk::load(const JsonObject& jo, const std::string& src) {
     mandatory(jo, was_loaded, "name", name);
     mandatory(jo, was_loaded, "description", description);
+    mandatory(jo, was_loaded, "category", category);
     optional(jo, was_loaded, "hidden", hidden, false);
     if( jo.has_array( "enchantments" ) ) {
         for( JsonObject jobj : jo.get_array( "enchantments" ) ) {

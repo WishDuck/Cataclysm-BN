@@ -57,11 +57,13 @@ public:
     bool is_hidden() const;
     std::string get_name() const;
     std::string get_description() const;
+    std::string get_category() const;
     std::vector<enchantment> get_enchantments() const;
 
 private:
     translation name; 
     translation description;
+    translation category;
     bool hidden;
     std::vector<enchantment> enchantments;
 
