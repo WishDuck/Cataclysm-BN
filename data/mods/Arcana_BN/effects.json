@@ -1025,8 +1025,8 @@
     "max_intensity": 25,
     "int_dur_factor": "1 h",
     "base_mods": {
-      "str_mod": [ 2 ],
-      "dex_mod": [ 1 ],
+      "str_mod": [ -2 ],
+      "dex_mod": [ -1 ],
       "int_mod": [ -1 ],
       "per_mod": [ -1 ],
       "fatigue_tick": [ 1800 ],
@@ -1037,7 +1037,7 @@
       "dex_mod": [ -0.2, 0.12 ],
       "int_mod": [ -0.24 ],
       "per_mod": [ -0.2 ],
-      "stamina_min": [ 2.5 ],
+      "stamina_min": [ -2.5 ],
       "fatigue_min": [ 0.25 ]
     }
   },
