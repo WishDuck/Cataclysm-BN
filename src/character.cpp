@@ -582,6 +582,7 @@ void Character::move_operator_common( Character &&source ) noexcept
     cached_time = source.cached_time ;
 
     addictions = std::move( source.addictions );
+    perks = std::move( source.perks );
 
     mounted_creature = std::move( source.mounted_creature );
     mounted_creature_id = source.mounted_creature_id ;
@@ -2560,6 +2561,26 @@ int Character::get_mod_stat_from_bionic( const character_stat &Stat ) const
         }
     }
     return ret;
+}
+
+std::vector<perk_id> Character::get_perks() const
+{
+    return perks | std::ranges::to<std::vector>();
+}
+
+void Character::add_perk( const perk_id &perk )
+{
+    perks.insert( perk );
+}
+
+void Character::remove_perk( const perk_id &perk )
+{
+    perks.erase( perk );
+}
+
+bool Character::has_perk( const perk_id &perk ) const
+{
+    return perks.contains( perk );
 }
 
 detached_ptr<item> Character::wear_item( detached_ptr<item> &&wear,

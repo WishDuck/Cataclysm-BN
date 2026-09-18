@@ -6757,7 +6757,8 @@
     "valid": false,
     "purifiable": false,
     "profession": true,
-    "cancels": [ "ILLITERATE" ]
+    "cancels": [ "ILLITERATE" ],
+    "mut_enchantments": [ { "flags": [ "NO_READING_COMPLEXITY_PENALTY" ] } ]
   },
   {
     "type": "mutation",

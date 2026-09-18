@@ -14,19 +14,22 @@
 #include <algorithm>
 #include <optional>
 #include <ranges>
+#include <sstream>
 #include <vector>
 
-namespace {
-generic_factory<perk> all_perks("Perks");
+namespace
+{
+generic_factory<perk> all_perks( "Perks" );
 }
 
-IMPLEMENT_STRING_AND_INT_IDS(perk, all_perks);
+IMPLEMENT_STRING_AND_INT_IDS( perk, all_perks );
 
-void perk::load(const JsonObject& jo, const std::string& src) {
-    mandatory(jo, was_loaded, "name", name);
-    mandatory(jo, was_loaded, "description", description);
-    mandatory(jo, was_loaded, "category", category);
-    optional(jo, was_loaded, "hidden", hidden, false);
+void perk::load( const JsonObject &jo, const std::string &src )
+{
+    mandatory( jo, was_loaded, "name", name );
+    mandatory( jo, was_loaded, "description", description );
+    mandatory( jo, was_loaded, "category", category );
+    optional( jo, was_loaded, "hidden", hidden, false );
     if( jo.has_array( "enchantments" ) ) {
         for( JsonObject jobj : jo.get_array( "enchantments" ) ) {
             enchantment ench;
@@ -39,24 +42,52 @@ void perk::load(const JsonObject& jo, const std::string& src) {
     }
 }
 
-std::vector<enchantment> perk::get_enchantments() const {
+void perk::add_enchantment( enchantment &nench )
+{
+    for( enchantment &ench : enchantments ) {
+        if( ench.add( nench ) ) {
+            return;
+        }
+    }
+    enchantments.emplace_back( enchantment( nench ) );
+}
+
+std::vector<enchantment> perk::get_enchantments() const
+{
     return enchantments;
 }
 
-bool perk::is_hidden() const {
+bool perk::is_hidden() const
+{
     return hidden;
 }
 
-std::string perk::get_name() const {
+std::string perk::get_name() const
+{
     return name.translated();
 }
 
-std::string perk::get_description() const {
-    return description.translated();
+std::string perk::get_description() const
+{
+    std::ostringstream oss;
+    oss << description.translated() << "\n";
+    oss << "\n" << _( "Effects:" ) << "\n";
+    for( const enchantment &ench : enchantments ) {
+        for( const std::string str : ench.get_effect_string( false ) ) {
+            oss << "  " << str << "\n";
+        }
+    }
+    return oss.str();
 }
 
-void perk::load_perks(const JsonObject& jo, const std::string& src) {
-    all_perks.load(jo, src);
+std::string perk::get_category() const
+{
+    return category.translated();
+}
+
+void perk::load_perks( const JsonObject &jo, const std::string &src )
+{
+    all_perks.load( jo, src );
 }
 
 void perk::finalize_all()
@@ -74,21 +105,25 @@ void perk::finalize()
     }
 }
 
-void perk::check() const {
+void perk::check() const
+{
     for( const enchantment &ench : enchantments ) {
         ench.check();
     }
 }
 
-void perk::check_consistency() {
+void perk::check_consistency()
+{
     all_perks.check();
 }
 
-void perk::reset() {
+void perk::reset()
+{
     all_perks.reset();
 }
 
-std::vector<perk> perk::get_all() {
+std::vector<perk> perk::get_all()
+{
     return all_perks.get_all();
 }
 

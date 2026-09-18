@@ -31,43 +31,44 @@ enum class character_stat : char;
 
 void draw_perk_menu( Character &player );
 
-class perk {
-public:
-    perk() = default;
-    ~perk() = default;
+class perk
+{
+    public:
+        perk() = default;
+        ~perk() = default;
 
-    static void load_perks(const JsonObject& jo, const std::string& src);
+        static void load_perks( const JsonObject &jo, const std::string &src );
 
-    void load(const JsonObject& jo, const std::string& src);
+        void load( const JsonObject &jo, const std::string &src );
 
-    static void finalize_all();
+        static void finalize_all();
 
-    void finalize();
+        void finalize();
 
-    static void check_consistency();
+        static void check_consistency();
 
-    void check() const;
+        void check() const;
 
-    static std::vector<perk> get_all();
+        static std::vector<perk> get_all();
 
-    static void reset();
+        static void reset();
 
-    perk_id id;
-    bool was_loaded;
-    int points;
+        perk_id id;
+        bool was_loaded = false;
+        int points;
 
-    bool is_hidden() const;
-    std::string get_name() const;
-    std::string get_description() const;
-    std::string get_category() const;
-    std::vector<enchantment> get_enchantments() const;
+        bool is_hidden() const;
+        std::string get_name() const;
+        std::string get_description() const;
+        std::string get_category() const;
+        std::vector<enchantment> get_enchantments() const;
 
-private:
-    translation name; 
-    translation description;
-    translation category;
-    bool hidden;
-    std::vector<enchantment> enchantments;
+    private:
+        translation name;
+        translation description;
+        translation category;
+        bool hidden;
+        std::vector<enchantment> enchantments;
 
-    void add_enchantment( enchantment ench );
+        void add_enchantment( enchantment &ench );
 };
