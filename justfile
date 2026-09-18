@@ -1,3 +1,5 @@
+import? 'cata.just'
+
 set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
 
 default:
