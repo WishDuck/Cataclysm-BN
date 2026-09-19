@@ -29,7 +29,7 @@
 #include "map/mapbuffer.h"
 #include "map/mapbuffer_registry.h"
 #include "map_helpers.h"
-#include "mapgen_constructor.h"
+#include "mapgen/mapgen_constructor.h"
 #include "monster.h"
 #include "npc.h"
 #include "options.h"
@@ -1360,11 +1360,11 @@ TEST_CASE("catalua_table_compare", "[lua]") {
     }
 }
 
-static std::string serialize_table(sol::table t) {
+static auto serialize_table(sol::table t) -> std::string {
     return serialize_wrapper([&](JsonOut& jsout) { cata::serialize_lua_table(t, jsout); });
 }
 
-static sol::table deserialize_table(sol::state& lua, const std::string& data) {
+static auto deserialize_table(sol::state& lua, const std::string& data) -> sol::table {
     sol::table res = lua.create_table();
     deserialize_wrapper(
         [&](JsonIn& jsin) {
