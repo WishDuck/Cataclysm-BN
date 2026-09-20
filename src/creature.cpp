@@ -448,6 +448,10 @@ bool Creature::sees( const Creature &critter ) const
 
 bool Creature::sees( const tripoint_bub_ms &t, bool /*is_avatar*/, double range_mod ) const
 {
+    if( range_mod <= 0 ) {
+        return false;
+    }
+
     map &here = get_map();
     // A creature in a different dimension from the current render map cannot
     // perform a valid sight check through that map's terrain data.
