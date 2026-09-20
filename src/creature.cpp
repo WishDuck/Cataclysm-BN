@@ -443,10 +443,11 @@ bool Creature::sees( const Creature &critter ) const
         }
         range_mod *= ( double( ch->visibility() ) / 100.0 );
     }
-    return sees( critter.bub_pos(), critter.is_avatar(), range_mod ) && visible( ch );
+    return sees( critter.bub_pos(), critter.is_avatar(), 0, range_mod ) && visible( ch );
 }
 
-bool Creature::sees( const tripoint_bub_ms &t, bool /*is_avatar*/, double range_mod ) const
+bool Creature::sees( const tripoint_bub_ms &t, bool /*is_avatar*/, int range_limit,
+                     double range_mod ) const
 {
     if( range_mod <= 0 ) {
         return false;
@@ -488,9 +489,12 @@ bool Creature::sees( const tripoint_bub_ms &t, bool /*is_avatar*/, double range_
     const auto is_lit = ambient > natural_light;
     if( wanted_range <= range_min ||
         ( wanted_range <= range_max && is_lit ) ) {
-        auto range = is_lit ? g_max_view_distance * range_mod : range_min;
+        int range = is_lit ? g_max_view_distance * range_mod : range_min;
         if( has_effect( effect_no_sight ) ) {
             range = 1;
+        }
+        if( range_limit > 0 ) {
+            range = std::min( range, range_limit );
         }
         return here.sees( bub_pos(), t, range );
     } else {
