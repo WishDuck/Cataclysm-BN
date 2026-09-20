@@ -316,6 +316,11 @@
     "desc": "Affects Long Range Vision"
   },
   {
+    "id": "SIGHT_RANGE",
+    "type": "enchantment_value",
+    "desc": "Affects unenhanced sight range"
+  },
+  {
     "id": "EFFECTIVE_FOCUS",
     "type": "enchantment_value",
     "desc": "Affects Focus"

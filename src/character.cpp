@@ -401,6 +401,8 @@ static const enchantment_value_id ench_val_WEIGHTMOD_BODY( "WEIGHTMOD_BODY" );
 static const enchantment_value_id ench_val_WEIGHTMOD_INVENTORY( "WEIGHTMOD_INVENTORY" );
 static const enchantment_value_id ench_val_WEIGHTMOD_BIONICS( "WEIGHTMOD_BIONICS" );
 static const enchantment_value_id ench_val_WEIGHTMOD_WEAPON( "WEIGHTMOD_WEAPON" );
+
+static const enchantment_value_id ench_val_SIGHT_RANGE( "SIGHT_RANGE" );
 namespace io
 {
 
@@ -904,6 +906,8 @@ int Character::sight_range( int light_level ) const
     int range = static_cast<int>( -std::log( get_vision_threshold( static_cast<int>
                                   ( get_map().ambient_light_at( bub_pos() ) ) ) / static_cast<float>( light_level ) ) *
                                   ( 1.0 / LIGHT_TRANSPARENCY_OPEN_AIR ) );
+
+    range += bonus_from_enchantments( range, ench_val_SIGHT_RANGE );
 
     // Clamp to [1, sight_max].
     return clamp( range, 1, sight_max );
