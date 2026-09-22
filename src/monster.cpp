@@ -240,6 +240,7 @@ auto report_invalid_lua_attitude_return( const std::string &method, const sol::o
 auto get_lua_monster_attitude( const monster &mon,
                                const Character *target ) -> std::optional<monster_attitude>
 {
+    ZoneScoped;
     const auto &lua_method = mon.type->lua_attitude;
     if( !lua_method ) {
         return std::nullopt;
