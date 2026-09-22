@@ -3664,7 +3664,7 @@ auto jmapgen_setmap::apply(
         point_omt_ms pt2 = func(point_omt_ms(x2_get(), y2_get()));
         // If it is not a line or square, pt2 will always be 0, 0
         // This is in case rotation messes with the order
-        if( op >= JMAPGEN_SETMAP_OPTYPE_LINE ) {
+        if (op >= JMAPGEN_SETMAP_OPTYPE_LINE) {
             if (pt.x() > pt2.x()) {
                 int inter = pt.x();
                 pt.x() = pt2.x();
