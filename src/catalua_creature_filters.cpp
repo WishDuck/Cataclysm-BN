@@ -7,6 +7,7 @@
 #include "game.h"
 #include "monster.h"
 #include "type_id.h"
+#include "profile.h"
 
 using LuaValue = sol::basic_object<sol::basic_reference<>>;
 using MonsterVec = std::vector<monster *>;
@@ -139,6 +140,7 @@ std::unordered_map<std::string, std::function<std::function<bool( FilterContext 
 
 std::vector<monster *> filter_monsters_from_lua( const sol::table &filters )
 {
+    ZoneScoped;
     std::vector<monster *> monsters;
     FilterContext context = {
         .mon = nullptr,
