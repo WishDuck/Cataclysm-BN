@@ -180,9 +180,10 @@ end
 function mod.on_every_10_turns_civilian_update()
   if not CONFIG.PULPING_ENABLED then return end
   local map = gapi.get_map()
+  if not map then return end
   local civilians = gapi.get_monsters_if({ ["faction_ids"] = { faction_civ_id }, ["limit"] = CONFIG.PULPING_CIV_LIMIT })
   -- Dont process if no civilians in sight
-  if not map or not civilians then return end
+  if not civilians then return end
 
   local hostiles = gapi.get_monsters_if({
     ["faction_ids"] = { faction_zombie_id },
@@ -192,7 +193,7 @@ function mod.on_every_10_turns_civilian_update()
     ["limit"] = 1,
   })
 
-  -- Dont process if no hostiles in sight
+  -- Dont process if hostiles in sight
   if hostiles and #hostiles > 0 then return end
 
   local checked_positions = {}
