@@ -289,7 +289,7 @@ public:
     // serialization will receive the maximum-capped catchup on first load.
     time_point last_touched = calendar::turn_zero;
     // This is used for things like terrain swap catch up, generally set on last loaded
-    time_point last_terrain_swap_check = calendar::turn_zero;
+    time_point last_actualized = calendar::turn_zero;
     std::vector<spawn_point> spawns;
 
     // ---- Per-submap simulation caches ----

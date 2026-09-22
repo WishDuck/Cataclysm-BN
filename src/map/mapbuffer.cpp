@@ -3537,7 +3537,7 @@ auto mapbuffer::actualize_submap(const tripoint_abs_sm& pos) -> void {
         decay_cosmetic_fields(options);
 
         // These dont happen while simulated
-        options.elapsed = calendar::turn - tmpsub->last_terrain_swap_check;
+        options.elapsed = calendar::turn - tmpsub->last_actualized;
         grow_plant(options);
         restock_fruits(options);
         produce_sap(options);
@@ -3545,7 +3545,7 @@ auto mapbuffer::actualize_submap(const tripoint_abs_sm& pos) -> void {
     }
 
     tmpsub->last_touched = calendar::turn;
-    tmpsub->last_terrain_swap_check = calendar::turn;
+    tmpsub->last_actualized = calendar::turn;
 }
 
 auto mapbuffer::drain_pending_submap_destroy() -> void {
