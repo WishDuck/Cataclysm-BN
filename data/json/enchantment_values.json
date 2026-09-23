@@ -133,6 +133,12 @@
     "desc": "Affects Stamina Regen"
   },
   {
+    "id": "PASSIVE_BIONIC_POWER",
+    "type": "enchantment_value",
+    "can_mult": false,
+    "desc": "Affects Passive Bionic Power"
+  },
+  {
     "id": "THIRST",
     "type": "enchantment_value",
     "desc": "Affects Thirst Rates",
