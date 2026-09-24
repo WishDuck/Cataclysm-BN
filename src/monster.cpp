@@ -1851,10 +1851,15 @@ std::string io::enum_to_string<monster_attitude>( monster_attitude att )
     abort();
 }
 
+std::mutex lua_monster_attitude_lock;
+
 auto monster::attitude( const Character *u ) const -> monster_attitude
 {
-    if( const auto lua_attitude = get_lua_monster_attitude( *this, u ); lua_attitude ) {
-        return *lua_attitude;
+    {
+        std::unique_lock lock( lua_monster_attitude_lock );
+        if( const auto lua_attitude = get_lua_monster_attitude( *this, u ); lua_attitude ) {
+            return *lua_attitude;
+        }
     }
 
     if( friendly != 0 ) {
