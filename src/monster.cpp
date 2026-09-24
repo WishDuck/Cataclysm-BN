@@ -237,6 +237,8 @@ auto report_invalid_lua_attitude_return( const std::string &method, const sol::o
               method, raw_name );
 }
 
+std::mutex lua_monster_attitude_lock;
+
 auto get_lua_monster_attitude( const monster &mon,
                                const Character *target ) -> std::optional<monster_attitude>
 {
@@ -245,6 +247,7 @@ auto get_lua_monster_attitude( const monster &mon,
         return std::nullopt;
     }
 
+    std::unique_lock lock( lua_monster_attitude_lock );
     auto *lua_state = DynamicDataLoader::get_instance().lua.get();
     if( lua_state == nullptr ) {
         return std::nullopt;
@@ -1851,15 +1854,10 @@ std::string io::enum_to_string<monster_attitude>( monster_attitude att )
     abort();
 }
 
-std::mutex lua_monster_attitude_lock;
-
 auto monster::attitude( const Character *u ) const -> monster_attitude
 {
-    {
-        std::unique_lock lock( lua_monster_attitude_lock );
-        if( const auto lua_attitude = get_lua_monster_attitude( *this, u ); lua_attitude ) {
-            return *lua_attitude;
-        }
+    if( const auto lua_attitude = get_lua_monster_attitude( *this, u ); lua_attitude ) {
+        return *lua_attitude;
     }
 
     if( friendly != 0 ) {
