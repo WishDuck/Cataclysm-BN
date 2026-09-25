@@ -2428,15 +2428,15 @@ void options_manager::add_options_performance()
         add( "ACTIVITY_SKIP_SOUND_SKIP", page_id,
              translate_marker( "Skip Activity Sounds Calculations" ),
              translate_marker( "Turns caclculation of sound on or off during activity skip" ),
-             true );
+             false );
         add( "ACTIVITY_SKIP_MON_SKIP", page_id,
              translate_marker( "Skip Activity Monster Calculations" ),
              translate_marker( "Turns caclculation of monsters on or off during activity skip" ),
-             true );
+             false );
         add( "ACTIVITY_SKIP_NPC_SKIP", page_id,
              translate_marker( "Skip Activity NPC Calculations" ),
-             translate_marker( "Turns recaclculation of visibility cache on or off during activity skip" ),
-             true );
+             translate_marker( "During activity skip disables NPC logic other then doing activities and processing items" ),
+             false );
     } );
 
     add_empty_line();

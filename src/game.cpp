@@ -2902,10 +2902,8 @@ auto game::execute_activity_fixed_window_skip( const time_duration &duration ) -
                             // A ton cheaper then NPCs normally
                             // While not messing any activities up
                             guy.process_turn();
-                            guy.process_items();
                             if( guy.has_player_activity() ) {
                                 guy.execute_action( "npc_player_activity" );
-
                             }
                         }
                     }
@@ -2972,6 +2970,12 @@ auto game::run_activity_skip_batch_turns( const int skipped_turns ) -> void
     {
         ZoneScopedN( "do_player_process_items" );
         u.process_items( skipped_turns );
+    }
+    if( activity_skip_npc_skip ) {
+        ZoneScopedN( "do_npc_process_items" );
+        for( npc &guy : g->all_npcs() ) {
+            guy.process_items( skipped_turns );
+        }
     }
 
     {
