@@ -207,7 +207,6 @@ namespace
 
 constexpr auto option_group_type = "OPTION_GROUP";
 constexpr auto option_type = "OPTION";
-constexpr auto reload_option_definitions_action = "RELOAD_OPTION_DEFINITIONS";
 
 struct option_dependency_definition {
     std::string option;
@@ -977,7 +976,7 @@ void options_manager::cOpt::setPrerequisites( const std::string &sOption,
 {
     const bool hasOption = get_options().has_option( sOption );
     if( !hasOption ) {
-        debugmsg( "setPrerequisite: unknown option %s", sType );
+        debugmsg( "setPrerequisite: unknown option %s", sOption );
         return;
     }
 
@@ -1717,58 +1716,6 @@ auto options_manager::load_option_definitions() -> void
                 get_option( pending.option_name ).setPrerequisites( dep.option, dep.values );
             }
         }
-    }
-}
-
-auto options_manager::reload_option_definitions_preserving_values() -> void
-{
-    const auto previous_options = options;
-    const auto previous_values = capture_option_values( previous_options );
-    const auto previous_world_options = world_options.has_value() ? *world_options.value() :
-                                        options_container();
-    const auto previous_world_values = world_options.has_value() ?
-                                       capture_option_values( previous_world_options ) :
-                                       std::map<std::string, std::string>();
-
-    init();
-
-    const auto merge_string_select_items = [&]( const options_container & source,
-    options_container & target ) {
-        for( const auto &[name, source_opt] : source ) {
-            if( !target.contains( name ) ) {
-                continue;
-            }
-            auto &target_opt = target[name];
-            if( source_opt.sType != "string_select" || target_opt.sType != "string_select" ) {
-                continue;
-            }
-            for( const auto &item : source_opt.vItems ) {
-                const auto already_present = std::ranges::any_of( target_opt.vItems,
-                [&]( const id_and_option & existing ) {
-                    return existing.first == item.first;
-                } );
-                if( !already_present ) {
-                    target_opt.vItems.push_back( item );
-                }
-            }
-        }
-    };
-
-    for( const auto &[name, source_opt] : previous_options ) {
-        if( options.contains( name ) || source_opt.getPage() != "external_options" ) {
-            continue;
-        }
-        options.emplace( name, source_opt );
-    }
-
-    merge_string_select_items( previous_options, options );
-    restore_option_values( previous_values, options );
-
-    if( world_options.has_value() ) {
-        auto &current_world_options = *world_options.value();
-        current_world_options = get_world_defaults();
-        merge_string_select_items( previous_world_options, current_world_options );
-        restore_option_values( previous_world_values, current_world_options );
     }
 }
 
@@ -2664,349 +2611,6 @@ void options_manager::add_options_graphics()
 
 void options_manager::add_options_performance()
 {
-    const auto add_empty_line = [&]() {
-        this->add_empty_line( performance );
-    };
-#if defined(__ANDROID__)
-    const static bool is_android = true;
-#else
-    const static bool is_android = false;
-#endif
-#if defined(__ANDROID__)
-    add( "LOAD_FROM_EXTERNAL", performance, translate_marker( "External Storage Saving" ),
-         translate_marker( "Save in data/catalcysm... instead of Documents/..." ),
-         false );
-
-#endif
-    add_option_group( performance, Group( "rem_act_perf", to_translation( "Activity Boost" ),
-                                          to_translation( "Skip expensive processing while the player does activities." ) ),
-    [&]( auto & page_id ) {
-        add( "ACTIVITY_SKIP_VISIBILITY", page_id,
-             translate_marker( "Skip Activity Visibility Calculations" ),
-             translate_marker( "Turns recaclculation of visibility cache on or off during activity slow paths" ),
-             true );
-        add( "SLEEP_SKIP_VEH", page_id, translate_marker( "Skip Vehicle Movement" ),
-             translate_marker( "Turns off vehicle movement and autodrive while sleeping ( slow path only )" ),
-             true );
-        add( "SLEEP_SKIP_SOUND", page_id, translate_marker( "Skip Sound Processing On Sleep" ),
-             translate_marker( "Sounds are not processed while sleeping ( slow path only )" ),
-             false );
-        add( "SLEEP_SKIP_MON", page_id, translate_marker( "Skip Monster Movement" ),
-             translate_marker( "Monsters do not move while the player is sleeping ( slow path only )" ),
-             is_android ? true : false );
-        add( "SLEEP_SKIP_NPC", page_id, translate_marker( "Skip NPC Movement" ),
-             translate_marker( "NPCs are forced to sleep alongside the player, skipping movement "
-                               "but still processing rest recovery (fatigue reduction, healing, etc.).  "
-                               "NPCs with non-interruptible activities (e.g. surgery) are frozen "
-                               "for the turn instead. ( slow path only )" ),
-             is_android ? true : false );
-        add( "ACTIVITY_SKIP_SOUND_SKIP", page_id,
-             translate_marker( "Skip Activity Sounds Calculations" ),
-             translate_marker( "Turns caclculation of sound on or off during activity skip" ),
-             false );
-        add( "ACTIVITY_SKIP_MON_SKIP", page_id,
-             translate_marker( "Skip Activity Monster Calculations" ),
-             translate_marker( "Turns caclculation of monsters on or off during activity skip" ),
-             false );
-        add( "ACTIVITY_SKIP_NPC_SKIP", page_id,
-             translate_marker( "Skip Activity NPC Calculations" ),
-             translate_marker( "During activity skip disables NPC logic other then doing activities and processing items" ),
-             false );
-    } );
-
-    add_empty_line();
-
-    add_option_group( performance, Group( "lod_monster", to_translation( "Monster LOD" ),
-                                          to_translation( "Configure level-of-detail thresholds for monster AI." ) ),
-    [&]( auto & page_id ) {
-        add( "MONSTER_LOD_ENABLED", page_id,
-             translate_marker( "Enable Monster LOD" ),
-             translate_marker( "Enable level-of-detail processing for monsters.  "
-                               "When enabled, distant or wandering monsters are assigned "
-                               "AI tiers. Higher tiers are processed less often and skip certain functions.  "
-                               "When disabled, every monster runs full AI every turn regardless of distance." ),
-             true );
-        add( "LOD_ACTION_BUDGET", page_id,
-             translate_marker( "Action Budget" ),
-             translate_marker( "Minimum number of monsters that enter the move loop per turn.  "
-                               "The actual budget is the larger of this value and the current Tier-0 "
-                               "(full-AI) monster count, so full-AI monsters are never skipped.  "
-                               "Higher values process more distant monsters each turn.  "
-                               "0 means only Tier-0 monsters run (no extra Tier-1 budget)." ),
-             32, 2048, is_android ? 96 : 128 );
-        add( "LOD_MACRO_INTERVAL", page_id,
-             translate_marker( "Macro Step Interval" ),
-             translate_marker( "How many turns elapse between movement steps for Tier-2 (distant wandering) "
-                               "monsters.  At 1 they step every turn; at 3 (default) they step once every "
-                               "3 turns.  Higher values reduce CPU cost for distant hordes." ),
-             1, 8, is_android ? 3 : 4 );
-        add( "LOD_TIER_FULL_DIST", page_id,
-             translate_marker( "Full AI Radius" ),
-             translate_marker( "Monsters within this radius run the complete AI every turn.  "
-                               "Must be less than the Coarse AI Radius." ),
-             5, 208, is_android ? 20 : 30 );
-        add( "LOD_TIER_COARSE_DIST", page_id,
-             translate_marker( "Coarse AI Radius" ),
-             translate_marker( "Monsters between the Full AI Radius and this distance use cached "
-                               "paths and skip expensive faction queries.  Monsters beyond this "
-                               "distance are Tier-2 (macro step only)." ),
-             10, 208, is_android ? 40 : 75 );
-        add( "LOD_DEMOTION_COOLDOWN", page_id,
-             translate_marker( "Demotion Cooldown" ),
-             translate_marker( "Turns a monster must wait after being promoted to a higher-fidelity "
-                               "tier before it can be demoted again.  Prevents rapid tier oscillation "
-                               "at distance boundaries.  0 disables the cooldown." ),
-             0, 10, 3 );
-        add( "LOD_COARSE_SCENT_INTERVAL", page_id,
-             translate_marker( "Coarse Scent Check Interval" ),
-             translate_marker( "How many turns elapse between scent-tracking checks for Tier-1 (coarse) "
-                               "monsters.  At 1 they check scent every turn (full fidelity); at 3 (default) "
-                               "only once every 3 turns. " ),
-             1, 5, is_android ? 3 : 4 );
-        add( "LOD_GROUP_MORALE_MAX_TIER", page_id,
-             translate_marker( "Group Morale Max Tier" ),
-             translate_marker( "Highest LOD tier that participates in group-morale and swarming calculations.  "
-                               "0 = Tier-0 only (default, cheapest).  1 = Tier-0 and Tier-1 monsters also "
-                               "run group-morale/swarm checks. " ),
-             0, 1, 0 );
-        add( "ACTIVITY_SKIP_MONSTER_LOD_GATE", page_id,
-             translate_marker( "Activity Skip Monster Gate" ),
-             translate_marker( "Highest real monster LOD tier allowed to run activity-skip AI.  "
-                               "Allowed monsters act one LOD tier less detailed than normal.  "
-                               "0 lets only Tier-0 monsters act as Tier-1.  "
-                               "1 lets Tier-0 and Tier-1 monsters act as Tier-1 and Tier-2, "
-                               "which is the default.  2 also lets Tier-2 monsters run macro AI." ),
-             0, 2, 1 );
-    } );
-
-    get_option( "LOD_ACTION_BUDGET" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_MACRO_INTERVAL" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_TIER_FULL_DIST" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_TIER_COARSE_DIST" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_DEMOTION_COOLDOWN" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_COARSE_SCENT_INTERVAL" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "LOD_GROUP_MORALE_MAX_TIER" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-    get_option( "ACTIVITY_SKIP_MONSTER_LOD_GATE" ).setPrerequisite( "MONSTER_LOD_ENABLED" );
-
-    add_empty_line();
-
-    add_option_group( performance, Group( "fov_3d", to_translation( "3D Field of Vision" ),
-                                          to_translation( "Configure three-dimensional visibility across z-levels." ) ),
-    [&]( auto & page_id ) {
-        add( "FOV_3D_OCCLUSION", page_id, translate_marker( "Angled Sunlight Shadows" ),
-             translate_marker( "When enabled, direct sunlight follows the current sun angle and roofs or overhangs cast time-dependent shadows." ),
-             false
-           );
-        add( "PREVENT_OCCLUSION", page_id, translate_marker( "Handle occlusion by high sprites" ),
-             translate_marker( "Draw tall sprites normal (Off), retracted/transparent (On), or automatically retracting/transparent near the player (Auto)." ),
-        {
-            { "off", translate_marker( "Off" ) },
-            { "on", translate_marker( "On" ) },
-            { "auto", translate_marker( "Auto" ) }
-        },
-        "auto" );
-        add( "PREVENT_OCCLUSION_TRANSP", page_id, translate_marker( "Prevent occlusion via transparency" ),
-             translate_marker( "Prevent high-sprite occlusion by using semi-transparent *_transparent tile variants when available." ),
-             true
-           );
-        add( "PREVENT_OCCLUSION_RETRACT", page_id, translate_marker( "Prevent occlusion via retraction" ),
-             translate_marker( "Prevent high-sprite occlusion by retracting sprites that define retracted offsets." ),
-             true
-           );
-        add( "PREVENT_OCCLUSION_MIN_DIST", page_id,
-             translate_marker( "Minimum distance for automatic occlusion handling" ),
-             translate_marker( "Minimum distance for automatic occlusion handling. Values above zero override tileset settings." ),
-             0.0, 60.0, 0.0, 0.1
-           );
-        add( "PREVENT_OCCLUSION_MAX_DIST", page_id,
-             translate_marker( "Maximum distance for automatic occlusion handling" ),
-             translate_marker( "Maximum distance for automatic occlusion handling. Values above zero override tileset settings." ),
-             0.0, 60.0, 0.0, 0.1
-           );
-    } );
-
-    add_empty_line();
-
-    add( "SKEW_VISION_CACHE_SIZE", performance,
-         translate_marker( "LOS Cache Size" ),
-         translate_marker( "Maximum number of line-of-sight results kept in the skew-vision LRU cache.  "
-                           "Higher values reduce redundant ray traces at the cost of more RAM.  "
-                           "Reduce if memory is tight; increase on machines with spare RAM and many "
-                           "on-screen creatures." ),
-         1024, 4194304, is_android ? 65536 : 262144 );
-
-    add_empty_line();
-
-    add_option_group( performance, Group( "multithreading", to_translation( "Multithreading" ),
-                                          to_translation( "Configure worker-thread parallelism for expensive per-turn computations." ) ),
-    [&]( auto & page_id ) {
-        add( "MULTITHREADING_ENABLED", page_id,
-             translate_marker( "Enable Multithreading" ),
-             translate_marker( "Enable worker-thread parallelism for expensive per-turn computations "
-                               "(monster planning, map-cache building, scent map updates, etc).  "
-                               "Disable to run everything on the main thread — useful for debugging, "
-                               "reproducibility testing, or machines where thread overhead exceeds gain.  "
-                               "Requires restart." ),
-             !is_android );
-        add( "THREAD_POOL_WORKERS", page_id,
-             translate_marker( "Thread Pool Worker Count" ),
-             translate_marker( "Number of worker threads in the persistent thread pool.  "
-                               "0 means automatic (hardware concurrency minus 1, leaving one core for "
-                               "the main/SDL thread).  Set to a lower value to cap CPU usage, e.g. when "
-                               "streaming or running other CPU-heavy applications alongside the game.  "
-                               "Requires restart." ),
-             0, 64, 0 );
-        add( "PARALLEL_MONSTER_PLANNING", page_id,
-             translate_marker( "Parallel Monster Planning" ),
-             translate_marker( "Compute monster AI plans (pathfinding target selection, LOS queries) in "
-                               "parallel across worker threads each turn.  Disable if monsters behave "
-                               "unexpectedly or for reproducible save-file testing.  Requires restart." ),
-             true );
-        add( "MONSTER_PLAN_CHUNK_SIZE", page_id,
-             translate_marker( "Monster Plan Chunk Size" ),
-             translate_marker( "Number of monsters batched into a single worker-thread task during the "
-                               "parallel planning pass.  Smaller values improve load balancing when "
-                               "planning cost varies widely (large hordes with mixed sight ranges); "
-                               "larger values reduce task-dispatch overhead.  Requires restart." ),
-             1, 64, 8 );
-        add( "PARALLEL_MAP_CACHE", page_id,
-             translate_marker( "Parallel Map Cache Build" ),
-             translate_marker( "Build per-z-level map caches (transparency, outside, floor, "
-                               "vehicle-obscured) in parallel across worker threads.  Disable on "
-                               "machines where the thread-dispatch overhead exceeds the benefit "
-                               "(typically dual-core systems or when z-levels are disabled).  "
-                               "Requires restart." ),
-             true );
-        add( "PARALLEL_SCENT_UPDATE", page_id,
-             translate_marker( "Parallel Scent Update" ),
-             translate_marker( "Compute the scent-diffusion Y-pass and X-pass across worker threads.  "
-                               "Disable on machines where the ~70 k-cell work unit is too small to "
-                               "amortize dispatch latency.  Requires restart." ),
-             true );
-    } );
-
-    get_option( "THREAD_POOL_WORKERS" ).setPrerequisite( "MULTITHREADING_ENABLED" );
-    get_option( "PARALLEL_MONSTER_PLANNING" ).setPrerequisite( "MULTITHREADING_ENABLED" );
-    get_option( "MONSTER_PLAN_CHUNK_SIZE" ).setPrerequisite( "MULTITHREADING_ENABLED" );
-    get_option( "PARALLEL_MAP_CACHE" ).setPrerequisite( "MULTITHREADING_ENABLED" );
-    get_option( "PARALLEL_SCENT_UPDATE" ).setPrerequisite( "MULTITHREADING_ENABLED" );
-
-    add_empty_line();
-
-    add_option_group( performance, Group( "reality_bubble", to_translation( "Reality Bubble" ),
-                                          to_translation( "Configure how the reality bubble functions." ) ),
-    [&]( auto & page_id ) {
-        add( "REALITY_BUBBLE_SIZE", page_id,
-             translate_marker( "Reality Bubble Size" ),
-             translate_marker( "Submap radius of the reality bubble (submaps visible beyond your position). "
-                               "Grid size = 2 × size + 3 submaps per side (size 4 → 11×11, legacy default). "
-                               "Maximum player sight range = 12 × (size + 1) tiles.  "
-                               "Larger values increase the loaded area and memory usage; "
-                               "smaller values reduce both. " ),
-             0, REALITY_BUBBLE_SIZE_MAX, is_android ? 4 : 6 );
-        add( "VISIBILITY_SCALING", page_id,
-             translate_marker( "Visibility Scaling" ),
-             translate_marker( "Controls how clear-air visibility attenuation scales with the reality bubble.  "
-                               "Perfect scales directly with the current bubble size.  Smart keeps visibility "
-                               "near the size 6 baseline while still giving small bubbles less range and large "
-                               "bubbles more range.  None keeps visibility at the size 6 baseline and only uses "
-        "bubble size as a hard view cap." ), {
-            { "perfect", translate_marker( "Perfect Scale" ) },
-            { "smart", translate_marker( "Smart Scale" ) },
-            { "none", translate_marker( "No Scale" ) }
-        }, "smart" );
-        add( "LAZY_BORDER", page_id,
-             translate_marker( "Pre-load Border" ),
-             translate_marker( "Preload a one-overmap-tile border around the reality bubble over several turns.  "
-                               "This reduces map-shift hitches at the cost of extra per-turn loading work and    "
-                               "some additional memory usage." ),
-             !is_android );
-        add( "ACTIVITY_MOBILE_BUBBLE_SIZE", page_id,
-             translate_marker( "Mobile Activity Bubble Size" ),
-             translate_marker( "Shrink the reality bubble to this radius while the player is performing a "
-                               "mobile activity (crafting, construction, etc.).  "
-                               "0 disables the feature.  Must be smaller than Reality Bubble Size to take effect." ),
-             0, REALITY_BUBBLE_SIZE_MAX, is_android ? 3 : 4 );
-        add( "ACTIVITY_IDLE_BUBBLE_SIZE", page_id,
-             translate_marker( "Idle Activity Bubble Size" ),
-             translate_marker( "Shrink the reality bubble to this radius while the player is performing an "
-                               "idle activity (sleeping, reading, waiting, etc.).  "
-                               "0 disables the feature.  Must be smaller than Reality Bubble Size to take effect." ),
-             0, REALITY_BUBBLE_SIZE_MAX, is_android ? 2 : 3 );
-        add( "UNDERGROUND_BUBBLE_SIZE", page_id,
-             translate_marker( "Underground Reality Bubble Size" ),
-             translate_marker( "Shrink the reality bubble to this radius while the player is underground "
-                               "and indoors (no sky visible).  "
-                               "0 disables the feature.  Must be smaller than Reality Bubble Size to take effect." ),
-             0, REALITY_BUBBLE_SIZE_MAX, is_android ? 2 : 4 );
-        add( "VEHICLE_BUBBLE_SIZE", page_id,
-             translate_marker( "Vehicle Reality Bubble Size" ),
-             translate_marker( "Shrink the reality bubble to this radius while the player is actively driving a vehicle  "
-                               "or mounted on a creature. Useful with a high render distance to reduce lag at speed.  "
-                               "0 disables the feature.  Must be smaller than Reality Bubble Size to take effect." ),
-             0, REALITY_BUBBLE_SIZE_MAX, is_android ? 3 : 0 );
-        add( "COMBAT_BUBBLE_SIZE", page_id,
-             translate_marker( "Combat Reality Bubble Size" ),
-             translate_marker( "Shrink the reality bubble to this radius while hostile creatures are visible nearby.  "
-                               "Uses the same detection range as safe mode.  "
-                               "0 disables the feature.  Must be smaller than Reality Bubble Size to take effect." ),
-             0, REALITY_BUBBLE_SIZE_MAX, 0 );
-        add( "ACTIVITY_BUBBLE_GRACE", page_id,
-             translate_marker( "Activity Bubble Grace Period" ),
-             translate_marker( "Minimum length of activity in minutes before the reality bubble shrinks.  "
-                               "Acts as a safety net to avoid unnecessary resizes for short tasks.  "
-                               "Default is 5 minutes." ),
-             1, 60, 5 );
-        add( "DYNAMIC_BUBBLE_GRACE", page_id,
-             translate_marker( "Dynamic Bubble Grace Period" ),
-             translate_marker( "Consecutive turns a condition must be met before the reality bubble shrinks "
-                               "for underground, vehicle, and combat modes.  "
-                               "Prevents rapid resizing when briefly entering or leaving a trigger zone.  "
-                               "Default is 5 turns." ),
-             1, 30, 5 );
-    } );
-
-    add_empty_line();
-
-    add_option_group( performance, Group( "submap_loading", to_translation( "Submap Loading" ),
-                                          to_translation( "Configure how submaps are loaded and "
-                                                  "processed outside of the reality bubble." ) ),
-    [&]( auto & page_id ) {
-        // Temporary fix for #8726: disable out-of-bubble fire spread until
-        // fire-loaded submaps can safely handle vehicle state.
-        // add( "REALITY_BUBBLE_FIRE_SPREAD", page_id,
-        //      translate_marker( "Out-of-Bubble Fire Spread" ),
-        //      translate_marker( "Controls whether fire can keep areas loaded outside of render "
-        //                        "distance. 'None': fire burns out in place. "
-        //                        "'Adjacent': fire can spread into unloaded areas, and keeps "
-        //                        "close enough." ), {
-        //     { "none", translate_marker( "None (pause spread)" ) },
-        //     { "adjacent", translate_marker( "Adjacent (one layer)" ) }
-        // },
-        // is_android ? "none" : "adjacent"
-        //    );
-        // add( "FIRE_SPREAD_SUBMAP_CAP", page_id,
-        //      translate_marker( "Fire Spread Submap Cap" ),
-        //      translate_marker( "Maximum number of submaps that fire spread may keep loaded "
-        //                        "simultaneously across all dimensions. Higher values allow larger "
-        //                        "fires to be simulated correctly. "
-        //                        "0 disables out-of-bubble fire spread loading entirely. " ),
-        //      0, 250, 25 );
-        add( "RETAINED_OMT_CACHE_LENGTH", page_id,
-             translate_marker( "Retained Map Cache" ),
-             translate_marker( "Side length of the extra overmap-terrain MRU cache. "
-                               "The retained cache budget is this value squared; lazy border "
-                               "loading is budgeted separately." ),
-             4, 50, is_android ? 10 : 24 );
-        add( "POWER_PORTAL_LOAD_RADIUS", page_id,
-             translate_marker( "Power portal load radius (submaps)" ),
-             translate_marker( "Radius in submaps around each end of a power-portal link that is "
-                               "force-loaded while the link is active." ),
-             0, static_cast<int>( REALITY_BUBBLE_SIZE_MAX ) + 1, is_android ? 2 : 3
-           );
-    } );
-
-    // get_option( "FIRE_SPREAD_SUBMAP_CAP" ).setPrerequisite( "REALITY_BUBBLE_FIRE_SPREAD", "adjacent" );
 }
 
 void options_manager::add_options_debug()
@@ -3279,19 +2883,6 @@ void options_manager::add_options_world_default()
        );
 
     add_empty_line();
-
-    add_option_group( world_default, Group( "skill_buff_category",
-                                            to_translation( "Enabled Skill Buffs" ),
-                                            to_translation( "Enable or disable major skill buffs" ) ),
-    [&]( const std::string & page_id ) {
-        add( "cooking_kcal_buff", page_id, "Cooking Calories Buff",
-             "Include the scaling calories from cooking buff?",
-             true );
-        add( "althletics_encumbrance_buff", page_id, "Althletics Encumbrance Buff",
-             "Include the reduce all encumbrance per level of althletics buff?",
-             true );
-    }
-                    );
 
     add_empty_line();
 
@@ -4125,8 +3716,6 @@ struct string_col {
 std::string options_manager::show( bool ingame, const bool world_options_only,
                                    const std::function<bool()> &on_quit )
 {
-    reload_option_definitions_preserving_values();
-
     const int iWorldOptPage = std::ranges::find_if( pages_, [&]( const Page & p ) {
         return p.id_ == world_default;
     } ) - pages_.begin();
@@ -4169,7 +3758,6 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
     ctxt.register_action( "PAGE_UP" );
     ctxt.register_action( "PAGE_DOWN" );
     ctxt.register_action( "CONFIRM" );
-    ctxt.register_action( reload_option_definitions_action, to_translation( "Reload option JSON" ) );
     ctxt.register_action( "HELP_KEYBINDINGS" );
 
     const int iWorldOffset = world_options_only ? 2 : 0;
@@ -4539,24 +4127,6 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
                 iCurrentPage = pages_.size() - 1;
             }
             sfx::play_variant_sound( "menu_move", "default", 100 );
-        } else if( action == reload_option_definitions_action ) {
-            const auto current_page_id = pages_[iCurrentPage].id_;
-            reload_option_definitions_preserving_values();
-
-            const auto page_iter = std::ranges::find_if( pages_, [&]( const Page & page ) {
-                return page.id_ == current_page_id;
-            } );
-            iCurrentPage = page_iter == pages_.end() ? 0 : std::ranges::distance( pages_.begin(), page_iter );
-            iCurrentLine = 0;
-            iStartPos = 0;
-            groups_state.clear();
-            groups_state.emplace( "", true );
-            for( const Group &g : groups_ ) {
-                groups_state.emplace( g.id_, true );
-            }
-            sync_snapshot_keys( OPTIONS, OPTIONS_OLD );
-            sync_snapshot_keys( ACTIVE_WORLD_OPTIONS, WOPTIONS_OLD );
-            popup( _( "Reloaded option JSON." ) );
         } else if( action == "RIGHT" || action == "LEFT" || action == "CONFIRM" ) {
             switch( curr_item.type ) {
                 case ItemType::Option: {
