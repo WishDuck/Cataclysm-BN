@@ -1743,7 +1743,6 @@ void options_manager::init()
         p.items_.clear();
     }
 
-    add_options_general();
     add_options_interface();
     add_options_graphics();
     add_options_performance();
@@ -1751,6 +1750,7 @@ void options_manager::init()
     add_options_world_default();
     add_options_android();
     load_option_definitions();
+    add_options_general();
 
     for( Page &p : pages_ ) {
         p.removeRepeatedEmptyLines();
