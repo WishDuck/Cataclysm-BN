@@ -14,6 +14,7 @@
 #include "filesystem.h"
 #include "fstream_utils.h"
 #include "json.h"
+#include "options.h"
 #include "path_info.h"
 #include "string_formatter.h"
 #include "string_id.h"
@@ -313,6 +314,9 @@ std::optional<MOD_INFORMATION> load_modfile( const JsonObject &jo, const std::st
         }
     }
 
+    if( jo.has_string( "options" ) ) {
+        get_options().load_option_definitions( jo.get_string( "options" ) );
+    }
     return { std::move( modfile ) };
 }
 

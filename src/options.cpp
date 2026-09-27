@@ -206,6 +206,7 @@ namespace
 {
 
 constexpr auto option_group_type = "OPTION_GROUP";
+constexpr auto option_space_type = "OPTION_SPACE";
 constexpr auto option_type = "OPTION";
 
 struct option_dependency_definition {
@@ -476,39 +477,6 @@ auto parse_option_definition( const JsonObject &jo ) -> option_definition
     }
 
     return option;
-}
-
-auto parse_option_definition_entry( const JsonObject &jo,
-                                    parsed_option_definitions &parsed ) -> void
-{
-    const auto type = jo.get_string( "type" );
-    if( type == option_group_type ) {
-        parsed.groups.push_back( parse_option_group_definition( jo ) );
-        return;
-    }
-    if( type == option_type ) {
-        parsed.options.push_back( parse_option_definition( jo ) );
-        return;
-    }
-
-    jo.throw_error( string_format( "Unknown option definition type '%s'", type ), "type" );
-}
-
-auto parse_option_definition_file( JsonIn &jsin, parsed_option_definitions &parsed ) -> void
-{
-    if( jsin.test_object() ) {
-        auto jo = jsin.get_object();
-        parse_option_definition_entry( jo, parsed );
-        jo.finish();
-        return;
-    }
-
-    jsin.start_array();
-    while( !jsin.end_array() ) {
-        auto jo = jsin.get_object();
-        parse_option_definition_entry( jo, parsed );
-        jo.finish();
-    }
 }
 
 auto capture_option_values( const options_manager::options_container &container )
@@ -1613,18 +1581,9 @@ void options_manager::Page::removeRepeatedEmptyLines()
     }
 }
 
-auto options_manager::load_option_definitions() -> void
+auto options_manager::parse_option_definition_entry( const JsonObject &jo ) -> void
 {
-    const auto files = get_files_from_path( ".json", option_definitions_path(), true, true );
-    auto parsed = parsed_option_definitions{};
-    auto pending_prerequisites = std::vector<pending_option_prerequisites>();
-
-    for( const auto &file : files ) {
-        read_from_file_json( file, [&]( JsonIn & jsin ) {
-            parse_option_definition_file( jsin, parsed );
-        }, true );
-    }
-
+    const auto type = jo.get_string( "type" );
     const auto has_page = [&]( const std::string & page_id ) -> bool {
         return std::ranges::any_of( pages_, [&]( const Page & page )
         {
@@ -1638,84 +1597,124 @@ auto options_manager::load_option_definitions() -> void
         } );
     };
 
-    for( const auto &group : parsed.groups ) {
-        if( !has_page( group.page ) ) {
-            debugmsg( "Option group '%s' references unknown page '%s'", group.id, group.page );
-            continue;
+    if( type == option_group_type ) {
+        auto parsed = parse_option_group_definition( jo );
+        if( !has_page( parsed.page ) ) {
+            debugmsg( "Option group '%s' references unknown page '%s'", parsed.id, parsed.page );
+            return;
         }
-        add_option_group( group.page, Group( group.id, group.title, group.desc ),
+        add_option_group( parsed.page, Group( parsed.id, parsed.title, parsed.desc ),
         []( const std::string & ) {} );
+        return;
     }
+    if( type == option_type ) {
+        auto parsed = parse_option_definition( jo );
+        if( !has_page( parsed.page ) ) {
+            debugmsg( "Option '%s' references unknown page '%s'", parsed.name, parsed.page );
+            return;
+        }
+        if( parsed.scope != "global" && parsed.scope != "world" ) {
+            debugmsg( "Option '%s' has unknown scope '%s'", parsed.name, parsed.scope );
+            return;
+        }
+        if( parsed.scope == "world" && parsed.page != world_default ) {
+            debugmsg( "World-scoped option '%s' must be placed on page '%s'", parsed.name, world_default );
+            return;
+        }
+        if( parsed.scope == "global" && parsed.page == world_default ) {
+            debugmsg( "Global option '%s' cannot be placed on page '%s'", parsed.name, world_default );
+            return;
+        }
 
-    for( const auto &option : parsed.options ) {
-        if( !has_page( option.page ) ) {
-            debugmsg( "Option '%s' references unknown page '%s'", option.name, option.page );
-            continue;
-        }
-        if( option.scope != "global" && option.scope != "world" ) {
-            debugmsg( "Option '%s' has unknown scope '%s'", option.name, option.scope );
-            continue;
-        }
-        if( option.scope == "world" && option.page != world_default ) {
-            debugmsg( "World-scoped option '%s' must be placed on page '%s'", option.name, world_default );
-            continue;
-        }
-        if( option.scope == "global" && option.page == world_default ) {
-            debugmsg( "Global option '%s' cannot be placed on page '%s'", option.name, world_default );
-            continue;
-        }
-
-        const auto group_id = has_group( option.group ) ? option.group : std::string();
-        if( !option.group.empty() && group_id.empty() ) {
-            debugmsg( "Option '%s' references unknown group '%s'", option.name, option.group );
+        const auto group_id = has_group( parsed.group ) ? parsed.group : std::string();
+        if( !parsed.group.empty() && group_id.empty() ) {
+            debugmsg( "Option '%s' references unknown group '%s'", parsed.name, parsed.group );
+            return;
         }
 
         adding_to_group_ = group_id;
-        if( option.stype == "bool" ) {
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 option.default_bool, option.hide );
-        } else if( option.stype == "int" ) {
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 option.min_int, option.max_int, option.default_int, option.hide,
-                 option.format.empty() ? "%i" : option.format );
-        } else if( option.stype == "float" ) {
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 option.min_float, option.max_float, option.default_float, option.step_float,
-                 option.hide, option.format.empty() ? "%.2f" : option.format );
-        } else if( option.stype == "string_input" ) {
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 option.default_string, option.max_length, option.hide );
-        } else if( option.stype == "string_select" ) {
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 option.items, option.default_string, option.hide );
-        } else if( option.stype == "int_map" ) {
-            const auto int_items = option.int_map_items
+        if( parsed.stype == "bool" ) {
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 parsed.default_bool, parsed.hide );
+        } else if( parsed.stype == "int" ) {
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 parsed.min_int, parsed.max_int, parsed.default_int, parsed.hide,
+                 parsed.format.empty() ? "%i" : parsed.format );
+        } else if( parsed.stype == "float" ) {
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 parsed.min_float, parsed.max_float, parsed.default_float, parsed.step_float,
+                 parsed.hide, parsed.format.empty() ? "%.2f" : parsed.format );
+        } else if( parsed.stype == "string_input" ) {
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 parsed.default_string, parsed.max_length, parsed.hide );
+        } else if( parsed.stype == "string_select" ) {
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 parsed.items, parsed.default_string, parsed.hide );
+        } else if( parsed.stype == "int_map" ) {
+            const auto int_items = parsed.int_map_items
             | std::views::transform( []( const int_map_item_definition & item ) {
                 return std::tuple<int, std::string>( item.value,
                                                      std::string( item.label.debug_get_raw() ) );
             } )
             | std::ranges::to<std::vector>();
-            add( option.name, option.page, std::string( option.menu_text.debug_get_raw() ),
-                 std::string( option.tooltip.debug_get_raw() ),
-                 int_items, option.default_int, option.default_int, option.hide, option.verbose );
+            add( parsed.name, parsed.page, std::string( parsed.menu_text.debug_get_raw() ),
+                 std::string( parsed.tooltip.debug_get_raw() ),
+                 int_items, parsed.default_int, parsed.default_int, parsed.hide, parsed.verbose );
         }
-        adding_to_group_.clear();
-        pending_prerequisites.push_back( pending_option_prerequisites{ .option_name = option.name, .deps = option.deps } );
-    }
-
-    for( const auto &pending : pending_prerequisites ) {
-        for( const auto &dep : pending.deps ) {
+        for( const auto &dep : parsed.deps ) {
             if( dep.values.empty() ) {
-                get_option( pending.option_name ).setPrerequisite( dep.option );
+                get_option( parsed.name ).setPrerequisite( dep.option );
             } else {
-                get_option( pending.option_name ).setPrerequisites( dep.option, dep.values );
+                get_option( parsed.name ).setPrerequisites( dep.option, dep.values );
             }
         }
+        adding_to_group_.clear();
+        return;
+    }
+
+    if( type == option_space_type ) {
+        std::string page = jo.get_string( "page" );
+        if( !has_page( page ) ) {
+            debugmsg( "Option space references unknown page '%s'", page );
+            return;
+        }
+        add_empty_line( page );
+        return;
+    }
+
+    jo.throw_error( string_format( "Unknown option definition type '%s'", type ), "type" );
+}
+
+auto options_manager::parse_option_definition_file( JsonIn &jsin ) -> void
+{
+    if( jsin.test_object() ) {
+        auto jo = jsin.get_object();
+        parse_option_definition_entry( jo );
+        jo.finish();
+        return;
+    }
+
+    jsin.start_array();
+    while( !jsin.end_array() ) {
+        auto jo = jsin.get_object();
+        parse_option_definition_entry( jo );
+        jo.finish();
+    }
+}
+
+auto options_manager::load_option_definitions( std::string path ) -> void
+{
+    const auto files = get_files_from_path( ".json", path, true, true );
+
+    for( const auto &file : files ) {
+        read_from_file_json( file, [&]( JsonIn & jsin ) {
+            parse_option_definition_file( jsin );
+        }, true );
     }
 }
 
@@ -1728,8 +1727,8 @@ void options_manager::init()
         p.items_.clear();
     }
 
+    load_option_definitions( option_definitions_path() );
     add_options_general();
-    load_option_definitions();
     add_options_interface();
     add_options_graphics();
     add_options_performance();
@@ -3747,7 +3746,7 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
     std::unordered_map<std::string, bool> groups_state;
     groups_state.emplace( "", true ); // Non-existent group
     for( const Group &g : groups_ ) {
-        groups_state.emplace( g.id_, true );
+        groups_state.emplace( g.id_, false );
     }
 
     input_context ctxt( "OPTIONS" );
@@ -3755,8 +3754,6 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
     ctxt.register_action( "QUIT" );
     ctxt.register_action( "NEXT_TAB" );
     ctxt.register_action( "PREV_TAB" );
-    ctxt.register_action( "PAGE_UP" );
-    ctxt.register_action( "PAGE_DOWN" );
     ctxt.register_action( "CONFIRM" );
     ctxt.register_action( "HELP_KEYBINDINGS" );
 
@@ -3987,27 +3984,6 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
 
         const std::string action = ctxt.handle_input();
 
-        std::vector<int> visible_items;
-        visible_items.reserve( page_items.size() );
-        const auto is_visible = [&]( int i ) -> bool {
-            const PageItem &it = page_items[i];
-            switch( it.type )
-            {
-                case ItemType::GroupHeader:
-                    return true;
-                case ItemType::BlankLine:
-                case ItemType::Option:
-                    return groups_state[it.group];
-                default:
-                    abort();
-            }
-        };
-        for( int i = 0; i < static_cast<int>( page_items.size() ); ++i ) {
-            if( is_visible( i ) ) {
-                visible_items.push_back( i );
-            }
-        }
-
         if( world_options_only && ( action == "NEXT_TAB" || action == "PREV_TAB" ||
                                     ( action == "QUIT" && ( !on_quit || on_quit() ) ) ) ) {
             return action;
@@ -4099,18 +4075,6 @@ std::string options_manager::show( bool ingame, const bool world_options_only,
                     iCurrentLine = page_items.size() - 1;
                 }
             } while( !is_selectable( iCurrentLine ) );
-        } else if( action == "PAGE_DOWN" || action == "PAGE_UP" ) {
-            const auto current_visible = std::ranges::find( visible_items, iCurrentLine );
-            if( current_visible != visible_items.end() ) {
-                const auto current_visible_index = static_cast<int>( std::ranges::distance( visible_items.begin(),
-                                                   current_visible ) );
-                const auto page_step = std::max( 1, iContentHeight - 1 );
-                const auto last_visible_index = static_cast<int>( visible_items.size() ) - 1;
-                const auto target_visible_index = action == "PAGE_DOWN" ?
-                                                  std::min( current_visible_index + page_step, last_visible_index ) :
-                                                  std::max( current_visible_index - page_step, 0 );
-                iCurrentLine = visible_items[target_visible_index];
-            }
         } else if( action == "NEXT_TAB" ) {
             iCurrentLine = 0;
             iStartPos = 0;
