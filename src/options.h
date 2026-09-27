@@ -28,7 +28,6 @@ class options_manager
                     : std::pair<std::string, translation>( first, second ) {
                 }
         };
-        auto load_option_definitions( std::string path ) -> void;
     private:
         static std::vector<id_and_option> build_tilesets_list();
         static std::vector<id_and_option> build_soundpacks_list();
@@ -39,6 +38,7 @@ class options_manager
 
         void enable_json( const std::string &var );
         void add_retry( const std::string &var, const std::string &val );
+        auto load_option_definitions() -> void;
         auto refresh_title_screen_option() -> void;
         auto parse_option_definition_file( JsonIn &jsin ) -> void;
         auto parse_option_definition_entry( const JsonObject &jo ) -> void;

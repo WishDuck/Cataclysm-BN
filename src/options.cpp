@@ -28,6 +28,7 @@
 #include "language.h"
 #include "line.h"
 #include "mapsharing.h"
+#include "mod_manager.h"
 #include "output.h"
 #include "path_info.h"
 #include "preload_config.h"
@@ -1707,14 +1708,29 @@ auto options_manager::parse_option_definition_file( JsonIn &jsin ) -> void
     }
 }
 
-auto options_manager::load_option_definitions( std::string path ) -> void
+auto options_manager::load_option_definitions() -> void
 {
-    const auto files = get_files_from_path( ".json", path, true, true );
+    auto files = get_files_from_path( ".json", option_definitions_path(), true, true );
 
     for( const auto &file : files ) {
         read_from_file_json( file, [&]( JsonIn & jsin ) {
             parse_option_definition_file( jsin );
         }, true );
+    }
+
+    mod_manager manager = mod_manager();
+    manager.refresh_mod_list();
+    for( const auto &mod : manager.all_mod_objects() ) {
+        if( mod.load_options ) {
+            files = get_files_from_path( ".json", mod.options_path, true, true );
+
+            for( const auto &file : files ) {
+                read_from_file_json( file, [&]( JsonIn & jsin ) {
+                    parse_option_definition_file( jsin );
+                }, true );
+            }
+
+        }
     }
 }
 
@@ -1727,7 +1743,6 @@ void options_manager::init()
         p.items_.clear();
     }
 
-    load_option_definitions( option_definitions_path() );
     add_options_general();
     add_options_interface();
     add_options_graphics();
@@ -1735,6 +1750,7 @@ void options_manager::init()
     add_options_debug();
     add_options_world_default();
     add_options_android();
+    load_option_definitions();
 
     for( Page &p : pages_ ) {
         p.removeRepeatedEmptyLines();
@@ -2882,7 +2898,18 @@ void options_manager::add_options_world_default()
        );
 
     add_empty_line();
-
+    add_option_group( world_default, Group( "skill_buff_category",
+                                            to_translation( "Enabled Skill Buffs" ),
+                                            to_translation( "Enable or disable major skill buffs" ) ),
+    [&]( const std::string & page_id ) {
+        add( "cooking_kcal_buff", page_id, "Cooking Calories Buff",
+             "Include the scaling calories from cooking buff?",
+             true );
+        add( "althletics_encumbrance_buff", page_id, "Althletics Encumbrance Buff",
+             "Include the reduce all encumbrance per level of althletics buff?",
+             true );
+    }
+                    );
     add_empty_line();
 
     add( "canmutprofmut", world_default, "Starting Trait Cancelling",
