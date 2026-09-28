@@ -596,15 +596,15 @@ auto options_manager::insert_page_item( Page &page, const PageItem &item ) -> vo
         return;
     }
 
-    const auto group_range = std::ranges::find_last_if( page.items_, [&]( const PageItem & existing ) {
+    const auto group_range = std::find_if( page.items_.begin(), page.items_.end(), [&]( const PageItem & existing ) {
         return existing.group == item.group;
     } );
-    if( group_range.empty() ) {
+    if( group_range == page.items_.end() ) {
         page.items_.push_back( item );
         return;
     }
 
-    page.items_.insert( std::next( group_range.begin() ), item );
+    page.items_.insert( std::next( group_range ), item );
 }
 
 options_manager::cOpt::cOpt()
