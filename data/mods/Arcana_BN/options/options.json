@@ -1,7 +1,7 @@
 [
   {
     "type": "OPTION",
-    "name": "SPAWN_RATE_arcana_components",
+    "name": "SPAWN_RATE_arcane_components",
     "stype": "float",
     "scope": "world",
     "page": "world_default",
