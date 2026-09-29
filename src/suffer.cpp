@@ -28,6 +28,7 @@
 #include "npc.h"
 #include "options.h"
 #include "overmap/overmapbuffer.h"
+#include "profile.h"
 #include "pldata.h"
 #include "point.h"
 #include "regional_settings.h"
@@ -385,7 +386,7 @@ void Character::suffer_while_awake( const int current_stim )
             w_carry = mount.get_carried_weight() + this->get_weight();
             w_cap = 4 * mount.weight_capacity();
         } else {
-            w_carry = weight_carried();
+            w_carry = cached_weight_carried();
             w_cap = 4 * weight_capacity();
         }
 
@@ -1637,6 +1638,7 @@ void Character::suffer_without_sleep( const int sleep_deprivation )
 
 void Character::suffer()
 {
+    ZoneScopedN( "character_suffer" );
     const int current_stim = get_stim();
     // TODO: Remove this section and encapsulate hp_cur
     for( const std::pair<const bodypart_str_id, bodypart> &elem : get_body() ) {
