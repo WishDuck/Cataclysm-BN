@@ -3879,6 +3879,7 @@ std::vector<detached_ptr<item>> remove_randomly_by_weight( location_inventory &i
 
 void Character::drop_invalid_inventory()
 {
+    ZoneScoped;
     bool dropped_liquid = false;
 
     const auto p = bub_pos();
@@ -3903,7 +3904,7 @@ void Character::drop_invalid_inventory()
         return;
     }
     // Also drop excess weight IF an NPC
-    auto wt_carried = weight_carried();
+    auto wt_carried = cached_weight_carried();
     auto wt_capacity = weight_capacity();
     if( wt_carried > wt_capacity ) {
         auto items_to_drop = remove_randomly_by_weight( inv, wt_carried - wt_capacity );
