@@ -112,6 +112,37 @@ TEST_CASE("lua_global_functions", "[lua]") {
     REQUIRE(lua_npc_avatar_name == "nil");
 }
 
+TEST_CASE("lua_weather_override_can_expire", "[lua][weather]") {
+    clear_all_state();
+    sol::state lua = make_lua_state();
+
+    sol::table test_data = lua.create_table();
+    lua.globals()["test_data"] = test_data;
+
+    const auto restore_turn = restore_on_out_of_scope<time_point>(calendar::turn);
+
+    run_lua_test_script(lua, "weather_override_expiration_test.lua");
+
+    const auto center = test_data.get<tripoint_abs_omt>("center");
+    CHECK(test_data.get<bool>("has_before"));
+    CHECK(test_data.get<std::string>("weather_before") == "lightning");
+    CHECK(get_weather().has_omt_weather_override(center));
+
+    calendar::turn += 31_minutes;
+
+    const auto script_res = lua.safe_script(
+        R"(
+test_data["has_after"] = gapi.has_omt_weather_override(test_data["center"])
+test_data["weather_after"] = tostring(gapi.get_omt_weather_override(test_data["center"]))
+)",
+        sol::script_pass_on_error);
+    REQUIRE(script_res.valid());
+
+    CHECK_FALSE(test_data.get<bool>("has_after"));
+    CHECK(test_data.get<std::string>("weather_after") == "nil");
+    CHECK_FALSE(get_weather().has_omt_weather_override(center));
+}
+
 TEST_CASE("lua_map_create_item_at_places_without_returning_owned_item", "[lua][map]") {
     clear_all_state();
     auto lua = make_lua_state();
@@ -137,6 +168,46 @@ test_data["item_count"] = #map:get_items_at(test_data["pos"])
     CHECK(test_data.get<int>("item_count") == 1);
 
     here.i_clear(pos);
+}
+
+TEST_CASE("lua_field_ids_expose_moppable_fields_on_real_map", "[lua][map][fluid_regression]") {
+    clear_all_state();
+    const auto cleanup = on_out_of_scope([]() { clear_all_state(); });
+    auto& here = get_map();
+    const auto pos = tripoint_bub_ms(60, 60, 0);
+    const auto water_field = field_type_id("fd_water");
+    const auto fire_field = field_type_id("fd_fire");
+    g->place_player(tripoint_bub_ms(61, 60, 0));
+    REQUIRE(here.add_field(pos, water_field));
+    REQUIRE(here.add_field(pos, fire_field));
+
+    auto lua = make_lua_state();
+    lua["field_pos"] = pos;
+    const auto result = lua.safe_script(
+        R"(
+local here = gapi.get_map()
+local saw_water, saw_fire = false, false
+for _, field_id in ipairs(here:get_field_ids_at(field_pos)) do
+  if field_id:str_id():str() == "fd_water" then
+    saw_water = true
+    assert(field_id:obj().moppable)
+  elseif field_id:str_id():str() == "fd_fire" then
+    saw_fire = true
+    assert(not field_id:obj().moppable)
+  end
+  if field_id:obj().moppable then here:remove_field_at(field_pos, field_id) end
+end
+return { saw_water = saw_water, saw_fire = saw_fire }
+)",
+        sol::script_pass_on_error);
+    const auto water_removed = here.get_field(pos, water_field) == nullptr;
+    const auto fire_preserved = here.get_field(pos, fire_field) != nullptr;
+    REQUIRE(result.valid());
+    const auto observed = result.get<sol::table>();
+    CHECK(observed.get<bool>("saw_water"));
+    CHECK(observed.get<bool>("saw_fire"));
+    CHECK(water_removed);
+    CHECK(fire_preserved);
 }
 
 TEST_CASE("item_lua_invoke_at_invokes_use_action", "[lua][item]") {

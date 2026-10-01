@@ -3173,7 +3173,7 @@ void item::armor_fit_info( std::vector<iteminfo> &info, const iteminfo_query *pa
             }
         } else {
             info.emplace_back( "DESCRIPTION", _( "* This clothing <bad>can not be refitted, "
-                                                 "upsized, or downsized</bad>." ) );
+                                                 "upsized, or downsized</bad> to fit abnormal anatomy without <bad>extensive modifications</bad>, but should <info>fit everyone with normal anatomy</info>." ) );
         }
     }
 
@@ -11643,9 +11643,17 @@ bool item::on_drop( const tripoint_bub_ms &pos, map &m )
         !has_own_flag( flag_DIRTY ) ) {
         set_flag( flag_DIRTY );
     }
+
+    const auto spilled_to_field =
+        made_of( LIQUID ) && type->spill_field != fd_null && !m.has_flag( flag_LIQUIDCONT, pos );
+    if( spilled_to_field ) {
+        m.spill_liquid_field( pos, *this );
+    }
     you.flag_encumbrance();
 
-    return type->drop_action && type->drop_action.call( you, *this, false, pos );
+    const auto handled_by_drop_action =
+        type->drop_action && type->drop_action.call( you, *this, false, pos );
+    return spilled_to_field || handled_by_drop_action;
 }
 
 time_duration item::age() const

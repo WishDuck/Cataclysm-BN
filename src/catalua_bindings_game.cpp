@@ -96,6 +96,59 @@ void cata::detail::reg_game_api( sol::state &lua )
     luna::set_fx( lib, "bodytemp_hot",
                   []() -> int { return units::to_legacy_bodypart_temp( BODYTEMP_HOT ); } );
     luna::set_fx( lib, "rng", sol::resolve<int( int, int )>( &rng ) );
+    DOC( "Override weather for all OMTs in a radius around center. Radius is in OMT tiles.  Optionally expires at a given time_point." );
+    luna::set_fx( lib, "set_omt_weather_override",
+                  []( const tripoint_abs_omt & center, const int radius,
+    const std::string & weather, const sol::optional<time_point> &expires_at ) -> void {
+        if( radius < 0 )
+        {
+            throw std::runtime_error( "set_omt_weather_override radius must be non-negative" );
+        }
+        const auto weather_id = weather_type_id( weather );
+        if( !weather_id.is_valid() )
+        {
+            throw std::runtime_error( string_format( "invalid weather id: %s", weather ) );
+        }
+        const auto maybe_expires_at = expires_at ?
+        std::optional<time_point>( *expires_at ) :
+        std::nullopt;
+        get_weather().set_omt_weather_override( {
+            .center = center,
+            .radius = radius,
+            .weather = weather_id,
+            .expires_at = maybe_expires_at
+        } );
+        get_weather().set_nextweather( calendar::turn );
+    } );
+    DOC( "Clear weather overrides for all OMTs in a radius around center. Radius is in OMT tiles." );
+    luna::set_fx( lib, "clear_omt_weather_override",
+    []( const tripoint_abs_omt & center, const int radius ) -> void {
+        if( radius < 0 )
+        {
+            throw std::runtime_error( "clear_omt_weather_override radius must be non-negative" );
+        }
+        get_weather().clear_omt_weather_override( center, radius );
+        get_weather().set_nextweather( calendar::turn );
+    } );
+    DOC( "Clear every active OMT weather override." );
+    luna::set_fx( lib, "clear_all_omt_weather_overrides", []() -> void {
+        get_weather().clear_all_omt_weather_overrides();
+        get_weather().set_nextweather( calendar::turn );
+    } );
+    DOC( "Get the current OMT weather override at a location, or nil if none is set." );
+    luna::set_fx( lib, "get_omt_weather_override",
+    []( const tripoint_abs_omt & location ) -> sol::optional<std::string> {
+        if( const weather_type_id *result = get_weather().get_omt_weather_override( location ) )
+        {
+            return result->str();
+        }
+        return sol::nullopt;
+    } );
+    DOC( "Returns true if an OMT weather override exists at the given location." );
+    luna::set_fx( lib, "has_omt_weather_override",
+    []( const tripoint_abs_omt & location ) -> bool {
+        return get_weather().has_omt_weather_override( location );
+    } );
     DOC( "Get recent player message log entries. Returns array of { time=string, text=string }." );
     luna::set_fx( lib, "get_messages", []( sol::this_state lua_this, const int count ) {
         sol::state_view lua( lua_this );
@@ -185,6 +238,8 @@ void cata::detail::reg_game_api( sol::state &lua )
     } );
 
     DOC( "Spawns a new item. Same as Item::spawn " );
+    DOC( "`count` sets the item's charges, not the number of items: exactly one item is created." );
+    DOC( "For stackable (count-by-charges) items such as ammo, `count` is the stack size. For non-stackable items, pass a negative value (e.g. -1), since a positive one is still applied as charges. Tools spawned with a negative value get their default charges." );
     luna::set_fx( lib, "create_item", []( const itype_id & itype, int count ) -> detached_ptr<item> {
         return item::spawn( itype, calendar::turn, count );
     } );

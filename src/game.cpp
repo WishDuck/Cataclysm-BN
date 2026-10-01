@@ -3040,8 +3040,10 @@ auto game::try_activity_fixed_window_skip() -> bool
     const auto duration = activity_fixed_window_duration();
     if( !can_activity_fixed_window_skip( duration ) ) {
         next_activity_fixed_window_check_ = calendar::turn + 1_minutes;
+        u.in_skip_state = false;
         return false;
     }
+    u.in_skip_state = true;
     const auto skipped_turns = execute_activity_fixed_window_skip( duration );
     if( skipped_turns <= 0 ) {
         next_activity_fixed_window_check_ = calendar::turn + 1_minutes;
@@ -3056,6 +3058,7 @@ auto game::try_activity_fixed_window_skip() -> bool
     if( skipped_turns >= full_window_turns || get_weather().nextweather <= calendar::turn ) {
         run_activity_cadence_boundary();
     }
+    u.in_skip_state = false;
     return true;
 }
 
@@ -13215,6 +13218,7 @@ auto game::place_player( const tripoint_bub_ms &dest_loc ) -> point_rel_sm
                             vp1 ) ) {
         u.stop_hauling();
     }
+    const auto moved = u.bub_pos() != dest_loc;
     const auto origin_before_setpos = m.get_abs_sub();
     const tripoint_abs_ms abs_dest_loc = bub_to_abs( dest_loc );
     u.setpos( dest_loc );
@@ -13315,6 +13319,10 @@ auto game::place_player( const tripoint_bub_ms &dest_loc ) -> point_rel_sm
     // If the new tile is a boardable part, board it
     if( vp1.part_with_feature( "BOARDABLE", true ) && !u.is_mounted() ) {
         m.board_vehicle( u.bub_pos(), &u );
+    }
+
+    if( moved ) {
+        m.creature_in_field( u, /*movement_only=*/true );
     }
 
     // Traps!
