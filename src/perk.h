@@ -63,6 +63,10 @@ class perk
         std::string get_category() const;
         std::vector<enchantment> get_enchantments() const;
 
+        // Needed for bindings
+        auto operator==( const perk &rhs ) const -> bool { return id == rhs.id; }
+        auto operator<( const perk &rhs ) const -> bool { return id < rhs.id; }
+
     private:
         translation name;
         translation description;

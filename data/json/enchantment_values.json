@@ -227,6 +227,11 @@
     "desc": "Affects Cold Blooded Speed"
   },
   {
+    "id": "SLEEPY",
+    "type": "enchantment_value",
+    "desc": "Affects easy of sleeping"
+  },
+  {
     "id": "SLEEP_PAIN_THRESH",
     "type": "enchantment_value",
     "desc": "Affects Pain To Wake Up",
