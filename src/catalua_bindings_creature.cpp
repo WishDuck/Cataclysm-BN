@@ -1023,6 +1023,8 @@ void cata::detail::reg_character( sol::state &lua )
 
         SET_FX_T( is_wielding, bool( const item & ) const );
 
+        SET_FX( wielded_items );
+
         SET_FX_T( is_wearing, bool( const item & ) const );
 
         SET_FX_T( is_wearing_on_bp, bool( const itype_id &, const bodypart_id & ) const );
