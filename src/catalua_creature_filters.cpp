@@ -41,6 +41,17 @@ static bool filter_faction_ids( const FilterContext &context,
     return ids.contains( context.mon->faction );
 }
 
+static bool filter_flags( const FilterContext &context,
+                          const std::unordered_set<m_flag> &ids )
+{
+    for( const auto &flag : ids ) {
+        if( context.mon->has_flag( flag ) ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 static bool filter_species_ids( const FilterContext &context,
                                 const std::unordered_set<species_id> &ids )
 {
@@ -64,7 +75,7 @@ static bool filter_sees( const FilterContext &context, const std::vector<monster
 }
 
 static bool filter_within_range_of( const FilterContext &context, float range,
-                                    const std::vector<monster *> other_monsters )
+                                    const std::vector<Creature *> other_monsters )
 {
     auto mpos = context.mon->abs_pos();
     for( const auto &other_mon : other_monsters ) {
@@ -117,6 +128,12 @@ std::unordered_map<std::string, std::function<std::function<bool( FilterContext 
         }
     },
     {
+        "flags", []( LuaValue & val ) -> std::function<bool( FilterContext &context )> {
+            const auto types = val.as<std::unordered_set<m_flag>>();
+            return [types]( FilterContext & context ) -> bool { return filter_flags( context, types ); };
+        }
+    },
+    {
         "sees", []( LuaValue & val ) -> std::function<bool( FilterContext &context )> {
             const auto types = val.as<std::vector<monster *>>();
             return [types]( FilterContext & context ) -> bool { return filter_sees( context, types ); };
@@ -126,7 +143,7 @@ std::unordered_map<std::string, std::function<std::function<bool( FilterContext 
         "within_range_of", []( LuaValue & val ) -> std::function<bool( FilterContext &context )> {
             const auto values = val.as<sol::table>();
             const auto range = values["range"].get<float>();
-            const auto mons = values["monsters"].get<std::vector<monster *>>();
+            const auto mons = values["monsters"].get<std::vector<Creature *>>();
             return [range, mons]( FilterContext & context ) -> bool { return filter_within_range_of( context, range, mons ); };
         }
     },
