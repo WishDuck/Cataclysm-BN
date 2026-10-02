@@ -41,6 +41,17 @@ static bool filter_faction_ids( const FilterContext &context,
     return ids.contains( context.mon->faction );
 }
 
+static bool filter_flags( const FilterContext &context,
+                          const std::unordered_set<m_flag> &ids )
+{
+    for( const auto &flag : ids ) {
+        if( context.mon->has_flag( flag ) ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 static bool filter_species_ids( const FilterContext &context,
                                 const std::unordered_set<species_id> &ids )
 {
@@ -114,6 +125,12 @@ std::unordered_map<std::string, std::function<std::function<bool( FilterContext 
         "species_ids", []( LuaValue & val ) -> std::function<bool( FilterContext &context )> {
             const auto types = val.as<std::unordered_set<species_id>>();
             return [types]( FilterContext & context ) -> bool { return filter_species_ids( context, types ); };
+        }
+    },
+    {
+        "flags", []( LuaValue & val ) -> std::function<bool( FilterContext &context )> {
+            const auto types = val.as<std::unordered_set<m_flag>>();
+            return [types]( FilterContext & context ) -> bool { return filter_flags( context, types ); };
         }
     },
     {
