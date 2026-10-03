@@ -72,12 +72,14 @@ std::string perk::get_description() const
     std::ostringstream oss;
     oss << description.translated() << "\n";
     oss << "\n" << _( "Effects:" ) << "\n";
+    bool added_string = false;
     for( const enchantment &ench : enchantments ) {
         for( const std::string str : ench.get_effect_string( false ) ) {
             oss << "  " << str << "\n";
+            added_string = true;
         }
     }
-    return oss.str();
+    return added_string ? oss.str() : "";
 }
 
 std::string perk::get_category() const
