@@ -558,6 +558,7 @@
       ]
     ],
     "desc": "Affects Incoming %s Damage",
+    "desc_insert": [ "" ],
     "increase_good": false
   },
   {
