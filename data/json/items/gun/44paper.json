@@ -37,6 +37,7 @@
       [ "barrel", 1 ],
       [ "bore", 1 ],
       [ "grip", 1 ],
+      [ "sling", 1 ],
       [ "stock", 1 ],
       [ "underbarrel", 1 ],
       [ "rail", 1 ],
@@ -58,6 +59,8 @@
     "material": [ "steel", "wood" ],
     "color": "brown",
     "ammo": "44paper",
+    "ranged_damage": { "damage_type": "bullet", "amount": 8 },
+    "range": 4,
     "dispersion": 280,
     "clip_size": 8
   }
