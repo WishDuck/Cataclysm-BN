@@ -12971,7 +12971,7 @@ int Character::item_reload_cost( const item &it, item &ammo, int qty ) const
         qty = clamp( qty, ammo.contents.front().charges, 1 );
     } else if( ammo.is_magazine() ) {
         qty = 1;
-    // Disallow stackable generic to avoid issues with damage melding
+        // Disallow stackable generic to avoid issues with damage melding
     } else if( ammo.is_ammo() || ammo.is_comestible() ) {
         qty = std::max( std::min( qty, ammo.charges ), 1 );
     } else {
