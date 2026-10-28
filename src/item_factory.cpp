@@ -2140,6 +2140,16 @@ void Item_factory::load( islot_armor &slot, const JsonObject &jo, const std::str
             }
         }
     }
+    if( jo.has_array( "provided_slots" ) ) {
+        for( const JsonObject &obj : jo.get_array( "provided_slots" ) ) {
+            slot.provides_slot[flag_id( obj.get_string( "id" ) )] = obj.get_int( "amount", 1 );
+        }
+    }
+    if( jo.has_array( "consumed_slots" ) ) {
+        for( const JsonObject &obj : jo.get_array( "consumed_slots" ) ) {
+            slot.consumes_slot[flag_id( obj.get_string( "id" ) )] = obj.get_int( "amount", 1 );
+        }
+    }
 
 }
 

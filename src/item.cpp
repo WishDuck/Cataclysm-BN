@@ -1061,6 +1061,27 @@ bool item::swap_side()
     return set_side( opposite_side( get_side() ) );
 }
 
+std::map<flag_id, int> item::get_required_slots() const
+{
+    if( type && type->armor ) {
+        return type->armor->consumes_slot;
+    }
+    return std::map<flag_id, int>();
+}
+
+std::map<flag_id, int> item::get_provided_slots() const
+{
+    if( type && type->armor ) {
+        return type->armor->provides_slot;
+    }
+    return std::map<flag_id, int>();
+}
+
+bool item::requires_slots() const
+{
+    return type && type->armor && !type->armor->consumes_slot.empty();
+}
+
 bool item::is_worn_only_with( const item &it ) const
 {
     return( ( ( has_flag( flag_POWERARMOR_EXTERNAL ) || has_flag( flag_POWERARMOR_MOD ) ||
@@ -6728,11 +6749,6 @@ bool item::is_power_armor() const
     return ( has_flag( flag_POWERARMOR_EXO ) || has_flag( flag_POWERARMOR_EXTERNAL ) ||
              has_flag( flag_POWERARMOR_PLATING ) ||
              has_flag( flag_POWERARMOR_MOD ) );
-}
-
-bool item::is_armor_plate() const
-{
-    return has_flag( flag_ARMOR_PLATE );
 }
 
 int item::get_avg_encumber( const Character &who ) const
