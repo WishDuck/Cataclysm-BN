@@ -4879,17 +4879,6 @@ bool Character::is_wearing_active_optcloak() const
     return false;
 }
 
-int Character::is_wearing_plate_carrier() const
-{
-    int result = 0;
-    for( auto &elem : worn ) {
-        if( elem->has_flag( flag_PLATE_CARRIER ) ) {
-            result += 1;
-        }
-    }
-    return result;
-}
-
 bool Character::in_climate_control()
 {
     bool regulated_area = false;

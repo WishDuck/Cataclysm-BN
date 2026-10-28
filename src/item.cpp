@@ -1084,10 +1084,17 @@ bool item::requires_slots() const
 
 bool item::is_worn_only_with( const item &it ) const
 {
-    return( ( ( has_flag( flag_POWERARMOR_EXTERNAL ) || has_flag( flag_POWERARMOR_MOD ) ||
-                has_flag( flag_POWERARMOR_PLATING ) ) &&
-              it.has_flag( flag_POWERARMOR_EXO ) ) || ( has_flag( flag_ARMOR_PLATE ) &&
-                      it.has_flag( flag_PLATE_CARRIER ) ) );
+    if( requires_slots() ) {
+        std::map<flag_id, int> provided_flags = it.get_provided_slots();
+        for( const auto &[flag, amount] : get_required_slots() ) {
+            if( provided_flags.contains( flag ) ) {
+                return true;
+            }
+        }
+    }
+    return( ( has_flag( flag_POWERARMOR_EXTERNAL ) || has_flag( flag_POWERARMOR_MOD ) ||
+              has_flag( flag_POWERARMOR_PLATING ) ) &&
+            it.has_flag( flag_POWERARMOR_EXO ) );
 }
 
 detached_ptr<item> item::in_its_container( detached_ptr<item> &&self )

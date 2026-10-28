@@ -1230,6 +1230,16 @@ void Item_factory::check_definitions() const
                     }
                 }
             }
+            for( const auto &flag : type->armor->provides_slot | std::views::keys ) {
+                if( !flag.is_valid() ) {
+                    msg += string_format( "invalid slot providing flag %s used", flag.str() );
+                }
+            }
+            for( const auto &flag : type->armor->consumes_slot | std::views::keys ) {
+                if( !flag.is_valid() ) {
+                    msg += string_format( "invalid slot consuming flag %s used", flag.str() );
+                }
+            }
         }
 
         if( type->weight < 0_gram ) {
