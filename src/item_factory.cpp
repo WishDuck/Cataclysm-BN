@@ -281,6 +281,9 @@ void Item_factory::finalize_pre( itype &obj )
         if( sscanf( f.c_str(), "LIGHT_%i", &ll ) == 1 && ll > 0 ) {
             obj.light_emission = ll;
         }
+        if( has_consumed_slot.contains( f ) && obj.armor && !obj.armor->consumes_slot.contains( f ) ) {
+            obj.armor->consumes_slot[f] = 1;
+        }
     }
     // remove LIGHT_[X] flags
     erase_if( obj.item_tags, []( const flag_id & f ) {
@@ -2142,12 +2145,16 @@ void Item_factory::load( islot_armor &slot, const JsonObject &jo, const std::str
     }
     if( jo.has_array( "provided_slots" ) ) {
         for( const JsonObject &obj : jo.get_array( "provided_slots" ) ) {
-            slot.provides_slot[flag_id( obj.get_string( "id" ) )] = obj.get_int( "amount", 1 );
+            flag_id id( obj.get_string( "id" ) );
+            slot.provides_slot[id] = obj.get_int( "amount", 1 );
+            has_consumed_slot.insert( id );
         }
     }
     if( jo.has_array( "consumed_slots" ) ) {
         for( const JsonObject &obj : jo.get_array( "consumed_slots" ) ) {
-            slot.consumes_slot[flag_id( obj.get_string( "id" ) )] = obj.get_int( "amount", 1 );
+            flag_id id( obj.get_string( "id" ) );
+            slot.consumes_slot[id] = obj.get_int( "amount", 1 );
+            has_consumed_slot.insert( id );
         }
     }
 

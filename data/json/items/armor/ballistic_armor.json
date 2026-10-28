@@ -181,7 +181,6 @@
     "encumbrance": 6,
     "warmth": 0,
     "material_thickness": 8,
-    "consumed_slots": [ { "id": "ARMOR_PLATE", "amount": 1 } ],
     "flags": [ "FRAGILE", "OUTER", "ALLOWS_WINGS", "ARMOR_PLATE", "COMPACT", "NO_REPAIR" ]
   },
   {
@@ -205,7 +204,6 @@
     "warmth": 0,
     "material_thickness": 4,
     "resistance": { "bullet": 48 },
-    "consumed_slots": [ { "id": "ARMOR_PLATE", "amount": 1 } ],
     "flags": [ "OUTER", "ALLOWS_WINGS", "ARMOR_PLATE", "COMPACT" ]
   },
   {
@@ -229,7 +227,6 @@
     "warmth": 0,
     "material_thickness": 4,
     "resistance": { "bullet": 28 },
-    "consumed_slots": [ { "id": "ARMOR_PLATE", "amount": 1 } ],
     "flags": [ "OUTER", "ALLOWS_WINGS", "ARMOR_PLATE", "COMPACT" ]
   },
   {
@@ -267,7 +264,6 @@
     "warmth": 0,
     "material_thickness": 3,
     "resistance": { "bullet": 18 },
-    "consumed_slots": [ { "id": "ARMOR_PLATE", "amount": 1 } ],
     "flags": [ "OUTER", "ALLOWS_WINGS", "ARMOR_PLATE", "COMPACT" ]
   },
   {
